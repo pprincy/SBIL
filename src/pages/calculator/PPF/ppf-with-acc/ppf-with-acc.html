@@ -1,0 +1,187 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button [class.active]="isBtnActive" (click)="toggleClass()" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title >{{'PPFCalculator.PPFCalculator' | translate}}</ion-title>
+  </ion-navbar>
+  <div class="calculator_common_sec_steps">
+    <div class="calculator_steps" id="stepsCount">
+      <div class="calculator_steps_com active">
+        <div class="calculator_dashed step1">
+          <span class="calculator_steps_com_num">
+            <span>1</span>
+          </span>
+        </div>
+      </div>
+      <div class="calculator_steps_com">
+        <div class="calculator_dashed step2">
+          <span class="calculator_steps_com_num">
+            <span>2</span>
+          </span>
+        </div>
+      </div>
+      <div class="calculator_steps_com">
+        <div class="calculator_dashed step3">
+          <span class="calculator_steps_com_num">
+            <span>3</span>
+          </span>
+        </div>
+      </div>
+      <!-- <div class="calculator_steps_com">
+        <div class="calculator_dashed step4">
+          <span class="calculator_steps_com_num">
+            <span>4</span>
+          </span>
+        </div>
+      </div>
+      <div class="calculator_steps_com">
+        <div class="calculator_dashed step5">
+          <span class="calculator_steps_com_num">
+            <span>5</span>
+          </span>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</ion-header>
+
+<ion-content class="calculator_common_sec">
+  <ion-slides class="calculator_sliders" pager="false">
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading qOne">
+        <h1>{{'PPFCalculator.qOne' | translate}}</h1>
+      </div>
+      <div class="ppf_first_slide">
+        <div class="ppf_first_sec">
+          <ion-list radio-group class="custom_radio" [(ngModel)]="existPPFAcc" >
+            <ion-item *ngFor="let option of optionsArr;">
+              <ion-label [ngClass]="existPPFAcc === option.id ? 'selected' : 'unselected'">{{option.value}}</ion-label>
+              <ion-radio value="{{option.id}}" (click)="selectedOption(option,i)" [ngClass]="existPPFAcc === option.id ? 'selected' : 'unselected'"></ion-radio>
+            </ion-item>
+            <!-- <ion-item>
+              <ion-label>No</ion-label>
+              <ion-radio value="no"></ion-radio>
+            </ion-item> -->
+          </ion-list>
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide *ngIf="isAccPresent">
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h3>{{'PPFCalculator.qtwo' | translate}}</h3>
+      </div>
+
+      <div class="tell_us_cont_common ppf_slider_range">
+        <div class="calculator_common_sec_inner">
+          <div class="calculation_with_range">
+            <div class="calculation_with_range_inp">
+              <!-- <span class="rs_icon icon-Icons_Ruppee"></span> -->
+              <ion-input
+                type="tel"
+                (keypress)="isAmount($event)"
+                (ionFocus)="clearStartZero('existing')"
+                [(ngModel)]="existingPPFBalComma"
+                (ionChange)="formatAmount(existingPPFBalComma, 'balance')"
+                class="overlay_dropdown_rng_val"
+              ></ion-input>
+            </div>
+            <ion-item>
+              <ion-range min="{{minExistAmount}}" max="{{maxExistAmount}}" step="{{steps}}" [(ngModel)]="existingPPFBal"
+                pin="true" (ngModelChange)="doSomething($event,'existing')">
+              </ion-range>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide *ngIf="isAccPresent">
+      <ion-slide>
+        <div class="calculator_common_sec_inner age_slider_heading">
+          <h2>{{'PPFCalculator.qThree' | translate}}</h2>
+          <h5>
+            <strong class="diffYear">
+              {{('PPFCalculator.inTheYear' | translate).replace('$year$',
+              futureInvestYear)}}
+            </strong>
+          </h5>
+        </div>
+        <div class="tell_us_cont_common common_years_slider">
+          <div class="tell_us_cont com_head active">
+            <div class="tell_us_slider prevYear">
+              <div *ngFor="let i of selectPrevInvestBar">
+                <span class="tell_us_slider_age">{{i}}</span>
+                <!-- <span class="tell_us_slider_year"
+                  >{{'common.years' | translate}}</span
+                > -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slide>
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h3>{{'PPFCalculator.qFour' | translate}}</h3>
+      </div>
+
+      <div class="tell_us_cont_common ppf_slider_range">
+        <div class="calculator_common_sec_inner">
+          <div class="calculation_with_range">
+            <div class="calculation_with_range_inp">
+              <!-- <span class="rs_icon icon-Icons_Ruppee"></span> -->
+              <ion-input type="tel" (keypress)="isAmount($event)" (ionFocus)="clearStartZero('investAmt')"
+                [(ngModel)]="investAmtComma" (ionChange)="formatAmount(investAmtComma, 'invest')"
+                class="overlay_dropdown_rng_val"></ion-input>
+            </div>
+            <ion-item>
+              <ion-range min="{{minAmt}}" max="{{maxAmt}}" step="{{steps}}" [(ngModel)]="investAmt" pin="true"
+                (ngModelChange)="doSomething($event,'invest')">
+              </ion-range>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h2>{{'PPFCalculator.qFive' | translate}}</h2>
+        <h5>
+          <strong class="diffYear">
+            {{('PPFCalculator.inTheYear' | translate).replace('$year$',
+            futurePPFYear)}}
+          </strong>
+        </h5>
+      </div>
+      <div class="tell_us_cont_common common_years_slider">
+        <div class="tell_us_cont com_head active">
+          <div class="tell_us_slider PPFYear">
+            <div *ngFor="let i of selectPPFTenureBar">
+              <span class="tell_us_slider_age">{{i}}</span>
+              <!-- <span class="tell_us_slider_year"
+                >{{'common.years' | translate}}</span
+              > -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+<ion-footer class="ppf_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col" *ngIf="!backBtnhide">
+      <button ion-button outline class="back_btn" (click)="back()">
+        {{'common.back' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col" [attr.text-center]="backBtnhide ? '' : null">
+      <button ion-button class="login_btn" (click)="next()">
+        {{'common.next' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span> <img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

@@ -1,0 +1,266 @@
+page-mpin-change {
+    .head {
+        background: linear-gradient(270deg, #301f6c 0%, #d60d47 100%);
+      }
+    .header{
+        background-color: $sbi_bg_color; height:0;
+
+        .bar-button{
+            color: #fff;
+            vertical-align: middle;
+            min-width: none;
+        }
+        .toolbar-background-ios{
+            border-width :0px !important;
+        }
+        .toolbar{
+            box-shadow: none !important;
+
+            .toolbar-content {
+                .toolbar-title {
+                  color: $sbi_fifth_color;
+                  text-transform: capitalize;
+                  font-family: "Lato";
+                  font-size: 4.615vw;
+                  text-align: center;
+                  margin: 0 -26px;
+                  
+                }
+              }
+        }
+    }
+    .top_area{
+        height: 200px;
+        .mob_email {
+            bottom: 21px;
+        }
+    }
+    .mpin_area{
+        padding: 90px 25px 0 25px;
+        .heading_panel{
+            padding: 12px 0 0px 0;
+            .heading1 {
+                font-family: 'Lato';
+                color: $sbi_twentyseven_color;
+                font-size: 8.61vw;
+                margin: 65px 0 10px 0;
+            }
+            .heading2 {
+                font-family: 'Lato';
+                color: $sbi_twentyseven_color;
+                font-size: 4.61vw;
+                margin: 10px 0 20px 0;
+                letter-spacing: 0.38px;
+            }
+        }
+
+        .user_pic {
+            border: 1px solid #fff;
+           overflow: hidden;
+           margin: -4.278vw auto 0px;
+           text-align: center;
+           margin-top: 20px;
+           img {
+            //  width: 60%;
+            width: 220px;
+            height: 240px;
+             text-align: center;
+           //   margin: 45px 0 85px;
+           }
+         }
+    }
+    .sucess_text {
+        font-size: 3.888vw;
+        text-align: center;
+        font-family:'Lato Semibold'; 
+        color: #555555;
+        margin-top:50px;
+    }
+    .mpitext {
+        color:$sbi_twentyseven_color;
+        text-align: center;
+        font-family:'Lato Light'; 
+        font-size: 3.333vw;
+    }
+
+    .login_btn{
+        border-radius: 0;
+        font-family: "Lato";
+        font-size: 4.1vw;
+        text-transform: capitalize;
+        // margin: 0 46px 28px 46px;
+        background: #2a2076;
+        letter-spacing: 0.38px;
+        max-width: 90%;
+        height: 45px;
+
+    }
+
+    .back_btn{
+        border-radius: 0;
+        font-family: "Lato";
+        font-size: 4.1vw;
+        text-transform: capitalize;
+        // margin: 0 46px 28px 46px;
+        background: #2a2076;
+        letter-spacing: 0.38px;
+        max-width: 92%;
+        color: #ffffff;
+
+    }
+
+  .footer_panel {
+    .ion-md-apps {
+        margin-right:10px;        
+    }
+    .no_outline_btn {
+        font-size: 3.33vw;
+        text-transform: capitalize;
+    }
+  }
+    .divmpinValue{
+        margin: 5px 0 10px 0;
+        > .grid{padding:0; margin-left: -5px; margin-right: -5px;}
+        .spam_otp_msg{ color:$sbi_nine_color;font-family:'Lato Light'; font-size: 3.8vw;padding-top: 10px;
+        }       
+    }
+
+
+    .divOtpValue{
+        padding: 0 25px 0 25px;
+    }
+
+.btnOtp{
+    height: 15.83vw;
+    width: 100%;
+    box-shadow:10px 10px 14px 0px rgba(94, 72, 186, 0.09);
+    color:lighten($sbi_third_color,10%);
+    background-color: $sbi_fifth_color;
+    font-family:'Lato Thin';
+    font-size: 8.8vw;
+    border-radius: 5px;
+    ion-icon{
+        font-size: 3.3vw;
+    }
+    &.otpBtn1{
+        background-color:$sbi_twentyseven_color;
+        color:$sbi_fifth_color;
+        position: relative;
+        transform: scale(1.05);
+    }
+    &.wrong_otp{
+        border: 1px solid lighten($sbi_error_color,30%);
+        border-bottom: 3px solid $sbi_error_color;
+        background-color:$sbi_fifth_color;
+        color:$sbi_secondary_color;
+    
+    }
+   
+}
+.inputBtnGirdStart{
+    position: fixed;bottom: 0px; left:0; right:0; z-index:9999;
+    ion-grid{
+        padding: 0px !important;
+        .row{
+            .col{
+                border: 0.5px solid lighten($sbi_third_color,20%);
+                background-color: $sbi_fifth_color;
+                .belowBtn{
+                    color: $sbi_primary_color;
+                    width: 100%;
+                    margin: 0;
+                    font-size: 5.5vw;
+                }
+                &:first-child{
+                    border-left: 1px solid lighten($sbi_third_color,20%);
+                }
+                &:last-child{
+                    border-right: 1px solid lighten($sbi_third_color,20%);
+                }
+            }
+            &:first-child{
+                .col{
+                    border-top: 2px solid lighten($sbi_third_color,20%);
+                }  
+            }
+
+            &:last-child{
+                .col{
+                    border-bottom: 2px solid lighten($sbi_third_color,25%);
+                }  
+            }
+        }
+    }
+    
+
+}
+
+.patt-holder{  -ms-touch-action: none;}
+.patt-wrap{position:relative; cursor:pointer;}
+.patt-wrap ul, .patt-wrap li{
+	list-style: none;
+	margin:0;
+	padding: 0;
+}
+.patt-circ{
+	position:relative;
+	float: left;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+ }
+.patt-circ.hovered{
+    .patt-dots{
+        border:3px solid $sbi_nine_color;
+    }	
+}
+
+.patt-error .patt-circ.hovered{
+    .patt-dots{
+        border:3px solid $sbi_seven_color;
+    }
+	
+}
+.patt-error{
+    .patt-lines{
+        background:$sbi_seven_color;
+    }
+}
+.patt-hidden .patt-circ.hovered{border:0;}
+
+.patt-dots{
+	background:$sbi_third_color;
+	width: 10px;height: 10px;
+	border-radius:5px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top:-5px;
+	margin-left:-5px;
+}
+.patt-lines{
+	border-radius:5px;
+	height:10px;
+	background:$sbi_nine_color;
+	position:absolute;
+	transform-origin:5px 5px;
+	-ms-transform-origin:5px 5px; /* IE 9 */
+	-webkit-transform-origin:5px 5px;
+}
+.dark_blue {
+    color: #2A2076 !important;
+    font-family: "Lato";
+    margin: -9px 0 0 0;
+}
+.footer_panel {
+    background: #F8F8F8 !important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    padding: 10px 16px;
+}
+
+.patt-hidden .patt-lines{
+	display:none;
+}
+}
+
+

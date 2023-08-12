@@ -1,0 +1,252 @@
+page-quiz-questions {
+    .scroll_div .scroll-content {
+        padding-top: 0!important;
+    }
+
+    .top_area { 
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: none;
+        height: 100px;
+        .top_area_container {
+            background: none;
+            .cloud{
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .header {
+        .toolbar {    box-shadow: none;
+            .toolbar-background{border:none;}
+                .bar-button{color: $sbi_fifth_color;}
+                .toolbar-content{
+                    .toolbar-title{
+                        color: $sbi_fifth_color;
+                    }
+                } 
+        }
+        &:after{background-image:none; height: 0;}
+        .networth_details {
+            text-align: center;
+            color: $sbi_fifth_color;
+            border-left:none;
+            border-right:none;
+            border-bottom:none;
+            .family_protect_header{ display: none;
+                .grid{ border-radius: 0; margin: 0 -0.5px;
+                    .row{
+                       
+                        .col{
+                            padding: 7px 12px;border-radius: 0px;
+                        }
+                        .family_protect_header_lt{
+                            font-size: 2.77vw; font-family:'Lato Semibold'; color: $sbi_nine_color; 
+        
+                        }
+                        .family_protect_header_rt{
+                            font-size: 3.33vw; font-family:'Lato Black'; color: $sbi_primary_color; 
+                            span{
+                                font-size:3vw;  
+                            }
+                           
+                        }
+                    }
+                }
+        
+        }
+            &.shrink { padding-bottom: 0;
+                &:before{
+                    left: -1px;
+                    width: 22px;
+                    margin-top: 0;
+                }
+                &:after{
+                    right: -1px;
+                    width: 22px;
+                    margin-top: 0;
+                }
+                .networth_amt .networth_amt_inner .rs_icon {font-size: 3.611vw;}
+                .family_protect_header{
+                    display: block;
+                    animation: addAnimation .5s;
+                    animation-fill-mode: both;
+                }
+            }
+             h4{
+                 font-family:'Lato Light';
+                 color: lighten($sbi_fifth_color,15%);          
+                 font-size: 3.88vw;
+                 line-height: 4.16vw;
+                 margin: 0 0 4px 0; 
+             }
+             h5{
+                 font-family: 'Lato';                 
+                 color: $sbi_fifth_color;          
+                 font-size: 5.42vw;
+                 line-height: 7.61vw;
+                 text-align: initial;
+                 margin: 10px 40px;
+             }
+             .networth_amt{
+                font-family:'Lato Black';font-size: 10.27vw;
+                .networth_amt_inner{display: inline-block;   padding: 0 10px 5px 10px;
+                    .rs_icon{margin-right: 5px;  font-size: 8.611vw;}
+                }
+             
+            }
+           
+             .networth_sum{
+                 font-family:'Lato Semibold';font-size:3.61vw; padding: 15px 0px 15px 0px;
+             }
+             
+             
+         }
+    }
+
+    .content {
+        .scroll-content {
+            padding-top: 0px !important;
+        }
+        .networth_details {
+            text-align: center;
+            color: $sbi_fifth_color;
+            border-left:none;
+            border-right:none;
+            border-bottom:none;
+            .family_protect_header{ display: none;
+                .grid{ border-radius: 0; margin: 0 -0.5px;
+                    .row{
+                       
+                        .col{
+                            padding: 7px 12px;border-radius: 0px;
+                        }
+                        .family_protect_header_lt{
+                            font-size: 2.77vw; font-family:'Lato Semibold'; color: $sbi_nine_color; 
+        
+                        }
+                        .family_protect_header_rt{
+                            font-size: 3.33vw; font-family:'Lato Black'; color: $sbi_primary_color; 
+                            span{
+                                font-size:3vw;  
+                            }
+                           
+                        }
+                    }
+                }
+        
+        }
+            &.shrink { padding-bottom: 0;
+                &:before{
+                    left: -1px;
+                    width: 22px;
+                    margin-top: 0;
+                }
+                &:after{
+                    right: -1px;
+                    width: 22px;
+                    margin-top: 0;
+                }
+                .networth_amt .networth_amt_inner .rs_icon {font-size: 3.611vw;}
+                .family_protect_header{
+                    display: block;
+                    animation: addAnimation .5s;
+                    animation-fill-mode: both;
+                }
+            }
+             h4{
+                 font-family:'Lato Light';
+                 color: lighten($sbi_fifth_color,15%);          
+                 font-size: 3.88vw;
+                 line-height: 4.16vw;
+                 margin: 0 0 4px 0; 
+             }
+             h5{
+                 font-family: 'Lato';                 
+                 color: $sbi_fifth_color;          
+                 font-size: 5.42vw;
+                 line-height: 7.61vw;
+                 text-align: initial;
+                 margin: 0px 40px;
+             }
+             .networth_amt{
+                font-family:'Lato Black';font-size: 10.27vw;
+                .networth_amt_inner{display: inline-block;   padding: 0 10px 5px 10px;
+                    .rs_icon{margin-right: 5px;  font-size: 8.611vw;}
+                }
+             
+            }
+           
+             .networth_sum{
+                 font-family:'Lato Semibold';font-size:3.61vw; padding: 15px 0px 15px 0px;
+             }
+             
+             
+         }
+        background: #5448b7;
+        .card {
+            margin: 10px 0px;
+            width: 100%;
+            border-radius: 5px;
+
+            .card-header {
+                padding: 20px 20px 0 20px;
+                h5 {
+                    font-family:'Lato Black';
+                    color: $sbi_primary_color;
+                    font-size: 4.55vw;
+                    margin: 0 0 8px 0;
+                    text-align: left;
+                    white-space: normal;
+                }
+            }
+
+            .card-content {
+                padding: 0 20px 20px 22px;
+                .custom_radio {
+                    .item-radio {
+                        display: block;
+                        align-items: start;
+                        -webkit-box-align: start;
+                        vertical-align: top;
+                        border:none !important;
+                        //font-size: 2.77vw;
+                        padding-left: 1.38vw;
+                        .item-inner {
+                            padding-right:0;
+                            .label{
+                                font-size: 3.61vw;
+                                margin: 16px 8px 9px 0;
+                                margin-left: 5vw;
+                                display: flex;
+                                align-items: center;
+                                opacity: 1 !important;
+                                img {
+                                    width: 16px;
+                                    display: inline-block;
+                                    margin: 0 5px;
+                                }
+                            }
+                        } 
+                    }
+                }
+            }
+        }
+
+        .footer_panel {
+            background-color: transparent;
+            box-shadow: none;
+            margin-top: 14px;
+            .back_btn {
+                color: $sbi_fifth_color;
+            }
+        }
+    }
+
+    .radio-disabled {
+        opacity: 1 !important;
+    }
+}

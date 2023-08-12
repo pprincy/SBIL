@@ -1,0 +1,194 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-title>{{'PPFCalculator.PPFCalculator' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="networth_details">
+    <h4>
+      {{('PPFCalculator.coupusTitle' | translate).replace('$year$',
+      futureYears)}}
+    </h4>
+    <div class="networth_amt">
+      <div class="networth_amt_inner">
+        <span class="rs_icon icon-Icons_Ruppee"></span>{{corpusAccumlated |
+        amountFormat:'S'}}
+      </div>
+    </div>
+  </div>
+
+  <ion-card class="ppf_card">
+    <ion-card-header class="invested_result" text-center>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <h5>
+              <span class="indiccat color_fr"></span
+              >{{'PPFCalculator.amountinvested' | translate}}
+            </h5>
+          </ion-col>
+          <ion-col col-6>
+            <h5>
+              <span class="indiccat color_sec"></span
+              >{{'PPFCalculator.interestEarned' | translate}}
+            </h5>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col text-left>
+            <h5>
+              <span class="indiccat color_tr"></span
+              >{{'PPFCalculator.futureValueOfExistingbalance' | translate}}
+            </h5>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content class="ppf_card_content">
+      <div id="ppf_chart" style="display: block; height: 200px"></div>
+
+      <ion-list class="networth_list">
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/chart.svg" />
+            </figure>
+            <p>{{'PPFCalculator.rateOfReturn' | translate}}</p>
+          </div>
+          <button ion-button icon-right float-right clear>
+            {{rateOfReturn}}%
+            <span class="drp_sub_txt">{{'common.pa' | translate}}</span>
+          </button>
+        </ion-item>
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/chart.svg" />
+            </figure>
+            <p>{{'PPFCalculator.existingBalance' | translate}}</p>
+          </div>
+          <button
+            ion-button
+            text-capitalize
+            icon-right
+            float-right
+            clear
+            (click)="showOverlay('existingBalance')"
+          >
+            {{existingPPFAmt | amountFormat:'S'}}
+            <ion-icon name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/chart.svg" />
+            </figure>
+            <p>{{'PPFCalculator.durationOfExistingBalance' | translate}}</p>
+          </div>
+          <button
+            ion-button
+            icon-right
+            float-right
+            clear
+            (click)="showOverlay('tenureOfExistBal')"
+          >
+            {{existingPPFTenure}}
+            <span class="drp_sub_txt">{{'common.yrs' | translate}}</span>
+            <ion-icon name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/hlv_calculator/currency_rupee.svg" />
+            </figure>
+            <p>{{'PPFCalculator.amountinvested' | translate}}</p>
+          </div>
+          <button
+            ion-button
+            text-capitalize
+            icon-right
+            float-right
+            clear
+            (click)="showOverlay('amtInvested')"
+          >
+          <span class="rs_icon icon-Icons_Ruppee"></span>
+          {{investedAmt | amountFormat:'S'}}
+            <ion-icon name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/duration.svg" />
+            </figure>
+            <p>{{'common.duration' | translate}}</p>
+          </div>
+          <button
+            ion-button
+            icon-right
+            float-right
+            clear
+            (click)="showOverlay('tenure')"
+          >
+            {{investedTenure}}
+            <span class="drp_sub_txt">{{'common.yrs' | translate}}</span>
+            <ion-icon name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <p class="disclaimer_txt" text-center>
+    <!-- <span class="icon-Icons_Info"></span> -->
+    <a (click)="disclaimerInfo()">{{'common.disclaimersLink' | translate}}</a>
+  </p>
+</ion-content>
+<ion-footer class="ppf_final_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col">
+      <button ion-button class="back_btn" outline (click)="recalculate()">
+        {{'buttons.recalculate' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn" (click)="goToGoalsListing()">
+        {{'buttons.startPlanning' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+<div class="overlay_dropdown" *ngIf="status">
+  <div class="overlay_dropdown_content calculation_with_range">
+    <ppf-with-acc-range
+      class="drop_com_comp"
+      [rangeData]="rangeDataUi"
+    ></ppf-with-acc-range>
+    <ion-item>
+      <button ion-button class="login_btn" (click)="done()">
+        {{'common.done' | translate}}
+      </button>
+    </ion-item>
+  </div>
+</div>
+
+<div class="overlay_dropdown annuity disclaimer" *ngIf="disclaimer">
+  <div class="overlay_dropdown_content">
+    <div class="overlay_dropdown_content_inner">
+      <ion-icon
+        name="ios-close-circle-outline"
+        (click)="disclaimerClose()"
+      ></ion-icon>
+      <h3 padding>{{'common.disclaimers' | translate}}</h3>
+      <div
+        class="innerCont"
+        [innerHtml]="utilitiesProvider.disclaimerText"
+      ></div>
+    </div>
+  </div>
+</div>
+<div class="common_loader" *ngIf="pageLoader">
+  <span> <img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

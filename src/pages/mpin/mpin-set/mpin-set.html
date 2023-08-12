@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-navbar  class="head" color="sbiHeader" text-center>
+    <ion-title>{{'mpin.mpin' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="mpin_area">
+    <div class="user_pic">
+      <img [ngStyle]="{'margin' : setMPinStep == '3' ? '45px 0 0px' : '45px 0 85px'}" src="assets/imgs/mpin.png"/>
+    </div>
+    <div class="heading_panel" (click)="hideKeyboard()">
+      <p class="heading2" *ngIf="setMPinStep == '1'">{{'mpin.pleaseSetYourMpin' | translate}}</p>
+      <p class="heading2" *ngIf="setMPinStep == '2'">{{'mpin.pleaseRenterYourMpin' | translate}}</p>
+      <p class="heading1" *ngIf="setMPinStep == '3'">{{'mpin.yourMpinHasBeenSetSuccessfully' | translate}}</p>
+    </div>
+    <div class="sucess_text" *ngIf="setMPinStep == '3'">
+      {{'mpin.mpinNote' | translate}}
+    </div>
+    <div class="divOtpValue" *ngIf="setMPinStep != '3'">
+      <ion-grid align="center">
+        <ion-row>
+          <ion-col col-3><button ion-button class="btnOtp {{!otpNum1 ? '' : 'otpBtn1'}}"
+              (click)="inputBtnClick()">{{otpNum1}}<ion-icon name="ios-cog-outline" *ngIf="!otpNum1"></ion-icon>
+            </button></ion-col>
+          <ion-col col-3><button ion-button class="btnOtp {{!otpNum2 ? '' : 'otpBtn1'}}" (click)="inputBtnClick()">
+              {{otpNum2}}<ion-icon name="ios-cog-outline" *ngIf="!otpNum2"></ion-icon></button></ion-col>
+          <ion-col col-3><button ion-button class="btnOtp {{!otpNum3 ? '' : 'otpBtn1'}}"
+              (click)="inputBtnClick()">{{otpNum3}}<ion-icon name="ios-cog-outline" *ngIf="!otpNum3"></ion-icon>
+              </button></ion-col>
+          <ion-col col-3><button ion-button class="btnOtp {{!otpNum4 ? '' : 'otpBtn1'}}"
+              (click)="inputBtnClick()">{{otpNum4}}<ion-icon name="ios-cog-outline" *ngIf="!otpNum4"></ion-icon>
+              </button></ion-col>
+        </ion-row>
+        <ion-row class="wrong_otp_msg hide">
+          <ion-col align="center"><label>{{'mpin.pleaseRenterYourMpin' | translate}}</label></ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+
+  <div style="height:200px" *ngIf="keyboardShow" (click)="hideKeyboard()"></div>
+  <div class="inputBtnGirdStart" *ngIf="keyboardShow">
+    <ion-grid align="center">
+      <ion-row>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('1')">1</button></ion-col>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('2')">2</button></ion-col>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('3')">3</button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('4')">4</button></ion-col>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('5')">5</button></ion-col>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('6')">6</button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('7')">7</button></ion-col>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('8')">8</button></ion-col>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('9')">9</button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numBackClick()">
+            <ion-icon name="backspace" style="font-size: 50px !important;
+        font-weight: 700;"></ion-icon>
+          </button></ion-col>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('0')">0</button></ion-col>
+        <ion-col><button ion-button clear class="belowBtn" (click)="next()">
+            <ion-icon name="ios-checkmark-outline" style="font-size: 78px !important;
+        font-weight: 700;"></ion-icon>
+          </button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+<ion-footer *ngIf="!keyboardShow" no-order>
+  <div class="footer_panel row active">
+    <div class="col" text-center *ngIf="setMPinStep == '2'">
+      <button ion-button class="back_btn" (click)="back()">
+        {{'common.back' | translate}}
+      </button>
+    </div>
+    <div class="col" text-center>
+      <button ion-button class="login_btn" (click)="next()"
+        *ngIf="setMPinStep == '1'">{{'mpin.proceed' | translate}}</button>
+      <!-- <button ion-button class="login_btn" (click)="next()"
+        *ngIf="setMPinStep == '1'">{{'mpin.save' | translate}}</button> -->
+      <button ion-button class="back_btn" (click)="next()"
+        *ngIf="setMPinStep == '2'">{{'mpin.confirmMpin' | translate}}</button>
+      <button ion-button class="login_btn" (click)="gotIt()"
+        *ngIf="setMPinStep == '3'">{{'mpin.gotIt' | translate}}</button>
+    </div>
+  </div>
+  <!-- <div>
+    <div class="col" text-center >
+      <button ion-button class="login_btn" (click)="back()"
+      *ngIf="setMPinStep == '2'">{{'common.back' | translate}}</button>
+    </div>
+    <div class="col" text-center>
+      
+      <button ion-button class="login_btn" (click)="next()"
+        *ngIf="setMPinStep == '1'">{{'mpin.proceed' | translate}}</button>
+      <button ion-button class="login_btn" (click)="next()"
+        *ngIf="setMPinStep == '2'">{{'mpin.confirmMpin' | translate}}</button>
+      <button ion-button class="final_btn" (click)="gotIt()"
+        *ngIf="setMPinStep == '3'">{{'mpin.gotIt' | translate}}</button>
+    </div>
+  </div> -->
+  <div *ngIf="setMPinStep != '3'">
+    <div class="col" text-center>
+      <button ion-button clear class="no_outline_btn dark_blue" (click)="goPatternLock()">
+        <ion-icon name="apps"></ion-icon> &nbsp; {{'mpin.usePatternLock' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

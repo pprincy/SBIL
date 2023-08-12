@@ -1,0 +1,328 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-title> {{'homeGoal.homeGoal' | translate}}</ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button icon-right (click)="takeScreenshot()">
+        <ion-icon name="md-share"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button
+        ion-button
+        icon-only
+        class="notification-button"
+        (click)="goNotificationList()"
+      >
+        <ion-icon class="icon-Icons_Notification">
+          <ion-badge
+            class="notifications-badge"
+            color="sbi_primary_color"
+            *ngIf="restapiProvider.notificationCount > 0"
+            >{{restapiProvider.notificationCount}}</ion-badge
+          >
+        </ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div class="networth_details">
+    <h4>
+      {{('homeGoal.coupusTitle' | translate).replace('$year$', headerYear)}}
+    </h4>
+    <div class="networth_amt">
+      <div class="networth_amt_inner">
+        <span class="rs_icon icon-Icons_Ruppee"></span
+        >{{finalValue.RequiredDownPayment > 0 ? (finalValue.RequiredDownPayment
+        | amountFormat: 'S') : 0 | amountFormat:'S'}}
+      </div>
+    </div>
+    <!-- <div class="asset_allocation_header">
+      <h5 *ngIf="showAssets">
+        {{'suggestedAssetsAllocation.yourAssetsAllocation' | translate}}
+      </h5>
+      <div class="allocation_graph_main_graph" *ngIf="showAssets">
+        <span class="color_nin" [ngStyle]="{'width' : MyEquityPer + '%'}">
+          <span
+            ><span class="rs_icon icon-Icons_Monthly_Expense"></span
+            >{{MyEquityPer}}</span
+          >
+        </span>
+        <span class="color_eleven" [ngStyle]="{'width' : MyDebtPer + '%'}">
+          <span
+            ><span class="rs_icon icon-Icons_Monthly_Expense"></span
+            >{{MyDebtPer}}</span
+          >
+        </span>
+      </div>
+      <h5>
+        {{'suggestedAssetsAllocation.suggestedAssetsAllocation' | translate}}
+      </h5>
+      <div class="allocation_graph_main_graph">
+        <span
+          class=" {{eq.color}}"
+          *ngFor="let eq of table2"
+          [ngStyle]="{'width' : eq.Allocation_prc + '%'}"
+        >
+          <span
+            ><span class="rs_icon icon-Icons_Ruppee"></span
+            >{{eq.AllocationAmount}}</span
+          >
+        </span>
+      </div>
+    </div> -->
+  </div>
+  <div class="sukanya_slider">
+    <ion-slides pager="false">
+      <ion-slide>
+        <ion-card class="custom_card">
+          <ion-grid class="invested_result">
+            <ion-row>
+              <ion-col class="col_inner1">
+                <div class="col_inner2">
+                  <h5>{{'homeGoal.futureValueOfYourHome' | translate}}</h5>
+                  <div class="invested_result_amt">
+                    <span class="rs_icon icon-Icons_Ruppee"></span
+                    >{{finalValue.FVOfHome | amountFormat:'S'}}
+                  </div>
+                </div>
+                
+              </ion-col>
+              <ion-col>
+                <div class="col_inner">
+                  <h5>{{'homeGoal.suggestedSavingsPM' | translate}}</h5>
+                <div class="invested_result_amt highlighted_txt">
+                  <span class="rs_icon icon-Icons_Ruppee"></span>{{finalValue.MonthlySavingRequired > 0 ?
+                  (finalValue.MonthlySavingRequired | amountFormat:'S') : 0 }}
+                </div>
+                </div>
+                
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-card-content class="custom_card_content">
+            <div class="asset_allocat_cont">
+              <h3>{{'suggestedAssetsAllocation.keepingInMind' | translate}}</h3>
+              <div class="allocation_graph" *ngIf="showAssets">
+                <ion-grid class="invested_result">
+                  <ion-row>
+                    <ion-col class="col_inner1">
+                      <div class="col_inner2">
+                        <h5>
+                          {{'suggestedAssetsAllocation.equity' | translate}}
+                        </h5>
+                          <div class="invested_result_amt">
+                            {{MyEquityPer}}%
+                          </div>
+                      </div>
+                      
+                    </ion-col>
+                    <ion-col>
+                      <div class="col_inner">
+                        <h5>{{'suggestedAssetsAllocation.debt' | translate}}</h5>
+                        <div class="invested_result_amt highlighted_txt">
+                          {{MyDebtPer}}%
+                        </div>
+                      </div>
+                      
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+                <div class="allocation_graph_main_graph">
+                  <span
+                    class="color_nin"
+                    [ngStyle]="{'width' : MyEquityPer + '%'}"
+                  >
+                    <span
+                      ><span class="rs_icon icon-Icons_Monthly_Expense"></span
+                      >{{MyEquityPer}}</span
+                    >
+                  </span>
+                  <span
+                    class="color_eleven"
+                    [ngStyle]="{'width' : MyDebtPer + '%'}"
+                  >
+                    <span
+                      ><span class="rs_icon icon-Icons_Monthly_Expense"></span
+                      >{{MyDebtPer}}</span
+                    >
+                  </span>
+                </div>
+              </div>
+              <h5 *ngIf="showAssets">
+                {{'suggestedAssetsAllocation.yourAssetsAllocation' | translate}}
+              </h5>
+              <div class="allocation_graph">
+                <ion-grid class="invested_result">
+                  <ion-row>
+                    <ion-col class="col_inner1">
+                      <div class="col_inner2">
+                        <h5>
+                          {{'suggestedAssetsAllocation.equity' | translate}}
+                        </h5>
+                        <div class="invested_result_amt">
+                          {{equityPer}}%
+                        </div>
+                      </div>
+                      
+                    </ion-col>
+                    <ion-col>
+                      <div class="col_inner">
+                        <h5>{{'suggestedAssetsAllocation.debt' | translate}}</h5>
+                      <div class="invested_result_amt highlighted_txt">
+                        {{debtPer}}%
+                      </div>
+                      </div>
+                      
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+                <div class="allocation_graph_main_graph">
+                  <span
+                    class=" {{eq.color}}"
+                    *ngFor="let eq of table2"
+                    [ngStyle]="{'width' : eq.Allocation_prc + '%'}"
+                  >
+                    <span
+                      ><span class="rs_icon icon-Icons_Ruppee"></span
+                      >{{eq.AllocationAmount}}</span
+                    >
+                  </span>
+                </div>
+              </div>
+              <h5>
+                {{'suggestedAssetsAllocation.suggestedAssetsAllocation' |
+                translate}}
+              </h5>
+              <h4>
+                {{'suggestedAssetsAllocation.youNeedToSave' | translate}}
+                {{incomePer > 0 ? incomePer : 0}}%
+                {{'suggestedAssetsAllocation.ofYourIncome' | translate}}
+              </h4>
+            </div>
+            <div class="heading_seperator">
+              {{'suggestedAssetsAllocation.suggestedEquityAssets' | translate}}
+              :
+              <span>{{equityPer}}%</span>
+            </div>
+            <ion-list class="networth_list">
+              <ion-item *ngFor="let p of equityList">
+                <div class="networth_list_lt" float-left>
+                  <span class="indiccat {{p.color}}"></span>{{p.ProductName}}
+                  <i class="notify" (click)="disclaimerInfo(p, 'product')"
+                    ><img style="margin-left: 5px;"
+                      src="assets/imgs/info.svg"
+                      width="13"
+                      height="13"
+                    />
+                  </i>
+                </div>
+                <button ion-button icon-right float-right clear text-lowercase>
+                  <span class="rs_icon icon-Icons_Ruppee"></span
+                  >{{p.AllocationAmount > 0 ? (p.AllocationAmount |
+                  amountFormat:'S') : 0 | amountFormat:'S'}}
+                </button>
+              </ion-item>
+            </ion-list>
+
+            <div class="heading_seperator">
+              {{'suggestedAssetsAllocation.suggestedDebtAssets' | translate}}
+              :<span>{{debtPer}}%</span>
+            </div>
+            <ion-list class="networth_list">
+              <ion-item *ngFor="let p of debtList">
+                <div class="networth_list_lt" float-left>
+                  <span class="indiccat {{p.color}}"></span>{{p.ProductName}}
+                  <i class="notify" (click)="disclaimerInfo(p, 'product')"
+                    ><img style="margin-left: 5px;"
+                      src="assets/imgs/info.svg"
+                      width="13"
+                      height="13"
+                    />
+                  </i>
+                </div>
+                <button ion-button icon-right float-right clear text-lowercase>
+                  <span class="rs_icon icon-Icons_Ruppee"></span
+                  >{{p.AllocationAmount > 0 ? (p.AllocationAmount |
+                  amountFormat:'S') : 0 | amountFormat:'S'}}
+                </button>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <h5 text-center class="inAddition">
+    {{'suggestedAssetsAllocation.inAdditionToAboveYou' | translate}}
+  </h5>
+  <p
+    class="disclaimer_txt"
+    text-center
+    (click)="disclaimerInfo('', 'disclaimer')"
+  >
+    <!-- <span><img src="assets/imgs/notification_icon.png" /> </span> -->
+    <a>{{'common.disclaimersLink' | translate}} </a>
+  </p>
+</ion-content>
+
+<!-- Disclaimer Popup -->
+<div class="overlay_dropdown annuity" id="disclaimerId" *ngIf="disclaimer">
+  <div class="overlay_dropdown_content">
+    <div class="overlay_dropdown_content_inner">
+      <ion-icon
+        name="ios-close-circle-outline"
+        (click)="disclaimerClose()"
+      ></ion-icon>
+      <h3 padding>{{disclaimerTitle}}</h3>
+      <div class="innerCont" [innerHtml]="disclaimerText"></div>
+    </div>
+  </div>
+</div>
+<!-- Save Goal        -->
+<div class="overlay_dropdown annuity" *ngIf="saveGoalPopup">
+  <div class="overlay_dropdown_content">
+    <h3 text-center padding>{{'common.doYouWantToSaveGoal' | translate}}</h3>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <button
+            ion-button
+            class="back_btn"
+            outline
+            (click)="saveFunction('dont')"
+          >
+            {{'suggestedAssetsAllocation.dontSave' | translate}}
+          </button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button class="login_btn" (click)="saveFunction('save')">
+            {{'suggestedAssetsAllocation.save' | translate}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>
+<ion-footer class="goals_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col">
+      <button
+        ion-button
+        class="back_btn"
+        outline
+        (click)="btnClick('articles')"
+      >
+        {{'suggestedAssetsAllocation.readArticles' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col" (click)="btnClick('cal')">
+      <button ion-button class="login_btn">
+        {{'suggestedAssetsAllocation.tryCalculators' | translate}}
+      </button>
+    </div>
+  </div></ion-footer
+>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

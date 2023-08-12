@@ -1,0 +1,337 @@
+<ion-header>
+  <ion-navbar text-center color="sbiHeader">
+    <button [class.active]="isBtnActive" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title
+      >{{'mySpends.mySpendsTitle' | translate}}
+      <!-- <span class="filter_icon" (click)="showPopupCategory()">
+        <img src="assets/imgs/filter_icon.png" width="16" />
+      </span> -->
+    </ion-title>
+  </ion-navbar>
+  <ion-segment [(ngModel)]="spendsType" (ionChange)="myspentSegChange()">
+    <ion-segment-button
+      value="allSpends"
+      (click)="getExpenseTypeWiseReport(spendsType, '')"
+    >
+      {{'mySpends.allSpends' | translate}}
+    </ion-segment-button>
+    <ion-segment-button
+      value="discrea"
+      (click)="getExpenseTypeWiseReport(spendsType, '')"
+    >
+      {{'mySpends.optionalSpends' | translate}}
+    </ion-segment-button>
+    <ion-segment-button
+      value="nonDiscrea"
+      (click)="getExpenseTypeWiseReport(spendsType, '')"
+    >
+      {{'mySpends.requiredSpends' | translate}}
+    </ion-segment-button>
+    <ion-segment-button
+      value="semiDiscrea"
+      (click)="getExpenseTypeWiseReport(spendsType, '')"
+    >
+      {{'mySpends.semioptional' | translate}}
+    </ion-segment-button>
+    <ion-segment-button
+      value="emi"
+      (click)="getExpenseTypeWiseReport(spendsType, '')"
+    >
+      {{'mySpends.emi' | translate}}
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+<ion-content class="no_padding">
+  <div
+    text-center
+    class="cus_date_picker"
+    *ngIf="spendsType == 'allSpends'?false:true"
+  >
+    <!-- <ion-calendar [(ngModel)]="dateRange" (onChange)="onChangeRange($event)" [options]="optionsRange" [type]="type" [format]="'YYYY-MM-DD'">
+    </ion-calendar> -->
+    <span (click)="showCalendar()"
+      >{{expensesDate.from | date: 'dd MMM'}} - {{expensesDate.to | date: 'dd
+      MMM'}}</span>
+    <span (click)="showCalendar()">
+      <img src="assets/imgs/cal_icon.svg" />
+    </span>
+  </div>
+  <div [ngSwitch]="spendsType">
+    <div *ngSwitchCase="'allSpends'" class="common_spent_cont">
+      <div class="recent_spends" [hidden]="!noPageData">
+        <ion-list>
+          <ion-item *ngFor="let spends of mySpendsList">
+            <ion-thumbnail item-start class="zomato_icon" [style.background]="spends.CategoryColorCode">
+              <img src="{{imgURLNew + spends.ImagePath}}" />
+            </ion-thumbnail>
+            <h5>
+              {{spends.SubCategoryName ? spends.SubCategoryName : "Un-named"}}
+            </h5>
+            <h6 class="spent_data_lbl">
+              {{spends.CategoryName?spends.CategoryName:''}}
+            </h6>
+
+            <div item-end class="spent_data">
+              <span class="rs_icon icon-Icons_Ruppee"></span
+              >{{spends.ExpenseValue | amountFormat:'S'}}
+              <h4 class="spent_data_date">
+                {{spends.ExpenseDate | date: 'MMM dd, yyyy'}}
+              </h4>
+            </div>
+
+            <div
+              item-end
+              class="arrow_right"
+              (click)="addExpense(spends.CategoryName,spends.ExpenseDate,spends.ExpenseValue,spends.CategoryId,spends.SubCategoryName,spends.ExpenseId, spends.IsRepeat)"
+            >
+              <img src="assets/imgs/edit_note.svg" />
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div class="articles_num" [hidden]="noPageData">
+        <div class="articles_num_cont">
+          <span> {{'common.noSpendsAvailable' | translate}}</span>
+        </div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'discrea'" class="common_spent_cont">
+      <div class="recent_spends" [hidden]="!noPageData">
+        <ion-list>
+          <ion-item *ngFor="let spends of mySpendsList">
+            <ion-thumbnail item-start class="zomato_icon" [style.background]="spends.CategoryColorCode">
+              <img src="{{imgURLNew + spends.ImagePath}}" />
+            </ion-thumbnail>
+            <h5>
+              {{spends.SubCategoryName ? spends.SubCategoryName : "Un-named"}}
+            </h5>
+            <h6 class="spent_data_lbl">
+              {{spends.CategoryName?spends.CategoryName:''}}
+            </h6>
+            <div item-end class="spent_data">
+              <span class="rs_icon icon-Icons_Ruppee"></span
+              >{{spends.ExpenseAmount | amountFormat:'S'}}
+              <h4 class="spent_data_date">
+                {{spends.ExpenseDate | date: 'MMM dd, yyyy'}}
+              </h4>
+            </div>
+            <div
+              item-end
+              class="arrow_right"
+              (click)="addExpense(spends.CategoryName,spends.ExpenseDate,spends.ExpenseAmount,spends.CategoryId,spends.SubCategoryName,spends.ExpenseId, spends.IsRepeat)"
+            >
+              <img src="assets/imgs/edit_note.svg" />
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div class="articles_num" [hidden]="noPageData">
+        <div class="articles_num_cont">
+          <span>{{'common.noSpendsAvailable' | translate}}</span>
+        </div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'nonDiscrea'" class="common_spent_cont">
+      <div class="recent_spends" [hidden]="!noPageData">
+        <ion-list>
+          <ion-item *ngFor="let spends of mySpendsList">
+            <ion-thumbnail item-start class="zomato_icon" [style.background]="spends.CategoryColorCode">
+              <img src="{{imgURLNew + spends.ImagePath}}" />
+            </ion-thumbnail>
+            <h5>
+              {{spends.SubCategoryName ? spends.SubCategoryName : "Un-named"}}
+            </h5>
+            <h6 class="spent_data_lbl">
+              {{spends.CategoryName?spends.CategoryName:''}}
+            </h6>
+
+            <div item-end class="spent_data">
+              <span class="rs_icon icon-Icons_Ruppee"></span
+              >{{spends.ExpenseAmount | amountFormat:'S'}}
+              <h4 class="spent_data_date">
+                {{spends.ExpenseDate | date: 'MMM dd, yyyy'}}
+              </h4>
+            </div>
+
+            <div
+              item-end
+              class="arrow_right"
+              (click)="addExpense(spends.CategoryName,spends.ExpenseDate,spends.ExpenseAmount,spends.CategoryId,spends.SubCategoryName,spends.ExpenseId, spends.IsRepeat)"
+            >
+              <img src="assets/imgs/edit_note.svg" />
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div class="articles_num" [hidden]="noPageData">
+        <div class="articles_num_cont">
+          <span>{{'common.noSpendsAvailable' | translate}}</span>
+        </div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'semiDiscrea'" class="common_spent_cont">
+      <div class="recent_spends" [hidden]="!noPageData">
+        <ion-list>
+          <ion-item *ngFor="let spends of mySpendsList">
+            <ion-thumbnail item-start class="zomato_icon" [style.background]="spends.CategoryColorCode">
+              <img src="{{imgURLNew + spends.ImagePath}}" />
+            </ion-thumbnail>
+            <h5>
+              {{spends.SubCategoryName ? spends.SubCategoryName : "Un-named"}}
+            </h5>
+            <h6 class="spent_data_lbl">
+              {{spends.CategoryName?spends.CategoryName:''}}
+            </h6>
+
+            <div item-end class="spent_data">
+              <span class="rs_icon icon-Icons_Ruppee"></span
+              >{{spends.ExpenseAmount | amountFormat:'S'}}
+              <h4 class="spent_data_date">
+                {{spends.ExpenseDate | date: 'MMM dd, yyyy'}}
+              </h4>
+            </div>
+
+            <div
+              item-end
+              class="arrow_right"
+              (click)="addExpense(spends.CategoryName,spends.ExpenseDate,spends.ExpenseAmount,spends.CategoryId,spends.SubCategoryName,spends.ExpenseId, spends.IsRepeat)"
+            >
+              <img src="assets/imgs/edit_note.svg" />
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div class="articles_num" [hidden]="noPageData">
+        <div class="articles_num_cont">
+          <span>{{'common.noSpendsAvailable' | translate}}</span>
+        </div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'emi'" class="common_spent_cont">
+      <div class="recent_spends" [hidden]="!noPageData">
+        <ion-list>
+          <ion-item *ngFor="let spends of mySpendsList">
+            <ion-thumbnail item-start class="zomato_icon" [style.background]="spends.CategoryColorCode">
+              <img src="{{imgURLNew + spends.ImagePath}}" />
+            </ion-thumbnail>
+            <h5>
+              {{spends.SubCategoryName ? spends.SubCategoryName : "Un-named"}}
+            </h5>
+            <h6 class="spent_data_lbl">
+              {{spends.CategoryName?spends.CategoryName:''}}
+            </h6>
+
+            <div item-end class="spent_data">
+              <span class="rs_icon icon-Icons_Ruppee"></span
+              >{{spends.ExpenseAmount | amountFormat:'S'}}
+              <h4 class="spent_data_date">
+                {{spends.ExpenseDate | date: 'MMM dd, yyyy'}}
+              </h4>
+            </div>
+
+            <div
+              item-end
+              class="arrow_right"
+              (click)="addExpense(spends.CategoryName,spends.ExpenseDate,spends.ExpenseAmount,spends.CategoryId,spends.SubCategoryName,spends.ExpenseId, spends.IsRepeat)"
+            >
+              <img src="assets/imgs/edit_note.svg" />
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div class="articles_num" [hidden]="noPageData">
+        <div class="articles_num_cont">
+          <span>{{'common.noSpendsAvailable' | translate}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<div class="overlay_dropdown calendar" *ngIf="isCalendar">
+  <div class="overlay_dropdown_content calculation_with_range">
+    <h5>
+      {{'mySpends.calender' | translate}}<i
+        float-right
+        (click)="showCalendar()"
+      >
+        <ion-icon name="ios-close-outline"></ion-icon>
+      </i>
+    </h5>
+    <div class="current_date">
+      <span
+        >{{'mySpends.firstDaySelected' | translate}}<br /><br />{{expensesDate.from
+        | date: 'dd MMMM yyyy'}}</span
+      >
+      <span>{{'mySpends.to' | translate}}</span>
+      <span
+        >{{'mySpends.lastDaySelected' | translate}}<br /><br />{{expensesDate.to
+        | date: 'dd MMMM yyyy'}}</span
+      >
+    </div>
+    <ion-calendar
+      [(ngModel)]="dateRange"
+      (onChange)="onChangeRange($event)"
+      [options]="optionsRange"
+      [type]="type"
+      [format]="'YYYY-MM-DD'"
+    >
+    </ion-calendar>
+    <button
+      ion-button
+      class="round_btn"
+      (click)="getExpenseTypeWiseReport(spendsType, '')"
+    >
+      {{'common.done' | translate}}
+    </button>
+  </div>
+</div>
+<!-- <PopUp for Select Category> -->
+<div class="overlay_dropdown" *ngIf="selectCategory">
+  <div class="overlay_dropdown_content calculation_with_range">
+    <ion-card class="common_expense_card">
+      <ion-card-header>
+        <h4>{{'addExpenses.selectCategory' | translate}}</h4>
+        <i float-right (click)="hidePopupSelectCategory()">
+          <ion-icon name="ios-close-outline"></ion-icon>
+        </i>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="card_inner_cont recent_spends">
+          <ion-list>
+            <ion-item
+              (click)="filterSpendsList(category.CategoryId)"
+              *ngFor="let category of filterCategoryList"
+            >
+              <ion-thumbnail item-start class="zomato_icon" [style.background]="spends.CategoryColorCode">
+                <img src="{{imgURLNew + category.ImagePath}}" />
+              </ion-thumbnail>
+              <h5>{{category.CategoryName}}</h5>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-card-content>
+      <div *ngIf="isShowReset">
+        <button
+          ion-button
+          class="login_btn"
+          (click)="getExpenseTypeWiseReport(spendsType, 'reset')"
+        >
+          {{'common.reset' | translate}}
+        </button>
+      </div>
+    </ion-card>
+  </div>
+  <div class="common_loader" *ngIf="pageLoader">
+    <span>
+      <img src="assets/imgs/pageLoader.gif" />
+    </span>
+  </div>
+</div>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span>
+    <img src="assets/imgs/pageLoader.gif" />
+  </span>
+</div>

@@ -1,0 +1,281 @@
+page-incomeapproximation {
+    .header {
+        .toolbar {
+            box-shadow: none;
+            background: $sbi_secondary_color;
+
+            .toolbar-background {
+                border: none;
+            }
+
+            .bar-button {
+                color: $sbi_fifth_color;
+            }
+
+            .toolbar-content {
+                .toolbar-title {
+                    color: $sbi_fifth_color;
+                }
+            }
+        }
+
+        &:after {
+            background-image: none;
+            height: 0;
+        }
+        
+    }
+
+    .content {
+        background-color: $sbi_fifth_color;
+        margin-bottom: 70px;
+        .scroll-content {
+            padding-top: 0 !important;
+            margin-bottom: 54px;
+        }
+
+        .card {
+            background: $sbi_fifth_color;
+            box-shadow: none;
+            margin: 0;
+            width: 100%;
+
+            .card-header {
+                padding: 16px 0 0 0;
+            }
+        }
+
+        .common_expense_card {
+            ion-card-header {
+                h4 {
+                    font-family: 'Lato Black';
+                    font-size: 4.34vw;
+                    color: $sbi_primary_color;
+                    margin: 0;
+                }
+
+                .custom_select_drop {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    max-width: 100%;
+
+                    .select-text {
+                        color: $sbi_secondary_color;
+                        font-size: 2.89vw;
+                        font-weight: 600;
+                    }
+
+                    .select-icon {
+                        .select-icon-inner {
+                            margin-top: -6px;
+                            color: $sbi_fifteen_color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .no_padding {
+            padding: 0 !important;
+
+            .card_inner_cont {
+                padding: 0;
+                position: relative;
+            }
+        }
+
+        .recent_spends {
+            .list {
+                .item {
+                    padding-left: 0;
+                    border-bottom: 1px solid $sbi_eighteen_color;
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                    ion-thumbnail {
+                        min-width: 33px;
+                        min-height: 33px;
+                        margin: 8px 8px 8px 0;
+
+                        img {
+                            width: 33px;
+                            height: 33px;
+                        }
+                    }
+
+                    h5 {
+                        color: $sbi_primary_color;
+                        font-family: 'Lato Semibold';
+                        font-size: 3.33vw;
+                        margin: 0 0 2px 0;
+                    }
+
+                    p {
+                        color: $sbi_nine_color;
+                        font-family: 'Lato Semibold';
+                        font-size: 2.77vw;
+
+                        strong {
+                            font-size: 2.5vw;
+                            font-weight: normal;
+                            opacity: 0.6;
+
+                            &.O {
+                                color: $sbi_twentythree_color;
+                            }
+
+                            &.T {
+                                color: $sbi_twentytwo_color;
+                            }
+        
+                            &.Underspent {
+                                color: $sbi_twentytwo_color;
+                            }
+                        }
+                    }
+
+                    .recent_price {
+                        color: $sbi_primary_color;
+                        font-family: 'Lato Black';
+                        font-size: 3.88vw;
+                        display: inherit;
+                        span {
+                            font-weight: bold;
+                            font-size: 3vw;
+                            
+                        }
+                        .editIcon {
+                            margin-left: 15px;
+                            margin-right: 5px;
+                            font-size: 1.5em;
+                         
+                        }
+                        .refreshIcon {
+                        margin-left: 5px;
+                        font-size: 1.5em;
+                    }
+                    }
+                }
+            }
+            .customBorder {
+                border-right: 1px solid $sbi_third_color;
+                margin-right: 5px;
+                margin-left: 5px;
+            }
+        }
+    }
+
+    // .login_btn{
+    //     margin-top: 100px;
+    // }
+    .overlay_dropdown {
+       
+        .overlay_dropdown_content.calculation_with_range {
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 84%;
+            max-height: 51%;
+            padding: 15px 30px 15px 30px;
+            min-height: 250px;
+            h3 {
+                text-align: left;
+                margin-top: 0;
+
+                i {
+                    .icon {
+                        color: $sbi_nine_color;
+                        font-size: 40px;
+                    }
+                }
+            }
+            p {
+                color: $sbi_nine_color;
+                font-family: 'Lato Semibold';
+                font-size: 2.77vw;
+
+                strong {
+                    font-size: 2.5vw;
+                    font-weight: normal;
+                    opacity: 0.6;
+
+                    &.Overspent {
+                        color: $sbi_twentythree_color;
+                    }
+
+                    &.On-track {
+                        color: grey;
+                    }
+
+                    &.Underspent {
+                        color: $sbi_twentytwo_color;
+                    }
+                }
+            }
+
+            .custom_notes{
+                text-align: center;
+                min-height: 100%;
+                .item-inner{
+                    border-bottom:none;
+                    
+                    .label{
+                        margin:0;
+                       
+                        p{
+                            font-size: 2.5vw;
+                            text-transform: uppercase;
+                            letter-spacing: 1.5px;
+                            white-space: normal;
+                            line-height: 1.5;
+                        }
+                    }
+                }
+            }
+
+            .valid_msg{
+                color:$sbi_error_color;
+                font-family:'Lato Semibold';
+                font-size: 3.05vw; padding: 10px 0 0 0;
+                display: block;
+            }
+            .item:last-child .item-inner .item-button {
+                width: 50%;
+                margin-bottom: 12px;
+                margin-top: 20px;
+            }
+            .range {
+                padding: 4px 24px 10px 20px;
+            }
+            
+        }
+    }
+    ion-footer {
+        height: 8%;
+        .login_btn {
+            margin-top: 7px;
+        }
+    }
+
+    .month_btn{
+        text-align: center;
+        margin: 0 auto;
+    
+        .month_title{
+          font-family: "Lato";
+              color: $sbi_twentysix_color;
+              font-size: 4.103vw;
+              height: auto;
+        }
+    
+        .month_arrow{
+          font-size: 1.4em;
+                line-height: 0.67;
+                pointer-events: none;
+                padding-left: 0.4em;
+                color: #2a2076;
+        }
+      }
+
+}

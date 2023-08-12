@@ -1,0 +1,1626 @@
+{
+  "PaisaGenie": "पैसा जीनी",
+
+  "appintro": {
+    "Welcome": "स्वागत",
+    "title": "एसबीआई पैसा जीनी",
+    "subtitle": "एक वफादार दोस्त की तरह,",
+    "subtitleone": "हम आपको सशक्त बनाना चाहते हैं",
+    "skip": "शुरू हो जाओ"
+  },
+
+  "login": {
+    "hello": "अपने पैसे पर नियंत्रण रखें",
+    "subtitle": "अपने खर्चों की निर्बाध योजना बनाएं",
+    "subtitletwo": "मोबाइल या ईमेल आईडी दर्ज करें",
+    "placeHolder": "रजिस्टर्ड मोबाइल नंबर या ईमेल आईडी दें।",
+    "errorMsg": "कृपया सही ईमेल आईडी / मोबाइल नंबर दर्ज करें",
+    "loginBtn": "लॉग इन करें"
+  },
+
+  "unRegisteredCustomer": {
+    "mobileTitle": "हो सकता है आपका मोबाइल नं. एसबीआई पैसा जिनी के साथ पंजीकृत नहीं है",
+    "emailTitle": "हो सकता है आपका मोबाइल नं.",
+    "emailTitleone": "एसबीआई पैसा जिनी के साथ पंजीकृत नहीं है",
+    "emailSubTitle": "कृपया पंजीकरण करने के लिए लिंक पर क्लिक करें",
+    "mobileSubTitle": "कृपया पंजीकरण करने के लिए लिंक पर क्लिक करें",
+    "locate": "सबसे पास के शाखा का पता लगाएं",
+    "reEnter": "विवरण दोबारा दर्ज करें और जांचें",
+    "tryEmail": "अपने रजिस्टर्ड ईमेल आईडी के द्वारा प्रयास करें",
+    "tryMobile": "अपने रजिस्टर्ड मोबाइल नंबर के द्वारा प्रयास करें",
+    "mobile": "मोबाइल नंबर",
+    "email": "ईमेल आईडी",
+    "updateYrEmail": "अपना ईमेल आईडी अपडेट करें"
+  },
+
+  "otp": {
+    "title": "फ़ोन सत्यापन",
+    "enterOtp": "कृपया भेजा गया सत्यापन कोड दर्ज करें",
+    "sentOn": "आपके रजिस्टर्ड मोबाइल पर भेजा गया है",
+    "submit": "जारी रखना",
+    "resendOtp": "दोबारा भेजें",
+    "resend": "कोई कोड प्राप्त नहीं हुआ?",
+    "otpResendSuccessfully": "OTP resend successfully",
+    "PleaseEnterTheCorrectOTP": "कृपया सही ओटीपी दर्ज करें",
+    "checkSpam": "Please check your spam in case OTP is not received"
+  },
+
+  "quizAge": {
+    "hello": "नमस्ते",
+    "subTitle": "PaiseGenie आपके विवरण की पुष्टि करेगा",
+    "yourAge": "आपकी आयु",
+    "yourPro": "आपका व्यवसाय",
+    "reEnterDetails": "विवरण दोबारा दर्ज करें",
+    "yesItsMe": "हाँ मैं ही हूँ"
+  },
+
+  "quizLifeStyle": {
+    "hintOne": "1.अपनी आय ब्रैकेट का चयन करने के लिए टैप करें",
+    "hintTwo": "2. जो लाइफस्टेज आपको उपयुक्त लगती है उसे चुनें",
+    "annualIncome": "वार्षिक आय",
+    "almostReady": "लगभग तैयार",
+    "selectLifeStageIncome": "कृपया अपना लाइफस्टेज और आय चुनें",
+    "clickAnywhere": "आगे बढ़ने के लिए कहीं भी क्लिक करें",
+    "lifeStyle": {
+      "sinle": "अकेले हैं",
+      "married": "विवाहित",
+      "marriedWithOneKid": "विवाहित हैं और एक बच्चा है",
+      "marriedWithTwoKid": "विवाहित हैं और दो बच्चे है",
+      "independent": "स्वतंत्र"
+    }
+  },
+
+  "discover": {
+    "PaisaGenie": "PaisaGenie",
+    "discover": "डिस्कवर",
+    "planYourLife": "अपने जीवन की योजना बनाएं",
+    "setYourGoals": "अपने लक्ष्य तय करें",
+    "startPlanning": "योजना शुरू करें",
+    "yourPersonalisedreads": "निजीकृत पढ़ने योग्य बातें",
+    "forBetterPlanning": "बेहतर योजना के लिए",
+    "quesHeading": "आपको बेहतर तरीके से जानने में हमारी सहायता करें",
+    "thankSubTitle": "प्रश्नों का उत्तर और अपना विवरण देने के लिए",
+    "yourInvestmentChoices": "आपके निवेश विकल्प",
+    "tellUsLike": "हमें बताएं कि आपको क्या पसंद है",
+    "latestNews": "ताज़ा खबर",
+    "forYou": "आपके लिए",
+    "helpUsToKnowYouBetter": "आपको बेहतर तरीके से जानने में हमारी सहायता करें",
+    "quesFinal": "प्रश्नों का उत्तर और अपना विवरण देने के लिए",
+    "collection": "संग्रह",
+    "allInOnePlace": "सब एक ही जगह पर",
+    "updateChoices": "अपनी पसंद अपडेट करें",
+    "monthlyExpense": "मासिक खर्च",
+    "startPlanningYourGoals": "आज ही अपने लक्ष्यों की योजना बनाना शुरू करें!"
+  },
+
+  "plan": {
+    "plan": "प्लान",
+    "popularGoals": "लोकप्रिय लक्ष्य",
+    "setYourGoals": "अपने लक्ष्य तय करें",
+    "tools": "टूल्स",
+    "calculateYourInvestments": "अपना निवेश (इनवेस्टमेंट) कैलकुलेट करें",
+    "tellUs": "हमें बताएं",
+    "yourInvestmentAttitude": "अपना निवेश दृष्टिकोण",
+    "tips": "टिप्स",
+    "forFinancialLifestylePlanning": "वित्तीय और जीवनशैली योजना के लिए",
+    "faqs": "अक्सर पूछे जाने वाले प्रश्न",
+    "completed": "पूरा कर लिया है",
+    "GiveUsMoreSetailsToKnowYou": "आपको जानने के लिए हमें और विवरण दें",
+    "completeProfile": "प्रोफाइल पूरी करें",
+    "takeMeToSpendManager": "खर्च प्रबंधक के लिए जाएँ",
+    "peerBenchmarking": "सहकर्मी बेंचमार्किंग",
+    "seehowYourPeerSpends": "देखें कि आपके साथी कैसे खर्च करते हैं"
+  },
+
+  "settings": {
+    "settings": "सेटिंग्स",
+    "notifications": "नोटिफिकेशन्स",
+    "location": "लोकेशन",
+    "locationAccess": "लोकेशन एक्सेस",
+    "sms": "एसएमएस",
+    "smsAccess": "एसएमएस एक्सेस",
+    "legal": "कानूनी",
+    "disclaimers": "अस्वीकरण",
+    "TermsCondition": "नियम व शर्त",
+    "security": "सुरक्षा",
+    "needMPINToOpenApp": "ऐप खोलने के लिए एम-पिन की आवश्यकता है"
+  },
+
+  "sidemenu": {
+    "hello": "नमस्ते",
+    "profileCompleted": "प्रोफाइल पूरा कर लिया है",
+    "selectLanguage": "भाषा चुनिए",
+    "menuPage": [
+      {
+        "title": "डिस्कवर",
+        "component": "TabsPage",
+        "name": "Icons_Discover_New"
+      },
+      { "title": "प्लान", "component": "TabsPage", "name": "Icons_Plan_New" },
+      {
+        "title": "लक्ष्य",
+        "component": "ListingScreenGoalPage",
+        "name": "Icons_Goals_New"
+      },
+      {
+        "title": "व्यय प्रबंधक",
+        "component": "IncomeDashboardPage",
+        "name": "Icons_Trending_Expenses_New"
+      },
+      {
+        "title": "कैलकुलेटर",
+        "component": "CalculatorlistingPage",
+        "name": "Icons_Tools_New"
+      },
+      {
+        "title": "संग्रह",
+        "component": "ArticlesPage",
+        "name": "Icons_Trending_Collection_New"
+      },
+      {
+        "title": "आपके लिए टिप्स",
+        "component": "TipsListingPage",
+        "name": "Icons_Tips_For_You_New"
+      },
+      {
+        "title": "सेव्ड",
+        "component": "SavedArticleGoalPage",
+        "name": "Icons_Saved_Goals_New"
+      },
+      {
+        "title": "रिस्क असेसमेंट",
+        "component": "RiskAssesmentPage",
+        "name": "Icons_Risk_Assessment_New"
+      },
+      {
+        "title": "प्रश्नोत्तरी/सर्वेक्षण",
+        "component": "QuizSurveyListPage",
+        "name": "Icons_Quiz_Survey_New"
+      },
+      {
+        "title": "समायोजन",
+        "component": "SettingsPage",
+        "name": "Icons_Settings_New"
+      }
+    ],
+    "subMenu": [
+      {
+        "title": "अक्सर पूछे जाने वाले प्रश्न",
+        "component": "FaqsPage",
+        "name": "Icons_FAQs"
+      },
+      {
+        "title": "संपर्क करें",
+        "component": "ContactusPage",
+        "name": "Icons_ContactUs"
+      },
+      { "title": "एम-पिन", "component": "MpinPage", "name": "Icons_MPin" },
+      {
+        "title": "हमारे बारे में",
+        "component": "AboutusPage",
+        "name": "Icons_AboutUs"
+      },
+      {
+        "title": "प्राइवेसी पॉलिसी",
+        "component": "",
+        "name": "Icons_PrivacyPolicy"
+      },
+      {
+        "title": "हमें रेटिंग दें",
+        "component": "RatingsPage",
+        "name": "Icons_RateUs"
+      },
+      { "title": "लॉग आउट", "component": "", "name": "Icons_LogOut" }
+    ]
+  },
+
+  "contactUs": {
+    "contactUs": "हमसे संपर्क करें",
+    "subTitle": "हमें आपसे सुनना अच्छा लगेगा। उपर्युक्त ईमेल पर हमें लिखें"
+  },
+
+  "faqs": {
+    "faqs": "अक्सर पूछे जाने वाले प्रश्न"
+  },
+
+  "aboutUs": {
+    "aboutUs": "हमारे बारे में",
+    "disclaimers": "अस्वीकरण",
+    "TermsCondition": "नियम व शर्त",
+    "aboutUsText": "SBI Life is one of the leading private Life Insurance companies in India. We are a joint venture between India’s largest bank State Bank of India and the leading global insurance company BNP Paribas Cardif.State Bank Group has an unrivalled strength of over 23,000 branches across the country, making it the largest Banking group in India. With 198 foreign offices in 37 countries, SBI is truly an Indian multinational.It also features in the Fortune Global 500 list of the world’s biggest corporations.BNP Paribas Cardif is the Life and Property &amp; Casualty insurance arm of BNP Paribas, one of the strongest banks in the world. With presence in more than 70 countries, the BNP Paribas Group ranks highly in Retail Banking, Investment Solutions and Corporate &amp; Investment Banking.BNP Paribas Cardif is one of the world leaders in creditor insurance, and its life and non-life insurance units have received an A rating from Standard &amp; Poor’s."
+  },
+
+  "ratings": {
+    "ratings": "रेटिंग",
+    "someRating": "अरे कुछ रेटिंग गिरा दो!",
+    "review": "हमें बताएं कि हमने आपकी कितनी अच्छी सेवा की।"
+  },
+
+  "logOut": {
+    "title": "क्या आप लॉग आउट करना चाहते हैं ?"
+  },
+
+  "goalListing": {
+    "myGoals": "मेरे लक्ष्य",
+    "planYourLife": "अपने जीवन की योजना बनाएं",
+    "Collection": "संग्रह",
+    "AllInOnePlace": "सभी एक ही स्थान पर",
+    "muSavedGoal": "मेरा सेव्ड लक्ष्य",
+    "goalList": [
+      {
+        "goalName": "पारिवारिक संरक्षण",
+        "img": "assets/imgs/goals/family_protection.svg",
+        "className": "FamilyProtectionPage",
+        "goalDesc": "बीमा कवर को समज कर अपने प्रियजनों को एक अच्छी सुरक्षा प्रदान करें। स्वास्थ्य कवर और आपातकालीन निधि उन्हें हमारे परिवार संरक्षण प्लानर के साथ आवश्यकता होगी"
+      },
+      {
+        "goalName": "हेल्थ इंश्योरेंस",
+        "img": "assets/imgs/goals/health_insurance.svg",
+        "className": "HealthInsurancePage",
+        "goalDesc": "अपने लिए आवश्यक लाइफ इंश्योरेंस कवर का अनुमान लगाकर अपने प्रियजनों को एक अच्छी सुरक्षा प्रदान करें"
+      },
+      {
+        "goalName": "शिक्षा",
+        "img": "assets/imgs/goals/education.svg",
+        "className": "ChildEducationPage",
+        "goalDesc": "इनफ्लेशन की तुलना में शिक्षा खर्च तेजी से बढ़ सकते हैं, इसलिए अपने स्मार्ट शिक्षा प्लानर के साथ अपने और अपने बच्चे के लिए बुद्धिमानी से निवेश करें।"
+      },
+      {
+        "goalName": "शादी",
+        "img": "assets/imgs/goals/marriage.svg",
+        "className": "MarriagePage",
+        "goalDesc": "चाहे आप अपने या अपने बच्चे के सपनों की शादी की योजना बना रहे हों, हमारा वेडिंग प्लानर आपको उस सपने की शादी को सच बनाने के लिए अपने निवेश की योजना बनाने में मदद करेगा।"
+      },
+      {
+        "goalName": "होम",
+        "img": "assets/imgs/goals/home.svg",
+        "className": "HomeGoalPage",
+        "goalDesc": "हमारे होम प्लानर के साथ बुद्धिमानी से योजना बनाने और निवेश करके अपने सपनों के घर का मालिक बनें।"
+      },
+      {
+        "goalName": "कार",
+        "img": "assets/imgs/goals/car.svg",
+        "className": "CargoalPage",
+        "goalDesc": "बुद्धिमानी से निवेश करें और अपने स्मार्ट कार प्लानर के साथ अपने सपने को पूरा करें ताकि आप अपनी पसंदीदा कार खरीद सकें।"
+      },
+      {
+        "goalName": "रिटायरमेंट",
+        "img": "assets/imgs/goals/retirement.svg",
+        "className": "RetirementGoalPage",
+        "goalDesc": "जीवन खुल कर जीना पूरी तरह से जारी रखें, अपनी रिटायरमेंट के बाद, रिटायरमेंट प्लानर के साथ बुद्धिमानी से बचत करें और निवेश करें।"
+      },
+      {
+        "goalName": "कस्टम लक्ष्य",
+        "img": "assets/imgs/goals/custom.svg",
+        "className": "CustomGoalPage",
+        "goalDesc": "चाहे आप अपने व्यवसाय का विस्तार करने या अपने परिवार के साथ विश्व दौरे पर जाने की योजना बना रहे हों, हमारा कस्टम प्लानर आपको अपने सपनों को सच करने के लिए बुद्धिमानी से योजना बनाने में मदद करेगा।"
+      }
+    ]
+  },
+
+  "familyProtection": {
+    "familyProtection": "पारिवारिक संरक्षण",
+    "qOne": "अपनी आयु का चयन करें",
+    "yourRetirement": "आपकी रिटायरमेंट की",
+    "yourCurrent": "आपकी वर्तमान",
+    "qTwo": "अपनी मासिक आय दर्ज करें",
+    "approximateValue": "अनुमानित मूल्य",
+    "qThree": "अनुमानित मासिक खर्च दर्ज करें",
+    "qThreeNew": "क्या आप देखना चाहेंगे",
+    "yearsToGo": "जाने के लिए साल",
+    "sliderThreeArray": [
+      { "id": 1, "title": "एक्सीडेंटल डेथ बेनेफिट राइडर?", "value": "Yes" },
+      { "id": 2, "title": "टोटल परमानेंट डिसेबिलिटी राइडर?", "value": "Yes" }
+    ],
+    "accidentalDeathBenefitRider": "एक्सीडेंटल डेथ बेनेफिट राइडर?",
+    "totalPermanentDisablityRider": "टोटल परमानेंट डिसेबिलिटी राइडर?",
+    "addAccidentalDeathBenefitRider": "एक्सीडेंटल डेथ बेनेफिट राइडर जोड़ें?",
+    "addTotalPermanentDisablityRider": "टोटल परमानेंट डिसेबिलिटी राइडर जोड़ें?",
+    "sliderFourArray": [
+      {
+        "QuestionID": 1,
+        "title": "क्या आप नियमित रूप से लंबी दूरी तक ड्राइव करते हैं?",
+        "AnswerID": 1,
+        "subTitle": ""
+      },
+      {
+        "QuestionID": 2,
+        "title": "क्या आप नियमित रूप से सार्वजनिक परिवहन से यात्रा करते हैं?",
+        "AnswerID": 1,
+        "subTitle": ""
+      },
+      {
+        "QuestionID": 3,
+        "title": "क्या आप धूम्रपान करते हैं?",
+        "AnswerID": 1,
+        "subTitle": ""
+      },
+      {
+        "QuestionID": 4,
+        "title": "क्या आप किसी बड़ी बीमारी से पीड़ित हैं?",
+        "AnswerID": 1,
+        "subTitle": "(3 दिनों से अधिक समय के लिए अस्पताल में भर्ती की आवश्यकता है)"
+      }
+    ],
+    "mcq1": "क्या आप नियमित रूप से लंबी दूरी तक ड्राइव करते हैं?",
+    "mcq2": "क्या आप नियमित रूप से सार्वजनिक परिवहन से यात्रा करते हैं?",
+    "mcq3": "क्या आप धूम्रपान करते हैं?",
+    "mcq4": "क्या आप किसी बड़ी बीमारी से पीड़ित हैं",
+    "mcq4SubTitle": "(3 दिनों से अधिक समय तक के लिए अस्पताल में भर्ती की आवश्यकता है)",
+    "suggestedCompreheniveCover": "कुल जीवन बीमा आवश्यक है",
+    "suggestedTpd": "सुझाया गया TPD",
+    "suggestedAbd": "सुझाया गया ABD",
+    "existingLifeCover": "मौजूदा लाइफ कवर",
+    "excludingEmiAndRent": "EMI और किराए को छोड़कर",
+    "enterExpenseBreakupValues": "खर्च ब्रेकअप की वैल्यू दर्ज करें",
+    "totalLifeInsuranceRequired": "कुल जीवन बीमा आवश्यक है",
+    "healthCover": "स्वास्थ्य कवर",
+    "ContigencyFund": "आकस्मिकता निधि",
+    "existingCover": "मौजूदा जीवन कवर",
+    "monthlyIncome": "मासिक आय",
+    "monthlyExpenses": "मासिक खर्च",
+    "retirementAge": "रिटायरमेंट आयु",
+    "replan": "दोबारा से प्लान करें",
+    "readArticles": "लेख पढ़ें",
+    "ageTodayHas": "आज की उम्र रिटायरमेंट पर उम्र से कम होनी चाहिए",
+    "adbPopup": "घर के कमाने वाले सदस्य की आकस्मिक मौत के कारण अस्पताल का खर्च और आय का स्थायी रूप से बंद हो जाना परिवार के लिए भावनात्मक और आर्थिक संकट का कारण हो सकता है। यहां एक्सीडेंटल डेथ बेनिफिट राइडर सहायक साबित हो सकता है। मृत्यु के मामले में नामांकित व्यक्ति को मूल बीमा राशि के साथ अतिरिक्त राइडर राशि भी प्राप्त होती है। ",
+    "tpdPopup": "ए टोटल एंड परमानेंट डिसएबिलिटी (पूर्ण और स्थायी विकलांगता) राइडर उन मामलों में फायदेमंद हो सकता है जहां बीमित व्यक्ति को किसी प्रकार की पूर्ण और स्थायी विकलांगता हो जाती है जिससे काम करने की उसकी क्षमता में बाधा आती है जिससे उसे नियमित आय का नुकसान होता है। ऐसे मामलों में बीमाकृत व्यक्ति को राइडर के अनुसार एक बीमा राशि मिलती है।"
+  },
+
+  "educationGoal": {
+    "educationGoal": "शिक्षा लक्ष्य",
+    "qOne": "उस उम्र का चयन करें जिस पर आप / बच्चे अध्ययन करना चाहते हैं",
+    "currentAge": "वर्तमान आयु",
+    "ageDuring": "अध्ययन के दौरान उम्र",
+    "enterTheFee":"आपकी मासिक आय कितनी है?",
+    "enterWhatAreThe": "पाठ्यक्रम शुल्क दर्ज करें",
+    "dontKnowCostOfCourse": "मैं निश्चित रूप से लागत नहीं जानता",
+    "underGraduate": "ग्रेजुएट के तहत",
+    "postGraduate": "पोस्ट ग्रेजुएट",
+    "isTheCollegeInIndia": "क्या यह कॉलेज भारत में है?",
+    "corpusTitle": "वर्ष $year$ में आवश्यक वार्षिक कॉर्पस होगा",
+    "willBe": " में होगा",
+    "futureValueOfYourCourse": "बेशक भविष्य का मूल्य",
+    "suggestedSavingsPM": "सुझाई गई बचत",
+    "youHaveAlreadyAaved": "यदि आपने किसी भी धन को इस लक्ष्य के लिए बचाया है",
+    "risk": "जोखिम",
+    "riskSubTitle": "वापसी की औसत दर @",
+    "rateOfInflation": "इनफ्लेशन की दर",
+    "increasingSavingsRate": "बढ़ती बचत दर",
+    "currentCostOfCourse": "पाठ्यक्रम की वर्तमान लागत",
+    "qOneError": "आज की उम्र पाठ्यक्रम के दौरान उम्र से कम होनी चाहिए",
+    "selectCountry": "देश चुनिए",
+    "selectCourseField": "पाठ्यक्रम क्षेत्र का चयन करें",
+    "selectCourse": "पाठ्यक्रम का चयन करें"
+  },
+
+  "marriageGoal": {
+    "marriageGoal": "विवाह लक्ष्य",
+    "qOne": "आप शादी की योजना कब बना रहे हैं",
+    "inTheYear": "साल में",
+    "qTwo": "अपनी अनुमानित मासिक बचत चुनें",
+    "approximateValue": "अनुमानित मूल्य",
+    "costRequiredInYear": "वर्ष $year$ में आवश्यक लागत होगी",
+    "willBe": "होगा",
+    "futureValueOfWedding": "शादी का भविष्य मूल्य",
+    "suggestedSavingsPM": "सुझाई गई बचत प्रति माह",
+    "youHaveAlreadySaved": "यदि आपने किसी भी धन को इस लक्ष्य के लिए बचाया है",
+    "riskAppetite": "जोखिम उठाने की क्षमता",
+    "averageRateOfReturn": "वापसी की औसत दर",
+    "rateOfInflation": "इनफ्लेशन की दर",
+    "increasingSavingsRate": "बढ़ती बचत दर",
+    "currentCostOfWedding": "शादी की वर्तमान लागत"
+  },
+
+  "suggestedAssetsAllocation": {
+    "popupTitle": "अपने वर्तमान एसेट की तुलना हमारे सुझाव से करे",
+    "updateAssets": "एसेट अपडेट करें",
+    "compareNow": "अभी तुलना करें",
+    "getMyRecommendations": "हमारी सलाह ले",
+    "keepingInMind": "आपके जोखिम प्रोफाइल आवश्यकताओं और बचत को ध्यान मैं रखते हुए, हम निवेश करने का सुझाव देते है",
+    "equity": "इक्विटी",
+    "debt": "डेब्ट",
+    "suggestedAssetsAllocation": "सुझाए गए एसेट एलोकेशन",
+    "youNeedToSave": "आपको बचाने की जरूरत है",
+    "ofYourIncome": "आपकी आय का",
+    "suggestedEquityAssets": "सुझाई गई इक्विटी एसेट",
+    "suggestedDebtAssets": "डेब्ट एसेट का सुझाव दिया",
+    "inAdditionToAboveYou": "उपर्युक्त के अलावा आपके पास पर्याप्त सुरक्षा और स्वास्थ्य कवर होना चाहिए",
+    "readArticles": "लेख पढ़ें",
+    "tryCalculators": "कैलकुलेटर उपयोग करके देखें",
+    "doYouWantToSaveThisGoal": "क्या आप इस लक्ष्य को सेव करना चाहते है?",
+    "dontSave": "नहीं",
+    "yourGoalSavedSuccessfully": "आपका लक्ष्य सफलतापूर्वक सेव्ड",
+    "yourAssetsAllocation": "आपकी एसेट आवंटन",
+    "save": "हा"
+  },
+
+  "updateAssets": {
+    "qOne": "आपका जो भी अपना है उस सभी का अनुमान लगाएं?",
+    "savingsAndInvestments": "बचत और निवेश",
+    "totalAmount": "कुल राशि"
+  },
+
+  "homeGoal": {
+    "homeGoal": "घर का लक्ष्य",
+    "qOne": "आप अपने सपनों का घर कब खरीदना चाहते हैं?",
+    "inTheYear": "वर्ष $year$ में",
+    "qTwo": "दर्ज करें कि आपके घर की कीमत क्या है",
+    "approximateValue": "अनुमानित मूल्य",
+    "qThree": "अनुमानित डाउन पेमेंट राशि दर्ज करें",
+    "ofTheTotalCost": "कुल लागत का",
+    "coupusTitle": "$year$ मैं डाउनपायमेंट के  लिए आवश्यक कार्पस होगा ",
+    "youHaveAlreadySaved": "यदि आपने किसी भी धन को इस लक्ष्य के लिए बचाया है",
+    "futureValueOfYourHome": "आपके घर का भविष्य मूल्य",
+    "suggestedSavingsPM": "सुझाई गई बचत प्रति माह",
+    "riskAppetite": "जोखिम उठाने की क्षमता",
+    "averageRateOfReturn": "इनफ्लेशन की औसत दर",
+    "rateOfInflation": "इनफ्लेशन की दर",
+    "increasingSavingsRate": "बढ़ती बचत दर",
+    "costOfHome1": "सपनों के घर की",
+    "costOfHome2": "वर्तमान लागत",
+    "estimatedDownPayment": "अनुमानित भुगतान",
+    "EMIToBePaid": "भुगतान करने के लिए EMI",
+    "loanamount": "लोन अमाउंट",
+    "rateOfInterest": "ब्याज की दर"
+  },
+
+  "retirementGoal": {
+    "retirementGoal": "रिटायरमेंट लक्ष्य",
+    "qOne": "चुनें कि आप कब रिटायर होना चाहते हैं",
+    "yourRetirementAge": "आपकी रिटायरमेंट की आयु",
+    "yourCurrentAge": "आपकी वर्तमान आयु",
+    "qTwo": "अनुमानित मासिक खर्च दर्ज करें",
+    "excludingEmiAndRent": "EMI और किराए को छोड़कर",
+    "enterExpenseBreakupValues": "खर्च ब्रेकअप की वैल्यू दर्ज करें",
+    "corpusTitle": "वर्ष $year$ तक आपकी रिटायरमेंट कॉर्पस होगी",
+    "willbe": "होगा",
+    "at5Annuity": "5% ऐन्युटि पर",
+    "suggestedSavingsPM": "सुझाई गई बचत प्रतिमाह",
+    "youHaveAlreadySaved": "पहले पैसे बचाए थे",
+    "annuityPlan": "ऐन्युटि प्लान",
+    "riskAppetite": "जोखिम उठाने की क्षमता",
+    "averageRateOfReturn": "वापसी की औसत दर",
+    "rateOfInflation": "इनफ्लेशन की दर",
+    "increasingSavingsRate": "बढ़ती बचत दर",
+    "retirementAge": "रिटायरमेंट आयु",
+    "monthlyExpenses": "मासिक खर्च",
+    "errorAge": "आज की उम्र रिटायरमेंट पर उम्र से कम होनी चाहिए",
+    "annuityPopupText": "एन्युटी प्लान व्यक्ति को रिटायरमेंट के बाद रेग्युलर इंकम देता है। आप केवल एक सिंगल पेमेंट कर सकते हैं और रिटायरमेंट के बाद एन्युटी आपको निश्चित अंतराल पर भुगतान करेगी (1 महीने, 3 महीने, 12 महीने)।",
+    "duration": "अवधि"
+  },
+
+  "carGoal": {
+    "carGoal": "कार लक्ष्य",
+    "qOne": "जिस प्रकार की कार आप चाहते हैं उसका चयन करें",
+    "approximatePrice": "अनुमानित कीमत",
+    "qTwo": "आप कार कब खरीदना चाहते हैं?",
+    "inTheYear": "साल में",
+    "qThree": "डाउन पेमेंट राशि दर्ज करें",
+    "ofTheTotalCost": "कुल लागत का",
+    "corpusTitle": "$year$ मैं डाउनपायमेंट के  लिए आवश्यक कार्पस होगा ",
+    "willBe": "होगा",
+    "futureValueOfTheCar": "कार का भविष्य मूल्य",
+    "suggestedSavingsPM": "सुझाई गई बचत प्रतिमाह",
+    "moneySavedAlready": "यदि आपने किसी भी धन को इस लक्ष्य के लिए बचाया है",
+    "riskAppetite": "जोखिम उठाने की क्षमता",
+    "averageRateOfReturn": "वापसी की औसत दर",
+    "rateOfInflation": "इनफ्लेशन की दर",
+    "increasingSavingsRate": "बढ़ती बचत दर",
+    "costOfCar": "कार की वर्तमान लागत",
+    "estimatedDownPayment": "अनुमानित भुगतान",
+    "EMIToBePaid": "भुगतान करने के लिए EMI",
+    "loanAmount": "लोन अमाउंट",
+    "rateOfInterest": "ब्याज की दर"
+  },
+  "healthInsuranceGoal": {
+    "healthInsurance": "हेल्थ इंश्योरेंस",
+    "qOne": "इस समय आपकी उम्र क्या है?",
+    "qTwo": "आपकी मासिक आय कितनी है?",
+    "qThree": "क्या आप कवर में अपने परिवार को जोड़ना चाहते हैं?",
+    "qThreeA": "क्या आप कवर में अपने परिवार",
+    "qThreeB": "को जोड़ना चाहते हैं",
+    "qFour": "आप क्या खोजना पसंद करते हैं",
+    "yes": "हाँ",
+    "no": "नहीं",
+    "spouse": "जीवनसाथी",
+    "children": "बच्चे",
+    "addChildren": "बच्चों को जोड़ें",
+    "father": "पिता",
+    "mother": "माँ",
+    "selectAge": "उम्र चुनें",
+    "monthlyIncome": "मासिक आय",
+    "totalHealthCoverRequired": "आवश्यक कुल हेल्थ कवर",
+    "indemity": "क्षतिपूर्ति",
+    "fixed": "फ़िक्स्ड",
+    "downloadPdf": "pdf डाउनलोड करें",
+    "criticalIllness": "गंभीर बिमारी",
+    "forParents": "माता-पिता के लिए",
+    "forSpouseAndChildren": "पति / पत्नी, बच्चों और आप के लिए",
+    "forYou": "आपके लिए",
+    "ExistingHealthCover": "मौजूदा हेल्थ कवर",
+    "indemnityTxt": "एक क्षतिपूर्ति-आधारित योजना पॉलिसीधारक को किसी भी गंभीर बीमारी से ग्रस्त होने पर चिकित्सा खर्चों की लागत की प्रतिपूर्ति करती है। ये योजना पॉलिसीधारक को अस्पताल में भर्ती होने के दौरान व्यय के रूप में खर्च की गई राशि की प्रतिपूर्ति करती है।",
+    "fixedText": "एक फ़िक्स्ड लाभ योजना वह है जहां बीमाकृत गंभीर बीमारी से ग्रस्त होने पर निश्चित राशि का भुगतान किया जाता है। निश्चित लाभ योजना लाभकारी हो सकती है क्योंकि यह चिकित्सा खर्चों की लागत के अतिरिक्त धन प्रदान करती है।"
+  },
+  "customGoal": {
+    "custom": "कस्टम लक्ष्य",
+    "tellUsYourAspirations": "हमें अपनी आकांक्षाएं बताएं",
+    "pickAnOptionFromBelow": "नीचे से एक विकल्प चुनें",
+    "nameYourDream": "अपने सपने को एक नाम दें",
+    "back": "पीछे जाएं",
+    "qOne": "आप इसे कब प्राप्त करना चाहते हैं?",
+    "inTheYear": "साल में",
+    "qTwo": "अपने सपनों की अनुमानित लागत दर्ज करें",
+    "approximateValue": "अनुमानित मूल्य",
+    "corpusTitle": "वर्ष $year$ में आवश्यक वार्षिक कॉर्पस होगा",
+    "willBe": "होगा",
+    "futureValueOfGoal": "लक्ष्य का भविष्य मूल्य",
+    "suggestedSavingsPM": "सुझाई गई बचत प्रतिमाह",
+    "youHaveAlreadySaved": "यदि आपने किसी भी धन को इस लक्ष्य के लिए बचाया है",
+    "riskAppetite": "जोखिम उठाने की क्षमता",
+    "averageRateOfReturn": "वापसी की औसत दर",
+    "rateOfInflation": "इनफ्लेशन की दर",
+    "increasingSavingsRate": "बढ़ती बचत दर",
+    "costOfGoal": "लक्ष्य की वर्तमान लागत",
+    "goalList": [
+      {
+        "goalId": 0,
+        "goalName": "छुट्टी",
+        "imgFilled": "assets/imgs/vacation_goal.png",
+        "imgUnFiled": "assets/imgs/travel_unfiled.png"
+      },
+      {
+        "goalId": 1,
+        "goalName": "आभूषण",
+        "imgFilled": "assets/imgs/jwellery_goal.png",
+        "imgUnFiled": "assets/imgs/jewellery_unfiled.png"
+      },
+      {
+        "goalId": 2,
+        "goalName": "बाइक",
+        "imgFilled": "assets/imgs/bike_goal.png",
+        "imgUnFiled": "assets/imgs/bike_unfiled.png"
+      },
+      {
+        "goalId": 3,
+        "goalName": "व्यापार बढ़ाना",
+        "imgFilled": "assets/imgs/bussiness_expansion_goal.png",
+        "imgUnFiled": "assets/imgs/business_expansion_unfiled.png"
+      },
+      {
+        "goalId": 4,
+        "goalName": "अन्य",
+        "imgFilled": "assets/imgs/other_goal.png",
+        "imgUnFiled": "assets/imgs/parasuit_unfiled.png"
+      }
+    ]
+  },
+
+  "myProfile": {
+    "tabs": ["व्यक्तिगत", "प्रोफेशनल", "निवेश", "शौक/रुचियां"],
+    "myProfile": "मेरी प्रोफाइल",
+    "completed": "पूरा कर लिया है",
+    "shareYourDetails": "अपने विवरण बताएँ ताकि हम आपकी व्यक्तिगत फाइनेंशियल प्लानिंग टिप्स और इत्यादि दे सकें",
+    "personaldetails": "व्यक्तिगत विवरण",
+    "professionalDetails": "प्रोफेशनल विवरण",
+    "investmentDetails": "निवेश विवरण",
+    "hobbiesInterests": "शौक/रुचियां",
+    "dob": "जन्मतिथि",
+    "livingIn": "में रहते हैं",
+    "education": "शिक्षा",
+    "lifeStage": "जीवन की अवस्था",
+    "familyMembers": "परिवार के सदस्य",
+    "yearOld": "वर्ष की आयु है",
+    "whenweknowYouBetter": "जब हम आपको बेहतर जानते हैं, तब हम आपकी सेवा बेहतर कर सकते हैं! कृपया आपकी मदद करने में हमारी सहायता करें",
+    "firstName": "पहला नाम",
+    "lastName": "अंतिम नाम",
+    "mobileNumber": "मोबाइल नंबर",
+    "member": "सदस्य",
+    "emailId": "ईमेल आईडी",
+    "selectLifeStage": "जीवन अवस्था का चयन करें",
+    "addFalmilyMember": "परिवार के सदस्यों को जोड़ें",
+    "addAMember": "एक सदस्य जोड़ें",
+    "nameOfYourFamilyMember": "आपके परिवार के सदस्य का नाम",
+    "daughter": "Daughter",
+
+    "occupation": "व्यवसाय",
+    "industry": "इंडस्ट्री",
+    "workExperience": "कार्य अनुभव",
+    "incomeRange": "आय सीमा",
+    "industryOfWork": "जिस इंडस्ट्री में काम करते हैं",
+    "selectDesignation": "पदनाम का चयन करें",
+    "yearsOfWorkExperience": "वर्षों का अनुभव",
+    "yourIncomeRange": "आपकी आय सीमा",
+    "annualy": "सालाना",
+
+    "riskassessmentResult": "रिस्क असेसमेंट रिज़ल्ट",
+    "monthlyExpenses": "मासिक खर्च",
+    "estimateAllMonthlyExpense": "सभी मासिक खर्च का अनुमान लगाएं",
+    "totalAmount": "कुल राशि",
+    "oneTimeSavings": "एक समय की बचत",
+    "viewBreakup": "ब्रेक अप देखें",
+    "assetValues": "एसेट की कीमत",
+    "estimateAllAssetsYouOwn": "अपने स्वामित्व वाली सभी एसेटों का अनुमान लगाएं",
+    "savingsAndInvestment": "बचत और निवेश",
+    "viewAssetBreakup": "एसेट ब्रेकअप देखें",
+    "Liabilities": "लायबिलिटी",
+    "viewLiabilitiesBreakup": "लायबिलिटियों का ब्रेकअप देखें",
+    "estimateAllDebtsYouOwn": "अपने सभी लोनों का अनुमान लगाएं",
+    "debts": "डेब्ट",
+    "emergencyFunds": "आपातकालीन फंड",
+    "ancestryProperty": "पैतृक संपत्ति",
+    "preferences": "पसंद",
+    "reAssesMyRiskType": "जोखिम प्रकार का दोबारा आकलन करें",
+    "lumpsumSavings": "सेविंग्स",
+    "estimateYourTotalAssets": "अपनी कुल एसेट का अनुमान लगाएं",
+    "approxValue": "लगभग मूल्य",
+    "addassetsBreakup": "एसेट ब्रेकअप जोड़ें",
+    "selectSavAndInv": "अपने सभी बचत और निवेश (एसेट) का चयन करें",
+    "enterSavAndInv": "प्रत्येक सेविंग्स टूल में अनुमानित निवेशित राशि दर्ज करें",
+    "assetsBreakUpSavedSuccessfully": "एसेट ब्रेकअप सफलता से सेव्ड",
+    "addLiabilitiesBreakup": "लायबिलिटियों का ब्रेकअप जोड़ें",
+    "selectDebtsAndLiab": "अपने सभी डेब्ट और लायबिलिटियों का चयन करें",
+    "enterDebtsAnsLiab": "Enter the estimated amount of liability in each liabilities tool",
+    "liabilitiesBreakUpSavedSuccessfully": "लायबिलिटिज़ ब्रेकअप सफलता से सेव्ड",
+    "ancestorProperty": "पैतृक संपत्ति",
+    "ifAny": "यदि कोई हो तो",
+    "monthlyExpense": "मासिक खर्च",
+    "addExpenseBreakup": "खर्च का ब्रेकअप जोड़ें",
+    "selectYourMonthlyExpenses": "अपने मासिक खर्च चुनें",
+    "enterMonthlyExpenses": "प्रत्येक खर्च उपकरण में अनुमानित राशि का अनुवैल्यू दर्ज करें",
+    "monthlyExpensesSavedSuccessfully": "मासिक खर्च ब्रेकअप सफलतापूर्वक सेव्ड",
+    "pickYourPreferredInvestmentInstruments": "अपने पसंदीदा निवेश साधन चुनें।",
+    "selectYourHobbiesInterests": "अपने शौक और रुचियों का चयन करें",
+    "estimateYourTotalLiabilities": "अपनी कुल लायबिलिटियों का अनुमान लगाएं",
+    "fillProfile": "प्रोफ़ाइल भरें",
+    "thanksProfile": "अपनी प्रोफाइल को पूरा करने के लिए धन्यवाद",
+    "subThanks": "आप लगभग वहां हैं, अपनी प्रोफ़ाइल पूरी करें और PaisaGenie के पूर्ण जादू का अनुभव करें।",
+    "monthlyExpenseBreakupSavedSuccessfully": "मासिक व्यय ब्रेकअप सफलतापूर्वक सेव्ड",
+    "liabilitiesBreakupSavedSuccessfully": "देयताएं ब्रेकअप सफलतापूर्वक सेव्ड",
+    "assetBreakupSavedSuccessfully": "एसेट ब्रेकअप सफलतापूर्वक सेव्ड",
+    "edit": "संपादन करना"
+  },
+
+  "tools": {
+    "tools": "साधन",
+    "calculators": "कैलकुलेटर",
+    "calculateYourInvestments": "अपना निवेश (इनवेस्टमेंट) कैलकुलेट करें",
+    "toolsListing": [
+      {
+        "calName": "मानव जीवन मूल्य",
+        "img": "assets/imgs/calculator/hlv_cal.svg",
+        "className": "HlvCalculatorPage",
+        "desc": "पता करें कि आप अपने परिवार के सुरक्षित वित्तीय भविष्य का निर्धारण कैसे कर सकते हैं"
+      },
+      {
+        "calName": "NPS कैलकुलेटर",
+        "img": "assets/imgs/calculator/nps_cal.svg",
+        "className": "NpsPage",
+        "desc": "खुशहाल रिटायरमेंट के लिए योजना बनाएं और जानें कि हमारे NPS कैलकुलेटर के साथ एक रिटायरमेंट कॉर्पस कैसे करें"
+      },
+      {
+        "calName": "सुकन्या समृद्धि",
+        "img": "assets/imgs/calculator/sukanya_cal.svg",
+        "className": "SukanyaSamridhiPage",
+        "desc": "अपनी बेटी के भविष्य के लिए योजना बनाएं और हमारे सुकन्या समृद्धि योजना कैलकुलेटर के साथ बुद्धिमानी से बचाएं"
+      },
+      {
+        "calName": "फिक्स्ड डिपॉजिट",
+        "img": "assets/imgs/calculator/fixed_deposit_cal.svg",
+        "className": "FdpagePage",
+        "desc": "हमारे फिक्स्ड डिपॉज़िट कैलक्यूलेटर के साथ जानें कि सुरक्षित और सुविधाजनक तरीके से अपना पैसा कैसे बढ़ाएं"
+      },
+      {
+        "calName": "SIP कैलकुलेटर",
+        "img": "assets/imgs/calculator/sip_cal.svg",
+        "className": "SipCalculatorPage",
+        "desc": "SIP कैलकुलेटर के साथ व्यवस्थित मासिक निवेश के साथ बचत बनाएं और उच्च रिटर्न कमाएं"
+      },
+      {
+        "calName": "लोन EMI",
+        "img": "assets/imgs/calculator/loan_emi_cal.svg",
+        "className": "LoanemiCalculatorPage",
+        "desc": "आप हमारे EMI कैलकुलेटर के साथ उस EMI को प्लान करें जो हर महीने घर, व्यक्तिगत या कार लोन के लिए भुगतान कर सकते हैं"
+      },
+      {
+        "calName": "होम लोन पाने के लिए पात्रता",
+        "img": "assets/imgs/calculator/home_loan_cal.svg",
+        "className": "HomeLoanEligibilityPage",
+        "desc": "हमारे होम लोन योग्यता कैलकुलेटर के साथ जानें कि आपको अपने सपनों के घर के लिए कितना लोन चाहिए"
+      },
+      {
+        "calName": "कंपाउंडिंग का जादू",
+        "img": "assets/imgs/calculator/nps_cal.svg",
+        "className": "MagicCompoundingPage",
+        "desc": "हमारे कैलकुलेटर के साथ एक खुशहाल रिटायरमेंट के लिए योजना बनाएं और कंपाउंडिंग के जादू का अनुभव करें"
+      },
+      {
+        "calName": "नेटवर्थ कैलकुलेटर",
+        "img": "assets/imgs/calculator/networth_cal.svg",
+        "className": "NetworthStepsPage",
+        "desc": "हमारे नेटवर्क कैलक्यूलेटर के साथ जानें कि मौजूदा नेटवर्क के अनुसार अपना पैसा कहां निवेश करें"
+      },
+      {
+        "calName": "PPF कैलकुलेटर",
+        "img": "assets/imgs/calculator/ppf_cal.svg",
+        "className": "PpfWithAccPage",
+        "desc": "हमारे PPF कैलकुलेटर के साथ रिटायरमेंट के लिए अपने PPF के मैच्योरिटी अमाउंट का अनुमान लगाएं"
+      },
+      {
+        "calName": "करोड़पति बनें",
+        "img": "assets/imgs/calculator/crorepati_cal.svg",
+        "className": "BecomeCrorepatiPage",
+        "desc": "हमारे कैलकुलेटर से जानें कि स्वयं करोड़पति बनने के लिए आपको कितनी बचत करनी होगी!"
+      },
+      {
+        "calName": "धूम्रपान छोड़ें",
+        "img": "assets/imgs/calculator/quit_smoking_cal.svg",
+        "className": "QuitSmokingPage",
+        "desc": "आज ही धूम्रपान छोड़ें और अपना स्वास्थ्य और पैसे बचाएं!"
+      },
+      {
+        "calName": "बाहर खाना",
+        "img": "assets/imgs/calculator/family_protection.svg",
+        "className": "EatingOutPage",
+        "desc": "बाहर खाना कम करके आप अपना स्वास्थ्य और पैसे बचाएं!"
+      }
+    ]
+  },
+
+  "NPSCalculator": {
+    "NPSCalculator": "NPS कैलकुलेटर",
+    "qOne": "अपनी आयु का चयन करें",
+    "yourRetirement": "आपकी रिटायरमेंट आयु",
+    "yourCurrent": "आपकी वर्तमान उम्र",
+    "qTwo": "मासिक राशि के योगदान का चयन करे जिसे आप मासिक रूप से योगदान देना चाहते हैं",
+    "corpusTitle": "वर्ष $year$ में आपका रिटायरमेंट कॉर्पस होगा",
+    "willbe": "होगा",
+    "monthlyPension": "मासिक पेंशन",
+    "amountWithdrawn": "राशि वापस लेना",
+    "totalInterestEarned": "कुल ब्याज कमाया",
+    "totalinvestment": "कुल निवेश",
+    "ofYourPensionAmountYou": "आपकी पेंशन राशि का% जो आप सालाना में फिर से निवेश करने की योजना बना रहे हैं",
+    "estimatedRateOfReturn": "वापसी की अनुमानित दर",
+    "expectedRateOfReturn ": "वापसी की अपेक्षित दर",
+    "rateOfInflation": "इनफ्लेशन की दर",
+    "increasingSavingsRate": "बढ़ती बचत दर",
+    "retirementAge": "रिटायरमेंट आयु",
+    "monthlyExpenses": "मासिक खर्च",
+    "monthlyContribution": "मासिक योगदान",
+    "yearsToGo": "जाने के लिए साल",
+    "setAgeHere": "यहां आयु निर्धारित करें"
+  },
+
+  "networthCalculator": {
+    "networthCalculator": "नेटवर्थ कैलकुलेटर",
+    "qOne": "अपनी सभी बचत और निवेश (एसेट) का चयन करें",
+    "qTwo": "प्रत्येक बचत उपकरण में निवेश की गई राशि",
+    "qThree": "लोन, ऋण, मॉर्टगेज जैसे सभी लायबिलिटिज़ का चयन करें",
+    "qFour": "प्रत्येक देयता के लिए बकाया राशि",
+    "coupusTitle": "आज आपकी अनुमानित नेटवर्थ है",
+    "AssetsLiabilitiesNetworth": "एसेट - लायबिलिटिज़ = नेटवर्थ",
+    "totalnetworth": "कुल नेट वर्थ",
+    "totalAssets": "कुल एसेट",
+    "totalLiabilities": "कुल लायबिलिटिज़",
+    "savingsAccount": "बचत खाता",
+    "homeLoan": "गृह ऋण",
+    "others": "अन्य"
+  },
+
+  "sukannyaSamriddhi": {
+    "sukannyaSamriddhi": "सुकन्या समृद्धि",
+    "qOne": "अपनी बेटी की उम्र को चुनें",
+    "Daughter": "Daughter",
+    "qTwo": "मासिक राशि का निवेश करने की योजना का चयन करें",
+    "for": "$name$ के लिए",
+    "coupusTitle": "$name$ के लिए आपकी मैच्योरिटी कॉर्पस होगी",
+    "atmaturityYear": "मैच्योरिटी वर्ष $year$ पर",
+    "totalInvestment": "कुल निवेश",
+    "totalInterest": "कुल ब्याज",
+    "totalMaturityValue": "कुल परिपक्वता मूल्य",
+    "monthlyInvestment": "मासिक निवेश",
+    "rateOfInterest": "ब्याज की दर",
+    "rateOfInterestSubtitle": "सरकार के अनुसार ब्याज दर",
+    "tenurePolicy": "14 साल की न्यूनतम निवेश अवधि",
+    "investmentTenure": "निवेश कार्यकाल",
+    "both": "दोनों",
+    "Daughter1": "कन्या 1",
+    "Daughter2": "कन्या 2",
+    "addMore": "और जोड़ें",
+    "remove": "हटाएं"
+  },
+
+  "fixedDepositCalculator": {
+    "fixedDepositCalculator": "फिस्ड डिपॉजिट कैलकुलेटर",
+    "qOne": "वह राशि दर्ज करें जिसे आप जमा करना चाहते हैं",
+    "qTwo": "उस अवधि का चयन करें जिसके लिए आप जमा करना चाहते हैं",
+    "qThree": "ब्याज दर की आवृत्ति दर्ज करें",
+    "corpusTitle": "$year$ में एफडी का मैच्योरिटी वैल्यू होगी",
+    "amountInvested": "राशि निवेश की गई",
+    "interestEarned": "अर्जित ब्याज",
+    "rateOfinterest": "ब्याज की दर",
+    "frequencyOfinterest": "ब्याज की आवृत्ति",
+    "investmentDuration": "निवेश अवधि",
+    "investmentTenure": "निवेश कार्यकाल",
+    "inYear": "साल में",
+    "principalAmount": "मुख्य राशि",
+    "interest_rate_frequency": [
+      { "name": "मासिक", "id": "Monthly" },
+      { "name": "त्रैमासिक", "id": "Quarterly" },
+      { "name": "अर्धवार्षिक", "id": "Half Yearly" },
+      { "name": "वार्षिक", "id": "Yearly" }
+    ]
+  },
+  "emiCalculator": {
+    "emiCalculator": "Emi कैलकुलेटर",
+    "qOne": "जिस पर आप/बच्चा पढ़ना चाहता है",
+    "qTwo": "उस अवधि का चयन करें जिसके लिए लोन लिया जाता है",
+    "corpusTitle": "$month$ महीने के लिए EMI होगा",
+    "loanamount": "लोन अमाउंट",
+    "interest": "ब्याज",
+    "totalPayableamount": "कुल देय राशि",
+    "rateOfInterest": "ब्याज की दर",
+    "EMIDuration": "EMI अवधि",
+    "interestRate": "एफडी ब्याज दर"
+  },
+
+  "sipCalculator": {
+    "sipCalculator": "एसआईपी कैलकुलेटर",
+    "qOne": "उस राशि को दर्ज करें जिसे आप मासिक म्यूचुअल फंड में निवेश करना चाहते हैं",
+    "qTwo": "उस अवधि का चयन करें जिसके लिए आप निवेश करना चाहते हैं",
+    "corpusTitle": "वर्ष $year$ में कॉर्पस होगा",
+    "SIPAmountInvested": "SIP राशि निवेश किया",
+    "interestEarned": "अर्जित ब्याज",
+    "monthlyInvestment": "मासिक निवेश",
+    "expectedRateOfReturnPA": "प्रति वर्ष वापसी की त्वरित दर",
+    "increasingSavingsRate": "बढ़ती बचत दर",
+    "SIPDuration": "SIP अवधि"
+  },
+
+  "homeLoanEligibility": {
+    "homeLoanEligibility": "घर लोन के लिए पात्रता",
+    "qOne": "अपनी आयु दर्ज करें",
+    "qTwo": "अपनी मासिक आय दर्ज करें",
+    "qThree": "अपने घर लोन की अपेक्षित अवधि का चयन करें",
+    "corpusTitle": "आपके घर लोन पात्रता राशि होगी",
+    "EMIPerMonth": "ईएमआई परमिट",
+    "interestAmount": "ब्याज राशि",
+    "totalPayableamount": "कुल देय राशि",
+    "rateOfInterest": "ब्याज की दर",
+    "monthlyIncome": "मासिक आय",
+    "tenure": "कार्यकाल",
+    "myMonthlyIncome":"मेरी मासिक आय"
+  },
+
+  "magicOfCompounding": {
+    "magicOfCompounding": "कंपाउंडिंग का जादू",
+    "qOne": "अपने लक्ष्य की अवधि का चयन करें",
+    "qTwo": "अपनी अनुमानित मासिक बचत का चयन करें",
+    "corpusTitle": "वर्ष $year$ में आपकी मैच्योरिटी मूल्य होगी",
+    "rateOfreturn": "प्रतिफल दर",
+    "increasingsavingsRate": "बढ़ती बचत दर",
+    "monthlysavings": "मासिक बचत",
+    "yourSavings": "आपके सेविंग यदि आप बचाते हो",
+    "excessAmount": "अतिरिक्त राशि"
+  },
+
+  "PPFCalculator": {
+    "PPFCalculator": "PPF कैलकुलेटर",
+    "qOne": "क्या आपके पास मौजूदा PPF खाता है?",
+    "qtwo": "अपनी मौजूदा पीपीएफ बैलेंस वापस दर्ज करें",
+    "qThree": "जब आप निवेश कर रहे हैं तब से अवधि का चयन करें",
+    "qFour": "उस राशि का चयन करें जिसे आप निवेश करने की योजना बनाते हैं",
+    "qFive": "अपने PPF खाते की अवधि का चयन करें",
+    "coupusTitle": "वर्ष $year$ में जमा आपके कॉर्पस होंगे",
+    "amountinvested": "राशि निवेश की गई",
+    "interestEarned": "अर्जित ब्याज",
+    "futureValueOfExistingbalance": "मौजूदा शेष राशि का भविष्य मूल्य",
+    "rateOfReturn": "प्रतिफल दर",
+    "existingBalance": "मौजूदा शेष राशि",
+    "durationOfExistingBalance": "मौजूदा शेष राशि की अवधि",
+    "totalInvestedAmount": "कुल निवेश राशि",
+    "totalInterestEarned": "अर्जित कुल ब्याज",
+    "tenure": "कार्यकाल",
+    "tenureOfExistingBalance": "मौजूदा संतुलन का कार्यकाल",
+    "inTheYear": "वर्ष $year$ में"
+  },
+  "becomeACrorepati": {
+    "becomeACrorepati": "करोड़पति बनें",
+    "toBecomeACrorepatiYouNeedToSave": "करोड़पति बनने के लिए आवश्यक सेविंग",
+    "targetAmount": "लक्ष्य राशि",
+    "amountToSaveIn": "$year$ साल में बचाने के लिए राशि",
+    "amountAlreadySaved": "पहले से बचाई गई राशि",
+    "rateOfInterest": "ब्याज दर",
+    "iWantToBeACrorepatiIn": "में मैं एक करोड़पति बनना चाहता हूं",
+    "increasingSavingsRate": "बढ़ती बचत दर"
+  },
+
+  "quitSmoking": {
+    "quitSmoking": "धूम्रपान छोड़ें",
+    "lifespanReduced": "जीवन कम होता है",
+    "totalAmountYouWouldSavedUponQuitting": "छोड़ने पर आप जो कुल राशि जमा कर चुके होंगे",
+    "tarAccumaledOverTheYears": "साल भर में जमा हुआ टार",
+    "grams": "ग्राम",
+    "cigarettesYouSmokeDaily": "आप रोज़ जितनी सिगरेट पीते हैं",
+    "rateOfInterest": "ब्याज दर",
+    "costOfTheCigarette": "सिगरेट का मूल्य",
+    "yearsIveBeenSmokingFor": "सालों से मैं धूम्रपान कर रहा हूँ",
+    "popUpText1": "medicalnewstoday.com, यूनिवर्सिटी ऑफ कैलिफोर्निया, बर्कले वेलनेस लेटर, अप्रैल 2000",
+    "popUpText2": "tobaccocontrol.bmj.com, चयनित अंतरराष्ट्रीय सिगरेट के मुख्यधारा के धुएं में, टार, निकोटिन और कार्बन मोनोऑक्साइड याइल्ड्स का शोध पेपर-निर्धारण",
+    "days": "दिन"
+  },
+
+  "eatingOutCalculator": {
+    "eatingOutCalculator": "ईटिंग आउट कैल्क्युलेटर",
+    "amountYouSavePerMonth": "राशि जो आप प्रति माह बचाते हैं",
+    "amountSavedInYears": "5 साल में बचाई गई राशि",
+    "reductionsInOutingsPerMonth": "प्रति माह आउटिंग में कटौती",
+    "outingsPerMonth": "प्रति माह आउटिंग",
+    "annualSavingGrowthRate": "वार्षिक बचत विकास दर",
+    "averageCostPerOuting": "प्रति आउटिंग औसत लागत"
+  },
+
+  "hlvCalculator": {
+    "hlvCalculator": "HLV कैल्क्युलेटर",
+    "getStarted": "शुरू करें",
+    "title": "सुखी जीवन कैलकुलेटर",
+    "hlvTitle": "सुखी जीवन कैलकुलेटर",
+    "description": "यहां एक सरल और उपयोग में आसान टूल है जो आपके परिवार के वित्तीय भविष्य को सुरक्षित करने के लिए व्यापक सुरक्षा प्राप्त करने में आपकी सहायता करेगा। बस अपने बारे में कुछ भरें और पता करें कि आप अपने परिवार के सुरक्षित वित्तीय भविष्य का निर्धारण कैसे कर सकते हैं।",
+    "letsStart": "आएँ शुरू करें! आप अपने बारे में बताइए।",
+    "myName": "मेरा नाम है",
+    "name": "नाम",
+    "enterName": "नाम दर्ज करें",
+    "enterDOB": "अपने जन्म की तारीख दर्ज करें",
+    "bornOn": "मेरा जन्म हुआ था",
+    "age": "उम्र",
+    "DOB": "जन्म की तारीख",
+    "selectGender": "अपना जेंडर चुनें",
+    "prevDrawnSalary": "अपना पिछला आहरित वेतन दर्ज करें",
+    "myMonthlyIncome": "मेरी मासिक आय",
+    "enterExpenses": "आवास और अन्य खर्च दर्ज करें।",
+    "expenseNote": "नोट: कृपया किराया/ईएमआई शामिल न करें।",
+    "myHouseholdExpenses": "मेरे घरेलू खर्चे हैं",
+    "outstandingAmount": "गृह लोन, कार लोन, शिक्षा लोन आदि की बकाया राशि।",
+    "myCurrentLiability": "मेरी वर्तमान लायबिलिटिज़ हैं",
+    "areYouMarried": "क्या आप विवाहित हैं या अविवाहित?",
+    "relationshipStatus": "मेरे रिश्ते की स्थिति है",
+    "single": "अकेले हैं",
+    "married": "विवाहित",
+    "male": "पुरुष",
+    "female": "महिला",
+    "almostDone": "आप लगभग कर चुके हैं!",
+    "mySpouseIs": "मेरी पत्नी",
+    "isYourSpouse": "आपका जीवनसाथी है",
+    "earning": "कमाती है",
+    "notEarning": "नहीं कमाती है",
+    "enterSpouseSalary": "अपने जीवनसाथी का पिछला आहरित वेतन दर्ज करें",
+    "spouseMonthlyIncome": "मेरे जीवनसाथी की मासिक आय है",
+    "spousesMonthlyIncome": "जीवनसाथी की मासिक आय",
+    "doYouHave": "क्या आपके पास",
+    "insurancePlan": "बीमा योजना है ?",
+    "iAmCurrently": "मैं इस समय",
+    "insured": "बीमित हूं",
+    "notInsured": "बीमित नहीं हूं",
+    "iamInsured": "मैं बीमाकृत हूँ",
+    "iamNotInsured": "मेरा बीमा नहीं है",
+    "totalSumAssured": "समूह बीमा को छोड़कर मौजूदा पॉलिसियों के तहत कुल बीमा राशि",
+    "myCurrentLifeInsurance": "मेरा वर्तमान जीवन बीमा कवर है",
+    "myCurrentInsurance": "मेरा वर्तमान बीमा",
+    "yourRequiredLifeCover": "आपके परिवार के भविष्य की रक्षा के लिए आपका आवश्यक जीवन बीमा",
+    "corpusTitle": "आपका मानव जीवन मूल्य है",
+    "hereIsTheSummary": "यहां किसी भी स्थिति के लिए आपकी वित्तीय तैयारी का सारांश दिया गया है",
+    "income": "आय",
+    "expenditure": "खर्चा",
+    "currentLiabilities": "वर्तमान लायबिलिटिज़",
+    "currentLifeInsuranceCoverage": "जीवन बीमा कवर",
+    "secureYourFamily": "अपने परिवार का भविष्य सुरक्षित करें",
+    "arrivedHLV": "** आगमन HLV आपके द्वारा प्रदान की गई जानकारी पर आधारित है। यह आपकी वित्तीय जरूरतों का एक उदाहरण है"
+  },
+
+  "collections": {
+    "collections": "संग्रह",
+    "filter": "फ़िल्टर",
+    "categories": "कैटिगरी",
+    "relatedArticles": "संबंधित लेख",
+    "noArticles": "कोई लेख नहीं",
+    "articles": "संग्रह",
+    "postedOn": "",
+    "postComments": "टिप्पणियाँ पोस्ट करें",
+    "charactersOnly": "केवल 1000 कैरेक्टर्स",
+    "rateArticle": "इस लेख को आँकिए",
+    "comments": "टिप्पणियाँ",
+    "awesome": "धन्यवाद!",
+    "commentSuccess": "आपकी टिप्पणी सफलतापूर्वक सबमिट कर दी गई है।",
+    "referenceArticle": "संदर्भ लेख",
+    "TrendingTopics": "प्रवृत्ति विषयें",
+    "fromLatestNews": "ताजा खबर से"
+  },
+
+  "tipsForyou": {
+    "tips": "सलाह",
+    "tipsForyou": "आपके लिए टिप्स"
+  },
+
+  "Saved": {
+    "Saved": "सेव्ड",
+    "yourArticles": "आपके लेख",
+    "myGoals": "मेरा लक्ष्य",
+    "viewEarlierHistory": "पहले इतिहास देखें",
+    "viewMyPlanSummary": "मेरी योजना सारांश देखें",
+    "plannedOn": "को प्लान किया",
+    "corpusRequiredInYear": "वर्ष $year$ में कॉर्पस की आवश्यकता थी",
+    "myPlanSummary": "योजना सारांश देखें",
+    "canPlanBetter": "बेहतर योजना बना सकते हैं",
+    "monthlyExpenses": "मासिक खर्च",
+    "requiredSaving": "आवश्यक बचत",
+    "yourIncome": "आप की आय",
+    "plannedGoals": "नियोजित लक्ष्य",
+    "tenure": "कार्यकाल",
+    "savingsRequired": "बचत की आवश्यकता है",
+    "totalAmountRequired": "कुल राशि आवश्यक है",
+    "noSavedArticles": "कोई सेव्ड लेख नहीं",
+    "noSavedGoals": "कोई सेव्ड लक्ष्य नहीं",
+    "youReallyWantToDelete": "आप वास्तव में हटाना चाहते हैं",
+    "totalInsuranceCoverYouNeed": "आपको आवश्यक कुल बीमा कवर",
+    "wellPlanned": "अच्छी योजना बनाई",
+    "totalHealthCoverRequired": "कुल स्वास्थ्य कवर की आवश्यकता है",
+    "savedGoals": "सहेजे गए लक्ष्य",
+    "viewArticles": "लेख देखें",
+    "planSummary": "योजना सारांश देखें"
+  },
+
+  "riskAssessment": {
+    "riskAssessment": "रिस्क असेसमेंट",
+    "qOne": "When it comes to investing in stocks and Mutual Funds, I would describe myself as….",
+    "qTwo": "I prefer to keep my money risk-free and in the bank",
+    "qThree": "Risk Scenario You are on a TV game show and are asked to pay Rs 10,000. What will you do?",
+    "qFour": "When you think of the word 'risk' which of the following words come to mind first",
+    "yourRiskProfileIs": "आपका जोखिम प्रोफाइल है"
+  },
+
+  "planYourLife": {
+    "planYourLife": "अपने जीवन की योजना बनाएं",
+    "personalGoals": "व्यक्तिगत लक्ष्य",
+    "subTitle": "योजना शुरू करने के लिए किसी भी लक्ष्य पर टैप करें!",
+    "popupTitle": "आप इसे कब प्राप्त करना चाहते हैं?",
+    "addPlan": "योजना जोड़ें",
+    "by": "$year$ तक",
+    "sPlan": " की योजना",
+    "viewMyGoals": "मेरे लक्ष्यों को देखें",
+    "youReallyWantToDelete": "आप वास्तव में हटाना चाहते हैं"
+  },
+
+  "notification": {
+    "notification": "नोटिफिकेशन",
+    "noNewNotification": "कोई नई नोटिफिकेशन नहीं"
+  },
+
+  "search": {
+    "search": "खोजें",
+    "noSearchRecords": "कोई खोज रिकॉर्ड नहीं",
+    "articlessearches": "लेख खोजें",
+    "recentlyViewedArticles": "हाल ही में देखे गए लेख",
+    "setYourGoalWith": "के साथ अपने लक्ष्यों को सेट करें"
+  },
+
+  "common": {
+    "yrs": "वर्ष",
+    "replan": "दोबारा से प्लान करें",
+    "save": "हाँ",
+    "disclaimers": "डिस्क्लेमर",
+    "disclaimer": "डिस्क्लेमर",
+    "disclaimersLink": "डिस्क्लेमर लिंक",
+    "done": "पूरा किया",
+    "next": "अगला",
+    "toGo": "जाने के लिए साल",
+    "back": "पीछे जाएं",
+    "thankYou": "धन्यवाद",
+    "proceed": "आगे बढ़ें",
+    "submit": "सबमिट करें",
+    "readAll": "और पढ़ें",
+    "showMore": "और लोड करें",
+    "pm": "प्रति माह",
+    "pa": "प्रति वर्ष",
+    "age": "आयु",
+    "year": "वर्ष",
+    "years": "वर्षों में",
+    "totalAmount": "कुल राशि",
+    "willbe": "होगा",
+    "viewMore": "और देखें",
+    "duration": "अवधि",
+    "monthly": "मासिक",
+    "quarterly": "त्रैमासिक",
+    "halfYearly": "अर्धवार्षिक",
+    "yearly": "सालाना",
+    "months": "महीने",
+    "inMonths": "महीने में",
+    "yes": "हाँ",
+    "no": "नहीं",
+    "inTheYear": "साल में",
+    "disclaimerText": "The information, material, advices, suggestions, illustrations notifications, circulars etc. are collectively stated 'the content' in this application. If the said content contains any mistakes, omissions, inaccuracies and typographical errors, etc. SBI Life assumes no responsibility thereof. SBI Life makes no warranty or representation regarding any content provided through this application and disclaims its liabilities in respect thereof. Any action on your part on the basis of the said content is at your own risk and responsibility.SBI Life reserves its right to correct any part of the said content at any time as and when required at its sole discretion. The content of this application shall not be displayed or printed in any form in part or whole without the prior written approval of SBI Life. E-mail messages sent to SBI Life over the Internet cannot be guaranteed to be completely secure. The integrity of such messages cannot be guaranteed on the Internet and SBI Life will not be responsible for any damages incurred by users due to messages send or received by them to and from SBI Life. SBI Life does not send emails from other than domain names - sbilife.co.in & sbi-life.com. Please do not respond to any mails other than email IDs with this domain name as same may be fraudulent/phishing emails.",
+    "doYouWantToSaveGoal": "क्या आप इस लक्ष्य को सेव करना चाहते है?",
+    "dontSave": "नहीं",
+    "goalSavedSuccessfully": "आपका लक्ष्य सफलतापूर्वक सेव्ड",
+    "viewLess": "कम देखें",
+    "for": "के लिये",
+    "total": "कुल",
+    "to": "से",
+    "k": "हज़ार",
+    "thousand": "हज़ार",
+    "thousands": "हज़ार",
+    "l": "लाख",
+    "lac": "लाख",
+    "lakh": "लाख",
+    "lakhs": "लाख",
+    "cr": "करोड़",
+    "crore": "करोड़",
+    "crores": "करोड़",
+    "tenure": "कार्यकाल",
+    "se": "से",
+    "noDataAvalilable": "कोई डेटा उपलब्ध नहीं",
+    "noSpendsAvailable": "कोई खर्च उपलब्ध नहीं है",
+    "noReportData": "रिपोर्ट देखने के लिए कृपया माह और वर्ष चुनें",
+    "reset": "रीसेट",
+    "resetAll": "सारा रिसेट करें",
+    "loadMore": "और लोड करें",
+    "addMore": "अधिक जोड़ें",
+    "start": "शुरू"
+  },
+
+  "buttons": {
+    "back": "वापस जाएं",
+    "discover": "डिस्कवर",
+    "next": "अगला",
+    "save": "सहेजें",
+    "disclaimerLink": "अस्वीकरण लिंक",
+    "replan": "दोबारा से प्लान करें",
+    "suggestInvesment": "संवेदना का सुझाव दें",
+    "recalculate": "दोबारा गणना करें",
+    "startPlanning": "योजना शुरू करें",
+    "fillProfile": "प्रोफाइल भरें",
+    "readArticles": "लेख पढ़ें",
+    "newPlan": "नई योजना",
+    "reassess": "पुनर्मूल्यांकन",
+    "ok": "ठीक"
+  },
+
+  "errorMsg": {
+    "noInternetConnection": "कोई इंटरनेट कनेक्शन नहीं",
+    "checkInternetConnection": "कृपया अपना इंटरनेट कनेक्शन जांचें या बाद में पुनः प्रयास करें",
+    "retry": "दोबारा प्रयास करें",
+    "pleaseTryAgain": "कृपया दोबारा प्रयास करें।",
+    "PleaseEnterDownPaymentBetween": "कृपया भुगतान नीचे दर्ज करें",
+    "to": " से ",
+    "newNotification": "नई नोटिफिकेशन",
+    "selectOneTopic": "कृपया सूची से कम से कम एक विषय का चयन करें",
+    "comingSoon": "जल्द आ रहा है...",
+    "enterDepositAmountBetween": "कृपया के बीच की राशि दर्ज करें",
+    "enterTenureBetween": "कृपया के बीच का कार्यकाल दर्ज करें",
+    "tenureMustBeBelow60": "कार्यकाल 60 वर्ष से कम होना चाहिए।",
+    "pleaseNumbers": "कृपया केवल संख्या दर्ज करें",
+    "enterAgeAmountBetween": "कृपया के बीच की आयु राशि दर्ज करें",
+    "enterIncomeAmountBetween": "कृपया के बीच की आय राशि दर्ज करें",
+    "atleastSelectOne.": "कम से कम एक का चयन करें।",
+    "pleaseEnterAmount": "कृपया राशि दर्ज करें",
+    "amountShouldBeBetween": "आपकी कुल राशि के बीच होना चाहिए",
+    "ageTodayLessToBeRetirement": "Age today has to be less than age at retirement",
+    "enterDownPaymentBetween": "कृपया भुगतान नीचे दर्ज करें",
+    "goalSavedSuccessfully.": "आपका लक्ष्य सफलतापूर्वक सेव्ड.",
+    "enterFeesBetween": "कृपया शुल्क दर्ज करें",
+    "enterMonthlyExpensesBetween": "कृपया अपना मासिक खर्च दर्ज करें ",
+    "enterWeddingCostBetween": "कृपया शादी की लागत दर्ज करें",
+    "pleaseTryAgainAfterSometime": "कृपया कुछ समय बाद दोबारा प्रयास करें।",
+    "OTPResendSuccessfully": "ओटीपी सफलतापूर्वक भेजा गया",
+    "couldNotLoadGoalTypes": "लक्ष्य प्रकार लोड नहीं कर सका।",
+    "goalDeletedSuccessfully": "लक्ष्य सफलतापूर्वक हटा दिया गया।",
+    "couldSaveSettings!": "सेटिंग्स को सहेजा गया!",
+    "enterValidAmountForAssets.": "एसेट के लिए वैध राशि दर्ज करें।",
+    "enterValidAmountForLiabilities": "लायबिलिटिज़ के लिए वैध राशि दर्ज करें।",
+    "enterValidDOB": "कृपया वैध जन्म तारीख दर्ज करें",
+    "selectValidEducationOption": "कृपया वैध शिक्षा विकल्प का चयन करें",
+    "selectValidOccupation": "कृपया एक वैध व्यवसाय का चयन करें",
+    "selectValidWorkIndustry": "कृपया वैध कार्य उद्योग का चयन करें",
+    "selectValidDesignation": "कृपया एक वैध पदनाम का चयन करें",
+    "selectValidRelationshipMember": "कृपया परिवार के सदस्य के लिए एक वैध संबंध का चयन करें",
+    "selectValidAgeMember": "परिवार के सदस्य के लिए वैध आयु का चयन करें",
+    "enterValidNameMember": "कृपया परिवार के सदस्य के लिए एक वैध नाम दर्ज करें",
+    "enterValidAssetValue": "कृपया वैध एसेट वैल्यू दर्ज करें",
+    "assetBreakupCouldNotSaved": "एसेट ब्रेक अप सहेजा नहीं जा सका",
+    "liabilitiesBreakupCouldNotSaved": "लायबिलिटिज़ का ब्रेकअप सहेजा नहीं जा सका",
+    "monthlyExpenseSaved": "मासिक खर्च ब्रेकअप नहीं बचाया जा सका",
+    "couldNotSaveDetailsCorrectly.": "विवरण सही ढंग से सहेज नहीं सका।",
+    "sessionExpired": "सत्र समाप्त हुआ!!!",
+    "saveByNotBuyingCoffee": "रोज़ कॉफी नहीं खरीदकर बचाएं",
+    "wellPlanned": "अच्छी तरह से योजना बनाकर आपमें पहले से ही बहुत बचा लिया है",
+    "saveByNotEatingOut": "रोज़ बाहर नहीं खाकर बचाएं",
+    "saveByTakingPublicTransport": "रोज़ पब्लिक ट्रांसपोर्ट लेकर बचाएं",
+    "saveByNotDrinks": "रोज़ न पीकर बचाएं",
+    "noInternetSubtitle": "कृपया अपना इंटरनेट कनेक्शन जांचें या बाद में दोबारा प्रयास करें",
+    "pleaseEnterNumberBetween": "कृपया संख्या दर्ज करें",
+    "pleaseEnterAmountBetween": "कृपया राशि दर्ज करें",
+    "pleaseEnterName": "कृपया नाम दर्ज करें",
+    "pleaseSelectGender": "कृपया जेंडर चुनें",
+    "pleaseSelectRelationship": "कृपया रिश्ते की स्थिति चुनें",
+    "pleaseSelectSpouseEarning": "कृपया जीवनसाथी की कमाई की स्थिति चुनें",
+    "pleaseSelectInsuranceStatus": "कृपया बीमा स्थिति चुनें",
+    "errorMsg": "कृपया सही ईमेल आईडी / मोबाइल नंबर दर्ज करें"
+  },
+
+  "infoPopup": [
+    {
+      "id": "1",
+      "title": "इनफ्लेशन दर",
+      "desc": "समय-समय पर प्रतिशत में मापा गया सामान और सेवाओं की कीमत में इनफ्लेशन की दर बढ़ी है।"
+    },
+    {
+      "id": "2",
+      "title": "बढ़ती बचत दर",
+      "desc": "बढ़ती बचत दर का मतलब वार्षिक आधार पर एक निश्चित प्रतिशत से बचत में वृद्धि से है।"
+    },
+    {
+      "id": "3",
+      "title": "अवधि यह लोन टेन्योर है",
+      "desc": "लोनकी अवधि वह अवधि है जब लोन को बंद करने के लिए लोन स्वीकृत किया जाता है।"
+    },
+    {
+      "id": "4",
+      "title": "रिटर्न की अपेक्षित दर",
+      "desc": "रिटर्न की अपेक्षित दर वह रिटर्न है जो एक व्यक्ति निवेश पर अनुमान करता है।"
+    },
+    {
+      "id": "5",
+      "title": "एफडी ब्याज दर",
+      "desc": "एफडी ब्याज दर आपके बैंक द्वारा पूर्व निर्धारित परिभाषित अंतराल पर आपको दी गई मूल राशि का प्रतिशत है।"
+    },
+    {
+      "id": "6",
+      "title": "लोन ब्याज दर",
+      "desc": "ब्याज दर ऋणदाता द्वारा मूल धन के प्रतिशत के रूप में चार्ज और व्यक्त की गई राशि है।"
+    }
+  ],
+
+  "TermsConditionHtml": [
+    {
+      "key": "Agreement",
+      "value": "These Terms and Conditions read together with the Privacy Policy of this Application shall constitute a legally binding agreement between you and the Company regarding your use of the Application and any services offered by the Company ('the Service'). In the event of any inconsistency between the Terms and Conditions and the Privacy Policy, the Terms and Conditions supersede the Privacy Policy. Any user of the Application is deemed to have agreed to the present Terms and Conditions and has entered into a legally binding contract with the Company. 'User' or 'You' means any person who access or avail this Application of the Company for the purpose of hosting, publishing, sharing, transacting, displaying or uploading information or views and includes other persons jointly participating in using the Application of the Company. You understand and agree that you are using this Application entirely at your risk and SBI LIFE Insurance Company Ltd shall not be responsible for the consequences of any action taken by you while using this Application. This Application is provided to you by SBI Life free of cost as a service gesture and it is entirely your sole discretion as to whether you will use this application or not or whether you will rely on the guidance or suggestions provided by the Application. By accessing the Application or service and/or by clicking 'I agree', you agree to be bound by these Terms and Conditions and any amendment thereof."
+    },
+    {
+      "key": "About this Application",
+      "value": "<p> This Application provides articles, fact cards and tips to help user better plan their  finances and investments for various important goals like Education, marriage, buying a car, Buying a Home and retirement. There will also be content covering general welfare and insurance. There will also be occasional news related articles. There will not be any articles related to any of the products of SBI Life Insurance Co Ltd or any other financial products in the market.</p><p>Apart from the content there will also be calculators that will help users calculate the maturity value of investments in various avenues. There is a separate goal section where user can plan for achieving various target amounts for different  goals and the application will help them by giving suggestions like monthly savings required and the assets where user may wish to invest basis the risk assessment results of user. Suggestions are only limited to asset classes(equity, debt, small saving schemes etc) and no actual  financial products will be suggested or mentioned in any way.)</P>"
+    },
+    {
+      "key": "Disclaimer",
+      "value": "<p>The information, material, advices, suggestions, illustrations notifications, circulars etc. are collectively stated 'the content' in this applicaton. If the said content contains any mistakes, omissions, inaccuracies and typographical errors, etc. SBI Life assumes no responsibility thereof. </p><p>SBI Life makes no warranty or representation regarding any content provided through this application and disclaims its liabilities in respect thereof. Any action on your part on the basis of the said content is at your own risk and responsibility.</p><p>SBI Life reserves its right to correct any part of the said content at any time as and when required at its sole discretion. The content of this application shall not be displayed or printed in any form in part or whole without the prior written approval of SBI Life. SBI LIFE may, at its sole discretion, withdraw this Application at any time without any notice to the Public whatsoever.</p><p>E-mail messages sent to SBI Life over the Internet cannot be guaranteed to be completely secure. The integrity of such messages cannot be guaranteed on the Internet and SBI Life will not be responsible for any damages incurred by users due to messages sent or received by them to and from SBI Life. </p><p>SBI Life does not send emails from other than domain names - sbilife.co.in &amp; sbi-life.com. Please do not respond to any mails other than email IDs with this domain name as same may be fraudulent/phishing emails.</p>"
+    },
+    {
+      "key": "Eligibility",
+      "value": "You hereby represent and warrant to the Company that you have completed at least eighteen (18) years of age or above and are capable of entering, performing and adhering to these Terms and Conditions and that you agree to be bound by the Terms and Conditions. While individuals under the age of 18 may utilize the service of the Application, they shall do so only with the involvement & guidance of their parents and / or legal guardians, under such parent /legal guardian's registered account. In case of a corporation, trust, association of persons or a firm, you must be authorised to agree to the Terms and Conditions and to access, use and avail of the Application. If you do not qualify, please do not access or use the Application. This Application is intended exclusively for the use of Resident Indians, Non-Resident Indians, Persons of Indian Origin. Citizens and residents of countries other than India (collectively, 'non-residents') shall access, use and avail of the Application only to the extent the domestic laws of India and such countries of their residence permit them to access, use and avail of the Application. All non-residents understand that by accessing, using and availing of the Application, they may be violating the local laws in India and/or such countries. You agree that it will be your responsibility to check yourself as to whether you can use this Application  You agree that you will be solely and absolutely liable for any liability incurred by you in India or elsewhere and shall in this regard indemnify SBI LIFE INSURANCE CO LTD and keep indemnified SBI LIFE INSURANCE CO LTD against any liability incurred by SBI LIFE INSURANCE CO LTD in this regard. Nothing in the SBI LIFE INSURANCE CO LTD Application shall be considered as a solicitation to buy or an offer to sell a security, or any product or service, to any person in any jurisdiction where such solicitation, offer, purchase or sale would be unlawful under the laws of that jurisdiction."
+    },
+    {
+      "key": "Conduct of Users",
+      "value": "<p>By agreeing to the Terms &amp; Conditions, the User agrees:<br>to confirm that the details provided by the User(s) are true and correct. </p><p><strong>You shall not - - </strong></p> <ul><li>Restrict or inhibit any other person from accessing, using and enjoying the Application;</li><li>Use the Application for any purpose that is unlawful in any jurisdiction or not permitted by the Terms and Conditions;</li><li>modify, copy, distribute, transmit, display, perform, publish, licence, create derivative works from, transfer or sell any information, designs, logos, trademarks, software, facilities, products or services obtained on or through the Application, except as permitted by the copyright owner or other right holder thereof; </li><li>post, transmit and receive any unlawful, fraudulent, libellous, defamatory, obscene, pornographic, profane, threatening, abusive, hateful, offensive, or otherwise objectionable information or statement of any kind including, without limitation, any information or statement constituting or encouraging conduct that would constitute sedition, a criminal offence, give rise to civil liability, or otherwise violate any local, state, national, foreign or other law;</li><li>post or transmit any advertisements, solicitations, chain letters, pyramid schemes, investment opportunities or schemes or other unsolicited commercial communication (except as otherwise expressly permitted by SBI LIFE INSURANCE CO LTD) or engage in spamming or flooding; </li><li>post, transmit any spam mails, information or software which contains a virus, Trojan horse, worm or other harmful component; post, publish, transmit, reproduce, distribute or in any way exploit any information, software or other material obtained from or through the Application for commercial purposes (); </li><li>upload, post, publish, transmit, reproduce or distribute in any way, information, software or other material obtained on or through the Application which is protected by copyright or other proprietary right, or derivative works with respect thereto, except as permitted by the copyright owner or other right holder thereof; </li><li>upload, post, publish, reproduce, transmit or distribute in any way any component of the Application itself or derivative works with respect thereto, except as permitted by SBI LIFE INSURANCE CO LTD or the copyright owner or other right holder thereof, the Application being copyrighted under the relevant laws;</li><li>Attempt to decompile or reverse engineer any of the software available on the Application.</li><li>You will not make any attempt to hack into the Application or otherwise attempt to subvert any firewall or other security measure of the Application and if you become aware of any shortcoming in the security on the Application you shall forthwith inform SBI LIFE INSURANCE CO LTD of the same in writing. If the Application contains bulletin boards, chat rooms, access to mailing lists or other message or communication facilities (collectively, 'Forums'), you agree to use the Forums only to send and receive messages and material that are proper and related to the particular Forum. You shall use any software provided on, by or through the Application only for the purposes for which it has been provided to you and for no other purpose.&nbsp;</li></ul><p>You shall not host, display, upload, modify, publish, transmit, update or share any information on the Application, that:</p><ol><li>belongs to another person and to which you do not have any right to;</li><li>is grossly harmful, harassing, blasphemous defamatory, obscene, pornographic, paedophilic, libellous, invasive of another's privacy, hateful, or racially, ethnically objectionable, disparaging, relating or encouraging money laundering or gambling, or otherwise unlawful in any manner whatever; </li><li>harm minors in any way;</li><li>infringes any patent, trademark, copyright or other proprietary rights;</li><li>violates any law for the time being in force;</li><li>deceives or misleads the addressee about the origin of such messages or communicates any information which is grossly offensive or menacing in nature;</li><li>impersonate another person;</li><li>contains software viruses or any other computer code, files or programs designed to interrupt, destroy or limit the functionality of any computer resource;</li><li>threatens the unity, integrity, defence, security or sovereignty of India, friendly relations with foreign states, or public order or causes incitement to the commission of any cognisable offence or prevents investigation of any offence or is insulting any other nation.</li></ol><p> Any content and or comment uploaded by you, shall be subject to relevant Indian laws and may be disabled, or and may be subject to investigation under appropriate laws. Furthermore, if you are found to be in non-compliance with the laws and regulations, these terms, or the privacy policy of the Application, the Company shall have the right to immediately terminate/block your access and usage of the Application and the Company shall have the right to immediately remove any non-compliant Content and/or comment, uploaded by you and shall further have the right to take recourse to such remedies as would be available to the Company under the applicable laws.</p>"
+    },
+    {
+      "key": "Disclaimers",
+      "value": [
+        "<p>This Application is not intended to provide any tax, legal, insurance or investment advice, and nothing on the SBI LIFE INSURANCE CO LTD Application should be construed as a recommendation, by SBI LIFE INSURANCE CO LTD or any third party, to acquire or dispose of any investment or security, or to engage in any investment transaction. Except as otherwise specified, you alone are solely responsible for determining whether any investment, security or any other product or service, is appropriate or suitable for you based on your investment objectives and personal and financial situation. You should consult a legal or tax professional regarding your specific legal or tax queries. Access and use of the Application is entirely at your own risk. The Application, including any content or information on it, any related or linked site, products and services displayed, provided, availed of, licensed or purchased on, through or via the Application are provided 'as is,' without any representation or warranty of any kind, either express or implied, including without limitation, any representation or warranty for accuracy, continuity, uninterrupted access, timeliness, sequence, quality, performance, fitness for any particular purpose or completeness. Specifically, SBI LIFE INSURANCE CO LTD disclaims any and all warranties including, but not limited to - - Any warranties concerning the availability, accuracy, usefulness, or correctness, currency or completeness of information, products or services and - Any warranties of title, warranty of non-infringement, freedom from computer virus, warranties of merchantability or fitness for a particular purpose, other than those warranties which are incapable of exclusion, restriction or modification under the laws applicable to the Terms and Conditions.</p>",
+        "<p>SBI LIFE INSURANCE CO LTD has not verified and shall not be liable or responsible for any content or other information on the Application or on web-sites linked to or with SBI LIFE INSURANCE CO LTD. SBI LIFE INSURANCE CO LTD does not, in any way, certify or warrant the performance, operation, content or availability of the Application or such other applications. Although SBI LIFE INSURANCE CO LTD adopts security measures, which it considers appropriate for the Application, it does not assure or guarantee that no person will overcome or subvert the security measures and gain unauthorised access to the Application. SBI LIFE INSURANCE CO LTD LTD shall not be responsible or liable if any unauthorised person hacks into or gains access to the Application, or your accounts; and you shall be liable and responsible for the same. This disclaimer of liability applies also to any damage or injury caused by any failure of performance, error, omission, interruption, deletion, defect, delay in operation or transmission, computer virus, communication line failure, theft or destruction or unauthorized access to, alteration of, or use of record, whether for breach of contract, tortuous behaviour, negligence, or under any other cause of action. The information and views contained herein are based on information available and believed to be correct to the best of our knowledge. Although due care has been exercised to verify the accuracy of the information, neither SBI LIFE INSURANCE CO LTD  nor  its information suppliers assume responsibility for the accuracy or for any loss arising out of any information contained herein. This is neither a solicitation to invest in any product nor to avail of a particular service SBI LIFE INSURANCE CO LTD does not warrant or make any representations regarding the use or the results of the use of any product, service in terms of its compatibility, correctness, accuracy, reliability or otherwise. You assume total responsibility and risk for your access and use of the Application, all site-related services, products and services mentioned or advertised on or accessed or availed on or through the Application. You acknowledge that any warranty that is provided in connection with any of the products or services described on the Application are provided solely by the owner, advertiser, manufacturer, provider or supplier of that product or service, and not by SBI LIFE INSURANCE CO LTD or the Application. SBI LIFE INSURANCE CO LTD operates and offers the Application strictly on a no-liability basis and SBI LIFE INSURANCE CO LTD shall not be liable to you or any other third party for any direct, indirect, incidental, special, exemplary, punitive, consequential or other damages (including without limitation loss of profits, loss or corruption of data, loss of goodwill, work stoppage, computer failure or malfunction, or interruption of business) under any contract, negligence, strict liability or other law or theory arising out of or in connection with the Application, products or services mentioned or advertised on or accessed or availed on or through the Application or any contract or transaction entered into or executed in pursuance thereof (however arising, including negligence) or resulting from the use of or inability to use, access or avail of the Application, any service or product or out of any breach of any warranty. Under no circumstances shall SBI LIFE INSURANCE CO LTD be liable for any damages whatsoever whether such damages are direct, indirect, incidental consequential and irrespective of whether any claim is based on loss of revenue, investment, production, goodwill, profit, interruption of business or any other loss of any character or nature whatsoever and whether sustained by you or any other person.. SBI LIFE INSURANCE CO LTD shall not be responsible for any inability to access the Application or any use or misuse of the Application. Any search results displayed by or on the Application are automated and cannot be screened. Accordingly, SBI LIFE INSURANCE CO LTD assumes no responsibility for the accuracy or otherwise of any search results or of the content of any site included in the search results or otherwise linked to the Application. SBI LIFE INSURANCE CO LTD shall not be responsible for any unauthorised interception of e-mail to or from you or SBI LIFE INSURANCE CO LTD. To the extent possible, the disclaimers, limitations on liability and indemnities available to SBI LIFE INSURANCE CO LTD under the Terms and Conditions shall mutates mutandis extend and be available also to the Alliance Partners and Service Providers and its/ their respective directors, officers, employees, agents, successors, assigns, consultants, sponsors, affiliates, content providers and every one involved in creating, producing, delivering or managing the Application (or any part thereof). However, this clause shall not protect the aforesaid Persons or extend to their obligations and liability to SBI LIFE INSURANCE CO LTD or SBI LIFE INSURANCE CO LTD's claims against them. A possibility exists that the Application could include inaccuracies or errors. Additionally, a possibility exists that unauthorised additions, deletions or alterations could be made by third parties to the Application. Although SBI LIFE INSURANCE CO LTD attempts to ensure the integrity of the Application, they make no guarantee whatsoever as to its sequence, timeliness, completeness, correctness or accuracy. In the event that such an inaccuracy or incompleteness arises, please inform SBI LIFE INSURANCE CO LTD so that it can be corrected. Links from the Application clicking on certain portions or links within the Application might take you to other applications without any intimation or indication of doing or having done so. The linked applications are not under the control of SBI LIFE INSURANCE CO LTD and SBI LIFE INSURANCE CO LTD assumes no responsibility whatsoever for such other applications whether as to content, availability, performance or otherwise. SBI LIFE INSURANCE CO LTD also does not represent or warrant that these links shall operate satisfactorily. SBI LIFE INSURANCE CO LTD provides these links only as a convenience and links to external web sites do not constitute an endorsement by SBI LIFE INSURANCE CO LTD of such other sites, the sponsors of such sites or the content, products, advertising or other materials presented on or by such sites. SBI LIFE INSURANCE CO LTD shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the access or use of such other applications or reliance on or availing of any content, goods or services available on such other sites. The links on the Application may take you to other sites or to other locations within the Application where the trading of securities is possible. SBI LIFE INSURANCE CO LTD shall not be responsible or liable with regard to any trading which may be conducted on such linked trading sites, non-SBI LIFE INSURANCE CO LTD web sites, and any other web site which may be linked to or from the SBI LIFE INSURANCE CO LTD Application. For informational or educational purposes, or as a convenience to the users, the SBI LIFE INSURANCE CO LTD Application may provide referrals to third party content or links to third party applications, including companies that have a relationship with SBI LIFE INSURANCE CO LTD. Our decision to provide referral information to a third party or to pass on an offer made by a third party or to provide a link from SBI LIFE INSURANCE CO LTD Application to a third party application shall not be construed as an endorsement of the third party products, services, content, tools and information. You will use third-party content at your own risk. SBI LIFE INSURANCE CO LTD is not responsible for any third party, their products or services their application, or any content made available through such third party sites, nor do we make any warranties or representations, express or implied, regarding third party content on any third party sites, and shall have no liability in relation to any of the foregoing. You shall agree to all the terms and conditions, disclaimers clauses and be liable to Copyright Owners of the hyper links appearing in the Application which is independent in itself and not connected. You shall further indemnify and keep indemnified SBI LIFE, its employees, directors, representatives and keep them harmless from any dispute(s) that may arise due to a violation/breach (s) of the Terms and Conditions of such hyper link(s) by you. You will be solely responsible for maintaining the confidentiality of the account that you create on the SBI LIFE INSURANCE CO LTD Application.</p>"
+      ]
+    },
+    {
+      "key": "Proprietary and Intellectual Property Rights",
+      "value": "SBI LIFE INSURANCE CO LTD is the owner and/or authorized user of any trademark, registered trademark and/or service mark appearing on the Application, and is the copyright owner or licensee of the content and/or information on the Application including but not limited to any text, images, illustrations, audio clips, video clips and screens appearing on the Application. All rights on the Application are reserved and you may not download and/or save a copy of the Application or any part thereof including any of the screens or part thereof and/or reproduce, store it in a retrieval system or transmit it in any form or by any means - electronic, electrostatic, magnetic tape, mechanical printing, photocopying, recording or otherwise including the right of translation in any language without the express permission of SBI LIFE INSURANCE CO LTD (or use it in any manner that is likely to cause confusion or deception among persons or in any manner disparages or discredits SBI LIFE INSURANCE CO LTD or Partners. This Application is for your personal use. If you make other use of this Application, except as otherwise provided above, you may violate copyright and other laws of India and other countries, and may be subject to penalties. SBI LIFE INSURANCE CO LTD, its Partners do not grant any license or other authorization or user of its trademarks, registered trademarks, service marks, or other copyrightable material or other intellectual property by placing them on the Application. "
+    },
+    {
+      "key": "Authority to SBI LIFE INSURANCE CO LTD",
+      "value": "You irrevocably and unconditionally authorise SBI LIFE INSURANCE CO LTD to access all information relating to you (including personal information and information relating to access and use of the Application by you and the transactions entered into by you). Subject to the Privacy Policy, all information submitted on or via the Application shall be deemed to be and remain the property of SBI LIFE INSURANCE CO LTD and the Partners; and SBI LIFE INSURANCE CO LTD, the Affiliate Partners shall be free to use, for any purpose, any ideas, concepts, know-how or techniques contained in any information you may provide to or through the Application. SBI LIFE INSURANCE CO LTD, the Partners shall not be subject to any obligations of confidentiality regarding submitted information except as otherwise expressly agreed by it directly with you. SBI LIFE INSURANCE CO LTD shall be deemed to acquire from you a non-exclusive, world-wide, perceptual, irrevocable, royalty free licence to use, adapt, reproduce, modify, publish, translate, create derivative works from, distribute, perform or display any ideas, concepts, know-how or techniques contained in any information provided by you to or through the Application."
+    },
+    {
+      "key": "No Agency",
+      "value": "The Terms and Conditions and your use of or access to the Application are not intended to create an agency, partnership, joint-venture or employer-employee relationship between you and the Application, SBI LIFE INSURANCE CO LTD and any Partner."
+    },
+    {
+      "key": "No Obligation for Maintenance",
+      "value": "SBI LIFE INSURANCE CO LTD has no obligation to monitor the functioning of the Application. However, you acknowledge and agree that SBI LIFE INSURANCE CO LTD has the right to monitor the functioning of the Application electronically or otherwise from time to time and to disclose any information as necessary or appropriate to satisfy any law, regulation or other governmental request, to operate the Application properly or to protect itself or its Service Providers, Alliance Partners, Visitors, Users. SBI LIFE INSURANCE CO LTD will not intentionally monitor or disclose any private electronic-mail message to any third party unless required by law. SBI LIFE INSURANCE CO LTD reserves the right to refuse to post or to remove any information or materials, in whole or in part, that, in its sole discretion, are unacceptable, undesirable, inappropriate or in violation of the Terms and Conditions."
+    },
+    {
+      "key": "Indemnity",
+      "value": "You agree to defend, indemnify and hold SBI LIFE INSURANCE CO LTD, its directors, officers, employees, Affiliates Partners, and Content harmless from any and all claims, liabilities, damages, costs, expenses and proceedings, including reasonable attorneys' fees, arising in any way from your use of the Application or the placement or transmission of any message, information, software or other materials through the Application by you or users of your ID and password or related to any violation of the Terms and Conditions by you or users of your of your ID and password, and any claims dispute or differences between you and any supplier."
+    },
+    {
+      "key": "Termination",
+      "value": "You acknowledge and agree that SBI LIFE INSURANCE CO LTD may, without notice, suspend or terminate your ID, password or account or deny you access to all or part of the Application without prior notice if you engage in any conduct or activities that SBI LIFE INSURANCE CO LTD in its sole discretion believes violate any of the Terms and Conditions, violate the rights of SBI LIFE INSURANCE CO LTD, or is otherwise inappropriate for continued access, or IF SBI LIFE INSURANCE CO LTD learns of your death, bankruptcy or lack of legal capacity or of circumstances which impact your credit worthiness (which shall be determined at the sole discretion of SBI LIFE INSURANCE CO LTD) or for any other reason which SBI LIFE INSURANCE CO LTD thinks fit and proper. You acknowledge and agree that SBI LIFE INSURANCE CO LTD may in its sole discretion deny you access through SBI LIFE INSURANCE CO LTD to any materials stored on the Internet, or to access third party services, merchandise or information on the Internet through the Application, and SBI LIFE INSURANCE CO LTD shall have no responsibility to notify you or third-party providers of facilities, services, merchandise or information nor any responsibility for any consequences resulting from lack of notification. "
+    },
+    {
+      "key": "Disclosure Policy",
+      "value": "We will only share non-public personal information with third parties in the limited circumstances permitted under law including situations where we need to share information with entities who work on behalf of SBI LIFE INSURANCE CO LTD to service or maintain your account or process transactions as requested by you, when the disclosure is made to a party representing you, or when such information is required by law including inter alia in response to a legal process. Further, SBI LIFE INSURANCE CO LTD will ensure that any third parties assisting it in marketing its products, are under contractual obligations to protect the confidentiality of information of the users of the SBI LIFE INSURANCE CO LTD Application, and to use it only to provide the services to the extent as required under the agreement with SBI LIFE INSURANCE CO LTD."
+    },
+    {
+      "key": "Governing Law & Jurisdiction",
+      "value": "The Application, the Terms and Conditions, all transactions entered into on or through the Application and the relationship between you and SBI LIFE INSURANCE CO LTD shall be governed by and construed in accordance with the laws of India and no other nation, without regard to the laws relating to conflicts of law. You and SBI LIFE INSURANCE CO LTD agree that all claims, differences and disputes arising under or in connection with or pursuant to the Application, the Terms and Conditions, any transactions entered into on or through the Application or the relationship between you and SBI LIFE INSURANCE CO LTD shall be subject to the exclusive jurisdiction of the competent courts located in the city of New Delhi, India and you hereby accede to and accept the jurisdiction of such courts. Provided that, notwithstanding what is stated above, if SBI LIFE INSURANCE CO LTD so thinks fit SBI LIFE INSURANCE CO LTD may institute proceedings against you in any other court or tribunal having jurisdiction. SBI LIFE INSURANCE CO LTD accepts no liability whatsoever, direct or indirect for non-compliance with the laws of any country other than that of India. The mere fact that the Application can be accessed or used or any facility can be availed of in a country other than India would not mean that the laws of such country would be applicable."
+    },
+    {
+      "key": "No Waiver",
+      "value": "The failure or delay of SBI LIFE INSURANCE CO LTD to exercise or enforce any right or provision of the Terms and Conditions shall not constitute a waiver of such right or provision. No waiver on the part of SBI LIFE INSURANCE CO LTD shall be valid unless it is in writing signed by or on behalf of SBI LIFE INSURANCE CO LTD. A waiver of any right or provision by SBI LIFE INSURANCE CO LTD on a particular occasion shall not prevent SBI LIFE INSURANCE CO LTD from enforcing such right or provision on a subsequent occasion."
+    },
+    {
+      "key": "Severability",
+      "value": "If any provision of the Terms and Conditions shall be held to be invalid or unenforceable by reason of any law or any rule, order, judgment, decree, award or decision of any court, tribunal or regulatory or self-regulatory agency or body, such invalidity or unenforceability shall attach only to such provision or condition,. The validity of the remaining provisions and conditions shall not be affected thereby and these Terms and Conditions shall be carried out as if any such invalid or unenforceable provision or condition was not contained herein."
+    },
+    {
+      "key": "Limitation",
+      "value": "Notwithstanding any statute or law to the contrary, but to the extent permitted by law, any claim or cause of action arising out of or related to access or use of the Application or the Terms and Conditions must be filed within three (3) months after such claim or cause of action arose failing which it shall be forever barred."
+    },
+    {
+      "key": "Notices",
+      "value": "SBI LIFE INSURANCE CO LTD may give notice to you by e-mail, letter, telephone or any other means as SBI LIFE INSURANCE CO LTD may deem fit to the address last given by you. Notices under the Terms and Conditions may be given to SBI LIFE INSURANCE CO LTD by you in writing by delivering them by hand or by sending them by post to SBI LIFE INSURANCE CO LTD's address mentioned on the Application. SBI LIFE INSURANCE CO LTD may, but shall not be bound to, act upon notices and instructions given by you to SBI LIFE INSURANCE CO LTD by e-mail, letter, telephone or any other means as SBI LIFE INSURANCE CO LTD may deem fit. In addition, SBI LIFE INSURANCE CO LTD may (but shall not be bound to) also publish notices of general nature, which are applicable to all users in a newspaper circulating in India or on its Application. Such notices will have the same effect as a notice served individually to each user (including you). Documents which may be sent by electronic communication between the parties may be in the form of an electronic mail, an electronic mail attachment, or in the form of an available download from the Application. SBI LIFE INSURANCE CO LTD shall be deemed to have duly communicated and delivered any communication or document to you if such communication or document is sent via electronic mail (e-mail) to the e-mail address provided by you to SBI LIFE INSURANCE CO LTD. SBI LIFE INSURANCE CO LTD shall also be entitled to act on the basis of any instructions received or purported to be received by SBI LIFE INSURANCE CO LTD from you by e-mail or other electronic means or via the internet. SBI LIFE INSURANCE CO LTD shall also be entitled (but not bound) to act upon fax instructions and communications."
+    },
+    {
+      "key": "Miscellaneous",
+      "value": "The clause headings in the Terms and Conditions are only for convenience and do not affect the meaning of any provision and shall not be taken into account in interpreting or limiting the scope of the provisions of the Terms and the Conditions. SBI LIFE INSURANCE CO LTD may sub-contract or employ agents to carry out any functions or services relating to the Application or any of its obligations under the Terms and Conditions. SBI LIFE INSURANCE CO LTD may from time to time send by e-mail or otherwise, information relating to products and services offered by it or the Partners or any other entities, general information related to financial and other services, advertisements of various products and services etc. to you. You must at your own cost: (a) provide for your own access to the World Wide Web and pay any service fees, telephone charges and online service usage associated with such access, and (b) provide all equipment necessary for you to make such connection to the World Wide Web, including a computer and modem. The content presented at the Application may vary depending upon your browser limitations."
+    },
+    {
+      "key": "Grievance Redressal",
+      "value": "<p>Redressal Mechanism: Any complaints, abuse or concerns with regards to content and or comment or breach of these terms shall be immediately informed  by e-mail to <a href='mailto:paisagenie@sbilife.co.in'>paisagenie@sbilife.co.in</a> Provide the following information in your complaint: </p><ol><li>Identification of the information provided by you.</li><li> Clear statement as to whether the information is personal information or sensitive personal information.</li><li>Your telephone number or e-mail address. </li><li>A statement that you have a good-faith belief that the information has been processed incorrectly or disclosed without authorization, as the case may be.</li><li>A statement, under penalty of perjury, that the information in the notice is accurate, and that the information being complained about belongs to you.</li></ol>    </div>"
+    }
+  ],
+
+  "mpin": {
+    "mpin": "एम-पिन",
+    "mobilePersonalIdentificationNumber": "मोबाइल पर्सनल आइडेंटिफिकेशन नंबर (एम-पिन) पैसा जीनी में एक सुरक्षा का स्तर जोड़ता है।",
+    "setMPinNow": "अब एम-पिन सेट करें",
+    "settingMPIN": "एम-पिन सेट करना",
+    "pleaseSetYourMpin": "कृपया अपना एम-पिन सेट करें",
+    "usePatternLock": "पैटर्न लॉक का प्रयोग करें",
+    "proceed": "आगे बढ़ें",
+    "pleaseRenterYourMpin": "कृपया अपना एम-पिन पुनः दर्ज करें",
+    "confirmMpin": "एम-पिन की पुष्टि करें",
+    "yourMpinHasBeenSetSuccessfully": "आपका एम-पिन सफलतापूर्वक सेट कर दिया गया है!",
+    "mpinNote": "कृपया ध्यान दें कि आपको पैसाजीनी अनलॉक करने के लिए एम-पिन की आवश्यकता होगी",
+    "gotIt": "समझ गए!",
+    "forgotMpin": "एम-पिन भूल गए",
+    "PleaseEnterYourMpin": "कृपया अपना एम-पिन दर्ज करें",
+    "changeMpinNow": "अब एम-पिन बदलें",
+    "pleaseEnterYourOldMpin": "कृपया अपना पुराना एम-पिन दर्ज करें",
+    "pleaseEnterYourNewMpin": "कृपया अपना नया एम-पिन दर्ज करें",
+    "pleaseReenterYourNewMpin": "कृपया अपना नया एम-पिन पुन: दर्ज करें",
+    "pleaseSetYourPattern": "कृपया अपना पैटर्न सेट करें",
+    "useMpinLock": "एम-पिन लॉक का प्रयोग करें",
+    "pleaseReenterYourPattern": "कृपया अपना पैटर्न पुनः दर्ज करें",
+    "confirmPattern": "पैटर्न की पुष्टि करें",
+    "pleaseEnterTheSamePattern": "कृपया उसी पैटर्न को दर्ज करें",
+    "yourPatternHasBeenSetSuccessfully": "आपका पैटर्न सफलतापूर्वक सेट कर दिया गया है!",
+    "forgot": "भूल गया",
+    "enterYourDetailsToReciveOTP": "ओटीपी को पुनः प्राप्त करने के लिए अपना विवरण दर्ज करें",
+    "pleaseEnterYourOldPattern": "कृपया अपना पुराना पैटर्न दर्ज करें",
+    "pleaseEnterTheCorrectPattern": "कृपया सही पैटर्न दर्ज करें",
+    "enterOtp": "ओटीपी दर्ज करें",
+    "pleaseEnterYourPattern": "कृपया अपना पैटर्न दर्ज करें",
+    "forgotPattern": "पैटर्न भूल गए"
+  },
+  "selectPreferableLanguage": {
+    "selectPreferableLanguage": "अपनी पसंद की भाषा का चयन करें",
+    "infographics": "इन्फोग्राफिक्स"
+  },
+
+  "editIncome": {
+    "editIncomeTitle": "आय में सुधार करें",
+    "howMuchIsYourSalary": "अपने मासिक वेतन का चयन करें",
+    "doYouHaveAnotherIncome": "दूसरे आय स्रोतों से चयन करें",
+    "addOtherSources": "आय के अन्य स्रोत जोड़ें",
+    "otherIncomeSources": "अन्य आय स्रोत",
+    "source1": "स्रोत 1",
+    "monthlyIncome": "मासिक आय",
+    "source2": "स्रोत 2",
+    "bussinessIncome": "व्यापार आय",
+    "intrestIncome": "ब्याज आय",
+    "otherIncome": "अन्य आय",
+    "rent": "किराया",
+    "source3": "स्रोत 3",
+    "noSpendsFor": "इस महीने में ",
+    "inThisMonth": " के लिए कोई खर्च नहीं|"
+  },
+
+  "incomeDashboard": {
+    "spendsManager": "खर्च प्रबंधक",
+    "spendsSummary": "सारांश खर्च करता है",
+    "spendsReview": "खर्च की समीक्षा करें",
+    "spendOmeter": "खर्च का मीटर",
+    "savings": "बचत",
+    "monthlyIncome": "मासिक आय",
+    "totalMonthlySpends": "कुल मासिक खर्च",
+    "monthlySavings": "मासिक बचत",
+    "exceededSpends": "सीमा से अधिक खर्च",
+    "yourCurrentGoals": "आपके वर्तमान लक्ष्य",
+    "assignSavingsTo": "घर के लक्ष्यों, कार लक्ष्यों आदि के लिए बचत को सौंपें।",
+    "assignIncomeToDifferentCategories": "विभिन्न श्रेणियों के लिए आय निर्दिष्ट करें",
+
+    "spends": "खर्च",
+    "totalSpends": "कुल खर्च",
+    "selectYourLimit": "श्रेणियों के लिए मासिक खर्च की लिमिट इनपुट करें",
+    "inputMonthlySpendingLimit": "इनपुट करें",
+    "getStarted": "शुरू करें",
+
+    "spendsPattern": "खर्च का पैटर्न",
+
+    "myRecentSpends": "मेरा ताज़ा खर्च",
+    "addOtherSources": "अन्य स्रोत जोड़ें",
+
+    "existingSavings": "वर्तमान बचत",
+    "savingsRequired": "आवश्यक बचत ",
+    "gotMoreLifeGoals": "जोड़ने के लिए जीवन में और भी लक्ष्य हैं",
+    "saveMore": "अधिक बचत करें",
+    "viewDetails": "विवरण देखें",
+    "yourCurrentSavingsCanBe": "आपकी वर्तमान बचत का उपयोग आपके भविष्य के लक्ष्यों की योजना बनाने में किया जा सकता है",
+    "addGoals": "लक्ष्य जोड़ें",
+
+    "viewAll": "सभी को देखें",
+    "viewMore": "सभी को देखें",
+    "viewReport": "रिपोर्ट देखें",
+
+    "hi": "नमस्ते!",
+    "youHave": "आपके पास वर्गीकृत किए जाने की प्रतीक्षा में",
+    "uncategorisedSpends": "अवर्गीकृत खर्च हैं।",
+    "doYouWishToLook": "क्या आप उन पर एक नज़र डालना चाहते हैं?",
+    "noThanks": "जी नहीं, धन्यवाद",
+    "okay": "ठीक",
+
+    "itSeemsLike": "ऐसा लगता है जैसे हाल ही में ",
+    "hasIncreasedRecently": "में आपका खर्च बढ़ा है",
+    "setBudgetFor": "",
+    "keLiye": " के लिए बजट निर्धारित करें",
+    "setBudget": "बजट निर्धारित करें",
+
+    "budgetExpense": "बजट व्यय",
+    "setMonthlyBudget": "मासिक बजट निर्धारित करें",
+    "SelectCategoryToSet": "श्रेणी का चयन करें",
+    "SelectCategoryBudget": "श्रेणी बजट चुनें",
+    "setBudgetIn": "बजट निर्धारित करें",
+    "spent": "",
+    "karchKiya": "खर्च किया",
+    "ofBudget": "",
+    "budgetKa": "बजट का",
+    "set": "सेट",
+    "doYouWantToReset": "",
+    "kayAap": "क्या आप",
+    "keLiyeBudget": "के लिए बजट रीसेट करना चाहते हैं",
+    "add": "खर्च",
+    "expense": "जोड़ें",
+    "totalBudgetSet": "महीने के लिए कुल निर्धारित बजट: ",
+    "monthlyIncomeText": "मासिक आय"
+  },
+
+  "savings": {
+    "savingsTitle": "बचत",
+    "requiredSavings": "आवश्यक बचत",
+    "currentSavings": "वर्तमान बचत",
+    "needToSaveMore": "अधिक बचत की जरूरत है",
+    "existingGoals": "वर्तमान लक्ष्य",
+    "tenure": "कार्यकाल",
+    "needToSave": "आवश्यक बचत",
+    "haveMoreFinancialGoals": "जोड़ने के लिए जीवन में और भी लक्ष्य हैं?",
+    "addHere": "यहाँ जोड़ें"
+  },
+
+  "expenses": {
+    "spendsTitle": "खर्च",
+    "totalSpends": "कुल खर्च"
+  },
+
+  "incomeApproximation": {
+    "budgetfortheMonth": "महीने के लिए बजट",
+    "inputMonthlySpends": "श्रेणियों के लिए मासिक खर्च सीमा ",
+    "assignMonthlyIncomeForHealth": "",
+    "assignMonthly": "के लिए मासिक आय प्रदान करें",
+    "totalbudget": "कुल बजट: "
+  },
+
+  "addExpenses": {
+    "addSpends": "खर्च जोड़ें",
+    "enterAmount": "राशि दर्ज करें",
+    "addDetailsOfSpends": "खर्च विवरण जोड़ें",
+    "selectCategory": "श्रेणी",
+    "addCategoryName": "श्रेणी का नाम जोड़ें",
+    "saveAndAdd": "सहेजें और जोड़ें",
+    "or": "या",
+    "doYouWantToDelete": "क्या आप इस खर्च को हटाना चाहते हैं?",
+    "noThanks": "जी नहीं, धन्यवाद",
+    "yes": "हाँ",
+    "oneTimeExpense": "एक बार का खर्च",
+    "regularExpense": "नियमित खर्च",
+    "setBudget": "बजट निर्धारित करें",
+    "spendingDetails": "खर्च का ब्योरा"
+  },
+
+  "uncategorizedSpends": {
+    "unCatTitle": "अवर्गीकृत खर्च",
+    "selectCategory": "श्रेणी चुनें"
+  },
+
+  "expenesTrends": {
+    "spendsPattern": "खर्च का पैटर्न",
+    "oneMonth": "1 माह  ",
+    "threeMonths": "3 माह",
+    "sixMonths": "6 माह ",
+    "twelveMonths": "12 माह",
+    "totalSpends": "कुल खर्च",
+    "week": "सप्ताह ",
+    "month": "माह"
+  },
+
+  "mySpends": {
+    "mySpendsTitle": "मेरा खर्च",
+    "allSpends": "सब",
+    "optionalSpends": "ऑप्शनल खर्च",
+    "semioptional": "सेमी-ऑप्शनल खर्च",
+    "requiredSpends": "आवश्यक खर्च ",
+    "emi": "ईएमआई",
+    "calender": "कैलेंडर",
+    "firstDaySelected": "पहले दिन का चयन",
+    "to": "से",
+    "lastDaySelected": "अंतिम दिन का चयन"
+  },
+
+  "report": {
+    "reportTitle": "रिपोर्ट",
+    "yourIncomeDistribution": "आपका आय वितरण",
+    "spends": "खर्च",
+    "emi": "ईएमआई",
+    "netCashFlow": "शुद्ध नकद प्रवाह",
+    "tax": "कर",
+    "totalTaxToBePaid": "भुगतान किया जाने वाला कुल कर",
+    "asPerSalary": "प्रति वेतन के रूप में",
+
+    "yourSaving": "आपकी बचत",
+    "yourNetCashFlow": "आपका शुद्ध नकद प्रवाह",
+    "rateIs": "दर है",
+    "paisaGenieRecommends": "पैसाजिनी की सलाह है",
+
+    "spendsAnalysis": "खर्च विश्लेषण",
+    "optionalSpends": "ऑप्शनल खर्च",
+    "semiOptionalSpends": "सेमी- ऑप्शनल खर्च",
+    "requiredSpends": "आवश्यक खर्च",
+    "taxes": "कर (टैक्स)",
+    "yourTotalIncome": "आपकी कुल आय",
+    "totalIncome": "कुल आय",
+    "amount": "राशि",
+    "ofIncome": "आय का",
+    "spendsExcluding": "खर्च करों को छोड़कर (कुल आय से)",
+    "spendsThatCanBeReduced": "खर्च जिसे कम किया जा सकता है (कुल आय से)",
+    "yourNetSaving": "आपकी शुद्ध बचत",
+    "manageSpendsToImprove": "अपनी भविष्य की बचत को बेहतर बनाने के लिए खर्च प्रबंधित करें",
+    "minimiseSpendsby": "खर्च में कमी",
+    "saveExtraBy": "अतिरिक्त बचत",
+    "totalSaving": "कुल बचत",
+
+    "goalTimeline": "लक्ष्य समयरेखा",
+    "asCorpusAmount": "कॉर्पस राशि के रूप में",
+    "totalTaxtoBePaid": "भुगतान किया जाने वाला कुल कर",
+    "taxIsDisplayedOnly": "कर केवल प्रदत्त वेतन और लागू टैक्स ब्रैकेट के आधार पर प्रदर्शित किया जाता है। अदा किए जाने वाले वास्तविक कर में कर बचत के साधन, होम लोन आदि में निवेश पर विचार करने वाले कारकों में अंतर हो सकता है|",
+    "spendsanalysis": "खर्च विश्लेषण",
+    "spendsCanBe": "आवश्यक, अर्ध वैकल्पिक और वैकल्पिक खर्चों के रूप में खर्च का विश्लेषण किया जा सकता है। इससे उन खर्चों को समझने में मदद मिलती है जिन्हें जरूरत पड़ने पर नियंत्रित किया जा सकता है।",
+    "impactOfExpense": "भविष्य में बचत पर व्यय नियंत्रण का प्रभाव",
+    "thisExplainthe": "यह उन अनुपातों की व्याख्या करता है जिनके द्वारा यदि वैकल्पिक खर्चों को नियंत्रित किया जाता है तो आपकी बचत बढ़ सकती है। नियंत्रणीय व्यय में कोई कमी बचत दर को बढ़ाने में मदद करेगी।",
+    "savingsProfile": "आपकी बचत",
+    "thisRatioShows": "यह अनुपात दर्शाता है कि आपके निपटान में वास्तव में कमाई का कितना प्रतिशत है। इसकी गणना बचत दर से EMI घटाने के बाद की जाती है। यह एक बार के खर्चों पर विचार नहीं करता है जो प्रकृति में नियमित नहीं हैं।",
+    "incomeExpenseDistribution": "आपका आय वितरण",
+    "incomeExpenseReportIs": "आय व्यय रिपोर्ट को महीने के खर्च की संख्या के लिए दिखाया गया है या इनपुट किया जा रहा है। रिपोर्ट 12 महीनों की अवधि के लिए डेटा को अधिकतम मानती है।"
+  },
+
+  "surveyQuiz": {
+    "surveyQuizTitle": "क्विज़ / सर्वे",
+    "quizTitle": "क्विज़",
+    "surveyTitle": "सर्वे",
+    "takeSurvey": "सर्वे में भाग लें",
+    "takeQuiz": "क्विज़ में भाग लें",
+    "close": "समाप्त",
+    "playAgain": "फिर खेलिए",
+    "checkAns": "उत्तर जॉंचिए",
+    "congrats": "बधाई हो!",
+    "tryAgain": "कृपया फिर प्रयास करें!",
+    "quizCompleted": "क्विज़ को सफलतापूर्वक पूरा किया गया",
+    "score": "स्कोर",
+    "thankYou": "धन्यवाद!",
+    "surveyComplete": "हम सर्वे में प्रदान की गई आपकी राय की सराहना करते हैं"
+  }
+}

@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{'uncategorizedSpends.unCatTitle' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card class="common_expense_card">
+    <button class="month_btn" ion-button clear (click)="MonthListExpense()">
+      <p class="month_title">{{expensesDate ? expensesDate : 'Select date'}}</p>
+      <ion-icon class="month_arrow" name="md-arrow-dropdown"></ion-icon>
+    </button>
+    <!-- <ion-select [(ngModel)]="expensesDate" interface="popover" class="custom_select_drop"
+      [placeholder]="getDate | date:'MMM yyyy'">
+      <ion-option [value]="dates.MonthYearDropDown" *ngFor="let dates of dateList"
+        (ionSelect)="getUnCategoriesExpense(dates)">{{dates.MonthYearDropDown
+        | date:'MMM yyyy'}}</ion-option>
+    </ion-select> -->
+    <ion-card-header>
+      <div class="card_inner_cont" [hidden]="!isData">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-12>
+              <div id="unCategoriesExpense_trend" style="height: 160px; margin: 0 auto"></div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-card-header>
+    <ion-card-content class="no_padding">
+      <div class="card_inner_cont recent_spends" [hidden]="!isData">
+        <ion-list>
+          <ion-item
+            (click)="addExpense(list.ExpenseTitle,list.SMSDate,list.DEBITVALUE,list.CategoryId,'Uncategories',list.ExpenseId)"
+            *ngFor="let list of unCategoriesExpenseList">
+            <ion-thumbnail item-start>
+              <img src="{{imgURL + list.CatImagePath}}">
+            </ion-thumbnail>
+            <h5>{{list.ExpenseTitle}}</h5>
+            <p>{{list.SMSDate | date:'MMM dd yyyy'}}</p>
+            <div item-end class="recent_price">
+              <span class="rs_icon icon-Icons_Ruppee"></span>{{list.DEBITVALUE | number:0}}</div>
+            <ion-icon item-end name="create" class="arrow_right"></ion-icon>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-card-content>
+    <div class="articles_num" [hidden]="isData">
+      <div class="articles_num_cont">
+        <span>{{'common.noDataAvalilable' | translate}}</span>
+      </div>
+    </div>
+  </ion-card>
+</ion-content>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span>
+    <img src="assets/imgs/pageLoader.gif" />
+  </span>
+</div>
+
+<div class="overlay_dropdown" *ngIf="selectCategory">
+  <div class="overlay_dropdown_content calculation_with_range">
+    <ion-card class="common_expense_card">
+      <ion-card-header>
+        <h4>{{'uncategorizedSpends.selectCategory' | translate}}
+          <i float-right (click)="hidePopupSelectCategory()">
+            <ion-icon name="ios-close-outline"></ion-icon>
+          </i>
+        </h4>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="card_inner_cont recent_spends">
+          <ion-list>
+            <ion-item (click)="addUnCategoriesTransaction(category.CategoryId)" *ngFor="let category of categoryList">
+              <ion-thumbnail item-start>
+                <img src="{{imgURL + category.ImagePath}}">
+              </ion-thumbnail>
+              <h5>{{category.CategoryName}}</h5>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</div>

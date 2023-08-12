@@ -1,0 +1,41 @@
+<ion-header id="header">
+  <ion-navbar color="sbiHeader">
+    <button [class.active]="isBtnActive" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Financial Infographics</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="search()">
+        <ion-icon name="ios-search-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only class="notification-button" (click)="goNotificationList()">
+        <ion-icon name="ios-notifications">
+          <ion-badge class="notifications-badge" color="sbi_primary_color"
+            *ngIf="restapiProvider.notificationCount > 0">
+            {{restapiProvider.notificationCount}}
+          </ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row class="card_slider_thumbnail">
+      <ion-col col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 (click)="goDetails(info)" *ngFor="let info of infographicList">
+        <ion-card class="card_slider_item_inner">
+          <img src="{{imgURL + info.BigImage}}" />
+          <ion-card-content class="card_slider_item_inner_cont">
+            <h5>{{info.Title}}</h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<div class="common_loader" *ngIf="pageLoader">
+  <span>
+    <img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

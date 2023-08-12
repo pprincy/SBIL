@@ -1,0 +1,247 @@
+<ion-header>
+  <ion-navbar text-center color="sbiHeader">
+    <button [class.active]="isBtnActive" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'collections.articles' | translate}}</ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button icon-only (click)="search()">
+        <ion-icon class="icon-Icons_Search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only class="notification-button" (click)="goNotificationList()">
+        <ion-icon class="icon-Icons_Notification">
+          <ion-badge class="notifications-badge" color="sbi_primary_color" *ngIf="restapiProvider.notificationCount > 0">{{restapiProvider.notificationCount}}</ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content
+  no-padding
+  *ngIf="article"
+  scroll-events="true"
+  (ionScrollStart)="setUpshotScrollEvent()"
+>
+  <!-- <button ion-button (click)="goToQuiz()">Go to quiz</button> -->
+  <div id="capture-article" class="article_description_cont">
+    <h2>
+      {{article.CatID != 9 ? article.Title : article.ShortDesc}}
+      <ion-icon
+        name="ios-bookmark"
+        *ngIf="articleSavedFlag == 1"
+        (click)="saveArticle()"
+      ></ion-icon>
+      <ion-icon
+        name="ios-bookmark-outline"
+        *ngIf="articleSavedFlag == 0"
+        (click)="saveArticle()"
+      ></ion-icon>
+
+      <!-- <img src="assets/icon/bookmark.png" width="20" *ngIf="articleSavedFlag == 1" (click)="saveArticle()" />
+      <img src="assets/icon/bookmark-outline.png" width="20" *ngIf="articleSavedFlag == 0" (click)="saveArticle()" /> -->
+    </h2>
+    <h5>
+      {{'collections.postedOn' | translate}} {{article.PublishDate | date:
+      'medium'}}
+    </h5>
+    <figure>
+      <img [src]="imageURL | safe : 'url'" />
+    </figure>
+
+    <div [innerHTML]="article.LongDesc | safe:'html'"></div>
+
+    <!-- checking article.CatID == 3 for hiding in news section -->
+    <div class="article_likes" *ngIf="article.CatID == 3">
+      <ion-row>
+        <ion-col (click)="likeDislikeArticle(1)" col-2>
+          <img src="assets/imgs/thumup.svg" width="24" /><span
+            >{{totalLikes}}</span
+          >
+        </ion-col>
+        <ion-col (click)="likeDislikeArticle(0)" col-2>
+          <img src="assets/imgs/thumdown.svg" width="24" /><span
+            >{{totalDislikes}}</span
+          >
+        </ion-col>
+        <ion-col *ngIf="avgRating > 0" col-2 offset-6>
+          <span>{{avgRating | number:'1.1-1'}}</span
+          ><img src="assets/imgs/star-grey-border.svg" width="24" />
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <!-- checking article.CatID == 3 for hiding in news section -->
+  <div
+    class="post_comment"
+    *ngIf="(commentFlag == null || rateFlag == null) && article.CatID == 3"
+  >
+    <section *ngIf="commentFlag == null">
+      <ion-row align-items-center justify-content-between>
+        <ion-col col-6>
+          <h4>{{'collections.postComments' | translate}}</h4>
+          <!-- <h6>Lorem ipsum dolar sit amet</h6> -->
+        </ion-col>
+        <ion-col col-2>
+          <img src="assets/imgs/message.png" width="50" />
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-item>
+          <ion-textarea
+            [(ngModel)]="userComment"
+            maxlength="1000"
+            placeholder="Add Comments..."
+          ></ion-textarea>
+        </ion-item>
+      </ion-row>
+      <ion-row class="comment_char">
+        <ion-col>{{'collections.charactersOnly' | translate}}</ion-col>
+      </ion-row>
+    </section>
+    <ion-row class="rate_article" *ngIf="rateFlag == null">
+      <span>{{'collections.rateArticle' | translate}}</span>
+      <img
+        src="assets/imgs/{{userRating >= 1 ? 'star-yellow.svg':'star-grey-border.svg'}}"
+        (click)="setRating(1)"
+      />
+      <img
+        src="assets/imgs/{{userRating >= 2 ? 'star-yellow.svg':'star-grey-border.svg'}}"
+        (click)="setRating(2)"
+      />
+      <img
+        src="assets/imgs/{{userRating >= 3 ? 'star-yellow.svg':'star-grey-border.svg'}}"
+        (click)="setRating(3)"
+      />
+      <img
+        src="assets/imgs/{{userRating >= 4 ? 'star-yellow.svg':'star-grey-border.svg'}}"
+        (click)="setRating(4)"
+      />
+      <img
+        src="assets/imgs/{{userRating >= 5 ? 'star-yellow.svg':'star-grey-border.svg'}}"
+        (click)="setRating(5)"
+      />
+    </ion-row>
+    <button ion-button class="login_btn" (click)="commentRateArticle()">
+      {{'common.submit' | translate}}
+    </button>
+  </div>
+
+  <ion-list
+    class="users_comment"
+    *ngIf="commentsList.length > 0 && article.CatID == 3"
+    no-lines
+  >
+    <div class="comments_total">
+      {{'collections.comments' | translate}} ({{commentsList.length}})
+    </div>
+    <ion-item *ngFor="let item of commentListCopy">
+      <ion-avatar item-start>
+        <!-- <img [src]="item.CustomerProfPic"> -->
+        <!-- <ion-text-avatar>{{item.CustomerName || 'Anonymous' | profileName}}</ion-text-avatar> -->
+        <text-avatar
+          [text]="getName(item.CustomerName)"
+          [color]="'#053072'"
+        ></text-avatar>
+      </ion-avatar>
+      <ion-row align-items-center justify-content-between>
+        <ion-col col-6>
+          <h2>{{item.CustomerName || 'Anonymous'}}</h2>
+          <img
+            src="assets/imgs/{{item.Rating >= 1 ? 'star-yellow.svg':'star-grey.svg'}}"
+            (click)="setRating(1)"
+          />
+          <img
+            src="assets/imgs/{{item.Rating >= 2 ? 'star-yellow.svg':'star-grey.svg'}}"
+            (click)="setRating(2)"
+          />
+          <img
+            src="assets/imgs/{{item.Rating >= 3 ? 'star-yellow.svg':'star-grey.svg'}}"
+            (click)="setRating(3)"
+          />
+          <img
+            src="assets/imgs/{{item.Rating >= 4 ? 'star-yellow.svg':'star-grey.svg'}}"
+            (click)="setRating(4)"
+          />
+          <img
+            src="assets/imgs/{{item.Rating >= 5 ? 'star-yellow.svg':'star-grey.svg'}}"
+            (click)="setRating(5)"
+          />
+        </ion-col>
+        <ion-col class="comment_time" col-3>
+          {{item.RatingDateTime | dateago}}
+        </ion-col>
+      </ion-row>
+      <p>{{item.Comment}}</p>
+    </ion-item>
+  </ion-list>
+
+  <div
+    class="view_all"
+    (click)="viewAllComments()"
+    *ngIf="commentsList.length > 5 && (commentsList.length != commentListCopy.length) && article.CatID == 3"
+  >
+    View All
+  </div>
+
+  <div class="recommend_for_your" *ngIf="relatedArticles.length > 0">
+    <div class="recommend_for_your_header disc_com_header">
+      <h2>{{'collections.relatedArticles' | translate}}</h2>
+    </div>
+    <div class="recommend_for_your_cont">
+      <div class="recommend_for_your_cont">
+        <ion-scroll
+          class="recommend_for_your_cont_slider"
+          id="related_article"
+          scrollX="true"
+          scroll-avatar
+        >
+          <div
+            class="recommend_for_your_cont_slider_item"
+            *ngFor="let item of relatedArticles"
+            (click)="relatedArt(item)"
+          >
+            <div class="recommend_for_your_cont_slider_item_inner">
+              <figure>
+                <img src="{{imgURL + item.BigImage}}" />
+              </figure>
+              <i style="font-size: 0px">{{item.ArticleID}}</i>
+              <h4>{{utilitiesProvider.showEllipsisTitle(item.Title)}}</h4>
+              <p>{{item.Author}}</p>
+            </div>
+          </div>
+        </ion-scroll>
+      </div>
+    </div>
+  </div>
+
+  <ion-fab right bottom>
+    <button ion-fab class="share_btn" (click)="takeScreenshot()">
+      <ion-icon name="md-share"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
+<div class="common_loader" *ngIf="pageLoader">
+  <span> <img src="assets/imgs/pageLoader.gif" /> </span>
+</div>
+
+<div class="overlay_dropdown" *ngIf="isCommentPopup">
+  <div class="overlay_dropdown_content">
+    <ion-row justify-content-center>
+      <ion-col col-2>
+        <img src="assets/imgs/tick.svg" />
+      </ion-col>
+    </ion-row>
+    <h3>{{'collections.awesome' | translate}}</h3>
+    <p>{{'collections.commentSuccess' | translate}}</p>
+    <button ion-button class="login_btn" (click)="hideCommentPopup()">
+      {{'buttons.ok' | translate}}
+    </button>
+  </div>
+</div>
+
+<!-- div for px to mm conversion -->
+<!-- <div id="my_mm" style="height:100mm;display:none"></div> -->

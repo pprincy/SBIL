@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-navbar color="sbiHeader">
+      <button [class.active]="isBtnActive" ion-button [menuToggle]="activeMenu">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Collection</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only>
+          <ion-icon name="ios-search-outline"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons end>
+        
+        <button ion-button icon-only class="notification-button" (click)="goNotificationList()">
+          <ion-icon name="ios-notifications">
+  
+            <ion-badge class="notifications-badge" color="sbi_primary_color" *ngIf="restapiProvider.notificationCount > 0">{{restapiProvider.notificationCount}}</ion-badge>
+          </ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+ 
+    </ion-header>
+
+
+<ion-content no-padding>
+
+<div class="article_description_cont">
+<h2>Wedding savings &amp;
+    budgeting <ion-icon name="ios-bookmark"></ion-icon></h2>
+    <h5>Posted on Mar 10, 2017 at 12:12 pm <span>2 min read</span></h5>
+    <figure>
+      <img src="assets/imgs/article_desc_img.jpg"/>
+    </figure>
+
+<div class="search_keyword">
+    <button ion-button>Wedding</button>
+    <button ion-button>Venue</button>
+    <button ion-button>marriage</button>
+    <button ion-button>Planning</button>
+    <button ion-button>Couple</button>
+    <button ion-button>Destination wedding</button>
+
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+   <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+</div>
+<!-- <ion-grid class="comment_option" no-padding>
+    <ion-row>
+      <ion-col><ion-icon name="md-eye"></ion-icon>View comments </ion-col>
+      <ion-col><ion-icon name="md-add-circle"></ion-icon> Add comments </ion-col>
+    </ion-row>
+  </ion-grid> -->
+  <div class="recommend_for_your">
+    <div class="recommend_for_your_header disc_com_header">
+      <h2>Related Articles</h2>
+     </div>
+    <div class="recommend_for_your_cont">
+      <div class="recommend_for_your_cont_slider">
+        <div class="recommend_for_your_cont_slider_item">
+          <div class="recommend_for_your_cont_slider_item_inner">
+            <figure>
+              <img src="assets/imgs/tax_recommend_01.png">
+            </figure>
+            <h4>5 tips on saving better
+              for your children</h4>
+            <p>by Jaison Justus</p>
+          </div>
+        </div>
+
+        <div class="recommend_for_your_cont_slider_item">
+          <div class="recommend_for_your_cont_slider_item_inner">
+            <figure>
+              <img src="assets/imgs/tax_recommend_02.png">
+            </figure>
+            <h4>Insure your child’s future
+              with these steps</h4>
+            <p>by Jaison Justus</p>
+          </div>
+        </div>
+
+        <div class="recommend_for_your_cont_slider_item">
+          <div class="recommend_for_your_cont_slider_item_inner">
+            <figure>
+              <img src="assets/imgs/tax_refund.png">
+            </figure>
+            <h4>Warning signs of a ponzi 
+              scheme</h4>
+            <p>by Jaison Justus</p>
+          </div>
+        </div>
+
+
+       
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>
+

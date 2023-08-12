@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button [class.active]="isBtnActive" (click)="toggleClass()" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'goalListing.myGoals' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="goal_listing">
+  <h1 class="list_title">{{'goalListing.collection' | translate}}</h1>
+  <h3>{{'goalListing.allInOnePlace' | translate}}</h3>
+  <ion-list class="list">
+    <div class="list_group" *ngFor="let g of goalList" (click)="goalClick(g)">
+      <div class="list_item">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <img src="{{g.img}}" width="{{g.goalName == 'Home' ? 80:85}}" />
+              <h6>{{g.goalName}}</h6>
+              <p [innerHTML]="g.goalDesc"></p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </ion-list>
+</ion-content>
+
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-title>
+      <button (click)="goSaved()" ion-button clear>
+        {{'goalListing.muSavedGoal' | translate}}
+      </button>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer> -->
+
+<ion-footer class="save_goal_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_rt col">
+      <button ion-button outline class="login_btn" (click)="goSaved()" clear>{{'goalListing.muSavedGoal' | translate}}</button>
+    </div>
+  </div>
+</ion-footer>
+<!-- <div class="load_more_btn">
+  <button
+    ion-button
+    class="load_btn"
+  >
+    {{'common.loadMore' | translate}}
+  </button>
+</div> -->

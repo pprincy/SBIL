@@ -1,0 +1,158 @@
+page-forgot-mpin-otp {
+    .header{
+        background-color: $sbi_bg_color; height:0;
+        .toolbar-background-ios{
+            border-width :0px !important;
+        }
+        .toolbar{
+            box-shadow: none !important;
+        }
+    }
+    .top_area{
+        height: 200px;
+        .mob_email {
+            bottom: 21px;
+        }
+    }
+    .otp_area{
+        padding: 0px 25px 0 25px;
+        .heading_panel{
+            padding: 12px 0 0px 0;
+        }
+    }
+    
+    .divOtpValue{
+        margin: 5px 0 10px 0;
+        > .grid{padding:0; margin-left: -5px; margin-right: -5px; margin-top: 20px;}
+        .spam_otp_msg{ color:$sbi_nine_color;font-family:'Lato Light'; font-size: 3.8vw;padding-top: 10px;
+        }
+       
+    }
+.btnOtp{
+    height: 15.83vw;
+    width: 100%;
+    box-shadow:10px 10px 14px 0px rgba(94, 72, 186, 0.09);
+    color:lighten($sbi_third_color,10%);
+    background-color: $sbi_fifth_color;
+    font-family:'Lato Thin';
+    font-size: 8.8vw;
+    border-radius: 5px;
+    ion-icon{
+        font-size: 3.3vw;
+    }
+    &.otpBtn1{
+        background-color:$sbi_twentyseven_color;
+        color:$sbi_fifth_color;
+        position: relative;
+        transform: scale(1.05);
+    }
+    &.wrong_otp{
+        border: 1px solid lighten($sbi_error_color,30%);
+        border-bottom: 3px solid $sbi_error_color;
+        background-color:$sbi_fifth_color;
+        color:$sbi_secondary_color;
+    
+    }
+   
+}
+.inputBtnGirdStart{
+    position: fixed;bottom: 0px; left:0; right:0; z-index:9999;
+    ion-grid{
+        padding: 0px !important;
+        .row{
+            .col{
+                border: 0.5px solid lighten($sbi_third_color,20%);
+                background-color: $sbi_fifth_color;
+                .belowBtn{
+                    color: $sbi_primary_color;
+                    width: 100%;
+                    margin: 0;
+                    font-size: 5.5vw;
+                }
+                &:first-child{
+                    border-left: 1px solid lighten($sbi_third_color,20%);
+                }
+                &:last-child{
+                    border-right: 1px solid lighten($sbi_third_color,20%);
+                }
+            }
+            &:first-child{
+                .col{
+                    border-top: 2px solid lighten($sbi_third_color,20%);
+                }  
+            }
+
+            &:last-child{
+                .col{
+                    border-bottom: 2px solid lighten($sbi_third_color,25%);
+                }  
+            }
+        }
+    }
+    
+
+}
+
+.mpin_area {
+    padding: 33px 55px 15px 63px;
+
+    .heading_panel {
+        padding: 12px 0 0px 0;
+
+        h1 {
+            font-family: 'Lato';
+            color: black;
+            font-size: 8.61vw;
+            margin: 65px 0 20px 0;
+        }
+
+        h4 {
+            font-family: 'Lato';
+            color: $sbi_twentyseven_color;
+            font-size: 4.61vw;
+            font-weight: 400;
+            margin: -82px 0 20px 0;
+        }
+    }
+
+    .user_pic {
+        border: 1px solid #fff;
+        overflow: hidden;
+        margin: -4.278vw auto 0px;
+        text-align: center;
+
+        img {
+            width: 60%;
+            text-align: center;
+            margin: 45px 0 0px;
+        }
+    }
+}
+
+.login_btn{
+    border-radius: 0;
+            height: 45px;
+            font-family: "Lato";
+            font-size: 4.615vw !important;
+            text-transform: capitalize;
+            margin: 300px 0px 5px 0;
+            background: $sbi_twentysix_color;
+            letter-spacing: 0.38px;
+            max-width: 100%;
+}
+
+
+.heading_panel{
+    h1{
+        font-family: 'Lato';
+        font-size: 9.61vw;
+        color: $sbi_twentysix_color;
+    }
+
+    h4{
+        font-family: 'Lato';
+        font-size: 4.4vw;
+        color: $sbi_twentyseven_color;
+    }
+}
+}

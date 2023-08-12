@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-title>{{categoryName}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card class="common_expense_card">
+    <button class="month_btn" ion-button clear (click)="MonthListExpenseReview()">
+      <p class="month_title">{{expensesDate ? expensesDate : 'Select date'}}</p>
+      <ion-icon class="month_arrow" name="md-arrow-dropdown"></ion-icon>
+    </button>
+    <ion-card-header [hidden]="isData">
+      <div class="card_inner_cont">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-12>
+              <div id="categoriesExpense_trend" style="height: 160px; margin: 0 auto"></div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-card-header>
+    <ion-card-content class="no_padding">
+      <div class="card_inner_cont recent_spends">
+        <ion-list>
+          <ion-item *ngFor="let list of categoryList"
+            (click)="addExpense(list.CategoryName,list.SMSDate,list.DEBITVALUE,list.CategoryId,list.SubCategoryName,list.ExpenseId,list.IsRepeat)">
+            <ion-thumbnail [style.background]="list.CategoryColorCode" item-start>
+              <img src="{{imgURLNew + list.CatImagePath}}">
+            </ion-thumbnail>
+            <h5>{{list.SubCategoryName}}</h5>
+            <p>{{list.SMSDate | date:'MMM dd yyyy'}}</p>
+            <div item-end class="recent_price">
+              <span class="rs_icon icon-Icons_Ruppee"></span>{{list.DEBITVALUE | number:0}}</div>
+            <ion-icon item-end name="create" class="arrow_right"></ion-icon>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-card-content>
+    <div class="articles_num" [hidden]="!isData">
+      <div class="articles_num_cont">
+        <span>{{'editIncome.noSpendsFor' | translate}}{{categoryName}}{{'editIncome.inThisMonth' | translate}}</span>
+      </div>
+    </div>
+  </ion-card>
+</ion-content>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span>
+    <img src="assets/imgs/pageLoader.gif" />
+  </span>
+</div>

@@ -1,0 +1,65 @@
+page-landing {
+    .header{
+        background-color: $sbi_bg_color; height:0;
+        .toolbar-background-ios{
+            border-width :0px !important;
+        }
+        .toolbar{
+            box-shadow: none !important;
+        }
+    }
+    .flight_icon {
+        padding: 103px 0 0 0;
+    }
+    .login_area{
+        padding: 0 25px;
+   
+    .input_field{
+        margin: 30px 0; position: relative;
+        .valid_msg{
+            color:$sbi_third_color;
+            font-family:'Lato Semibold';
+            font-size: 11px;
+            position: absolute; right:10px; top:1px;bottom: 1px;padding: 15px 0 0 0; background-color: #fff;
+        }
+        .input_field_item{
+            padding-left: 15px;
+            padding-right: 15px;
+            border-radius: 7px;
+            box-shadow: 7px 1px 17px 13px $sbi_light_shadow;
+            border:1px solid transparent;
+            &.input-has-focus,&.input-has-focus:last-child{
+                border-color:transparent;
+                box-shadow: 7px 1px 17px 13px $sbi_light_shadow;
+                .item-inner{
+                    border-bottom-color:transparent;
+                    box-shadow: none;
+                }
+                
+            }
+            &.input-has-error{
+              border:1px solid $sbi_error_color;
+              border-right:3px solid $sbi_error_color;  
+            }
+            
+
+            input{
+                color: $sbi_primary_color;
+                font-family:'Lato Light';
+                font-size: 13px;
+                &::-webkit-input-placeholder{
+                    font-family:'Lato';  
+                    color:lighten($sbi_third_color,45%);
+                }
+               
+            }
+            
+           
+        }
+    }
+    
+}
+.footer_panel {
+    .footer_panel_rt {padding-top: 21px;}
+}
+}

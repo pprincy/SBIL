@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button [class.active]="isBtnActive" (click)="toggleClass()" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'sipCalculator.sipCalculator' | translate}}</ion-title>
+  </ion-navbar>
+
+  <div class="calculator_common_sec_steps">
+    <div class="calculator_steps" id="stepsCount">
+      <div class="calculator_steps_com active">
+        <div class="calculator_dashed step1">
+          <span class="calculator_steps_com_num">
+            <span>1</span>
+          </span>
+        </div>
+      </div>
+      <div class="calculator_steps_com">
+        <div class="calculator_dashed step2">
+          <span class="calculator_steps_com_num">
+            <span>2</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-header>
+<ion-content class="calculator_common_sec">
+  <ion-slides class="calculator_sliders" pager="false">
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h1>
+          {{'sipCalculator.qOne' | translate}}
+        </h1>
+      </div>
+
+      <div class="tell_us_cont_common sip_slider_range">
+        <div class="calculator_common_sec_inner">
+          <div class="calculation_with_range">
+            <div class="calculation_with_range_inp">
+              <ion-input type="tel" (keypress)="isAmount($event)" (keyup)="checkSIPAmt()" [(ngModel)]="SIPAmountComma"
+                (ionChange)="formatAmount(SIPAmountComma)" class="overlay_dropdown_rng_val"></ion-input>
+            </div>
+            <ion-item>
+              <ion-range min="{{minSIPamount}}" max="{{maxSIPamount}}" step="{{steps}}" [(ngModel)]="SIPAmount"
+                pin="true" (ngModelChange)="doSomething($event)">
+              </ion-range>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+    <!-- Step 2 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h2>{{'sipCalculator.qTwo' | translate}}</h2>
+        <h5>{{'common.for' | translate}} {{tenureInMonths}}
+          {{'common.months' | translate}} </h5>
+      </div>
+      <div class="tell_us_cont_common">
+        <div class="tell_us_cont com_head active">
+          <div class="tell_us_slider homeYear common_years_slider dOneSlider">
+            <div *ngFor="let i of selectYearsBar">
+              <span class="tell_us_slider_age">{{i}}</span>
+              <!-- <span class="tell_us_slider_year">{{'common.years' | translate}}</span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>
+
+<ion-footer class="sip_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col" *ngIf="!backBtnhide">
+      <button ion-button outline class="back_btn" (click)="back()">{{'common.back' | translate}}</button>
+    </div>
+    <div class="footer_panel_rt col" [attr.text-center]="backBtnhide ? '' : null">
+      <button ion-button class="login_btn" (click)="next()">{{'common.next' | translate}}</button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span>
+    <img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

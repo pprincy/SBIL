@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button [class.active]="isBtnActive" (click)="toggleClass()" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'aboutUs.aboutUs' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="calculator_common_sec">
+  <ion-row>
+    <ion-col>
+      <div class="user_pic">
+        <img src="assets/imgs/Paisa-Genie logo.png" />
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-grid>
+    <ion-row class="userinfo">
+      <ion-col>
+        <h6>v{{versionCode}}</h6>
+
+      </ion-col>
+      <!-- <p>SBI Life is one of the leading private Life Insurance companies in India. We are a joint venture between India’s largest bank State Bank of India and the leading global insurance company BNP Paribas Cardif.</p>
+              <p>State Bank Group has an unrivalled strength of over 23,000 branches across the country, making it the largest Banking group in India. With 198 foreign offices in 37 countries, SBI is truly an Indian multinational.</p>
+              <p>It also features in the Fortune Global 500 list of the world’s biggest corporations.</p>
+              <p>BNP Paribas Cardif is the Life and Property & Casualty insurance arm of BNP Paribas, one of the strongest banks in the world. With presence in more than 70 countries, the BNP Paribas Group ranks highly in Retail Banking, Investment Solutions and Corporate & Investment Banking.</p>
+              <p>BNP Paribas Cardif is one of the world leaders in creditor insurance, and its life and non-life insurance units have received an A rating from Standard & Poor’s.</p> -->
+      <p>SBI Life Insurance (‘SBI Life’ / ‘The Company’), one of the most trusted life insurance companies in India, was
+        incorporated in October 2000 and is registered with the Insurance Regulatory and Development Authority of India
+        (IRDAI) in March 2001.
+      <p>
+
+      <p>Serving millions of families across India, SBI Life’s diverse range of products caters to individuals as well
+        as group customers through Protection, Pension, Savings and Health solutions.
+      <p>
+      <p>Driven by ‘Customer-First’ approach, SBI Life places great emphasis on maintaining world class operating
+        efficiency and providing hassle-free claim settlement experience to its customers by following high ethical
+        standards of service. Additionally, SBI Life is committed to enhance digital experiences for its customers,
+        distributors and employees alike.
+      <p>
+
+      <p>SBI Life strives to make insurance accessible to all, with its extensive presence across the country through
+        its 990 offices, 19,599 employees, a large and productive individual agent network of about 178,357 agents, 58
+        corporate agents and 14 bancassurance partners with more than 40,000 partner branches, 127 brokers and other
+        insurance marketing firms. In addition to doing what’s right for the customers, the company is also committed to
+        provide a healthy and flexible work environment for its employees to excel personally and professionally. SBI
+        Life strongly encourages a culture of giving back to the society and has made substantial contribution in the
+        areas of child education, healthcare, disaster relief and environmental upgrade. In 2021-22, the Company touched
+        over 2 lakh direct beneficiaries through various CSR interventions.
+      <p>
+
+      <p>Listed on the Bombay Stock Exchange ('BSE') and the National Stock Exchange ('NSE'), the company has an
+        authorized capital of ` 20.0 billion and a paid up capital of ` 10.0 billion. The AuM is ` 2,826.3 billion.
+      <p>
+      <p>For more information, please visit our website-www.sbilife.co.in and connect with us on Facebook, Twitter,
+        YouTube, Instagram, and Linkedin.
+      <p>
+      <p><i>((Numbers & data mentioned above are for the period ended September 30, 2022))</i></p>
+    </ion-row>
+  </ion-grid> 
+
+</ion-content>
+
+<ion-footer>
+  <div class="list_item">
+    <ion-list>
+      <ion-item (click)="termCondModal()">
+
+        <ion-label>{{'aboutUs.TermsCondition' | translate}} <ion-icon name="ios-arrow-forward-outline"
+            float-right></ion-icon></ion-label>
+      </ion-item>
+      <ion-item (click)="disclaimerModal()">
+        <ion-label>{{'aboutUs.disclaimers' | translate}}<ion-icon name="ios-arrow-forward-outline"
+            float-right></ion-icon></ion-label>
+      </ion-item>
+    </ion-list>
+
+
+  </div>
+</ion-footer>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /></span>
+</div>

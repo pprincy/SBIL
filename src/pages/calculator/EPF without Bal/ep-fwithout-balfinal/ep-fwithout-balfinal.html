@@ -1,0 +1,151 @@
+<ion-header>
+  <ion-navbar ><ion-title>EPF Calculator </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-right (click)="takeScreenshot()">
+        <ion-icon name="md-share"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only class="notification-button" (click)="goNotificationList()">
+        <ion-icon class="icon-Icons_Notification">
+          <ion-badge class="notifications-badge" color="sbi_primary_color" *ngIf="restapiProvider.notificationCount > 0">{{restapiProvider.notificationCount}}</ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <div class="networth_details">
+    <h4>Amount accumulated in the year 2020</h4>
+    <div class="networth_amt">
+      <div class="networth_amt_inner">
+        <span class="rs_icon icon-Icons_Ruppee"></span>456456
+      </div>
+    </div>
+
+  </div>
+</ion-header>
+<div class="top_area">
+  <div class="top_area_container">
+    <div class="cloud cloud1">
+      <img src="assets/imgs/cloud1.png" width="68" height="33" /> </div>
+    <div class="cloud cloud2">
+      <img src="assets/imgs/cloud2.png" width="68" height="33" /> </div>
+    <div class="cloud cloud3">
+      <img src="assets/imgs/cloud3.png" width="99" height="48" /> </div>
+    <div class="cloud cloud4">
+      <img src="assets/imgs/cloud4.png" width="74" height="36" /> </div>
+
+  </div>
+</div>
+
+<ion-content  padding>
+
+  <ion-card>
+    <ion-card-header class="invested_result" text-center>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h5> Total amount Invested </h5>
+            <div class="invested_result_amt">
+              <span class="rs_icon icon-Icons_Ruppee"></span>5456456</div>
+          </ion-col>
+          <ion-col>
+            <h5>Total interest earned</h5>
+            <div class="invested_result_amt highlighted_txt">
+              <span class="rs_icon icon-Icons_Ruppee"></span>545456</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content>
+      <div id="networth_chart" style="display: block;"></div>
+
+      <ion-list class="networth_list">
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <ion-icon name="trending-up"></ion-icon> Rate of return</div>
+          <button ion-button icon-right float-right clear (click)="showOverlay('interestRate')">
+            12%
+            <span class="drp_sub_txt">p.a</span>
+            <ion-icon name="ios-arrow-down-outline"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-icon name="trending-up"></ion-icon>Own contribution</ion-label>
+          <ion-select [(ngModel)]="interestFreq" (ngModelChange)="CalculateFDValue()">
+            <ion-option [value]="tenure" *ngFor="let tenure of tenureArr;index as i" [selected]="tenure == interestFreq?'true':'false'">56546</ion-option>
+          </ion-select>
+
+        </ion-item>
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <ion-icon name="trending-up"></ion-icon>Company contribution </div>
+          <button ion-button icon-right float-right clear (click)="showOverlay('principalAmt')">
+            <span class="rs_icon icon-Icons_Ruppee"></span> 12123
+            <ion-icon name="ios-arrow-down-outline"></ion-icon>
+          </button>
+        </ion-item>
+
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <ion-icon name="trending-up"></ion-icon>Rate on increase in basic pay  </div>
+          <button ion-button icon-right float-right clear (click)="showOverlay('principalAmt')">
+            <span class="rs_icon icon-Icons_Ruppee"></span>2144156
+            <ion-icon name="ios-arrow-down-outline"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <ion-icon>
+              <span class="rs_icon icon-Icons_Ruppee"></span>
+            </ion-icon>Monthly basic pay  </div>
+          <button ion-button icon-right float-right clear (click)="showOverlay('principalAmt')">
+            <span class="rs_icon icon-Icons_Ruppee"></span> 454654
+            <ion-icon name="ios-arrow-down-outline"></ion-icon>
+          </button>
+        </ion-item>
+
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <ion-icon><span class="icon-Icons_Age_of_Retirement"></span></ion-icon> Tenure</div>
+          <button ion-button icon-right float-right clear (click)="showOverlay('tenure')">
+          456456
+            <span class="drp_sub_txt_sm_fs">years</span>
+            <ion-icon name="ios-arrow-down-outline"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <p class="desclaimer_txt" text-center>
+    <span class="icon-Icons_Info"></span>
+    <a (click)="disclaimerInfo()"> Disclaimer  Link</a>
+  </p>
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col">
+      <button ion-button class="back_btn" outline (click)="recalculate()">Recalculate</button>
+    </div>
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn" (click)="stepTwoBtn()">Next Steps</button>
+    </div>
+  </div>
+
+  <div class="overlay_dropdown" *ngIf="status">
+    <div class="overlay_dropdown_content calculation_with_range">
+      <!-- <fd-range  class="drop_com_comp"  [rangeData]="rangeDataUi"></fd-range> -->
+      <ion-item>
+        <button ion-button class="login_btn" (click)="done()">Done</button>
+      </ion-item>
+    </div>
+  </div>
+
+  <div class="overlay_dropdown annuity disclaimer" *ngIf="disclaimer">
+    <div class="overlay_dropdown_content">
+        <div class="overlay_dropdown_content_inner">
+        <ion-icon name="ios-close-circle-outline" (click)="disclaimerClose()"></ion-icon>
+        <h3 padding>Disclaimers</h3>
+        <div class="innerCont" [innerHtml]="utilitiesProvider.disclaimerText"></div>
+    </div></div>
+    </div>
+
+</ion-content>

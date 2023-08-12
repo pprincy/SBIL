@@ -1,0 +1,161 @@
+page-listing-screen-goal {
+  .scroll-content,
+  .fixed-content {
+    margin-top: 54px;
+  }
+  .header {
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+
+      .toolbar-background {
+        border: none;
+      }
+      .bar-button {
+        color: $sbi_fifth_color;
+        // padding-left: 28px;
+        .back-button-text {
+          display: none;
+        }
+      }
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+          margin-left: -22px;
+        }
+      }
+    }
+  }
+  .goal_listing {
+    h1 {
+      font-family: "Lato";
+      color: $sbi_twentysix_color;
+      font-size: 6.154vw;
+      text-transform: capitalize;
+      margin: 30px 23px 6px 23px;
+    }
+    h3 {
+      font-family: "Lato Semibold";
+      color: $sbi_twentyseven_color;
+      font-size: 4.615vw;
+      margin: 0 23px 20px 23px;
+      font-weight: 400;
+    }
+    .list_group {
+      padding-left: 0;
+
+      // max-width:138px;
+
+      //  height: 138px;
+    }
+    .list {
+      float: left;
+      width: 100%;
+      padding: 0 20px;
+    }
+    .list_item {
+      margin: 0 0 20px 0px;
+      //   border: 1px solid #fff;
+      padding: 10px;
+      //   -webkit-box-shadow: 0 0 25px 9px rgba(85, 68, 133, 0.13);
+      //   box-shadow: 0 0 25px 9px rgba(85, 68, 133, 0.13);
+      -webkit-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      //height: 138px;
+      border-radius: 4px;
+      //   &:hover {
+      //     border: 1px solid $sbi_secondary_color;
+      //   }
+      h6 {
+        font-family: "Lato";
+        color: $sbi_twentyeight_color;
+        font-size: 3.59vw;
+        text-transform: capitalize;
+        padding: 10px 0 14px 0;
+        margin: 0;
+      }
+      p {
+        font-size: 14px;
+        line-height: 4.33vw;
+        font-family: "Lato Semibold";
+        margin: 0;
+        color: $sbi_thirtyfour_color;
+        font-weight: 400;
+        width: 290px;
+      }
+      > .grid {
+        .row {
+          > .col {
+            //    &:first-child{
+            //        position: relative;
+            //        h6{
+            //            position: absolute;
+            //            top:50%;
+            //            transform: translateY(-50%);
+            //            left:5px;
+            //        }
+            //    }
+            img {
+              max-width: 34px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // .footer {
+  //   margin: 0 45px 20px 45px;
+  //   width: 80%;
+  //   &.footerOverlay {
+  //     display: none;
+  //   }
+  //   .toolbar {
+  //     .toolbar-background {
+  //       background-color: $sbi_twentysix_color;
+  //     }
+  //     .toolbar-title {
+  //       text-align: center;
+  //       font-family: "Lato";
+  //       text-transform: capitalize;
+  //       color: $sbi_fifth_color;
+  //       font-size: 3.77vw;
+  //       .button {
+  //         color: $sbi_fifth_color;
+  //         text-align: center;
+  //         text-transform: capitalize;
+  //       }
+  //     }
+  //   }
+  // }
+  ion-footer {
+    &.save_goal_footer {
+      &.footer {
+        .footer_panel {
+          box-shadow: none !important;
+          background: none !important;
+          padding: 18px 18px 28px;
+          .footer_panel_rt {
+            text-align: center;
+
+            .login_btn {
+              background: $sbi_twentysix_color;
+              color: $sbi_fifth_color;
+              letter-spacing: 0.38px;
+              border: 1px solid $sbi_twentyseven_color;
+              max-width: 300px;
+              height: 50px;
+              font-size: 16px;
+            }
+          }
+        }
+        &::before {
+          background-image: none;
+        }
+      }
+    }
+  }
+}

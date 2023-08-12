@@ -1,0 +1,357 @@
+page-ep-fwithout-bal {
+
+    .invest_option_wrapper{overflow-y: auto;}
+    .invest_option{
+        .row{margin: 0 -10px;}
+        .button{padding: 3.6vw 5vw;position: relative;height:13.33vw; border-radius: 4px; color:$sbi_secondary_color; 
+         margin: 0 0 18px 0;   background: $sbi_fifth_color;  box-shadow: none; font-size:4.44vw; text-transform: none; width:100%; font-family:'Lato Thin'; box-shadow: 10px 20px 30px 0px rgba(94,72,186,0.08),0px -4px 30px 0px rgba(94,72,186,0.08);
+     .button-inner {align-items: left;
+         -webkit-box-align: left;
+        -webkit-align-items: left;
+        -ms-flex-align: left;
+        align-items: left;
+        -webkit-box-pack: left;
+         -webkit-justify-content: left;
+        -ms-flex-pack: left;
+     justify-content: left;
+    }
+            .icon { position: absolute;width:6.11vw; height: 6.11vw; top:3.10vw; right:2.5vw;    padding: 0;  font-size:3.5vw; line-height:4.16vw; border-radius: 50%; 
+                background: lighten($sbi_third_color,25%);
+                &:before{content: '';}
+       }
+            &.active,&:hover:not(.disable-hover){color:$sbi_fifth_color;
+            background:$sbi_secondary_color; 
+            .icon{display: block;
+                background: rgba(15,9,60,1);
+                background: -moz-linear-gradient(top, rgba(15,9,60,1) 0%, rgba(0,0,0,0.09) 51%, rgba(0,0,0,0.09) 100%);
+                background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(15,9,60,1)), color-stop(51%, rgba(0,0,0,0.09)), color-stop(100%, rgba(0,0,0,0.09)));
+                background: -webkit-linear-gradient(top, rgba(15,9,60,1) 0%, rgba(0,0,0,0.09) 51%, rgba(0,0,0,0.09) 100%);
+                background: -o-linear-gradient(top, rgba(15,9,60,1) 0%, rgba(0,0,0,0.09) 51%, rgba(0,0,0,0.09) 100%);
+                background: -ms-linear-gradient(top, rgba(15,9,60,1) 0%, rgba(0,0,0,0.09) 51%, rgba(0,0,0,0.09) 100%);
+                background: linear-gradient(to bottom, rgba(15,9,60,1) 0%, rgba(0,0,0,0.09) 51%, rgba(0,0,0,0.09) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f093c', endColorstr='#000000', GradientType=0 );
+                &:before{content: "\f2bc"; padding-top: 1.38vw;}
+            } 
+        }
+        }
+    }
+    .top_area{ 
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: none;
+        .top_area_container{background: none;
+            
+        }
+       
+    }
+    .com_head{
+        h4{
+            font-size: 3.33vw; line-height: 4.44vw; font-family:'Lato Semibold'; text-align: center;  text-transform: uppercase; margin: 0 0 8px 0; padding: 0 30px;
+           }
+    }
+    .year_cal{
+        text-align: center; position: relative; z-index: -1;
+        .year_cal_val{display: inline-block; width: 65.13px; height:19.16vw; padding: 5.83vw 0; background-color:lighten($sbi_third_color,20%); border-left:1px solid lighten($sbi_third_color,30%); border-right:1px solid lighten($sbi_third_color,30%);
+            font-size:9px; color:$sbi_secondary_color;font-family:'Lato';
+            strong{display: block; color:$sbi_secondary_color;font-family:'Lato Black'; font-size: 12px;}
+        }
+        .year_cal_error{font-family:'Lato Semibold'; display: none; font-size: 9px; color: $sbi_error_color; position: absolute; margin: 0 auto; top:0; left: 0; right:0; margin-right: 70px; padding: 12px 0; width: 65.13px;height:19.16vw;}
+    &.display_error{
+        .year_cal_val{border-left:1px solid lighten($sbi_error_color,30%); border-right:1px solid lighten($sbi_error_color,30%);}
+        .year_cal_error{display: block;}
+    }
+    }
+    // opacity: 0;
+    .tell_us_cont_common{  padding-top: 30px;
+        .com_head{
+            h4{
+                font-size: 3.05vw; line-height: 3.15vw; color: $sbi_nine_color; font-family:'Lato Black'; letter-spacing: 1px;  text-transform: uppercase; margin: 0 0 8px 0; padding: 0 30px;
+               }
+        }
+        }
+    .tell_us_cont{padding: 0px 0px 0px 0px; position: relative; overflow: hidden;     margin-top: 31px;
+        &.age_now{margin-top: -6.66vw; }
+    .tell_us_slider{ position: relative;
+        &:after{
+            content:'';
+            position: absolute;
+            top:0;
+            bottom: 0; 
+            left:0;
+            right:0;
+            box-shadow: 7px 0px 17px 8px $sbi_light_shadow;
+            background-color: $sbi_secondary_color; 
+            width:69.13px;
+            border-radius: 4px;
+            margin: 0 auto;
+            z-index: -1;
+        }
+       
+       .slick-list{
+           position:relative; overflow: visible;
+           &:before{
+            content:'';
+            position: absolute;
+            top:0;
+            right:0;
+            left:0;
+        height: 0;
+        z-index: 9;
+        box-shadow: 0px 1px 10px 6px rgba(84, 72, 183, 0.05);
+        }
+        &:after{
+            content:'';
+            position: absolute;
+            bottom:0;
+            right:0;
+            left:0;
+            height: 0;
+            z-index: 9;
+            box-shadow: 0px -1px 10px 6px rgba(84, 72, 183, 0.05);
+        }
+       } 
+        .slick-slide{ text-align: center; position: relative;
+            .tell_us_slider_age{
+                font-family:'Lato Thin';
+                color: $sbi_third_color;          
+                font-size: 24px;
+                padding: 15px 16px;
+                border-radius: 4px;
+                display: block;
+              
+            }
+            .tell_us_slider_year{display: none; position: absolute; bottom: 4px; color: #fff; font-family:'Lato Light';left: 0;
+                right: 0;
+                font-size: 10px;}
+            &.slick-current{
+               
+                .tell_us_slider_age{
+                    color: #fff; font-size: 32px;margin-top: -8px;
+                }
+                .tell_us_slider_year{display: block;
+                }
+            }
+        }
+    }
+}
+    .calculator_common_sec{
+        .calculator_steps{ display: table; text-align: center; width:100%; padding: 10px 30px;
+            .calculator_steps_com{display: table-cell; vertical-align: top; width:25%; 
+            .calculator_steps_com_num{width:16px; height: 16px; border-radius: 16px; padding: 3px; display: block; background: lighten($sbi_third_color,10%); font-size: 9px; color: #fff;font-family:'Lato Black'; margin: 0 auto 5px auto;
+            
+            span{
+                display: block;
+                width: 100%;
+                height: 100%;
+                vertical-align: middle;
+                margin-top: -1px;
+            }
+            }
+            .icon {display: none;}
+            &.active{
+                .calculator_steps_com_num{
+    
+                    background: lighten($sbi_error_color,10%); 
+                    span{display: none;}
+                    .icon {display: block;}
+                } 
+                
+                .calculator_steps_com_bar{
+                    background: lighten($sbi_error_color,10%);
+                    box-shadow:0 2px 7px lighten($sbi_error_color,10%);
+                   /*  &:after{
+                        background: lighten($sbi_error_color,10%);
+                        width: 4px;
+                        height: 9px;
+                        content: '';
+                        right: -3px;
+                        transform: rotate(24deg);
+                    } */
+                    &:before{
+                        height: 0;
+                    }
+                    
+                   
+                }
+            }
+            .calculator_steps_com_bar{
+                height:8px; width:100%; display: block;background: lighten($sbi_third_color,10%); position: relative;
+                &:after{position: absolute;
+                    width: 4px;
+                    height: 14px;
+                    content: '';
+                    right: -1px;
+                    top: -1px;
+                    background: #fff;
+                    transform: rotate(24deg);
+                    z-index: 1; }
+                   &:before{
+                        position: absolute;
+                        background: #fff;
+                        width:100%;
+                        height: 5px;
+                        content: '';
+                        right: 0;left:-3px; bottom:-5px;z-index: 1;
+                    } 
+            }
+            &:first-child{
+                .calculator_steps_com_bar{ border-top-left-radius: 8px; border-bottom-left-radius: 8px; }
+               }
+            &:last-child{
+                .calculator_steps_com_bar{ border-top-right-radius: 8px; border-bottom-right-radius: 8px; 
+                    &:after{width:0; height: 0;}
+                }
+                &.active{
+                    &:after{width:0; height: 0;}
+                }
+            }
+            }
+            }
+        // .calculator_steps{ display: table; text-align: center; width:100%;  padding: 10px 30px;
+        // .calculator_steps_com{display: table-cell; vertical-align: top; width:25%; 
+        // .calculator_steps_com_num{width:16px; height: 16px; border-radius: 16px; padding: 3px; display: block; background: lighten($sbi_third_color,40%); font-size: 9px; color: #fff;font-family:'Lato Bold'; margin: 0 auto 5px auto; }
+        // .icon {display: none;}
+        // &.active{
+        //     .calculator_steps_com_num{
+
+        //         background: lighten($sbi_error_color,10%); 
+        //         span{display: none;}
+        //         .icon {display: block;}
+        //     } 
+            
+        //     .calculator_steps_com_bar{
+        //         background: lighten($sbi_error_color,10%);
+        //         box-shadow:0 2px 7px lighten($sbi_error_color,10%);
+        //        /*  &:after{
+        //             background: lighten($sbi_error_color,10%);
+        //             width: 4px;
+        //             height: 9px;
+        //             content: '';
+        //             right: -3px;
+        //             transform: rotate(24deg);
+        //         } */
+        //         &:before{
+        //             height: 0;
+        //         }
+                
+               
+        //     }
+        // }
+        // .calculator_steps_com_bar{
+        //     height:8px; width:100%; display: block;background: lighten($sbi_third_color,40%); position: relative;
+        //     &:after{position: absolute;
+        //         width: 4px;
+        //         height: 14px;
+        //         content: '';
+        //         right: -1px;
+        //         top: -1px;
+        //         background: #fff;
+        //         transform: rotate(24deg);
+        //         z-index: 1; }
+        //        &:before{
+        //             position: absolute;
+        //             background: #fff;
+        //             width:100%;
+        //             height: 5px;
+        //             content: '';
+        //             right: 0;left:-3px; bottom:-5px;z-index: 1;
+        //         } 
+        // }
+        // &:first-child{
+        //     .calculator_steps_com_bar{ border-top-left-radius: 8px; border-bottom-left-radius: 8px; }
+        //    }
+        // &:last-child{
+        //     .calculator_steps_com_bar{ border-top-right-radius: 8px; border-bottom-right-radius: 8px; 
+        //         &:after{width:0; height: 0;}
+        //     }
+        //     &.active{
+        //         &:after{width:0; height: 0;}
+        //     }
+        // }
+        // }
+        // }
+
+        .calculator_common_sec_inner{ padding: 0px 30px;
+            &.nps_age_first{padding-top:10px; padding-bottom:10px; position: absolute;
+                left: 0;
+                right: 0;
+                z-index: 9;
+                bottom: 73px;
+                
+            .footer_panel_rt {padding: 0;}
+            }
+            &.age_slider_heading{padding-top:20px;}
+
+            .calculation_with_range {
+                .item{ 
+                    .label{
+                        
+                            .rs_icon{color: $sbi_secondary_color;          
+                                font-size: 15vw; line-height: 15vw; }
+                                .overlay_dropdown_rng_txt{font-size:3.33vw; color: lighten($sbi_third_color,20%); font-family:'Lato';  }
+                        
+                        .daughtername{font-size:3.33vw; margin:0 0 10px 0; text-transform: uppercase;  font-family:'Lato Semibold';
+                            color: $sbi_third_color;}
+                    }
+                    padding-top: 40px;
+                    &.item-range{
+                        padding-top: 0px; overflow: inherit; contain: none;
+                        .range{padding: 2px 10px;}
+                    }
+                    &:last-child{padding-top: 0!important; }
+                    .overlay_dropdown_rng_txt{}
+                }
+            }
+            }
+        .calculator_sliders { height:auto;
+            .swiper-slide{align-items: start; position: relative;}
+           /*   height: auto;
+            .swiper-container{overflow-y: auto;}
+            .swiper-slide{display: block;} */
+            .calculator_common_sec_inner{
+                h1{
+                    font-family:'Lato Black';
+                    color: $sbi_primary_color;
+                    font-size: 8.33vw;
+                    margin: 0 0 8px 0;
+                    text-align: left;
+                }
+                h5{
+                    font-family:'Lato';
+                    color: lighten($sbi_third_color,20%);          
+                    font-size: 3.33vw;
+                    margin: 0 0 16px 0;  
+                    text-align: left;
+                }
+
+               .footer_panel {
+                margin: 0 0 0 0;
+                    padding: 5px 0px; text-align: left;
+                    .back_btn {margin:0; width: 100%; max-width: 166px; }
+                }
+                       
+                
+               
+            }
+        }
+    }
+
+    .calculator_common_sec_inner{
+        .footer_panel {
+            margin: 0 0 0 0;
+                padding: 10px 0px;
+                .footer_panel_rt {padding: 5px!important; padding-right: 0!important; }
+                .back_btn {margin:0; width: 100%; max-width: 166px;}
+            }
+        .calculation_with_range {
+            .item{
+                padding-top: 40px;
+                &:last-child{padding-top: 0!important; }
+            }
+        }
+    }
+
+}

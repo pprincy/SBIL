@@ -1,0 +1,364 @@
+page-become-crorepati {
+  .scroll-content {
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  .header {
+    background: $sbi_thirtytwo_color;
+
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+      border-bottom: 1px solid $sbi_fifth_color;
+
+      .toolbar-background {
+        border: none;
+      }
+
+      .bar-button {
+        color: $sbi_fifth_color;
+        // padding-left: 28px;
+
+        .back-button-text {
+          display: none;
+        }
+      }
+
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          // text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+          margin-left: -30px;
+        }
+      }
+    }
+
+    &:after {
+      background-image: none;
+      height: 0;
+    }
+  }
+
+  .content {
+    .networth_details {
+      text-align: center;
+      padding: 17px 0 35px 0;
+
+      h4 {
+        font-family: "Lato";
+        font-size: 6.154vw;
+        color: $sbi_twentysix_color;
+        margin: 0;
+        padding: 0 53px 20px;
+        letter-spacing: 0.38px;
+      }
+
+      .networth_amt {
+        background: $sbi_thirtytwo_color;
+        border-radius: 38px;
+        width: 251px;
+        height: 50px;
+        margin: 0 auto;
+
+        .networth_amt_inner {
+          font-family: "Lato";
+          font-size: 6.154vw;
+          color: $sbi_fifth_color;
+          margin: 0;
+          padding: 10px 28px;
+          text-align: center;
+          .rs_icon {
+            font-weight: bold;
+            font-size: 4.6vw;
+            margin-right: -4px;
+          }
+        }
+      }
+    }
+
+    .sukanya_slider {
+      ion-card {
+        &.sukanya_card {
+          background: #fff;
+          box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+          border-radius: 4px;
+          //margin: 0 11px 11px;
+        }
+
+        ion-card-content {
+          &.sukanya_card_content {
+            padding: 22px 0 0;
+            
+          }
+
+          .crorepati_img_sec {
+            figure {
+              width: 255px;
+              overflow: hidden;
+              margin: 0 auto;
+
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+
+          .crorepati_content {
+            padding: 0;
+            margin: 0px 24px 40px;
+
+            .crorepati_content_row {
+              .crorepati_content_td {
+                filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.1));
+                border-radius: 8px;
+                border: 1px solid $sbi_twentysix_color;
+                padding: 28px 13px 19px;
+                margin-right: 13px;
+                width: 151px;
+                height: 130px;
+
+                figure {
+                  width: 24px;
+                  height: 24px;
+                  overflow: hidden;
+                  margin: 0 auto;
+
+                  img {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+
+                h5 {
+                  font-family: "Lato Semibold";
+                  font-size: 3.077vw;
+                  color: $sbi_twentyseven_color;
+                  margin: 15px 0 4px 0;
+                  letter-spacing: 0.38px;
+                  white-space: nowrap;
+                }
+
+                .crorepati_content_td_val {
+                  font-family: "Lato Semibold";
+                  font-size: 6.154vw;
+                  color: $sbi_twentyseven_color;
+
+                  .rs_icon {
+                    font-family: "Lato Light";
+                    font-size: 4.6vw;
+                    color: $sbi_twentyseven_color;
+                    font-weight: bold;
+                    // margin-right: -3px;
+                  }
+                }
+
+                &:last-child {
+                  margin-right: 0;
+                }
+              }
+            }
+          }
+
+          .heading_reinvest {
+            font-family: "Lato";
+            font-size: 3.077vw;
+            color: $sbi_twentysix_color;
+            margin: 0;
+            padding: 0 0 17px;
+            text-transform: capitalize;
+            letter-spacing: 0.38px;
+          }
+        }
+      }
+    }
+
+    .disclaimer_txt {
+      font-family: "Lato";
+      font-size: 4.103vw;
+      color: $sbi_thirtyeight_color;
+      margin: 0;
+      padding: 20px 0 0;
+      text-transform: capitalize;
+      text-decoration-line: underline;
+      a {
+        color: $sbi_thirtyeight_color;
+      }
+    }
+
+    .calculation_with_range {
+      .calculation_with_range_inp {
+        border-bottom: none;
+      }
+
+      .range {
+        margin: -17px 0 20px;
+        padding: 0 24px;
+
+        .range-slider {
+          .range-bar {
+            height: 40px;
+            border: 1px solid $sbi_twentyseven_color;
+
+            &.range-bar-active {
+              background: $sbi_thirtytwo_color;
+            }
+          }
+          .range-knob-handle {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .networth_list {
+      margin: 36px -16px 0px;
+      .item {
+        border-top: 1px solid $sbi_fifty_color;
+        font-family: "Lato Semibold";
+        background-color: $sbi_fifth_color;
+        color: $sbi_nine_color;
+        font-size: 3.33vw;
+
+        &.item-block {
+          .item-inner {
+            padding: 0 12px 0 22px;
+          }
+        }
+        &.item-block:last-child {
+          border-bottom: none;
+        }
+        .label {
+          margin-right: 0;
+          color: $sbi_nine_color;
+          .rs_icon,
+          .icon {
+            font-size: 3.72vw;
+            margin-right: 1.11vw;
+            vertical-align: top;
+            min-width: 15px;
+          }
+        }
+        .select {
+          .select-text {
+            color: $sbi_primary_color;
+            font-family: "Lato Light";
+            font-size: 5.25vw;
+          }
+          .select-icon {
+            color: $sbi_primary_color;
+            padding-left: 7px;
+            .select-icon-inner {
+              position: relative;
+              font-family: "Ionicons";
+              border: none;
+              top: 0;
+              right: 0;
+              width: auto;
+              height: auto;
+              left: auto;
+              margin-top: 0px;
+              &:after {
+                content: "\f3d0";
+                font-size: 4.4vw;
+                color: lighten($sbi_primary_color, 20%);
+                margin-top: 1px;
+                position: absolute;
+                top: 3px;
+              }
+            }
+          }
+        }
+        .networth_list_lt {
+          display: flex;
+          align-items: center;
+          p {
+            font-family: "Lato";
+            font-size: 4.103vw;
+            color: $sbi_twentysix_color;
+            margin-left: 17px;
+            letter-spacing: 0.38px;
+          }
+          .rs_icon,
+          .icon {
+            font-size: 3.72vw;
+            margin-right: 4px;
+            vertical-align: middle;
+          }
+          figure {
+            width: 24px;
+            height: 24px;
+            overflow: hidden;
+            margin: 0 auto;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+
+        .item-button {
+          font-family: "Lato";
+          color: $sbi_twentyseven_color;
+          font-size: 4.103vw;
+          height: auto;
+          .rs_icon,
+          .icon-Icons_Monthly_Expense {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 0.76em;
+            margin-top: 3px;
+            margin-right: 2px;
+            font-weight: bold;
+          }
+          .icon {
+            font-size: 1.8em;
+            line-height: 0.67;
+            pointer-events: none;
+            padding-left: 0.4em;
+            color: #2a2076;
+          }
+        }
+      }
+    }
+  }
+
+  .crorepati_footer {
+    &.footer {
+      .footer_panel {
+        box-shadow: none !important;
+        background: none !important;
+        padding: 18px 17px 28px 18px;
+
+        .footer_panel_rt {
+          .login_btn {
+            background: $sbi_twentysix_color;
+            color: $sbi_fifth_color;
+            letter-spacing: 0.38px;
+            border: 1px solid $sbi_twentyseven_color;
+            max-width: 172px;
+            height: 50px;
+          }
+        }
+
+        .footer_panel_lt {
+          .back_btn {
+            background: $sbi_fifth_color;
+            color: $sbi_twentysix_color;
+            letter-spacing: 0.38px;
+            border: 1px solid $sbi_twentyseven_color;
+            max-width: 172px;
+            height: 50px;
+          }
+        }
+      }
+      &::before {
+        background-image: none;
+      }
+    }
+  }
+  
+}

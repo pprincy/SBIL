@@ -1,0 +1,906 @@
+page-addexpenses {
+  ion-content.content > .fixed-content + .scroll-content {
+    padding: 0;
+    padding-bottom: 0px !important;
+  }
+
+  .header {
+    background: $sbi_thirtytwo_color;
+
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+      border-bottom: 1px solid $sbi_fifth_color;
+
+      .toolbar-background {
+        border: none;
+      }
+
+      .bar-button {
+        color: $sbi_fifth_color;
+        // padding-left: 27px;
+        .back-button-text {
+          display: none;
+        }
+      }
+
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+          margin: -22px;
+          @media screen and (max-width: 360px) {
+            margin: 0 -23px;
+          }
+        }
+      }
+    }
+
+    &:after {
+      background-image: none;
+      height: 0;
+    }
+  }
+
+  .calculator_common_sec_inner {
+    padding: 0px 30px;
+
+    .item-inner {
+      padding-right: 0;
+      border-bottom: 1px solid lighten($sbi_third_color, 10%);
+
+      .text-input {
+        border: none;
+      }
+
+      .label {
+        font-size: 3.05vw;
+        font-family: "Lato Black";
+        color: $sbi_nine_color;
+        text-transform: uppercase;
+        margin-right: 0;
+        overflow: visible;
+      }
+
+      .input {
+        position: relative;
+
+        &:before {
+          position: absolute;
+          font-family: $ruppes_font;
+          color: $sbi_secondary_color;
+          font-size: 11.11vw;
+          top: 10px;
+          content: "`";
+        }
+
+        .text-input {
+          font-size: 10.27vw;
+          font-family: "Lato Thin";
+          color: $sbi_secondary_color;
+          padding-left: 5.55vw;
+        }
+      }
+    }
+  }
+  //   .content {
+  //     .monyear {
+  //       display: inline-block !important;
+  //       align-content: center !important;
+  //       overflow: auto;
+  //       &.repeat_toogle {
+  //         position: absolute;
+  //         right: 0;
+  //         top: 0;
+  //         z-index: 9;
+  //         top: 50%;
+  //         transform: translateY(-50%);
+  //       }
+
+  //       border: 1px solid $sbi_third_color;
+  //       border-radius: 20px;
+  //       // margin: 40px auto 0 auto;
+  //       // padding-top: 10px auto 0 auto;
+  //       // display: block;
+  //       // max-width: 30vw;
+
+  //       span {
+  //         font-family: "Lato Semibold";
+  //         font-size: 3.11vw;
+  //         color: $sbi_secondary_color;
+  //         border-radius: 20px;
+
+  //         &.active {
+  //           background-color: $sbi_secondary_color;
+  //           color: $sbi_fifth_color;
+  //         }
+  //       }
+  //     }
+  //   }
+
+  .add_expenses {
+    .cus_date_picker {
+      color: $sbi_nine_color;
+      font-family: "Lato Semibold";
+      font-size: 3.39vw;
+      max-width: 36.38vw;
+      width: 100%;
+      margin: auto auto 0 auto;
+
+      ion-datetime {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .datetime {
+        max-width: 28.33vw;
+        width: 100%;
+        display: inline-block;
+        text-align: middle;
+      }
+      img {
+        width: 4.44vw;
+        height: 4.44vw;
+        display: inline-block;
+        vertical-align: middle;
+        z-index: 1;
+        margin-left: -13px;
+      }
+      .icon {
+        font-size: 6vw;
+        display: inline-block;
+        vertical-align: middle;
+        color: $sbi_secondary_color;
+        z-index: 1;
+        margin-left: -13px;
+      }
+      .trash {
+        margin-right: -100px;
+        margin-top: 0px;
+        .icon {
+          z-index: 1;
+          margin: -55px 10px auto auto;
+          font-size: 7vw;
+          font-weight: 600;
+          color: #5448b7;
+        }
+      }
+    }
+
+    .scroll-content {
+      padding: 15px 25px;
+    }
+
+    .tell_us_cont_common {
+      &.add_cat_name {
+        .calculator_common_sec_inner {
+          .calculation_with_range {
+            margin: 0;
+          }
+        }
+      }
+
+      .calculator_common_sec_inner {
+        padding: 0;
+
+        .calculation_with_range {
+          margin: 24px 0 34px 0;
+          text-align: center;
+          @media screen and (max-width: 360px) {
+            margin: 30px 0 34px 0;
+          }
+
+          .calculation_with_range_inp {
+            border-bottom: none;
+            text-align: center;
+            position: relative;
+            .delete {
+              font-size: 28px;
+              position: absolute;
+              right: 20px;
+              top: 50%;
+              transform: translateY(-50%);
+              color: #2A2076;
+            }
+          }
+          &.text_fld {
+            label {
+              color: $sbi_primary_color;
+              font-size: 3.39vw;
+              text-transform: none;
+              letter-spacing: 0.5px;
+            }
+
+            .calculation_with_range_inp {
+              .overlay_dropdown_rng_val {
+                font-size: 14px;
+                font-size: 15px;
+                text-transform: capitalize;
+                text-align: center;
+              }
+            }
+          }
+
+          label {
+            color: $sbi_nine_color;
+            font-family: "Lato Black";
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin: 0 0 10px 0;
+            display: block;
+            font-size: 2.83vw;
+            margin-top: 25px;
+            text-align: initial;
+          }
+
+          .calculation_with_range_inp {
+            .rs_icon {
+              text-align: center;
+              font-size: 17px;
+              line-height: 22px;
+            }
+            label {
+              color: $sbi_primary_color;
+              font-size: 3.39vw;
+              text-transform: none;
+              letter-spacing: 0.5px;
+              margin-top: 25px;
+              text-align: initial;
+            }
+
+            .overlay_dropdown_rng_val {
+              font-size: 21px;
+              line-height: 22px;
+              text-transform: capitalize;
+            }
+          }
+        }
+      }
+    }
+
+    .expense_category {
+      text-align: center;
+
+      .top_title_sec {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 23px;
+        h5 {
+          color: $sbi_twentysix_color;
+          font-family: "Lato";
+          margin: 0;
+          font-size: 4.615vw;
+          text-transform: capitalize;
+        }
+
+        .view_more {
+          color: $sbi_twentyseven_color;
+          font-weight: 400;
+          font-family: "Lato";
+          margin: 0;
+          font-size: 14px;
+          // text-transform: capitalize;
+        }
+      }
+
+      .expense_category_cont {
+        margin: 15px 23px 30px;
+        background: $sbi_thirtyone_color;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        padding: 21px 33px;
+
+        .expense_category_cont_list {
+        }
+
+        .expense_category_cont_item {
+          text-align: center;
+          // width: 24%;
+          width: 50%;
+          padding: 10px 1px;
+          display: inline-flex;
+          vertical-align: top;
+
+          .fig_title {
+            background-color: $sbi_twentysix_color;
+            border-radius: 3px;
+            width: 131px;
+            height: 65px;
+            padding: 10px 5px 6px;
+
+            figure {
+              // width: 13.33vw;
+              // height: 13.33vw;
+              width: 24px;
+              height: 24px;
+              margin: 0 0 7px;
+              img {
+                width: 100%;
+                height: 100%;
+              }
+
+              ion-icon {
+                display: none;
+              }
+            }
+
+            span {
+              font-family: "Lato";
+              font-size: 3.8vw;
+              color: $sbi_fifth_color;
+              display: flex;
+            }
+          }
+          //   &.active {
+          //     figure {
+          //       position: relative;
+
+          //       ion-icon {
+          //         position: absolute;
+          //         top: -5px;
+          //         right: -7px;
+          //         font-size: 6vw;
+          //         color: $sbi_button_color;
+          //         display: block;
+          //       }
+
+          //       &:before {
+          //         position: absolute;
+          //         content: "";
+          //         border: 1px solid $sbi_third_color;
+          //         width: 15.33vw;
+          //         height: 15.33vw;
+          //         border-radius: 50%;
+          //         top: -1.33vw;
+          //         left: -1.33vw;
+          //       }
+          //     }
+          //   }
+        }
+      }
+    }
+
+    .select_items {
+      // border-top: 1px solid $sbi_third_color;
+      padding: 12px 38px 12px 38px;
+      text-transform: capitalize;
+
+      span {
+        color: $sbi_twentysix_color;
+        font-size: 3.01vw;
+        border: 1px solid $sbi_twentysix_color;
+        border-radius: 14px;
+        padding: 5px 8px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 10px 13px 0;
+
+        &.selected {
+          border-color: $sbi_twentysix_color;
+          background: $sbi_twentysix_color;
+          color: $sbi_fifth_color;
+        }
+      }
+    }
+
+    .select_expense {
+      position: relative;
+
+      .checkbox-icon {
+        border-radius: 0;
+      }
+
+      .item {
+        padding-left: 0;
+
+        .checkbox {
+          margin-right: 8px;
+        }
+
+        .item-inner {
+          border-bottom: none;
+
+          .label {
+            font-family: "Lato Semibold";
+            font-size: 3.11vw;
+            color: $sbi_nine_color;
+          }
+        }
+      }
+    }
+  }
+
+  .card {
+    background: $sbi_fifth_color;
+    box-shadow: none;
+    margin: 0;
+    width: 100%;
+
+    .card-header {
+      padding: 16px 0 0 0;
+    }
+  }
+
+  .common_expense_card {
+    ion-card-header {
+      h4 {
+        font-family: "Lato Black";
+        font-size: 4.34vw;
+        color: $sbi_primary_color;
+        margin: 0;
+      }
+
+      .custom_select_drop {
+        padding-top: 0;
+        padding-bottom: 0;
+        max-width: 100%;
+
+        .select-text {
+          color: $sbi_fourteen_color;
+          font-size: 2.89vw;
+        }
+
+        .select-icon {
+          .select-icon-inner {
+            margin-top: -6px;
+            color: $sbi_fifteen_color;
+          }
+        }
+      }
+    }
+  }
+
+  .no_padding {
+    padding: 0 !important;
+
+    .card_inner_cont {
+      padding: 0;
+      position: relative;
+    }
+  }
+
+  .recent_spends {
+    .list {
+      .item {
+        padding-left: 0;
+        border-bottom: 1px solid $sbi_eighteen_color;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        ion-thumbnail {
+          min-width: 33px;
+          min-height: 33px;
+          margin: 8px 8px 8px 0;
+
+          img {
+            width: 33px;
+            height: 33px;
+          }
+        }
+
+        h5 {
+          color: $sbi_primary_color;
+          font-family: "Lato Semibold";
+          font-size: 3.33vw;
+          margin: 0 0 2px 0;
+        }
+
+        p {
+          color: $sbi_nine_color;
+          font-family: "Lato Semibold";
+          font-size: 2.77vw;
+
+          strong {
+            font-size: 2.5vw;
+            font-weight: normal;
+            opacity: 0.6;
+
+            &.overspent {
+              color: $sbi_twentythree_color;
+            }
+
+            &.ontrack {
+              color: $sbi_twentytwo_color;
+            }
+          }
+        }
+
+        .recent_price {
+          color: $sbi_primary_color;
+          font-family: "Lato Black";
+          font-size: 3.88vw;
+
+          span {
+            font-weight: bold;
+            font-size: 3vw;
+          }
+        }
+      }
+    }
+  }
+
+  .monyear {
+    border: none;
+    border-radius: 0;
+    margin: 0 38px;
+    margin-bottom: 38px;
+    span {
+      font-family: "Lato";
+      font-size: 3.11vw;
+      color: $sbi_twentysix_color;
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 20px;
+
+      &.active {
+        background-color: $sbi_secondary_color;
+        color: $sbi_fifth_color;
+      }
+    }
+
+    .custom_radio {
+      background-color: $sbi_header_color_before_scroll;
+      border-radius: 5px;
+      margin: 0;
+      height: 83px;
+      // padding-top: 2px;
+      .item {
+        padding: 0 37px 0 0;
+        background-color: transparent;
+        border-radius: 4px;
+        &.item-block:first-child {
+          border-top: none;
+        }
+        &.item-block:last-child {
+          border-bottom: none;
+          bottom: 10px;
+        }
+        .item-inner {
+          border-bottom: none;
+          padding-right: 31.8vw;
+          @media screen and (max-width: 360px) {
+            padding-right: 29.8vw;
+          }
+
+          .label {
+            font-family: "Lato";
+            font-size: 3.59vw;
+            color: $sbi_twentysix_color !important;
+            @media screen and (max-width: 360px) {
+              margin: 0px 2px 0px 27px;
+            }
+          }
+
+          .radio {
+            left: -5px !important;
+            top: auto !important;
+            margin: 0 !important;
+            .radio-icon {
+              width: 20px;
+              height: 20px;
+              border-color: $sbi_twentyseven_color;
+              background-color: transparent;
+              border-radius: 100%;
+              border: 2px solid $sbi_twentyseven_color;
+              left: 273px;
+              @media screen and (max-width: 360px) {
+                left: 248px;
+              }
+              &.radio-checked {
+                border-color: $sbi_twentyseven_color;
+                background-color: transparent;
+                border-radius: 100%;
+                border: 2px solid $sbi_twentyseven_color;
+                left: 273px;
+                @media screen and (max-width: 360px) {
+                  left: 248px;
+                }
+                .radio-inner {
+                  background-color: $sbi_twentyseven_color;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 2.5vw;
+                  height: 2.5vw;
+                }
+              }
+              .radio-inner {
+                background-color: transparent;
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .overlay_dropdown {
+    .overlay_dropdown_content.calculation_with_range {
+      top: 50%;
+      transform: translateY(-50%);
+      &.uncategorize_popup {
+        h4 {
+          font-family: "Lato Black";
+          font-size: 3.88vw;
+          line-height: 5.88vw;
+          color: $sbi_primary_color;
+          margin: 10px 0 20px 15px;
+        }
+      }
+      > div {
+        i {
+          font-size: 6vw;
+          color: $sbi_nine_color;
+          font-weight: bold;
+        }
+      }
+
+      .login_btn {
+        margin: 0px auto 0 auto;
+        max-width: 135px;
+      }
+      .back_btn {
+        border: 1px solid lighten($sbi_third_color, 10%);
+        max-width: 166px;
+        height: 40px;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: none;
+        font-family: "Lato Black";
+        color: $sbi_nine_color;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin: 0;
+        background-color: white;
+      }
+
+      .list {
+        .item {
+          border-bottom: 1px solid $sbi_third_color;
+
+          p {
+            > .list_high {
+              display: inline-block;
+              vertical-align: middle;
+              color: $sbi_primary_color;
+              font-family: "Lato Black";
+
+              .rs_icon {
+                font-weight: bold;
+                font-size: 2.2vw;
+              }
+            }
+
+            strong {
+              display: inline-block;
+              vertical-align: middle;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    .card-header {
+      padding-top: 0;
+      white-space: normal;
+    }
+  }
+
+  ion-datetime {
+    position: relative;
+  }
+  .back_btn {
+    border: 1px solid lighten($sbi_third_color, 10%);
+    max-width: 166px;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: none;
+    font-family: "Lato Black";
+    color: $sbi_nine_color;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .valid_msg {
+    color: $sbi_error_color;
+    font-family: "Lato Semibold";
+    font-size: 3.05vw;
+    padding: 10px 0 0 0;
+    display: block;
+    &.cat {
+      padding-left: 38px;
+      padding-bottom: 10px;
+    }
+  }
+
+  .tell_us_cont_common {
+    &.add_cat_name {
+      .calculator_common_sec_inner {
+        .calculation_with_range {
+          .overlay_dropdown_rng_val {
+            .text-input {
+              margin: 0;
+              padding: 5px 0px 5px 0px;
+              text-align: center;
+              color: $sbi_twentysix_color;
+              font-weight: 700;
+              font-family: "Lato";
+              font-style: normal;
+              font-size: 34px;
+            }
+          }
+          .calculation_with_range_inp {
+            text-align: center;
+            .overlay_dropdown_rng_val {
+              .text-input {
+                border: 1px solid $sbi_twentysix_color;
+                margin: 0 0 15px;
+                padding: 10px 20px;
+                width: 80%;
+                color: $sbi_fortysix_color;
+                font-family: "Lato Light";
+                font-size: 4.615vw;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .view_more_section {
+    background: $sbi_fortyseven_color;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 99;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+
+    .view_more_list {
+      background: $sbi_thirtyone_color;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      margin: 49px 21px 39px 21px;
+      padding: 40px 33px;
+      .expense_category_cont_item {
+        text-align: center;
+        width: 50%;
+        padding: 2.77vw 1vw;
+        display: inline-block;
+        vertical-align: top;
+
+        &.active {
+          border-color: #5448b7;
+          border-radius: 4px;
+        }
+
+        .fig_title {
+          background-color: $sbi_twentysix_color;
+          border-radius: 3px;
+          width: 131px;
+          height: 65px;
+          padding: 10px 10px 6px;
+
+          figure {
+            width: 24px;
+            height: 24px;
+            margin: 0 0 7px;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+
+            ion-icon {
+              display: none;
+            }
+          }
+
+          span {
+            font-family: "Lato";
+            font-size: 4.103vw;
+            color: $sbi_fifth_color;
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+  .calculation_with_range {
+    .amount_rs {
+      display: inline-block;
+      min-width: 24px;
+      margin: 0;
+      padding: 5px 0px 5px 0px;
+      text-align: center;
+      color: $sbi_twentysix_color;
+      font-weight: 700;
+      font-family: "Lato";
+      font-style: normal;
+      font-size: 34px;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      text-underline-offset: 4px;
+    }
+    .rs_sym {
+      color: $sbi_twentysix_color;
+      font-weight: 700;
+      font-family: "Lato";
+      font-style: normal;
+      font-size: 9.5vw;
+      // margin-right: 10px;
+    }
+    .overlay_dropdown_rng_val {
+      .text-input {
+        margin: 0;
+        padding: 5px 0px 5px 0px;
+        text-align: center;
+        color: #5c2483;
+        font-weight: 700;
+        font-family: "Lato";
+        font-style: normal;
+        font-size: 34px;
+        border-bottom: 3px solid #5c2483;
+        width: 43px;
+        @media screen and (max-width: 360px) {
+          padding: 5px 2px 5px 0px;
+        }
+      }
+      &.rs {
+        .text-input {
+          text-decoration: underline;
+          text-decoration-skip-ink: none;
+          text-underline-offset: 4px;
+        }
+      }
+    }
+  }
+
+  .footer_panel {
+    .save {
+      width: 37vw;
+      background: #2A2076;
+      font-family: "Lato";
+      font-size: 3.59vw;
+      color: #fff;
+      text-transform: capitalize;
+      border-radius: 0;
+    }
+    &.footer_add_expense {
+      padding: 25px 38px 27px;
+      box-shadow: none !important;
+      background: none !important;
+      &:active {
+        box-shadow: none;
+        background: none;
+      }
+      .back_btn {
+        max-width: 147px;
+        height: 50px;
+        letter-spacing: 0.38px;
+        @media screen and (max-width: 360px) {
+          border-bottom: none;
+        }
+      }
+      .login_btn {
+        height: 50px;
+        letter-spacing: 0.38px;
+        max-width: 147px;
+      }
+    }
+  }
+}

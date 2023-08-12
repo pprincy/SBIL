@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar color="sbiHeader">
+  </ion-navbar>
+</ion-header>
+<ion-content class="bg_img">
+  <div class="top_area">
+    <div class="mob_email">
+      <img src="assets/imgs/mpin_shield.png" />
+      <img class="hide" src="assets/imgs/sucessmpin_shield.png" />
+    </div>
+    <div class="top_area_container">
+      <div class="cloud cloud1"><img src="assets/imgs/cloud1.png" width="68" height="33" /> </div>
+      <div class="cloud cloud2"><img src="assets/imgs/cloud2.png" width="68" height="33" /> </div>
+      <div class="cloud cloud3"><img src="assets/imgs/cloud3.png" width="99" height="48" /> </div>
+      <div class="cloud cloud4"><img src="assets/imgs/cloud4.png" width="74" height="36" /> </div>
+    </div>
+  </div>
+  <div class="mpin_area">
+    <div class="heading_panel">
+      <h2>{{'mpin.pleaseSetYourPattern' | translate}}</h2>
+    </div>
+    <div align="center">
+      <div id="patternHolder1" class="pattern-holder">
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="footer_panel row active">
+    <div class="col" text-center>
+      <button ion-button class="login_btn">
+        {{'common.proceed' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

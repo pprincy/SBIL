@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{'incomeApproximation.budgetfortheMonth' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card class="common_expense_card">
+    <ion-card-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h4>{{'incomeApproximation.totalbudget' | translate}}<span
+                class="rs_icon icon-Icons_Ruppee"></span>{{totalBudget == null ? 0 : totalBudget | amountFormat:'S'}}</h4>
+          </ion-col>
+          <ion-col text-right>
+            <button class="month_btn" ion-button clear (click)="MonthListExpenseTrend()">
+              <p class="month_title">{{expensesDate ? expensesDate : 'Select date'}}</p>
+              <ion-icon class="month_arrow" name="md-arrow-dropdown"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 text-left>
+            <h4>{{'incomeApproximation.inputMonthlySpends' | translate}}</h4>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content class="no_padding">
+      <div class="card_inner_cont recent_spends">
+        <ion-list>
+          <ion-item *ngFor="let approx of incomeApprox" [hidden]="!approx.CategoryId">
+            <ion-thumbnail item-start>
+              <img src="{{imgURLNew + approx.ImagePath}}">
+            </ion-thumbnail>
+            <h5>{{approx.CategoryName}}</h5>
+            <p>{{approx.Expense | currency:"INR": true : '2.0-0'}} <span class="customBorder"
+                *ngIf="approx.IncomeApproxBudgetStatus !== ''  ? true: false"></span> <strong
+                class="{{approx.IncomeApproxBudgetStatusFlag}}">{{approx.IncomeApproxBudgetStatus}}</strong></p>
+            <div item-end class="recent_price">
+              {{approx.CategoryBudget ?(approx.CategoryBudget| currency:"INR": true : '2.0-0') : approx.CategoryBudget}}
+              <ion-icon class="editIcon" name="create"
+                (click)="showPopupExpenses(approx.CategoryName,approx.CategoryId,approx.CategoryBudget)"></ion-icon>
+              <span class="customBorder" *ngIf="approx.IncomeApproxBudgetStatus !== ''  ? true: false"></span>
+              <ion-icon class="refreshIcon" name="refresh" (click)="resetBudget(approx.CategoryId,approx.CategoryName)"
+                *ngIf="approx.IncomeApproxBudgetStatus !== ''  ? true: false"></ion-icon>
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <button ion-button class="login_btn" type="submit"
+    (click)="goToIncomeDashboard()">{{'common.back' | translate}}</button>
+</ion-footer>
+
+<div class="overlay_dropdown" *ngIf="expensepop">
+  <div class="overlay_dropdown_content calculation_with_range">
+    <h3>{{showCategoryName}} <i float-right (click)="showPopupExpenses()">
+        <ion-icon name="ios-close-outline"></ion-icon>
+      </i>
+    </h3>
+    <div class="calculation_with_range_inp" align="center">
+      <span class="rs_icon">`</span>
+      <ion-input type="tel" class="overlay_dropdown_rng_val" [(ngModel)]="assignValueComma"
+      (ionChange)="formatAmount(assignValueComma)" (ngModelChange)="isValidAmount = false"></ion-input>
+    </div>
+    <ion-item>
+      <ion-range min="{{minAmount}}" max="{{maxAmount}}" step="10" [(ngModel)]="assignValue" pin="true"
+       (ionChange)="formatAmountRange(assignValue)" (ngModelChange)="isValidAmount = false">
+      </ion-range>
+    </ion-item>
+    <ion-item class="custom_notes">
+      <p>{{'incomeApproximation.assignMonthlyIncomeForHealth' | translate}} {{showCategoryName}}
+        {{'incomeApproximation.assignMonthly' | translate}}</p>
+    </ion-item>
+    <span class="valid_msg" *ngIf="isValidAmount" align="center">Please enter amount between {{minAmount}} to
+      {{maxAmount}}</span>
+    <ion-item>
+      <button ion-button class="login_btn" (click)="newValue()">{{'buttons.ok' | translate}}
+      </button>
+    </ion-item>
+  </div>
+</div>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /></span>
+</div>
+<div class="overlay_dropdown delete_popup" *ngIf="resetStatus">
+  <div class="overlay_dropdown_content">
+    <h3 text-center padding>{{'incomeDashboard.doYouWantToReset' | translate}} {{'incomeDashboard.kayAap' | translate}}
+      {{budgetCategory}} {{'incomeDashboard.keLiyeBudget' | translate}} ?</h3>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button class="back_btn" (click)="resetCatBudget('no')"
+            outline>{{'common.no' | translate}}</button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button class="login_btn" (click)="resetCatBudget('yes')">{{'common.yes' | translate}}</button>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+</div>

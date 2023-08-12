@@ -1,0 +1,166 @@
+page-drop-dowm-selction {
+  .scroll-content {
+    background: transparent !important;
+  }
+  .main-view {
+    background: transparent;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.5;
+    background-color: #333;
+  }
+  .modal_content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    z-index: 100;
+    margin: 0 auto;
+    padding: 0;
+    color: #333;
+    background: $sbi_fifth_color;
+    max-height: 50%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    overflow-y: auto;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    .up_content {
+      border-top: 3px solid $sbi_thirtysix_color;
+      width: 15%;
+      margin: 24px auto;
+      border-radius: 4px;
+    }
+    
+    .language_selector {
+      .list {
+        background: #f7f7f7;
+        border-radius: 4px;
+        .item {
+          border-bottom: 1px solid $sbi_thirtysix_color;
+          &.list-header {
+            margin: 0;
+
+            .label {
+              font-family: "Lato" !important;
+              color: $sbi_twentysix_color !important;
+              //text-transform: uppercase !important;
+              font-size: 14px !important;
+            }
+          }
+          padding: 0px 0 0 0px;
+          border-top: 0;
+          background: #f7f7f7;
+          height: 61px;
+          width: 88%;
+          margin: 0 21px;
+          &:first-child {
+            border-bottom: 1px solid $sbi_thirtysix_color;
+            border-radius: 7px 7px 0 0;
+          }
+          &:last-child {
+            border-radius: 0 0 7px 7px;
+          }
+
+          .radio {
+            position: absolute;
+            display: block;
+            margin: 0;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            text-align: right;
+
+            .radio-icon {
+              display: inline-block;
+              margin: 22px 0px 0 0;
+              width: 21px;
+              height: 21px;
+              border-width: 2px;
+              border-color: #727272;
+              &.radio-checked {
+                border-color: $sbi_twentyseven_color !important;
+                .radio-inner {
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 2.4vw;
+                  height: 2.4vw;
+				background-color: $sbi_twentyseven_color !important;
+                }
+              }
+            }
+
+            &.radio-ios {
+              .radio-icon {
+                border: 1px solid #727272 !important;
+                border-width: 2px !important;
+                border-radius: 10px !important;
+                .radio-inner {
+                  border-radius: 10px !important;
+                }
+              }
+            }
+          }
+
+          .item-inner {
+            border-bottom: none;
+            padding: 0;
+
+            .input-wrapper {
+              .label {
+                //font-family: "Lato Semibold";
+                color: $sbi_twentyeight_color;
+                font-size: 18px;
+                letter-spacing: 0.38px;
+                font-weight: 400;
+                text-transform: capitalize;
+              }
+            }
+          }
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+
+      .filter_dropdown_btn {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 15px;
+        margin: 0 auto;
+        z-index: 9;
+      }
+    }
+  }
+  .list-ios {
+    margin: 39px 20px 28px;
+    padding: 0;
+  }
+  .list-md {
+    margin: 39px 20px 28px;
+    padding: 0;
+  }
+  .login_btn {
+    border-radius: 0;
+    font-family: "Lato";
+    font-size: 4.1vw;
+    text-transform: capitalize;
+    //margin: 0 46px 28px 36px;
+    background: #2a2076;
+    letter-spacing: 0.38px;
+    max-width: 80%;
+  }
+}

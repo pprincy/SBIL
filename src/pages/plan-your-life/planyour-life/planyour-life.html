@@ -1,0 +1,150 @@
+<ion-header>
+  <ion-navbar class="head">
+    <button [class.active]="isBtnActive" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'planYourLife.planYourLife' | translate}}</ion-title>
+  </ion-navbar>
+  <div class="top_area">
+    <div class="top_area_container">
+      <div class="cloud cloud5">
+        <img src="assets/imgs/cloud5.png" /> </div>
+      <div class="cloud cloud6">
+        <img src="assets/imgs/cloud6.png" /> </div>
+    </div>
+  </div>
+</ion-header>
+<!-- scroll_div -->
+<ion-content padding class="scroll_div">
+  <div class="plan-yourlife" *ngIf="stage == 1">
+    <ion-card class="heading">
+      <div class="card-title">{{'planYourLife.personalGoals' | translate}} </div>
+      <div class="card-subtitle">{{'planYourLife.subTitle' | translate}}</div>
+    </ion-card>
+    <div>
+      <div *ngIf="goalTypesList.length > 0">
+        <ion-card *ngFor="let item of goalTypesList;even as e;index as i">
+          <div [ngClass]="[e?'goals':'goals1', item.GoalCount > 0?'active':'']" (click)="plan_goal_modalInfo($event, item)">
+            <div>
+              <div class="bluebadge">
+                <ion-icon name="add"></ion-icon>
+              </div>
+              <div class="bluebadge rm" *ngIf="item.GoalCount > 0">
+                <ion-icon name="remove"></ion-icon>
+              </div>
+              <div class="greenbadge" *ngIf="item.GoalCount > 1">{{item.GoalCount}}</div>
+              <div class="greenbadge" *ngIf="item.GoalCount == 1">
+                <ion-icon ios="ios-checkmark" md="md-checkmark"></ion-icon>
+              </div>
+              <span class="plan_img">
+                <img src="{{imgURL + item.ImagePath}}" />
+              </span>
+              <h6>{{item.GoalType}}</h6>
+            </div>
+          </div>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="stage == 2">
+    <ion-row class="user_info">
+      <div class="user_pic">
+        <img [src]="restapiProvider.userData['profileImg']" (error)="errorPic()" />
+      </div>
+      <div class="user_name">
+        {{name}}{{'planYourLife.sPlan' | translate}}
+      </div>
+    </ion-row>
+    <ion-list class="plan_list">
+      <div *ngIf="savedGoalsList.length > 0">
+        <ion-item *ngFor="let item of savedGoalsList">
+          <ion-avatar item-start (click)="popularGoalClick(item)">
+            <img src="{{imgURL + item.ImagePath}}">
+          </ion-avatar>
+          <h2 (click)="popularGoalClick(item)">{{item.GoalName}}</h2>
+          <h3 (click)="popularGoalClick(item)">{{('planYourLife.by' | translate).replace('$year$', item.GoalYear)}}</h3>
+          <!-- <ion-icon ios="ios-close" md="md-close" (click)="showConfirmPopup(item)" class="close_icon"></ion-icon> -->
+          <ion-icon name="ios-arrow-forward-outline" class="rht_arrow_icon"></ion-icon>
+          <div class="remove_plan">
+            <ion-icon name="ios-trash-outline" (click)="showConfirmPopup(item)"></ion-icon>
+          </div>
+        </ion-item>
+      </div>
+    </ion-list>
+  </div>
+</ion-content>
+<ion-footer class="view_goal_btn" *ngIf="stage == 1 && !plan_goal_modal">
+  <!-- <ion-toolbar>
+    <ion-title>
+      <button ion-button class="login_btn" (click)="nextStage()">
+        {{'planYourLife.viewMyGoals' | translate}}
+      </button>
+    </ion-title>
+  </ion-toolbar> -->
+  <div class="footer_panel row active">
+    <div
+      class="footer_panel_rt col">
+      <button ion-button class="login_btn" (click)="nextStage()">
+        {{'planYourLife.viewMyGoals' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+<ion-footer *ngIf="stage == 2">
+  <ion-toolbar>
+    <ion-title>
+      <button ion-button clear (click)="nextStage()">
+        <ion-icon name="ios-add-circle-outline"></ion-icon> &nbsp;
+        {{'planYourLife.addPlan' | translate}}
+      </button>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
+<div class="overlay_dropdown delete_popup" *ngIf="deleteStatus">
+  <div class="overlay_dropdown_content ">
+    <h3 text-center padding>
+      {{'planYourLife.youReallyWantToDelete' | translate}}
+    </h3>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button class="back_btn" (click)="deleteGoal('no')" outline>
+            {{'common.no' | translate}}
+          </button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button class="login_btn" (click)="deleteGoal('yes')">
+            {{'common.yes' | translate}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>
+
+<div class="overlay_dropdown annuity disclaimer plan_goal_modal" *ngIf="plan_goal_modal">
+  <div class="overlay_dropdown_content">
+    <div class="overlay_dropdown_content_inner">
+      <ion-icon name="ios-close-circle-outline" (click)="plan_goal_modalClose()"></ion-icon>
+      <div class="plan_goal_modal_img">
+        <figure>
+          <img src="{{imgURL + selectedGoal.ImagePath}}">
+        </figure>
+        <h5>{{selectedGoal.GoalType}}</h5>
+      </div>
+      <h3>{{'planYourLife.popupTitle' | translate}}</h3>
+      <div *ngIf="plan_goal_modal">
+        <round-slider #sliderElem [width]="227" [height]="227" [thick]="7" [min]="minSlider" [max]="maxSlider"
+          [radius]="100" [value]="1" (onChangeEnd)="changeYear(sliderElem.value)"></round-slider>
+      </div>
+      <!-- <round-slider #sliderElem [width]="140" [height]="140" [radius]="50" dragging="true" [max]="100" [min]="0" [imageUrl]="https://s-media-cache-ak0.pinimg.com/736x/99/9b/af/999baff3288ebe0232ac9d34ac7b73ba.jpg" [value]="levelControlValue" (onChangeEnd)="listenerEvent$(sliderElem.value)"></round-slider> -->
+      <button ion-button class="login_btn" (click)="InsertUserTempGoals(selectedGoal)">
+        {{'common.done' | translate}}
+      </button>
+    </div>
+  </div>
+</div>
+<div class="common_loader" *ngIf="pageLoader">
+  <span>
+    <img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

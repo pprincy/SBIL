@@ -1,0 +1,259 @@
+page-quiz-survey-list {
+  .scroll_div .scroll-content {
+    padding-top: 0 !important;
+  }
+
+  // .top_area {
+  //     position: absolute;
+  //     z-index: 1;
+  //     top: 0;
+  //     left: 0;
+  //     right: 0;
+  //     background: none;
+  //     height: 100px;
+  //     .top_area_container {
+  //         background: none;
+  //         .cloud{
+  //             opacity: 0.5;
+  //         }
+  //     }
+  // }
+
+  .survey_pic {
+    margin: 146px 54px 0 137px;
+    @media screen and (max-width: 360px) {
+      margin: 146px 50px 0 115px;
+    }
+  }
+  .txt {
+    font-size: 18px;
+    color: #5c2483;
+    text-align: center;
+    width: 168px;
+    letter-spacing: 0.38px;
+
+    margin: 13px 108px 0 96px;
+    @media screen and (max-width: 360px) {
+      margin: 13px 108px 0 80px;
+    }
+  }
+  .header {
+    background: $sbi_thirtytwo_color;
+
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+      border-bottom: 1px solid $sbi_fifth_color;
+
+      .toolbar-background {
+        border: none;
+      }
+
+      .bar-button {
+        color: $sbi_fifth_color;
+        // padding-left: 28px;
+        .back-button-text {
+          display: none;
+        }
+      }
+
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+          margin-left: -22px;
+          @media screen and (max-width: 360px) {
+            text-align: center;
+            margin: 0 -25px;
+          }
+        }
+      }
+    }
+
+    &:after {
+      background-image: none;
+      height: 0;
+    }
+  }
+  .content {
+    .scroll-content {
+      padding-top: 0px !important;
+      background-color: #fff;
+    }
+    .networth_details {
+      text-align: center;
+      color: $sbi_fifth_color;
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
+      .family_protect_header {
+        display: none;
+        .grid {
+          border-radius: 0;
+          margin: 0 -0.5px;
+          .row {
+            .col {
+              padding: 7px 12px;
+              border-radius: 0px;
+            }
+            .family_protect_header_lt {
+              font-size: 2.77vw;
+              font-family: "Lato Semibold";
+              color: $sbi_nine_color;
+            }
+            .family_protect_header_rt {
+              font-size: 3.33vw;
+              font-family: "Lato Black";
+              color: $sbi_primary_color;
+              span {
+                font-size: 3vw;
+              }
+            }
+          }
+        }
+      }
+      &.shrink {
+        padding-bottom: 0;
+        &:before {
+          left: -1px;
+          width: 22px;
+          margin-top: 0;
+        }
+        &:after {
+          right: -1px;
+          width: 22px;
+          margin-top: 0;
+        }
+        .networth_amt .networth_amt_inner .rs_icon {
+          font-size: 3.611vw;
+        }
+        .family_protect_header {
+          display: block;
+          animation: addAnimation 0.5s;
+          animation-fill-mode: both;
+        }
+      }
+      h4 {
+        font-family: "Lato Light";
+        color: lighten($sbi_fifth_color, 15%);
+        font-size: 3.88vw;
+        line-height: 4.16vw;
+        margin: 0 0 4px 0;
+      }
+      h5 {
+        font-family: "Lato";
+        color: $sbi_fifth_color;
+        font-size: 5.42vw;
+        line-height: 7.61vw;
+        text-align: initial;
+        margin: 0px 40px;
+      }
+      .networth_amt {
+        font-family: "Lato Black";
+        font-size: 10.27vw;
+        .networth_amt_inner {
+          display: inline-block;
+          padding: 0 10px 5px 10px;
+          .rs_icon {
+            margin-right: 5px;
+            font-size: 8.611vw;
+          }
+        }
+      }
+
+      .networth_sum {
+        font-family: "Lato Semibold";
+        font-size: 3.61vw;
+        padding: 15px 0px 15px 0px;
+      }
+    }
+    background: #5448b7;
+    .card {
+      margin: 20px 0px;
+      width: 100%;
+      border-radius: 5px;
+
+      .col {
+        padding: 0;
+        .quiz-img {
+          width: 80%;
+        }
+      }
+
+      .card-header {
+        padding: 20px 20px 0 20px;
+        h5 {
+          font-family: "Lato Semibold";
+          color: $sbi_primary_color;
+          font-size: 6.55vw;
+          margin: 0 0 8px 0;
+          text-align: left;
+          white-space: normal;
+        }
+      }
+
+      .card-content {
+        padding: 0 20px 20px 22px;
+        .list {
+          .item {
+            padding: 0;
+            .label {
+              font-family: "Lato Light";
+              color: $sbi_secondary_color;
+              text-overflow: initial;
+              white-space: normal;
+              font-size: 3.61vw;
+              margin: 0;
+              display: flex;
+              align-items: center;
+              opacity: 1 !important;
+            }
+          }
+        }
+
+        .custom_radio {
+          .item-radio {
+            display: block;
+            align-items: start;
+            -webkit-box-align: start;
+            vertical-align: top;
+            border: none !important;
+            //font-size: 2.77vw;
+            padding-left: 1.38vw;
+            .item-inner {
+              padding-right: 0;
+              .label {
+                font-size: 3.61vw;
+                margin: 16px 8px 9px 0;
+                margin-left: 5vw;
+                display: flex;
+                align-items: center;
+                opacity: 1 !important;
+                img {
+                  width: 16px;
+                  display: inline-block;
+                  margin: 0 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .footer_panel {
+      background-color: transparent;
+      box-shadow: none;
+      margin-top: 14px;
+      .back_btn {
+        color: $sbi_fifth_color;
+      }
+    }
+  }
+
+  .no_record_found_cont {
+    background: $sbi_fifth_color;
+  }
+}

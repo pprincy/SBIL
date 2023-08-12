@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="sbiHeader">
+  </ion-navbar>
+</ion-header>
+<ion-content class="bg_img" no-bounce>
+  <div class="mpin_area">
+    <div class="user_pic">
+      <img src="assets/imgs/mpin.png" />
+      <!-- <img class="hide" src="assets/imgs/sucessmpin_shield.png" /> -->
+    </div>
+  </div>
+  <div class="login_area">
+    <div class="heading_panel">
+      <p class="heading1">{{'mpin.forgotMpin' | translate}}</p>
+      <p class="heading2">{{'mpin.enterYourDetailsToReciveOTP' | translate}} </p>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="submitUserID($event)">
+      <ion-list class="input_field" no-lines>
+        <ion-item class="input_field_item">
+          <ion-input formControlName="userId" type="text" value="" [(ngModel)]="userId"
+            (ngModelChange)="changeInput($event)" placeholder="{{'login.placeHolder' | translate}}"></ion-input>
+        </ion-item>
+        <span class="valid_msg hide">{{errorMessage}}</span>
+      </ion-list>
+      <div>
+        <div class="col" text-center>
+          <button ion-button class="login_btn" type="submit">{{'common.proceed' | translate}}</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</ion-content>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

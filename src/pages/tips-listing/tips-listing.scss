@@ -1,0 +1,187 @@
+page-tips-listing {
+  ion-content.content > .fixed-content + .scroll-content {
+    padding: 0 13px;
+  }
+  .header {
+    background: $sbi_thirtytwo_color;
+
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+      border-bottom: 1px solid $sbi_fifth_color;
+
+      .toolbar-background {
+        border: none;
+      }
+
+      .bar-button {
+        color: $sbi_fifth_color;
+        // padding-left: 28px;
+        .back-button-text {
+          display: none;
+        }
+      }
+
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+          margin-left: -22px;
+        }
+      }
+    }
+
+    &:after {
+      background-image: none;
+      height: 0;
+    }
+  }
+
+  .content {
+    .title {
+      .toolbar-title {
+        font-family: "Lato";
+        font-size: 6.154vw;
+        color: $sbi_twentysix_color;
+        padding: 30px 23px 20px;
+        text-align: left;
+      }
+    }
+    .card_slider_item_inner {
+      margin: 0 0 20px 0;
+      width: 100%;
+     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.10);
+      border-radius: 4px;
+      padding: 20px;
+
+      img {
+        border-radius: 4px;
+        width: 100%;
+        &:after {
+          background: rgba(48, 31, 108, 0.6);
+          background: -moz-linear-gradient(
+            top,
+            226.19deg,
+            rgba(48, 31, 108, 0.6) 0.97%,
+            rgba(214, 13, 71, 0.6) 94.02%
+          );
+
+          background: -webkit-gradient(
+            left top,
+            left bottom,
+            color-stop(0%, rgba(48, 31, 108, 0.6)),
+            color-stop(100%, rgba(214, 13, 71, 0.6))
+          );
+          background: -webkit-linear-gradient(
+            top,
+            rgba(48, 31, 108, 0.6) 0%,
+            rgba(214, 13, 71, 0.6) 100%
+          );
+          background: -o-linear-gradient(
+            top,
+            rgba(48, 31, 108, 0.6) 0%,
+            rgba(214, 13, 71, 0.6) 100%
+          );
+          background: -ms-linear-gradient(
+            top,
+            rgba(48, 31, 108, 0.6) 0%,
+            rgba(214, 13, 71, 0.6) 100%
+          );
+          background: linear-gradient(
+            to bottom,
+            rgba(48, 31, 108, 0.6) 0%,
+            rgba(214, 13, 71, 0.6) 100%
+          );
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#0a1d3b', GradientType=0 );
+          border-radius: 4px;
+        }
+      }
+
+      //   &:after {
+      //     background: rgba(255, 255, 255, 0);
+      //     background: -moz-linear-gradient(
+      //       top,
+      //       rgba(255, 255, 255, 0) 0%,
+      //       rgba(10, 29, 59, 0.8) 100%
+      //     );
+      //     background: -webkit-gradient(
+      //       left top,
+      //       left bottom,
+      //       color-stop(0%, rgba(255, 255, 255, 0)),
+      //       color-stop(100%, rgba(10, 29, 59, 0.8))
+      //     );
+      //     background: -webkit-linear-gradient(
+      //       top,
+      //       rgba(255, 255, 255, 0) 0%,
+      //       rgba(10, 29, 59, 0.8) 100%
+      //     );
+      //     background: -o-linear-gradient(
+      //       top,
+      //       rgba(255, 255, 255, 0) 0%,
+      //       rgba(10, 29, 59, 0.8) 100%
+      //     );
+      //     background: -ms-linear-gradient(
+      //       top,
+      //       rgba(255, 255, 255, 0) 0%,
+      //       rgba(10, 29, 59, 0.8) 100%
+      //     );
+      //     background: linear-gradient(
+      //       to bottom,
+      //       rgba(255, 255, 255, 0) 0%,
+      //       rgba(10, 29, 59, 0.8) 100%
+      //     );
+      //     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#0a1d3b', GradientType=0 );
+      //     border-radius: 4px;
+      //   }
+
+      .card_slider_item_inner_cont {
+        &.card-content {
+          padding: 0;
+        }
+        h4 {
+          font-family: "Lato";
+          font-weight: 700;
+          color: $sbi_twentyeight_color;
+          font-size: 16px;
+          margin: 20px 0 10px 0;
+        }
+        p{
+          font-size: 14px;
+          font-weight: 400;
+          color: #727272;
+          letter-spacing: 0.38px;
+        }
+        ul {
+          &.tips_content {
+            margin: 0;
+            padding: 0 0 0 15px;
+            list-style: number;
+            text-align: left;
+            li {
+              font-family: "Lato Light";
+              color: $sbi_thirtyfour_color;
+              font-size: 3.59vw;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+    .load_more_btn {
+      .load_btn {
+        margin: 28px 0px 28px 34px;
+        width: 80%;
+        height: 50px;
+        text-transform: capitalize;
+        font-family: "Lato Semibold";
+        font-size: 4.103vw;
+        border: 1px solid $sbi_header_color_before_scroll;
+        background: $sbi_twentysix_color;
+        border-radius: 0;
+        box-shadow: none;
+      }
+    }
+  }
+}

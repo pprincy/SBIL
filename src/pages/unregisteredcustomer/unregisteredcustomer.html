@@ -1,0 +1,30 @@
+<ion-content class="bg_customer">
+  <div class="customer_wrap" align="center">
+    <img src="assets/imgs/otpset.png" />
+  </div>
+  <div class="customer_wrap_cont">
+  <div class="heading_panel" align="center">
+      <h1 *ngIf="mobile">{{'unRegisteredCustomer.mobileTitle' | translate}} </h1>
+      <h1 *ngIf="!mobile">{{'unRegisteredCustomer.emailTitle' | translate}}</h1>
+      <h1 *ngIf="!mobile">{{'unRegisteredCustomer.emailTitleone' | translate}}</h1>
+      <h4 *ngIf="mobile">{{'unRegisteredCustomer.emailSubTitle' | translate}}</h4>
+      <h4 *ngIf="!mobile">{{'unRegisteredCustomer.mobileSubTitle' | translate}}</h4>
+      </div>
+      <div class="user_img">
+        <img src="assets/imgs/Location.png" />
+      </div>
+            <div class="main_site"  *ngIf="!mobile"  (click)="goBrowser()"><a>{{'unRegisteredCustomer.locate' | translate}}</a> </div>
+            <div class="main_site"  *ngIf="mobile"  (click)="goBrowser()"><a>{{'unRegisteredCustomer.updateYrEmail' | translate}}</a> </div>
+
+          <!-- <div class="customer_wrap_btm">
+            <a class="reenter" (click)="reEnter()">{{'unRegisteredCustomer.reEnter' | translate}}</a>
+            <br/>
+            <a *ngIf="mobile" class="tryother"><span><img src="assets/imgs/email_icon.png" alt="Image"/> </span>{{'unRegisteredCustomer.tryEmail' | translate}}</a>
+            <a *ngIf="!mobile" class="tryother"><span><img src="assets/imgs/phone_icon.png" alt="Image"/> </span>{{'unRegisteredCustomer.tryMobile' | translate}}</a>
+          </div> -->
+          <button ion-button class="login_btn" (click)="reEnter()">
+            {{'unRegisteredCustomer.reEnter' | translate}}
+          </button>
+    </div>
+
+</ion-content>

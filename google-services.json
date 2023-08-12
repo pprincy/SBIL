@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "123275891232",
+    "firebase_url": "https://sbil-paisagenie.firebaseio.com",
+    "project_id": "sbil-paisagenie",
+    "storage_bucket": "sbil-paisagenie.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123275891232:android:40aa49e7ebcaab00",
+        "android_client_info": {
+          "package_name": "com.paisagenie.paisagenie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "123275891232-64n3c3k9vv4p4t3i6h8fkn8v3hlghl3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB78ZDaihkbneqJzfs3YiGoPxvX9q8iruA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

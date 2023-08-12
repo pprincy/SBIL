@@ -1,0 +1,580 @@
+<ion-header>
+  <ion-navbar color="sbiHeader">
+    <button [class.active]="isBtnActive" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'incomeDashboard.spendsManager' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div [ngSwitch]="expenditure" [hidden]="!isPageDataLoad">
+    <div *ngSwitchCase="'spendometer'" class="spendometer_cont">
+      <ion-card class="common_expense_card spendo_first_sec">
+        <ion-card-header>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-12 >
+                <button class="month_btn" ion-button clear (click)="MonthListFunc()">
+                  <h4 class="month_title">{{expReviewDate ? expReviewDate : 'Select date'}}</h4>
+                  <ion-icon class="month_arrow" name="md-arrow-dropdown"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-header>
+        <ion-card-content class="spend_card">
+          <div class="card_inner_cont">
+            <div class="spendometer_cont_sec">
+              <ion-card>
+                <div id="spend_dashboard_chart" style="display: block; margin-top: -58px; margin-left: -30px; margin-right: -30px; margin-bottom: -195px;" ></div>
+              </ion-card>
+              <div class="column_wrapper">
+                <div class="col_inner1">
+                  <ion-list class="column_box1">
+                    <figure>
+                      <img src="/assets/imgs/fd_calculator/amount_invested.png" alt="" />
+                    </figure>
+                    <h5 class="loan_amt">
+                      {{'incomeDashboard.totalMonthlySpends' | translate}}
+                    </h5>
+                    <div class="invested_result_amt loanamt_col">
+                      <span class="rs_icon icon-Icons_Ruppee"></span>{{totalSpends | amountFormat:'S' }}
+                    </div>
+                  </ion-list>
+                </div>
+              </div>
+              <div class="column_wrapper">
+                <div class="col_inner2">
+                  <ion-list class="column_box2">
+                    <figure>
+                      <img src="assets/imgs/monthly_savings.svg" alt="" />
+                    </figure>
+                    <h5 *ngIf="!moreSpends">
+                      {{'incomeDashboard.monthlySavings' | translate}}
+                    </h5>
+                    <div class="invested_result_amt highlighted_txt" *ngIf="!moreSpends">
+                      <span class="rs_icon icon-Icons_Ruppee"></span>{{savings
+                      | amountFormat:'S'}}
+                    </div>
+                    <div class="invested_result_amt highlighted_txt" *ngIf="moreSpends">
+                      <span class="indiccat color"></span>{{'incomeDashboard.exceededSpends' | translate}}
+                      <span class="rs_icon icon-Icons_Ruppee"></span>{{savings
+                      | amountFormat:'S'}}
+                    </div>
+                  </ion-list>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="common_expense_card spends_sec">
+        <ion-card-header>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-12>
+                <h5>{{'incomeDashboard.spendsSummary' | translate}}</h5>
+                <button class="month_btn" ion-button clear (click)="MonthListExpense()">
+                  <h4 class="month_title">{{expensesDate ? expensesDate : 'Select date'}}</h4>
+                  <ion-icon class="month_arrow" name="md-arrow-dropdown"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-header>
+        <ion-card-content [hidden]="!isExpensesData">
+          <div>
+            <div id="total_expenses" style="min-width: 300px; height: 220px; margin: 0 auto"></div>
+            <div class="recent_spends">
+              <ion-list>
+                <ion-item *ngFor="let expense of expenseCategory" [hidden]="!expense.Expense"
+                  (click)="expenseListing(expense.CategoryName,expense.CategoryId)">
+                  <ion-thumbnail item-start class="santon_icon" [style.background]="expense.CategoryColorCode">
+                    <img src="{{imgURLNew + expense.ImagePath}}" />
+                  </ion-thumbnail>
+                  <h5>{{expense.CategoryName}}</h5>
+                  <div item-end class="spent_data">
+                    <span class="spent_data_lbl" align="center">
+                      <span class="icon-Icons_Ruppee"></span>{{expense.Expense |
+                      amountFormat:'S'}}</span>
+                    <!-- <span
+                      class="spent_data_date {{expense.IncomeApproxBudgetStatusFlag}}">{{expense.IncomeApproxBudgetStatus}}
+                    </span> -->
+                  </div>
+                  <!-- <ion-icon item-end name="ios-arrow-forward-outline" class="arrow_right"></ion-icon> -->
+                  <div item-end class="arrow_right">
+                    <!-- <img src="assets/imgs/vector.svg" /> -->
+                    <ion-icon class="right_icon" name="md-arrow-dropright"></ion-icon>
+                  </div>
+                </ion-item>
+              </ion-list>
+              <div class="artificalIntelligence" *ngIf="isArtificalIntelligence">
+                <div align="right">
+                  <i (click)="hideArtificalIntelligence(1)">
+                    <ion-icon class="closeIcon" name="ios-close-outline"></ion-icon>
+                  </i>
+                </div>
+                <span class="aiText">
+                  <img class="budgetCalculator" src="assets/imgs/icons_calculator.svg" />
+                  <span class="aiLogic" *ngFor="let ai of artificalIntelligence">
+                    {{'incomeDashboard.itSeemsLike' |
+                    translate}}{{ai.CategoryName}}
+                    <span class="aiLogic">{{'incomeDashboard.hasIncreasedRecently' |
+                      translate}}</span>
+                    <span class="aiLogic">{{'incomeDashboard.setBudgetFor' |
+                      translate}}{{ai.CategoryName}}{{'incomeDashboard.keLiye' |
+                      translate}}?</span>
+                  </span>
+                </span>
+
+                <div class="set_button" (click)="incomeapproximation()">
+                  <a class="login_btn">{{'incomeDashboard.setBudget' | translate}}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ion-card-content>
+
+        <div class="articles_num" [hidden]="isExpensesData">
+          <div class="articles_num_cont">
+            <span>{{'common.noSpendsAvailable' | translate}}</span>
+          </div>
+        </div>
+        <div class="no_padding" [hidden]="!isExpensesData">
+          <div class="view_all" (click)="expenses()">
+            {{'incomeDashboard.viewMore' | translate}}
+          </div>
+        </div>
+      </ion-card>
+
+      <ion-card class="common_expense_card budget_expense">
+        <ion-card-header>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-12>
+                <h5>{{'incomeDashboard.budgetExpense' | translate}}</h5>
+                <h6>{{'incomeDashboard.setMonthlyBudget' | translate}}</h6>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-header>
+        <ion-card-content class="no_padding">
+          <div class="budget_list_sec">
+            <ion-thumbnail class="cal_icon">
+              <img src="assets/imgs/budgetexpense/calculate.svg" />
+            </ion-thumbnail>
+            <ion-thumbnail class="attribution_icon">
+              <img src="assets/imgs/budgetexpense/attribution.svg" />
+            </ion-thumbnail>
+            <ion-thumbnail class="travel_icon">
+              <img src="assets/imgs/budgetexpense/travel.svg" />
+            </ion-thumbnail>
+            <ion-thumbnail class="cal_icon">
+              <img src="assets/imgs/budgetexpense/calculate.svg" />
+            </ion-thumbnail>
+            <ion-thumbnail class="add_btn">
+              <img src="assets/imgs/budgetexpense/add.svg" />
+            </ion-thumbnail>
+          </div>
+          <div class="budget_input_wrap">
+            <div class="yes_no_container_body_mid calculation_with_range range_result">
+              <div class="enterBudget" (click)="selectCategoryPopUp()">
+                <div class="calculation_with_range_inp text_fld">
+                  <ion-input readonly disabled class="overlay_dropdown_rng_val"
+                    placeholder="{{'incomeDashboard.SelectCategoryBudget' | translate}}" [(ngModel)]="budgetName">
+                  </ion-input>
+                  <div class="arrow">
+                    <img src="assets/imgs/Vector.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="yes_no_container_body_mid calculation_with_range range_result">
+              <div class="enter_Budget">
+                <div class="calculation_with_range_inp text_fld">
+                  <span class="rs_icon">`</span>
+                  <ion-input min="0" type="tel" class="overlay_dropdown_rng_val"
+                    (ionChange)="formatAmount(setBudgetComma)"
+                    placeholder="{{'incomeDashboard.setBudget' | translate}}" [(ngModel)]="setBudgetComma">
+                  </ion-input>
+                </div>
+              </div>
+            </div>
+            <div class="set_button" (click)="addCategoryBudget()">
+              <a class="login_btn">{{'incomeDashboard.setBudget' | translate}}</a>
+            </div>
+            <div class="no_padding" *ngIf=isCustomerBudget>
+              <div class="view_all" (click)="incomeapproximation()">{{'incomeDashboard.viewAll' | translate}}</div>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="common_expense_card recent_spends_sec" [hidden]="!isRecentData">
+        <ion-card-header>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-12>
+                <h5>{{'incomeDashboard.myRecentSpends' | translate}}</h5>
+                <h6>{{'incomeDashboard.addOtherSources' | translate}}</h6>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-header>
+        <ion-card-content class="no_padding">
+          <div class="card_inner_cont recent_spends">
+            <ion-list>
+              <ion-item *ngFor="let spends of recentSpends">
+                <ion-thumbnail item-start class="zomato_icon" [style.background]="spends.CategoryColorCode">
+                  <img src="{{imgURLNew + spends.ImagePath}}" />
+                </ion-thumbnail>
+                <h5>
+                  {{spends.SubCategoryName ? spends.SubCategoryName :
+                  "Un-named"}}
+                </h5>
+                <p>
+                  {{spends.ExpenseDate | date:'MMM dd , yyyy'}}
+                  <!-- <img class="smsIcon" *ngIf="spends.IsAppAddition == 1 ? true: false"
+                    src="assets/imgs/icons_hand.svg" />
+                  <ion-icon class="smsScrapIcon" *ngIf="spends.IsAppAddition == 1 ? false: true" name="ios-mail">
+                  </ion-icon> -->
+                </p>
+                <div item-end class="recent_price">
+                  <span class="rs_icon icon-Icons_Ruppee"></span>{{spends.ExpenseValue | amountFormat:'S'}}
+                </div>
+                <!-- <ion-icon item-end name="create" class="arrow_right"
+                  (click)="addExpense(spends.CategoryName,spends.ExpenseDate,spends.ExpenseValue,spends.CategoryId,spends.SubCategoryName,spends.ExpenseId,spends.IsRepeat)">
+                </ion-icon> -->
+                <div item-end class="arrow_right"
+                  (click)="addExpense(spends.CategoryName,spends.ExpenseDate,spends.ExpenseValue,spends.CategoryId,spends.SubCategoryName,spends.ExpenseId,spends.IsRepeat)">
+                  <img src="assets/imgs/edit_note.svg" />
+                </div>
+              </ion-item>
+            </ion-list>
+          </div>
+          <div class="view_all" (click)="mySpendsPage()">
+            {{'incomeDashboard.viewMore' | translate}}
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="common_expense_card spends_summary">
+        <ion-card-header>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-12>
+                <h4>{{'expenesTrends.spendsPattern' | translate}}</h4>
+                <button class="month_btn" ion-button clear (click)="MonthListExpenseTrend()">
+                  <p class="month_title">{{expensesTrendDate ? expensesTrendDate : 'Select date'}}</p>
+                  <ion-icon class="month_arrow" name="md-arrow-dropdown"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-header>
+        <ion-card-content class="no_padding" [hidden]="!isTrendData">
+          <div class="card_inner_cont">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <div id="expense_trend_dash" style="height: 155px; margin: 0 auto"></div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+          <div class="view_all" (click)="expenseTrends()">
+            {{'incomeDashboard.viewMore' | translate}}
+          </div>
+        </ion-card-content>
+        <div class="articles_num" [hidden]="isTrendData">
+          <div class="articles_num_cont">
+            <span>{{'common.noDataAvalilable' | translate}}</span>
+          </div>
+        </div>
+      </ion-card>
+      <ion-row class="round_btn_sec">
+        <ion-col col-10>
+          <button ion-button class="round_btn_new" (click)="report()" [hidden]="!isRecentData">
+            {{'incomeDashboard.viewReport' | translate}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div *ngSwitchCase="'savings'" class="saving_cont">
+      <ion-card class="common_expense_card">
+        <ion-card-header class="customHeader">
+          <ion-grid>
+            <ion-row text-center>
+              <ion-col>
+                <button class="month_btn" ion-button clear (click)="MonthListExpenseReview()">
+                  <h4 class="month_title">{{expReviewDate ? expReviewDate : 'Select date'}}</h4>
+                  <ion-icon class="month_arrow" name="md-arrow-dropdown"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <div class="chart_bar">
+            <span [style.width.%]="totalCurrentSavingsPrecentage" class="color_fi"></span>
+            <span [style.width.%]="totalNeedToSavePrecentage" class="color_ther"></span>
+          </div>
+        </ion-card-header>
+        <ion-card-content>
+          <div class="saving_head">
+            <h3>{{'savings.requiredSavings' | translate}}</h3>
+            <div>
+              <span class="rs_icon icon-Icons_Ruppee"></span>{{requiredSaving ?
+              requiredSaving: 0 |amountFormat:'S'}}
+            </div>
+          </div>
+          <ion-grid class="invested_monthlySaving">
+            <ion-row>
+              <ion-col>
+                <h5>
+                  <span class="indiccat color_sec"></span>
+                  {{'savings.currentSavings' | translate}}
+                </h5>
+                <div class="invested_result_amt">
+                  <span class="rs_icon icon-Icons_Ruppee"></span>{{savings |
+                  amountFormat:'S'}}
+                </div>
+              </ion-col>
+              <ion-col class="invested_result_amt_savings">
+                <h5>{{'savings.needToSaveMore' | translate}}</h5>
+                <div class="invested_result_amt">
+                  <span class="rs_icon icon-Icons_Ruppee"></span>{{needToSave ?
+                  needToSave : 0| amountFormat:'S'}}
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <h2 *ngIf="isGoals">{{'savings.existingGoals' | translate}}</h2>
+
+          <div class="critical_slider_list" *ngIf="isGoals">
+            <div class="critical_slider_list_row">
+              <div class="critical_slider_list_head"></div>
+              <div class="critical_slider_list_head">
+                {{'savings.tenure' | translate}}
+              </div>
+              <div class="critical_slider_list_head">
+                {{'savings.needToSave' | translate}}
+              </div>
+              <div class="critical_slider_list_head"></div>
+            </div>
+
+            <div class="critical_slider_list_row" *ngFor="let goals of userGoals">
+              <div class="critical_slider_list_data">
+                <span class="critical_slider_list_data_img">
+                  <img src="{{imgURLNew + goals.ImagePath}}" [hidden]="goals.GoaltypeID == 1" />
+                  <img src="assets/icon/{{goals.UserGoalName}}.png" [hidden]="goals.GoaltypeID !== 1" />
+                </span>
+                <span class="critical_slider_list_data_val">{{goals.UserGoalName}}</span>
+              </div>
+              <div class="critical_slider_list_data">
+                <span>{{goals.tenure}}</span> {{'common.yrs' | translate}}
+              </div>
+              <div class="critical_slider_list_data">
+                <span class="rs_icon">`</span> {{goals.RequieredDownpayment |
+                amountFormat:'S'}}
+              </div>
+              <div class="critical_slider_list_data" (click)="deleteGoals(goals.UserSaveGoalID)">
+                <ion-icon class="trashIcon" name="ios-trash-outline"></ion-icon>
+              </div>
+            </div>
+          </div>
+          <div class="collection">
+            <div class="collection_header disc_com_header">
+              <h2>{{'savings.haveMoreFinancialGoals' | translate}}</h2>
+              <h2>{{'savings.addHere' | translate}}:</h2>
+            </div>
+            <div class="collection_cont">
+              <ion-scroll class="collection_cont_slider" scrollX="true" scroll-avatar>
+                <div class="collection_cont_slider_item" *ngFor="let goal of goalsList"
+                  (click)="popularGoalClick(goal)">
+                  <div class="collection_cont_slider_item_inner"
+                    [hidden]="goal.GoalTypeID == 7 || goal.GoalTypeID == 8">
+                    <div class="collection_cont_slider_item_inner_mid"
+                      [hidden]="goal.GoalTypeID == 7 || goal.GoalTypeID ==8">
+                      <figure class="collection_fig" [hidden]="goal.GoalTypeID == 7 || goal.GoalTypeID == 8">
+                        <img src="{{imgURLNew + goal.ImagePath}}" />
+                      </figure>
+                      <div class="collection_cont_slider_item_inner_btm"
+                        [hidden]="goal.GoalTypeID == 7 || goal.GoalTypeID ==8">
+                        {{goal.GoalType}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ion-scroll>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+  <ion-fab class="addExpenseFab" bottom right (click)="addExpense()" *ngIf="expenditure=='spendometer'? true:false">
+    <button class="addExpenseButn" ion-fab mini color="sbi_secondary_color">
+      <ion-icon class="addExpenseIcon" name="add"> </ion-icon>
+      <h6 class="addExpenseText">
+        {{'incomeDashboard.add' | translate}} {{'incomeDashboard.expense' |
+        translate}}
+      </h6>
+    </button>
+  </ion-fab>
+</ion-content>
+
+<ion-footer class="spend_manager_footer">
+  <ion-segment [(ngModel)]="expenditure" color="sbiHeader" (ionChange)="spendManagerSegChange()">
+    <ion-segment-button value="spendometer" (click)="ionViewWillEnter()">
+      <figure>
+        <img src="assets/imgs/spendo.svg" alt="" />
+      </figure>
+      {{'incomeDashboard.spendOmeter' | translate}}
+    </ion-segment-button>
+    <ion-segment-button value="savings" (click)="expenditureReview(reviewDate);">
+      <figure>
+        <img src="assets/imgs/savings.svg" alt="" />
+      </figure>
+      {{'incomeDashboard.savings' | translate}}
+    </ion-segment-button>
+  </ion-segment>
+</ion-footer>
+
+<div class="overlay_dropdown" *ngIf="unCategorised">
+  <div class="overlay_dropdown_content calculation_with_range uncategorize_popup">
+    <div text-right>
+      <i (click)="showPopupunCategorised()">
+        <ion-icon name="ios-close-outline"></ion-icon>
+      </i>
+    </div>
+    <h4>
+      {{'incomeDashboard.hi' | translate}}<br />{{'incomeDashboard.youHave' |
+      translate}} {{unCategoriesExpenseCount == undefined? '0':
+      unCategoriesExpenseCount}} {{'incomeDashboard.uncategorisedSpends' |
+      translate}}<br />{{'incomeDashboard.doYouWishToLook' | translate}}
+    </h4>
+    <ion-row>
+      <ion-col>
+        <button ion-button class="back_btn" (click)="showPopupunCategorised()">
+          {{'incomeDashboard.noThanks' | translate}}
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button class="login_btn" type="submit" (click)="uncategorisedExpense()">
+          {{'incomeDashboard.okay' | translate}}
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>
+</div>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span>
+    <img src="assets/imgs/pageLoader.gif" />
+  </span>
+</div>
+
+<div class="overlay_dropdown" *ngIf="isSetCategory">
+  <div class="overlay_dropdown_content calculation_with_range">
+    <ion-card class="common_expense_card">
+      <ion-card-header>
+        <h4>
+          {{'uncategorizedSpends.selectCategory' | translate}}
+          <i float-right (click)="hidePopupSelectCategory()">
+            <ion-icon class="closeIcon" name="ios-close-outline"></ion-icon>
+          </i>
+        </h4>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="card_inner_cont recent_spends">
+          <ion-list>
+            <ion-item (click)="selectBudget(category.CategoryId, category.CategoryName, category.CategoryBudget)"
+              *ngFor="let category of allBudgetCat; let i = index" [hidden]="!category.CategoryId">
+              <ion-thumbnail item-start>
+                <img class="c{{i}}" src="{{imgURLNew + category.ImagePath}}" />
+              </ion-thumbnail>
+              <h5>{{category.CategoryName}}</h5>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</div>
+
+<div class="overlay_dropdown" *ngIf="expensepop">
+  <div class="overlay_dropdown_content calculation_with_range">
+    <h3>
+      {{showCategoryName}}
+      <i float-right (click)="showPopupExpenses()">
+        <ion-icon class="closeIcon" name="ios-close-outline"></ion-icon>
+      </i>
+    </h3>
+    <div class="calculation_with_range_inp" align="center">
+      <span class="rs_icon">`</span>
+      <ion-input type="number" class="overlay_dropdown_rng_val" [(ngModel)]="setBudget"
+        (ngModelChange)="isValidAmount = false"></ion-input>
+    </div>
+    <ion-item>
+      <ion-range min="{{minAmount}}" max="{{maxAmount}}" step="10" [(ngModel)]="setBudget" pin="true"
+        (ngModelChange)="isValidAmount = false">
+      </ion-range>
+    </ion-item>
+    <ion-item class="custom_notes" align="center">
+      <p>
+        {{'incomeApproximation.assignMonthlyIncomeForHealth' | translate}}
+        {{showCategoryName}} {{'incomeApproximation.assignMonthly' | translate}}
+      </p>
+    </ion-item>
+    <span class="valid_msg" *ngIf="isValidAmount" align="center">Please enter amount between {{minAmount}} to
+      {{maxAmount}}</span>
+    <ion-item>
+      <button ion-button class="login_btn" (click)="newValue()">
+        {{'buttons.ok' | translate}}
+      </button>
+    </ion-item>
+  </div>
+</div>
+<div class="overlay_dropdown delete_popup" *ngIf="deleteStatus">
+  <div class="overlay_dropdown_content">
+    <h3 text-center padding>{{'Saved.youReallyWantToDelete' | translate}}</h3>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button class="back_btn" (click)="deleteGoal('no')" outline>
+            {{'common.no' | translate}}
+          </button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button class="login_btn" (click)="deleteGoal('yes')">
+            {{'common.yes' | translate}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>
+
+<div class="overlay_dropdown delete_popup" *ngIf="resetStatus">
+  <div class="overlay_dropdown_content">
+    <h3 text-center padding>
+      {{'incomeDashboard.doYouWantToReset' | translate}}
+      {{'incomeDashboard.kayAap' | translate}} {{budgetCategory}}
+      {{'incomeDashboard.keLiyeBudget' | translate}} ?
+    </h3>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button class="back_btn" (click)="resetCatBudget('no')" outline>
+            {{'common.no' | translate}}
+          </button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button class="login_btn" (click)="resetCatBudget('yes')">
+            {{'common.yes' | translate}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>

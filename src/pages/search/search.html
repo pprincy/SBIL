@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button [class.active]="isBtnActive" (click)="toggleClass()" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+    <ion-title>{{'search.search' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="calculator_common_sec scroll_div">
+
+  
+  <ion-toolbar hideBackButton>
+  
+    <ion-searchbar placeholder="{{'search.search' | translate}}" [(ngModel)]="search" (ngModelChange)="searchFun()">
+     
+    </ion-searchbar>
+    <ion-buttons end>
+      <!-- <button ion-button icon-only (click)="goBack()" *ngIf="isCancel">
+        <ion-icon name="close"></ion-icon>
+      </button> -->
+      <ion-spinner style="margin-left:10px" name="bubbles" *ngIf="!isCancel"></ion-spinner>
+    </ion-buttons>
+  </ion-toolbar>
+  <div class="articles_num" *ngIf="noSearch">
+    <div class="articles_num_cont">
+      <span>{{'search.noSearchRecords' | translate}}</span>
+    </div>
+  </div>
+
+  <div class="search_sugge" *ngIf="goalsSearchList.length > 0 || trandingSearch.length > 0">
+    <ion-list *ngIf="goalsSearchList.length > 0 ">
+      <ion-item *ngFor="let g of goalsSearchList" (click)="goalGo(g)">
+        <ion-thumbnail item-start>
+          <img src="{{imgURL + g.ImagePath}}">
+        </ion-thumbnail>
+        <h2>Set your goal with</h2>
+
+        <p class="goal_type">{{g.GoalType}}</p>
+        <button ion-button icon-only class="arrow">
+          <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward-outline"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="trandingSearch.length > 0">
+      <div no-lines class="search_title">
+        {{'search.articlessearches' | translate}}
+      </div>
+      <ion-item *ngFor="let t of trandingSearch">
+        <div style="  background-color: #E0F6FD" (click)="goArticle(t)">
+          <p>{{t.Title}}</p>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="search_title" *ngIf="resentArticle.length > 0"> {{'search.recentlyViewedArticles' | translate}}</div>
+  <ion-list class="recent_article">
+    <ion-item *ngFor="let r of resentArticle" (click)="goArticle(r)">
+        <div style="  background-color: #E0F6FD" >
+        <ion-row class="row" style="align-items: center;">
+
+          <ion-thumbnail>
+            <img src="{{imgURL + r.BigImage}}">
+          </ion-thumbnail>
+
+          <ion-col>
+            <p>{{r.Title}}</p>
+          </ion-col>
+
+        </ion-row>
+
+      </div>
+
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

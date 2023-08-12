@@ -1,0 +1,190 @@
+page-ep-fwithout-balfinal {
+    .scroll_div .scroll-content {
+        padding-top: 0!important;
+        background: #FFF !important;
+    }
+    .top_area{ 
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: none;
+        .top_area_container{background: none;
+            .cloud{
+                opacity: 0.5;
+            }
+        }
+       
+    }
+    .header {
+        .toolbar {    box-shadow: none;
+            .toolbar-background{border:none;}
+                .bar-button{color: $sbi_fifth_color;}
+                .toolbar-content{
+                    .toolbar-title{
+                        color: $sbi_fifth_color;
+                    }
+                } 
+        }
+        &:after{background-image:none; height: 0;}
+        .networth_details{ text-align: center;  color: $sbi_fifth_color;
+           
+            h4{
+                font-family:'Lato Light';
+                color: lighten($sbi_fifth_color,15%);          
+                font-size: 3.88vw;
+                line-height: 4.16vw;
+                margin: 0 0 4px 0; 
+            }
+            .networth_amt{
+                font-family:'Lato Black';font-size: 10.27vw;
+                .networth_amt_inner{display: inline-block;  padding: 0 10px 5px 10px;
+                    .rs_icon{margin-right: 10px;}
+                }
+               
+            }
+            .networth_sum{
+                font-family:'Lato Semibold';font-size: 3.61vw; padding: 15px 0px 15px 0px;
+            }
+            
+            
+        }
+    }
+   
+
+    .content {
+        .card-header{
+            font-size: 4.44vw;
+            color: $sbi_nine_color;font-family:'Lato Black'; text-transform: uppercase; letter-spacing: 1px;
+        }
+        background: #5448b7; /* Old browsers */
+        background: -moz-linear-gradient(top, #5448b7 0%, #5448b7 35%, #ffffff 35%, #ffffff 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #5448b7 0%,#5448b7 35%,#ffffff 35%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #5448b7 0%,#5448b7 35%,#ffffff 35%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5448b7', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+        #networth_chart{
+            .highcharts-container{margin: 0 auto;}
+        }
+        .card{margin:0 auto 25px auto; width: 100%; box-shadow:0px 8px 19px 0px lighten($sbi_third_color,10%); border-radius: 4px;}
+       
+.invested_result {
+            .invested_user_details{position: relative;
+                &:after{position: absolute; content: ''; height:1px; width:100%; background-color: lighten($sbi_third_color,40%); bottom:0; right:-1px; }
+                .col{position: relative;  padding:10px 12px;
+                    &:first-child{
+                        &:before{position: absolute; content: ''; height:0px; width:0px; top:0; right:0px; }
+                    }
+                    }
+                .invested_user_name{font-family:'Lato Black';
+                    color: $sbi_seven_color;          
+                    font-size: 3.33vw;
+                    line-height: 3.61vw; text-transform: uppercase; text-align: left;}
+                .invested_user_age{font-family:'Lato Light';
+                    color:$sbi_third_color;          
+                    font-size: 3.33vw;
+                    line-height: 3.61vw;  text-align: right;
+                strong{font-family:'Lato Black';}
+                }
+            }
+            .col{position: relative;  padding:12px;
+            &:first-child{
+                &:before{position: absolute; content: ''; height:44px; width:1px; background-color: lighten($sbi_third_color,20%); top:12px; right:-1px; }
+            }
+            }
+            border-bottom: 1px solid lighten($sbi_third_color,20%); padding: 4px 0px;
+            .grid{padding: 0;}
+            h5{ font-family:'Lato Semibold';
+                color: $sbi_nine_color;          
+                font-size: 3.05vw;
+                line-height: 3.33vw;
+                margin: 0 0 8px 0;}
+            .invested_result_amt{
+                font-family:'Lato Black';
+                color: $sbi_primary_color;          
+                font-size: 5vw;
+                line-height: 5.27vw;
+                .rs_icon{margin-right:2px; font-size:5.83vw;}
+                &.highlighted_txt{
+                    color: $sbi_highlighted_color;
+                    .pm{
+                        font-family:'Lato Light';
+                        font-size: 3.33vw;
+                    }
+                   }
+            }
+        }
+        
+
+       .networth_list{
+                            margin: -1px -16px 20px;
+                            .item{border-top:0.5px solid lighten($sbi_third_color,20%); font-family:'Lato Semibold'; background-color: lighten($sbi_third_color,28%);
+                                color: $sbi_nine_color;          
+                                font-size: 3.33vw;
+                
+                
+                                .label {margin-right: 0; color: $sbi_nine_color;
+                                    .rs_icon,.icon{font-size: 4.72vw; margin-right: 1.11vw; vertical-align: top;min-width: 15px;}
+                                }
+                                .select {
+                                    .select-text{
+                                        color: $sbi_primary_color;
+                                        font-family:'Lato Light';    font-size: 5.25vw;
+                
+                                    }
+                                    .select-icon{
+                                        color: $sbi_primary_color;    padding-left: 7px;
+                                        .select-icon-inner{
+                                           
+                                            position: relative;
+                                            font-family: "Ionicons";
+                                            border: none;
+                                            top: 0;
+                                            right: 0;
+                                            width: auto;
+                                            height: auto;
+                                            left: auto;
+                                            margin-top:0px;
+                                            &:after{
+                                                content: "\f3d0";
+                                                font-size: 4.4vw;
+                                                color: lighten($sbi_primary_color,20%);
+                                                margin-top: 1px;
+                                                position: absolute;
+                                                top:3px;
+                                            }
+                                        }
+                                    }
+                                   
+                                }
+                                .networth_list_lt{
+
+
+                        padding-top: 8px;
+                        p{font-size: 2.77vw; color: lighten($sbi_third_color,30%); padding-left: 5.55vw;
+                            a{
+                                color:$sbi_primary_color;
+                            }
+                            }
+                        .rs_icon,.icon{font-size: 4.72vw; margin-right: 4px; vertical-align: middle;}
+                    }
+                
+                .item-button{
+                    font-family:'Lato Light';
+                    color: $sbi_primary_color;          
+                    font-size: 5vw; height: auto;
+                    .rs_icon,.icon-Icons_Monthly_Expense{    display: inline-block;
+                        vertical-align: middle;
+                        font-size: 4vw;
+                        margin-top: 3px;
+                        margin-right: 2px;}
+                        .icon{font-size: 4.44vw; color: $sbi_eight_color;  margin-top: 1px;}
+                }
+                }
+            }
+
+        
+    }
+
+}
+

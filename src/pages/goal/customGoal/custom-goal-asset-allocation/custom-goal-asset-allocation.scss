@@ -1,0 +1,1191 @@
+page-custom-goal-asset-allocation {
+  // .top_area{
+  //     position: absolute;
+  //     z-index: 1;
+  //     top: 0;
+  //     left: 0;
+  //     right: 0;
+  //     background: none;
+  //     .top_area_container{background: none;
+  //         .cloud{
+  //             opacity: 0.5;
+  //         }
+  //     }
+
+  // }
+  .header {
+    background: $sbi_thirtytwo_color;
+
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+      border-bottom: 1px solid $sbi_fifth_color;
+
+      .toolbar-background {
+        border: none;
+      }
+
+      .bar-button {
+        color: $sbi_fifth_color;
+        // padding-left: 28px;
+        .back-button-text {
+          display: none;
+        }
+      }
+
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+          margin-left: -22px;
+        }
+      }
+    }
+
+    &:after {
+      background-image: none;
+      height: 0;
+    }
+  }
+
+  .allocation_graph_main_graph {
+    display: table;
+    width: 90%;
+    margin: 15px 0;
+    > span {
+      display: table-cell;
+      height: 40px;
+      position: relative;
+      &:first-child {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+      &:last-child {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+      &:hover {
+        > span {
+          display: block;
+          transition: all 0.3s ease-out;
+        }
+      }
+      > span {
+        display: none;
+        position: absolute;
+        width: 58px;
+        color: $sbi_nine_color;
+        font-size: 10px;
+        background-color: lighten($sbi_third_color, 20%);
+        padding: 5px 7px;
+        border-radius: 20px;
+        font-family: "Lato Black";
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: -25px;
+        z-index: 1;
+        &:after,
+        &:before {
+          position: absolute;
+          content: "";
+        }
+
+        &:before {
+          border: 6px solid transparent;
+          border-top: 6px solid lighten($sbi_third_color, 20%);
+          bottom: -11px;
+          left: 22px;
+          z-index: 3;
+        }
+        &:after {
+          z-index: 2;
+        }
+      }
+
+      &.color_fr {
+        background-color: $sbi_button_color;
+        > span {
+          border: 1px solid $sbi_button_color;
+          &:after {
+            border: 6px solid transparent;
+            border-top: 6px solid $sbi_button_color;
+            bottom: -12px;
+            left: 22px;
+          }
+        }
+      }
+      &.color_sec {
+        background-color: $sbi_eleven_color;
+        > span {
+          border: 1px solid $sbi_eleven_color;
+          &:after {
+            border: 6px solid transparent;
+            border-top: 6px solid $sbi_eleven_color;
+            bottom: -12px;
+            left: 22px;
+          }
+        }
+      }
+      &.color_tr {
+        background-color: $sbi_primary_color;
+        > span {
+          border: 1px solid $sbi_primary_color;
+          &:after {
+            border: 6px solid transparent;
+            border-top: 6px solid $sbi_primary_color;
+            bottom: -12px;
+            left: 22px;
+          }
+        }
+      }
+      &.color_for {
+        background-color: $sbi_secondary_color;
+        > span {
+          border: 1px solid $sbi_secondary_color;
+          &:after {
+            border: 6px solid transparent;
+            border-top: 6px solid $sbi_secondary_color;
+            bottom: -12px;
+            left: 22px;
+          }
+        }
+      }
+      &.color_fi {
+        background-color: $sbi_seven_color;
+        > span {
+          border: 1px solid $sbi_seven_color;
+          &:after {
+            border: 6px solid transparent;
+            border-top: 6px solid $sbi_seven_color;
+            bottom: -12px;
+            left: 22px;
+          }
+        }
+      }
+      &.color_si {
+        background-color: $sbi_error_color;
+        > span {
+          border: 1px solid $sbi_error_color;
+          &:after {
+            border: 6px solid transparent;
+            border-top: 6px solid $sbi_error_color;
+            bottom: -12px;
+            left: 22px;
+          }
+        }
+      }
+
+      &.color_sev {
+        background-color: $sbi_third_color;
+        > span {
+          border: 1px solid $sbi_third_color;
+          &:after {
+            border: 6px solid transparent;
+            border-top: 6px solid $sbi_third_color;
+            bottom: -12px;
+            left: 22px;
+          }
+        }
+      }
+
+      &.color_eig {
+        background-color: $sbi_fourth_color;
+        > span {
+          border: 1px solid $sbi_fourth_color;
+          &:after {
+            border: 6px solid transparent;
+            border-top: 6px solid $sbi_fourth_color;
+            bottom: -12px;
+            left: 22px;
+          }
+        }
+      }
+
+      &.color_nin {
+        background-color: $sbi_sixth_color;
+        > span {
+          border: 1px solid $sbi_sixth_color;
+          &:after {
+            border: 6px solid transparent;
+            border-top: 6px solid $sbi_sixth_color;
+            bottom: -12px;
+            left: 22px;
+          }
+        }
+      }
+
+      &.color_ten {
+        background-color: $sbi_eight_color;
+        > span {
+          border: 1px solid $sbi_eight_color;
+          &:after {
+            border: 6px solid transparent;
+            border-top: 6px solid $sbi_eight_color;
+            bottom: -12px;
+            left: 22px;
+          }
+        }
+      }
+
+      &.color_eleven {
+        background-color: $sbi_thirteen_color;
+        > span {
+          border: 1px solid $sbi_thirteen_color;
+          &:after {
+            border: 6px solid transparent;
+            border-top: 6px solid $sbi_thirteen_color;
+            bottom: -12px;
+            left: 22px;
+          }
+        }
+      }
+    }
+  }
+  .content {
+    background: $sbi_fifth_color !important;
+    .networth_details {
+      text-align: center;
+      padding: 0 0 26px;
+      h4 {
+        font-family: "Lato";
+        font-size: 6.154vw;
+        color: $sbi_twentysix_color;
+        margin: 0 auto;
+        padding: 0 0 20px;
+        width: 269px;
+      }
+      .networth_amt {
+        background: $sbi_thirtytwo_color;
+        border-radius: 38px;
+        margin: 0 70px;
+        .networth_amt_inner {
+          font-family: "Lato";
+          font-size: 6.154vw;
+          color: $sbi_fifth_color;
+          margin: 0;
+          padding: 15px 28px;
+          text-align: center;
+          .rs_icon {
+            font-size: 0.76em;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    ion-card {
+      &.custom_card {
+        background: $sbi_fifth_color;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        margin: 0;
+      }
+      ion-card-content {
+        &.custom_card_content {
+          padding: 30px 0 0;
+        }
+      }
+    }
+    background: #5448b7; /* Old browsers */
+    background: -moz-linear-gradient(
+      top,
+      #5448b7 0%,
+      #5448b7 18%,
+      #ffffff 18%,
+      #ffffff 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+      top,
+      #5448b7 0%,
+      #5448b7 18%,
+      #ffffff 18%,
+      #ffffff 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+      to bottom,
+      #5448b7 0%,
+      #5448b7 18%,
+      #ffffff 18%,
+      #ffffff 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5448b7', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+    .highcharts-container {
+      margin: 0 auto;
+    }
+
+    .sukanya_slider {
+      .heading_reinvest {
+        padding: 0 0 15px 0;
+        font-size: 4.16vw;
+        font-family: "Lato";
+        color: $sbi_nine_color;
+        letter-spacing: 1.5px;
+      }
+      .overlay_dropdown_rng_val {
+        font-size: 8.61vw;
+        line-height: 8.88vw;
+      }
+      .calculation_with_range {
+        &.range_result {
+          .calculation_with_range_inp {
+            .overlay_dropdown_rng_val {
+              .text-input {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+
+      .swiper-container {
+        overflow: inherit;
+      }
+      .swiper-pagination-bullets {
+        bottom: 0;
+        .swiper-pagination-bullet-active {
+          background: $sbi_secondary_color;
+        }
+      }
+
+      .allocation_graph_main_graph {
+        display: table;
+        width: 90%;
+        margin-left: 16px;
+        > span {
+          display: table-cell;
+          height: 40px;
+          position: relative;
+          &:first-child {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+          }
+          &:last-child {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+          }
+          &:hover {
+            > span {
+              display: block;
+              transition: all 0.3s ease-out;
+            }
+          }
+          > span {
+            display: none;
+            position: absolute;
+            width: 58px;
+            color: $sbi_nine_color;
+            font-size: 10px;
+            background-color: lighten($sbi_third_color, 20%);
+            padding: 5px 7px;
+            border-radius: 20px;
+            font-family: "Lato Black";
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            top: -25px;
+            z-index: 1;
+            &:after,
+            &:before {
+              position: absolute;
+              content: "";
+            }
+
+            &:before {
+              border: 6px solid transparent;
+              border-top: 6px solid lighten($sbi_third_color, 20%);
+              bottom: -11px;
+              left: 22px;
+              z-index: 3;
+            }
+            &:after {
+              z-index: 2;
+            }
+          }
+
+          &.color_fr {
+            background-color: $sbi_button_color;
+            > span {
+              border: 1px solid $sbi_button_color;
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_button_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+          &.color_sec {
+            background-color: $sbi_eleven_color;
+            > span {
+              border: 1px solid $sbi_eleven_color;
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_eleven_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+          &.color_tr {
+            background-color: $sbi_primary_color;
+            > span {
+              border: 1px solid $sbi_primary_color;
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_primary_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+          &.color_for {
+            background-color: $sbi_secondary_color;
+            > span {
+              border: 1px solid $sbi_secondary_color;
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_secondary_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+          &.color_fi {
+            background-color: $sbi_seven_color;
+            > span {
+              border: 1px solid $sbi_seven_color;
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_seven_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+          &.color_si {
+            background-color: $sbi_error_color;
+            > span {
+              border: 1px solid $sbi_error_color;
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_error_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+
+          &.color_sev {
+            background-color: $sbi_third_color;
+            > span {
+              border: 1px solid $sbi_third_color;
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_third_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+
+          &.color_eig {
+            background-color: $sbi_fourth_color;
+            > span {
+              border: 1px solid $sbi_fourth_color;
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_fourth_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+
+          &.color_nin {
+            background-color: $sbi_sixth_color;
+            > span {
+              border: 1px solid $sbi_sixth_color;
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_sixth_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+
+          &.color_ten {
+            background-color: $sbi_eight_color;
+            > span {
+              border: 1px solid $sbi_eight_color;
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_eight_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+
+          &.color_eleven {
+            background-color: $sbi_thirteen_color;
+            > span {
+              border: 1px solid $sbi_thirteen_color;
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_thirteen_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+        }
+      }
+
+      .card {
+        margin: 0 auto 25px auto;
+        width: 97%;
+        box-shadow: 0px 8px 19px 0px lighten($sbi_third_color, 10%);
+        border-radius: 4px;
+        .asset_allocat_cont {
+          //   background: url(../../../assets/imgs/landscape.png) no-repeat center
+          //     bottom;
+          padding-bottom: 37px;
+          h3 {
+            font-family: "Lato";
+            color: $sbi_twentysix_color;
+            text-align: center;
+            font-size: 3.88vw;
+            line-height: 3.98vw;
+            margin: 0;
+          }
+          h5 {
+            font-family: "Lato";
+            color: $sbi_nine_color;
+            text-align: center;
+            font-size: 3.33vw;
+            line-height: 3.4vw;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+          .allocation_graph {
+            margin: 0 0 10px 0;
+            display: block;
+            width: 100%;
+            .allocation_graph_main {
+              max-width: 192px;
+              width: 100%;
+              margin: 0 auto 10px auto;
+              .allocation_graph_lt,
+              .allocation_graph_rt {
+                padding: 2vw 5.16vw;
+                text-align: left;
+                border: 1px solid lighten($sbi_third_color, 20%);
+                display: table-cell;
+                background-color: lighten($sbi_third_color, 27%);
+                p {
+                  font-size: 2.77vw;
+                  font-family: "Lato Semibold";
+                  text-transform: uppercase;
+                  span {
+                    font-family: "Lato Black";
+                    color: $sbi_fourth_color;
+                    font-size: 3.22vw;
+                  }
+                }
+              }
+
+              .allocation_graph_lt {
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                border-right: 0.5px solid lighten($sbi_third_color, 20%);
+              }
+              .allocation_graph_rt {
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                border-left: 0.5px solid lighten($sbi_third_color, 20%);
+              }
+            }
+          }
+          h4 {
+            font-family: "Lato";
+            color: $sbi_twentysix_color;
+            font-size: 3.88vw;
+            line-height: 3.98vw;
+            margin: 10px 0;
+            text-align: center;
+          }
+        }
+
+        .invested_result {
+          padding: 24px 24px 0;
+          .row {
+            &:first-child {
+              // margin-right: 13px;
+            }
+            .col {
+              // background: linear-gradient(270deg, #301F6C 0%, #D60D47 100%);
+              border-radius: 8px;
+              padding: 0px;
+              width: 151px;
+              height: auto;
+              &.col_inner1{
+              background: linear-gradient(270deg, #301F6C 0%, #D60D47 100%);
+              border-radius: 8px;
+              padding: 1px;
+              width: 154px;
+              height: auto;
+              }
+              
+              .col_inner2{
+                background: #fff;
+                border-radius: 8px;
+                border: 0px;
+                border-color: $sbi_twentysix_color;
+                border-style: solid;
+                padding: 28px 1px 19px 1px;
+                  text-align: center;
+                  width: 100%;
+                  height: 95px;
+              figure {
+                width: 24px;
+                height: 24px;
+                overflow: hidden;
+                margin: 0 auto 20px;
+                img {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+              h5 {
+                background: $sbi_thirtytwo_color;
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                font-family: "Lato Semibold";
+                font-size: 3.077vw;
+                margin: 0 0 4px;
+                letter-spacing: 0.38px;
+                white-space: nowrap;
+              }
+              .invested_result_amt {
+                background: $sbi_thirtytwo_color;
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                font-family: "Lato";
+                font-size: 6.164vw;
+                .rs_icon {
+                  font-size: 0.76em;
+                  font-weight: bold;
+                  // margin-right: -3px;
+                }
+              }
+              }
+
+              .col_inner{
+                background: #fff;
+                border-radius: 8px;
+                border: 1px;
+                border-color: $sbi_twentysix_color;
+                border-style: solid;
+                padding: 30px 0 19px;
+                  text-align: center;
+                  width: 100%;
+                  height: 97px;
+              figure {
+                width: 24px;
+                height: 24px;
+                overflow: hidden;
+                margin: 0 auto 20px;
+                img {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+              h5 {
+                font-family: "Lato Semibold";
+                font-size: 3.077vw;
+                color: $sbi_twentyseven_color;
+                margin: 0 0 4px;
+                letter-spacing: 0.38px;
+                white-space: nowrap;
+              }
+              .invested_result_amt {
+                font-family: "Lato";
+                font-size: 6.164vw;
+                color: $sbi_twentyseven_color;
+                .rs_icon {
+                  font-size: 0.76em;
+                  font-weight: bold;
+                  // margin-right: -3px;
+                }
+              }
+              }
+              
+              // height: 130px;
+              &:first-child {
+                margin-right: 13px;
+              }
+              
+            }
+          }
+        }
+        .invested_result_heading {
+          text-align: center;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          font-family: "Lato";
+          color: lighten($sbi_third_color, 20%);
+          font-size: 2.77vw;
+          line-height: 3.05vw;
+          .indiccat {
+            vertical-align: middle;
+            margin-right: 3px;
+            margin-top: 0px;
+          }
+          .col {
+            position: relative;
+            strong {
+              font-family: "Lato Black";
+              margin-left: 4px;
+              color: $sbi_third_color;
+              .rs_icon {
+                font-size: 3.33vw;
+                margin-right: 2px;
+              }
+            }
+            &:first-child {
+              &:before {
+                position: absolute;
+                content: "";
+                height: 12px;
+                width: 1px;
+                background-color: lighten($sbi_third_color, 40%);
+                top: 5px;
+                right: -1px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .ttl_result_val {
+      font-family: "Lato Black";
+      color: $sbi_third_color;
+      font-size: 14px;
+      text-align: center;
+      .rs_icon {
+        font-size: 16px;
+        margin-right: 2px;
+      }
+    }
+
+    .calculation_with_range {
+      .range {
+        padding: 0px 5px 5px 5px;
+      }
+      .item {
+        text-align: center;
+
+        .overlay_dropdown_rng_amt {
+          font-family: "Lato Black";
+          color: $sbi_secondary_color;
+          font-size: 3.33vw;
+          line-height: 3.61vw;
+          float: right;
+          margin-top: 20px;
+          .rs_icon {
+            margin-right: 2px;
+            font-size: 3.61vw;
+          }
+        }
+        &.item-range {
+          padding-top: 0px;
+          contain: none;
+          overflow: inherit;
+        }
+      }
+    }
+
+    .footer_panel {
+      .back_btn,
+      .login_btn {
+        font-size: 8px;
+      }
+    }
+    .emi_gen {
+      text-align: center;
+      padding: 25px 0 30px 0;
+      h5 {
+        font-family: "Lato";
+        color: $sbi_nine_color;
+        font-size: 3.05vw;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+      .emi_gen_val {
+        font-family: "Lato Light";
+        color: $sbi_secondary_color;
+        font-size: 8.33vw;
+        span {
+          display: inline-block;
+          margin-top: 2px;
+          margin-right: 2px;
+        }
+      }
+    }
+
+    .indiccat {
+      width: 3.33vw;
+      height: 3.33vw;
+      border-radius: 3.33vw;
+      margin-right: 2.5vw;
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 0;
+      &.color_fr {
+        background-color: $sbi_button_color;
+      }
+      &.color_sec {
+        background-color: $sbi_eleven_color;
+      }
+      &.color_tr {
+        background-color: $sbi_primary_color;
+      }
+      &.color_for {
+        background-color: $sbi_secondary_color;
+      }
+      &.color_fi {
+        background-color: $sbi_seven_color;
+      }
+      &.color_si {
+        background-color: $sbi_error_color;
+      }
+      &.color_sev {
+        background-color: $sbi_third_color;
+      }
+      &.color_eig {
+        background-color: $sbi_fourth_color;
+      }
+      &.color_nin {
+        background-color: $sbi_sixth_color;
+      }
+      &.color_ten {
+        background-color: $sbi_eight_color;
+      }
+      &.color_eleven {
+        background-color: $sbi_thirteen_color;
+      }
+    }
+    // .networth_list {
+    //   margin: -1px -16px 20px;
+    //   .item {
+    //     border-top: 0.5px solid lighten($sbi_third_color, 20%);
+    //     font-family: "Lato Semibold";
+    //     background-color: lighten($sbi_third_color, 28%);
+    //     color: $sbi_nine_color;
+    //     font-size: 3.33vw;
+    //     .item-inner {
+    //       .input-wrapper {
+    //         .label {
+    //           margin: 13px 0px 13px 0;
+    //         }
+    //       }
+    //     }
+    //     .networth_list_lt {
+    //       padding-top: 8px;
+    //       .notify {
+    //         display: inline-block;
+    //         vertical-align: middle;
+    //         margin-left: 2px;
+    //         width: 13px;
+    //         height: 13px;
+    //       }
+    //     }
+
+    //     .item-button {
+    //       font-family: "Lato Light";
+    //       color: $sbi_nine_color;
+    //       font-size: 5vw;
+    //       height: auto;
+    //       .rs_icon {
+    //         display: inline-block;
+    //         vertical-align: middle;
+    //         font-size: 4.11vw;
+    //         margin-top: 3px;
+    //         margin-right: 2px;
+    //       }
+
+    //       .icon {
+    //         font-size: 3.44vw;
+    //         color: $sbi_eight_color;
+    //         margin-top: 1px;
+    //       }
+    //     }
+    //   }
+    // }
+    .heading_seperator {
+      font-family: "Lato";
+      font-size: 4.103vw;
+      line-height: 4vw;
+      margin: 0;
+      text-align: left;
+      text-transform: capitalize;
+      padding: 10px 25px;
+      color: $sbi_twentysix_color;
+      border-top: 1px solid lighten($sbi_third_color, 10%)!important;
+      border: none;
+      background-color: transparent;
+    }
+    .networth_list {
+      margin: -1px -16px 7px;
+      .item {
+        border-top: 1px solid $sbi_fifty_color;
+        font-family: "Lato Semibold";
+        background-color: $sbi_fifth_color;
+        color: $sbi_nine_color;
+        font-size: 3.33vw;
+
+        &.item-block {
+          .item-inner {
+            padding: 0 12px 0 22px;
+          }
+        }
+
+        .label {
+          margin-right: 0;
+          color: $sbi_nine_color;
+          .rs_icon,
+          .icon {
+            font-size: 3.72vw;
+            margin-right: 1.11vw;
+            vertical-align: top;
+            min-width: 15px;
+          }
+        }
+        .select {
+          .select-text {
+            font-family: "Lato";
+            color: $sbi_twentysix_color;
+            font-size: 4.103vw;
+            height: auto;
+            margin-right: 4px;
+          }
+          .select-icon {
+            color: $sbi_primary_color;
+            padding-left: 7px;
+            .select-icon-inner {
+              position: relative;
+              font-family: "Ionicons";
+              border: none;
+              top: 0;
+              right: 0;
+              width: auto;
+              height: auto;
+              left: auto;
+              margin-top: 0px;
+              &:after {
+                content: "\f3d0";
+                font-size: 4.4vw;
+                color: lighten($sbi_primary_color, 20%);
+                margin-top: 1px;
+                position: absolute;
+                top: 3px;
+              }
+            }
+          }
+        }
+
+        .label_freq {
+          margin: 13px 30px 13px 0;
+          .freq_interest {
+            display: flex;
+            align-items: center;
+            p {
+              font-family: "Lato";
+              font-size: 4.103vw;
+              color: $sbi_twentysix_color;
+              margin-left: 13px;
+            }
+            figure {
+              width: 24px;
+              height: 24px;
+              overflow: hidden;
+              margin: 0 4px 0 0px;
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+
+        .freq_select {
+          padding: 13px 5px 13px 7px;
+          color: #5c2483;
+          vertical-align: middle;
+          font-size: 4.5vw;
+          margin-top: 2px;
+          margin-right: 18px;
+
+          ion-select::part(text) {
+            color: #5c2483;
+          }
+        }
+
+        .networth_list_lt {
+          display: flex;
+          align-items: center;
+          p {
+            font-family: "Lato";
+            font-size: 4.103vw;
+            color: $sbi_twentysix_color;
+            margin-left: 17px;
+            width: 150px;
+          }
+          .rs_icon,
+          .icon {
+            font-size: 3.72vw;
+            margin-right: 4px;
+            vertical-align: middle;
+          }
+          figure {
+            width: 24px;
+            height: 24px;
+            overflow: hidden;
+            margin: 0 auto;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+
+        .item-button {
+          font-family: "Lato";
+          color: $sbi_twentysix_color;
+          font-size: 4.103vw;
+          height: auto;
+          margin: 0;
+          .rs_icon,
+          .icon-Icons_Monthly_Expense {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 0.76em;
+            margin-top: 3px;
+            margin-right: 2px;
+            font-weight: bold;
+          }
+          .icon {
+            font-size: 1.4em;
+            line-height: 0.67;
+            pointer-events: none;
+            padding-left: 0.4em;
+            color: #2a2076;
+          }
+        }
+      }
+    }
+
+    .overlay_dropdown {
+      &.annuity {
+        background: rgba(0, 0, 0, 0.5);
+      }
+      display: table;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.6);
+      background: -moz-linear-gradient(
+        top,
+        rgba(255, 255, 255, 0.6) 0%,
+        rgba(255, 255, 255, 1) 45%,
+        rgba(255, 255, 255, 1) 100%
+      );
+      background: -webkit-gradient(
+        left top,
+        left bottom,
+        color-stop(0%, rgba(255, 255, 255, 0.6)),
+        color-stop(45%, rgba(255, 255, 255, 1)),
+        color-stop(100%, rgba(255, 255, 255, 1))
+      );
+      background: -webkit-linear-gradient(
+        top,
+        rgba(255, 255, 255, 0.6) 0%,
+        rgba(255, 255, 255, 1) 45%,
+        rgba(255, 255, 255, 1) 100%
+      );
+      background: -o-linear-gradient(
+        top,
+        rgba(255, 255, 255, 0.6) 0%,
+        rgba(255, 255, 255, 1) 45%,
+        rgba(255, 255, 255, 1) 100%
+      );
+      background: -ms-linear-gradient(
+        top,
+        rgba(255, 255, 255, 0.6) 0%,
+        rgba(255, 255, 255, 1) 45%,
+        rgba(255, 255, 255, 1) 100%
+      );
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.6) 0%,
+        rgba(255, 255, 255, 1) 45%,
+        rgba(255, 255, 255, 1) 100%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9;
+      .overlay_dropdown_content {
+        display: table-cell;
+        vertical-align: bottom;
+        padding: 17px;
+        h3 {
+          font-family: "Lato Black";
+          color: $sbi_primary_color;
+          font-size: 28px;
+        }
+      }
+    }
+
+    .inAddition {
+        font-family: "Lato"!important;
+        color: $sbi_twentysix_color;
+        font-size: 3.88vw;
+        line-height: 3.98vw;
+        margin: 10px 0;
+    }
+
+    .disclaimer_txt {
+      font-family: "Lato";
+      font-size: 4.103vw;
+      color: $sbi_thirtyeight_color;
+      margin: 0;
+      padding: 10px 0 0;
+      text-transform: capitalize;
+      text-decoration-line: underline;
+    }
+  }
+}
+
+// .ios {
+//   page-custom-goal-asset-allocation {
+//     .header {
+//       // For iPhone X
+//       @media only screen and (min-device-width: 375px) and (min-device-height: 812px) {
+//         margin-top: 16px;
+//       }
+//       // For iPhone 11
+//       @media only screen and (min-device-width: 414px) and (min-device-height: 896px) {
+//         margin-top: 16px;
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,138 @@
+page-tabs {
+  .tabbar {
+    // top:56px !important
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  // background-color: $sbi_fifth_color;
+  // .overlay_dropdown.annuity .overlay_dropdown_content {
+  //     top: 113px;
+  // }
+  .login_btn {
+    // box-shadow: 0 4px 10px #628635;
+  }
+  .tabbar {
+    background: $sbi_thirtyone_color !important;
+    border-top: 0 !important;
+    padding: 21px 0 23px 0 !important;
+    // background: $sbi_secondary_color!important;
+    // margin-top: 56px !important;
+
+    .tab-button {
+      font-family: "Lato Black";
+      // color: rgba(255,255,255,0.4);
+      display: grid;
+      color: $sbi_thirtyfour_color;
+      font-size: 8.33vw;
+      &:first-child {
+        border-right: 1px solid $sbi_thirtysix_color;
+      }
+
+      .tab-button-icon {
+        overflow: visible;
+        // color: rgba(255,255,255,0.4);
+        color: $sbi_thirtyfour_color;
+        font-family: "icomoon" !important;
+        text-align: center;
+
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 6.154vw;
+        padding-right: 0;
+        // &[ng-reflect-name="icon-Icons_Discover_1"],
+        // &[aria-label="icon Icons_Discover_1"] {
+        //   &:before {
+        //     content: "\e900";
+        //     display: inline-block;
+        //   }
+        // }
+
+        // &[ng-reflect-name="icon-Icons_Plan-13"],
+        // &[aria-label="icon Icons_Plan-13"] {
+        //   &:before {
+        //     content: "\e921";
+        //     display: inline-block;
+        //   }
+        // }
+        &.ion-ios-icon-Icons_Discover_1,
+        &.ion-ios-icon-Icons_Discover_1-outline {
+          background-image: url(../assets/imgs/discover_icon.png);
+          width: 100%;
+          background-repeat: no-repeat;
+          margin: 0 50px;
+        }
+        
+        &.ion-ios-icon-Icons_Plan-13,
+        &.ion-ios-icon-Icons_Plan-13-outline {
+          background-image: url(../assets/imgs/plan_icon.png);
+          width: 100%;
+          background-repeat: no-repeat;
+          margin: 0 50px;
+          
+        }
+        &.ion-md-icon-Icons_Discover_1,
+        &.ion-md-icon-Icons_Discover_1-outline {
+          background-image: url(../assets/imgs/discover_icon.png);
+          width: 100%;
+          background-repeat: no-repeat;
+          margin: 0 50px;
+        }
+        
+        &.ion-md-icon-Icons_Plan-13,
+        &.ion-md-icon-Icons_Plan-13-outline {
+          background-image: url(../assets/imgs/plan_icon.png);
+          width: 100%;
+          background-repeat: no-repeat;
+          margin: 0 50px;
+          
+        }
+       }
+      .tab-button-text {
+        font-size: 3.59vw;
+        text-transform: uppercase;
+        padding-bottom: 0.8vw;
+        letter-spacing: 1px;
+        color: $sbi_thirtyfour_color;
+        padding-top: 8px;
+      }
+      // .ion-md-icon-Icons_Discover_1{
+      //     &:before{
+      //         content: "\e900";
+      //         display: inline-block;
+
+      //     }
+
+      // }
+
+      // .ion-md-icon-Icons_Plan-13{
+      //     &:before{
+      //         content: "\e921";
+      //         display: inline-block;
+      //     }
+
+      // }
+      &[aria-selected="true"] {
+        // color: $sbi_fifth_color;
+        .tab-button-icon {
+          // color: $sbi_fifth_color;
+          color: $sbi_twentyseven_color;
+        }
+
+        .tab-button-text {
+          color: $sbi_twentyseven_color;
+          // border-bottom: 1px solid $sbi_highlighted_color;
+        }
+      }
+    }
+    &:after {
+      background-image: none !important;
+    }
+  }
+}

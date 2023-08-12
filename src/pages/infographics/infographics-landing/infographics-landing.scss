@@ -1,0 +1,181 @@
+page-infographics-landing {
+    .header {
+        .toolbar {
+            box-shadow: none;
+            background: $sbi_thirtytwo_color;
+
+            .toolbar-background {
+                border: none;
+            }
+
+            .bar-button {
+                color: $sbi_fifth_color;
+            }
+
+            .toolbar-content {
+                .toolbar-title {
+                    color: $sbi_fifth_color;
+                }
+            }
+        }
+
+        .articles_num {
+            &.articles_num_overlay {
+                display: none;
+            }
+
+            text-align: center;
+            padding: 10px;
+
+            .articles_num_cont {
+                font-family: 'Lato Semibold';
+                display: inline-block;
+                vertical-align: middle;
+                color: $sbi_nine_color;
+                font-size: 3.77vw;
+                text-align: center;
+                padding: 7px 17px;
+                margin: 0;
+                border-radius: 20px;
+                border: 1px solid $sbi_third_color;
+
+                strong {
+                    font-family: 'Lato Bold';
+                    color: $sbi_error_color;
+                }
+            }
+        }
+
+        &:after {
+            background-image: none;
+            height: 0;
+        }
+    }
+
+    .content {
+        .scroll-content {
+            padding-top: 0 !important;
+        }
+
+        .card_slider_item_inner {
+            margin: 10px 5px 10px 5px;
+            position: relative;
+            width: auto;
+            box-shadow: 0 4px 10px $sbi_third_color;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.8);
+
+            img {
+                border-radius: 4px;
+                width: 100%;
+            }
+
+            &:after {
+                background: rgba(255, 255, 255, 0);
+                background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(10, 29, 59, 0.8) 100%);
+                background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(10, 29, 59, 0.8)));
+                background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(10, 29, 59, 0.8) 100%);
+                background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(10, 29, 59, 0.8) 100%);
+                background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(10, 29, 59, 0.8) 100%);
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(10, 29, 59, 0.8) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#0a1d3b', GradientType=0 );
+                border-radius: 4px;
+            }
+
+            .card_slider_item_inner_cont {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
+                margin: 0;
+                padding: 13px 30px 13px 13px;
+
+                h4 {
+                    font-family: 'Lato';
+                    color: $sbi_fifth_color;
+                    font-size: 5.55vw;
+                    margin: 0 0 6px 0;
+                }
+
+                p {
+                    font-family: 'Lato Light';
+                    color: lighten($sbi_fifth_color, 90%);
+                    font-size: 3.88vw;
+                    line-height: 4vw;
+                    margin: 0 0 6px 0;
+                }
+
+                span {
+                    display: block;
+                    font-size: 3vw;
+                    color: $sbi_highlighted_color;
+                }
+            }
+
+            &:after {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                content: '';
+                z-index: 0;
+                top: 0;
+            }
+        }
+
+        .card_slider_thumbnail {
+            margin: 0 -5px !important;
+
+            .card_slider_item_inner {
+                box-shadow: none;
+                padding-left: 0px !important;
+                padding-right: 0px !important;
+                box-shadow: 0 4px 15px lighten($sbi_third_color,20%);
+                height: 100%;
+                .card_slider_item_inner_cont {
+                    position: relative;
+                    padding: 0;
+                }
+
+                h5 {
+                    font-family: 'Lato';
+                    color: $sbi_nine_color;
+                    font-size: 2.88vw;
+                    line-height: 3.88vw;
+                    margin: 0;
+                    padding: 14px 10px 9px 10px;
+                }
+
+                img {
+                    position: relative;
+                    border-radius: 4px 4px 0 0;
+                    width: 100%;
+
+                    &:after {
+                        background: rgba(255, 255, 255, 0);
+                        background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(10, 29, 59, 0.8) 100%);
+                        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(10, 29, 59, 0.8)));
+                        background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(10, 29, 59, 0.8) 100%);
+                        background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(10, 29, 59, 0.8) 100%);
+                        background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(10, 29, 59, 0.8) 100%);
+                        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(10, 29, 59, 0.8) 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#0a1d3b', GradientType=0 );
+                        border-radius: 4px;
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        content: '';
+                        z-index: 0;
+                        top: 0;
+                    }
+                }
+
+                &:after {
+                    background: none;
+                }
+            }
+        }
+    }
+}

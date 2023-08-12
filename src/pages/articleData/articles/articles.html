@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-navbar  text-center color="sbiHeader">
+    <button [class.active]="isBtnActive" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{header}}</ion-title>
+    <ion-buttons end>
+      <button ion-button clear [disabled]="allCategoriesList.length == 0" (click)="showFilter()">
+        <img src="assets/imgs/filter_alt.svg" alt="">
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <div class="articles_num" *ngIf="source != 'Trends'">
+    <div class="articles_num_cont">
+      <strong>{{articleCount}}</strong>
+      <span>{{'collections.collections' | translate}}</span><span *ngIf="articleCount > 1"></span>
+    </div>
+  </div>
+  <div class="articles_num" *ngIf="source == 'Trends' && !isArticles">
+    <div class="articles_num_cont">
+      <!-- <strong>No articles</strong>  -->
+      <span>{{'collections.noArticles' | translate}}</span>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row *ngIf="allArticlesList.length > 0">
+      <h3>{{'collections.fromLatestNews' | translate}}</h3>
+      <ion-col col-12 no-padding *ngFor="let article of allArticlesList | slice:0:1">
+        <ion-card class="card_slider_item_inner latest_news_sec" (click)="articleDetails(article)">
+          <img src="{{imgURL + article.BigImage}}" />
+          <ion-card-content class="card_slider_item_inner_cont">
+            <h4 *ngIf="article.CatID != 9">{{article.Title}}</h4>
+            <p>{{article.ShortDesc}}</p>
+            <!-- <span>2 min read</span> -->
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="card_slider_thumbnail" *ngIf="allArticlesList.length > 1">
+      <h4>{{'collections.TrendingTopics' | translate}}</h4>
+      <ion-col col-12 *ngFor="let article of allArticlesList | slice:1:11">
+        <ion-card class="card_slider_item_inner" (click)="articleDetails(article)">
+          <div class="collection_img">
+            <!-- <img src="assets/imgs/investment_pigbag.png" /> -->
+            <img src="{{imgURL + article.BigImage}}" />
+            <!-- <div class="collection_img_overlay">
+              <img src="assets/imgs/investment1.svg" />
+            </div> -->
+          </div>
+          <ion-card-content class="card_slider_item_inner_cont">
+            <h5>{{article.CatID != 9 ? article.Title : article.ShortDesc}}</h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="card_slider_thumbnail" *ngIf="loadMore">
+      <ion-col col-12 *ngFor="let article of allArticlesList | slice:11">
+        <ion-card class="card_slider_item_inner" (click)="articleDetails(article)">
+          <div class="collection_img">
+            <!-- <img src="assets/imgs/investment_pigbag.png" /> -->
+            <img src="{{imgURL + article.BigImage}}" />
+            <!-- <div class="collection_img_overlay">
+              <img src="assets/imgs/investment1.svg" />
+            </div> -->
+          </div>
+          <ion-card-content class="card_slider_item_inner_cont">
+            <h5>{{article.CatID != 9 ? article.Title : article.ShortDesc}}</h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="load_more_btn" *ngIf="allArticlesList.length > 10 && !loadMore" (click)="LoadMore()">
+    <button ion-button class="load_btn">
+      {{'common.loadMore' | translate}}
+    </button>
+  </div>
+</ion-content>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>
+
+<div class="filter_wrapper" *ngIf="filterStatus">
+  <div class="filter_backdrop" (click)="filterStatus = false"></div>
+  <div class="filter_dropdown">
+    <div class="up_content"></div>
+    <div style="height: 12px;"></div>
+    <!-- <ion-icon name="md-close" float-right (click)="cancelSelection()"></ion-icon> -->
+    <ion-list multiple="true" *ngIf="allCategoriesList.length > 0">
+      <!-- <ion-list-header>{{'collections.categories' | translate}}</ion-list-header> -->
+      <ion-item *ngFor="let item of allCategoriesList">
+        <ion-label>{{item.Name}}</ion-label>
+        <ion-checkbox [checked]="item.checked?'true':'false'" (ionChange)="changeCategory($event,item.ID)"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  
+    <div class="text-center filter_dropdown_btn">
+      <button ion-button class="login_btn" (click)="finalSelection()">
+        {{'common.done' | translate}}
+      </button>
+    </div>
+  </div>
+</div>

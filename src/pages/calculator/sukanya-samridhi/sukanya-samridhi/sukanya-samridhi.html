@@ -1,0 +1,191 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button [class.active]="isBtnActive" (click)="toggleClass()" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'sukannyaSamriddhi.sukannyaSamriddhi' | translate}}</ion-title>
+  </ion-navbar>
+
+  <div class="calculator_common_sec_steps">
+    <div class="calculator_steps" id="stepsCount">
+      <div class="calculator_steps_com active">
+        <div class="calculator_dashed step1">
+          <span class="calculator_steps_com_num">
+            <span>1</span>
+          </span>
+        </div>
+      </div>
+      <div class="calculator_steps_com">
+        <div class="calculator_dashed step2">
+          <span class="calculator_steps_com_num">
+            <span>2</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content class="calculator_common_sec">
+  <ion-slides class="calculator_sliders" pager="false" (ionDidChange)="onSliderChange()">
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h1>{{'sukannyaSamriddhi.qOne' | translate}}</h1>
+        <!-- <h5>Below 10 years of age</h5> -->
+      </div>
+      <div class="tell_us_cont_common">
+        <div class="label">
+          {{'sukannyaSamriddhi.Daughter' | translate}} 1
+        </div>
+        <div class="tell_us_cont com_head active">
+          <!-- <div class="calculator_common_sec_inner">
+            <div class="label">
+              {{'sukannyaSamriddhi.Daughter' | translate}} 1
+              <ion-icon name="ios-add-circle-outline"></ion-icon>
+            </div> -->
+            <!-- <ion-input type="text" value="" placeholder="{{'sukannyaSamriddhi.Daughter' | translate}}  1"
+              [(ngModel)]="daughterOne"></ion-input> -->
+            <!-- 
+
+            <span class="fld_icon">
+              <ion-icon name="md-create" (click)="isReadonlyD1  = false"></ion-icon>
+              <ion-icon name="ios-close-circle-outline" (click)="isReadonlyD1  = true" ></ion-icon>
+            </span> -->
+          <!-- </div> -->
+          <div class="tell_us_slider common_years_slider dOneSlider">
+            <div *ngFor="let i of ageBar">
+              <span class="tell_us_slider_age">{{i}}</span>
+              <!-- <span class="tell_us_slider_year"
+                >{{'common.year' | translate}}</span
+              > -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+        <div class="tell_us_cont_common">
+          <div style="height: 24px;"></div>
+          <div class="label" [ngClass]="{'hidden': !showInvestAmountTwo}">
+            {{'sukannyaSamriddhi.Daughter' | translate}} 2
+          </div>
+          <div class="tell_us_cont com_head active" [ngClass]="{'hidden': !showInvestAmountTwo}">
+            <!-- <div class="calculator_common_sec_inner">
+              <div class="label">
+                {{'sukannyaSamriddhi.Daughter' | translate}} 2
+                <ion-icon name="ios-add-circle-outline" (click)="showInvestAmountTwo = true"></ion-icon>
+              </div>
+              <span class="fld_icon">
+                <ion-icon name="ios-close-circle-outline" (click)="showInvestAmountTwo = false"></ion-icon>
+              </span>
+              <ion-input type="text" placeholder="{{'sukannyaSamriddhi.Daughter' | translate}}  2"
+                [(ngModel)]="daughterTwo"></ion-input>
+            </div> -->
+            <div class="tell_us_slider common_years_slider dTwoSlider">
+              <div *ngFor="let i of ageBar">
+                <span class="tell_us_slider_age">{{i}}</span>
+                <!-- <span class="tell_us_slider_year"
+                  >{{'common.year' | translate}}</span
+                > -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="add_remove">
+          <span class="icon_border"*ngIf="showInvestAmountTwo == false">
+            <ion-icon name="md-add" (click)="showInvestAmountTwo = true"></ion-icon>
+          </span>
+          <span class="icon_border"*ngIf="showInvestAmountTwo == true">
+            <ion-icon name="md-remove" (click)="showInvestAmountTwo = false"></ion-icon>
+          </span>
+          <div class="txt">{{showInvestAmountTwo == false?('sukannyaSamriddhi.addMore' | translate):('sukannyaSamriddhi.remove' | translate)}}</div>
+        </div>
+        <div style="height: 200px" *ngIf="keyboardShow"></div>
+      
+
+      <!-- <div class="calculator_common_sec_inner nps_age_first"  *ngIf="!keyboardShow">
+        <div class="footer_panel row">
+
+          <div class="footer_panel_rt col" text-left>
+            <button ion-button class="login_btn" (click)="stepOneNext()" float-left>Next</button>
+
+          </div>
+        </div>
+      </div> -->
+    </ion-slide>
+    <!-- Step 2 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h2>{{'sukannyaSamriddhi.qTwo' | translate}}</h2>
+      </div>
+
+      <div class="tell_us_cont_common ss_slider_range">
+        <div class="calculator_common_sec_inner">
+          <div class="calculation_with_range">
+            <div>
+              <div class="daughtername">
+                {{daughterOne}}
+              </div>
+
+              <div class="calculation_with_range_inp">
+                <span class="rs_icon icon-Icons_Ruppee"></span>
+                <ion-input type="tel" [(ngModel)]="daughterOneInvestComma" class="overlay_dropdown_rng_val"
+                  (ionChange)="formatAmount(daughterOneInvestComma, 'daughter1')"></ion-input>
+                <!-- <span class="overlay_dropdown_rng_txt" float-right>per month</span> -->
+              </div>
+              <!-- <span class="rs_icon">`</span>
+              <span class="overlay_dropdown_rng_val">/span>
+              <span class="overlay_dropdown_rng_txt" float-right>per month</span> -->
+            </div>
+            <ion-item>
+              <ion-range min="{{minValue}}" max="{{maxValue}}" step="{{steps}}" [(ngModel)]="daughterOneInvest"
+                pin="true" (ngModelChange)="doSomething($event)">
+              </ion-range>
+            </ion-item>
+</div>
+</div>
+</div>
+
+            <div *ngIf="showInvestAmountTwo">
+              <div class="tell_us_cont_common ss_slider_range">
+                <div class="calculator_common_sec_inner">
+                  <div class="calculation_with_range">
+              <div class="daughtername">
+                {{daughterTwo}}
+              </div>
+              <div class="calculation_with_range_inp">
+                <span class="rs_icon icon-Icons_Ruppee"></span>
+                <ion-input type="tel" [(ngModel)]="daughterTwoInvestComma" class="overlay_dropdown_rng_val"
+                  (ionChange)="formatAmount(daughterTwoInvestComma, 'daughter2')"></ion-input>
+                <!-- <span class="overlay_dropdown_rng_txt" float-right>per month</span> -->
+              </div>
+            
+            <ion-item *ngIf="showInvestAmountTwo">
+              <ion-range min="{{minValue}}" max="{{maxValue}}" step="{{steps}}" [(ngModel)]="daughterTwoInvest"
+                pin="true" (ngModelChange)="doSomething($event)">
+              </ion-range>
+            </ion-item>
+          </div>
+          </div>
+        </div>
+        <div style="height: 200px" *ngIf="keyboardShow"></div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+<ion-footer class="ss_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col" *ngIf="!backBtnhide">
+      <button ion-button class="back_btn" outline (click)="back()">
+        {{'common.back' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col" [attr.text-center]="backBtnhide ? '' : null">
+      <button ion-button class="login_btn" (click)="next()">
+        {{'common.next' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

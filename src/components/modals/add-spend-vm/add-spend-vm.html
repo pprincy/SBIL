@@ -1,0 +1,22 @@
+<ion-content class="main-view" scroll="true">
+  <div class="overlay" (click)="dismissModal()"></div>
+  <div class="modal_content">
+    <div class="view_more_section" >
+      <div class="up_content"></div>
+      <div class="view_more_list">
+          <div class="expense_category_wrap">
+            <div class="expense_category_cont_item" *ngFor="let list of categoryList" (click)="selectCategory(list.CategoryId)">
+              <div class="fig_title" [ngStyle]="{'background-color': list.CategoryColorCode }">
+                <figure>
+                  <img src="{{imgURLNew + list.ImagePath}}" />
+                </figure>
+                <span>{{list.CategoryName}}</span>
+              </div>
+            </div>
+          </div>
+      </div>      
+    </div>    
+  </div>
+
+  <!-- [ngClass]="isCategorySlected[list.CategoryId]?'expense_category_cont_item active':'expense_category_cont_item'" -->
+</ion-content>

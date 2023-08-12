@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar text-center color="sbiHeader">
+    <button [class.active]="isBtnActive" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'faqs.faqs' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="discover_plan_main">
+    <div class="faqs">
+      <div class="faqs_header disc_com_header">
+        <h2>{{'faqs.faqs' | translate}}</h2>
+      </div>
+      <div class="faq_cont" *ngFor="let item of faqsArr; let i = index">
+        <div class="faq_cont_content">
+          <ion-grid>
+            <ion-row>
+              <ion-icon name="close" name="{{!item.open ? 'add' : 'close'}}" (click)="toggleSection(i)"
+                detail-none></ion-icon>
+              <h3>
+                {{ item.CATNAME }}
+              </h3>
+            </ion-row>
+            <ion-label>
+              <ion-list *ngIf="item.QuesArr.length > 0  && item.open" no-lines>
+                <!-- Second Level -->
+                <ion-list-header style="margin-top: 10px; margin-bottom: 15px;border:none;" *ngFor="let child of item.QuesArr; let j = index" no-padding>
+                  <!-- border-bottom: 1px solid #dedede; -->
+                  <!-- Toggle Button -->
+                  <button ion-item (click)="toggleItem(i, j)" class="child" detail-none>
+                    <ion-icon style="margin-right: -7px; font-size: 5vw;color:#343434;" item-right name="ios-arrow-down"
+                      *ngIf="!child.open"></ion-icon>
+                    <ion-icon style="margin-right: -7px; font-size: 5vw;color:#343434;" item-right name="ios-arrow-up" *ngIf="child.open"></ion-icon>
+                    <h4>{{ child.QUESTION }}</h4>
+                  </button>
+                  <!-- Direct Add Button as Fallback -->
+                  <ion-item *ngIf="child.open" ion-item detail-none text-wrap>
+                    <p class="faq_child_answer">{{ child.ANSWER }}</p>
+                  </ion-item>
+                </ion-list-header>
+              </ion-list>
+            </ion-label>
+          </ion-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

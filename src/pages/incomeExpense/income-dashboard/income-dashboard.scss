@@ -1,0 +1,3126 @@
+page-income-dashboard {
+  ion-refresher-content {
+    ion-spinner * circle {
+      fill: white !important;
+    }
+  }
+
+  ion-content.content {
+    > .fixed-content {
+      margin-top: 77px !important;
+    }
+  }
+
+  ion-content.content > .fixed-content + .scroll-content {
+    margin-top: 56px !important;
+    background: none !important;
+  }
+
+  .header {
+    background: $sbi_thirtytwo_color;
+
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+      border-bottom: 1px solid $sbi_fifth_color;
+
+      .toolbar-background {
+        border: none;
+      }
+
+      .bar-button {
+        color: $sbi_fifth_color;
+        padding-left: 28px;
+        margin: 0 -4px;
+        .back-button-text {
+          display: none;
+        }
+      }
+
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+          text-align: center;
+          margin: 0 -17px;
+        }
+      }
+    }
+
+    &:after {
+      background-image: none;
+      height: 0;
+    }
+
+    .calculator_common_sec_steps {
+      background: $sbi_fifth_color;
+      padding: 17px;
+      border-bottom: 1px solid $sbi_thirtysix_color;
+      .calculator_steps {
+        display: table;
+        text-align: center;
+        width: 75%;
+        padding: 0 30px;
+        margin: auto;
+        .calculator_steps_com {
+          display: table-cell;
+          vertical-align: top;
+          width: 25%;
+          .calculator_dashed {
+            .calculator_steps_com_num {
+              width: 30px;
+              height: 30px;
+              border-radius: 4px;
+              padding: 5px;
+              display: block;
+              background: $sbi_fifth_color;
+              border: 1px solid $sbi_thirtyfour_color;
+              font-size: 4.103vw;
+              color: $sbi_thirtyfour_color;
+              font-family: "Lato Black";
+              margin: 0 5px 0;
+
+              span {
+                display: block;
+                width: 100%;
+                height: 100%;
+                vertical-align: middle;
+                margin-top: -1px;
+              }
+            }
+          }
+
+          .calculator_dashed {
+            &.step1,
+            &.step2 {
+              display: flex;
+              align-items: center;
+            }
+            &:after {
+              border-bottom: 1px dashed black;
+              content: "";
+              flex: 1;
+            }
+          }
+
+          &.active {
+            .calculator_steps_com_num {
+              background: $sbi_twentyseven_color;
+              color: $sbi_fifth_color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    // background-color: $sbi_nineteen_color;
+    background-color: #fff9f9;
+
+    // background: #5448b7; /* Old browsers
+    // background: -moz-linear-gradient(top, #5448b7 0%, #5448b7 25%, #ffffff 25%, #ffffff 100%); /* FF3.6-15
+    // background: -webkit-linear-gradient(top, #5448b7 0%, #5448b7 25%, #ffffff 25%, #ffffff 100%); /* Chrome10-25,Safari5.1-6
+    // background: linear-gradient(to bottom, #5448b7 0%, #5448b7 25%, #ffffff 25%, #ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5448b7', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+    .scroll-content {
+      //   padding-top: 0 !important;
+      padding: 0 14px !important;
+    }
+
+    // #total_expenses {
+    //   margin-bottom: 25px !important;
+    // }
+
+    .saving_cont {
+      
+      ion-card-header {
+        text-align: center !important;
+      }
+      .month_btn {
+        text-align: center;
+        margin: 0 auto;
+        color: #2a2076 !important;
+        .month_title {
+          font-family: "Lato";
+          color: #2a2076 !important;
+          font-size: 16px;
+          height: auto;
+          text-transform: capitalize;
+        }
+    
+        .month_arrow {
+          font-size: 21px;
+          pointer-events: none;
+          color: #2a2076;
+          margin: -3px 3px 0 11px;
+        }
+      }
+    
+
+      .saving_main {
+        margin: 30px auto 20px auto;
+        padding: 0 75px;
+      }
+
+      .saving_add_goals {
+        border: none;
+        padding: 0;
+        margin: 16px 4px;
+      }
+
+      .saving_tbl {
+        .row {
+          border-bottom: 1px solid $sbi_twelve_color;
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+
+        h5 {
+          font-family: "Lato Semibold";
+          font-size: 3.8vw;
+          color: $sbi_primary_color;
+          margin: 0;
+        }
+
+        h6 {
+          font-family: "Lato Black";
+          font-size: 2.89vw;
+          color: $sbi_fourteen_color;
+          margin: 5px 0 5px 0;
+          font-weight: normal;
+        }
+
+        .saving_tbl_val {
+          font-family: "Lato Semibold";
+          font-size: 3.8vw;
+          color: $sbi_primary_color;
+
+          span {
+            font-size: 3vw;
+            font-weight: bold;
+          }
+        }
+
+        .view_all {
+          font-family: "Lato Semibold";
+          color: $sbi_secondary_color;
+          font-size: 3.33vw;
+          text-align: center;
+          padding: 10px;
+          background-color: $sbi_eighteen_color;
+        }
+      }
+
+      ion-scroll[scrollX].saving_slider {
+        white-space: nowrap;
+        height: 9vw;
+        overflow: hidden;
+      }
+
+      .saving_slider {
+        .scroll-content {
+          padding: 0;
+        }
+
+        ::-webkit-scrollbar {
+          display: none;
+        }
+
+        margin: 20px 0;
+
+        .saving_slider_item + .saving_slider_item:before {
+          position: absolute;
+          content: "";
+          left: -1px;
+          top: 0;
+          bottom: 0;
+          height: 100%;
+          width: 1px;
+          background-color: $sbi_twelve_color;
+        }
+
+        .saving_slider_item {
+          padding: 0 16px;
+          display: inline-block;
+          vertical-align: middle;
+          position: relative;
+
+          figure {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+            width: 9vw;
+            max-width: 9vw;
+            height: 9vw;
+
+            img {
+              height: 100%;
+            }
+          }
+
+          .saving_slider_item_val {
+            display: inline-block;
+            vertical-align: middle;
+            font-family: "Lato Black";
+            font-size: 3.33vw;
+            color: $sbi_primary_color;
+            margin-left: 12px;
+
+            span {
+              font-weight: bold;
+              font-size: 3vw;
+            }
+          }
+        }
+      }
+
+      .saving_main_btn {
+        border-bottom: 1px solid $sbi_twelve_color;
+        padding: 5px 0 24px 0;
+
+        .login_btn {
+          max-width: 250px;
+          height: 40px;
+          margin: 0;
+        }
+      }
+    }
+
+    .expenditure_limit {
+      border: 1px solid $sbi_twelve_color;
+      padding: 15px 12px;
+      margin: 16px 4px;
+
+      h3 {
+        font-family: "Lato Black";
+        font-size: 5.55vw;
+        line-height: 7.55vw;
+        color: $sbi_primary_color;
+        margin: 0 0 5px 0;
+      }
+
+      p {
+        font-family: "Lato Light";
+        font-size: 3.8vw;
+        color: $sbi_secondary_color;
+        margin: 0;
+      }
+
+      a {
+        text-align: center;
+        margin: 14px 0 0 0;
+        line-height: 37px;
+      }
+    }
+    .set_button {
+      padding: 0;
+      margin: 0;
+
+      a {
+        text-align: center;
+        margin: 20px 0 0 0;
+        line-height: 31px;
+      }
+    }
+
+    .chart_total_exp {
+      h5 {
+        font-family: "Lato";
+        font-size: 3.05vw;
+        color: $sbi_nine_color;
+        margin: 0;
+      }
+
+      .chart_total_val {
+        font-family: "Lato";
+        font-size: 24px;
+        font-weight: 700;
+        color: $sbi_primary_color;
+        margin: 0;
+
+        span {
+          font-weight: bold;
+          font-size: 3.72vw;
+        }
+      }
+    }
+
+    .card {
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      margin: 0 0 15px 0;
+      width: 100%;
+      border-radius: 4px;
+
+      // &:first-child {
+      //   margin-top: 5px;
+      // }
+    }
+
+    .expense_trend_txt {
+      text-align: right;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+
+      h5 {
+        font-family: "Lato Black";
+        font-size: 3.33vw;
+        color: $sbi_fourteen_color;
+        margin: 0;
+      }
+
+      span {
+        font-family: "Lato Black";
+        font-size: 4.55vw;
+        color: $sbi_primary_color;
+        margin: 0;
+        display: block;
+
+        &:before {
+          font-size: 3.5vw;
+        }
+      }
+    }
+
+    // .common_expense_card {
+    //   ion-card-header {
+    //     h4 {
+    //       font-family: "Lato Black";
+    //       font-size: 4.34vw;
+    //       color: $sbi_primary_color;
+    //       margin: 0;
+    //     }
+    //     p {
+    //       font-family: "Lato Semibold";
+    //       font-size: 3vw;
+    //       color: $sbi_fourteen_color;
+    //       margin: 2px 0 10px 0;
+    //     }
+
+    //     // .custom_select_drop {
+    //     //   padding-top: 0;
+    //     //   padding-bottom: 0;
+    //     //   max-width: 100%;
+
+    //     //   .select-text {
+    //     //     color: $sbi_secondary_color;
+    //     //     font-size: 2.89vw;
+    //     //     font-weight: 600;
+    //     //   }
+
+    //     //   .select-icon {
+    //     //     .select-icon-inner {
+    //     //       margin-top: -6px;
+    //     //       color: $sbi_fifteen_color;
+    //     //     }
+    //     //   }
+    //     // }
+    //     .budgetIcon {
+    //       width: 75%;
+    //     }
+    //   }
+    //   .customHeader {
+    //     margin-bottom: -28px;
+    //   }
+
+    //   .segment {
+    //     padding: 0 30px;
+
+    //     .segment-button {
+    //       font-family: "Lato Black";
+    //       font-size: 2.77vw;
+    //       color: $sbi_sixeen_color;
+    //       opacity: 1;
+    //       border-bottom: none;
+    //       height: auto;
+    //       line-height: 2.4rem;
+
+    //       &.segment-activated {
+    //         &:after {
+    //           position: absolute;
+    //           content: "";
+    //           width: 85px;
+    //           margin: 0 auto;
+    //           left: 0;
+    //           right: 0;
+    //           bottom: 0;
+    //           height: 5px;
+    //           background-color: $sbi_fifteen_color;
+    //           border-radius: 2px;
+    //         }
+    //       }
+    //     }
+    //   }
+    //   .invested_monthly {
+    //     padding: 20px 0 0 0;
+
+    //     .row {
+    //       .col + .col {
+    //         border-left: 1px solid $sbi_third_color;
+    //       }
+    //     }
+    //   }
+    //   .spendometer_cont {
+    //     figure {
+    //       margin: 30px auto 20px auto;
+    //       padding: 0 45px;
+    //     }
+
+    //     .invested_monthly {
+    //       padding: 20px 0 0 0;
+
+    //       .row {
+    //         .col + .col {
+    //           border-left: 1px solid $sbi_third_color;
+    //         }
+    //       }
+    //     }
+    //   }
+
+    //   .month_income {
+    //     text-align: center;
+    //     padding: 0 0 10px 0;
+    //     position: relative;
+
+    //     &::before {
+    //       position: absolute;
+    //       left: 0;
+    //       content: "";
+    //       width: 1px;
+    //       background-color: $sbi_third_color;
+    //       height: 100%;
+    //       top: 39%;
+    //     }
+
+    //     &::after {
+    //       position: absolute;
+    //       right: 0;
+    //       content: "";
+    //       width: 1px;
+    //       background-color: $sbi_third_color;
+    //       height: 100%;
+    //       top: 39%;
+    //     }
+
+    //     .month_income_lt {
+    //       display: inline-block;
+    //       vertical-align: middle;
+    //       position: relative;
+
+    //       &::before {
+    //         position: absolute;
+    //         left: -100%;
+    //         content: "";
+    //         height: 1px;
+    //         background-color: $sbi_third_color;
+    //         width: 100%;
+    //         margin-left: -30px;
+    //         top: 50%;
+    //       }
+
+    //       &::after {
+    //         position: absolute;
+    //         right: -100%;
+    //         content: "";
+    //         height: 1px;
+    //         background-color: $sbi_third_color;
+    //         width: 100%;
+    //         margin-right: -52px;
+    //         top: 50%;
+    //       }
+
+    //       h5 {
+    //         font-family: "Lato";
+    //         color: $sbi_primary_color;
+    //         font-size: 2.77vw;
+    //       }
+
+    //       div {
+    //         font-family: "Lato Black";
+    //         color: $sbi_primary_color;
+    //         font-size: 3.75vw;
+
+    //         span {
+    //           font-weight: bold;
+    //           font-size: 3.55vw;
+    //         }
+    //       }
+    //     }
+
+    //     .month_income_rt {
+    //       display: inline-block;
+    //       vertical-align: middle;
+    //       background-color: $sbi_primary_color;
+    //       width: 6.27vw;
+    //       height: 6.27vw;
+    //       border-radius: 5.27vw;
+    //       color: $sbi_fifth_color;
+    //       font-size: 3vw;
+    //       line-height: 7.27vw;
+    //       text-align: center;
+    //       box-shadow: 0 0 13px rgba(104, 235, 255, 0.6);
+    //     }
+    //   }
+    //   .month_income_More {
+    //     text-align: center;
+    //     padding: 0 0 10px 0;
+    //     position: relative;
+    //     .month_income_lt_More {
+    //       display: inline-block;
+    //       vertical-align: middle;
+    //       position: relative;
+
+    //       h5 {
+    //         font-family: "Lato";
+    //         color: $sbi_primary_color;
+    //         font-size: 2.77vw;
+    //       }
+
+    //       div {
+    //         font-family: "Lato Black";
+    //         color: $sbi_primary_color;
+    //         font-size: 3.75vw;
+
+    //         span {
+    //           font-weight: bold;
+    //           font-size: 3.55vw;
+    //         }
+    //       }
+    //     }
+
+    //     .month_income_rt_More {
+    //       display: inline-block;
+    //       vertical-align: middle;
+    //       background-color: $sbi_primary_color;
+    //       width: 6.27vw;
+    //       height: 6.27vw;
+    //       border-radius: 5.27vw;
+    //       color: $sbi_fifth_color;
+    //       font-size: 3vw;
+    //       line-height: 7.27vw;
+    //       text-align: center;
+    //       box-shadow: 0 0 13px rgba(104, 235, 255, 0.6);
+    //     }
+    //   }
+
+      .chart_bar {
+        display: table;
+        width: 100%;
+
+        > span {
+          display: table-cell;
+          height: 22px;
+          position: relative;
+
+          &:first-child {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+          }
+
+          &:last-child {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+          }
+
+          &:hover {
+            > span {
+              display: block;
+              transition: all 0.3s ease-out;
+            }
+          }
+
+          > span {
+            display: none;
+            position: absolute;
+            width: 58px;
+            color: $sbi_nine_color;
+            font-size: 10px;
+            background-color: lighten($sbi_third_color, 20%);
+            padding: 5px 7px;
+            border-radius: 20px;
+            font-family: "Lato Black";
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            top: -25px;
+            z-index: 1;
+
+            &:after,
+            &:before {
+              position: absolute;
+              content: "";
+            }
+
+            &:before {
+              border: 6px solid transparent;
+              border-top: 6px solid lighten($sbi_third_color, 20%);
+              bottom: -11px;
+              left: 22px;
+              z-index: 3;
+            }
+
+            &:after {
+              z-index: 2;
+            }
+          }
+
+          &.color_fr {
+            background-color: $sbi_button_color;
+
+            > span {
+              border: 1px solid $sbi_button_color;
+
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_button_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+
+          &.color_sec {
+            background-color: $sbi_eleven_color;
+
+            > span {
+              border: 1px solid $sbi_eleven_color;
+
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_eleven_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+
+          &.color_tr {
+            background-color: $sbi_primary_color;
+
+            > span {
+              border: 1px solid $sbi_primary_color;
+
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_primary_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+
+          &.color_for {
+            background-color: $sbi_secondary_color;
+
+            > span {
+              border: 1px solid $sbi_secondary_color;
+
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_secondary_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+
+          &.color_fi {
+            background-color: $sbi_seven_color;
+
+            > span {
+              border: 1px solid $sbi_seven_color;
+
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_seven_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+
+          &.color_si {
+            background-color: $sbi_error_color;
+
+            > span {
+              border: 1px solid $sbi_error_color;
+
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_error_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+
+          &.color_sev {
+            background-color: $sbi_third_color;
+
+            > span {
+              border: 1px solid $sbi_third_color;
+
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_third_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+
+          &.color_eig {
+            background-color: $sbi_fourth_color;
+
+            > span {
+              border: 1px solid $sbi_fourth_color;
+
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_fourth_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+
+          &.color_nin {
+            background-color: $sbi_sixth_color;
+
+            > span {
+              border: 1px solid $sbi_sixth_color;
+
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_sixth_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+
+          &.color_ten {
+            background-color: $sbi_eight_color;
+
+            > span {
+              border: 1px solid $sbi_eight_color;
+
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_eight_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+
+          &.color_eleven {
+            background-color: $sbi_thirteen_color;
+
+            > span {
+              border: 1px solid $sbi_thirteen_color;
+
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_thirteen_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+
+          &.color_twe {
+            background-color: $sbi_seventeen_color;
+
+            > span {
+              border: 1px solid $sbi_seventeen_color;
+
+              &:after {
+                border: 6px solid transparent;
+                border-top: 6px solid $sbi_seventeen_color;
+                bottom: -12px;
+                left: 22px;
+              }
+            }
+          }
+          &.color_ther {
+            background-color: $sbi_third_color;
+          }
+        }
+      }
+
+    //   .indiccat {
+    //     width: 3.33vw;
+    //     height: 3.33vw;
+    //     border-radius: 3.33vw;
+    //     display: inline-block;
+    //     vertical-align: middle;
+    //     margin-right: 3px;
+    //     margin-top: 0px;
+
+    //     &.color_fr {
+    //       background-color: $sbi_sixth_color;
+    //     }
+
+    //     &.color_sec {
+    //       background-color: $sbi_seven_color;
+    //     }
+
+    //     &.color_tr {
+    //       background-color: $sbi_sixth_color;
+    //     }
+
+    //     &.color_for {
+    //       background-color: $sbi_secondary_color;
+    //     }
+
+    //     &.color_fi {
+    //       background-color: $sbi_seven_color;
+    //     }
+
+    //     &.color_si {
+    //       background-color: $sbi_error_color;
+    //     }
+
+    //     &.color_sev {
+    //       background-color: $sbi_third_color;
+    //     }
+
+    //     &.color_eig {
+    //       background-color: $sbi_fourth_color;
+    //     }
+
+    //     &.color_nin {
+    //       background-color: $sbi_sixth_color;
+    //     }
+
+    //     &.color_ten {
+    //       background-color: $sbi_eight_color;
+    //     }
+
+    //     &.color_eleven {
+    //       background-color: $sbi_thirteen_color;
+    //     }
+
+    //     &.color_twe {
+    //       background-color: $sbi_seventeen_color;
+    //     }
+
+    //     &.O {
+    //       background-color: $sbi_twentythree_color;
+    //     }
+
+    //     &.T {
+    //       background-color: $sbi_twentytwo_color;
+    //     }
+    //     &.Underspent {
+    //       background-color: $sbi_twentytwo_color;
+    //     }
+    //   }
+
+    //   .invested_monthly {
+    //     text-align: center;
+
+    //     .indiccat {
+    //     }
+
+    //     h5 {
+    //       font-family: "Lato Semibold";
+    //       color: $sbi_nine_color;
+    //       font-size: 3.05vw;
+    //       line-height: 3.33vw;
+    //       margin: 0 0 8px 0;
+    //     }
+
+    //     .invested_result_amt {
+    //       font-family: "Lato Black";
+    //       color: $sbi_primary_color;
+    //       font-size: 3.69vw;
+    //       line-height: 6vw;
+
+    //       .rs_icon {
+    //         font-weight: bold;
+    //         margin-right: 2px;
+    //         font-size: 3.33vw;
+    //       }
+    //     }
+    //   }
+    // }
+
+    .recommend_for_your_cont {
+      ion-scroll[scrollX] {
+        white-space: nowrap;
+        height: 41.72vw;
+        overflow: hidden;
+
+        &.active {
+          height: 29.72vw;
+        }
+      }
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      .recommend_for_your_cont_slider {
+        .scroll-content {
+          padding: 0;
+        }
+
+        .recommend_for_your_cont_slider_item {
+          display: inline-block;
+          vertical-align: top;
+          border: 1px solid $sbi_twelve_color;
+          margin: 0 4px;
+          border-radius: 2px;
+
+          &.active {
+            .recommend_for_your_cont_slider_item_inner {
+              &.view_more {
+                min-height: 26.5vw;
+              }
+            }
+          }
+
+          .recommend_for_your_cont_slider_item_inner {
+            position: relative;
+            padding-bottom: 13px;
+            width: 33.33vw;
+            padding: 10px 15px;
+
+            &.view_more {
+              min-height: 39.5vw;
+              border-radius: 4px;
+              text-align: center;
+              background-color: $sbi_fifth_color;
+              position: relative;
+
+              .view_more_cont {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                right: 0;
+
+                .icon {
+                  font-size: 7.33vw;
+                  color: lighten($sbi_nine_color, 30%);
+                }
+
+                span {
+                  display: block;
+                  font-family: "Lato Semibold";
+                  font-size: 3.33vw;
+                  line-height: 3.39vw;
+                  color: lighten($sbi_nine_color, 40%);
+                }
+              }
+            }
+
+            figure {
+              margin: 0 0 10px 0;
+
+              img {
+                width: 37%;
+              }
+            }
+
+            h4 {
+              font-family: "Lato Semibold";
+              font-size: 3.33vw;
+              line-height: 4.33vw;
+              margin: 0 0 2px 0;
+              color: $sbi_primary_color;
+            }
+
+            p {
+              font-family: "Lato Black";
+              font-size: 3.61vw;
+              line-height: 4.61vw;
+              margin: 0;
+              color: $sbi_primary_color;
+
+              span {
+                font-size: 3vw;
+                font-weight: bold;
+              }
+            }
+          }
+
+          .recommend_for_your_cont_slider_item_inner_btm {
+            font-size: 3.05vw;
+            color: $sbi_nine_color;
+            padding: 15px;
+            border-top: 1px solid $sbi_twelve_color;
+
+            .indiccat {
+              width: 3.05vw;
+              height: 1.66vw;
+              margin: 0 7px 0 0;
+            }
+          }
+        }
+      }
+    }
+
+    .no_padding {
+      padding: 0 !important;
+
+      .card_inner_cont {
+        padding: 0 13px 29px 13px;
+        position: relative;
+        @media screen and (max-width: 360px) {
+          padding: 0 13px 20px 13px;
+        }
+
+        .cloud_lt {
+          position: absolute;
+          left: 0;
+          top: -21px;
+          width: auto;
+        }
+        .col {
+          padding: 5px 5px 0px 5px;
+        }
+
+        .cloud_rt {
+          position: absolute;
+          right: 0;
+          top: 23px;
+          width: auto;
+        }
+        .yAxis {
+          color: $sbi_primary_color;
+          font-family: "Lato Black";
+          font-size: 3.88vw;
+          margin-top: -10px;
+          span {
+            font-weight: bold;
+            font-size: 3vw;
+          }
+          .col {
+            color: $sbi_primary_color;
+            font-family: "Lato Black";
+            font-size: 3.88vw;
+          }
+        }
+      }
+      .selectCatDropDown {
+        margin: 0px 25px 0px 25px;
+        border-bottom: 1px solid #bfbfbf;
+        .label {
+          font-size: 3.55vw;
+          font-family: "Lato Semibold";
+          color: #999999;
+          margin-right: 0;
+          overflow: visible;
+        }
+      }
+      //   .enterBudget {
+      //     margin: 0px 0px 0px 18px;
+      //     padding: 0px 0px 0px 0px;
+      //     .label {
+      //       font-size: 3.55vw;
+      //       font-family: "Lato Semibold";
+      //       color: #999999;
+      //       margin-right: 0;
+      //       overflow: visible;
+      //       margin-left: 2px;
+      //     }
+      //     .rs_icon {
+      //       font-size: 5.05vw;
+      //       line-height: 8.88vw;
+      //       color: #5448b7;
+      //       padding-left: 10px;
+      //     }
+      //     .text_fld {
+      //       label {
+      //         color: $sbi_primary_color;
+      //         font-size: 3.39vw;
+      //         text-transform: none;
+      //         letter-spacing: 0.5px;
+      //       }
+      //       .dropArrow {
+      //         margin-top: 15px;
+      //         margin-right: 10px;
+      //       }
+      //       .text-input {
+      //         font-size: 18px;
+      //         font-family: "Lato thin";
+      //         color: $sbi_secondary_color;
+      //         padding-left: 1.55vw;
+      //         font-weight: 900;
+      //       }
+
+      //       .calculation_with_range_inp {
+      //         .overlay_dropdown_rng_val {
+      //           font-size: 14px;
+      //           padding-left: 6px;
+      //         }
+      //         &.text_fld {
+      //           label {
+      //             color: $sbi_secondary_color;
+      //             font-size: 3.39vw;
+      //             text-transform: none;
+      //             letter-spacing: 0.5px;
+      //           }
+      //         }
+      //       }
+      //     }
+      //   }
+      .view_all {
+        font-family: "Lato Semibold";
+        color: $sbi_secondary_color;
+        font-size: 3.33vw;
+        text-align: center;
+        padding: 10px;
+        background-color: $sbi_eighteen_color;
+      }
+    }
+
+    .round_btn {
+      margin: 36px auto;
+    }
+
+    // .recent_spends {
+    //   margin-top: -18px;
+    //   .list {
+    //     border-top: 1px solid #ebebeb;
+    //     .item {
+    //       padding-left: 0;
+    //       border-bottom: 1px solid #ebebeb;
+
+    //       &:last-child {
+    //         border-bottom: none;
+    //       }
+
+    //       ion-thumbnail {
+    //         min-width: 33px;
+    //         min-height: 33px;
+    //         margin: 8px 8px 8px 0;
+
+    //         img {
+    //           width: 33px;
+    //           height: 33px;
+    //         }
+    //       }
+
+    //       h5 {
+    //         color: $sbi_primary_color;
+    //         font-family: "Lato Semibold";
+    //         font-size: 3.33vw;
+    //         margin: 0 0 2px 0;
+    //         text-transform: capitalize;
+    //         .smsIcon {
+    //           color: #828282 !important;
+    //           margin-top: 0px !important;
+    //           border-left: 1px solid #828282 !important;
+    //           padding-left: 5px;
+    //           margin-left: 4px;
+    //           width: 16px;
+    //           display: inline-block;
+    //           font-size: larger;
+    //         }
+    //       }
+
+    //       p {
+    //         color: $sbi_nine_color;
+    //         font-family: "Lato Semibold";
+    //         font-size: 2.77vw;
+    //         .rs_icon {
+    //           font-weight: bold;
+    //           font-size: 2.9vw;
+    //         }
+    //         .smsIcon {
+    //           color: #828282 !important;
+    //           margin-top: 0px !important;
+    //           border-left: 1px solid #828282 !important;
+    //           padding-left: 5px;
+    //           margin-left: 4px;
+    //           width: 16px;
+    //           display: inline-block;
+    //           font-size: larger;
+    //         }
+    //         .smsScrapIcon {
+    //           color: #828282 !important;
+    //           margin-top: 0px !important;
+    //           border-left: 1px solid #828282 !important;
+    //           padding-left: 5px;
+    //           margin-left: 4px;
+    //           width: 10%;
+    //           display: inline-block;
+    //         }
+    //       }
+    //       .spent_data {
+    //         color: $sbi_primary_color;
+    //         font-family: "Lato Black";
+    //         font-size: 3.88vw;
+    //         margin-right: 12px;
+
+    //         .spent_data_lbl {
+    //           font-size: 3.88vw;
+    //           color: $sbi_primary_color;
+    //           font-family: "Lato Black";
+    //         }
+    //         span {
+    //           font-weight: bold;
+    //           font-size: 3vw;
+    //         }
+    //         .spent_data_date {
+    //           display: block !important;
+    //           font-size: 3vw;
+    //           margin-top: -5px;
+    //           &.O {
+    //             color: $sbi_twentythree_color;
+    //           }
+
+    //           &.T {
+    //             color: $sbi_twentytwo_color;
+    //           }
+    //         }
+
+    //         span {
+    //           display: inline-block;
+    //           color: $sbi_primary_color;
+    //           font-family: "Lato Semibold";
+    //           margin: 0 0 5px 0;
+    //           text-align: right;
+    //         }
+    //       }
+
+    //       .recent_price {
+    //         color: $sbi_primary_color;
+    //         font-family: "Lato Black";
+    //         font-size: 3.88vw;
+
+    //         span {
+    //           font-weight: bold;
+    //           font-size: 3vw;
+    //         }
+    //         .col {
+    //           color: $sbi_primary_color !important;
+    //           font-family: "Lato Black";
+    //           font-size: 3.88vw;
+    //         }
+    //         .editIcon {
+    //           color: #828282 !important;
+    //           font-size: 1.5em;
+    //         }
+    //         .refreshIcon {
+    //           color: #828282 !important;
+    //           font-size: 1.5em;
+    //           padding-left: 3px;
+    //         }
+    //       }
+
+    //       .arrow_right {
+    //         color: #828282;
+    //         margin-top: 16px;
+    //         font-size: large;
+    //       }
+    //     }
+    //   }
+    //   .spendsBudget {
+    //     padding-top: 15px;
+    //     .customBorder {
+    //       border-right: 1px solid $sbi_third_color;
+    //       margin-right: 5px;
+    //       margin-left: 5px;
+    //       font-size: 5vw !important;
+    //     }
+    //     .rs_icon {
+    //       font-weight: bold;
+    //       font-size: 3vw;
+    //       color: $sbi_primary_color;
+    //     }
+    //   }
+      .artificalIntelligence {
+        border-top: 1px solid #ebebeb;
+        display: inline-block;
+        margin-top: 32px;
+        margin-bottom: 20px;
+        .aiText {
+          display: inline-block;
+          .budgetCalculator {
+            width: 15%;
+            display: inline-block;
+            position: absolute;
+          }
+          .aiLogic {
+            margin-left: 70px;
+            margin-right: 55px;
+            color: $sbi_nine_color;
+            font-family: "Lato";
+            font-size: 3.3vw;
+            line-height: 1px;
+            letter-spacing: 0.1px;
+          }
+        }
+        .closeIcon {
+          display: inline-block;
+          font-size: 2.5em;
+          margin-top: 0px;
+          margin-bottom: 0px;
+          padding-top: 0px !important;
+          padding-bottom: 0px;
+          padding-right: 10px;
+          z-index: 1;
+        }
+        .set_button{
+          .login_btn {
+            font-family: "Lato";
+            font-size: 3.59vw;
+            text-align: center;
+            padding: 10px;
+            background: #2A2076;
+            max-width: 100%;
+            height: 50px;
+            letter-spacing: 0.38px;
+            text-transform: capitalize;
+            border-radius: 0;
+            color: #fff;
+            text-transform: capitalize;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+          }
+        }
+      }
+    // }
+  }
+
+  .view_all {
+    font-family: "Lato Semibold";
+    color: $sbi_secondary_color;
+    font-size: 3.33vw;
+    text-align: center;
+    padding: 10px;
+    background-color: $sbi_eighteen_color;
+  }
+  .articles_num {
+    &.articles_num_overlay {
+      display: none;
+    }
+
+    text-align: center;
+    padding: 10px;
+
+    .articles_num_cont {
+      font-family: "Lato Semibold";
+      display: inline-block;
+      vertical-align: middle;
+      color: $sbi_nine_color;
+      font-size: 3.77vw;
+      text-align: center;
+      padding: 7px 17px;
+      margin: 0;
+      border-radius: 20px;
+      border: 1px solid $sbi_third_color;
+
+      strong {
+        font-family: "Lato Bold";
+        color: $sbi_error_color;
+      }
+    }
+  }
+
+  .overlay_dropdown {
+    .overlay_dropdown_content.calculation_with_range {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      margin: 0;
+      max-height: 51%;
+      padding: 15px 30px -1px 30px;
+      min-height: 250px;
+      min-height: 30%;
+      max-height: 60%;
+      min-width: 30%;
+      padding: 15px 25px 25px 25px;
+      overflow-y: auto;
+      ion-thumbnail {
+        min-width: auto;
+        min-height: auto;
+        img {
+          width: auto;
+          height: auto;
+
+          filter: invert(50%) sepia(56%) saturate(591%) hue-rotate(91deg) brightness(85%) contrast(86%);
+          &.c0 {
+            filter: invert(40%) sepia(53%) saturate(4297%) hue-rotate(335deg)
+              brightness(103%) contrast(99%);
+          }
+          &.c1 {
+            filter: invert(50%) sepia(26%) saturate(2956%) hue-rotate(156deg)
+              brightness(97%) contrast(99%);
+          }
+          &.c2 {
+            filter: invert(34%) sepia(58%) saturate(4876%) hue-rotate(214deg)
+              brightness(74%) contrast(116%);
+          }
+          &.c3 {
+            filter: invert(24%) sepia(84%) saturate(5710%) hue-rotate(250deg)
+              brightness(74%) contrast(114%);
+          }
+          &.c4 {
+            filter: invert(45%) sepia(73%) saturate(1867%) hue-rotate(280deg)
+              brightness(113%) contrast(80%);
+          }
+          &.c5 {
+            filter: invert(50%) sepia(69%) saturate(496%) hue-rotate(345deg)
+              brightness(103%) contrast(99%);
+          }
+          &.c6 {
+            filter: invert(50%) sepia(56%) saturate(591%) hue-rotate(91deg)
+              brightness(85%) contrast(86%);
+          }
+          &.c7 {
+            filter: invert(85%) sepia(29%) saturate(6692%) hue-rotate(245deg)
+              brightness(101%) contrast(121%);
+          }
+          &.c8 {
+            filter: invert(46%) sepia(14%) saturate(1978%) hue-rotate(184deg)
+              brightness(89%) contrast(81%);
+          }
+          &.c9 {
+            filter: invert(85%) sepia(46%) saturate(3377%) hue-rotate(281deg)
+              brightness(88%) contrast(94%);
+          }
+          &.c10 {
+            filter: invert(85%) sepia(46%) saturate(3377%) hue-rotate(281deg)
+              brightness(88%) contrast(94%);
+          }
+          &.c11 {
+            filter: invert(25%) sepia(43%) saturate(3806%) hue-rotate(343deg)
+              brightness(101%) contrast(102%);
+          }
+        }
+      }
+      &.uncategorize_popup {
+        h4 {
+          font-family: "Lato Black";
+          font-size: 3.88vw;
+          line-height: 5.88vw;
+          color: $sbi_primary_color;
+          margin: 0px 0 30px 0;
+          padding: 0px 0px 0px 12px;
+        }
+      }
+      > div {
+        i {
+          font-size: 6vw;
+          color: $sbi_nine_color;
+          font-weight: bold;
+        }
+        .login_btn {
+          margin: 0px auto 0 auto;
+          max-width: 135px;
+        }
+      }
+      .back_btn {
+        border: 1px solid lighten($sbi_third_color, 10%);
+        max-width: 166px;
+        height: 40px;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: none;
+        font-family: "Lato Black";
+        color: $sbi_nine_color;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin: 0;
+        background-color: white;
+      }
+
+      .list {
+        .item {
+          border-bottom: 1px solid $sbi_third_color;
+
+          p {
+            > .list_high {
+              display: inline-block;
+              vertical-align: middle;
+              color: $sbi_primary_color;
+              font-family: "Lato Black";
+
+              .rs_icon {
+                font-weight: bold;
+                font-size: 2.2vw;
+              }
+            }
+
+            strong {
+              display: inline-block;
+              vertical-align: middle;
+              opacity: 1;
+            }
+          }
+
+          .custom_notes {
+            text-align: center;
+            min-height: 100%;
+            .item-inner {
+              border-bottom: none;
+
+              .label {
+                margin: 0;
+
+                p {
+                  font-size: 2.5vw;
+                  text-transform: uppercase;
+                  letter-spacing: 1.5px;
+                  white-space: normal;
+                  line-height: 1.5;
+                }
+              }
+            }
+          }
+        }
+      }
+      .custom_notes {
+        text-align: center;
+        min-height: 100%;
+        .item-inner {
+          border-bottom: none;
+
+          .label {
+            margin: 0;
+
+            p {
+              font-size: 2.5vw;
+              text-transform: uppercase;
+              letter-spacing: 1.5px;
+              white-space: normal;
+              line-height: 1.5;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &:after {
+    background-image: none;
+    height: 0;
+  }
+  .saving_head {
+    text-align: center;
+    padding: 20px 0;
+
+    h3 {
+      font-family: "Lato";
+      font-size: 16px;
+      color: #2a2076;
+      margin: 0 0 5px 0;
+    }
+
+    div {
+      font-family: "Lato";
+      font-size: 10.38vw;
+      color: $sbi_twentyseven_color;
+
+      span {
+        font-weight: bold;
+        font-size: 7.78vw;
+        color: $sbi_twentyseven_color;
+      }
+    }
+  }
+  .critical_slider_list {
+    display: table;
+    width: 100%;
+    margin: 16px 0 50px 0;
+
+    .critical_slider_list_row {
+      display: table-row;
+
+      &:last-child {
+        .critical_slider_list_data {
+          padding-bottom: 0;
+        }
+      }
+
+      .critical_slider_list_head {
+        display: table-cell;
+        font-family: "Lato Semibold";
+        font-size: 12px;
+        padding: 0 10px;
+        text-align: center;
+
+        &:first-child {
+          padding-left: 0;
+          color: $sbi_primary_color;
+        }
+
+        span {
+          color: lighten($sbi_nine_color, 20%);
+          margin-left: 3px;
+        }
+      }
+
+      .critical_slider_list_data {
+        display: table-cell;
+        text-align: left;
+        color: $sbi_twentyseven_color;
+        font-family: "Lato Black";
+        position: relative;
+        padding: 26px 0px 0 0;
+        font-size: 3.96vw;
+        text-align: center;
+        border-bottom: 1px solid $sbi_twenty_color;
+
+        .trashIcon {
+          padding-left: 0px;
+          z-index: 1;
+          padding-left: 8px;
+          margin-left: 5px;
+          margin-top: 10px;
+          color: $sbi_secondary_color;
+          border-left: 1px solid $sbi_twenty_color;
+        }
+
+        &:first-child {
+          padding-left: 0;
+          min-width: 130px;
+          text-align: left;
+        }
+
+        .critical_slider_list_data_img {
+          display: inline-block;
+          vertical-align: middle;
+          padding-right: 15px;
+          width: auto;
+          position: relative;
+
+          &:after {
+            position: absolute;
+            box-shadow: 0px -8px 13px 0px lighten($sbi_third_color, 20%);
+            content: "";
+            bottom: -7px;
+            left: 0;
+            right: 0;
+            height: 5px;
+          }
+        }
+
+        .critical_slider_list_data_val {
+          display: inline-block;
+          vertical-align: middle;
+          color: $sbi_twentysix_color;
+          font-family: "Lato";
+          font-size: 3.96vw;
+        }
+      }
+    }
+  }
+
+  .collection_cont {
+    ion-scroll[scrollX] {
+      margin-left: -36px;
+      margin-bottom: 10px;
+      margin-top: 20px;
+      white-space: nowrap;
+      height: 32.5vw;
+      overflow: hidden;
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .collection_cont_slider {
+      .slick-list {
+        overflow: visible;
+      }
+      .collection_cont_slider_item {
+        display: inline-block;
+        &:first-child {
+          padding-left: 15px;
+        }
+        .collection_cont_slider_item_inner {
+          padding: 0 5px;
+          width: 32vw;
+          height: 28vw;
+          .collection_cont_slider_item_inner_top {
+            text-align: center;
+            color: $sbi_seven_color;
+            font-family: "Lato";
+            font-size: 7.5vw;
+          }
+          .collection_cont_slider_item_inner_mid {
+            width: 100%;
+            background-color: $sbi_fifth_color;
+            border-radius: 4px;
+            position: relative;
+            box-shadow: 0 7px 10px lighten($sbi_secondary_color, 40%);
+            padding: 0;
+            overflow: hidden;
+
+            .collection_fig {
+              position: relative;
+
+              margin: 4.16vw 3.05vw 0 3.05vw;
+              min-height: 16.6vw;
+              img {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                padding: 0 11px;
+              }
+            }
+
+            .collection_cont_slider_item_inner_btm {
+              width: 100%;
+              text-align: center;
+              color: $sbi_nine_color;
+              font-family: "Lato";
+              font-size: 3.33vw;
+              padding: 0 0 2.5vw 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .invested_monthlySaving {
+    text-align: center;
+    border: 1px solid $sbi_twenty_color;
+    margin: 20px 0;
+
+    .col {
+      &:first-child {
+        border-right: 1px solid $sbi_twenty_color;
+      }
+      &:second-child {
+        border-right: 1px solid #af0f1b;
+      }
+    }
+
+    .indiccat {
+    }
+
+    h5 {
+      font-family: "Lato";
+      color: #2a2076;
+      font-size: 12px;
+      line-height: 3.33vw;
+      margin: 0 0 8px 0;
+    }
+
+    .invested_result_amt {
+      font-family: "Lato";
+      color: $sbi_twentyseven_color;
+      font-size: 24px;
+      line-height: 4vw;
+
+      .rs_icon {
+        font-weight: bold;
+        margin-right: -3px;
+        color: $sbi_twentyseven_color;
+        font-size: 0.77em;
+      }
+    }
+    invested_result_amt_savings {
+      [padding] h5:first-child {
+        color: #af0f1b;
+      }
+    }
+  }
+
+  .chart_center_text {
+    .chart_center_title {
+      font-family: "Lato";
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      color: $sbi_twentyseven_color;
+      &.f14 {
+        font-size: 14px;
+      }
+    }
+    .chart_center_rs {
+      font-family: "Lato";
+      font-size: 24px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      color: $sbi_twentysix_color;
+    }
+  }
+
+  .data_lable_rs {
+    font-family: "Lato";
+    font-size: 12px;
+    font-weight: 700;
+    color: $sbi_twentysix_color;
+  }
+
+  .x_lable {
+    color: $sbi_twentysix_color;
+    font-family: "Lato";
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+h2 {
+  font-family: "Lato Black";
+  font-size: 4.91vw;
+  color: $sbi_twentysix_color !important;
+  margin: 0;
+}
+
+.overlay_dropdown {
+  .overlay_dropdown_content {
+    top: 50%;
+    transform: translateY(-50%);
+    .closeIcon {
+      display: inline-block;
+      font-size: 2.2em;
+      margin-top: -7px;
+      margin-bottom: 0px;
+      padding-top: -10px;
+      padding-bottom: 0px;
+      padding-right: 0px;
+      z-index: 1;
+    }
+    .common_expense_card {
+      padding: 0;
+      width: 100%;
+      box-shadow: none;
+      margin: 0;
+      margin-bottom: 0px;
+      ion-card-header {
+        h4 {
+          font-family: "Lato Semibold";
+          font-size: 3.33vw;
+          color: $sbi_nine_color;
+          margin: 0;
+          text-transform: uppercase;
+        }
+        .closeIcon {
+          display: inline-block;
+          font-size: 3.2em;
+          margin-top: -7px;
+          margin-bottom: 0px;
+          padding-top: -10px;
+          padding-bottom: 0px;
+          padding-right: 0px;
+          z-index: 1;
+          border-style: hidden;
+          border-width: 5px;
+        }
+        padding: 0 0 10px 0;
+      }
+      //   .recent_spends {
+      //     margin-top: -18px;
+      //     .list {
+      //       border-top: 1px solid #ebebeb;
+      //       .item {
+      //         padding-left: 0;
+      //         border-bottom: 1px solid #ebebeb;
+      //         padding-top: 10px;
+      //         &:last-child {
+      //           border-bottom: none;
+      //         }
+
+      //         ion-thumbnail {
+      //           min-width: 33px;
+      //           min-height: 33px;
+      //           margin: 8px 8px 8px 0;
+
+      //           img {
+      //             width: 33px;
+      //             height: 33px;
+      //           }
+      //         }
+
+      //         h5 {
+      //           color: $sbi_primary_color;
+      //           font-family: "Lato Semibold";
+      //           font-size: 3.33vw;
+      //           margin: 0 0 2px 0;
+      //           text-transform: capitalize;
+      //           .smsIcon {
+      //             color: #828282 !important;
+      //             margin-top: 0px !important;
+      //             border-left: 1px solid #828282 !important;
+      //             padding-left: 5px;
+      //             margin-left: 4px;
+      //             width: 16px;
+      //             display: inline-block;
+      //             font-size: larger;
+      //           }
+      //         }
+
+      //         p {
+      //           color: $sbi_nine_color;
+      //           font-family: "Lato Semibold";
+      //           font-size: 2.77vw;
+      //           .smsIcon {
+      //             color: #828282 !important;
+      //             margin-top: 0px !important;
+      //             border-left: 1px solid #828282 !important;
+      //             padding-left: 5px;
+      //             margin-left: 4px;
+      //             width: 16px;
+      //             display: inline-block;
+      //             font-size: larger;
+      //           }
+      //           .rs_icon {
+      //             font-weight: bold;
+      //             font-size: 2.9vw;
+      //           }
+      //         }
+      //         .spent_data {
+      //           color: $sbi_primary_color;
+      //           font-family: "Lato Black";
+      //           font-size: 3.88vw;
+      //           margin-right: 12px;
+
+      //           .spent_data_lbl {
+      //             font-size: 3.88vw;
+      //             color: $sbi_primary_color;
+      //             font-family: "Lato Black";
+      //           }
+      //           span {
+      //             font-weight: bold;
+      //             font-size: 3vw;
+      //           }
+      //           .spent_data_date {
+      //             display: block !important;
+      //             font-size: 3vw;
+      //             margin-top: -5px;
+      //             &.O {
+      //               color: $sbi_twentythree_color;
+      //             }
+
+      //             &.T {
+      //               color: $sbi_twentytwo_color;
+      //             }
+      //           }
+
+      //           span {
+      //             display: inline-block;
+      //             color: $sbi_primary_color;
+      //             font-family: "Lato Semibold";
+      //             margin: 0 0 5px 0;
+      //             text-align: right;
+      //           }
+      //         }
+
+      //         .recent_price {
+      //           color: $sbi_primary_color;
+      //           font-family: "Lato Black";
+      //           font-size: 3.88vw;
+
+      //           span {
+      //             font-weight: bold;
+      //             font-size: 3vw;
+      //           }
+      //           .col {
+      //             color: $sbi_primary_color !important;
+      //             font-family: "Lato Black";
+      //             font-size: 3.88vw;
+      //           }
+      //           .editIcon {
+      //             color: #828282 !important;
+      //           }
+      //           .refreshIcon {
+      //             color: #828282 !important;
+      //           }
+      //         }
+
+      //         .arrow_right {
+      //           color: #828282;
+      //           margin-top: 16px;
+      //           font-size: large;
+      //         }
+      //         .smsIcon {
+      //           color: #828282 !important;
+      //           margin-top: 0px !important;
+      //           border-left: 1px solid #828282 !important;
+      //           padding-left: 5px;
+      //           margin-left: 4px;
+      //           width: 16px;
+      //           display: inline-block;
+      //           font-size: larger;
+      //         }
+      //       }
+      //     }
+      //     .spendsBudget {
+      //       padding-top: 15px;
+      //       .customBorder {
+      //         border-right: 1px solid $sbi_third_color;
+      //         margin-right: 5px;
+      //         margin-left: 5px;
+      //         font-size: 5vw !important;
+      //       }
+      //       .rs_icon {
+      //         font-weight: bold;
+      //         font-size: 3vw;
+      //         color: $sbi_primary_color;
+      //       }
+      //     }
+      //   }
+
+      .card-content {
+        height: 300px;
+        overflow: auto;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.addExpenseFab {
+  .addExpenseButn {
+    height: 45px;
+    width: 130px;
+    background-color: #2a2076;
+    border-radius: 25px;
+    padding: 8px 20px;
+    margin: 0;
+    .button-inner {
+      ion-icon {
+        &.addExpenseIcon {
+          font-size: 9.077vw;
+          margin: 0 14px 0 0px;
+          //font-weight: bold;
+
+          @media screen and (max-width: 360px) {
+            font-weight: 100;
+          }
+        }
+      }
+      h6 {
+        &.addExpenseText {
+          font-size: 3.077vw;
+          //   padding-bottom: 53px;
+          margin: 0px;
+          font-family: "Lato";
+        }
+      }
+    }
+  }
+}
+
+.spendometer_cont {
+  padding-top: 24px;
+  .common_expense_card {
+    margin: 0;
+    width: 100%;
+    &.spendo_first_sec {
+      margin: 0 0 30px;
+      ion-card-header {
+        text-align: center;
+        padding: 22px 0 0 0;
+        .custom_select_drop {
+          padding-top: 0;
+          padding-bottom: 0;
+          max-width: 100%;
+
+          .select-text {
+            font-family: "Lato";
+            font-size: 4.103vw;
+            color: $sbi_twentysix_color;
+          }
+
+          .select-icon {
+            .select-icon-inner {
+              margin-top: 0;
+              color: #2a2076;
+              left: -113px;
+              top: 40%;
+            }
+          }
+        }
+      }
+      .spend_card {
+        padding: 0 23px 46px 23px;
+        @media screen and (max-width: 360px) {
+          padding: 0 15px 46px 15px;
+          margin: -10px 0;
+        }
+
+        .custom_select_drop {
+          padding-top: 0;
+          padding-bottom: 0;
+          max-width: 100%;
+
+          .select-text {
+            color: $sbi_twentysix_color;
+            font-size: 4.615vw;
+            font-family: "Lato";
+          }
+
+          .select-icon {
+            .select-icon-inner {
+              margin-top: 4px;
+              color: $sbi_twentysix_color;
+            }
+          }
+        }
+
+        .card_inner_cont {
+          .spendometer_cont_sec {
+            ion-card {
+              box-shadow: none;
+              .chart_demo {
+                .gauge {
+                  --gauge-width: 254px;
+                  --min: 0;
+                  --max: 100;
+                  --gauge-height: calc(var(--gauge-width) / 2);
+                  width: var(--gauge-width);
+                  height: var(--gauge-height);
+                  border-radius: var(--gauge-height) var(--gauge-height) 0 0 !important;
+                  position: relative;
+                  overflow: hidden;
+                  background: inherit;
+                  margin: 0 auto;
+
+                  .slices {
+                    height: 100%;
+                    .marker {
+                      position: absolute;
+                      top: 0;
+                      border-radius: var(--gauge-height) var(--gauge-height) 0 0 !important;
+                      width: var(--gauge-width);
+                      height: var(--gauge-height);
+                      transform-origin: calc(var(--gauge-width) / 2)
+                        var(--gauge-height);
+                      animation: 1.5s ease-in 0s 1 gaugeRotation;
+                      transform: rotate(
+                        calc(
+                          (var(--trigg) - var(--min)) /
+                            (var(--max) - var(--min)) * 180deg
+                        )
+                      );
+                      background: var(--bg);
+                    }
+                  }
+
+                  .gauge-center {
+                    width: 80%;
+                    height: 80%;
+                    background: $sbi_fifth_color;
+                    border-radius: var(--gauge-height) var(--gauge-height) 0 0 !important;
+                    position: absolute;
+                    box-shadow: 0 0 10px #000;
+                    right: 9%;
+                    bottom: 0;
+                    padding-top: 5rem;
+                    .label,
+                    .number {
+                      display: block;
+                      width: 100%;
+                      text-align: center;
+                    }
+                    .label {
+                      font-family: "Lato";
+                      font-size: 3.077vw;
+                      color: $sbi_twentyseven_color;
+                    }
+                    .number {
+                      font-size: 6.154vw;
+                      color: $sbi_twentysix_color;
+                      padding-top: 5px;
+                    }
+                  }
+                }
+              }
+            }
+
+            .column_wrapper {
+              padding: 5px 8px 8px 8px;
+              float: left;
+              width: 50%;
+              position: relative;
+              text-align: center;
+              .col_inner1 {
+                margin: 0 0 15px -10px;
+                background: linear-gradient(270deg, #301F6C 0%, #D60D47 100%);
+                border-radius: 8px;
+                padding: 1px;
+              }
+              .column_box1 {
+                border: 0px solid $sbi_twentyseven_color;
+                // border-image: linear-gradient(45deg, #301F6C, #D60D47) 1;
+                // border-image: linear-gradient(270deg, #301F6C 0%, #D60D47 100%);
+                border-radius: 8px;
+                width: 100%;
+                padding: 15px 13px 16px;
+                height: auto;
+                max-height: 137px;
+                margin: 0;
+                background: #fff;
+                &:first-child {
+                  margin-right: 13px;
+                }
+                figure {
+                  width: 24px;
+                  height: 24px;
+                  overflow: hidden;
+                  margin: 0 auto 20px;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+                h5 {
+                  font-family: "Lato Semibold";
+                  font-size: 3.077vw;
+                  color: $sbi_twentyseven_color;
+                  margin: 0 0 4px;
+                  &.loan_amt {
+                    background: $sbi_thirtytwo_color;
+                    font-family: "Lato";
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                    font-family: "Lato";
+                    font-size: 3.077vw;
+                    letter-spacing: 0.38px;
+                  }
+                }
+                .invested_result_amt {
+                  font-family: "Lato";
+                  font-size: 6.164vw;
+                  color: $sbi_twentyseven_color;
+                  &.loanamt_col {
+                    background: $sbi_thirtytwo_color;
+                    font-family: "Lato";
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                    font-family: "Lato";
+                    font-size: 6.164vw;
+                    letter-spacing: 0.38px;
+                  }
+                  .rs_icon {
+                    font-size: 0.76em;
+                    font-weight: bold;
+                    // margin-right: -3px;
+                  }
+                }
+              }
+    
+              .col_inner2 {
+                margin: 0 -10px 15px 0;
+                background: $sbi_twentyseven_color;
+                border-radius: 8px;
+                padding: 1px;
+              }
+              .column_box2 {
+                border: 0px solid $sbi_twentyseven_color;
+                // border-image: linear-gradient(45deg, #301F6C, #D60D47) 1;
+                // border-image: linear-gradient(270deg, #301F6C 0%, #D60D47 100%);
+                border-radius: 8px;
+                width: 100%;
+                padding: 15px 18px 16px;
+                height: auto;
+                max-height: 137px;
+                margin: 0;
+                background: #fff;
+                &:first-child {
+                  margin-right: 13px;
+                }
+                figure {
+                  width: 24px;
+                  height: 24px;
+                  overflow: hidden;
+                  margin: 0 auto 20px;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+                h5 {
+                  font-family: "Lato Semibold";
+                  font-size: 3.077vw;
+                  color: $sbi_twentyseven_color;
+                  margin: 0 0 4px;
+                  &.loan_amt {
+                    background: $sbi_thirtytwo_color;
+                    font-family: "Lato";
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                    font-family: "Lato";
+                    font-size: 3.077vw;
+                    letter-spacing: 0.38px;
+                  }
+                }
+                .invested_result_amt {
+                  font-family: "Lato";
+                  font-size: 6.164vw;
+                  color: $sbi_twentyseven_color;
+                  &.loanamt_col {
+                    background: $sbi_thirtytwo_color;
+                    font-family: "Lato";
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                    font-family: "Lato";
+                    font-size: 6.164vw;
+                    letter-spacing: 0.38px;
+                  }
+                  .rs_icon {
+                    font-size: 0.76em;
+                    font-weight: bold;
+                    // margin-right: -3px;
+                  }
+                }
+          
+              }
+            }
+
+            .invested_monthly {
+              // padding: 20px 0 0 0;
+              .col {
+                padding: 4px;
+              }
+              .invest_month_col {
+                text-align: center;
+                border: 1px solid $sbi_twentyseven_color;
+                border-radius: 8px;
+                padding: 21px 15px 19px;
+                @media screen and (max-width: 360px) {
+                  width: 135px;
+                  height: 130px;
+                }
+
+                figure {
+                  margin: 0 auto;
+                  padding: 0;
+                  width: 26px;
+                  height: 26px;
+                  img {
+                    max-width: 100%;
+                  }
+                }
+                h5 {
+                  font-family: "Lato Light";
+                  font-size: 3.077vw;
+                  margin: 0 0 4px 0;
+                  padding: 20px 0 4px;
+                  white-space: nowrap;
+
+                  &.monthly_spends_text {
+                    background: $sbi_thirtytwo_color;
+                    font-family: "Lato";
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                    font-weight: 400;
+                    font-size: 12px;
+                    letter-spacing: 0.38px;
+                  }
+
+                  &.monthly_savings_text {
+                    color: $sbi_twentyseven_color;
+                    font-family: "Lato";
+                    letter-spacing: 0.38px;
+                    font-weight: 400;
+                    font-size: 12px;
+                  }
+                }
+
+                .invested_result_amt {
+                  font-family: "Lato";
+                  font-size: 6.154vw;
+                  color: $sbi_twentysix_color;
+
+                  &.monthly_spends {
+                    // color: #d60d47;
+                    background: $sbi_thirtytwo_color;
+                    font-family: "Lato";
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                    font-weight: 700;
+                    // font-size: 12px;
+                    letter-spacing: 0.38px;
+                  }
+
+                  &.monthly_savings {
+                    color: $sbi_twentyseven_color;
+                  }
+
+                  .rs_icon {
+                    font-weight: bold;
+                    font-size: 4.5vw;
+                  }
+
+                  .rs_icon_total {
+                    font-weight: bold;
+                    font-size: 4.5vw;
+                    background: $sbi_thirtytwo_color;
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                    margin-right: -2px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .view_all {
+          font-family: "Lato Semibold";
+          color: $sbi_secondary_color;
+          font-size: 3.33vw;
+          text-align: center;
+          padding: 10px;
+          background-color: $sbi_eighteen_color;
+        }
+      }
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .common_expense_card {
+    &.spends_sec {
+      margin: 0 0 24px;
+      ion-card-header {
+        text-align: center;
+        padding: 22px 0 0;
+        h5 {
+          font-family: "Lato";
+          font-size: 6.154vw;
+          color: $sbi_twentysix_color;
+          margin: 0 0 12px;
+          text-transform: capitalize;
+        }
+        .custom_select_drop {
+          padding-top: 0;
+          padding-bottom: 0;
+          max-width: 100%;
+
+          .select-text {
+            font-family: "Lato";
+            font-size: 4.103vw;
+            color: $sbi_twentysix_color;
+          }
+
+          .select-icon {
+            .select-icon-inner {
+              margin-top: 0;
+              color: #2a2076;
+              left: -113px;
+              top: 40%;
+            }
+          }
+        }
+      }
+      ion-card-content {
+        #total_expenses {
+          margin: 0px 0 25px 0 !important;
+          .chart_total_exp {
+            h5 {
+              font-family: "Lato";
+              font-size: 3.59vw;
+              color: $sbi_twentyseven_color;
+              margin: 0 0 7px;
+              text-transform: capitalize;
+            }
+            .chart_total_val {
+              font-family: "Lato";
+              font-size: 24px;
+              font-weight: 700;
+              color: $sbi_twentysix_color;
+              margin: 0;
+              font-weight: 700;
+              letter-spacing: 0.38;
+              .icon-Icons_Ruppee {
+                font-family: "Lato";
+                font-size: 6vw;
+                color: $sbi_twentysix_color;
+              }
+            }
+          }
+        }
+        .recent_spends {
+          .list {
+            .item-block {
+              border-top: 0.6px solid $sbi_fortyone_color;
+              padding: 6px 15px 6px 10px;
+              &:last-child {
+                border-bottom: none;
+              }
+              ion-thumbnail {
+                width: 40px;
+                height: 40px;
+                border-radius: 3px;
+                padding: 10px;
+                margin: 0 10px 0 0;
+                overflow: hidden;
+                &.santon_icon {
+                  background-color: $sbi_fortytwo_color;
+                  min-width: 40px;
+                  min-height: 40px;
+                  padding: 8px;
+                  // opacity: 0.5;
+                }
+                img {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+              .item-inner {
+                padding: 0;
+              }
+              h5 {
+                font-family: "Lato";
+                font-size: 4.103vw;
+                color: $sbi_twentysix_color;
+                margin: 0;
+              }
+              .spent_data {
+                margin: 0 19px 0 0;
+                .spent_data_lbl {
+                  font-family: "Lato";
+                  font-size: 4.103vw;
+                  color: $sbi_twentyseven_color;
+                  margin: 0;
+                  .icon-Icons_Ruppee {
+                    font-family: "Lato";
+                    font-size: 3.1vw;
+                    color: $sbi_twentyseven_color;
+                    // margin: 0;
+                    font-weight: bolder;
+                    margin-right: -1px;
+                  }
+                }
+              }
+              .arrow_right {
+                margin: 0;
+                overflow: hidden;
+                height: 20px;
+                .right_icon {
+                  font-size: 2em;
+                  line-height: 0.67;
+                  pointer-events: none;
+                  // padding-left: 0.4em;
+                  color: #2a2076;
+                }
+              }
+            }
+          }
+        }
+      }
+      .no_padding {
+        .view_all {
+          font-family: "Lato";
+          color: $sbi_twentysix_color;
+          font-size: 4.103vw;
+          text-align: center;
+          padding: 10px;
+          background-color: $sbi_fifth_color;
+          border: 1px solid $sbi_twentysix_color;
+          width: 90%;
+          text-transform: capitalize;
+          margin: 0 auto 28px auto;
+        }
+      }
+    }
+  }
+
+  .common_expense_card {
+    &.budget_expense {
+      margin: 0 0 30px;
+      ion-card-header {
+        text-align: center;
+        padding: 16px 16px 31px;
+        h5 {
+          font-family: "Lato";
+          font-size: 6.154vw;
+          color: $sbi_twentysix_color;
+          margin: 0 0 6px;
+          text-transform: capitalize;
+        }
+        h6 {
+          font-family: "Lato Semibold";
+          font-size: 4.615vw;
+          color: $sbi_twentyseven_color;
+          margin: 0;
+          text-transform: capitalize;
+        }
+      }
+      ion-card-content {
+        &.no_padding {
+          .budget_input_wrap {
+            padding: 0 24px 40px 24px;
+          }
+          .budget_list_sec {
+            display: flex;
+            justify-content: center;
+            margin: 0 30px 30px;
+            align-items: center;
+            ion-thumbnail {
+              width: 35px;
+              height: 35px;
+              padding: 8px;
+              border-radius: 5px;
+              margin: 0 21px 0 0;
+              overflow: hidden;
+              &.cal_icon {
+                background-color: $sbi_fortyfour_color;
+              }
+              &.attribution_icon {
+                background-color: $sbi_fortytwo_color;
+              }
+              &.travel_icon {
+                background-color: $sbi_fortythree_color;
+              }
+              &.add_btn {
+                background-color: $sbi_fortyfour_color;
+                margin: 0;
+              }
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+            button {
+              &.add_btn {
+                height: 2em;
+                padding: 10px;
+                margin: 0;
+                background-color: #cfe1ff;
+                @media screen and (max-width: 360px) {
+                  height: 2.4em;
+                  width: 32px;
+                  padding: 10px;
+                  margin: 0;
+                  background-color: #cfe1ff;
+                  border-radius: 6px;
+                  box-shadow: none;
+                }
+              }
+              ion-icon {
+                &::before {
+                  color: #1c1b1f;
+                  font-weight: bolder;
+                  font-size: x-large;
+                  @media screen and (max-width: 360px) {
+                    color: #1c1b1f;
+                    font-weight: bolder;
+                    font-size: x-large;
+                    @media screen and (max-width: 360px) {
+                      font-weight: 500;
+                      width: 24px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .calculation_with_range {
+            .calculation_with_range_inp {
+              border: 1px solid $sbi_twentysix_color;
+            }
+            .enter_Budget {
+              margin: 0;
+              padding: 0;
+              .rs_icon {
+                font-size: 6.154vw;
+                line-height: 8.88vw;
+                color: #2a2076;
+                padding-left: 23px;
+              }
+              .text_fld {
+                .text-input {
+                  font-size: 18px;
+                  font-family: "Lato Light";
+                  color: #bdbdbd;
+                  opacity: 1;
+                  margin: 0px 0px 0px 15px;
+                  text-align: left;
+                  &::placeholder {
+                    font-family: "Lato Light";
+                    color: #bdbdbd;
+                  }
+                }
+              }
+            }
+            .enterBudget {
+              margin: 0 0 12px 0;
+              padding: 0;
+
+              .label {
+                font-size: 3.55vw;
+                font-family: "Lato Semibold";
+                color: #999999;
+                margin-right: 0;
+                overflow: visible;
+                margin-left: 2px;
+              }
+              .rs_icon {
+                font-size: 6.154vw;
+                line-height: 8.88vw;
+                color: #2a2076;
+                padding-left: 17px;
+              }
+              .text_fld {
+                label {
+                  color: $sbi_primary_color;
+                  font-size: 3.39vw;
+                  text-transform: none;
+                  letter-spacing: 0.5px;
+                }
+                .arrow {
+                  width: 24%;
+                  transform: rotate(90deg);
+                  margin: 18px 30px 0 7px;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+                .text-input {
+                  font-size: 18px;
+                  font-family: "Lato Light";
+                  color: #bdbdbd;
+                  opacity: 1;
+                  margin: 0px 0px 0px 42px;
+                  text-align: left;
+                  @media screen and (max-width: 360px) {
+                    margin: 0px 0px 0px 42px;
+                  }
+                  &::placeholder {
+                    font-family: "Lato Light";
+                    color: #bdbdbd;
+                  }
+                }
+
+                .calculation_with_range_inp {
+                  .overlay_dropdown_rng_val {
+                    font-size: 14px;
+                    padding-left: 6px;
+                  }
+                  &.text_fld {
+                    label {
+                      color: $sbi_secondary_color;
+                      font-size: 3.39vw;
+                      text-transform: none;
+                      letter-spacing: 0.5px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .set_button {
+            padding: 0;
+            margin: 0;
+            .login_btn {
+              font-family: "Lato";
+              font-size: 3.59vw;
+              text-align: center;
+              padding: 10px;
+              background: $sbi_twentysix_color;
+              max-width: 100%;
+              height: 50px;
+              letter-spacing: 0.38px;
+              text-transform: capitalize;
+              border-radius: 0;
+              color: $sbi_fifth_color;
+              text-transform: capitalize;
+              box-shadow: none;
+            }
+          }
+        }
+      }
+      .view_all {
+        font-family: "Lato";
+        color: $sbi_twentysix_color;
+        font-size: 4.103vw;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid $sbi_twentysix_color;
+        text-transform: capitalize;
+        margin-top: 12px;
+      }
+    }
+  }
+
+  .common_expense_card {
+    &.recent_spends_sec {
+      margin: 0 0 30px;
+      &.card {
+        box-shadow: none;
+        background: none;
+        ion-card-header {
+          text-align: left;
+          padding: 0 9px;
+          margin-bottom: 20px;
+          h5 {
+            font-family: "Lato";
+            font-size: 6.154vw;
+            color: $sbi_twentysix_color;
+            margin: 0 0 6px;
+            text-transform: capitalize;
+          }
+          h6 {
+            font-family: "Lato Semibold";
+            font-size: 4.615vw;
+            color: $sbi_twentyseven_color;
+            margin: 0;
+            text-transform: capitalize;
+          }
+        }
+        ion-card-content {
+          &.no_padding {
+            .card_inner_cont {
+              padding: 0;
+              &.recent_spends {
+                .list {
+                  .item-block {
+                    background: $sbi_fifth_color;
+                    box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.1);
+                    border-radius: 4px;
+                    margin: 0 0 12px;
+                    padding: 10px;
+                    &:first-child {
+                      border-top: none;
+                    }
+                    ion-thumbnail {
+                      // min-width: 24px;
+                      // min-height: 24px;
+                      border-radius: 3px;
+                      padding: 5px;
+                      margin: 0 10px 0 0;
+                      overflow: hidden;
+                      width: 10px;
+                      &.zomato_icon {
+                        background-color: $sbi_twentysix_color;
+                        min-width: 44px;
+                        min-height: 44px;
+                        padding: 10px;
+                      }
+                      img {
+                        width: auto;
+                        height: auto;
+                      }
+                    }
+                    .item-inner {
+                      padding: 0;
+                      .label {
+                        margin: 0;
+                      }
+                    }
+                    h5 {
+                      font-family: "Lato";
+                      font-size: 4.103vw;
+                      color: $sbi_twentyeight_color;
+                      margin-bottom: 4px;
+                      text-transform: capitalize;
+                    }
+                    p {
+                      font-family: "Lato Semibold";
+                      font-size: 3.077vw;
+                      color: $sbi_twentysix_color;
+                      margin: 0;
+                      text-transform: capitalize;
+                    }
+                    .recent_price {
+                      margin: 0 12px 0 0;
+                      font-family: "Lato";
+                      font-size: 4.615vw;
+                      color: $sbi_twentyeight_color;
+                      .rs_icon {
+                        &.icon-Icons_Ruppee {
+                          font-family: "Lato";
+                          font-size: 3.6vw;
+                          color: $sbi_twentyeight_color;
+                          font-weight: bolder;
+                          @media screen and (max-width: 360px) {
+                            font-weight: bolder;
+                          }
+                        }
+                      }
+                    }
+                    .arrow_right {
+                      width: 24px;
+                      height: 24px;
+                      margin: 0;
+                      overflow: hidden;
+                      img {
+                        width: 100%;
+                        height: 100%;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .view_all {
+              font-family: "Lato";
+              color: $sbi_twentysix_color;
+              font-size: 4.103vw;
+              text-align: center;
+              padding: 10px;
+              background-color: $sbi_fifth_color;
+              border: 1px solid $sbi_twentysix_color;
+              width: 90%;
+              text-transform: capitalize;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .common_expense_card {
+    &.spends_summary {
+      margin: 0 0 30px;
+      ion-card-header {
+        text-align: center;
+        h4 {
+          margin: -15px 0 8px;
+          font-size: 24px;
+
+          color: #2a2076;
+          font-family: "Lato";
+        }
+        h5 {
+          font-family: "Lato";
+          font-size: 6.154vw;
+          color: $sbi_twentysix_color;
+          margin: 0 0 12px;
+          text-transform: capitalize;
+        }
+        .custom_select_drop {
+          padding-top: 0;
+          padding-bottom: 0;
+          max-width: 100%;
+
+          .select-text {
+            font-family: "Lato";
+            font-size: 4.103vw;
+            color: $sbi_twentysix_color;
+          }
+
+          .select-icon {
+            .select-icon-inner {
+              margin-top: 0;
+              color: #461981;
+              left: -105px;
+              top: 50%;
+            }
+          }
+        }
+      }
+      ion-card-content {
+        &.no_padding {
+          .view_all {
+            font-family: "Lato";
+            color: $sbi_twentysix_color;
+            font-size: 4.103vw;
+            text-align: center;
+            padding: 10px;
+            background-color: $sbi_fifth_color;
+            border: 1px solid $sbi_twentysix_color;
+            width: 90%;
+            text-transform: capitalize;
+            margin: 0 auto 40px auto;
+          }
+        }
+      }
+    }
+  }
+
+  .round_btn_sec {
+    justify-content: center;
+    .round_btn_new {
+      font-family: "Lato";
+      font-size: 3.59vw;
+      text-align: center;
+      padding: 10px;
+      background-color: $sbi_twentysix_color;
+      width: 105%;
+      height: 50px;
+      text-transform: capitalize;
+      margin: 0 -11px 37px;
+      border-radius: 0;
+      color: $sbi_fifth_color;
+    }
+  }
+
+  .month_btn {
+    text-align: center;
+    margin: 0 auto;
+    color: #2a2076 !important;
+    .month_title {
+      font-family: "Lato";
+      color: #2a2076 !important;
+      font-size: 16px;
+      height: auto;
+      text-transform: capitalize;
+    }
+
+    .month_arrow {
+      font-size: 21px;
+      pointer-events: none;
+      color: #2a2076;
+      margin: -3px 3px 0 11px;
+    }
+  }
+}
+.footer {
+  &.spend_manager_footer {
+    text-align: center;
+    .segment {
+      background-color: $sbi_thirtyone_color;
+      box-shadow: 0px -8px 12px rgba(0, 0, 0, 0.06);
+      padding: 20px;
+      .segment-button {
+        color: $sbi_thirtyfour_color;
+        font-family: "Lato";
+        font-size: 3.59vw;
+        border-color: transparent;
+        background-color: $sbi_thirtyone_color;
+        text-transform: uppercase;
+        height: 5.5rem;
+        line-height: 2;
+        @media screen and (max-width: 360px) {
+          line-height: 2.5;
+        }
+
+        &.segment-activated {
+          color: $sbi_twentyseven_color;
+          font-family: "Lato";
+          font-size: 3.59vw;
+          border-color: transparent;
+          background-color: $sbi_thirtyone_color;
+          img {
+            filter: invert(16%) sepia(29%) saturate(6396%) hue-rotate(264deg)
+              brightness(43%) contrast(92%);
+          }
+        }
+
+        &:first-child {
+          border-right: 1px solid $sbi_thirtysix_color;
+        }
+
+        figure {
+          margin: 10px auto 0 auto;
+          width: 20px;
+          height: 20px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}

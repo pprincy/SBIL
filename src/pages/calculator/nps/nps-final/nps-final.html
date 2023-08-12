@@ -1,0 +1,223 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-title>{{'NPSCalculator.NPSCalculator' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="networth_details">
+    <h4>
+      {{('NPSCalculator.corpusTitle' | translate).replace('$year$',
+      retirementCorpusDate)}}
+    </h4>
+    <div class="networth_amt">
+      <div class="networth_amt_inner">
+        <span class="rs_icon icon-Icons_Ruppee"></span
+        >{{finalValue.PensionWealthCreated | amountFormat:0}}
+      </div>
+    </div>
+
+    <div class="ttl_result_val">
+      <!-- <span class='rs_icon icon-Icons_Ruppee'></span> -->
+      <!-- <span class="toolTipValue"></span> -->
+    </div>  
+  </div>
+  <ion-card class="nps_card">
+    <div id="networth_chart" style="display: block; margin-top: -10px; margin-left: -30px; margin-right: -30px; margin-bottom: -230px;" ></div>
+    <div class="column_wrapper">
+      <div class="col_inner1">
+        <ion-list class="column_box1">
+          <figure>
+            <img src="assets/imgs/fd_calculator/amount_invested.png" />
+          </figure>
+          <h5 class="loan_amt">
+            {{'NPSCalculator.monthlyPension' | translate}}
+          </h5>
+          <div class="invested_result_amt loanamt_col">
+            <span class="rs_icon icon-Icons_Ruppee"></span
+            >{{finalValue.PensionPerMonthAfetrRetirement | amountFormat:'S'}}
+          </div>
+        </ion-list>
+      </div>
+    </div>
+    <div class="column_wrapper">
+      <div class="col_inner2">
+        <ion-list class="column_box2">
+          <figure>
+            <img src="assets/imgs/fd_calculator/interest_earned.png" />
+          </figure>
+          <h5>{{'NPSCalculator.amountWithdrawn' | translate}}</h5>
+          <div class="invested_result_amt">
+            <span class="rs_icon icon-Icons_Ruppee"></span
+            >{{finalValue.LumpsumWithdrawn | amountFormat:'S'}}
+          </div>
+        </ion-list>
+      </div>
+    </div>
+    
+    <ion-card-content class="nps_card_content">
+      <div class="tell_us_cont_common nps_slider_range">
+        <div class="calculator_common_sec_inner">
+          <div class="calculation_with_range">
+            <ion-item>
+              <span class="overlay_dropdown_rng_val perValue">
+                {{amountPer}} %
+              </span>
+              <span class="overlay_dropdown_rng_txt">
+                {{'common.pa' | translate}}</span
+              >
+            </ion-item>
+            <ion-item>
+              <ion-range
+                min="{{minPer}}"
+                max="{{maxPer}}"
+                step="1"
+                debounce="1000"
+                [(ngModel)]="amountPer"
+                pin="true"
+                (ionBlur)="GetNPS()"
+              >
+              </ion-range>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+      <p text-center class="heading_reinvest">
+        {{'NPSCalculator.ofYourPensionAmountYou' | translate}}
+      </p>
+
+      <ion-list class="networth_list">
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/chart.svg" />
+            </figure>
+            <p>{{'NPSCalculator.estimatedRateOfReturn' | translate}}</p>
+          </div>
+          <button
+            ion-button
+            icon-right
+            float-right
+            clear
+            text-lowercase
+            (click)="showOverlay('rateOfReturn')"
+          >
+            {{finalValue.ExpectedReturnsInPerc}} %
+            <span class="drp_sub_txt">{{'common.pa' | translate}}</span>
+            <ion-icon name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/chart.svg" />
+            </figure>
+            <p>{{'NPSCalculator.increasingSavingsRate' | translate}}</p>
+          </div>
+          <button
+            ion-button
+            icon-right
+            float-right
+            clear
+            text-lowercase
+            (click)="showOverlay('incrementalSavaing')"
+          >
+            {{finalValue.IncrementalSavingsRate}} %
+            <span class="drp_sub_txt">{{'common.pa' | translate}}</span>
+            <ion-icon name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/fd_calculator/card_travel.png" />
+            </figure>
+            <p>{{'NPSCalculator.monthlyContribution' | translate}}</p>
+          </div>
+          <button
+            ion-button
+            icon-right
+            float-right
+            clear
+            text-capitalize
+            (click)="showOverlay('monthlyContribution')"
+          >
+            <span class="rs_icon icon-Icons_Monthly_Expense"></span
+            >{{finalValue.MonthlyContribution | amountFormat:'S'}}
+            <ion-icon name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/duration.svg" />
+            </figure>
+            <p>{{'NPSCalculator.retirementAge' | translate}}</p>
+          </div>
+          <button
+            ion-button
+            icon-right
+            float-right
+            clear
+            text-lowercase
+            (click)="showOverlay('ageRetirement')"
+          >
+            {{finalValue.RetirementAge}}
+            <span class="drp_sub_txt">{{'common.yrs' | translate}}</span>
+            <ion-icon name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <p class="disclaimer_txt" text-center>
+    <a (click)="disclaimerInfo()"> {{'common.disclaimersLink' | translate}}</a>
+  </p>
+</ion-content>
+
+<div class="overlay_dropdown" *ngIf="status">
+  <div class="overlay_dropdown_content calculation_with_range">
+    <slick-slider
+      class="drop_com_comp"
+      class="drop_com_comp"
+      [rangeData]="rangeDataUi"
+    ></slick-slider>
+    <ion-item>
+      <button ion-button class="login_btn" (click)="done()">
+        {{'common.done' | translate}}
+      </button>
+    </ion-item>
+  </div>
+</div>
+<div class="overlay_dropdown annuity disclaimer" *ngIf="disclaimer">
+  <div class="overlay_dropdown_content">
+    <div class="overlay_dropdown_content_inner">
+      <ion-icon
+        name="ios-close-circle-outline"
+        (click)="disclaimerClose()"
+      ></ion-icon>
+      <h3 padding>{{'common.disclaimer' | translate}}</h3>
+      <div
+        class="innerCont"
+        [innerHtml]="utilitiesProvider.disclaimerText"
+      ></div>
+    </div>
+  </div>
+</div>
+<ion-footer class="nps_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col">
+      <button ion-button class="back_btn" outline (click)="recalculate()">
+        {{'buttons.recalculate' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn" (click)="goToGoalsListing()">
+        {{'buttons.startPlanning' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

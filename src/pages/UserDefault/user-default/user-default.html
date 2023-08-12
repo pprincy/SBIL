@@ -1,0 +1,253 @@
+<ion-header class="side_menu_header" *ngIf="profileData">
+  <ion-icon class="close_icon" name="md-close" (click)="back()"></ion-icon>
+  <ion-grid class="side_menu_top">
+    <ion-row class="side_menu_top_fr">
+      <ion-col no-padding col-8>
+        <div class="menu_fig_sec">
+          <div class="user_pic">
+            <img [src]="profileData.ImagePath" (error)="errorPic()" />
+          </div>
+          <div class="name_edit">
+            <h3>{{username}}</h3>
+            <button ion-button clear (click)="goToEditProfile()">
+              <img src="/assets/imgs/profile_edit_icon.svg" alt="">
+            </button>
+          </div>
+          <h5>
+            {{profileData.ProfileScore}}% {{'myProfile.completed' | translate}}
+          </h5>
+        </div>
+      </ion-col>
+      <ion-col no-padding col-4 class="lang_sel">
+        <ion-list class="lng_change">
+          <button menuClose ion-item no-lines class="langchg" (click)="languageClick()">
+            <span class="lang_opt">
+              {{langName}}
+              <ion-icon name="md-arrow-dropdown"></ion-icon></span>
+          </button>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content class="calculator_common_sec bgTransp">
+  <div class="details_container">
+    <div class="details_content">
+      <div class="tell_us_cont_common profile_tab">
+        <div class="tell_us_cont com_head active">
+          <ion-scroll class="tell_us_slider dOneSlider tab_slider" scrollX="true" scroll-avatar>
+            <div *ngFor="let option of sliderOptionsArr; let i = index" class="slick-slide-item"
+              (click)="openDetails(i)">
+              <span class="tell_us_slider_age">{{option}}</span>
+            </div>
+          </ion-scroll>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Personal details Start -->
+  <div class="details_container" *ngIf="showTabItm == 0">
+    <div class="details_content bor_style" *ngIf="profileData">
+      <ion-item class="calendar_icon">
+        <ion-label stacked>{{'myProfile.dob' | translate}}</ion-label>
+        <ion-input type="text" placeholder="Select your city" [(ngModel)]="this.restapiProvider.userData['dob']"></ion-input>
+      </ion-item>
+      <ion-item class="home_location_icon">
+        <ion-label stacked>{{'myProfile.livingIn' | translate}}</ion-label>
+        <ion-input type="text" placeholder="Select your city" [(ngModel)]="profileData.CityOfResidence"></ion-input>
+        <img src="assets/imgs/location_icon.png" />
+      </ion-item>
+      <ion-item class="education_icon">
+        <ion-label stacked>{{'myProfile.education' | translate}}</ion-label>
+        <ion-select interface="popover" [(ngModel)]="profileData.EducationName">
+          <ion-option selected="true">{{profileData.EducationName}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="life_stage_icon">
+        <ion-label stacked>{{'myProfile.lifeStage' | translate}}</ion-label>
+        <ion-select interface="popover" [(ngModel)]="profileData.MaritialStatus">
+          <ion-option selected="true">{{profileData.MaritialStatus}}</ion-option>
+        </ion-select>
+      </ion-item>
+      
+      <ion-label stacked  *ngIf="familyMembersArr && familyMembersArr.length > 0">
+        {{'myProfile.familyMembers' | translate}}
+      </ion-label>
+      <ion-item *ngFor="let member of familyMembersArr">
+        <ion-label stacked class="agecount">{{member.DepAge}}
+          <span class="year_old">{{'myProfile.yearOld' | translate}}</span>
+        </ion-label>
+        <ion-select interface="popover" [(ngModel)]="member.DepRelationShip">
+          <ion-option selected="true">{{member.DepRelationShip}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-label stacked  *ngIf="childrenArr && childrenArr.length > 0">
+        {{childrenArr.length}} {{childrenArr.length == 1?'child':'children'}}
+      </ion-label>
+      <ion-item *ngFor="let child of childrenArr">
+        <ion-label stacked class="agecount">{{member.DepAge}}
+          <span class="year_old">{{'myProfile.yearOld' | translate}}</span>
+        </ion-label>
+        <ion-select interface="popover" [(ngModel)]="member.DepRelationShip">
+          <ion-option selected="true">{{member.DepRelationShip}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </div>
+  </div>
+  <!-- Personal details End -->
+  <!-- Profesional details Start -->
+  <div class="details_container" *ngIf="showTabItm == 1">
+    <div class="details_content" *ngIf="profileData">
+      <ion-item class="occupation_icon">
+        <ion-label stacked>{{'myProfile.occupation' | translate}}</ion-label>
+        <ion-select interface="popover" [(ngModel)]="profileData.OccupationName">
+          <ion-option [value]="profileData.OccupationName" selected="true">{{profileData.OccupationName}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="industry_icon">
+        <ion-label stacked>{{'myProfile.industry' | translate}}</ion-label>
+        <ion-select interface="popover" [(ngModel)]="profileData.Industry">
+          <ion-option [value]="profileData.Industry" selected="true">{{profileData.Industry}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="work_exp_icon">
+        <ion-label stacked>{{'myProfile.workExperience' | translate}}</ion-label>
+        <ion-select interface="popover" [(ngModel)]="profileData.Experiance">
+          <ion-option [value]="profileData.Experiance" selected="true">{{profileData.Experiance}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="income_range_icon">
+        <ion-label stacked>{{'myProfile.incomeRange' | translate}}</ion-label>
+        <ion-select interface="popover" [(ngModel)]="profileData.IncomeGroup">
+          <ion-option [value]="profileData.IncomeGroup" selected="true">₹ {{profileData.IncomeGroup}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </div>
+  </div>
+  <!-- Profesional details End -->
+  <!-- Investment details Start -->
+  <div class="details_container" *ngIf="showTabItm == 2">
+    <div class="details_content" *ngIf="profileData">
+      <ion-item class="occupation_icon">
+        <ion-label stacked>{{'myProfile.riskassessmentResult' | translate}}
+        </ion-label>
+        <ion-input type="text" readonly="true" [(ngModel)]="profileData.Risk_AssestMent_Output"></ion-input>
+      </ion-item>
+      <ion-item class="industry_icon" (click)="viewBreakup('monthly')">
+        <ion-label stacked>{{'myProfile.monthlyExpenses' | translate}}
+        </ion-label>
+        <ion-input readonly [(ngModel)]="montlyExpenseComma"></ion-input>
+      </ion-item>
+      <ion-item class="work_exp_icon">
+        <ion-label stacked>{{'myProfile.oneTimeSavings' | translate}}
+        </ion-label>
+        <ion-input readonly [(ngModel)]="lumsumComma"></ion-input>
+      </ion-item>
+      
+      <ion-item class="occupation_icon" (click)="viewBreakup('asset')">
+        <ion-label stacked>{{'myProfile.assetValues' | translate}}
+        </ion-label>
+        <ion-input readonly [(ngModel)]="assetValue"></ion-input>
+      </ion-item>
+
+      <ion-item class="occupation_icon" (click)="viewBreakup('liabilities')">
+        <ion-label stacked>{{'myProfile.Liabilities' | translate}}
+        </ion-label>
+        <ion-input readonly [(ngModel)]="liabilitiesValue"></ion-input>
+      </ion-item>
+
+      <ion-item class="occupation_icon">
+        <ion-label stacked>{{'myProfile.emergencyFunds' | translate}}
+        </ion-label>
+        <ion-input readonly [(ngModel)]="emergencyFundsComma"></ion-input>
+      </ion-item>
+      <ion-item class="occupation_icon">
+        <ion-label stacked>{{'myProfile.ancestryProperty' | translate}}
+        </ion-label>
+        <ion-input readonly [(ngModel)]="ancestorPropertyComma"></ion-input>
+      </ion-item>
+
+      <div class="calculator_common_sec_inner">
+        <div class="age_slider_heading">
+          <ion-label>{{'myProfile.preferences' |
+            translate}}</ion-label>
+        </div>
+        <div class="invest_option_wrapper">
+          <ion-grid class="invest_option">
+            <ion-row>
+              <ion-col *ngFor="let item of investTypeArr">
+                <button ion-button icon-end class="active" style="border-radius: 0px;">
+                  {{item.InvestmentName}}
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Investment details End -->
+  <!-- Hobbies/Interests Start -->
+  <div class="details_container" *ngIf="showTabItm == 3">
+    <div class="invest_option_wrapper edit_content hobbies" *ngIf="hobbiesArr">
+      <ion-grid class="invest_option">
+        <ion-row>
+          <ion-item *ngFor="let item of hobbiesArr" class="active">
+            <div class="img_wrapper" [ngClass]="[hobbyImgDict[item.Hobbies]+' active']"
+            ></div>
+            <h4 class="active">{{item.HobbyName}}</h4>
+          </ion-item>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+<div class="common_loader" *ngIf="pageLoader">
+  <span>
+    <img src="assets/imgs/pageLoader.gif" /> </span>
+</div>
+<div class="content_wrap" *ngIf="status">
+  <ion-icon ios="ios-close" md="md-close" (click)="viewBreakup('close')"></ion-icon>
+  <div class="calculator_common_sec">
+    <div class="calculator_common_sec_inner">
+      <div class="age_slider_heading">
+        <h1>{{popupDataObj.header}}</h1>
+        <h5>{{popupDataObj.sub_head}}</h5>
+      </div>
+    </div>
+    <div class="calculator_common_sec_inner calculate_ttl">
+      <div class="row">
+        <div class="col calculate_ttl_lt" text-left>
+          {{'myProfile.totalAmount' | translate}}
+        </div>
+        <div class="col calculate_ttl_rt" text-right>
+          <span class="rs_icon">`</span>{{popupDataObj.total | amountFormat:'S'}}
+        </div>
+      </div>
+    </div>
+    <div class=" calculator_grid_wrapper">
+      <ion-list *ngIf="popupDataObj.type == 'monthly'">
+        <ion-item *ngFor="let item of popupDataObj.breakup">
+          <ion-label>{{item.MonthlyExpenseName}} </ion-label>
+          <ion-label text-right class="value">
+            <span class="rs_icon">`</span>{{item.ExpenseValue | amountFormat:'S'}} </ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-list *ngIf="popupDataObj.type == 'asset'">
+        <ion-item *ngFor="let item of popupDataObj.breakup">
+          <ion-label>{{item.AssetName}} </ion-label>
+          <ion-label text-right class="value">
+            <span class="rs_icon">`</span>{{item.AssetValue | amountFormat:'S'}} </ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-list *ngIf="popupDataObj.type == 'liabilities'">
+        <ion-item *ngFor="let item of popupDataObj.breakup">
+          <ion-label>{{item.DebtName}} </ion-label>
+          <ion-label text-right class="value">
+            <span class="rs_icon">`</span>{{item.DebtValue | amountFormat:'S'}} </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</div>

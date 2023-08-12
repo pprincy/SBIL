@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <button [class.active]="isBtnActive" (click)="toggleClass()" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'myProfile.myProfile' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="calculator_common_sec scroll_div complet_section">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="user_pic" *ngIf="profileData">
+          <!-- <img [src]="profileData.ImagePath" (error)="errorPic()"> -->
+          <img [src]="profileData.ImagePath" (error)="errorPic()" />
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="userinfo">
+      <ion-col *ngIf="profileData">
+        <h3>{{restapiProvider.userData['customerName']}}</h3>
+        <h5>{{profileData.ProfileScore}}% {{'myProfile.completed' | translate}}</h5>
+        <h6 *ngIf="profileData.ProfileScore == 100">
+          {{'myProfile.thanksProfile' | translate}}
+        </h6>
+        <p *ngIf="profileData.ProfileScore < 100">
+          {{'myProfile.subThanks' | translate}}
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer class="view_goal_btn">
+  <ion-toolbar>
+    <ion-title>
+      <button ion-button class="login_btn" (click)="goToPlan()">
+        {{'common.done' | translate}}
+      </button>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

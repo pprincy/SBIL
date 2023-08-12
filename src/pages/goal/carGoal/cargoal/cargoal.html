@@ -1,0 +1,164 @@
+<ion-header>
+	<ion-navbar text-center>
+		<button [class.active]="isBtnActive" (click)="toggleClass()" ion-button
+			[menuToggle]="activeMenu">
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>{{'carGoal.carGoal' | translate}}</ion-title>
+	</ion-navbar>
+	<div class="calculator_common_sec_steps">
+		<div class="calculator_steps" id="stepsCount">
+			<div class="calculator_steps_com active">
+				<div class="calculator_dashed step1">
+					<span class="calculator_steps_com_num">
+						<span>1</span>
+					</span>
+				</div>
+			</div>
+			<div class="calculator_steps_com">
+				<div class="calculator_dashed step2">
+					<span class="calculator_steps_com_num">
+						<span>2</span>
+					</span>
+				</div>
+			</div>
+			<div class="calculator_steps_com">
+				<div class="calculator_dashed step3">
+					<span class="calculator_steps_com_num">
+						<span>3</span>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-header>
+<ion-content class="calculator_common_sec">
+
+	<ion-slides class="calculator_sliders" pager="false">
+
+		<ion-slide class="car_goal_slider1">
+			<div class="calculator_common_sec_inner age_slider_heading">
+				<h1>{{'carGoal.qOne' | translate}}</h1>
+			</div>
+
+			<!-- car section -->
+			<div class="tell_us_cont_common">
+				<div class="car_goal_slider_wrap">
+					<div class="car_goal_slider">
+						<div class="car_goal_slider_item">
+							<ion-grid>
+								<ion-row>
+									<ion-item *ngFor="let c of carList" (click)="changeCar(c.cost,c.name)" (pan)='changeCar()' (panEnd)='changeCar()' [ngClass]="{'active': (c.name === selectedCar)}">
+										<ion-label class="car_goal_label">
+											<div class="car_goal_slider_item_inner">
+												<img src="{{imgURLNew + c.imagepath}}" *ngIf="c.imagepath">
+												<h4>{{c.name}}</h4>
+												<p style="font-size:0px">{{c.cost}}</p>
+											</div>
+										</ion-label>
+									</ion-item>
+								</ion-row>
+							</ion-grid>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="calculator_common_sec_inner">
+				<h5>{{'carGoal.approximatePrice' | translate}}</h5>
+
+				<div class="tell_us_cont_common goals_slider_range">
+					<div class="calculator_common_sec_inner">
+						<div class="calculation_with_range">
+							<div class="calculation_with_range_inp row">
+								<ion-input type="tel" [(ngModel)]="carCostComma"
+									class="overlay_dropdown_rng_val"
+									(ionChange)="formatAmount(carCostComma)"></ion-input>
+							</div>
+
+							<ion-item>
+								<ion-range min="{{minCarCost}}" max="{{maxCarCost}}" step="{{steps}}"
+									[(ngModel)]="carCost" pin="true"
+									(ngModelChange)="doSomething($event)">
+								</ion-range>
+							</ion-item>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</ion-slide>
+		<!-- Step 2 -->
+		<ion-slide class="car_goal_slider2">
+			<div class="calculator_common_sec_inner age_slider_heading">
+				<h2>{{'carGoal.qTwo' | translate}}</h2>
+				<h3>{{'carGoal.inTheYear' | translate}}
+					<strong class="diffYear">{{yearDiff}}</strong>
+				</h3>
+			</div>
+
+			<div class="tell_us_cont_common">
+				<!-- <ion-card class="card_slide"> -->
+				<div class="tell_us_cont com_head active">
+					<div class="tell_us_slider common_years_slider dOneSlider">
+						<div *ngFor="let i of timeToBuyCarRange">
+							<span class="tell_us_slider_age">{{i}}</span>
+							<span class="tell_us_slider_year">{{'carGoal.years' | translate}}</span>
+						</div>
+					</div>
+				</div>
+				<!-- </ion-card> -->
+			</div>
+		</ion-slide>
+		<!-- Step 3 -->
+		<ion-slide class="car_goal_slider3">
+			<div class="calculator_common_sec_inner age_slider_heading">
+				<h4>{{'carGoal.qThree' | translate}}</h4>
+				<h3><strong>{{downPaymentPer}}%</strong>
+					{{'carGoal.ofTheTotalCost' | translate}}</h3>
+			</div>
+
+			<div class="tell_us_cont_common goals_slider_range">
+				<div class="calculator_common_sec_inner">
+					<div class="calculation_with_range">
+						<div class="calculation_with_range_inp row">
+							<ion-input type="tel" [(ngModel)]="downPaymentComma"
+								class="overlay_dropdown_rng_val"
+								(ionChange)="changeDownPayment('input')"></ion-input>
+						</div>
+						<ion-item>
+							<ion-range min="{{minDownPayPer}}" max="{{maxDownPayPer}}" step="1"
+								[(ngModel)]="downPaymentPer"
+								pin="true" (ngModelChange)="changeDownPayment('range')">
+
+							</ion-range>
+						</ion-item>
+						<div class="range_no_sec">
+							<ion-icon range-left class="range_lt">10%</ion-icon>
+							<ion-icon range-right class="range_rt">100%</ion-icon>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-slide>
+	</ion-slides>
+
+
+
+</ion-content>
+<ion-footer class="goals_footer">
+	<div class="footer_panel row active">
+		<div class="footer_panel_lt col" *ngIf="!backBtnhide">
+			<button ion-button class="back_btn" outline (click)="back()">
+				{{'common.back' | translate}}
+			</button>
+		</div>
+		<div class="footer_panel_rt col" [attr.text-center]="backBtnhide ? '' : null">
+			<button ion-button class="login_btn" (click)="next()">
+				{{'common.next' | translate}}
+			</button>
+		</div>
+	</div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+	<span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button [class.active]="isBtnActive" (click)="toggleClass()" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+    <ion-title>{{'notification.notification' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="notifications scroll_div">
+  <div class="no_record_found" *ngIf="restapiProvider.notificationList.length < 1">
+    <div class="no_record_found_cont">
+      <span>{{'notification.noNewNotification' | translate}}</span>
+    </div>
+  </div>
+  
+  <div class="list_wrapper" *ngFor="let n of restapiProvider.notificationList">
+    <ion-list class="invest_list">
+      <ion-card>
+        <div (click)="notificationClick(n)">
+              <ul class="list_icon">
+                <li >
+                  <p class="notify_details">{{n.Title}}</p>
+                </li>
+              </ul>
+              <p class="publish_date">{{n.PublishDate}} at {{n.PublishTime}}</p>
+        </div>
+      </ion-card>        
+    </ion-list>
+  </div>
+</ion-content>
+
+

@@ -1,0 +1,475 @@
+<ion-header id="header">
+  <ion-navbar color="sbiHeader">
+    <ion-title>{{'PaisaGenie' | translate}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="search()">
+        <ion-icon class="icon-Icons_Search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button
+        ion-button
+        icon-only
+        class="notification-button"
+        (click)="goNotificationList()"
+      >
+        <ion-icon class="icon-Icons_Notification">
+          <ion-badge
+            class="notifications-badge"
+            color="sbi_primary_color"
+            *ngIf="restapiProvider.notificationCount > 0"
+            >{{restapiProvider.notificationCount}}</ion-badge
+          >
+        </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button
+        [class.active]="isBtnActive"
+        ion-button
+        [menuToggle]="activeMenu"
+        (click)="menuBtnClick()"
+      >
+        <img src="assets/icon/notification.png" />
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <!-- card_slider -->
+  <ion-slides
+    class="card_slider"
+    pager
+    autoplay="5000"
+    speed="1000"
+    loop="true"
+    *ngIf="cardSliderListShow"
+  >
+    <ion-slide
+      class="card_slider_item"
+      *ngFor="let sliderCard of cardSliderList"
+    >
+      <div class="card_slider_item_inner bannerImg">
+        <img src="{{imgURL + sliderCard.ImagePath}}" />
+        <p>
+          <!-- <span class="slidercard_title" (click)="cardClick(sliderCard)">{{sliderCard.Title}}</span><br /> -->
+          <!-- <ion-icon name="ios-information-circle" *ngIf="sliderCard.DisclaimerText" (click)="showDisclaimer(sliderCard)"
+            class="icon"></ion-icon> -->
+        </p>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- Plan your life -->
+  <div class="discover_plan_main">
+    <div class="plan_goal" *ngIf="planYourLife">
+      <div class="plan_goal_header">
+        <h2>{{'discover.planYourLife' | translate}}</h2>
+        <h3>{{'discover.setYourGoals' | translate}}</h3>
+      </div>
+      <div class="plan_goal_cont">
+        <div class="plan_img">
+          <img src="assets/imgs/Plan_Image.png"
+          />
+        </div>
+        <h4>{{'discover.startPlanningYourGoals' | translate}}</h4>
+        <button ion-button class="login_btn" (click)="goToPlanLife()">
+          {{'discover.startPlanning' | translate}}
+        </button>
+      </div>
+    </div>
+
+    <!-- Recomended for your -->
+    <div class="recommend_for_your" *ngIf="recommendedArticlesList.length > 0">
+      <div class="recommend_for_your_header recommend_header">
+        <h2>{{'discover.yourPersonalisedreads' | translate}}</h2>
+        <h3>{{'discover.forBetterPlanning' | translate}}</h3>
+      </div>
+      <div class="recommend_for_your_cont">
+        <ion-scroll
+          class="recommend_for_your_cont_slider"
+          scrollX="true"
+          scroll-avatar
+        >
+          <div
+            class="recommend_for_your_cont_slider_item"
+            *ngFor="let recoArticles of recommendedArticlesList"
+            (click)="articleDetails(recoArticles, 'article')"
+          >
+            <div class="recommend_for_your_cont_slider_item_inner">
+              <figure>
+                <img
+                  src="assets/imgs/new_tag.png"
+                  *ngIf="isContentNew(recoArticles.PublishDate)"
+                  style="position: absolute; top: 0; left: 0; width: 50px"
+                />
+                <img src="{{imgURL + recoArticles.BigImage}}" />
+              </figure>
+              <!-- <h4>{{utilitiesProvider.showEllipsisTitle(recoArticles.Title)}} </h4> -->
+              <p>{{recoArticles.ShortDesc}}</p>
+            </div>
+          </div>
+          <div
+            class="recommend_for_your_cont_slider_item"
+            *ngIf="recommendedArticlesList.length > 1"
+          >
+            <div
+              class="recommend_for_your_cont_slider_item_inner view_more"
+              (click)="goToAllArticles()"
+            >
+              <div class="view_more_cont">
+                <ion-icon name="ios-arrow-dropright"></ion-icon>
+                <span>{{'common.viewMore' | translate}} </span>
+              </div>
+            </div>
+          </div>
+        </ion-scroll>
+      </div>
+    </div>
+
+    <!-- Quations -->
+    <div class="help_us">
+      <div *ngIf="showQues">
+        <div class="help_us_main" *ngIf="showQuesNumber == 'yesNo'">
+          <h4>{{'discover.helpUsToKnowYouBetter' | translate}}</h4>
+          <div class="help_us_cont">
+            <h5>{{yesNoArray.Question}}</h5>
+            <ion-list radio-group class="custom_radio">
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-item>
+                      <ion-label>{{'common.yes' | translate}}</ion-label>
+                      <ion-radio value="Yes" (click)="yesNoQues('Yes')"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col>
+                    <ion-item>
+                      <ion-label>{{'common.no' | translate}}</ion-label>
+                      <ion-radio value="No" (click)="yesNoQues('No')"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-list>
+          </div>
+          <button ion-button class="login_btn" (click)="submitQuesAns('yesNoQues')">{{'common.proceed' | translate}}</button>
+        </div>
+
+        <div class="help_us_main" *ngIf="showQuesNumber == 'multi'">
+          <h4>{{'discover.helpUsToKnowYouBetter' | translate}}</h4>
+          <div class="help_us_cont" *ngFor="let item of questAnsArr;index as quesIndex">
+            <h5>{{item.Question}}</h5>
+            <ion-list radio-group class="custom_radio">
+              <ion-item *ngFor="let ans of item.AnswersArr;index as ansIndex">
+                <ion-label>{{ans.Answer}}</ion-label>
+                <ion-radio value="{{ans.AnswerID}}" (click)="selectTwoQuesAns(ans)"></ion-radio>
+              </ion-item>
+            </ion-list>
+          </div>
+          <button ion-button class="login_btn" (click)="submitQuesAns('twoQues')">{{'common.proceed' | translate}}</button>
+        </div>
+
+        <div class="spend_in_month" *ngIf="showQuesNumber == 'Monthly'">
+          <div class="spend_in_month_cont">
+            <h5>{{'discover.monthlyExpense' | translate}}</h5>
+            <div class="tell_us_cont_common">
+              <div class="calculator_common_sec_inner">
+                <div class="calculation_with_range">
+                  <div class="calculation_with_range_inp">
+                    <ion-input
+                      [(ngModel)]="monthlyExpenseComma"
+                      type="tel"
+                      class="overlay_dropdown_rng_val"
+                      (ionChange)="formatAmount(monthlyExpenseComma, 'expense')"
+                    ></ion-input>
+                  </div>
+                  <ion-item>
+                    <ion-range
+                      [(ngModel)]="monthlyExpense"
+                      min="{{minMonthlyExpense}}"
+                      max="{{maxMonthlyExpense}}"
+                      step="{{steps}}"
+                      pin="true"
+                      (ngModelChange)="checkSteps('monthlyExpense')"
+                    >
+                    </ion-range>
+                  </ion-item>
+                  <div class="range_btm">
+                    <span class="lbl">{{minMonthlyExpense}}</span>
+                    <span class="lbl">{{maxMonthlyExpense | amountFormat:'S'}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              ion-button
+              class="login_btn"
+              (click)="submitQuesAns('monthlyExpense')"
+            >
+              {{'common.proceed' | translate}}
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="help_us_submit" *ngIf="showThanksCard" padding>
+        <h3>{{'common.thankYou' | translate}}</h3>
+        <p>{{'discover.quesFinal' | translate}}</p>
+        <button ion-button class="login_btn" *ngIf="showThanksCard" (click)="proceed()">{{'common.submit' | translate}}</button>
+      </div>
+
+       <!-- <button ion-button class="login_btn" *ngIf="showQues" (click)="submitQuesAns()">Proceed</button> -->
+    </div>
+
+    <!-- Collection All in one placce -->
+    <div class="collection" *ngIf="articleCountByTagsList.length > 0">
+      <div class="collection_header disc_com_header">
+        <h2>{{'discover.collection' | translate}}</h2>
+        <h3>{{'discover.allInOnePlace' | translate}}</h3>
+      </div>
+      <div class="collection_cont">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6 *ngFor="let item of articleCountByTagsList">
+              <div class="col_inner1">
+                <div class="collection_cont_slider_item">
+                  <div
+                    class="collection_cont_slider_item_inner"
+                    (click)="goToArticleCategory(item.TagName,item.TagID)"
+                  >
+                    <div class="collection_cont_slider_item_inner_mid">
+                      <figure class="collection_fig">
+                        <img
+                          src="{{imgURLNew + item.ImagePath}}"
+                          *ngIf="item.ImagePath"
+                        />
+                      </figure>
+                    </div>
+                    <div class="collection_cont_slider_item_inner_btm">
+                      {{item.TagName}}
+                    </div>
+                    <div class="collection_cont_slider_item_inner_top">
+                      {{item.ArticleCount}} {{'collections.articles' | translate}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+
+    <div class="quiz-survey" *ngIf="articleCountByTagsList.length > 0" [hidden]="isSurveyData && isQuizData">
+      <div class="updates_header disc_com_header">
+        <h2>{{'surveyQuiz.surveyQuizTitle' | translate}}</h2>
+      </div>
+      <div class="quiz-cards">
+        <ion-card [hidden]="isSurveyData">
+          <ion-row align-items-center justify-content-between>
+            <ion-col col-8>
+              <ion-card-header>
+                <h5>{{'surveyQuiz.takeSurvey' | translate}}</h5>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-list>
+                  <ion-item *ngFor="let item of surveyList">
+                    <ion-label (click)="goToSurveyPage(item.QB_Header_ID)">{{item.QB_Header_Name}}</ion-label>
+                  </ion-item>
+        
+                </ion-list>
+              </ion-card-content>
+            </ion-col>
+            <ion-col col-4>
+              <img src="assets/imgs/survey.png" />
+            </ion-col>
+          </ion-row>
+        </ion-card>
+        <ion-card [hidden]="isQuizData">
+          <ion-row align-items-center justify-content-between>
+            <ion-col col-8>
+              <ion-card-header>
+                <h5>{{'surveyQuiz.takeQuiz' | translate}}</h5>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-list>
+                  <ion-item *ngFor="let item of quizList">
+      
+                    <ion-label (click)="goToQuizPage(item.QB_Header_ID)">{{item.QB_Header_Name}}</ion-label>
+                  </ion-item>
+                  
+                </ion-list>
+              </ion-card-content>
+            </ion-col>
+            <ion-col col-4>
+              <img class="quiz-img" src="assets/imgs/quiz.png" />
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+    </div>
+
+    <div class="updates" *ngIf="newsList.length > 0">
+      <div class="updates_header">
+        <h2>{{'discover.latestNews' | translate}}</h2>
+        <h3>{{'discover.forYou' | translate}}</h3>
+      </div>
+      <ion-list>
+        <ion-item
+          *ngFor="let news of newsList | slice:0:3"
+          (click)="articleDetails(news, 'news')"
+        >
+          <ion-thumbnail>
+            <img
+              src="assets/imgs/new_tag.png"
+              *ngIf="isContentNew(news.PublishDate)"
+              style="
+                position: absolute;
+                top: 10px;
+                left: 0;
+                width: 50px;
+                box-shadow: none;
+              "
+            />
+            <img src="{{imgURL + news.BigImage}}" />
+          </ion-thumbnail>
+          <h2>{{utilitiesProvider.showEllipsisTitle(news.Title)}}</h2>
+          <p>{{utilitiesProvider.showEllipsisTitle(news.ShortDesc)}}</p>
+        </ion-item>
+      </ion-list>
+      <div class="read_all">
+        <button ion-button class="read_btn" clear (click)="goToArticles()">
+          {{'common.readAll' | translate}}
+        </button>
+      </div>
+    </div>
+
+    <!-- Tips -->
+    <div class="tips_cont" *ngIf="tipsList.length > 0">
+      <div class="disc_com_header">
+        <h2>{{'plan.tips' | translate}}</h2>
+        <h3>{{'plan.forFinancialLifestylePlanning' | translate}}</h3>
+      </div>
+      <ion-slides pager class="card_slider_tips" pager="false" loop="false" slidesPerView="1.1">
+        <ion-slide
+          class="card_slider_item"
+          *ngFor="let tips of tipsList"
+          (click)="tipsGo()"
+        >
+          <div class="card_slider_item_inner">
+            <img
+              src="assets/imgs/new_tag.png"
+              *ngIf="isContentNew(tips.PublishDate)"
+              style="position: absolute; top: 0; left: 0; width: 60px"
+            />
+            <img src="{{imgURL + tips.BigImage}}" />
+          </div>
+          <div class="card_slider_item_inner_cont">
+            <p>{{tips.ShortDesc}}</p>
+            <!-- <ul>
+              <li>
+                <img class="tips_icon_section" src="assets/imgs/tips_icon.svg" />
+                <span>Write your Goals</span>
+              </li>
+              <li>
+                <img class="tips_icon_section" src="assets/imgs/tips_icon.svg" />
+                <span>Assess your risk appetite</span>
+              </li>
+              <li>
+                <img class="tips_icon_section" src="assets/imgs/tips_icon.svg" />
+                <span>Choose your tools</span>
+              </li>
+              <li>
+                <img class="tips_icon_section" src="assets/imgs/tips_icon.svg" />
+                <span>Stay consistent</span>
+              </li>
+              <li>
+                <img class="tips_icon_section" src="assets/imgs/tips_icon.svg" />
+                <span>Diversity</span>
+              </li>
+            </ul> -->
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+    <div class="infograph" *ngIf="infographicList.length > 0">
+      <div class="infograph_header">
+        <h2>Infographics</h2>
+      </div>
+      <div
+        class="infograph_cont"
+        *ngFor="let info of infographicList | slice:0:3; let i = index"
+      >
+        <div class="infograph_cont_content">
+          <div>
+            <div class="infograph_cont_flex">
+              <ion-icon
+                class="add_icon"
+                name="{{!info.open ? 'add' : 'close'}}"
+                (click)="toggleSection(i)"
+              ></ion-icon>
+              <div>
+                <h3 class="info_title">{{info.Title}}</h3>
+              </div>
+            </div>
+            <div
+              class="infograph_img"
+              *ngIf="info.open"
+              (click)="infographicsDetails(info)"
+            >
+              <img src="{{imgURL + info.BigImage}}" />
+            </div>
+          </div>
+
+          <!-- <div class="download_btn" *ngIf="info.open">
+              <button ion-button class="download" clear>
+                {{'common.download' | translate}}
+              </button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="invest_choice">
+      <div class="invest_choice_header disc_com_header">
+        <h2>{{'discover.yourInvestmentChoices' | translate}}</h2>
+        <h3>{{'discover.tellUsLike' | translate}}</h3>
+      </div>
+      <div class="invest_choice_cont">
+        <!-- <img src="assets/imgs/investment_pigbag.png" /> -->
+        <div class="investment_img investment_img1">
+          <img src="assets/imgs/investment1.svg" />
+        </div>
+        <div class="investment_img investment_img2">
+          <img src="assets/imgs/investment2.svg" />
+        </div>
+        <div class="investment_img investment_img3">
+          <img src="assets/imgs/investment3.svg" />
+        </div>
+      </div>
+      <div class="invest_btn">
+        <button ion-button class="login_btn" (click)="goToEditProfile()">
+          {{'discover.updateChoices' | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay_dropdown annuity discover_info" *ngIf="disclaimerShow">
+    <div class="overlay_dropdown_content">
+      <div class="overlay_dropdown_content_inner">
+        <ion-icon
+          name="ios-close-circle-outline"
+          (click)="hideDisclaimer()"
+        ></ion-icon>
+        <p>{{textDisclaimer}}</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

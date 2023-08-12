@@ -1,0 +1,148 @@
+page-preferable-language {
+    .header {
+        .toolbar {
+            box-shadow: none;
+            background: $sbi_secondary_color;
+
+            .toolbar-background {
+                border: none;
+            }
+
+            .bar-button {
+                color: $sbi_fifth_color;
+            }
+
+            .toolbar-content {
+                .toolbar-title {
+                    color: $sbi_fifth_color;
+                }
+            }
+        }
+
+        &:after {
+            background-image: none;
+            height: 0;
+        }
+    }
+
+    .content {
+        .scroll-content {
+            padding-top: 0 !important;
+            overflow-y: hidden !important;
+        }
+    }
+
+    .footer {
+        .toolbar {
+            .toolbar-background {
+                background-color: $sbi_fifth_color;
+            }
+
+            .toolbar-title {
+                text-align: center;
+                font-family: 'Lato';
+                text-transform: uppercase;
+                color: $sbi_secondary_color;
+                font-size: 3.77vw;
+
+                .icon {
+                    font-size: 4.77vw;
+                    margin: 0 6px 0 0;
+                }
+
+                .button {
+                    color: $sbi_secondary_color;
+                }
+            }
+        }
+    }
+
+    .language_selector {
+        .list {
+            .item {
+                &.list-header {
+                    margin: 0;
+
+                    .label {
+                        font-family: "Lato" !important;
+                        color: $sbi_nine_color !important;
+                        text-transform: uppercase !important;
+                        font-size: 3.33vw !important;
+                    }
+                }
+
+                padding: 0 17px 0 17px;
+                border-bottom: 1px solid lighten($sbi_third_color, 20%);
+
+                .radio {
+                    position: absolute;
+                    display: block;
+                    margin: 0;
+                    right: 0;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    text-align: right;
+
+                    .radio-icon {
+                        display: inline-block;
+                        margin: 13px 23px 0 0;
+                        width: 21px;
+                        height: 21px;
+                        border-width: 2px;
+                        border-color: $sbi_secondary_color;
+                        &.radio-checked {
+                            .radio-inner {
+                                left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 2vw;
+                        height: 2vw;
+                                background-color: $sbi_secondary_color;
+                            }
+                        }
+                    }
+
+                    &.radio-ios{
+                        .radio-icon{
+                            border: 1px solid $sbi_secondary_color !important;
+                            border-width: 1px !important;
+                            border-radius: 10px !important;
+                            .radio-inner{
+                                border-radius: 10px !important;
+                            }
+                        }
+                    }
+                }
+              
+
+                .item-inner {
+                    border-bottom: none;
+                    padding: 0;
+
+                    .input-wrapper {
+                        .label {
+                            font-family: 'Lato Light';
+                            color: $sbi_nine_color;
+                            font-size: 4.16vw;
+                        }
+                    }
+                }
+            }
+
+
+        }
+        
+
+        .filter_dropdown_btn {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 15px;
+            margin: 0 auto;
+            z-index: 9;
+        }
+    }
+    
+    
+}

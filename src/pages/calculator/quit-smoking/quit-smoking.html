@@ -1,0 +1,177 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button [class.active]="isBtnActive" (click)="toggleClass()" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'quitSmoking.quitSmoking' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+  <div class="networth_details">
+    <h4>
+      {{'quitSmoking.lifespanReduced' | translate}}
+    </h4>
+    <div class="networth_amt">
+      <div class="networth_amt_inner">{{convertNumToYear(lifeReduce)}}</div>
+    </div>
+  </div>
+
+  <div class="sukanya_slider">
+    <ion-slides pager="false">
+      <ion-slide>
+        <ion-card class="sukanya_card">
+          <ion-card-content class="sukanya_card_content">
+            <div class="smoke_heading">
+              <div class="quit_smoking_bg">
+                <figure class="bg_img">
+                  <img src="assets/imgs/quit_smoking/quit_smoking_bg.png" />
+                </figure>
+                <figure class="smok_img">
+                  <img src="assets/imgs/quit_smoking/quit_smoking.png" />
+                </figure>
+              </div>
+              <div class="first_sec">
+                <h5>
+                  {{'quitSmoking.totalAmountYouWouldSavedUponQuitting' |
+                  translate}}
+                </h5>
+                <div class="smoke_heading_val">
+                  <span class="rs_icon icon-Icons_Ruppee"></span>{{(convertInt(saving) < 0 ? 0 : convertInt(saving)) |
+                    amountFormat:'S'}} </div>
+                </div>
+                <div class="second_sec">
+                  <h5>{{'quitSmoking.tarAccumaledOverTheYears' | translate}}</h5>
+                  <div class="gms">
+                    {{convertInt(tarInTheYear)}} {{'quitSmoking.grams' |
+                    translate}}
+                  </div>
+                </div>
+              </div>
+              <p text-center class="heading_reinvest">
+                {{'quitSmoking.cigarettesYouSmokeDaily' | translate}}
+              </p>
+
+              <div class="calculation_with_range range_result">
+                <div class="calculation_with_range_inp">
+                  <!-- <span class="rs_icon icon-Icons_Ruppee"></span> -->
+                  <ion-input type="number" class="overlay_dropdown_rng_val" [(ngModel)]="no_of_ciggarettes_per_day"
+                    debounce="1000"></ion-input>
+                </div>
+
+                <ion-item>
+                  <ion-range min="{{no_of_ciggarettes_per_dayMin}}" max="{{no_of_ciggarettes_per_dayMax}}" step="1"
+                    [(ngModel)]="no_of_ciggarettes_per_day" pin="true" debounce="1000"
+                    (ionChange)="no_of_ciggarettes_per_dayFun($event)">
+                  </ion-range>
+                </ion-item>
+              </div>
+
+              <ion-list class="networth_list">
+                <ion-item>
+                  <div class="networth_list_lt" float-left>
+                    <figure>
+                      <img src="assets/imgs/chart.svg" />
+                    </figure>
+                    <p>{{'quitSmoking.rateOfInterest' | translate}}</p>
+                  </div>
+                  <button ion-button icon-right float-right clear text-capitalize
+                    (click)="showOverlay('rateOfInterest')">
+                    <span class="rate_cost_years">{{expected_rate_of_return}}%</span>
+                    <span class="drp_sub_txt"> {{'common.pa' | translate}} </span>
+                    <ion-icon class="drop_down_arrow" name="md-arrow-dropdown"></ion-icon>
+                  </button>
+                </ion-item>
+
+                <ion-item>
+                  <div class="networth_list_lt" float-left>
+                    <figure>
+                      <img src="assets/imgs/chart.svg" />
+                    </figure>
+                    <p>{{'quitSmoking.costOfTheCigarette' | translate}}</p>
+                  </div>
+                  <button ion-button icon-right float-right clear text-capitalize
+                    (click)="showOverlay('cost_per_ciggarette')">
+                    <span class="rs_icon icon-Icons_Ruppee"></span><span
+                      class="rate_cost_years">{{cost_per_ciggarette}}</span>
+                    <ion-icon class="drop_down_arrow" name="md-arrow-dropdown"></ion-icon>
+                  </button>
+                </ion-item>
+
+                <ion-item>
+                  <div class="networth_list_lt" float-left>
+                    <figure>
+                      <img src="assets/imgs/duration.svg" />
+                    </figure>
+                    <p>{{'quitSmoking.yearsIveBeenSmokingFor' | translate}}</p>
+                  </div>
+                  <button ion-button icon-right float-right clear text-capitalize
+                    (click)="showOverlay('years_ive_been_smoking')">
+                    <span style="margin-top: -1px;" class="rate_cost_years">{{years_ive_been_smoking}}</span>
+                    <span style="margin-top: -1px;" class="drp_sub_txt">
+                      {{'common.yrs' | translate}}
+                    </span>
+                    <ion-icon class="drop_down_arrow" name="md-arrow-dropdown"></ion-icon>
+                  </button>
+                </ion-item>
+              </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <p class="disclaimer_txt" text-center>
+    <!-- <span class="icon-Icons_Info"></span> -->
+    <a (click)="disclaimerInfo()"> {{'common.disclaimersLink' | translate}} </a>
+  </p>
+</ion-content>
+
+<ion-footer class="quit_smoking_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col">
+      <button ion-button class="back_btn" outline (click)="recalculate()">
+        {{'common.back' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn" (click)="goToGoalsListing()">
+        {{'buttons.readArticles' | translate}}
+      </button>
+    </div>
+  </div>
+  <div class="overlay_dropdown" *ngIf="status">
+    <div class="overlay_dropdown_content calculation_with_range">
+      <smoking-range class="drop_com_comp" [rangeData]="rangeDataUi"></smoking-range>
+      <ion-item>
+        <button ion-button class="login_btn" (click)="done()">
+          {{'common.done' | translate}}
+        </button>
+      </ion-item>
+    </div>
+  </div>
+  <div class="overlay_dropdown annuity disclaimer" *ngIf="disclaimer">
+    <div class="overlay_dropdown_content">
+      <div class="overlay_dropdown_content_inner">
+        <ion-icon name="ios-close-circle-outline" (click)="disclaimerClose()"></ion-icon>
+        <h3 padding>{{'common.disclaimer' | translate}}</h3>
+        <div class="innerCont" [innerHtml]="utilitiesProvider.disclaimerText"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay_dropdown annuity disclaimer" *ngIf="info">
+    <div class="overlay_dropdown_content">
+      <div class="overlay_dropdown_content_inner">
+        <ion-icon name="ios-close-circle-outline" (click)="infoClose()"></ion-icon>
+        <br />
+        <p>{{infoText}}</p>
+        <!-- <h3 padding>Info</h3> -->
+        <!-- <div class="innerCont" [innerHtml]="infoText"></div> -->
+      </div>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

@@ -1,0 +1,494 @@
+page-article-details {
+  .scroll-content,
+  .fixed-content {
+    margin-top: 54px;
+  }
+  .header {
+    background: $sbi_thirtytwo_color;
+
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+      border-bottom: 1px solid $sbi_fifth_color;
+
+      .toolbar-background {
+        border: none;
+      }
+
+      .bar-button {
+        color: $sbi_fifth_color;
+        // padding-left: 28px;
+
+        .back-button-text {
+          display: none;
+        }
+      }
+
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+          margin-left: -22px;
+        }
+      }
+    }
+
+    &:after {
+      background-image: none;
+      height: 0;
+    }
+  }
+
+  .content {
+    .article_description_cont {
+      padding: 16px;
+      h2 {
+        font-family: "Lato";
+        font-size: 6.154vw;
+        color: $sbi_twentysix_color;
+        padding-bottom: 20px;
+        line-height: 7.66vw;
+        margin: 0 0 7px 0;
+        position: relative;
+        padding-right: 6.11vw;
+        .icon {
+          position: absolute;
+          right: 0;
+          top: 4px;
+          color: lighten($sbi_eight_color, 10%);
+          font-size: 6vw;
+        }
+        img {
+          position: absolute;
+          right: 0;
+          top: 4px;
+          color: lighten($sbi_eight_color, 10%);
+          font-size: 6vw;
+        }
+      }
+      h3 {
+        font-family: "Lato Black";
+        color: $sbi_primary_color;
+        font-size: 5.66vw;
+        line-height: 6.66vw;
+        margin: 0 0 7px 0;
+        position: relative;
+      }
+      h4 {
+        font-family: "Lato Black";
+        color: $sbi_primary_color;
+        font-size: 5vw;
+        line-height: 6vw;
+        margin: 0 0 7px 0;
+        position: relative;
+      }
+      h5 {
+        font-family: "Lato";
+        color: $sbi_twentysix_color;
+        font-size: 4.615vw;
+        margin: 0 0 10px 0;
+        span {
+          font-family: "Lato Semibold";
+          color: $sbi_highlighted_color;
+        }
+      }
+
+      ol,
+      ul {
+        li {
+          font-size: 5vw;
+          line-height: 7vw;
+          font-family: "Lato Light";
+          color: $sbi_secondary_color;
+        }
+        &.list_header {
+          padding: 0;
+          margin: 0;
+          li {
+            font-family: "Lato Black";
+            color: $sbi_primary_color;
+            font-size: 5.5vw;
+            line-height: 6.5vw;
+            margin: 0 0 10px 0;
+            strong {
+              font-weight: normal;
+            }
+          }
+        }
+      }
+
+      figure {
+        margin: 0 0 15px 0;
+        img {
+          border-radius: 4px;
+          width: 100%;
+        }
+      }
+      .search_keyword {
+        button {
+          font-size: 3.88vw;
+          font-family: "Lato Light";
+          color: $sbi_nine_color;
+          background-color: lighten($sbi_third_color, 24%);
+          text-transform: none;
+          padding: 3.6vw 2.77vw;
+          box-shadow: none;
+          border-radius: 4px;
+        }
+      }
+      p {
+        font-size: 5vw;
+        line-height: 7vw;
+        font-family: "Lato Light";
+        color: $sbi_twentysix_color;
+      }
+
+      .article_likes {
+        .col {
+          display: flex;
+          align-items: center;
+          padding: 0;
+          img {
+            margin: 5px;
+          }
+          span {
+            font-family: "Lato Semibold";
+            color: $sbi_nine_color;
+            font-size: 4.35vw;
+          }
+        }
+      }
+    }
+
+    .post_comment {
+      padding: 0 16px;
+      margin-bottom: 30px;
+      .row {
+        .col {
+          padding: 0;
+          h4 {
+            font-size: 4.34vw;
+            font-family: "Lato Black";
+            margin: 0;
+            color: $sbi_twentysix_color;
+          }
+          h6 {
+            font-family: "Lato Semibold";
+            font-size: 3.05vw;
+            color: $sbi_nine_color;
+            margin: 2px 0;
+          }
+        }
+        .item {
+          padding: 0;
+          .item-inner {
+            padding: 0;
+            border: none !important;
+            box-shadow: none !important;
+          }
+          textarea {
+            border: 1px solid rgba(178, 178, 178, 0.4);
+            resize: none;
+            width: 100%;
+            height: 85px;
+            font-family: "Lato Light";
+            font-size: 3.04vw;
+            padding: 5px;
+            margin: 5px 0;
+          }
+        }
+      }
+
+      .comment_char {
+        text-align: right;
+        font-family: "Lato Semibold";
+        font-size: 2.77vw;
+        color: $sbi_twentysix_color;
+      }
+
+      .rate_article {
+        margin: 5px 0 30px 0;
+        height: 30px;
+        span {
+          font-family: "Lato Semibold";
+          font-size: 3.05vw;
+          color: $sbi_nine_color;
+          margin-right: 10px;
+          display: inline-flex;
+          align-items: center;
+        }
+        img {
+          margin: 0 2px;
+          width: 18px;
+        }
+      }
+
+      .login_btn {
+        margin-left: 0;
+        background: $sbi_twentysix_color;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border-radius: 0;
+      }
+    }
+
+    .users_comment {
+      .comments_total {
+        padding-left: 16px;
+        font-family: "Lato Black";
+        font-size: 3.05vw;
+        color: $sbi_primary_color;
+      }
+
+      .item {
+        margin-top: 15px;
+        ion-avatar {
+          margin: 0 16px 0 0;
+          margin-bottom: auto;
+          img {
+            object-fit: scale-down;
+          }
+          ion-text-avatar {
+            background-color: $sbi_primary_color;
+          }
+        }
+
+        ion-label {
+          margin: 0;
+        }
+
+        .row {
+          margin-top: 5px;
+          .col {
+            padding: 0;
+            h2 {
+              font-family: "Lato Black";
+              font-size: 3.05vw;
+              color: $sbi_nine_color !important;
+              text-transform: uppercase;
+              margin: 2px 0 -2px 0;
+            }
+
+            .icon {
+              font-size: 4.05vw;
+            }
+
+            img {
+              width: 9px;
+            }
+          }
+
+          .comment_time {
+            font-family: "Lato Semibold";
+            font-size: 3.05vw;
+            color: $sbi_third_color;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+          }
+        }
+
+        p {
+          margin: 5px 0px;
+          white-space: normal;
+          font-size: 3.05vw;
+        }
+      }
+    }
+
+    .view_all {
+      font-family: "Lato Semibold";
+      color: $sbi_secondary_color;
+      font-size: 3.33vw;
+      text-align: center;
+      padding: 10px;
+      background-color: $sbi_eighteen_color;
+      margin-bottom: 16px;
+    }
+
+    .comment_option {
+      border-top: 1px solid lighten($sbi_third_color, 20%);
+      border-bottom: 1px solid lighten($sbi_third_color, 20%);
+      margin: 0 0 14px 0;
+      .col {
+        font-size: 2.77vw;
+        font-family: "Lato";
+        color: $sbi_nine_color;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 10px !important;
+        &:first-child {
+          border-right: 1px solid lighten($sbi_third_color, 20%);
+        }
+        .icon {
+          margin-right: 2vw;
+          font-size: 5.77vw;
+          vertical-align: middle;
+          color: lighten($sbi_nine_color, 20%);
+        }
+      }
+    }
+    .recommend_for_your {
+      background: rgba(255, 255, 255, 0);
+      background: -moz-linear-gradient(
+        top,
+        rgba(230, 234, 239, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      background: -webkit-gradient(
+        left top,
+        left bottom,
+        color-stop(0%, rgba(230, 234, 239, 1)),
+        color-stop(100%, rgba(255, 255, 255, 0))
+      );
+      background: -webkit-linear-gradient(
+        top,
+        rgba(230, 234, 239, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      background: -o-linear-gradient(
+        top,
+        rgba(230, 234, 239, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      background: -ms-linear-gradient(
+        top,
+        rgba(230, 234, 239, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      background: linear-gradient(
+        to bottom,
+        rgba(230, 234, 239, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6eaef', endColorstr='#ffffff', GradientType=0 );
+      .recommend_for_your_header {
+        &.disc_com_header {
+          padding: 16px;
+          h2 {
+            font-size: 6.66vw;
+            font-family: "Lato Black";
+            margin: 0 0 5px 0;
+            color: $sbi_primary_color;
+          }
+        }
+      }
+      .recommend_for_your_cont {
+        ion-scroll[scrollX] {
+          white-space: nowrap;
+          height: 80vw;
+          overflow: hidden;
+        }
+        .recommend_for_your_cont_slider {
+          .scroll-content {
+            margin-top: 0px;
+          }
+          .recommend_for_your_cont_slider_item {
+            vertical-align: top;
+            display: inline-block;
+            .recommend_for_your_cont_slider_item_inner {
+              padding: 0 1.11vw;
+              width: 45.33vw;
+              &.view_more {
+                min-height: 100px;
+                border: 1px solid lighten($sbi_third_color, 20%);
+                border-radius: 4px;
+                text-align: center;
+                background-color: $sbi_fifth_color;
+                position: relative;
+                .view_more_cont {
+                  position: absolute;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  left: 0;
+                  right: 0;
+                  .icon {
+                    font-size: 7.33vw;
+                    color: lighten($sbi_nine_color, 30%);
+                  }
+                  span {
+                    display: block;
+                    font-family: "Lato Semibold";
+                    font-size: 3.33vw;
+                    line-height: 3.39vw;
+                    color: lighten($sbi_nine_color, 40%);
+                  }
+                }
+              }
+              figure {
+                margin: 0;
+                line-height: 0;
+                img {
+                  width: 100%;
+                  line-height: 0;
+                  height: auto;
+                  margin: 0;
+                  box-shadow: 0 4px 10px $sbi_third_color;
+                  border-radius: 4px;
+                }
+              }
+              h4 {
+                font-family: "Lato";
+                white-space: normal;
+                font-size: 3.61vw;
+                line-height: 4.65vw;
+                margin: 0 0 10px 0;
+                color: $sbi_nine_color;
+              }
+              p {
+                font-family: "Lato";
+                font-size: 3.33vw;
+                line-height: 4.39vw;
+                margin: 0 0 10px 0;
+                color: rgba(14, 30, 86, 0.56);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .scroll-content {
+      padding-top: 0 !important;
+    }
+  }
+
+  .overlay_dropdown {
+    .overlay_dropdown_content {
+      padding: 32px;
+      .col {
+        padding: 0;
+        img {
+          width: 50px;
+        }
+      }
+      h3 {
+        font-family: "Lato Semibold";
+        color: $sbi_primary_color;
+        font-size: 5vw;
+        text-align: center;
+      }
+      p {
+        font-size: 4.05vw;
+        font-family: "Lato Light";
+        color: $sbi_secondary_color;
+        text-align: center;
+      }
+      .login_btn {
+        width: 35%;
+      }
+    }
+  }
+
+  .share_btn {
+    background-color: #301f6c;
+    &:active,
+    &:hover {
+      background-color: #301f6c;
+    }
+  }
+}

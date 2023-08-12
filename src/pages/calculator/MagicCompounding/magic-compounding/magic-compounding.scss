@@ -1,0 +1,663 @@
+page-magic-compounding {
+  .header {
+    background: $sbi_thirtytwo_color;
+
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+      border-bottom: 1px solid $sbi_fifth_color;
+
+      .toolbar-background {
+        border: none;
+      }
+
+      .bar-button {
+        color: $sbi_fifth_color;
+        // padding-left: 28px;
+        .back-button-text {
+          display: none;
+        }
+      }
+
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+          margin-left: -22px;
+        }
+      }
+    }
+
+    &:after {
+      background-image: none;
+      height: 0;
+    }
+
+    .calculator_common_sec_steps {
+      background: $sbi_fifth_color;
+      padding: 13px;
+      border-bottom: 1px solid $sbi_thirtysix_color;
+      .calculator_steps {
+        display: table;
+        text-align: center;
+        padding: 0 30px;
+        margin: auto;
+        .calculator_steps_com {
+          display: table-cell;
+          vertical-align: top;
+          width: 65%;
+          .calculator_dashed {
+            .calculator_steps_com_num {
+              width: 30px;
+              height: 30px;
+              border-radius: 4px;
+              padding: 5px;
+              display: block;
+              background: $sbi_fifth_color;
+              border: 1px solid $sbi_thirtyfour_color;
+              font-size: 4.103vw;
+              color: $sbi_thirtyfour_color;
+              font-family: "Lato";
+              margin: 0 5px 0;
+
+              span {
+                display: block;
+                width: 100%;
+                height: 100%;
+                vertical-align: middle;
+                margin-top: -1px;
+              }
+            }
+          }
+
+          .calculator_dashed {
+            &.step1 {
+              display: flex;
+              align-items: center;
+            }
+            &:after {
+              border-bottom: 1px dashed $sbi_thirtyfour_color;
+              content: "";
+              flex: 1;
+            }
+          }
+
+          &.active {
+            .calculator_steps_com_num {
+              background: $sbi_twentyseven_color;
+              color: $sbi_fifth_color;
+              border: none;
+            }
+          }
+
+          &.active {
+            .calculator_dashed {
+              &:after {
+                border-bottom: 1px dashed $sbi_twentyseven_color;
+                content: "";
+                flex: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // .top_area{
+  //     position: absolute;
+  //     z-index: 1;
+  //     top: 0;
+  //     left: 0;
+  //     right: 0;
+  //     background: none;
+  //     .top_area_container{background: none;
+  //         .cloud{
+  //             opacity: 0.5;
+  //         }
+  //     }
+
+  // }
+
+  .invest_option_wrapper {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .invest_option {
+    .row {
+      margin: 0 -10px;
+    }
+    .button {
+      padding: 3.6vw 5vw;
+      position: relative;
+      height: 13.33vw;
+      border-radius: 4px;
+      color: $sbi_secondary_color;
+      margin: 0 0 18px 0;
+      background: $sbi_fifth_color;
+      box-shadow: none;
+      font-size: 4.44vw;
+      text-transform: none;
+      width: 100%;
+      font-family: "Lato Thin";
+      box-shadow: 10px 20px 30px 0px rgba(94, 72, 186, 0.08),
+        0px -4px 30px 0px rgba(94, 72, 186, 0.08);
+      .button-inner {
+        align-items: left;
+        -webkit-box-align: left;
+        -webkit-align-items: left;
+        -ms-flex-align: left;
+        align-items: left;
+        -webkit-box-pack: left;
+        -webkit-justify-content: left;
+        -ms-flex-pack: left;
+        justify-content: left;
+      }
+      .icon {
+        position: absolute;
+        width: 6.11vw;
+        height: 6.11vw;
+        top: 3.1vw;
+        right: 2.5vw;
+        padding: 0;
+        font-size: 3.5vw;
+        line-height: 4.16vw;
+        border-radius: 50%;
+        background: lighten($sbi_third_color, 25%);
+        &:before {
+          content: "";
+        }
+      }
+      &.active,
+      &:hover:not(.disable-hover) {
+        color: $sbi_fifth_color;
+        background: $sbi_secondary_color;
+        .icon {
+          display: block;
+          background: rgba(15, 9, 60, 1);
+          background: -moz-linear-gradient(
+            top,
+            rgba(15, 9, 60, 1) 0%,
+            rgba(0, 0, 0, 0.09) 51%,
+            rgba(0, 0, 0, 0.09) 100%
+          );
+          background: -webkit-gradient(
+            left top,
+            left bottom,
+            color-stop(0%, rgba(15, 9, 60, 1)),
+            color-stop(51%, rgba(0, 0, 0, 0.09)),
+            color-stop(100%, rgba(0, 0, 0, 0.09))
+          );
+          background: -webkit-linear-gradient(
+            top,
+            rgba(15, 9, 60, 1) 0%,
+            rgba(0, 0, 0, 0.09) 51%,
+            rgba(0, 0, 0, 0.09) 100%
+          );
+          background: -o-linear-gradient(
+            top,
+            rgba(15, 9, 60, 1) 0%,
+            rgba(0, 0, 0, 0.09) 51%,
+            rgba(0, 0, 0, 0.09) 100%
+          );
+          background: -ms-linear-gradient(
+            top,
+            rgba(15, 9, 60, 1) 0%,
+            rgba(0, 0, 0, 0.09) 51%,
+            rgba(0, 0, 0, 0.09) 100%
+          );
+          background: linear-gradient(
+            to bottom,
+            rgba(15, 9, 60, 1) 0%,
+            rgba(0, 0, 0, 0.09) 51%,
+            rgba(0, 0, 0, 0.09) 100%
+          );
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f093c', endColorstr='#000000', GradientType=0 );
+          &:before {
+            content: "\f2bc";
+            padding-top: 1.38vw;
+          }
+        }
+      }
+    }
+  }
+  .com_head {
+    h4 {
+      font-size: 12px;
+      line-height: 16px;
+      font-family: "Lato Semibold";
+      text-align: center;
+      text-transform: uppercase;
+      margin: 0 0 8px 0;
+      padding: 0 30px;
+    }
+  }
+  .tell_us_cont_common {
+    /* height: 40vh; */
+    overflow: auto;
+
+    @media screen and (max-height: 480px) {
+      height: 180px !important;
+    }
+    &.home_compounding_slider_range {
+      .calculator_common_sec_inner {
+        .calculation_with_range {
+          .range {
+            .range-slider {
+              height: 60px;
+              .range-bar {
+                height: 40px;
+                border: 1px solid $sbi_twentyseven_color;
+                border-radius: 0;
+                &.range-bar-active {
+                  background: $sbi_thirtytwo_color;
+                }
+              }
+              .range-knob-handle {
+                display: none;
+                // border: 1px solid $sbi_fifth_color !important;
+                // border-width: 0 3px 3px 0 !important;
+                // display: inline-block !important;
+                // padding: 3px !important;
+                // transform: rotate(-45deg) !important;
+                // -webkit-transform: rotate(-45deg) !important;
+                // background: $sbi_fifth_color;
+                // box-shadow: none;
+                // width: 0;
+                // height: 0;
+                &:before {
+                  display: none;
+                }
+              }
+            }
+          }
+          .calculation_with_range_inp {
+            border-bottom: none;
+            span {
+              font-family: "Lato";
+              font-size: 7.231vw;
+              color: $sbi_twentyseven_color;
+              font-weight: bold;
+              label {
+                font-family: "Lato";
+                font-size: 9.231vw;
+                color: $sbi_twentyseven_color;
+              }
+            }
+            .text-input {
+              font-size: 9.231;
+              font-family: "Lato";
+              color: $sbi_twentyseven_color;
+              text-align: center;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+    // &.common_years_slider {
+    //   margin: 0 6px;
+    //   background: $sbi_twentyseven_color;
+    //   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    //   border-radius: 4px;
+    // }
+  }
+
+  .tell_us_cont {
+    padding: 0px 0px 0px 0px;
+    position: relative;
+    overflow: hidden;
+    // margin-top: 20px;
+
+    @media screen and (max-height: 480px) {
+      margin-top: 10px;
+    }
+    .tell_us_slider {
+      display: none;
+      &.common_years_slider {
+        margin: 0 6px !important;
+        background: $sbi_twentyseven_color;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+      }
+    }
+    .calculator_common_sec_inner {
+      position: relative;
+      margin: 0 0 14px 0;
+
+      /* .list {
+                .item {padding-left: 0;
+                .item-inner{padding-right: 0;
+                .input-wrapper{ */
+      .label {
+        font-size: 5vw;
+        font-family: "Lato Light";
+        text-align: left;
+        color: $sbi_secondary_color;
+        .icon {
+          font-size: 7.22vw;
+          margin-left: 5px;
+          vertical-align: middle;
+          margin-top: -1.66vw;
+          border-radius: 50%;
+          box-shadow: 0px 0px 19px $sbi_light_shadow;
+          position: relative;
+          z-index: 9;
+        }
+      }
+      .input {
+        display: none;
+        border-bottom: 1px solid lighten($sbi_third_color, 40%);
+        font-size: 5vw;
+        font-family: "Lato Light";
+        text-align: left;
+        color: $sbi_secondary_color;
+      }
+
+      .text-input::placeholder {
+        font-size: 5vw;
+        font-family: "Lato Light";
+        text-align: left;
+        color: $sbi_secondary_color;
+      }
+      /*  }
+                }
+               
+                } */
+      .fld_icon {
+        position: absolute;
+        bottom: 2.22vw;
+        right: 32px;
+        color: lighten($sbi_third_color, 20%);
+        display: none;
+        .ion-ios-close-circle-outline {
+          display: none;
+          font-size: 5.83vw;
+        }
+        .ion-md-create {
+          font-size: 4.72vw;
+        }
+      }
+
+      /*  } */
+    }
+    &.active {
+      .label {
+        display: none;
+      }
+      .fld_icon {
+        display: block;
+      }
+      .input {
+        display: block;
+      }
+      .tell_us_slider {
+        display: block;
+        margin: 0 0 35px 0;
+      }
+    }
+
+    .tell_us_slider {
+      position: relative;
+      height: 109px;
+      overflow: hidden;
+      padding: 20px 0;
+      opacity: 0;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        box-shadow: 7px 0px 17px 8px $sbi_light_shadow;
+        background-color: $sbi_secondary_color;
+        width: 69.13px;
+        border-radius: 4px;
+        margin: 0 auto;
+        z-index: -1;
+      }
+
+      .slick-list {
+        position: relative;
+        overflow: visible;
+        .slick-track {
+          display: flex;
+          align-items: center;
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          height: 0;
+          z-index: 9;
+          box-shadow: 0px 1px 10px 6px rgba(84, 72, 183, 0.05);
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          height: 0;
+          z-index: 9;
+          box-shadow: 0px -1px 10px 6px rgba(84, 72, 183, 0.05);
+        }
+      }
+      .slick-slide {
+        text-align: center;
+        position: relative;
+        .tell_us_slider_age {
+          font-family: "Lato";
+          color: $sbi_third_color;
+          font-size: 24px;
+          font-weight: 700;
+          padding: 12px 22px;
+          border-radius: 4px;
+          display: block;
+        }
+        .tell_us_slider_year {
+          display: none;
+          position: absolute;
+          bottom: 4px;
+          color: #fff;
+          font-family: "Lato Light";
+          left: 0;
+          right: 0;
+          font-size: 10px;
+        }
+        &.slick-current {
+          // min-width: 68px;
+          .tell_us_slider_age {
+            color: #fff;
+            font-size: 28px;
+            font-weight: 700;
+            border: 2px solid;
+            padding: 1rem;
+            border-radius: 27px;
+            width: 63px;
+            height: 54px;
+          }
+          .tell_us_slider_year {
+            display: block;
+            margin: -25px;
+            font-size: 12px;
+            font-style: italic;
+            font-family: "Lato";
+          }
+        }
+      }
+    }
+  }
+  .calculator_common_sec {
+    .calculator_common_sec_inner {
+      padding: 0px 30px;
+      &.nps_age_first {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 9;
+        bottom: 73px;
+
+        .footer_panel_rt {
+          padding: 0;
+        }
+      }
+      &.age_slider_heading {
+        padding: 30px 0 0;
+      }
+    }
+    .calculator_sliders {
+      height: auto;
+      .swiper-slide {
+        align-items: start;
+        position: relative;
+      }
+      /*   height: auto;
+            .swiper-container{overflow-y: auto;}
+            .swiper-slide{display: block;} */
+      .calculator_common_sec_inner {
+        h1 {
+          font-family: "Lato";
+          color: $sbi_twentysix_color;
+          font-size: 6.154vw;
+          margin: 0;
+          text-align: center;
+          padding: 0 36px 30px 34px;
+          letter-spacing: 0.38px;
+        }
+        h2 {
+          font-family: "Lato";
+          color: $sbi_twentysix_color!important;
+          font-size: 6.154vw;
+          margin: 0;
+          text-align: center;
+          padding: 0 34px 30px;
+          letter-spacing: 0.38px;
+        }
+        h5 {
+          font-family: "Lato";
+          color: $sbi_twentysix_color;
+          font-size: 4.615vw;
+          margin: 0 0 13px 0;
+          text-align: left;
+          padding: 0 0 0 22px;
+          letter-spacing: 0.38px;
+        }
+      }
+    }
+  }
+
+  .calculator_common_sec_inner {
+    .footer_panel {
+      margin: 0 0 0 0;
+      padding: 5px 0px;
+      .footer_panel_rt {
+        padding: 5px !important;
+        padding-right: 0 !important;
+      }
+      .back_btn {
+        margin: 0;
+        width: 100%;
+        max-width: 166px;
+      }
+    }
+    .calculation_with_range {
+      .calculation_with_range_inp {
+      }
+      &.range_with_icon {
+        .item.item-range .range {
+          padding: 2px 10px 24px 10px;
+        }
+        .range {
+          .rng_lt,
+          .rng_rt {
+            position: absolute;
+            bottom: 0;
+            font-family: "Lato Light";
+            color: $sbi_secondary_color;
+            font-size: 12px;
+          }
+          .rng_lt {
+            left: 0;
+          }
+          .rng_rt {
+            right: 0;
+          }
+        }
+      }
+      .daughtername {
+        font-size: 3.88vw;
+        margin: 0 0 10px 0;
+        text-transform: uppercase;
+        font-family: "Lato Semibold";
+        color: $sbi_third_color;
+        text-align: left;
+      }
+      .item {
+        // .label{
+
+        //         .rs_icon{color: $sbi_secondary_color;
+        //             font-size: 15vw; line-height: 15vw; }
+        //             .overlay_dropdown_rng_txt{font-size:3.33vw; color: lighten($sbi_third_color,20%); font-family:'Lato';  }
+
+        //     .daughtername{font-size: 3.88vw; margin:0 0 10px 0; text-transform: uppercase;  font-family:'Lato Semibold';
+        //         color: $sbi_third_color;}
+        // }
+        padding-top: 40px;
+        &.item-range {
+          padding-top: 0px;
+          overflow: inherit;
+          contain: none;
+          .range {
+            padding: 2px 10px;
+          }
+        }
+        &:last-child {
+          padding-top: 0 !important;
+        }
+        .overlay_dropdown_rng_txt {
+        }
+      }
+    }
+  }
+  ion-footer {
+    &.magic_compounding_footer {
+      &.footer {
+        .footer_panel {
+          box-shadow: none !important;
+          background: none !important;
+          padding: 18px 17px 28px 18px;
+          .footer_panel_rt {
+            .login_btn {
+              background: $sbi_twentysix_color;
+              color: $sbi_fifth_color;
+              letter-spacing: 0.38px;
+              border: 1px solid $sbi_twentyseven_color;
+              max-width: 184px;
+              height: 50px;
+            }
+          }
+          .footer_panel_lt {
+            .back_btn {
+              background: $sbi_fifth_color;
+              color: $sbi_twentysix_color;
+              letter-spacing: 0.38px;
+              border: 1px solid $sbi_twentyseven_color;
+              max-width: 184px;
+              height: 50px;
+            }
+          }
+        }
+        &::before {
+          background-image: none;
+        }
+      }
+    }
+  }
+}

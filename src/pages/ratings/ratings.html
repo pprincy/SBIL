@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button
+      [class.active]="isBtnActive"
+      (click)="toggleClass()"
+      ion-button
+      [menuToggle]="activeMenu"
+    >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'ratings.ratings' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="ratings_sec">
+    <figure>
+      <img src="assets/imgs/ratings/heart.png" />
+    </figure>
+    <h4>{{'ratings.someRating' | translate}}</h4>
+    <h5>{{'ratings.review' | translate}}</h5>
+    <div class="rating_review">
+      <ion-icon name="star" style="font-size: 38px;" *ngFor="let num of [1,2,3,4,5,6]" 
+       (click)="rate(num)" [ngStyle]="{'color': getColor(num)}">
+      </ion-icon>
+    </div>
+    <div class="load_more_btn">
+      <button
+        ion-button
+        class="load_btn"
+      >
+        {{'common.submit' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-content>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /></span>
+</div>

@@ -1,0 +1,272 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button
+      [class.active]="isBtnActive"
+      (click)="toggleClass()"
+      ion-button
+      [menuToggle]="activeMenu"
+    >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'familyProtection.familyProtection' | translate}}</ion-title>
+  </ion-navbar>
+
+  <div class="calculator_common_sec_steps">
+    <div class="calculator_steps" id="stepsCount">
+      <div class="calculator_steps_com active">
+        <div class="calculator_dashed step1">
+          <span class="calculator_steps_com_num">
+            <span>1</span>
+          </span>
+        </div>
+      </div>
+      <div class="calculator_steps_com">
+        <div class="calculator_dashed step2">
+          <span class="calculator_steps_com_num">
+            <span>2</span>
+          </span>
+        </div>
+      </div>
+      <div class="calculator_steps_com">
+        <div class="calculator_dashed step3">
+          <span class="calculator_steps_com_num">
+            <span>3</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-header>
+<!-- <div class="top_area"></div> -->
+<ion-content class="calculator_common_sec">
+  <ion-slides class="calculator_sliders" pager="false" autoHeight="false">
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h1>{{'familyProtection.qOne' | translate}}</h1>
+      </div>
+      <!-- <div class="tell_us_cont_common">
+        <h2 class="block">{{diffVal}}</h2>
+        <p>{{'familyProtection.yearsToGo' | translate}}</p>
+        <p style="color: red; font-size: 4vw;" *ngIf="diffVal<=0">{{'familyProtection.ageTodayHas' | translate}}</p>
+      </div> -->
+      <div class="year_cal">
+        <h6 class="year_cal_val">{{diffVal}}</h6>
+        <p>{{'familyProtection.yearsToGo' | translate}}</p>
+        <div class="year_cal">
+          <p style="color: red; font-size: 4vw" *ngIf="diffVal<=0">
+            {{'familyProtection.ageTodayHas' | translate}}
+          </p>
+        </div>
+      </div>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="block_num">
+              <h3
+                class="age_num"
+                (click)="setAgeState('retire')"
+                [ngClass]="ageStatus == 'retire' ? 'selected-fill' : 'unselected-fill'"
+              >
+                {{selectedDuringAge}}
+              </h3>
+            </div>
+            <h4 class="title_num">
+              {{'familyProtection.yourRetirement' | translate}} {{'common.age' |
+              translate}}
+            </h4>
+          </ion-col>
+          <ion-col>
+            <img class="arrow" src="assets/icon/arrow_forward_ios (2).png" />
+          </ion-col>
+          <ion-col>
+            <div class="block_num">
+              <h3
+                class="age_num"
+                (click)="setAgeState('age')"
+                [ngClass]="ageStatus == 'age' ? 'selected-fill' : 'unselected-fill'"
+              >
+                {{sliderAgeNowAge}}
+              </h3>
+            </div>
+            <h4 class="title_num">
+              {{'familyProtection.yourCurrent' | translate}} {{'common.age' |
+              translate}}
+            </h4>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <h4 class="title_age">Set Age Here</h4>
+
+      <div class="tell_us_cont com_head" [style.opacity]="selectedDuringAge?1:0">
+        <div class="tell_us_slider retirementAge" [hidden]="retireAge">
+          <div *ngFor="let a of ageDuring">
+            <span class="tell_us_slider_age">{{a}}</span>
+          </div>
+        </div>
+        <div class="tell_us_slider sliderAgeNow" [hidden]="!currentAge">
+          <div *ngFor="let a of  ageNow; let i = index">
+            <span class="tell_us_slider_age">{{a}}</span>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+
+    <!-- Step 2 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h2>{{'familyProtection.qTwo' | translate}}</h2>
+        <h5>{{'familyProtection.approximateValue' | translate}}</h5>
+      </div>
+      <div class="tell_us_cont_common goals_slider_range">
+        <div class="calculator_common_sec_inner">
+          <div class="calculation_with_range">
+            <ion-row>
+              <ion-col>
+                <div class="calculation_with_range_inp row">
+                  <ion-input
+                    type="tel"
+                    disabled="{{!dropType}}"
+                    [(ngModel)]="monthlyIncome"
+                    class="overlay_dropdown_rng_val"
+                    (ionChange)="formatAmount(this.monthlyIncome)"
+                  ></ion-input>
+                </div>
+              </ion-col>
+            </ion-row>
+
+            <ion-item *ngIf="dropType">
+              <ion-range
+                min="{{minMonthlyIncome}}"
+                max="{{maxMonthlyIncome}}"
+                step="{{steps}}"
+                [(ngModel)]="monthlyIncomeRange"
+                pin="true"
+                (ngModelChange)="doSomething($event)"
+              >
+              </ion-range>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+
+    <!-- Step 3 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <!-- <h1>{{'familyProtection.qThree' | translate}}</h1> -->
+        <!-- <h5>({{'familyProtection.excludingEmiAndRent' | translate}})</h5> -->
+        <h4>{{'familyProtection.qThreeNew' | translate}}:</h4>
+      </div>
+
+      <div class="quesDiv">
+        <div class="qDiv" *ngFor="let q of qThree">
+          <ion-row>
+            <ion-card>
+              <ion-col>
+                <h6>{{q.title}}</h6>
+                <img (click)="info(q)" src="assets/imgs/info.svg"/>
+              </ion-col>
+              <ion-row>
+                <ion-col>
+                  <ion-list radio-group class="custom_radio">
+                    <ion-item>
+                      <ion-label>{{'common.yes' | translate}}</ion-label>
+                      <ion-radio
+                        [ngClass]="q.value === Yes ? 'radio-checked': null"
+                        (click)="q.value = 'Yes'"
+                        checked="{{q.value == 'Yes'}}"
+                        value="yes"
+                      ></ion-radio>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>{{'common.no' | translate}}</ion-label>
+                      <ion-radio
+                        [ngClass]="q.value === No ? 'radio-checked': null"
+                        (click)="q.value = 'No'"
+                        checked="{{q.value == 'No'}}"
+                        value="no"
+                      ></ion-radio>
+                    </ion-item>
+                  </ion-list>
+                </ion-col>
+              </ion-row>
+            </ion-card>
+          </ion-row>
+        </div>
+      </div>
+    </ion-slide>
+
+    <!-- Step 4 -->
+    <ion-slide>
+      <div class="quesDiv">
+        <div class="qDiv" *ngFor="let q of qFour">
+          <ion-row>
+            <ion-card>
+              <ion-row>
+                <h6>{{q.title}}</h6>
+              </ion-row>
+              <ion-row *ngIf="q.subTitle">
+                <p class="subTitle">{{q.subTitle}}</p>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-list radio-group class="custom_radio">
+                    <ion-item>
+                      <ion-label>{{'common.yes' | translate}}</ion-label>
+                      <ion-radio
+                        [ngClass]="q.AnswerID == 1 ? 'radio-checked': null"
+                        checked="{{q.AnswerID == 1}}"
+                        (click)="q.AnswerID = 1"
+                      ></ion-radio>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>{{'common.no' | translate}}</ion-label>
+                      <ion-radio
+                        [ngClass]="q.AnswerID == 0 ? 'radio-checked': null"
+                        checked="{{q.AnswerID == 0}}"
+                        (click)="q.AnswerID = 0"
+                      ></ion-radio>
+                    </ion-item>
+                  </ion-list>
+                </ion-col>
+              </ion-row>
+            </ion-card>
+          </ion-row>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+<div class="overlay_dropdown annuity discover_info" *ngIf="popupShow">
+  <div class="overlay_dropdown_content">
+    <div class="overlay_dropdown_content_inner">
+      <ion-icon
+        name="ios-close-circle-outline"
+        (click)="hideDisclaimer()"
+      ></ion-icon>
+      <p>{{popupText}}</p>
+    </div>
+  </div>
+</div>
+<ion-footer class="goals_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col" *ngIf="!backBtnhide">
+      <button ion-button class="back_btn" outline (click)="back()">
+        {{'common.back' | translate}}
+      </button>
+    </div>
+    <div
+      class="footer_panel_rt col"
+      [attr.text-center]="backBtnhide ? '' : null"
+    >
+      <button ion-button class="login_btn" (click)="next()">
+        {{'common.next' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

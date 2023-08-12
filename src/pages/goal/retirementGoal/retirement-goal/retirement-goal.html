@@ -1,0 +1,142 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button [class.active]="isBtnActive" (click)="toggleClass()" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'retirementGoal.retirementGoal' | translate}}</ion-title>
+  </ion-navbar>
+  <div class="calculator_common_sec_steps">
+    <div class="calculator_steps" id="stepsCount">
+      <div class="calculator_steps_com active">
+        <div class="calculator_dashed step1">
+          <span class="calculator_steps_com_num">
+            <span>1</span>
+          </span>
+        </div>
+      </div>
+      <div class="calculator_steps_com">
+        <div class="calculator_dashed step2">
+          <span class="calculator_steps_com_num">
+            <span>2</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-header>
+<ion-content class="calculator_common_sec">
+  <ion-slides class="calculator_sliders" pager="false" autoHeight="false">
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h1>{{'retirementGoal.qOne' | translate}}</h1>
+      </div>
+      <div class="tell_us_cont_common">
+        <h2 class="block">{{diffVal}}</h2>
+        <p>{{'familyProtection.yearsToGo' | translate}}</p>
+        <p style="color: red; font-size: 4vw;" *ngIf="diffVal<=0">{{'retirementGoal.errorAge' | translate}}</p>
+      </div>
+      <!-- <div class="year_cal">
+        <div class="year_cal_error">
+          {{'retirementGoal.errorAge' | translate}}
+        </div>
+      </div> -->
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="block_num">
+              <h3 class="age_num" (click)="setAgeState('retire')"
+                [ngClass]="ageStatus == 'retire' ? 'selected-fill' : 'unselected-fill'">{{selectedDuringAge}}</h3>
+            </div>
+            <h4 class="title_num">
+              {{'familyProtection.yourRetirement' | translate}} {{'common.age' |
+              translate}}
+            </h4>
+          </ion-col>
+          <ion-col>
+            <img class="arrow" src="assets/icon/arrow_forward_ios (2).png" />
+          </ion-col>
+          <ion-col>
+            <div class="block_num">
+              <h3 class="age_num" (click)="setAgeState('age')"
+                [ngClass]="ageStatus == 'age' ? 'selected-fill' : 'unselected-fill'">{{sliderAgeNowAge}}</h3>
+            </div>
+            <h4 class="title_num">
+              {{'familyProtection.yourCurrent' | translate}} {{'common.age' |
+              translate}}
+            </h4>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <h4 class="title_age">Set Age Here</h4>
+
+      <div class="tell_us_cont com_head" [style.opacity]="selectedDuringAge?1:0">
+        <div class="tell_us_slider sliderDuring" [hidden]="retireAge">
+          <div *ngFor="let a of ageDuring">
+            <span class="tell_us_slider_age">{{a}}</span>
+          </div>
+        </div>
+        <div class="tell_us_slider sliderAgeNow" [hidden]="!currentAge">
+          <div *ngFor="let a of  ageNow; let i = index">
+            <span class="tell_us_slider_age">{{a}}</span>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+    <!-- Step 2 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h2>{{'retirementGoal.qTwo' | translate}}</h2>
+        <h5>{{'retirementGoal.excludingEmiAndRent' | translate}}</h5>
+      </div>
+      <div class="tell_us_cont_common goals_slider_range">
+        <div class="calculator_common_sec_inner">
+          <div class="calculation_with_range">
+            <div class="calculation_with_range_inp">
+              <ion-input type="tel" disabled="{{showMoreOptions}}" [(ngModel)]="monthlyExpensesComma"
+                (ionChange)="formatAmount(monthlyExpensesComma)" class="overlay_dropdown_rng_val"></ion-input>
+            </div>
+            <ion-list lines="none">
+              <ion-item *ngIf="!showMoreOptions" lines="none">
+                <ion-range min="{{minMonthlyExpenses}}" max="{{maxMonthlyExpenses}}" step="{{steps}}"
+                  [(ngModel)]="monthlyExpenses" pin="true" (ngModelChange)="doSomething($event)">
+                </ion-range>
+              </ion-item>
+            </ion-list>
+          </div>
+          <ion-list lines="none">
+            <ion-item class="expense_checkbox" lines="none">
+              <ion-label style="color: #2A2076;">{{'retirementGoal.enterExpenseBreakupValues' |
+                translate}}</ion-label>
+              <ion-checkbox [(ngModel)]="showMoreOptions"></ion-checkbox>
+            </ion-item>
+          </ion-list>
+
+        </div>
+        <div class="calculator_common_sec_inner1" *ngIf="showMoreOptions">
+          <ion-list *ngFor="let b of breakUp" lines="none">
+            <ion-label stacked>{{b.MonthlyExpenseName}} </ion-label>
+            <ion-input type="tel" id="{{b.MonthlyExpenseID}}" [(ngModel)]="b.amount" value="{{b.amount}}"
+              (ionChange)="breakUpChange(b)"></ion-input>
+          </ion-list>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+<ion-footer class="goals_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col" *ngIf="!backBtnhide">
+      <button ion-button class="back_btn" outline (click)="back()">
+        {{'common.back' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col" [attr.text-center]="backBtnhide ? '' : null">
+      <button ion-button class="login_btn" (click)="next()">
+        {{'common.next' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

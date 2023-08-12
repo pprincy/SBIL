@@ -1,0 +1,174 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button
+      [class.active]="isBtnActive"
+      (click)="toggleClass()"
+      ion-button
+      [menuToggle]="activeMenu"
+    >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'NPSCalculator.NPSCalculator' | translate}}</ion-title>
+  </ion-navbar>
+  <div class="calculator_common_sec_steps">
+    <div class="calculator_steps" id="stepsCount">
+      <div class="calculator_steps_com active">
+        <div class="calculator_dashed step1">
+          <span class="calculator_steps_com_num">
+            <span>1</span>
+          </span>
+        </div>
+      </div>
+      <div class="calculator_steps_com">
+        <div class="calculator_dashed step2">
+          <span class="calculator_steps_com_num">
+            <span>2</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content class="calculator_common_sec">
+  <ion-slides class="calculator_sliders" pager="false" autoHeight="false">
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h1>{{'NPSCalculator.qOne' | translate}}</h1>
+      </div>
+
+      <div class="year_cal">
+        <h6 class="year_cal_val">{{diffVal}}</h6>
+        <p>{{'NPSCalculator.yearsToGo' | translate}}</p>
+        <!-- <div class="year_cal_error">
+          {{'errorMsg.ageTodayLessToBeRetirement' | translate}}
+      </div> -->
+        <div class="year_cal">
+          <p
+            style="color: red; text-align: center; font-size: 3vw"
+            *ngIf="ageYearError"
+          >
+            {{'errorMsg.ageTodayLessToBeRetirement' | translate}}
+          </p>
+        </div>
+      </div>
+
+      <!-- <div class="age_section">
+        <div class="retirement_age_sec">
+          <h4 (click)="setAgeState('retire')" [ngClass]="ageStatus === 'retire' ? 'selected-fill' : 'unselected-fill'">{{sliderRetireAge}}</h4>
+          <p>{{'NPSCalculator.yourRetirement' | translate}}</p>
+        </div>
+        <div>
+          <img class="arrow" src="assets/icon/arrow_forward_ios (2).png" />
+        </div>
+        <div class="current_age_sec">
+          <h4 (click)="setAgeState('age')" [ngClass]="ageStatus === 'age' ? 'selected-fill' : 'unselected-fill'">{{sliderAgeNowAge}}</h4>
+          <p>{{'NPSCalculator.yourCurrent' | translate}}</p>
+        </div>
+      </div> -->
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="block_num">
+              <h3
+                (click)="setAgeState('retire')"
+                [ngClass]="ageStatus === 'retire' ? 'selected-fill' : 'unselected-fill'"
+              >
+                {{sliderRetireAge}}
+              </h3>
+            </div>
+            <h4 class="title_num">
+              {{'NPSCalculator.yourRetirement' | translate}}
+            </h4>
+          </ion-col>
+          <span>
+            <img class="arrow" src="assets/icon/arrow_forward_ios.svg" />
+          </span>
+          <ion-col>
+            <div class="block_num">
+              <h3
+                (click)="setAgeState('age')"
+                [ngClass]="ageStatus === 'age' ? 'selected-fill' : 'unselected-fill'"
+              >
+                {{sliderAgeNowAge}}
+              </h3>
+            </div>
+            <h4 class="title_num">
+              {{'NPSCalculator.yourCurrent' | translate}}
+            </h4>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <div class="tell_us_cont_common">
+        <div class="tell_us_cont com_head setAge">
+          <h4>{{'NPSCalculator.setAgeHere' | translate}}</h4>
+          <div class="tell_us_slider sliderRetire" [hidden]="retireAge">
+            <div *ngFor="let i of retireAgeBar" class="item">
+              <span class="tell_us_slider_age">{{i}}</span>
+            </div>
+          </div>
+          <div class="tell_us_slider sliderAgeNow" [hidden]="!currentAge">
+            <div *ngFor="let i of nowAgeBar" class="item">
+              <span class="tell_us_slider_age">{{i}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+    <!-- Step 2 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h1>{{'NPSCalculator.qTwo' | translate}}</h1>
+      </div>
+
+      <div class="tell_us_cont_commonnn sip_slider_range">
+        <div class="calculator_common_sec_inner">
+          <div class="calculation_with_range">
+            <div class="calculation_with_range_inp">
+              <!-- <span class="rs_icon icon-Icons_Ruppee"></span> -->
+              <ion-input
+                type="tel"
+                [(ngModel)]="contributeComma"
+                class="overlay_dropdown_rng_val"
+                (ionChange)="formatAmount(contributeComma)"
+              ></ion-input>
+            </div>
+            <ion-item>
+              <ion-range
+                min="{{minValue}}"
+                max="{{maxValue}}"
+                step="{{steps}}"
+                [(ngModel)]="contribute"
+                pin="true"
+                (ngModelChange)="doSomething($event)"
+              >
+              </ion-range>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+<ion-footer class="nps_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col">
+      <button ion-button class="back_btn" outline (click)="back()">
+        {{'common.back' | translate}}
+      </button>
+    </div>
+    <div
+      class="footer_panel_rt col"
+      [attr.text-center]="backBtnhide ? '' : null"
+    >
+      <button ion-button class="login_btn" (click)="next()">
+        {{'common.next' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

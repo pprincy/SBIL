@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button [class.active]="isBtnActive" (click)="toggleClass()" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+    <ion-title>
+      <span class="hamberger_txt">{{'riskAssessment.riskAssessment' | translate}}</span>
+    </ion-title>
+    <ion-buttons end class="custom_header_btn">
+      <button ion-button icon-right (click)="takeScreenshot()">
+        <!-- <ion-icon name="md-share"></ion-icon> -->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="scroll-content">
+    <div class="Risk_details">
+      <h4>{{'riskAssessment.yourRiskProfileIs' | translate}}</h4>
+      <div class="networth_amt">
+        <div class="networth_amt_inner">{{profileType}}</div>
+        <h3>({{profileCode}})</h3>
+      </div>
+      <div class="RiskContent">
+        <ion-card-content class="moderate_content">
+          <p text-center class="heading_reinvest">
+            {{message}}
+          </p>
+        </ion-card-content>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer class="risk_final_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col" (click)="goBack()">
+      <button ion-button class="back_btn" outline>
+        {{'buttons.reassess' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn" (click)="goToGoalListing()">
+        {{'buttons.startPlanning' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>

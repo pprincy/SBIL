@@ -1,0 +1,59 @@
+<ion-header id="header">
+  <ion-navbar color="sbiHeader">
+    <button [class.active]="isBtnActive" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Financial Infographics</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="search()">
+        <ion-icon name="ios-search-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only class="notification-button" (click)="goNotificationList()">
+        <ion-icon name="ios-notifications">
+          <ion-badge class="notifications-badge" color="sbi_primary_color"
+            *ngIf="restapiProvider.notificationCount > 0">
+            {{restapiProvider.notificationCount}}
+          </ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content no-padding>
+  <div class="info_details_content">
+    <figure>
+      <img src="{{imgURL + infoDetails.BigImage}}" />
+    </figure>
+    <div class="posted_cont">
+      Posted on <span> {{infoDetails.PublishDate | date: 'medium'}} </span>
+    </div>
+  </div>
+  <div class="recommend_for_your" *ngIf="infographicList.length > 0">
+    <div class="recommend_for_your_header disc_com_header">
+      <h2>Related Infographics</h2>
+    </div>
+    <div class="recommend_for_your_cont">
+      <div class="recommend_for_your_cont">
+        <ion-scroll class="recommend_for_your_cont_slider" id="related_article" scrollX="true" scroll-avatar>
+          <div class="recommend_for_your_cont_slider_item" *ngFor="let info of infographicList | slice:0:6"
+            (click)="relatedInfo(info)">
+            <div class="recommend_for_your_cont_slider_item_inner" *ngIf="articleID != info.ArticleID">
+              <figure>
+                <img src="{{imgURL + info.BigImage}}" />
+              </figure>
+              <!-- <i style="font-size:0px" >{{item.ArticleID}}</i> -->
+              <h4>{{info.Title}}</h4>
+            </div>
+          </div>
+        </ion-scroll>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span>
+    <img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

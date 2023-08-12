@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="sbiHeader">
+  </ion-navbar>
+</ion-header>
+<ion-content class="bg_img scroll_div" no-bounce>
+  <div class="top_area">
+    <div class="mob_email">
+      <div class="profile_fig">
+        <figure (click)="uploadImg()">
+          <img src="{{profileImage}}" (error)="errorPic()">
+        </figure>
+        <a (click)="uploadImg()">+</a>
+      </div>
+    </div>
+    <!-- <div class="top_area_container">
+      <div class="cloud cloud1"><img src="assets/imgs/cloud1.png" width="68" height="33" /> </div>
+      <div class="cloud cloud2"><img src="assets/imgs/cloud2.png" width="68" height="33" /> </div>
+      <div class="cloud cloud3"><img src="assets/imgs/cloud3.png" width="99" height="48" /> </div>
+      <div class="cloud cloud4"><img src="assets/imgs/cloud4.png" width="74" height="36" /> </div>
+    </div> -->
+  </div>
+  <div class="heading_panel">
+    <h1>{{'quizAge.hello' | translate}} {{username}}</h1>
+    <h4>{{mobile}}</h4>
+    <h5>{{'quizAge.subTitle' | translate}} </h5>
+  </div>
+  <div class="tell_us_cont com_head">
+    <h4>{{'quizAge.yourAge' | translate}}</h4>
+    <div class="tell_us_slider">
+      <div *ngFor="let i of ageBar"><span class="tell_us_slider_age">{{i}}</span><span
+          class="tell_us_slider_year">{{'common.years' | translate}}</span></div>
+    </div>
+  </div>
+  <div class="occupation com_head">
+    <h4>{{'quizAge.yourPro' | translate}}</h4>
+    <div class="occupation_list">
+      <ion-list class="occupation_list_ul" radio-group [(ngModel)]="selectedOccupation">
+        <ion-item class="occupation_list_li" *ngFor="let o of occupationList">
+          <!-- <ion-radio value="{{ans.AnswerID}}" (click)="selectTwoQuesAns(ans)"></ion-radio> -->
+          <ion-radio value="{{o.OccupationID}}" (click)="occupationClick(o)"></ion-radio>
+          <ion-label style="color: #2A2076;">{{o.OccupationName}}</ion-label>
+        </ion-item>
+        <!-- this.profileData -->
+      </ion-list>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col">
+      <button ion-button class="back_btn" outline>{{'quizAge.reEnterDetails' | translate}}</button>
+    </div>
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn" (click)="yesItsMe()">{{'quizAge.yesItsMe' | translate}}</button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

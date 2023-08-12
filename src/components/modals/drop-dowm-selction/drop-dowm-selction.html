@@ -1,0 +1,14 @@
+<ion-content class="main-view" scroll="true">
+  <div class="overlay" (click)="dismissModal()"></div>
+  <div class="modal_content ">
+    <div class="up_content"></div>
+      <div class="language_selector">
+          <ion-list radio-group [(ngModel)]="selectedOption">
+            <ion-item *ngFor="let l of commonList">
+              <ion-label>{{l.name}}</ion-label>
+              <ion-radio (click)="dismissModal()" value="{{l.value}}"></ion-radio>
+            </ion-item>
+          </ion-list>
+      </div>
+  </div>
+</ion-content>

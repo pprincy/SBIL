@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button [class.active]="isBtnActive" (click)="toggleClass()" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+    <ion-title>{{'riskAssessment.riskAssessment' | translate}}</ion-title>
+  </ion-navbar>
+
+  <div class="calculator_common_sec">
+    <div class="calculator_steps" id="stepsCount">
+      <div class="calculator_steps_com active">
+        <div class="calculator_dashed step1">
+          <span class="calculator_steps_com_num">
+            <span>1</span>
+            <!-- <ion-icon name="checkmark"></ion-icon> -->
+          </span>
+          <!-- <span class="calculator_steps_com_bar"></span> -->
+        </div>
+      </div>
+      <div class="calculator_steps_com">
+        <div class="calculator_dashed step2">
+          <span class="calculator_steps_com_num">
+            <span>2</span>
+          </span>
+        </div>
+      </div>
+      <div class="calculator_steps_com">
+        <div class="calculator_dashed step3">
+          <span class="calculator_steps_com_num">
+            <span>3</span>
+          </span>
+        </div>
+      </div>
+      <div class="calculator_steps_com">
+        <div class="calculator_dashed step4">
+          <span class="calculator_steps_com_num">
+            <span>4</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content class="calculator_common_sec_content">
+  <ion-slides slidesPerView="1" spaceBetween="4" class="calculator_sliders" pager="false">
+    <ion-slide *ngFor="let item of questAnsArr;index as quesIndex">
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h1>{{item.Question}}</h1>
+      </div>
+      <div class="tell_us_cont_common">
+        <div class="slide_img">
+          <img src="assets/imgs/{{imgArr[quesIndex]}}" />
+        </div>
+        <div class="risk_container">
+          <div class="help_us_cont">
+            <ion-list radio-group class="custom_radio" [(ngModel)]="answerID">
+              <ion-item *ngFor="let ans of item.AnswersArr;index as ansIndex">
+                <ion-label  [ngClass]="answerID === ans.AnswerID ? 'selected' : 'unselected'">{{ans.Answer}}</ion-label>
+                <ion-radio [value]="ans.AnswerID" [checked]="ansIndex === 0?'true':'false'" [ngClass]="answerID === ans.AnswerID ? 'selected' : 'unselected'"
+                  (click)="setAnswers(item.QuestionID,quesIndex,ans.AnswerID,ansIndex)"></ion-radio>
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+<ion-footer class="risk_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col" *ngIf="!backBtnhide">
+      <button ion-button outline class="back_btn" (click)="back()">
+        {{'common.back' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col" [attr.text-center]="backBtnhide ? '' : null">
+      <button ion-button class="login_btn" (click)="next()">
+        {{'common.next' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

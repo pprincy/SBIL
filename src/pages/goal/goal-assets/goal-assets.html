@@ -1,0 +1,136 @@
+<ion-header>
+  <ion-navbar text-center>
+    <!-- <button [class.active]="isBtnActive" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title>{{paramsData.headerTitle}}</ion-title>
+  </ion-navbar>
+  <div class="calculator_common_sec" *ngIf="false">
+    <div class="calculator_steps" id="stepsCount">
+      <div class="calculator_steps_com active">
+        <span class="calculator_steps_com_num"
+          ><span>1</span><ion-icon name="checkmark"></ion-icon
+        ></span>
+        <span class="calculator_steps_com_bar"></span>
+      </div>
+      <div class="calculator_steps_com">
+        <span class="calculator_steps_com_num"
+          ><span>2</span><ion-icon name="checkmark"></ion-icon
+        ></span>
+        <span class="calculator_steps_com_bar"></span>
+      </div>
+      <div class="calculator_steps_com">
+        <span class="calculator_steps_com_num"
+          ><span>3</span><ion-icon name="checkmark"></ion-icon
+        ></span>
+        <span class="calculator_steps_com_bar"></span>
+      </div>
+      <div class="calculator_steps_com">
+        <span class="calculator_steps_com_num"
+          ><span>4</span><ion-icon name="checkmark"></ion-icon
+        ></span>
+        <span class="calculator_steps_com_bar"></span>
+      </div>
+    </div>
+  </div>
+</ion-header>
+<!-- <div class="top_area">
+  <div class="top_area_container">
+    <div class="cloud cloud5"><img src="assets/imgs/cloud5.png" /></div>
+    <div class="cloud cloud6"><img src="assets/imgs/cloud6.png" /></div>
+  </div>
+</div> -->
+<ion-content class="calculator_common_sec scroll_div">
+  <ion-slides class="calculator_sliders" pager="false">
+    <ion-slide>
+      <div class="calculator_common_sec_inner">
+        <div class="age_slider_heading">
+          <h1>{{'updateAssets.qOne' | translate}}</h1>
+          <h5>{{'updateAssets.savingsAndInvestments' | translate}}</h5>
+        </div>
+        <div class="invest_option_wrapper">
+          <ion-grid class="invest_option">
+            <ion-row>
+              <ion-col *ngFor="let si of savInvestData; let i = index">
+                <button
+                  ion-button
+                  icon-end
+                  id="invest_option_grid_list{{si.id}}"
+                  (click)="selectSavInvFunction(si)"
+                >
+                  {{si.value}}
+                  <!-- <ion-icon name="checkmark"></ion-icon> -->
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <div class="showmore" text-left>
+            <button class="shmore" ion-button icon-right clear>
+              {{'common.viewMore' | translate}}
+              <ion-icon name="ios-arrow-down"></ion-icon>
+            </button>
+            <button class="lessmore" ion-button icon-right clear>
+              {{'common.viewLess' | translate}}
+              <ion-icon name="ios-arrow-up"></ion-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+    <!-- Step 2 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner">
+        <div class="age_slider_heading">
+          <h1>{{'updateAssets.qOne' | translate}}</h1>
+          <h5>{{'updateAssets.savingsAndInvestments' | translate}}</h5>
+        </div>
+      </div>
+      <div class="calculator_common_sec_inner calculate_ttl">
+        <div class="row">
+          <div class="col calculate_ttl_lt" text-left>
+            <h2>{{'updateAssets.totalAmount' | translate}}</h2>
+          </div>
+          <div class="col calculate_ttl_rt" text-right>
+            <span class="rs_icon icon-Icons_Ruppee"></span>{{SITotal |
+            amountFormat:'S'}}
+          </div>
+        </div>
+      </div>
+      <div class="calculator_common_sec_inner calculator_grid_wrapper">
+        <ion-list *ngFor="let i of selectedSavInv">
+          <button ion-button icon-only float-right clear (click)="removeSI(i)">
+            <ion-icon name="ios-close-outline"></ion-icon>
+          </button>
+          <ion-item class="inp_with_close">
+            <ion-label stacked>{{i.value}} </ion-label>
+            <ion-input
+              type="tel"
+              id="assets_{{i.id}}"
+              value="{{i.amount}}"
+              (ionChange)="changeSIInput(i.id)"
+            ></ion-input>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>
+
+<ion-footer class="goals_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col">
+      <button ion-button class="back_btn" outline (click)="back()">
+        {{'common.back' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn" (click)="next()">
+        {{'common.next' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>

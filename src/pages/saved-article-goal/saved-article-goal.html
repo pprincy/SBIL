@@ -1,0 +1,151 @@
+<ion-header>
+  <ion-navbar text-center color="sbiHeader">
+    <button [class.active]="isBtnActive" (click)="toggleClass()" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'Saved.savedGoals' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="scroll_div">
+  <div [ngSwitch]="article" class="updates">
+    <ion-list *ngSwitchCase="'Yourarticles'">
+      <div class="no_record_found" *ngIf="allArticlesList.length < 1">
+        <div class="no_record_found_cont">
+          <figure>
+            <img src="assets/imgs/saved_goals/no_saved_articles.svg" alt="" />
+          </figure>
+          <p>{{'Saved.noSavedArticles' | translate}}</p>
+          <div class="view_articles_btn">
+            <button ion-button class="view_articles">
+              {{'Saved.viewArticles' | translate}}
+            </button>
+          </div>
+        </div>
+      </div>
+      <ion-item *ngFor="let art of allArticlesList; " (click)="articleDetails(art)">
+        <ion-thumbnail item-start>
+          <img src="{{imgURL + art.Link}}" />
+        </ion-thumbnail>
+        <h2>{{art.Title}}</h2>
+        <p>{{art.ShortDesc}}</p>
+      </ion-item>
+    </ion-list>
+    <!-- //Saved Goals -->
+    <ion-list *ngSwitchCase="'Mygoals'" class="mygoal">
+      <div class="no_record_found" *ngIf="goalsArr.length < 1">
+        <div class="no_record_found_cont">
+          <span>{{'Saved.noSavedGoals' | translate}}</span>
+        </div>
+      </div>
+      <ion-item-sliding *ngFor="let goals of goalResponseArr; let i = index;">
+        <ion-item>
+          <ion-card>
+              <ion-card-header>
+                <ion-row>
+                  <ion-col col-6 class="goal_top_img">
+                    <figure>
+                      <img src="{{imgURLNew + goals.ImagePath}}" />
+                    </figure>
+                    <h3>{{goals.GoalType}}</h3>
+                  </ion-col>
+                  <ion-col col-6 class="planned_sec" >
+                    <div>
+                      <h5>{{'Saved.plannedOn' | translate}}</h5>
+                      <div class="goal_plan_val">{{goals.PlannedDate | date : 'dd MMM yyyy'}}
+                        <span class="thintext">{{goals.PlannedDate | date : 'hh:mm a'}}</span>
+                      </div>
+                      <div class="goal_plan_val">{{'common.tenure' | translate}}:
+                        <span class="thintext">{{ goals.tenure}} {{'common.years' | translate}}</span>
+                      </div>
+                    </div>
+    
+                  </ion-col>
+                </ion-row>
+              </ion-card-header>
+              <ion-card-content  class="goalClose">
+                <ion-row >
+                  <ion-col col-9 class="goal_req">
+                    <h5 *ngIf="goals.GoaltypeID < 7">{{('Saved.corpusRequiredInYear' | translate) + " " + yearCal(goals.tenure)}}
+                    </h5>
+                    <h5 *ngIf="goals.GoaltypeID == 7">{{'Saved.totalInsuranceCoverYouNeed' | translate}}
+                    </h5>
+                    <h5 *ngIf="goals.GoaltypeID == 8">{{'Saved.totalHealthCoverRequired' | translate}}
+                    </h5>
+                  </ion-col>
+                  <ion-col col-3 class="goal_amt">
+                    <div class="goal_plan_amt">
+                      <span class="rs_icon">`</span>{{goals.RequieredDownpayment >
+                      0 ? ( goals.RequieredDownpayment | amountFormat:'S' ) : 0 |
+                      amountFormat:'S'}}
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-card-content>
+          </ion-card>
+        </ion-item>
+        <ion-item-options side="right" class="item_option">
+          <div style="width: 5px;"></div>
+          <button ion-button (click)="showConfirmPopup(goals)">
+            <img src="assets/imgs/delete_forever.svg"/>
+            <span style="font-size: 8.87px; font-weight: 700; margin-top: 6px; text-transform: none;">Remove</span>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      
+    </ion-list>
+  </div>
+  <div class="plan_summary_btn" *ngIf="article != 'Yourarticles'">
+    <button ion-button class="plan_summary" clear (click)="planSummary()">
+      {{'Saved.planSummary' | translate}}
+    </button>
+  </div>
+  <div class="overlay_dropdown delete_popup" *ngIf="deleteStatus">
+    <div class="overlay_dropdown_content">
+      <h3 text-center padding>{{'Saved.youReallyWantToDelete' | translate}}</h3>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <button ion-button class="back_btn" (click)="deleteGoal('no')" outline>
+              {{'common.no' | translate}}
+            </button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button class="login_btn" (click)="deleteGoal('yes')">
+              {{'common.yes' | translate}}
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+<!-- <ion-footer *ngIf="article != 'Yourarticles'">
+  <ion-toolbar>
+    <ion-title>
+      <button ion-button clear (click)="planSummary()">
+        {{'Saved.myPlanSummary' | translate}}<ion-icon
+          name="ios-arrow-forward-outline"
+        ></ion-icon>
+      </button>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer> -->
+<ion-footer class="spend_manager_footer">
+  <ion-segment [(ngModel)]="article" (ionChange)="savedSegmentChange()">
+    <ion-segment-button value="Yourarticles">
+      <figure>
+        <img src="assets/imgs/article-gray.svg" alt="" />
+      </figure>
+      {{'Saved.yourArticles' | translate}}
+    </ion-segment-button>
+    <ion-segment-button value="Mygoals" (click)="segmentChange('Mygoals')">
+      <figure>
+        <img src="assets/imgs/saved_goals/goals.svg" alt="" />
+      </figure>
+      {{'Saved.myGoals' | translate}}
+    </ion-segment-button>
+  </ion-segment>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

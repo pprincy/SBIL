@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-title>{{'expenses.spendsTitle' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card class="common_expense_card">
+    <ion-card-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12>
+            <h5>{{'incomeDashboard.spendsSummary' | translate}}</h5>
+            <button class="month_btn" ion-button clear (click)="MonthListExpense()">
+              <p class="month_title">{{expensesDate ? expensesDate : 'Select date'}}</p>
+              <ion-icon class="month_arrow" name="md-arrow-dropdown"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content class="no_padding" [hidden]="!noPageData">
+      <div class="card_inner_cont recent_spends" [hidden]="!isExpensesData">
+        <div id="total_expenses_new" style="min-width: 300px; height: 170px;  margin: 0 auto"></div>
+        <ion-list>
+          <ion-item *ngFor="let expense of expenseCategory" [hidden]="!expense.Expense"
+            (click)="expenseListingPage(expense.CategoryName,expense.CategoryId)">
+            <ion-thumbnail [style.background]="expense.CategoryColorCode" item-start>
+              <img src="{{imgURLNew + expense.ImagePath}}">
+            </ion-thumbnail>
+            <h5>{{expense.CategoryName}}</h5>
+            <div item-end class="spent_data">
+              <span class="spent_data_lbl" align="center">
+                <span class="icon-Icons_Ruppee"></span>{{expense.Expense | amountFormat:'S'}}</span>
+              <!-- <span
+                class="spent_data_date {{expense.IncomeApproxBudgetStatusFlag}}">{{expense.IncomeApproxBudgetStatus}}
+              </span> -->
+            </div>
+            <!-- <ion-icon item-end name="ios-arrow-forward-outline" class="arrow_right"></ion-icon> -->
+            <div item-end class="arrow_right">
+              <img src="assets/imgs/vector.svg" />
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div class="articles_num" *ngIf="!isExpensesData">
+        <div class="articles_num_cont">
+          <span>{{'common.noSpendsAvailable' | translate}}</span>
+        </div>
+      </div>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /></span>
+</div>

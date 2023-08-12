@@ -1,0 +1,172 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button [class.active]="isBtnActive" (click)="toggleClass()" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'networthCalculator.networthCalculator' | translate}}</ion-title>
+  </ion-navbar>
+
+  <div class="calculator_common_sec_steps">
+    <div class="calculator_steps" id="stepsCount">
+      <div class="calculator_steps_com active">
+        <div class="calculator_dashed step1">
+          <span class="calculator_steps_com_num">
+            <span>1</span>
+          </span>
+        </div>
+      </div>
+      <div class="calculator_steps_com">
+        <div class="calculator_dashed step2">
+          <span class="calculator_steps_com_num">
+            <span>2</span>
+          </span>
+        </div>
+      </div>
+      <div class="calculator_steps_com">
+        <div class="calculator_dashed step3">
+          <span class="calculator_steps_com_num">
+            <span>3</span>
+          </span>
+        </div>
+      </div>
+      <div class="calculator_steps_com">
+        <div class="calculator_dashed step4">
+          <span class="calculator_steps_com_num">
+            <span>4</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content class="calculator_common_sec">
+  <ion-slides class="calculator_sliders" pager="false">
+    <ion-slide>
+      <div class="calculator_common_sec_inner">
+        <div class="age_slider_heading">
+          <h1>{{'networthCalculator.qOne' | translate}}</h1>
+        </div>
+        <div class="invest_option_wrapper">
+          <ion-grid class="invest_option">
+            <ion-row>
+              <ion-col *ngFor="let si of savInvestData; let i = index">
+                <button ion-button icon-end id="{{si.id}}" (click)="selectSavInvFunction(si)">
+                  {{si.value}}
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <div class="showmore" text-left>
+            <button class="shmore" ion-button icon-right clear>
+              {{'common.viewMore' | translate}}<ion-icon name="ios-arrow-down"></ion-icon>
+            </button>
+            <button class="lessmore" ion-button icon-right clear>
+              {{'common.viewLess' | translate}}<ion-icon name="ios-arrow-up"></ion-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+    <!-- Step 2 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner">
+        <div class="age_slider_heading">
+          <h2>{{'networthCalculator.qTwo' | translate}}</h2>
+          <!-- <h5>{{'networthCalculator.savingsAccount' | translate}}</h5> -->
+          <!-- <h5>savings and investments</h5> -->
+        </div>
+      </div>
+      <!-- <div class="calculator_common_sec_inner calculate_ttl">
+        <div class="row">
+          <div class="col calculate_ttl_lt" text-left>
+            {{'common.totalAmount' | translate}}
+          </div>
+          <div class="col calculate_ttl_rt" text-right>
+            <span class="rs_icon icon-Icons_Ruppee"></span>{{SITotal |
+            amountFormat:0}}
+          </div>
+        </div>
+      </div> -->
+      <div class="calculator_common_sec_inner calculator_grid_wrapper">
+        <ion-list *ngFor="let i of selectedSavInv">
+          <!-- <button ion-button icon-only float-right clear (click)="removeSI(i)">
+            <ion-icon name="ios-close-outline"></ion-icon>
+          </button> -->
+          <ion-item class="inp_with_close">
+            <ion-label stacked>{{i.value}} </ion-label>
+            <ion-input type="tel" id="{{i.id}}" value="{{i.amount}}" (ionChange)="changeSIInput(i.id)"></ion-input>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-slide>
+    <!-- Step 3 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner">
+        <div class="age_slider_heading">
+          <h1>{{'networthCalculator.qThree' | translate}}</h1>
+          <!-- <h5>loans, debts, mortgages</h5> -->
+        </div>
+        <div class="invest_option_wrapper">
+          <ion-grid class="invest_option">
+            <ion-row>
+              <ion-col *ngFor="let si of owedData; let i = index">
+                <button ion-button icon-end id="{{'L-' + si.id}}" (click)="owedFunction(si)">
+                  {{si.value}}
+                  <!-- <ion-icon name="checkmark"></ion-icon> -->
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </div>
+    </ion-slide>
+    <!-- Step 4 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner">
+        <div class="age_slider_heading">
+          <h2>{{'networthCalculator.qFour' | translate}}</h2>
+          <!-- <h1>{{'networthCalculator.qFour' | translate}}</h1> -->
+          <!-- <h5>loans, debts, mortgages</h5> -->
+        </div>
+      </div>
+      <!-- <div class="calculator_common_sec_inner calculate_ttl">
+        <div class="row">
+          <div class="col calculate_ttl_lt" text-left>
+            {{'common.totalAmount' | translate}}
+          </div>
+          <div class="col calculate_ttl_rt" text-right>
+            <span class="rs_icon icon-Icons_Ruppee"></span>{{totOwed |
+            amountFormat:0}}
+          </div>
+        </div>
+      </div> -->
+      <div class="calculator_common_sec_inner calculator_grid_wrapper">
+        <ion-list *ngFor="let i of selectedOwed">
+          <!-- <button ion-button icon-only float-right clear (click)="removeOwed(i)">
+            <ion-icon name="ios-close-outline" float-right></ion-icon>
+          </button> -->
+          <ion-item class="inp_with_close">
+            <ion-label stacked>{{i.value}} </ion-label>
+            <ion-input type="tel" id="{{'L-' + i.id}}" value="{{i.amount}}"
+              (ionChange)="changeOwedInput(i.id)"></ion-input>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+<ion-footer class="networth_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col" *ngIf="!backBtnhide">
+      <button ion-button class="back_btn" outline (click)="back()">
+        {{'common.back' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col" [attr.text-center]="backBtnhide ? '' : null">
+      <button ion-button class="login_btn" (click)="next()">
+        {{'common.next' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>

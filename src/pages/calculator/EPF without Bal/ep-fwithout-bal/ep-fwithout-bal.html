@@ -1,0 +1,186 @@
+<ion-header>
+  <ion-navbar>
+    <button [class.active]="isBtnActive" (click)="toggleClass()" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>EPF Calculator</ion-title>
+  </ion-navbar>
+  <div class="calculator_common_sec">
+    <div class="calculator_steps"  id="stepsCount">
+      <div class="calculator_steps_com active">
+        <span class="calculator_steps_com_num"><span>1</span><ion-icon name="checkmark"></ion-icon></span>
+        <span class="calculator_steps_com_bar"></span>
+      </div>
+      <div class="calculator_steps_com">
+        <span class="calculator_steps_com_num "><span>2</span><ion-icon name="checkmark"></ion-icon></span>
+        <span class="calculator_steps_com_bar"></span>
+      </div>
+       <div class="calculator_steps_com">
+          <span class="calculator_steps_com_num"><span>3</span><ion-icon name="checkmark"></ion-icon></span>
+          <span class="calculator_steps_com_bar"></span>
+       </div>
+       <div class="calculator_steps_com">
+        <span class="calculator_steps_com_num"><span>4</span><ion-icon name="checkmark"></ion-icon></span>
+        <span class="calculator_steps_com_bar"></span>
+     </div>
+      
+    </div>
+</div>
+</ion-header>
+<div class="top_area">
+    <div class="top_area_container">
+    <div class="cloud cloud1"><img src="assets/imgs/cloud1.png" width="68" height="33"/> </div>
+    <div class="cloud cloud2"><img src="assets/imgs/cloud2.png" width="68" height="33"/> </div>
+    <div class="cloud cloud3"><img src="assets/imgs/cloud3.png" width="99" height="48"/> </div>
+    <div class="cloud cloud4"><img src="assets/imgs/cloud4.png" width="74" height="36"/> </div>
+   
+  </div>
+  </div>
+<ion-content class="calculator_common_sec scroll_div">
+  <ion-slides class="calculator_sliders" pager="false">
+      <ion-slide>
+          <div class="calculator_common_sec_inner age_slider_heading">
+            <h1>Do you Have an 
+              existing EPF account? </h1>       
+          </div>
+        
+          <div class="invest_option_wrapper calculator_common_sec_inner">
+            <ion-grid class="invest_option">
+                <ion-row class="row">
+                    <ion-col>
+                        <!-- <button (click)="selectedDuration(tenure,i)" ion-button icon-end id="tenure-{{i}}" [ngClass]="i === 0?'active':'inactive'">
+                          <ion-icon name="checkmark"></ion-icon>
+                        </button> -->
+                        <button class=" disable-hover active button button-md button-default button-default-md">
+                            <span class="button-inner">
+                              Yes
+                            <ion-icon name="checkmark"></ion-icon>
+                            </span>
+                        </button> 
+                    </ion-col>
+                  </ion-row>
+                    <ion-row class="row">
+                    <ion-col>   
+                        <button class=" disable-hover active button button-md button-default button-default-md">
+                            <span class="button-inner">
+                              No
+                            <ion-icon name="checkmark"></ion-icon>
+                            </span>
+                        </button> 
+                    </ion-col>
+                </ion-row>
+              </ion-grid>
+             
+            </div>
+         
+        </ion-slide>
+
+     <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h1>What is your age? </h1>
+      </div>
+      <div class="tell_us_cont_common">
+        
+        <div class="tell_us_cont com_head">
+          <h4 text-left>i want to
+            <br/> retire at</h4>
+          <div class="tell_us_slider sliderRetire">
+            <div *ngFor="let i of retireAgeBar">
+              <span class="tell_us_slider_age">{{i}}</span>
+              <span class="tell_us_slider_year">Years</span>
+            </div>
+          </div>
+        </div>
+        <div class="year_cal">
+          <div class="year_cal_val">
+            <strong class="diff" ></strong> to go</div>
+          <div class="year_cal_error" >Age today has to be less than age at retirement
+          </div>
+        </div>
+  
+        <div class="tell_us_cont com_head age_now">
+          <h4 text-left>Age now</h4>
+          <div class="tell_us_slider sliderAgeNow">
+            <div *ngFor="let i of nowAgeBar">
+              <span class="tell_us_slider_age">{{i}}</span>
+              <span class="tell_us_slider_year">Years</span>
+            </div>
+          </div>
+        </div>
+        </div>
+        <!-- <div class="calculator_common_sec_inner nps_age_first">
+          <div class="footer_panel row">
+  
+            <div class="footer_panel_lt col" text-left>
+              <button ion-button class="login_btn" (click)="stepOneNext()" float-left>Next</button>
+  
+            </div>
+          </div>
+        </div> -->
+  
+      <!-- <div class="tell_us_cont_common">
+        <div class="tell_us_cont com_head active">
+          <div class="tell_us_slider homeYear">
+            <div *ngFor="let i of selectTenureBar">
+              <span class="tell_us_slider_age">{{i}}</span>
+              <span class="tell_us_slider_year">Years</span>
+            </div>
+          </div>
+        </div>
+       </div> -->
+    </ion-slide> 
+
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h1>What is your basic monthly salary</h1>
+          <!-- <h5>In the year <strong class="diffYear">{{yearDiff}}</strong></h5>          -->
+      </div>
+   
+      <div class="tell_us_cont_common">
+        <div class="calculator_common_sec_inner">
+          <div class="calculation_with_range">
+          <div class="calculation_with_range_inp"><span class="rs_icon icon-Icons_Ruppee"></span>
+                <ion-input type="number" (keypress)="isAmount($event)" (keyup)="checkDepositAmt()" [(ngModel)]="depositAmt" class="overlay_dropdown_rng_val"></ion-input>
+             </div>
+           <ion-item>
+              <ion-range min="{{minDepositAmt}}" max="{{maxDepositAmt}}" step="{{steps}}" [(ngModel)]="depositAmt" pin="true" (ngModelChange)="doSomething($event)">
+              </ion-range>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+
+    </ion-slide>
+     <!-- Step 3 -->
+     <ion-slide>
+        <div class="calculator_common_sec_inner age_slider_heading">
+          <h1>What is the average increase in salary you expect</h1>
+            <!-- <h5>In the year <strong class="diffYear">{{yearDiff}}</strong></h5>          -->
+        </div>
+  
+         <div class="tell_us_cont_common">
+          <div class="calculator_common_sec_inner">
+            <div class="calculation_with_range">
+            <div class="calculation_with_range_inp"><span class="rs_icon icon-Icons_Ruppee"></span>
+                  <ion-input type="number" (keypress)="isAmount($event)" (keyup)="checkDepositAmt()" [(ngModel)]="depositAmt" class="overlay_dropdown_rng_val"></ion-input>
+               </div>
+             <ion-item>
+                <ion-range min="{{minDepositAmt}}" max="{{maxDepositAmt}}" step="{{steps}}" [(ngModel)]="depositAmt" pin="true" (ngModelChange)="doSomething($event)">
+                </ion-range>
+              </ion-item>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+      
+  </ion-slides>
+
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col"  *ngIf="!backBtnhide">
+       <button ion-button outline class="back_btn"  (click)="back()" >Back</button>
+          </div>
+        <div class="footer_panel_rt col"  [attr.text-center]="backBtnhide ? '' : null">
+            <button ion-button class="login_btn" [disabled]="depositAmt == 0 || depositAmt > maxDepositAmt || depositTenure > maxTenure" (click)="next()">Next</button>
+        </div>
+   </div>
+</ion-content>

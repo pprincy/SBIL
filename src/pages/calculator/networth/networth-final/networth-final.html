@@ -1,0 +1,145 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-title>{{'networthCalculator.networthCalculator' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="networth_details">
+    <h4>{{'networthCalculator.coupusTitle' | translate}}</h4>
+    <div class="networth_amt">
+      <div class="networth_amt_inner">
+        <span class="rs_icon icon-Icons_Ruppee"></span>{{networthValue |
+        amountFormat:'S'}}
+      </div>
+    </div>
+    <div class="networth_sum">
+      {{'networthCalculator.AssetsLiabilitiesNetworth' | translate}}
+    </div>
+  </div>
+
+  <ion-card class="networth_card">
+    <!-- <ion-card-header text-center>
+      {{'networthCalculator.totalnetworth' | translate}}
+    </ion-card-header> -->
+    <div id="networth_chart" style="display: block; margin-top: 15px; margin-bottom: 11px;"></div>
+
+    <ion-grid class="invested_result">
+      <ion-row>
+        <ion-col>
+          <figure>
+            <img src="assets/imgs/fd_calculator/amount_invest_org.png" />
+          </figure>
+          <h5 style="color: #F57721;">{{'networthCalculator.totalAssets' | translate}}</h5>
+          <div style="color: #F57721;" class="invested_result_amt" text-capitalize>
+            <span class="rs_icon icon-Icons_Ruppee"></span>{{assets |
+            amountFormat:'S'}}
+          </div>
+        </ion-col>
+        <ion-col>
+          <figure>
+            <img src="assets/imgs/fd_calculator/interest_earned.png" />
+          </figure>
+          <h5>{{'networthCalculator.totalLiabilities' | translate}}</h5>
+          <div class="invested_result_amt highlighted_txt" text-capitalize>
+            <span class="rs_icon icon-Icons_Ruppee"></span>{{liabilities |
+            amountFormat:'S'}}
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-card-content class="networth_card_content">
+      <!-- <div id="networth_chart" style="display: block"></div> -->
+
+      <!-- <ion-list class="networth_list">
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <span class="indiccat color_fr"></span>
+            {{'networthCalculator.totalAssets' | translate}}
+          </div>
+          <button
+            ion-button
+            icon-right
+            float-right
+            clear
+            text-capitalize
+            (click)="showOverlay('assets')"
+          >
+            <span class="rs_icon icon-Icons_Ruppee"></span>{{assets |
+            amountFormat:0}}
+            <ion-icon name="ios-arrow-down-outline"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <span class="indiccat color_sec"></span>
+            {{'networthCalculator.totalLiabilities' | translate}}
+          </div>
+          <button
+            ion-button
+            icon-right
+            float-right
+            clear
+            text-capitalize
+            (click)="showOverlay('liabilities')"
+          >
+            <span class="rs_icon icon-Icons_Ruppee"></span>{{liabilities |
+            amountFormat:0}}
+            <ion-icon name="ios-arrow-down-outline"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-list> -->
+    </ion-card-content>
+  </ion-card>
+  <p class="disclaimer_txt" text-center>
+    <!-- <span class="icon-Icons_Info"></span> -->
+    <a (click)="disclaimerInfo()"> {{'common.disclaimersLink' | translate}}</a>
+  </p>
+</ion-content>
+<ion-footer class="networth_final_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col">
+      <button ion-button class="back_btn" outline (click)="recalculate()">
+        {{'buttons.recalculate' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn" (click)="goToGoalsListing()">
+        {{'buttons.startPlanning' | translate}}
+      </button>
+    </div>
+  </div></ion-footer
+>
+
+<div class="overlay_dropdown" *ngIf="status">
+  <div class="overlay_dropdown_content calculation_with_range">
+    <range-select
+      class="drop_com_comp"
+      [rangeData]="rangeDataUi"
+    ></range-select>
+    <ion-item>
+      <button ion-button class="login_btn" (click)="done()">
+        {{'common.done' | translate}}
+      </button>
+    </ion-item>
+  </div>
+</div>
+
+<div class="overlay_dropdown annuity disclaimer" *ngIf="disclaimer">
+  <div class="overlay_dropdown_content">
+    <div class="overlay_dropdown_content_inner">
+      <ion-icon
+        name="ios-close-circle-outline"
+        (click)="disclaimerClose()"
+      ></ion-icon>
+      <h3 padding>{{'common.disclaimer' | translate}}</h3>
+      <div
+        class="innerCont"
+        [innerHtml]="utilitiesProvider.disclaimerText"
+      ></div>
+    </div>
+  </div>
+</div>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

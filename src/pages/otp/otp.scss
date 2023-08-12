@@ -1,0 +1,186 @@
+page-otp {
+  .heading_panel {
+    &.ios_heading {
+      padding: 10px 0;
+    }
+    h1 {
+      font-family: "Lato";
+      color: $sbi_twentysix_color;
+      font-size: 7.179vw;
+      margin: 55px auto 0;
+      text-align: center;
+      width: 145px;
+    }
+    h5 {
+      font-family: "Lato Semibold";
+      font-size: 4.615vw;
+     // margin: 20px;
+     padding: 19px 34px 0px 29px;
+      color: $sbi_thirtyfour_color;
+      text-align: center;
+    }
+  }
+
+  .header {
+    background-color: $sbi_bg_color;
+    height: 0;
+    .toolbar-background-ios {
+      border-width: 0px !important;
+    }
+    .toolbar {
+      box-shadow: none;
+    }
+  }
+  .top_area {
+    height: 200px;
+    // .mob_email {
+    //     bottom: 21px;
+    // }
+  }
+  .otp_area {
+    padding: 0px 25px 0 25px;
+    .heading_panel {
+      padding: 12px 0 0px 0;
+    }
+  }
+
+  .login_btn {
+    border-radius: 0;
+    height: 50px;
+    font-family: "Lato";
+    font-size: 4.615vw !important;
+    text-transform: capitalize;
+    margin: 33px 1px 20px 0;
+    background: $sbi_thirtyfour_color;
+    letter-spacing: 0.38px;
+    max-width: 100%;
+  }
+
+  .btnEnable{
+    background: $sbi_twentysix_color  !important;
+  }
+  .otp
+  {
+    color: #727272;
+    font-size: 16px;
+    margin: 0 0 0 49px;
+  }
+  .resend_text{
+    text-align: center;
+    .otp {
+      color: #727272;
+      font-size: 16px;
+      margin-left: 0;
+    }
+  }
+  
+  .no_outline_btn {
+    color: $sbi_thirtyeight_color!important;
+    font-family: "Lato";
+    font-size: 4.103vw;
+    margin: -12px 0px 0 -10px;
+    text-transform: capitalize;
+    // left: 50%;
+    // transform: translateX(-50%);
+  }
+
+  .divOtpValue {
+    // margin: 0px 0 32px 0;
+    > .grid {
+      padding: 0;
+      margin-left: -5px;
+      margin-right: -5px;
+    }
+    .spam_otp_msg {
+      color: $sbi_nine_color;
+      font-family: "Lato Light";
+      font-size: 3.8vw;
+      padding-top: 10px;
+    }
+  }
+  .btnOtp {
+    background-color: $sbi_twentysix_color;
+    border-radius: 2.5px;
+    width: 90%;
+    height: 5px;
+    margin: 106px 0 0 0;
+    // height: 15.83vw;
+    // width: 100%;
+    // box-shadow: none;
+    // color: lighten($sbi_third_color, 10%);
+    // font-family: "Lato Thin";
+    // font-size: 8.8vw;
+
+    ion-icon {
+      font-size: 0;
+    }
+    &.otpBtn1 {
+      background-color: $sbi_twentysix_color;
+      color: $sbi_twentysix_color;
+      position: relative;
+      transform: scale(1.05);
+      font-weight: 600;
+    }
+    &.wrong_otp {
+      // border: 1px solid lighten($sbi_error_color, 30%);
+      border-bottom: 3px solid $sbi_error_color;
+      background-color: $sbi_fifth_color;
+      color: $sbi_secondary_color;
+    }
+    .button-inner {
+      position: absolute;
+      top: -14px;
+      font-size: 36px;
+      margin: -24px 0px 0px -10px;
+    }
+  }
+  .inputBtnGirdStart {
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    ion-grid {
+      padding: 0px !important;
+      .row {
+        .col {
+          border: 0.5px solid lighten($sbi_third_color, 20%);
+          background-color: $sbi_fifth_color;
+          .belowBtn {
+            color: $sbi_primary_color;
+            width: 100%;
+            margin: 0;
+            font-size: 5.5vw;
+          }
+          &:first-child {
+            border-left: 1px solid lighten($sbi_third_color, 20%);
+          }
+          &:last-child {
+            border-right: 1px solid lighten($sbi_third_color, 20%);
+          }
+        }
+        &:first-child {
+          .col {
+            border-top: 2px solid lighten($sbi_third_color, 20%);
+          }
+        }
+
+        &:last-child {
+          .col {
+            border-bottom: 2px solid lighten($sbi_third_color, 25%);
+          }
+        }
+      }
+    }
+  }
+
+  // .footer_panel {
+  //   &.active {
+  //     position: fixed;
+  //     bottom: 0;
+  //     left: 0;
+  //     right: 0;
+  //     margin: 20px 0 0 0;
+  //   }
+  // }
+}

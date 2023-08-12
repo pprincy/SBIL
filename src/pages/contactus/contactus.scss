@@ -1,0 +1,110 @@
+page-contactus {
+  .header {
+    background: $sbi_thirtytwo_color;
+
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+      border-bottom: 1px solid $sbi_fifth_color;
+
+      .toolbar-background {
+        border: none;
+      }
+
+      .bar-button {
+        color: $sbi_fifth_color;
+        // padding-left: 28px;
+        .back-button-text {
+          display: none;
+        }
+      }
+
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+          margin-left: -22px;
+        }
+      }
+    }
+
+    &:after {
+      background-image: none;
+      height: 0;
+    }
+  }
+  .grid{
+    padding: 0;
+  }
+
+  .col{
+    padding: 0;
+  }
+
+  // .top_area{
+  //     position: absolute;
+  //     z-index: 1;
+  //     top: 0;
+  //     left: 0;
+  //     right: 0;
+  //     background: none;
+  //     .top_area_container{background: none;
+  //         background-image: linear-gradient(to right,#301F6C, #D60D47);
+  //     }
+
+  //  }
+  .user_pic {
+    // width: 99px;
+    // height: 99px;
+    border-radius: 83px;
+    border: 1px solid #fff;
+    overflow: hidden;
+    margin: -4.278vw auto 0px;
+    text-align: center;
+    img {
+      max-width: 73%;
+      text-align: center;
+      margin-top: 2.77vw;
+    }
+  }
+  .user_img {
+    // width: 99px;
+    // height: 99px;
+
+    border: 1px solid #fff;
+    overflow: hidden;
+    margin: 40px 28px 0;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      text-align: center;
+      //margin-top: 2.77vw;
+    }
+  }
+
+  .userinfo {
+    text-align: center;
+    padding: 0 25px;
+
+    h6 {
+      font-size: 3.88vw;
+      line-height: 12px;
+      color: #5c2483;
+      margin: -12px 0 5.12vw;
+      font-family: "Lato";
+      font-size: 18px;
+      line-height: 120%;
+    }
+
+    p {
+      font-size: 3.59vw;
+      color: #727272;
+      //font-family: 'Lato Light';
+      margin: 0 0 8px 0;
+      padding: 0 4px;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button
+      [class.active]="isBtnActive"
+      (click)="toggleClass()"
+      ion-button
+      [menuToggle]="activeMenu"
+    >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'tools.calculators' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="goal_listing">
+  <div class="list_wrapper">
+    <div class="list_wrapper_inner" *ngFor="let c of calList">
+      <ion-list
+        class="invest_list"
+        
+        (click)="calClick(c)"
+        [hidden]="c.className === 'EatingOutPage'"
+      >
+        <div class="invlist_item">
+          <figure>
+            <img src="{{c.img}}" />
+          </figure>
+        </div>
+        <div class="sub-content">
+          <h4>{{c.calName}}</h4>
+          <h5>{{c.desc}}</h5>
+        </div>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

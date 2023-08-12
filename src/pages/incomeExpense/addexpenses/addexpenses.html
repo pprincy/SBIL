@@ -1,0 +1,206 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-title *ngIf="!expenseId">{{'addExpenses.addSpends' | translate}}</ion-title>
+    <ion-title *ngIf="expenseId">{{headerTitle?headerTitle: 'un-named'}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="add_expenses">
+
+  <div class="tell_us_cont_common">
+    <div class="calculator_common_sec_inner">
+      <div class="calculation_with_range">
+        <div class="calculation_with_range_inp">
+          <span class="rs_sym">₹</span>
+          <div contenteditable [(ngModel)]="amountComma" id="usertitle-editable"
+          class="amount_rs" inputmode="tel" (ngModelChange)="formatAmount(amountComma)"></div>
+          <ion-icon class="delete" (click)="deletePopUp()" 
+          *ngIf="expenseId" name="ios-trash-outline"></ion-icon>
+        </div>
+        <span class="valid_msg" *ngIf="isValidAmount">Please enter amount</span>
+      </div>
+      <div class="expense_category">
+        <div class="top_title_sec">
+          <h5>{{'addExpenses.selectCategory' | translate}}</h5>
+          <h4 class="view_more" *ngIf="isViewMore" (click)="ViewMoreModal()">
+            {{'incomeDashboard.viewMore' |translate}}
+          </h4>
+        </div>
+        <div class="expense_category_cont">
+          <div
+            [ngClass]="isCategorySlected[list.CategoryId]?'expense_category_cont_item active':'expense_category_cont_item'"
+            *ngFor="let list of categoryList" (click)="selectCategory(list.CategoryId)">
+            <div class="fig_title" [ngStyle]="{'background-color': list.CategoryColorCode }">
+              <figure>
+                <img src="{{imgURLNew + list.ImagePath}}" />
+                <!-- <img src="assets/imgs/food_expenses.svg" /> -->
+                <ion-icon name="ios-checkmark-circle"></ion-icon>
+              </figure>
+              <span>{{list.CategoryName}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tell_us_cont_common add_cat_name" *ngIf="!isCategorySlected[categoryId]">
+          <div class="calculator_common_sec_inner">
+            <div class="calculation_with_range text_fld">
+              <div class="calculation_with_range_inp">
+                <ion-input type="text" class="overlay_dropdown_rng_val"
+                  placeholder="{{'addExpenses.addCategoryName' |translate}}" [(ngModel)]="newCategory"
+                  (ngModelChange)="changeInput('cat')"></ion-input>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="valid_msg cat" *ngIf="isValidCategory">Please Select/Add Category</span>
+  <div class="add_expenses">
+    <div class="expense_category">
+      <div class="tell_us_cont_common add_cat_name spending_details">
+        <div class="calculator_common_sec_inner">
+          <div class="calculation_with_range text_fld">
+            <!-- <label>{{'addExpenses.addDetailsOfSpends' | translate}}</label> -->
+            <div class="calculation_with_range_inp">
+              <ion-input type="text" class="overlay_dropdown_rng_val"
+                placeholder="{{'addExpenses.spendingDetails' | translate}}" [(ngModel)]="title"
+                (ngModelChange)="changeInput('spendsDetail') "></ion-input>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="select_items">
+    <span *ngFor="let array of tagArray" [ngClass]=" isTagSlected[array.TagId]?'selected':'' "
+      (click)="selectTagId(array)">{{array.TagName}}</span>
+  </div>
+  <div align="center">
+    <div class="monyear">
+      <ion-list radio-group class="custom_radio">
+        <ion-item>
+          <ion-label>{{'addExpenses.oneTimeExpense' | translate}}</ion-label>
+          <ion-radio (click)="changeExpense('one')" checked="true" value="oneTimeExpense"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>{{'addExpenses.regularExpense' | translate}}</ion-label>
+          <ion-radio (click)="changeExpense('rep')" value="regularExpense"></ion-radio>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="footer_panel footer_add_expense row active" *ngIf="!expenseId">
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn" (click)="addUserExpenses('saveAdd')" outline>
+        {{'addExpenses.saveAndAdd' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_lt col" style="margin-left: 20px;">
+      <button ion-button class="back_btn" (click)="addUserExpenses('save')">
+        {{'addExpenses.setBudget' | translate}}
+      </button>
+    </div>
+  </div>
+  <div class="footer_panel footer_add_expense row active" *ngIf="expenseId">
+    <div align="center" class="col">
+      <button ion-button class="save" (click)="editUserExpenses()">
+        {{'common.save' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+
+<div class="overlay_dropdown" *ngIf="expensepop">
+  <div class="overlay_dropdown_content calculation_with_range">
+    <div text-right>
+      <i (click)="showPopupExpenses()">
+        <ion-icon name="ios-close-outline"></ion-icon>
+      </i>
+    </div>
+    <ion-card class="common_expense_card">
+      <ion-card-header>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-12 text-left>
+              <h4>Do you want to keep auto repeating these expenses?</h4>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-header>
+      <ion-card-content class="no_padding">
+        <div class="card_inner_cont recent_spends">
+          <ion-list>
+            <ion-item (click)="showPopupExpenses()">
+              <ion-thumbnail item-start>
+                <img src="assets/imgs/chai_chef.png" />
+              </ion-thumbnail>
+              <h5>Amul Milk</h5>
+              <p>
+                <span class="list_high">
+                  <span class="rs_icon icon-Icons_Ruppee"></span>15,000</span>
+                |
+                <strong>Monthly</strong>
+              </p>
+              <div class="monyear" item-end>
+                <span class="active">Monthly</span>
+                <span>Yearly</span>
+              </div>
+            </ion-item>
+            <ion-item (click)="showPopupExpenses()">
+              <ion-thumbnail item-start>
+                <img src="assets/imgs/big_bazar.png" />
+              </ion-thumbnail>
+              <h5>Big Bazaar</h5>
+              <p>
+                <span class="list_high">
+                  <span class="rs_icon icon-Icons_Ruppee"></span>15,000</span>
+                |
+                <strong>Monthly</strong>
+              </p>
+              <div class="monyear" item-end>
+                <span class="active">Monthly</span>
+                <span>Yearly</span>
+              </div>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button class="login_btn" type="submit">
+      {{'common.save' | translate}}
+    </button>
+  </div>
+</div>
+<div class="common_loader" *ngIf="pageLoader">
+  <span>
+    <img src="assets/imgs/pageLoader.gif" />
+  </span>
+</div>
+
+<div class="overlay_dropdown" *ngIf="delete">
+  <div class="overlay_dropdown_content calculation_with_range uncategorize_popup">
+    <div text-right>
+      <i (click)="showPopupDelete()">
+        <ion-icon name="ios-close-outline"></ion-icon>
+      </i>
+    </div>
+    <h4>{{'addExpenses.doYouWantToDelete' | translate}}</h4>
+    <ion-row>
+      <ion-col>
+        <button ion-button class="back_btn" (click)="showPopupDelete()">
+          {{'addExpenses.noThanks' | translate}}
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button class="login_btn" type="submit" (click)="deleteExpense()">
+          {{'addExpenses.yes' | translate}}
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>
+</div>

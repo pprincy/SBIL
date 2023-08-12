@@ -1,0 +1,172 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{'surveyQuiz.quizTitle' | translate}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="notification-button" (click)="goNotificationList()">
+        <ion-icon class="icon-Icons_Notification">
+          <ion-badge class="notifications-badge" color="sbi_primary_color" *ngIf="restapiProvider.notificationCount > 0">{{restapiProvider.notificationCount}}</ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<div class="top_area">
+  <div class="top_area_container">
+    <div class="cloud cloud1"><img src="assets/imgs/cloud1.png" width="68" height="33" /> </div>
+    <div class="cloud cloud2"><img src="assets/imgs/cloud2.png" width="68" height="33" /> </div>
+    <div class="cloud cloud3"><img src="assets/imgs/cloud3.png" width="99" height="48" /> </div>
+    <div class="cloud cloud4"><img src="assets/imgs/cloud4.png" width="74" height="36" /> </div>
+  </div>
+</div>
+
+<ion-content padding>
+  <div class="networth_details">
+    <!-- <h5>Check out our interesting online quizzes to brush up your money related decision-making skills.</h5> -->
+    <h5>{{questionHeader}}</h5>
+  </div>
+  <ion-card *ngFor="let ques of quizQuestionArrCopy">
+    <ion-card-header>
+      <h5>{{ques.QB_Quetion}}</h5>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list radio-group class="custom_radio" [(ngModel)]="ques.UserSelectedResponse">
+        <ion-item *ngFor="let ans of ques.ResponseArr">
+          <ion-radio [value]="ans.QB_Response_ID" [disabled]="utilitiesProvider.isCheckQuiz" item-left></ion-radio>
+          <ion-label>{{ans.Response_Text}}
+            <img src="assets/imgs/cancel.svg" *ngIf="!ans.IsRightResponse && (ques.UserSelectedResponse == ans.QB_Response_ID) && utilitiesProvider.isCheckQuiz" />
+            <img src="assets/imgs/tick.svg" *ngIf="ans.IsRightResponse && utilitiesProvider.isCheckQuiz" />
+          </ion-label>
+
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+
+  <!-- <ion-card>
+    <ion-card-header>
+      <h5>Which of the following is not a benefit from a Mutual fund?</h5>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list radio-group class="custom_radio">
+        <ion-item>
+          <ion-radio [value]="1" item-left></ion-radio>
+          <ion-label>Inverstor is able to diversify risk</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-radio [value]="2" item-left></ion-radio>
+          <ion-label>Inverstor custody of securities where fund invests</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-radio [value]="3" item-left></ion-radio>
+          <ion-label>Inverstor can save cost</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-radio [value]="4" item-left></ion-radio>
+          <ion-label>Professional management of money</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <h5>The Investor of which kind of fund would bear a tax on shortterm capital gains, as per the investor tax slab</h5>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list radio-group class="custom_radio">
+        <ion-item>
+          <ion-radio [value]="1" item-left></ion-radio>
+          <ion-label>Debt oriented mutual fund</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-radio [value]="2" item-left></ion-radio>
+          <ion-label>Professional Management of money</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <h5>The Expense ratio as a measure of fund's performance is defined by s fund's</h5>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list radio-group class="custom_radio">
+        <ion-item>
+          <ion-radio [value]="1" item-left></ion-radio>
+          <ion-label>Total expenses and average net asets</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-radio [value]="2" item-left></ion-radio>
+          <ion-label>Total expenses and total assets</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-radio [value]="3" item-left></ion-radio>
+          <ion-label>Average expenses and average net assets</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-radio [value]="4" item-left></ion-radio>
+          <ion-label>None of the abovey</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <h5>The Investor of which kind of fund would bear a tax on shortterm capital gains, as per the investor tax slab</h5>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list radio-group class="custom_radio">
+        <ion-item>
+          <ion-radio [value]="1" item-left></ion-radio>
+          <ion-label>Debt oriented mutual fund</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-radio [value]="2" item-left></ion-radio>
+          <ion-label>Professional Management of money</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <h5>The Investor of which kind of fund would bear a tax on shortterm capital gains, as per the investor tax slab</h5>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list radio-group class="custom_radio">
+        <ion-item>
+          <ion-radio [value]="1" item-left></ion-radio>
+          <ion-label>Debt oriented mutual fund</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-radio [value]="2" item-left></ion-radio>
+          <ion-label>Professional Management of money</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card> -->
+
+  <div class="footer_panel row active" *ngIf="!utilitiesProvider.isCheckQuiz && showButton">
+    <div class="footer_panel_lt col">
+      <button ion-button class="back_btn" (click)="resetAll()" outline>{{'common.resetAll' | translate}}</button>
+    </div>
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn" (click)="submitAnswer()">{{'common.submit' | translate}}</button>
+    </div>
+  </div>
+</ion-content>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span>
+    <img src="assets/imgs/pageLoader.gif" /> </span>
+</div>
+
+<!-- <ion-footer>
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col">
+      <button ion-button class="back_btn" outline>Reset All</button>
+    </div>
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn">Submit</button>
+    </div>
+  </div>
+</ion-footer> -->

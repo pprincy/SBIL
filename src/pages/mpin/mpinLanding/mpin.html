@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar text-center color="sbiHeader">
+    <ion-title>{{'mpin.mpin' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="bg_img">
+
+  <div class="mpin_area">
+    <div class="user_pic">
+      <img src="assets/imgs/mpin.png" />
+    </div>
+    <div class="mpitext">
+      {{'mpin.settingMPIN' | translate}}
+    </div>
+    <div class="subtext">
+      <p>{{'mpin.mobilePersonalIdentificationNumber' | translate}}</p>
+    </div>
+
+  </div>
+</ion-content>
+<ion-footer no-border>
+  <div>
+    <button ion-button class="login_btn" (click)="setMpin()" *ngIf="!mpin">
+      {{'mpin.setMPinNow' | translate}}
+    </button>
+    <button ion-button class="login_btn" (click)="changeMpin()" *ngIf="mpin">
+      {{'mpin.changeMpinNow' | translate}}
+    </button>
+  </div>
+</ion-footer>

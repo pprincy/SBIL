@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button
+      [class.active]="isBtnActive"
+      (click)="toggleClass()"
+      ion-button
+      [menuToggle]="activeMenu"
+    >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>{{'contactUs.contactUs' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="calculator_common_sec scroll_div">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="user_img">
+          <img src="assets/imgs/contact-us.png" />
+        </div>
+        <div class="user_pic">
+          <img src="assets/imgs/Paisa-Genie logo.png" />
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="userinfo">
+      <ion-col>
+        <h6>paisagenie@sbi-life.com</h6>
+        <p>{{'contactUs.subTitle' | translate}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,11 @@
+page-pattern-forgot {
+    .header{
+        background-color: $sbi_bg_color; height:0;
+        .toolbar-background-ios{
+            border-width :0px !important;
+        }
+        .toolbar{
+            box-shadow: none !important;
+        }
+    }
+}

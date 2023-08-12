@@ -1,0 +1,642 @@
+page-report {
+  ion-refresher-content {
+    ion-spinner * circle {
+      fill: white !important;
+    }
+  }
+  ion-content.content {
+    > .fixed-content {
+      margin-top: 55px !important;
+    }
+  }
+
+  ion-content.content > .fixed-content + .scroll-content {
+    margin-top: 55px !important;
+  }
+  .header {
+    background: $sbi_thirtytwo_color;
+
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+      border-bottom: 1px solid $sbi_fifth_color;
+
+      .toolbar-background {
+        border: none;
+      }
+
+      .bar-button {
+        color: $sbi_fifth_color;
+        // padding-left: 28px;
+        .back-button-text {
+          display: none;
+        }
+      }
+
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+          margin: -22px;
+        }
+      }
+    }
+
+    
+    &:after {
+      background-image: none;
+      height: 0;
+    }
+  }
+
+  .content {
+    background-color: $sbi_fifth_color;
+
+    // background: #5448b7; /* Old browsers
+    // background: -moz-linear-gradient(top, #5448b7 0%, #5448b7 25%, #ffffff 25%, #ffffff 100%); /* FF3.6-15
+    // background: -webkit-linear-gradient(top, #5448b7 0%, #5448b7 25%, #ffffff 25%, #ffffff 100%); /* Chrome10-25,Safari5.1-6
+    // background: linear-gradient(to bottom, #5448b7 0%, #5448b7 25%, #ffffff 25%, #ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5448b7', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+    .chart_total_val{
+      .icon-Icons_Ruppee{
+        font-size: 4.5vw;
+      }
+    }
+
+    .scroll-content {
+      padding-top: 0 !important;
+    }
+
+    #income_distribution {
+      margin-bottom: 1px !important;
+      margin-top: 1px !important;
+      z-index: 1;
+    }
+
+    #expense_analysis {
+      margin-bottom: 10px !important;
+    }
+
+    .card {
+      background: $sbi_fifth_color;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      margin: 0 0 15px;
+      width: 100%;
+
+      &:first-child {
+        margin-top: 5px;
+      }
+    }
+
+    .expense_trend_txt {
+      text-align: right;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+
+      h5 {
+        font-family: "Lato Black";
+        font-size: 3.33vw;
+        color: $sbi_fourteen_color;
+        margin: 0;
+      }
+
+      span {
+        font-family: "Lato Black";
+        font-size: 4.55vw;
+        color: $sbi_primary_color;
+        margin: 0;
+        display: block;
+      }
+    }
+
+    .common_expense_card {
+      ion-card-header {
+        h4 {
+          font-family: "Lato";
+          font-size: 4.34vw;
+          color: $sbi_twentyseven_color;
+          margin: 0;
+        }
+
+        .p {
+          margin: 0 22px 12px;
+          text-align: justify;
+        }
+
+        .custom_select_drop {
+          text-align: center;
+          margin: 0 auto;
+          padding-top: 15px;
+          padding-bottom: 0;
+          padding-left: 32px;
+
+          .select-text {
+            color: $sbi_twentysix_color;
+            font-size: 4.103vw;
+            font-family: "Lato";
+          }
+
+          .select-icon {
+            .select-icon-inner {
+              // margin-top: -6px;
+              left: 0;
+              color: $sbi_twentysix_color;
+            }
+          }
+        }
+      }
+
+      &.saving_profile {
+        h5 {
+          font-family: "Lato";
+          font-size: 3.39vw;
+          color: $sbi_twentyseven_color;
+          margin: 0 0 5px 0;
+        }
+
+        p {
+          font-family: "Lato Semibold";
+          font-size: 2.77vw;
+          color: $sbi_twentyeight_color;
+          margin: 0 0 10px 0;
+        }
+      }
+      .expenditure_limit {
+        width: 100%;
+        max-width: 40%;
+        max-height: 40%;
+        height: 100%;
+        z-index: 1;
+        margin: -134px auto auto 180px;
+        box-shadow: 1px 1px 1px 1px #b2b2b27a;
+        border-radius: 2px 2px 2px 2px;
+      }
+      .icon-Icons_Info {
+        color: $sbi_twentyone_color;
+        font-size: 3vw;
+        margin-left: 5px;
+      }
+
+      .tabular_data {
+        border: 1px solid $sbi_third_color;
+        border-radius: 4px;
+        margin: 0 0 30px 0;
+
+        &.tabular_data_first {
+          padding: 0;
+        }
+
+        .tabular_data_header {
+          background-color: $sbi_twentyfour_color;
+          border-radius: 4px 4px 0 0;
+
+          .col {
+            font-family: "Lato Semibold";
+            font-size: 3.21vw;
+            color: $sbi_primary_color;
+          }
+        }
+
+        .tabular_data_body {
+          .col {
+            font-family: "Lato Semibold";
+            color: $sbi_twentysix_color;
+            font-size: 2.77vw;
+            padding: 8px 10px;
+
+            &.highlighted_tbl_val {
+              color: $sbi_twentyseven_color;
+              font-family: "Lato Black";
+
+              span {
+                font-size: 2.1vw;
+                font-weight: bold;
+              }
+            }
+
+            &.income_perc {
+              color: $sbi_twentyseven_color;
+              font-family: "Lato Black";
+            }
+          }
+
+          &.without_head_body {
+            .col:nth-child(2),
+            .col:nth-child(3),
+            .col:nth-child(4),
+            .col:nth-child(5),
+            .col:nth-child(6) {
+              color: $sbi_twentyseven_color;
+              font-family: "Lato Black";
+              font-size: 2.64vw;
+            }
+
+            .col {
+              padding: 8px 5px;
+            }
+          }
+        }
+      }
+
+      .impact_saving {
+        font-family: "Lato Black";
+        font-size: 3.33vw;
+        color: $sbi_primary_color;
+        display: block;
+        margin: 0 0 7px 0;
+        padding-left: 24px;
+      }
+
+      &.goal_timeline {
+        h6 {
+          font-family: "Lato Semibold";
+          font-size: 3.05vw;
+          color: $sbi_secondary_color;
+        }
+
+        .goal_timeline_corpus {
+          height: 68.22vw;
+
+          .goal_timeline_corpus_bar {
+            height: 4.16vw;
+            width: 100%;
+            position: relative;
+            background-color: $sbi_third_color;
+            padding: 0 2%;
+            display: table;
+            top: 50%;
+            transform: translateY(-50%);
+
+            > div {
+              position: relative;
+              display: table-cell;
+
+              .corpus_val {
+                display: block;
+                left: 0;
+                right: 0;
+                position: absolute;
+                font-family: "Lato Semibold";
+                font-size: 2.57vw;
+                color: $sbi_fifth_color;
+                top: 0;
+                bottom: 0;
+                text-align: center;
+                line-height: 4.57vw;
+              }
+            }
+
+            .corpus_bar_icon {
+              width: 7vw;
+              height: 7vw;
+              border-radius: 100%;
+              position: absolute;
+              margin: 0 auto;
+              left: 0;
+              right: 0;
+              .line {
+                position: absolute;
+                width: 0.83vw;
+                height: 14.85vw;
+                position: absolute;
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+              }
+
+              &.upper,
+              &.upper_lt,
+              &.upper_rt {
+                top: -21.77vw;
+                .line {
+                  top: 100%;
+                }
+              }
+
+              &.down,
+              &.down_lt,
+              &.down_rt {
+                bottom: -21.77vw;
+                .line {
+                  bottom: 100%;
+                }
+              }
+
+              &.upper_lt {
+                left: 0%;
+                right: auto;
+                margin: 0;
+              }
+
+              &.upper_rt {
+                right: 0%;
+                left: auto;
+                margin: 0;
+              }
+
+              &.down_lt {
+                left: 0%;
+                right: auto;
+                margin: 0;
+              }
+
+              &.down_rt {
+                right: 0%;
+                left: auto;
+                margin: 0;
+              }
+
+              img {
+                position: absolute;
+                margin: auto;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                padding: 1vw;
+              }
+            }
+
+            .corpus_bar_val {
+              position: absolute;
+              margin: 0 auto;
+              left: 0;
+              right: 0;
+              text-align: center;
+              width: 12.83vw;
+              word-break: break-word;
+
+              .rs_icon{
+                font-size: 2.1vw;
+                font-weight: bold;
+              }
+
+              &.upper,
+              &.upper_lt,
+              &.upper_rt {
+                top: -32.77vw;
+              }
+
+              &.down,
+              &.down_lt,
+              &.down_rt {
+                bottom: -32.77vw;
+              }
+
+              &.upper_lt {
+                left: -7%;
+                right: auto;
+                margin: 0;
+                text-align: left;
+              }
+
+              &.upper_rt {
+                right: -7%;
+                left: auto;
+                margin: 0;
+                text-align: right;
+              }
+
+              &.down_lt {
+                left: -7%;
+                right: auto;
+                margin: 0;
+                text-align: left;
+              }
+
+              &.down_rt {
+                right: -7%;
+                left: auto;
+                margin: 0;
+                text-align: right;
+              }
+
+              h6 {
+                font-family: "Lato Semibold";
+                font-size: 2.22vw;
+                color: $sbi_primary_color;
+              }
+
+              div {
+                font-family: "Lato Black";
+                font-size: 2.77vw;
+                color: $sbi_primary_color;
+
+                span {
+                  font-weight: bold;
+                  font-size: 2vw;
+                }
+              }
+            }
+
+            .goal_timeline_corpus_bar1 {
+              background-color: #104a57;
+
+              .corpus_bar_icon {
+                background-color: #104a57;
+
+                .line {
+                  background-color: #104a57;
+                }
+              }
+            }
+
+            .goal_timeline_corpus_bar2 {
+              background-color: #2c6889;
+
+              .corpus_bar_icon {
+                background-color: #2c6889;
+
+                .line {
+                  background-color: #2c6889;
+                }
+              }
+            }
+
+            .goal_timeline_corpus_bar3 {
+              background-color: #3184bc;
+
+              .corpus_bar_icon {
+                background-color: #3184bc;
+
+                .line {
+                  background-color: #3184bc;
+                }
+              }
+            }
+
+            .goal_timeline_corpus_bar4 {
+              background-color: #259bff;
+
+              .corpus_bar_icon {
+                background-color: #259bff;
+
+                .line {
+                  background-color: #259bff;
+                }
+              }
+            }
+
+            .goal_timeline_corpus_bar5 {
+              background-color: #46c9ff;
+
+              .corpus_bar_icon {
+                background-color: #45c5fa;
+
+                .line {
+                  background-color: #45c5fa;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .no_padding {
+      padding: 0 !important;
+
+      .card_inner_cont {
+        padding: 0 13px 16px 13px;
+        position: relative;
+      }
+    }
+
+    .recent_spends {
+      padding: 0 13px 16px 13px;
+      position: relative;
+      border-style: dashed;
+
+      .list {
+        .item {
+          padding-left: 0;
+          border-bottom: 1px solid $sbi_eighteen_color;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          ion-thumbnail {
+            min-width: 33px;
+            min-height: 33px;
+            margin: 8px 8px 8px 0;
+
+            img {
+              width: 33px;
+              height: 33px;
+            }
+          }
+
+          h5 {
+            color: $sbi_twentyseven_color;
+            font-family: "Lato Semibold";
+            font-size: 3.33vw;
+            margin: 0 0 2px 0;
+          }
+
+          p {
+            color: $sbi_nine_color;
+            font-family: "Lato Semibold";
+            font-size: 2.77vw;
+          }
+
+          .recent_price {
+            color: $sbi_primary_color;
+            font-family: "Lato Black";
+            font-size: 3.88vw;
+
+            span {
+              font-weight: bold;
+              font-size: 3vw;
+            }
+          }
+
+          .arrow_right {
+            color: $sbi_bg_color;
+          }
+        }
+      }
+    }
+
+    .income_dist_total {
+      border: 1px solid $sbi_sixeen_color;
+      padding: 10px 8px;
+      border-radius: 4px;
+
+      h5 {
+        font-family: "Lato Black";
+        font-size: 4.013vw;
+        color: $sbi_twentyeight_color;
+        margin: 0 0 5px 0;
+        text-transform: uppercase;
+      }
+
+      h6 {
+        font-family: "Lato";
+        font-size: 3.05vw;
+        color: $sbi_twentysix_color;
+        margin: 0;
+      }
+
+      .total_amt {
+        font-family: "Lato Black";
+        font-size: 4.013vw;
+        color: $sbi_twentyeight_color;
+
+        .rs_icon {
+          font-size: 3vw;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .articles_num {
+    &.articles_num_overlay {
+      display: none;
+    }
+
+    text-align: center;
+    padding: 10px;
+
+    .articles_num_cont {
+      font-family: "Lato Semibold";
+      display: inline-block;
+      vertical-align: middle;
+      color: $sbi_nine_color;
+      font-size: 3vw;
+      text-align: center;
+      padding: 7px 17px;
+      margin: 0;
+      border-radius: 20px;
+      border: 1px solid $sbi_third_color;
+
+      strong {
+        font-family: "Lato Bold";
+        color: $sbi_error_color;
+      }
+    }
+  }
+
+  &:after {
+    background-image: none;
+    height: 0;
+  }
+}
+.alert-md .alert-head {
+  padding: 0px !important;
+  font-size: 0px;
+}
+.alert-md .alert-wrapper {
+  position: absolute;
+  top: 106px;
+  right: 47px;
+}
+.alert-md .alert-title {
+  font-size: 0px;
+}

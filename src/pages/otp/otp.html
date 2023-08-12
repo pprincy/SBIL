@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-navbar color="sbiHeader">
+  </ion-navbar>
+</ion-header>
+<ion-content class="bg_img" no-bounce>
+  <div class="otp_area">
+    <div class="heading_panel" (click)="hideKeyboard()">
+      <h1>{{'otp.title' | translate}}</h1>
+      <h5>{{'otp.enterOtp' | translate}} +91 {{mobileNo}}</h5>
+      <!-- <h4> {{('otp.sentOn' | translate).replace('$method$', methodName)}}</h4> -->
+    </div>
+    <div class="divOtpValue">
+      <ion-grid align="center">
+        <ion-row>
+          <ion-col col-3><button ion-button class="btnOtp {{!otpNum1 ? '' : 'otpBtn1'}}"
+              (click)="inputBtnClick()">{{otpNum1}}<ion-icon name="ios-cog-outline" *ngIf="!otpNum1"></ion-icon>
+            </button></ion-col>
+          <ion-col col-3><button ion-button class="btnOtp {{!otpNum2 ? '' : 'otpBtn1'}}" (click)="inputBtnClick()">
+              {{otpNum2}}<ion-icon name="ios-cog-outline" *ngIf="!otpNum2"></ion-icon></button></ion-col>
+          <ion-col col-3><button ion-button class="btnOtp {{!otpNum3 ? '' : 'otpBtn1'}}"
+              (click)="inputBtnClick()">{{otpNum3}}<ion-icon name="ios-cog-outline" *ngIf="!otpNum3"></ion-icon>
+              </button></ion-col>
+          <ion-col col-3><button ion-button class="btnOtp {{!otpNum4 ? '' : 'otpBtn1'}}"
+              (click)="inputBtnClick()">{{otpNum4}}<ion-icon name="ios-cog-outline" *ngIf="!otpNum4"></ion-icon>
+              </button></ion-col>
+        </ion-row>
+        <!-- <ion-row class="wrong_otp_msg hide">
+          <ion-col align="center"><label>{{'otp.PleaseEnterTheCorrectOTP' | translate}}</label></ion-col>
+        </ion-row>
+        <ion-row class="spam_otp_msg" *ngIf="methodName != 'Mobile'">
+          <ion-col align="center"><label> {{'otp.checkSpam' | translate}} </label></ion-col>
+        </ion-row> -->
+      </ion-grid>
+    </div>
+    <!-- <div class="footer_panel row"> -->
+      <div class="col" text-center>
+        <div>
+        <button ion-button class="login_btn" (click)="submitOTP()" [ngClass]="{'btnEnable': otpNum4}">{{'otp.submit' | translate}}</button>
+        <div class="resend_text">
+          <span class="otp" *ngIf="countDown<1">{{'otp.resend' | translate}}</span>
+          <button *ngIf="countDown<1" ion-button clear class="no_outline_btn dark_blue" (click)="resendOtp()"> {{'otp.resendOtp' | translate}}  </button>
+        </div>
+        
+        <span style="text-align: center; font-weight: 400; font-family:Lato; color: #727272;" *ngIf="countDown>0">{{'otp.resendOtp' | translate}} (0:{{countDown<10?'0'+countDown:countDown}})</span>
+      </div>
+    </div>
+  </div>
+  <div style="height:200px" *ngIf="keyboardShow" (click)="hideKeyboard()"></div>
+  <div class="inputBtnGirdStart" *ngIf="keyboardShow">
+    <ion-grid align="center">
+      <ion-row>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('1')">1</button></ion-col>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('2')">2</button></ion-col>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('3')">3</button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('4')">4</button></ion-col>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('5')">5</button></ion-col>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('6')">6</button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('7')">7</button></ion-col>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('8')">8</button></ion-col>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('9')">9</button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numBackClick()">
+            <ion-icon name="backspace" style="font-size: 50px !important;
+        font-weight: 700;"></ion-icon>
+          </button></ion-col>
+        <ion-col><button ion-button clear class="belowBtn" (click)="numClickFunction('0')">0</button></ion-col>
+        <ion-col><button ion-button clear class="belowBtn" (click)="submitOTP()">
+            <ion-icon name="ios-checkmark-outline" style="font-size: 78px !important;
+        font-weight: 700;"></ion-icon>
+          </button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

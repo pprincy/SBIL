@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-navbar color="sbiHeader">
+    <button [class.active]="isBtnActive" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="ios-search-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only class="notification-button" (click)="goNotificationList()">
+        <ion-icon name="ios-notifications">
+
+          <ion-badge class="notifications-badge" color="sbi_primary_color"
+            *ngIf="restapiProvider.notificationCount > 0">{{restapiProvider.notificationCount}}</ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col no-padding>
+        <ion-card class="card_slider_item_inner" (click)="articleDetails()">
+          <img src="assets/imgs/wedding_img.png" />
+          <ion-card-content class="card_slider_item_inner_cont">
+            <h4>Wedding savings &amp; budgeting..</h4>
+            <p>Are you saving up for a wedding? SBI Life app has
+              tips to reach your goal..
+            </p>
+            <span>2 min read</span>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="card_slider_thumbnail">
+      <ion-col>
+        <ion-card class="card_slider_item_inner">
+          <img src="assets/imgs/5tips.png" />
+          <ion-card-content class="card_slider_item_inner_cont">
+            <h5>5 tips on plan your wedding
+              in a royal way.. </h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <ion-card class="card_slider_item_inner">
+          <img src="assets/imgs/top9.png" />
+          <ion-card-content class="card_slider_item_inner_cont">
+            <h5>Top 9 affordable venues for
+              wedding in mumbai </h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row class="card_slider_thumbnail">
+      <ion-col>
+        <ion-card class="card_slider_item_inner">
+          <img src="assets/imgs/married_cake.png" />
+          <ion-card-content class="card_slider_item_inner_cont">
+            <h5>Are you thinking of getting
+              married in next year </h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <ion-card class="card_slider_item_inner">
+          <img src="assets/imgs/wed_plan.png" />
+          <ion-card-content class="card_slider_item_inner_cont">
+            <h5>Confused about wedding
+              plans to make more..</h5>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>
+      <button ion-button clear (click)="showFilter()"> <ion-icon name="ios-funnel"></ion-icon>Filter</button>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
+
+<div class="filter_dropdown" *ngIf="filterStatus">
+  <ion-icon name="md-close" float-right (click)="filterHide()"></ion-icon>
+  <ion-list>
+    <ion-list-header> Categories
+    </ion-list-header>
+    <ion-item><ion-label>News updates</ion-label>
+      <ion-checkbox checked="true"></ion-checkbox></ion-item>
+    <ion-item><ion-label>Retirement plan</ion-label>
+      <ion-checkbox checked="true"></ion-checkbox> </ion-item>
+    <ion-item><ion-label>Home goal planning</ion-label>
+      <ion-checkbox checked="true"></ion-checkbox></ion-item>
+    <ion-item><ion-label>Car goal planning</ion-label>
+      <ion-checkbox checked="true"></ion-checkbox></ion-item>
+    <ion-item> <ion-label>Marriage plan</ion-label>
+      <ion-checkbox checked="true"></ion-checkbox></ion-item>
+
+  </ion-list>
+
+  <div class="text-center filter_dropdown_btn"><button ion-button class="login_btn">Done</button></div>
+</div>

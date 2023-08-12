@@ -1,0 +1,122 @@
+<ion-header>
+  <ion-navbar text-center color="sbiHeader">
+    <button [class.active]="isBtnActive" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> {{'expenesTrends.spendsPattern' | translate}}</ion-title>
+  </ion-navbar>
+  <ion-segment [(ngModel)]="monthType">
+    <ion-segment-button value="month" (click)="getExpenseTrade(monthType)">
+      {{'expenesTrends.oneMonth' | translate}}
+    </ion-segment-button>
+    <ion-segment-button value="threeMonth" (click)="getExpenseTrade(monthType)">
+      {{'expenesTrends.threeMonths' | translate}}
+    </ion-segment-button>
+    <ion-segment-button value="sixMonth" (click)="getExpenseTrade(monthType)">
+      {{'expenesTrends.sixMonths' | translate}}
+    </ion-segment-button>
+    <ion-segment-button
+      value="twelveMonth"
+      (click)="getExpenseTrade(monthType)"
+    >
+      {{'expenesTrends.twelveMonths' | translate}}
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content padding (click)="contentClick($event)">
+  <div class="spend_pattern_sec">
+    <div class="expense_trend_cont" [hidden]="!noPageData">
+      <span class="expense_trend_cont_lbl"
+        >{{'expenesTrends.totalSpends' | translate}}</span>
+      <div class="expense_trend_cont_val" [hidden]="isClick">
+        <span class="rupee">₹</span>
+        <span class="amt">{{totalExpense | amountFormat:'S'}}</span>
+      </div>
+      <!-- <div class="expense_trend_cont_val" [hidden]="!isClick">
+        <span class="icon-Icons_Ruppee"></span>{{totalMonthExpense |
+        amountFormat:2}}
+      </div> -->
+    </div>
+ 
+    <div text-center class="cus_date_picker">
+      <ion-datetime
+        #picker
+        displayFormat="MMM YYYY"
+        pickerFormat="MMMM,YYYY"
+        [placeholder]="placeDate | date:'MMM yyyy'"
+        [(ngModel)]="expensesDate"
+        (ionChange)="getExpenseTrade(monthType)"
+      >
+      </ion-datetime>
+      <img (click)="picker.open()" src="assets/imgs/cal_icon.svg" />
+    </div>
+
+    <div [ngSwitch]="monthType" [hidden]="!noPageData">
+      <div *ngSwitchCase="'month'" class="card_inner_cont">
+        <div
+          id="expense_trends_stack"
+          style="height: 250px; margin: 0 auto"
+          [hidden]="!isTrendData"
+        ></div>
+      </div>
+
+      <div *ngSwitchCase="'threeMonth'" class="saving_cont">
+        <div
+          id="expense_trends_stack"
+          style="height: 250px; margin: 0 auto"
+          [hidden]="!isTrendData"
+        ></div>
+      </div>
+
+      <div *ngSwitchCase="'sixMonth'" class="spendometer_cont">
+        <div
+          id="expense_trends_stack"
+          style="height: 250px; margin: 0 auto"
+          [hidden]="!isTrendData"
+        ></div>
+      </div>
+
+      <div *ngSwitchCase="'twelveMonth'" class="saving_cont">
+        <div
+          id="expense_trends_stack"
+          style="height: 250px; margin: 0 auto"
+          [hidden]="!isTrendData"
+        ></div>
+      </div>
+    </div>
+    <div class="legend_container" [hidden]="!noPageData">
+      <div class="legend_wrap">
+        <div class="legend_inner">
+          <span class="circle blue1"></span>
+          <span class="lbl">Food Expense</span>
+        </div>
+        <div class="legend_inner">
+          <span class="circle blue2"></span>
+          <span class="lbl">Shopping</span>
+        </div>
+      </div>
+      <div class="legend_wrap">
+        <div class="legend_inner">
+          <span class="circle blue3"></span>
+          <span class="lbl">Electronics</span>
+        </div>
+        <div class="legend_inner">
+          <span class="circle blue4"></span>
+          <span class="lbl">Others</span>
+        </div>
+      </div>
+    </div>
+    <div class="articles_num" [hidden]="noPageData">
+      <div class="articles_num_cont">
+        <span>No Data Available</span>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span>
+    <img src="assets/imgs/pageLoader.gif" />
+  </span>
+</div>

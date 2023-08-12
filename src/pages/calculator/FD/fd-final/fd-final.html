@@ -1,0 +1,152 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-title>{{'fixedDepositCalculator.fixedDepositCalculator' |
+      translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="networth_details">
+    <h4>
+      {{('fixedDepositCalculator.corpusTitle' | translate).replace('$year$',
+      maturityYear)}}
+    </h4>
+    <div class="networth_amt">
+      <div class="networth_amt_inner">
+        <span class="rs_icon icon-Icons_Ruppee"></span>{{maturityValue |
+        amountFormat: 'S'}}
+      </div>
+    </div>
+  </div>
+
+  <ion-card class="fd_card">
+    <div id="networth_chart" style="display: block; margin-top: -65px; margin-left: -30px; margin-right: -30px; margin-bottom: -175px;"></div>
+    <div class="column_wrapper">
+      <div class="col_inner1">
+        <ion-list class="column_box1">
+          <figure>
+            <img src="assets/imgs/fd_calculator/amount_invested.png" />
+          </figure>
+          <h5 class="loan_amt">{{'fixedDepositCalculator.amountInvested' | translate}}</h5>
+          <div class="invested_result_amt loanamt_col" text-capitalize>
+            <span class="rs_icon icon-Icons_Ruppee"></span>{{principalAmt |
+            amountFormat:'S'}}
+          </div>
+        </ion-list>
+      </div>
+    </div>
+    <div class="column_wrapper">
+      <div class="col_inner2">
+        <ion-list class="column_box2">
+          <figure>
+            <img src="assets/imgs/fd_calculator/interest_earned.png" />
+          </figure>
+          <h5>{{'fixedDepositCalculator.interestEarned' | translate}}</h5>
+          <div class="invested_result_amt highlighted_txt" text-capitalize>
+            <span class="rs_icon icon-Icons_Ruppee"></span>{{interestEarned |
+            amountFormat:'S'}}
+          </div>
+        </ion-list>
+      </div>
+    </div>
+    <ion-card-content class="fd_card_content">
+      
+      <ion-list class="networth_list">
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/chart.svg" />
+            </figure>
+            <p>{{'fixedDepositCalculator.rateOfinterest' | translate}}</p>
+          </div>
+          <button ion-button icon-right float-right clear (click)="showOverlay('interestRate')">
+            {{interestRate}}%
+            <span class="drp_sub_txt">{{'common.pa' | translate}}</span>
+            <ion-icon class="drop_down_arrow" name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/fd_calculator/insights.png" />
+            </figure>
+            <p>{{'fixedDepositCalculator.frequencyOfinterest' | translate}}</p>
+          </div>
+          <button ion-button icon-right float-right clear (click)="FDFreq()">
+            <h4 class="wrap-text">{{interestFreq}}</h4>
+            <ion-icon name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/hlv_calculator/currency_rupee.svg" />
+            </figure>
+            <p>{{'fixedDepositCalculator.amountInvested' | translate}}</p>
+          </div>
+          <button ion-button icon-right text-capitalize float-right clear (click)="showOverlay('principalAmt')">
+            <span class="rs_icon icon-Icons_Ruppee"></span> {{principalAmt |
+            amountFormat:'S'}}
+            <ion-icon class="drop_down_arrow" name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/duration.svg" />
+            </figure>
+            <p>{{'fixedDepositCalculator.investmentDuration' | translate}}</p>
+          </div>
+          <button ion-button icon-right float-right clear (click)="showOverlay('tenure')">
+            {{tenure}}
+            <span class="drp_sub_txt">{{'common.yrs' | translate}}</span>
+            <ion-icon class="drop_down_arrow" name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <p class="disclaimer_txt" text-center>
+    <!-- <span class="icon-Icons_Info"></span> -->
+    <a (click)="disclaimerInfo()">{{'common.disclaimersLink' | translate}}</a>
+  </p>
+</ion-content>
+
+<div class="overlay_dropdown" *ngIf="status">
+  <div class="overlay_dropdown_content calculation_with_range">
+    <fd-range class="drop_com_comp" [rangeData]="rangeDataUi"></fd-range>
+    <ion-item>
+      <button ion-button class="login_btn" (click)="done()">
+        {{'common.done' | translate}}
+      </button>
+    </ion-item>
+  </div>
+</div>
+
+<div class="overlay_dropdown annuity disclaimer" *ngIf="disclaimer">
+  <div class="overlay_dropdown_content">
+    <div class="overlay_dropdown_content_inner">
+      <ion-icon name="ios-close-circle-outline" (click)="disclaimerClose()"></ion-icon>
+      <h3 padding>{{'common.disclaimer' | translate}}</h3>
+      <div class="innerCont" [innerHtml]="utilitiesProvider.disclaimerText"></div>
+    </div>
+  </div>
+</div>
+<ion-footer class="fd_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col">
+      <button ion-button class="back_btn" outline (click)="recalculate()">
+        {{'buttons.recalculate' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn" (click)="goToGoalsListing()">
+        {{'buttons.startPlanning' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

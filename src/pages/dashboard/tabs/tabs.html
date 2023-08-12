@@ -1,0 +1,7 @@
+<ion-tabs [selectedIndex]="rootTabs" tabsPlacement="bottom" tabsLayout="icon-start" color="sbiHeader" tabsHideOnSubPages="true"  #myTabs>
+    <ion-tab [root]="tab1Root" tabTitle="{{'discover.discover' | translate}}" tabIcon="icon-Icons_Discover_1"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="{{'plan.plan' | translate}}" tabIcon="icon-Icons_Plan-13" ></ion-tab>
+  </ion-tabs>
+  <div class="common_loader" *ngIf="pageLoader">
+      <span><img src="assets/imgs/pageLoader.gif" /> </span>
+    </div>

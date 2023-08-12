@@ -1,0 +1,135 @@
+page-complete {
+    .header {
+      background: $sbi_thirtytwo_color;
+
+      .toolbar {
+        box-shadow: none;
+        background: $sbi_thirtytwo_color;
+        border-bottom: 1px solid $sbi_fifth_color;
+
+        .toolbar-background {
+          border: none;
+        }
+
+        .bar-button {
+          color: $sbi_fifth_color;
+          padding-left: 28px;
+          padding-right: 28px;
+          .back-button-text {
+            display: none;
+          }
+        }
+
+        .toolbar-content {
+          .toolbar-title {
+            color: $sbi_fifth_color;
+            text-transform: capitalize;
+            font-family: "Lato";
+            font-size: 4.615vw;
+          }
+        }
+      }
+
+      &:after {
+        background-image: none;
+        height: 0;
+      }
+    }
+    .login_btn {
+        margin: 0 auto;
+        background: $sbi_twentysix_color;
+        box-shadow: none;
+        border-radius: 0;
+        text-transform: capitalize;
+        font-family: "Lato";
+        font-size: 3.59vw;
+        border: 1px solid $sbi_header_color_before_scroll;
+        height: 46px;
+        letter-spacing: normal;
+      }
+    .text-input::-moz-placeholder {
+        font-size: 3.88vw;
+      }      
+      .text-input:-ms-input-placeholder {
+        font-size: 3.88vw;
+      }
+      
+      .text-input::-webkit-input-placeholder {
+        text-indent: 0;
+        font-size: 3.88vw;
+      }
+
+      .complet_section {
+        background:url(../assets/imgs/bg_complete.jpg) no-repeat fixed center $sbi_fifth_color;
+        background-size: cover;
+      }
+     .user_pic {
+        width: 99px;
+        height: 99px;
+        border-radius: 83px;
+        border: 1px solid #fff;
+        overflow: hidden;
+        margin: 30.55vw auto  0 ;
+        border-radius: 50%;
+        text-align: center;
+        img {border-radius: 50%; text-align: center; height: 100%; width:100%;
+           //-webkit-box-shadow: 10px 10px 10px 2px rgba(89,85,105,0.2);
+           // box-shadow: 10px 10px 10px 2px rgba(89,85,105,0.2);
+        }
+    }
+    .userinfo{
+        text-align: center;
+    h3 {
+        font-size: 3.88vw;
+        line-height: 19px;
+        color: $sbi_twentysix_color;
+        font-family: 'Lato Black';
+        margin: 0 0 10px 0;
+    }
+    h5 {
+        font-size: 7.777vw;       
+        color: #f09117;
+        font-family: 'Lato Black';
+        margin: 0 0 10px 0;
+    }
+    h6 {
+        font-size: 3.88vw;
+        line-height: 12px;
+        color: #555555;
+        font-family: 'Lato Semibold';
+        margin: 0 0 8px 0;
+    }
+}
+.footer {
+    &.footerOverlay{
+        display: none;
+    }
+    &.view_goal_btn{
+        .toolbar{padding: 15px;
+            min-height: 56px;
+        .toolbar-title{
+            .button {
+                color: $sbi_fifth_color;  
+            }  
+        }
+    } 
+    }
+    .toolbar{
+        .toolbar-background{
+         background-color: $sbi_fifth_color;
+        }
+        .toolbar-title{
+            text-align: center; font-family: 'Lato Semibold'; text-transform: uppercase;
+            color:$sbi_secondary_color;       
+            font-size: 3.77vw; 
+            .icon {
+                font-size: 4.77vw;   margin: 0 6px 0 0; font-weight: bold;
+            }
+            .button {
+                color: $sbi_secondary_color;  
+            }
+        }
+    }
+}
+}
+

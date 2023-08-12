@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar text-center color="sbiHeader">
+    <button [class.active]="isBtnActive" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'tipsForyou.tipsForyou' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-title>{{'tipsForyou.tips' | translate}}</ion-title>
+  <ion-grid no-padding>
+    <ion-row *ngIf="tipsList.length > 0">
+      <ion-col no-padding col-12 *ngFor="let item of tipsList | slice:0:11  ">
+        <ion-card class="card_slider_item_inner">
+          <img src="{{imgURL + item.BigImage}}" />
+          <ion-card-content class="card_slider_item_inner_cont">
+            <h4>{{item.Title}}</h4>
+            <p>{{item.ShortDesc}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="loadMore">
+      <ion-col no-padding col-12 *ngFor="let item of tipsList | slice:1:11  ">
+        <ion-card class="card_slider_item_inner">
+          <img src="{{imgURL + item.BigImage}}" />
+          <ion-card-content class="card_slider_item_inner_cont">
+            <h4>{{item.Title}}</h4>
+            <p>{{item.ShortDesc}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="load_more_btn" *ngIf="!loadMore && tipsList.length > 10" (click)="LoadMore()">
+    <button ion-button class="load_btn">
+      {{'common.loadMore' | translate}}
+    </button>
+  </div>
+</ion-content>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

@@ -1,0 +1,356 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-title>{{'sukannyaSamriddhi.sukannyaSamriddhi' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="networth_details">
+    <h4 *ngIf="!Daughter2">
+      {{('sukannyaSamriddhi.coupusTitle' | translate).replace('$name$',
+      Daughter1.Name)}}
+    </h4>
+    <h4 *ngIf="Daughter2">
+      {{('sukannyaSamriddhi.coupusTitle' | translate).replace('$name$',
+      ('sukannyaSamriddhi.both' | translate))}}
+    </h4>
+    
+    <!-- <h4>Your maturity corpus for  <span *ngIf="Daughter2">both</span><span *ngIf="!Daughter2">{{Daughter1.Name}}</span> will be</h4> -->
+
+    <div class="networth_amt">
+      <div class="networth_amt_inner">
+        <span class="rs_icon icon-Icons_Ruppee"></span>{{paramsData.result.TotalMaturityAmt | amountFormat:'S'}}
+      </div>
+    </div>
+    <!-- <h5>
+      {{('sukannyaSamriddhi.atmaturityYear' | translate).replace('$year$',
+      headerYear)}}
+    </h5> -->
+  </div>
+  <div class="sukanya_slider">
+    <ion-slides pager>
+      <!-- [attr.text-center]="!Daughter2 ? '' : null" -->
+      <ion-slide>
+        
+        <ion-card class="ss_card">
+          
+        <ion-item style="--border-color: #D60D47;" lines="full">
+          <ion-grid>
+            <ion-row class="invested_user_details">
+              <ion-col float-left *ngIf="Daughter2">
+                <div class="invested_user_name">{{Daughter1.Name}}</div>
+              </ion-col>
+              <ion-col float-right>
+                <div class="invested_user_age" style="text-align: right;" [attr.text-center]="!Daughter2 ? '' : null">
+                    {{'common.age' | translate}} :
+                  <strong>{{Daughter1.Age}} {{'common.yrs' | translate}}</strong>
+                </div>
+                
+              </ion-col>
+            </ion-row>
+            </ion-grid>
+            <div class="gradient_line"></div>
+        </ion-item>
+          <div id="networth_chart" style="display: block"></div>
+
+          <!-- <ion-card-header class="invested_result" text-center> -->
+          <ion-grid class="invested_result single_line">
+            <ion-row *ngIf="Daughter2">
+              <ion-col>
+                <figure>
+                  <img src="assets/imgs/fd_calculator/amount_invest.png" />
+                </figure>
+                <h5>
+                  <!-- <span class="indiccat color_fr" *ngIf="!Daughter2"></span> -->
+                  <h5 style="color: #27AE60;">{{Daughter1.Name ? Daughter1.Name : ''}}</h5>
+                </h5>
+                <div class="invested_result_amt" style="color: #27AE60;">
+                  <span class="rs_icon icon-Icons_Ruppee"></span>{{Daughter1.MaturityAmt | amountFormat:'S'}}
+                </div>
+              </ion-col>
+              <ion-col>
+                <figure>
+                  <img src="assets/imgs/fd_calculator/interest_earned.svg" />
+                </figure>
+                <h5 class="heading">
+                  <!-- <span class="indiccat color_tr" *ngIf="!Daughter2"></span> -->
+                  {{Daughter2.Name ? Daughter2.Name : ''}}
+                </h5>
+                <div class="invested_result_amt">
+                  <span class="rs_icon icon-Icons_Ruppee"></span>{{Daughter2.MaturityAmt | amountFormat : 'S'}}
+                </div>
+              </ion-col>
+            </ion-row>
+            <br />
+            <ion-row>
+              <ion-col class="totl_inv_int" >
+                <h5>
+                  <!-- <span class="indiccat color_fr" *ngIf="!Daughter2"></span> -->
+                  {{'sukannyaSamriddhi.totalInvestment' | translate}}
+                </h5>
+                <div class="invested_result_amt">
+                  <span class="rs_icon icon-Icons_Ruppee"></span>{{Daughter1.TotalInvestment | amountFormat:'S'}}
+                </div>
+              </ion-col>
+              <ion-col class="totl_inv_int" *ngIf="Daughter2">
+                <h5>
+                  <!-- <span class="indiccat color_tr" *ngIf="!Daughter2"></span> -->
+                  {{'sukannyaSamriddhi.totalInterest' | translate}}
+                </h5>
+                <div class="invested_result_amt">
+                  <span class="rs_icon icon-Icons_Ruppee"></span>{{Daughter1.InterestEarned | amountFormat : 'S'}}
+                </div>
+              </ion-col>
+              <ion-col class="totl_inv_int" *ngIf="!Daughter2">
+                <h5 style="color: #27AE60;">
+                  <!-- <span class="indiccat color_tr" *ngIf="!Daughter2"></span> -->
+                  {{'sukannyaSamriddhi.totalInterest' | translate}}
+                </h5>
+                <div class="invested_result_amt">
+                  <span class="rs_icon icon-Icons_Ruppee" style="color: #27AE60;"></span><span style="color: #27AE60;">{{Daughter1.InterestEarned | amountFormat : 'S'}}</span>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-card-content>
+            <p text-center class="heading_reinvest">
+              {{'sukannyaSamriddhi.monthlyInvestment' | translate}}
+            </p>
+
+            <div class="tell_us_cont_common ss_slider_range">
+              <div class="calculator_common_sec_inner">
+                <div class="calculation_with_range">
+                  <div class="calculation_with_range_inp">
+                    <ion-input type="tel" [(ngModel)]="amountD1Comma" class="overlay_dropdown_rng_val" debounce="1000"
+                    (keyup)="checkSukanyaAmt('D1')" (ionChange)="formatAmount(amountD1Comma, 'D1')"
+                    (ionBlur)="checkCalculateSukanya('D1')"
+                    (ngModelChange)="doSomethingD1($event, 'input')"></ion-input>
+                  </div>
+                  <ion-item>
+                    <ion-range min="{{minValue}}" max="{{maxValue}}" step="{{steps}}" [(ngModel)]="amountD1" pin="true"
+                      (ionBlur)="checkCalculateSukanya('D1')" (ngModelChange)="doSomethingD1($event, 'range')">
+                    </ion-range>
+                  </ion-item>
+                </div>
+              </div>
+            </div>
+
+            <ion-list class="networth_list">
+              <ion-item>
+                <div class="networth_list_lt" float-left>
+                  <figure>
+                    <img src="assets/imgs/chart.svg" />
+                  </figure>
+                  <div>
+                    <p>{{'sukannyaSamriddhi.rateOfInterest' | translate}}</p>
+
+                    <h4>
+                      {{'sukannyaSamriddhi.rateOfInterestSubtitle' | translate}}
+                    </h4>
+                  </div>
+                </div>
+                <button ion-button icon-right float-right clear text-capitalize>
+                  {{paramsData.result.RateOfInterestInPerc}} %
+                  <span class="drp_sub_txt">{{'common.pa' | translate}}</span>
+                  <ion-icon name="md-arrow-dropdown"></ion-icon>
+                </button>
+              </ion-item>
+
+              <ion-item>
+                <div class="networth_list_lt" float-left>
+                  <figure>
+                    <img src="assets/imgs/quit_smoking/years.png" />
+                  </figure>
+                  <div>
+                    <p>{{'common.duration' | translate}}</p>
+                    <h4>{{'sukannyaSamriddhi.tenurePolicy' | translate}}</h4>
+                  </div>
+                </div>
+                <button ion-button icon-right float-right clear text-capitalize (click)="showOverlay('Daughter1')">
+                  {{paramsData.result.InvestmentPeriod}}
+                  <span class="drp_sub_txt">
+                    {{'common.age' | translate}}
+                  </span>
+                  <ion-icon name="md-arrow-dropdown"></ion-icon>
+                </button>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <!-- Daughter2 -->
+      <ion-slide *ngIf="Daughter2">
+          
+        <ion-card class="ss_card">
+          <ion-item style="--border-color: #D60D47;" lines="full">
+            <ion-grid>
+              <ion-row class="invested_user_details">
+                <ion-col float-left>
+                  <div class="invested_user_name">{{Daughter2.Name}}</div>
+                </ion-col>
+                <ion-col float-right>
+                  <div class="invested_user_age" style="text-align: right;" [attr.text-center]="!Daughter2 ? '' : null">
+                      {{'common.age' | translate}} :
+                    <strong>{{Daughter2.Age}} {{'common.yrs' | translate}}</strong>
+                  </div>
+                </ion-col>
+              </ion-row>
+              </ion-grid>
+              <div class="gradient_line"></div>
+          </ion-item>
+          <div id="sukanya_chart" style="display: block"></div>
+          <!-- <ion-card-header class="invested_result" text-center> -->
+
+            <ion-grid class="invested_result single_line">
+              <ion-row>
+                <ion-col>
+                  <figure>
+                    <img src="assets/imgs/fd_calculator/amount_invest_blue.png" />
+                  </figure>
+                  <h5>
+                    <!-- <span class="indiccat color_fr" *ngIf="!Daughter2"></span> -->
+                    <h5 style="color: #2A2076;">{{Daughter1.Name ? Daughter1.Name : ''}}</h5>
+                  </h5>
+                  <div class="invested_result_amt">
+                    <span class="rs_icon icon-Icons_Ruppee"></span>{{Daughter1.MaturityAmt | amountFormat:'S'}}
+                  </div>
+                </ion-col>
+                <ion-col>
+                  <figure>
+                    <img src="assets/imgs/fd_calculator/intrest_earn.png" />
+                  </figure>
+                  <h5 style="color: #27AE60;">
+                    <!-- <span class="indiccat color_tr" *ngIf="!Daughter2"></span> -->
+                    {{Daughter2.Name ? Daughter2.Name : ''}}
+                  </h5>
+                  <div class="invested_result_amt" style="color: #27AE60;">
+                    <span class="rs_icon icon-Icons_Ruppee"></span>{{Daughter2.MaturityAmt | amountFormat : 'S'}}
+                  </div>
+                </ion-col>
+              </ion-row>
+              <br />
+              <ion-row>
+                <ion-col class="totl_inv_int">
+                  <h5>{{'sukannyaSamriddhi.totalInvestment' | translate}}</h5>
+                  <div class="invested_result_amt">
+                    <span class="rs_icon icon-Icons_Ruppee"></span>{{Daughter2.TotalInvestment | amountFormat:'S'}}
+                  </div>
+                </ion-col>
+                <ion-col class="total_inv_int">
+                  <h5>{{'sukannyaSamriddhi.totalInterest' | translate}}</h5>
+                  <div class="invested_result_amt">
+                    <span class="rs_icon icon-Icons_Ruppee"></span>{{Daughter2.InterestEarned | amountFormat:'S'}}
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          <!-- </ion-card-header> -->
+          <ion-card-content>
+            <p text-center class="heading_reinvest">
+              {{'sukannyaSamriddhi.monthlyInvestment' | translate}}
+            </p>
+            <div class="tell_us_cont_common ss_slider_range">
+              <div class="calculator_common_sec_inner">
+                <div class="calculation_with_range range_result">
+                  <div class="calculation_with_range_inp">
+                    <ion-input type="tel" [(ngModel)]="amountD2Comma" class="overlay_dropdown_rng_val"
+                      (keyup)="checkSukanyaAmt('D2')" (ionBlur)="checkCalculateSukanya('D2')"
+                      (ionChange)="formatAmount(amountD2Comma, 'D2')"
+                      (ngModelChange)="doSomethingD2($event, 'input')"></ion-input>
+                  </div>
+                  <ion-item>
+                    <ion-range min="{{minValue}}" max="{{maxValue}}" step="{{steps}}" [(ngModel)]="amountD2" pin="true"
+                      debounce="1000" (ionBlur)="checkCalculateSukanya('D2')"
+                      (ngModelChange)="doSomethingD2($event, 'range')">
+                    </ion-range>
+                  </ion-item>
+                </div>
+              </div>
+            </div>
+            
+            <ion-list class="networth_list">
+              <ion-item>
+                <div class="networth_list_lt" float-left>
+                  <figure>
+                    <img src="assets/imgs/chart.svg" />
+                  </figure>
+                  <div>
+                    <p>{{'sukannyaSamriddhi.rateOfInterest' | translate}}</p>
+
+                    <h4>
+                      {{'sukannyaSamriddhi.rateOfInterestSubtitle' | translate}}
+                    </h4>
+                  </div>
+                </div>
+                <button ion-button icon-right float-right clear text-capitalize>
+                  {{paramsData.result.RateOfInterestInPerc}}%<span class="drp_sub_txt">{{'common.pa' |
+                    translate}}</span>
+                </button>
+              </ion-item>
+              <ion-item>
+                <div class="networth_list_lt" float-left>
+                  <figure>
+                    <img src="assets/imgs/quit_smoking/years.png" />
+                  </figure>
+                  <div>
+                    <p>{{'common.duration' | translate}}</p>
+                    <h4>{{'sukannyaSamriddhi.tenurePolicy' | translate}}</h4>
+                  </div>
+                </div>
+                <button ion-button icon-right float-right clear text-capitalize (click)="showOverlay('Daughter2')">
+                  {{paramsData.result.InvestmentPeriod}}
+                  <span class="drp_sub_txt">
+                    {{'common.yrs' | translate}}
+                  </span>
+                  <ion-icon name="md-arrow-dropdown"></ion-icon>
+                </button>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <p class="disclaimer_txt" text-center>
+    <!-- <span class="icon-Icons_Info"></span> -->
+    <a (click)="disclaimerInfo()">{{'common.disclaimersLink' | translate}}</a>
+  </p>
+</ion-content>
+<ion-footer class="ss_final_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col">
+      <button ion-button class="back_btn" outline (click)="recalculate()">
+        {{'buttons.recalculate' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn" (click)="goToGoalsListing()">
+        {{'buttons.startPlanning' | translate}}
+      </button>
+    </div>
+  </div>
+  <div class="overlay_dropdown" *ngIf="status">
+    <div class="overlay_dropdown_content calculation_with_range">
+      <sukanya-range-slider class="drop_com_comp" [rangeData]="rangeDataUi"></sukanya-range-slider>
+      <ion-item>
+        <button ion-button class="login_btn" (click)="done()">
+          {{'common.done' | translate}}
+        </button>
+      </ion-item>
+    </div>
+  </div>
+  <div class="overlay_dropdown annuity disclaimer" *ngIf="disclaimer">
+    <div class="overlay_dropdown_content">
+      <div class="overlay_dropdown_content_inner">
+        <ion-icon name="ios-close-circle-outline" (click)="disclaimerClose()"></ion-icon>
+        <h3 padding>{{'common.disclaimer' | translate}}</h3>
+        <div class="innerCont" [innerHtml]="utilitiesProvider.disclaimerText"></div>
+      </div>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

@@ -1,0 +1,410 @@
+page-settings {
+  .tc {}
+
+  .header {
+    background: $sbi_thirtytwo_color;
+
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+      border-bottom: 1px solid $sbi_fifth_color;
+
+      .toolbar-background {
+        border: none;
+      }
+
+      .bar-button {
+        color: $sbi_fifth_color;
+
+        // padding-left: 27px;
+        .back-button-text {
+          display: none;
+        }
+      }
+
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+          margin-left: -22px;
+
+          @media screen and (max-width: 360px) {
+            margin: 0 -29px;
+          }
+        }
+      }
+    }
+
+    &:after {
+      background-image: none;
+      height: 0;
+    }
+  }
+
+  .item-block:first-child {
+    //border-bottom: 1px solid #f0f0f0 !important;
+    margin-left: 22px;
+    width: 348px;
+    border-top: none !important;
+
+    @media screen and (max-width: 360px) {
+      margin-left: 10px;
+      width: 340px;
+    }
+  }
+
+  .item-block {
+    // border-bottom: 1px solid #f0f0f0 !important;
+  }
+
+  .item-block:last-child {
+    @media screen and (max-width: 360px) {
+      border-bottom: none !important;
+    }
+  }
+
+  .list-ios:not([inset])+.list-ios:not([inset]) ion-list-header {
+    margin-top: 0;
+  }
+
+  .toggle.toggle-checked .toggle-inner {
+    background: $sbi_fifth_color;
+    // margin: 0px 0px 0 2px;
+    margin: 0px 0px 0 5px !important;
+
+    @media screen and (max-width: 360px) {
+      margin: 5px 4px 0 7px;
+    }
+  }
+
+  .toggle.toggle-checked .toggle-icon {
+    background: $sbi_thirtytwo_color;
+  }
+
+  .toggle .toggle-icon {
+    // border-radius: 14px;
+    border-radius: 16px !important;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: $sbi_thirty_color;
+    -webkit-transition: background-color 300ms;
+    transition: background-color 300ms;
+    pointer-events: none;
+  }
+
+  .toggle-icon::before {
+    background-color: transparent !important;
+  }
+
+  .toggle {
+    position: relative;
+    width: 51px;
+    height: 31px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    contain: strict;
+    padding: 12px !important;
+  }
+
+  .toggle .toggle-inner {
+    //margin-top: 4px;
+    background: $sbi_fifth_color;
+    // -webkit-box-shadow: 0px 6px 10px #bbb6e2;
+    // box-shadow: 0px 6px 10px #bbb6e2;
+    // border: none !important;
+    // -webkit-transform: none;
+    // transform: none;
+    // height: 20px;
+    // width: 20px;
+    // left: 0;
+    // top: -3px;
+    // border-radius: 50%;
+    // position: absolute;
+    // height: 27px;
+    // width: 27px;
+    height: 25px !important;
+    width: 25px !important;
+    border-radius: 14px;
+    margin: 0px 4px 0 0px;
+    top:2px;
+
+    @media screen and (max-width: 360px) {
+      margin: 4px 0px 0 2px;
+    }
+
+    &:before {
+      //position: absolute;
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      background-color: #75b6ed;
+      top: 50%;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+  }
+
+  .legal {
+    .label {
+      background: url(../assets/imgs/set_arrow.png) no-repeat 97%;
+      margin: 0 14px 0 0px;
+    }
+
+    .list-header {
+      .label {
+        background: none;
+      }
+    }
+
+    .item {
+      // border-bottom: 1px solid #f0f0f0 !important;
+      margin: 7px 0 0 21px;
+      width: 348px;
+
+      @media screen and (max-width: 360px) {
+        margin: 7px 0 0 9px;
+        width: 341px;
+      }
+    }
+
+    .set_lagel {
+      font-size: 4.103vw;
+      //font-family: "Lato";
+      color: $sbi_twentyseven_color;
+      margin: 12px 11px 14px 0;
+
+      @media screen and (max-width: 360px) {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .open_app {}
+
+  .item {
+    padding-left: 20px;
+  }
+
+  .home_ico {
+    color: #fff;
+    background: transparent;
+    float: right;
+    font-size: 5.55vw;
+    margin: 0 5px;
+  }
+
+  .list .item-block .item-inner {
+    //border-bottom: none !important;
+  }
+
+  .list-header,
+  .list-ios>.item-block:last-child,
+  .list-ios>.item-wrapper:last-child .item-block {
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .list {
+    margin: -1px 0 16px;
+  }
+
+  .settings {
+    .list_group {
+      padding-left: 0;
+      text-align: center;
+      width: 50%;
+      float: left;
+    }
+
+    .list_wrapper {
+      padding: 0 0;
+      float: left;
+      width: 100%;
+      margin-top: 21px;
+
+      ion-list {
+        .item {
+          // border-bottom: 1px solid #f0f0f0 !important;
+          margin: 7px 0 0 21px;
+          width: 348px;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          @media screen and (max-width: 360px) {
+            margin: 7px 0 0 9px;
+            width: 341px;
+          }
+          .item-inner{
+            .input-wrapper{
+              .label{
+                margin: 5px 0 5px 0;
+              }
+            }
+            .toggle{
+              padding: 6px 12px !important;
+            }
+          }
+        }
+
+        .label {
+          font-size: 4.103vw;
+          //font-family: "Lato";
+          color: $sbi_twentyseven_color;
+          margin: 12px 0 14px 0;
+        }
+      }
+      .list{
+        .item{
+          border-bottom: 1px solid #dedede;
+          .item-inner{
+            border-bottom:0;
+          }
+        }
+      }
+    }
+
+    .list-header {
+      padding-left: 0;
+      margin-bottom: 0;
+      min-height: auto;
+      border-top: none;
+      background: #f7f7f7;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      width: 106%;
+      left: -22px;
+
+      .label {
+        font-size: 3.59vw;
+        color: $sbi_thirtyfour_color;
+        font-family: "Lato Semibold";
+        text-transform: capitalize;
+        margin: 10px 0 10px 41px;
+      }
+    }
+
+    .invest_list {
+      float: left;
+      padding: 12px 0; //width:100%;
+      -webkit-box-shadow: 0 0 15px 5px rgba(68, 64, 79, 0.13);
+      box-shadow: 0 0 15px 5px rgba(68, 64, 79, 0.13);
+      //  margin: 0 20px;
+      border-radius: 3px;
+      margin-bottom: 12px;
+      width: 100%;
+      position: relative;
+    }
+
+    .invlist_item {
+      border: 1px solid #fff;
+      line-height: 16px;
+      padding: 0 12px;
+      font-size: 2.77vw;
+      font-family: "Lato Black";
+      text-transform: uppercase;
+      color: $sbi_primary_color;
+    }
+
+    .sub-content {
+      font-family: "Lato Light";
+      color: $sbi_nine_color;
+      font-size: 3.333vw;
+      clear: both;
+      //  border-top: 1px solid #e6e6e6 ;
+      // padding-top:10px;
+      padding: 10px 12px 0;
+    }
+
+    .list_title {
+      color: $sbi_secondary_color;
+      font-family: "Lato Light";
+      font-size: 14px;
+      padding: 20px 30px 20px;
+      margin: 0;
+    }
+  }
+
+  .content-ios .content_wrap {
+    top: 44px;
+  }
+
+  .content_wrap {
+    display: none;
+    padding: 25px 30px 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 56px;
+    bottom: 0;
+    background-color: $sbi_fifth_color;
+    z-index: 99;
+    padding-bottom: 71px;
+    overflow: auto;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+
+    .icon {
+      color: #989b9c;
+      float: right;
+      font-size: 4.55vw;
+    }
+
+    h2 {
+      font-size: 4.33vw;
+      color: #5c2483;
+      font-family: "Lato";
+      margin: 35px 0 25px 0;
+      // text-transform: uppercase;
+    }
+
+    .label {
+      font-size: 4.103vw;
+      color: #5c2483;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 3vw;
+      color: #f09117;
+      font-family: "Lato Black";
+      margin: 0 0 10px 0;
+      text-transform: uppercase;
+    }
+
+    ul,
+    ol {
+      margin: 0 0 25px 0;
+      padding: 0 0 0 15px;
+
+      li {
+        color: #555555;
+        line-height: 1.7em;
+        margin: 0 0 5px 0;
+        font-size: 3.055vw;
+        font-family: "Lato";
+      }
+    }
+
+    p {
+      color: #555555;
+      line-height: 1.7em;
+      margin: 0 0 15px 0;
+      font-size: 3.055vw;
+      font-family: "Lato";
+
+      strong {
+        font-family: "Lato Black";
+      }
+    }
+  }
+}

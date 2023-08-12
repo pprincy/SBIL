@@ -1,0 +1,216 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-title>{{'hlvCalculator.hlvCalculator' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="networth_details">
+    <h3>{{('hlvCalculator.yourRequiredLifeCover' | translate)}}</h3>
+    <h4>{{('hlvCalculator.corpusTitle' | translate)}}</h4>
+    <div class="networth_amt">
+      <div class="networth_amt_inner">
+        <span class="rs_icon icon-Icons_Ruppee"></span
+        >{{finalValue.FinalHLVValue | amountFormat:'S'}}
+      </div>
+    </div>
+  </div>
+  <ion-card class="custom_card">
+    <ion-card-content class="custom_card_content">
+      <!-- <div class="bigImgWrapper bg">
+        <div class="circleBox">
+          <img src="assets/imgs/happy_cover.png" />
+          <svg width="208" height="208">
+            <circle cx="104" cy="104" r="100" stroke-width="4" stroke="#5448b7" stroke-opacity=".6" fill="none" stroke-dashoffset="628"></circle>
+            <circle cx="104" cy="104" r="87" stroke-width="5" stroke="#ffffff" fill="#5448b7" stroke-dashoffset="546"></circle>
+            <circle cx="104" class="animateCircle" cy="104" r="87" stroke-width="10" stroke="#92c947" fill="none" stroke-dasharray="546" stroke-dashoffset="546"></circle>
+          </svg>
+          <div class="per">0</div>
+        </div>
+      </div> -->
+
+      <p text-center class="heading_reinvest">
+        {{'hlvCalculator.hereIsTheSummary' | translate}}
+      </p>
+
+      <ion-list class="networth_list">
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/hlv_calculator/currency_rupee.svg" />
+            </figure>
+            <p>{{'hlvCalculator.income' | translate}}</p>
+          </div>
+          <button
+            ion-button
+            icon-right
+            float-right
+            clear
+            text-capitalize
+            (click)="showOverlay('income')"
+          >
+            <span class="rs_icon icon-Icons_Monthly_Expense"></span
+            >{{finalValue.FinalIncome | amountFormat:'S'}}
+            <ion-icon name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/hlv_calculator/currency_rupee.svg" />
+            </figure>
+            <p>{{'hlvCalculator.expenditure' | translate}}</p>
+          </div>
+          <button
+            ion-button
+            icon-right
+            float-right
+            clear
+            text-capitalize
+            (click)="showOverlay('expense')"
+          >
+            <span class="rs_icon icon-Icons_Monthly_Expense"></span
+            >{{finalValue.FinalExpenditure | amountFormat:'S'}}
+            <ion-icon name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/hlv_calculator/currency_rupee.svg" />
+            </figure>
+            <p>{{'hlvCalculator.currentLiabilities' | translate}}</p>
+          </div>
+          <button
+            ion-button
+            icon-right
+            float-right
+            clear
+            text-capitalize
+            (click)="showOverlay('liability')"
+          >
+            <span class="rs_icon icon-Icons_Monthly_Expense"></span
+            >{{finalValue.FinalLiability | amountFormat:'S'}}
+            <ion-icon name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/hlv_calculator/currency_rupee.svg" />
+            </figure>
+            <p>{{'hlvCalculator.currentLifeInsuranceCoverage' | translate}}</p>
+          </div>
+          <button
+            ion-button
+            icon-right
+            float-right
+            clear
+            text-capitalize
+            (click)="showOverlay('insurance')"
+          >
+            <span class="rs_icon icon-Icons_Monthly_Expense"></span
+            >{{finalValue.FinalInsuranceCover | amountFormat:'S'}}
+            <ion-icon name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-list>
+
+      <div class="bigImgWrapper bg">
+        <div class="circleBox">
+          <img src="assets/imgs/happy_cover.png" />
+          <svg width="208" height="208">
+            <circle
+              cx="104"
+              cy="104"
+              r="100"
+              stroke-width="4"
+              stroke="#5448b7"
+              stroke-opacity=".6"
+              fill="none"
+              stroke-dashoffset="628"
+            ></circle>
+            <circle
+              cx="104"
+              cy="104"
+              r="87"
+              stroke-width="5"
+              stroke="#ffffff"
+              fill="#5448b7"
+              stroke-dashoffset="546"
+            ></circle>
+            <circle
+              cx="104"
+              class="animateCircle"
+              cy="104"
+              r="87"
+              stroke-width="10"
+              stroke="#92c947"
+              fill="none"
+              stroke-dasharray="546"
+              stroke-dashoffset="546"
+            ></circle>
+          </svg>
+          <div class="per">0</div>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <p class="sub_desclaimer" text-center>
+    {{'hlvCalculator.secureYourFamily' | translate}}
+  </p>
+  <p class="sub_desclaimer" text-center>
+    {{'hlvCalculator.arrivedHLV' | translate}}
+  </p>
+  <p class="disclaimer_txt" text-center>
+    <!-- <span class="icon-Icons_Info"></span> -->
+    <a style="color: #2F80ED;" (click)="disclaimerInfo()"> {{'common.disclaimersLink' | translate}}</a>
+  </p>
+</ion-content>
+
+<div class="overlay_dropdown" *ngIf="status">
+  <div class="overlay_dropdown_content calculation_with_range">
+    <hlv-slider
+      class="drop_com_comp"
+      class="drop_com_comp"
+      [rangeData]="rangeDataUi"
+    ></hlv-slider>
+    <ion-item>
+      <button ion-button class="login_btn" (click)="done()">
+        {{'common.done' | translate}}
+      </button>
+    </ion-item>
+  </div>
+</div>
+<div class="overlay_dropdown annuity disclaimer" *ngIf="disclaimer">
+  <div class="overlay_dropdown_content">
+    <div class="overlay_dropdown_content_inner">
+      <ion-icon
+        name="ios-close-circle-outline"
+        (click)="disclaimerClose()"
+      ></ion-icon>
+      <h3 padding>{{'common.disclaimer' | translate}}</h3>
+      <div
+        class="innerCont"
+        [innerHtml]="utilitiesProvider.disclaimerText"
+      ></div>
+    </div>
+  </div>
+</div>
+<ion-footer class="goals_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col">
+      <button ion-button class="back_btn" outline (click)="recalculate()">
+        {{'buttons.recalculate' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn" (click)="goToGoalsListing()">
+        {{'buttons.startPlanning' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

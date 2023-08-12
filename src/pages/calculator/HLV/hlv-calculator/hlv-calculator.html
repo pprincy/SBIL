@@ -1,0 +1,460 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button
+      [class.active]="isBtnActive"
+      (click)="toggleClass()"
+      ion-button
+      [menuToggle]="activeMenu"
+    >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'hlvCalculator.hlvCalculator' | translate}}</ion-title>
+  </ion-navbar>
+  <div
+    class="calculator_common_sec_steps"
+    [ngStyle]="{'opacity': isStarted ? 1 : 0}"
+    *ngIf="isStarted">
+    <div class="calculator_steps" id="stepsCount">
+      <div class="calculator_steps_com active">
+        <div class="calculator_dashed step1">
+          <span class="calculator_steps_com_num">
+            <span>1</span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="calculator_steps_com"
+        [ngClass]="{'active' : (stage=='enterIncome'||stage=='enterExpense'||stage=='enterLiability') || (stage=='maritalStatus'||stage=='spouseEarningStatus'||stage=='spouseEarning') || (stage=='insuranceStatus'||stage=='insuranceCoverAmount')}"
+      >
+        <div class="calculator_dashed step2">
+          <span class="calculator_steps_com_num">
+            <span>2</span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="calculator_steps_com"
+        [ngClass]="{'active' : (stage=='maritalStatus'||stage=='spouseEarningStatus'||stage=='spouseEarning') || (stage=='insuranceStatus'||stage=='insuranceCoverAmount')}"
+      >
+        <div class="calculator_dashed step3">
+          <span class="calculator_steps_com_num">
+            <span>3</span>
+          </span>
+        </div>
+      </div>
+      <div
+        class="calculator_steps_com"
+        [ngClass]="{'active' : (stage=='insuranceStatus'||stage=='insuranceCoverAmount')}"
+      >
+        <div class="calculator_dashed step4">
+          <span class="calculator_steps_com_num">
+            <span>4</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-header>
+<ion-content class="calculator_common_sec">
+  <ion-slides class="calculator_sliders" pager="false" [style.height]="keyboardShow?'auto':'100%'">
+    <!-- Intro Section Step-1 -->
+    <ion-slide class="calculator_sliders">
+      <div
+        style="padding-top: 0"
+        class="calculator_common_sec_inner intro_section"
+      >
+        <div class="main_img">
+          <img
+            class="getstart_img"
+            src="assets/imgs/hlv_calculator/hlv_getstarted.png"
+          />
+        </div>
+        <h1 class="intro_title">{{'hlvCalculator.hlvTitle' | translate}}</h1>
+        <p class="intro_desc">{{'hlvCalculator.description' | translate}}</p>
+      </div>
+    </ion-slide>
+
+    <!-- Enter Name Step-2 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h1 class="intro_title no_margin_bottom">{{'hlvCalculator.letsStart' | translate}}</h1>
+      </div>
+      <div class="main_img">
+        <img
+          class="name_img"
+          src="assets/imgs/hlv_calculator/hlv_namesection.png"
+        />
+      </div>
+      <div class="calculator_common_sec_inner name">
+        <h1>{{'hlvCalculator.name' | translate}}</h1>
+      </div>
+      <div class="calculator_common_sec_inner">
+        <ion-input class="border_input"
+          [(ngModel)]="name"
+          type="text"
+          placeholder="{{'hlvCalculator.enterName' | translate}}"
+        ></ion-input>
+      </div>
+    </ion-slide>
+
+    <!-- Enter DOB Step-3 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h1 class="intro_title">{{'hlvCalculator.enterDOB' | translate}}</h1>
+      </div>
+      <div style="height: 8px;"></div>
+      <div class="main_img">
+        <img class="dob_img" src="assets/imgs/hlv_calculator/hlv_dob.png" />
+      </div>
+      <div style="height: 43px;"></div>
+      <div class="calculator_common_sec_inner dob">
+        <h1>{{'hlvCalculator.DOB' | translate}}</h1>
+      </div>
+      <div class="calculator_common_sec_inner">
+        <div (click)="openCalendar()" *ngIf="dob" class="dob_container">
+          {{dob.split("-").reverse().join("/")}}
+        </div>
+      </div>
+    </ion-slide>
+
+    <!-- Enter Gender Step-4 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading male_female_sec">
+        <h1 class="intro_title">
+          {{'hlvCalculator.selectGender' | translate}}
+        </h1>
+      </div>
+      <div class="big_image_wrapper male_female_sec_img">
+        <ion-grid class="select_male_female">
+          <ion-row>
+            <ion-col (click)="selectGender('Female')">
+              <img [ngClass]="{'selected-fill': gender === 'Female'}"
+               src="assets/imgs/hlv_calculator/hlv_female.png" />
+              <span [ngClass]="{'selected': gender === 'Female'}">{{'hlvCalculator.female' | translate}}</span>
+            </ion-col>
+            <ion-col (click)="selectGender('Male')">
+              <img [ngClass]="{'selected-fill': gender === 'Male'}"
+               src="assets/imgs/hlv_calculator/hlv_male.png" />
+              <span [ngClass]="{'selected': gender === 'Male'}">{{'hlvCalculator.male' | translate}}</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-slide>
+
+    <!-- Enter Income Step-5 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading drawn_sal_sec">
+        <h1 class="intro_title no_margin_bottom">
+          {{'hlvCalculator.prevDrawnSalary' | translate}}
+        </h1>
+      </div>
+      <div class="main_img">
+        <img
+          class="salary_img"
+          src="assets/imgs/hlv_calculator/hlv_salary.png"
+        />
+      </div>
+      <div style="height: 56px;"></div>
+      <div class="calculator_common_sec_inner salary">
+        <h1>{{'hlvCalculator.myMonthlyIncome' | translate}}</h1>
+      </div>
+      <div class="tell_us_cont_common hlv_slider_range">
+        <div class="calculator_common_sec_inner">
+          <div class="calculation_with_range">
+            <div class="calculation_with_range_inp">
+              <ion-input
+                [(ngModel)]="monthlyIncomeComma"
+                type="tel"
+                class="overlay_dropdown_rng_val"
+                (ionChange)="formatAmount(monthlyIncomeComma, 'income')"
+              ></ion-input>
+            </div>
+            <ion-item>
+              <ion-range
+                [(ngModel)]="monthlyIncome"
+                min="{{minMonthlyIncome}}"
+                max="{{maxMonthlyIncome}}"
+                step="{{steps}}"
+                pin="true"
+                (ngModelChange)="checkSteps('monthlyIncome')"
+              >
+              </ion-range>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+
+    <!-- Enter Expenses Step-6 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading other_exp_sec">
+        <h1 class="intro_title">
+          {{'hlvCalculator.enterExpenses' | translate}}
+        </h1>
+        <p class="intro_desc fsmall">{{'hlvCalculator.expenseNote' | translate}}</p>
+      </div>
+      <div class="main_img">
+        <img
+          class="expense_img"
+          src="assets/imgs/hlv_calculator/hlv_expense.png"
+        />
+      </div>
+      <div style="height: 48px;"></div>
+      <div class="calculator_common_sec_inner expense">
+        <h1>{{'hlvCalculator.myHouseholdExpenses' | translate}}</h1>
+      </div>
+      <div class="tell_us_cont_common hlv_slider_range">
+        <div class="calculator_common_sec_inner">
+          <div class="calculation_with_range">
+            <div class="calculation_with_range_inp">
+              <ion-input
+                [(ngModel)]="monthlyExpensesComma"
+                type="tel"
+                class="overlay_dropdown_rng_val"
+                (ionChange)="formatAmount(monthlyExpensesComma, 'expense')"
+              ></ion-input>
+            </div>
+            <ion-item>
+              <ion-range
+                [(ngModel)]="monthlyExpenses"
+                min="{{minMonthlyExpenses}}"
+                max="{{maxMonthlyExpenses}}"
+                step="{{steps}}"
+                pin="true"
+                (ngModelChange)="checkSteps('monthlyExpense')"
+              >
+              </ion-range>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+
+    <!-- Enter Liabilities Step-7 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading outstanding_sec">
+        <h1 class="intro_title no_margin_bottom">
+          {{'hlvCalculator.outstandingAmount' | translate}}
+        </h1>
+      </div>
+      <div class="main_img">
+        <img
+          class="outstanding_img"
+          src="assets/imgs/hlv_calculator/hlv_outstanding.png"
+        />
+      </div>
+      <div style="height: 48px;"></div>
+      <div class="calculator_common_sec_inner outstanding">
+        <h1>{{'hlvCalculator.myCurrentLiability' | translate}}</h1>
+      </div>
+      <div class="tell_us_cont_common hlv_slider_range">
+        <div class="calculator_common_sec_inner">
+          <div class="calculation_with_range">
+            <div class="calculation_with_range_inp">
+              <ion-input
+                [(ngModel)]="liabilityAmtComma"
+                type="tel"
+                class="overlay_dropdown_rng_val"
+                (ionChange)="formatAmount(liabilityAmtComma, 'liability')"
+              ></ion-input>
+            </div>
+            <ion-item>
+              <ion-range
+                [(ngModel)]="liabilityAmt"
+                min="{{minLiability}}"
+                max="{{maxLiability}}"
+                step="{{steps}}"
+                pin="true"
+                (ngModelChange)="checkSteps('liability')"
+              >
+              </ion-range>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+
+    <!-- Marital Status Step-8 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading married_sec">
+        <h1 class="intro_title">
+          {{'hlvCalculator.areYouMarried' | translate}}
+        </h1>
+      </div>
+      <div class="big_image_wrapper" style="padding-top: 0px">
+        <ion-grid class="select_gender">
+          <ion-row>
+            <ion-col (click)="selectMaritalStatus('Married')">
+              <img class="selected-outline" [ngClass]="{'selected': maritalStatus === 'Married'}"
+              src="assets/imgs/hlv_calculator/hlv_married.png" />
+              <span [ngClass]="{'selected': maritalStatus === 'Married'}">{{'hlvCalculator.married' | translate}}</span>
+            </ion-col>
+            <ion-col (click)="selectMaritalStatus('Single')">
+              <img class="selected-outline" [ngClass]="{'selected': maritalStatus === 'Single'}"
+                  [src]="gender === 'Female'?'assets/imgs/hlv_calculator/hlv_single_f.png':'assets/imgs/hlv_calculator/hlv_single.png'"
+                />
+              <span [ngClass]="{'selected': maritalStatus === 'Single'}">{{'hlvCalculator.single' | translate}}</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-slide>
+
+    <!-- Spouse Earning Status and Enter Spouse Income Step-9 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <div style="height: 25px;"></div>
+        <h1 class="intro_title">
+          {{'hlvCalculator.isYourSpouse' | translate}}
+        </h1>
+      </div>
+      <div class="big_image_wrapper" style="padding-top: 0px">
+        <ion-grid>
+          <ion-row style="margin-top:14px">
+            <ion-col style="padding: 7px;" (click)="selectSpouseEarningStatus('Earning')">
+              <div class="spouse_earning"
+               [ngClass]="{'selected': spouseEarningStatus === 'Earning'}">
+                <img src="assets/imgs/hlv_calculator/hlv_earning.png" />
+                <span [ngClass]="{'selected': spouseEarningStatus === 'Earning'}">{{'hlvCalculator.earning' | translate}}</span>
+              </div>
+            </ion-col>
+            <ion-col style="padding: 7px;" (click)="selectSpouseEarningStatus('NotEarning')">
+              <div class="spouse_earning"
+              [ngClass]="{'selected': spouseEarningStatus === 'NotEarning'}">
+              <div class="not_earning">
+                <img src="assets/imgs/hlv_calculator/hlv_earning.png" />
+              </div>  
+                <span [ngClass]="{'selected': spouseEarningStatus === 'NotEarning'}">{{'hlvCalculator.notEarning' | translate}}</span>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <div class="calculator_common_sec_inner spouse_income">
+        <h1>{{'hlvCalculator.spousesMonthlyIncome' | translate}}</h1>
+      </div>
+      <div class="tell_us_cont_common hlv_slider_range">
+        <div class="calculator_common_sec_inner">
+          <div class="calculation_with_range">
+            <div class="calculation_with_range_inp spouse_monthly_income">
+              <ion-input
+                [(ngModel)]="spouseMonthlyIncomeComma"
+                type="tel"
+                class="overlay_dropdown_rng_val"
+                (ionChange)="formatAmount(spouseMonthlyIncomeComma, 'spouseIncome')"
+              ></ion-input>
+            </div>
+            <ion-item>
+              <ion-range
+                [(ngModel)]="spouseMonthlyIncome"
+                min="{{minMonthlyIncome}}"
+                max="{{maxMonthlyIncome}}"
+                step="{{steps}}"
+                pin="true"
+                (ngModelChange)="checkSteps('spouseIncome')"
+              >
+              </ion-range>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+
+    <!-- Insurance Status Step-10 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <div style="height: 16px;"></div>
+        <h1 class="intro_title">
+          {{'hlvCalculator.doYouHave' | translate}}<br>
+          {{'hlvCalculator.insurancePlan' | translate}}
+        </h1>
+      </div>
+      <div class="big_image_wrapper" style="padding-top: 0px">
+        <ion-grid>
+          <ion-row>
+            <ion-col style="padding: 9px;" (click)="selectInsuranceStatus('Insured')">
+              <div class="insurance"
+              [ngClass]="{'selected': insuranceStatus === 'Insured'}">
+                <img src="assets/imgs/hlv_calculator/hlv_insured.png" />
+              </div>
+              <span class="insurance_span" [ngClass]="{'selected': insuranceStatus === 'Insured'}">{{'hlvCalculator.iamInsured' | translate}}</span>
+            </ion-col>
+            <ion-col style="padding: 9px;" (click)="selectInsuranceStatus('NotInsured')">
+              <div class="insurance"
+              [ngClass]="{'selected': insuranceStatus === 'NotInsured'}">
+                <img src="assets/imgs/hlv_calculator/hlv_notinsured.png" />
+              </div>
+              <span class="insurance_span" [ngClass]="{'selected': insuranceStatus === 'NotInsured'}">{{'hlvCalculator.iamNotInsured' | translate}}</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-slide>
+
+    <!-- Enter Insurance Amount Step-11 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner totalsum_slider_heading">
+        <h1 class="intro_title">
+          {{'hlvCalculator.totalSumAssured' | translate}}
+        </h1>
+      </div>
+      <div class="main_img">
+        <img
+          class="groupinsure_img"
+          src="assets/imgs/hlv_calculator/hlv_groupinsure.png"
+        />
+      </div>
+      <div class="calculator_common_sec_inner groupinsure">
+        <h1>{{'hlvCalculator.myCurrentInsurance' | translate}}</h1>
+      </div>
+      <div class="tell_us_cont_common hlv_slider_range">
+        <div class="calculator_common_sec_inner">
+          <div class="calculation_with_range">
+            <div class="calculation_with_range_inp">
+              <ion-input
+                [(ngModel)]="insuranceAmountComma"
+                type="tel"
+                class="overlay_dropdown_rng_val"
+                (ionChange)="formatAmount(insuranceAmountComma, 'insurance')"
+              ></ion-input>
+            </div>
+            <ion-item>
+              <ion-range
+                [(ngModel)]="insuranceAmount"
+                min="{{minInsuranceAmt}}"
+                max="{{maxInsuranceAmt}}"
+                step="{{steps}}"
+                pin="true"
+                (ngModelChange)="checkSteps('insurance')"
+              >
+              </ion-range>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+<ion-footer class="hlv_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col" *ngIf="isStarted">
+      <button ion-button outline class="back_btn" (click)="back()">
+        {{'common.back' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col" *ngIf="isStarted">
+      <button ion-button class="login_btn" (click)="next()">
+        {{'common.next' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col noPadding" text-center="" *ngIf="!isStarted">
+      <button ion-button class="login_btn get_start" (click)="next()">
+        {{'hlvCalculator.getStarted' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span> <img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

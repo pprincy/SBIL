@@ -1,0 +1,275 @@
+<ion-header>
+  <ion-navbar text-center color="sbiHeader">
+    <!-- <button [class.active]="isBtnActive" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title>{{'report.reportTitle' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <span *ngIf="isPageDataLoad">
+    <ion-card class="common_expense_card">
+      <ion-card-header>
+        <ion-grid>
+          <ion-row>
+            <ion-col text-right>
+              <ion-select #yourSelect [(ngModel)]="expensesDate" interface="alert" multiple="true"
+                class="custom_select_drop" [placeholder]="placeDate" cancelText="Cancel" okText="Done"
+                (ionChange)="getExpenseTradeReport()">
+                <ion-option [value]="dates" (ionSelect)="selectAll()" *ngIf="isSelectAll">Select All</ion-option>
+                <ion-option [value]="dates" (ionSelect)="deselectAll()" *ngIf="!isSelectAll">Deselect All</ion-option>
+                <ion-option [value]="dates" *ngFor="let dates of dateList">{{dates.MonthYearDropDown | date:'MMM yyyy'}}
+                </ion-option>
+              </ion-select>
+            </ion-col>
+          </ion-row>
+          <ion-row [hidden]="noData">
+            <ion-col col-6>
+              <h4>
+                {{'report.yourIncomeDistribution' | translate}}
+                <span class="icon-Icons_Info" (click)="infoAnalysisDistribtion()"></span>
+              </h4>
+            </ion-col>
+          </ion-row>
+          <ion-row [hidden]="!noData">
+            <ion-col>
+              <div class="articles_num">
+                <div class="articles_num_cont">
+                  <span>{{'common.noReportData' | translate}}</span>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-header>
+      <ion-card-content class="no_padding" [hidden]="noData">
+        <div class="card_inner_cont">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div align="left" id="income_distribution" style="
+                    min-width: 200px;
+                    height: 150px;
+                    margin: -30px auto auto -35px;
+                  "></div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <div class="income_dist_total">
+            <ion-row>
+              <ion-col col-auto>
+                <h5>{{'report.totalTaxToBePaid' | translate}}</h5>
+                <h6>{{'report.asPerSalary' | translate}}</h6>
+              </ion-col>
+              <ion-col text-right>
+                <div class="total_amt">
+                  <span class="rs_icon icon-Icons_Ruppee"></span>{{totalTaxPaidNew == null ? 0 : totalTaxPaidNew |
+                  amountFormat:'S'}}<span class="icon-Icons_Info" (click)="info()"></span>
+                </div>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="common_expense_card saving_profile" [hidden]="noData">
+      <ion-card-header>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6>
+              <h4>
+                {{'report.yourSaving' | translate}}
+                <span class="icon-Icons_Info" (click)="infoSavings()"></span>
+              </h4>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-8>
+              <div align="left" id="your_savings" style="
+                  min-width: 200px;
+                  height: 150px;
+                  margin: -8px auto auto -20px;
+                "></div>
+            </ion-col>
+            <ion-col col-9 class="expenditure_limit" align="center">
+              <h5>{{profileName}}</h5>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <h5>{{'report.paisaGenieRecommends' | translate}}</h5>
+        <p>{{profileActionPlan}}</p>
+        <p *ngIf="isSavingText">{{savingText}}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="common_expense_card" [hidden]="noData">
+      <ion-card-header>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6>
+              <h4>
+                {{'report.spendsAnalysis' | translate}}<span class="icon-Icons_Info" (click)="infoAnalysis()"></span>
+              </h4>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-header>
+      <ion-card-content>
+        <div align="center" id="expense_analysis" style="min-width: 400px; height: 250px; margin: -6px auto auto -10px">
+        </div>
+        <ion-grid class="tabular_data tabular_data_first" *ngFor="let result of reportTable1">
+          <ion-row class="tabular_data_header">
+            <ion-col col-5 text-left></ion-col>
+            <ion-col col-3 text-center>{{'report.amount' | translate}}</ion-col>
+            <ion-col col-4 text-center>% {{'report.ofIncome' | translate}}</ion-col>
+          </ion-row>
+          <ion-row class="tabular_data_body">
+            <ion-col col-5 text-left>{{'report.yourTotalIncome' | translate}}</ion-col>
+            <ion-col col-3 class="highlighted_tbl_val" text-center><span
+                class="icon-Icons_Ruppee"></span>{{result.TotalIncome |
+              amountFormat:'S'}}</ion-col>
+            <ion-col col-4 text-center class="income_perc">{{result.Income_perc}} %</ion-col>
+          </ion-row>
+          <ion-row class="tabular_data_body">
+            <ion-col col-5 text-left>{{'report.spendsExcluding' | translate}}</ion-col>
+            <ion-col col-3 class="highlighted_tbl_val" text-center>
+              <span class="icon-Icons_Ruppee"></span>{{result.ExpenseOtherThanTax | amountFormat:'S'}}</ion-col>
+            <ion-col col-4 text-center class="income_perc">{{result.ExpenseOtherThanTax_perc}} %</ion-col>
+          </ion-row>
+          <ion-row class="tabular_data_body">
+            <ion-col col-5 text-left>{{'report.spendsThatCanBeReduced' | translate}}</ion-col>
+            <ion-col col-3 class="highlighted_tbl_val" text-center>
+              <span class="icon-Icons_Ruppee"></span>{{result.ControllableExpense | amountFormat:'S'}}</ion-col>
+            <ion-col col-4 text-center class="income_perc">{{result.ControllableExpense_Perc}}%</ion-col>
+          </ion-row>
+          <ion-row class="tabular_data_body">
+            <ion-col col-5 text-left>{{'report.yourNetSaving' | translate}}</ion-col>
+            <ion-col col-3 class="highlighted_tbl_val" text-center>
+              <span class="icon-Icons_Ruppee"></span>{{result.NetSavings |
+              amountFormat:'S'}}</ion-col>
+            <ion-col col-4 text-center class="income_perc">{{result.NetSavings_Perc | amountFormat:'S'}} %</ion-col>
+          </ion-row>
+        </ion-grid>
+        <div class="impact_saving">
+          {{'report.manageSpendsToImprove' | translate}}<span class="icon-Icons_Info" (click)="infoImprove()"></span>
+        </div>
+        <ion-grid class="tabular_data">
+          <ion-row class="tabular_data_body without_head_body">
+            <ion-col col-3 text-left>{{'report.minimiseSpendsby' | translate}}</ion-col>
+            <ion-col text-center>{{reductionInControllableExpensePerc[0]}} %</ion-col>
+            <ion-col text-center>{{reductionInControllableExpensePerc[1]}} %</ion-col>
+            <ion-col text-center>{{reductionInControllableExpensePerc[2]}} %</ion-col>
+            <ion-col text-center>{{reductionInControllableExpensePerc[3]}} %</ion-col>
+            <ion-col text-center>{{reductionInControllableExpensePerc[4]}} %</ion-col>
+          </ion-row>
+          <ion-row class="tabular_data_body without_head_body">
+            <ion-col col-3 text-left>{{'report.saveExtraBy' | translate}}</ion-col>
+            <ion-col text-center>{{reductionInControllableExpense[0] | amountFormat:'S'}}</ion-col>
+            <ion-col text-center>{{reductionInControllableExpense[1] | amountFormat:'S'}}</ion-col>
+            <ion-col text-center>{{reductionInControllableExpense[2] | amountFormat:'S'}}</ion-col>
+            <ion-col text-center>{{reductionInControllableExpense[3] | amountFormat:'S'}}</ion-col>
+            <ion-col text-center>{{reductionInControllableExpense[4] | amountFormat:'S'}}</ion-col>
+          </ion-row>
+          <ion-row class="tabular_data_body without_head_body">
+            <ion-col col-3 text-left>{{'report.totalSaving' | translate}}</ion-col>
+            <ion-col text-center>{{finalSavingRatePerc[0]}} %</ion-col>
+            <ion-col text-center>{{finalSavingRatePerc[1]}} %</ion-col>
+            <ion-col text-center>{{finalSavingRatePerc[2]}} %</ion-col>
+            <ion-col text-center>{{finalSavingRatePerc[3]}}%</ion-col>
+            <ion-col text-center>{{finalSavingRatePerc[4]}}%</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <div [hidden]="noGoals">
+      <ion-card class="common_expense_card goal_timeline" [hidden]="noData">
+        <ion-card-header>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6>
+                <h4>{{'report.goalTimeline' | translate}}</h4>
+                <h6>{{'report.asCorpusAmount' | translate}}</h6>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-header>
+        <ion-card-content>
+          <div class="goal_timeline_corpus" [hidden]="noData">
+            <div class="goal_timeline_corpus_bar"></div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </span>
+</ion-content>
+
+<div class="overlay_dropdown annuity discover_info" *ngIf="popupShow">
+  <div class="overlay_dropdown_content">
+    <div class="overlay_dropdown_content_inner">
+      <ion-icon name="ios-close-circle-outline" (click)="hideDisclaimer()"></ion-icon>
+      <p>
+        {{'report.totalTaxtoBePaid' | translate}}<br />
+        {{'report.taxIsDisplayedOnly' | translate}}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="overlay_dropdown annuity discover_info" *ngIf="popupShowSpends">
+  <div class="overlay_dropdown_content">
+    <div class="overlay_dropdown_content_inner">
+      <ion-icon name="ios-close-circle-outline" (click)="hideDisclaimerSpends()"></ion-icon>
+      <p>
+        {{'report.spendsanalysis' | translate}}<br />
+        {{'report.spendsCanBe' | translate}}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="overlay_dropdown annuity discover_info" *ngIf="popupShowImpact">
+  <div class="overlay_dropdown_content">
+    <div class="overlay_dropdown_content_inner">
+      <ion-icon name="ios-close-circle-outline" (click)="hideDisclaimerImpact()"></ion-icon>
+      <p>
+        {{'report.impactOfExpense' | translate}}<br />
+        {{'report.thisExplainthe' | translate}}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="overlay_dropdown annuity discover_info" *ngIf="popupShowSavings">
+  <div class="overlay_dropdown_content">
+    <div class="overlay_dropdown_content_inner">
+      <ion-icon name="ios-close-circle-outline" (click)="hideDisclaimerSavings()"></ion-icon>
+      <p>
+        {{'report.savingsProfile' | translate}}<br />
+        {{'report.thisRatioShows' | translate}}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="overlay_dropdown annuity discover_info" *ngIf="popupShowDistribution">
+  <div class="overlay_dropdown_content">
+    <div class="overlay_dropdown_content_inner">
+      <ion-icon name="ios-close-circle-outline" (click)="hideDisclaimerDistribution()"></ion-icon>
+      <p>
+        {{'report.incomeExpenseDistribution' | translate}}<br />
+        {{'report.incomeExpenseReportIs' | translate}}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span>
+    <img src="assets/imgs/pageLoader.gif" />
+  </span>
+</div>

@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-navbar color="sbiHeader">
+  </ion-navbar>
+</ion-header>
+<ion-content class="bg_img scroll_div" no-bounce>
+  <div class="top_area">
+  </div>
+  <div class="know_about_top">
+    <div class="heading_panel">
+      <h1>{{'quizLifeStyle.almostReady' | translate}}</h1>
+      <h4>{{'quizLifeStyle.selectLifeStageIncome' | translate}}</h4>
+    </div>
+  </div>
+  <div class="knowabout_container">
+    <div class="knowabout_slider" (pan)="swipeEvent($event)">
+      <div id="prv-knowabout_slider" class="knowabout_slider_ar"></div>
+      <div class="knowabout_slider_wrapper">
+        <div>
+          <span class="knowabout_slider_img"><img src="assets/imgs/lifeStyle/single.png" width="35" height="35" />
+          </span> <span class="knowabout_slider_item">
+            {{'quizLifeStyle.lifeStyle.sinle' | translate}} <span>Single</span>
+          </span>
+        </div>
+        <div><span class="knowabout_slider_img"> <img src="assets/imgs/lifeStyle/married.png" width="35"
+              height="35" /></span><span class="knowabout_slider_item">
+            {{'quizLifeStyle.lifeStyle.married' | translate}}<span>Married</span>
+          </span></div>
+        <div><span class="knowabout_slider_img"><img src="assets/imgs/lifeStyle/married_with_1kid.png" width="35"
+              height="35" /></span><span class="knowabout_slider_item">
+            {{'quizLifeStyle.lifeStyle.marriedWithOneKid' | translate}} <span>Married with 1 kid</span>
+          </span></div>
+        <div><span class="knowabout_slider_img"> <img src="assets/imgs/lifeStyle/married_with_2kids_or_more.png"
+              width="35" height="35" /></span><span class="knowabout_slider_item">
+            {{'quizLifeStyle.lifeStyle.marriedWithTwoKid' | translate}}<span>Married with 2 kid</span>
+          </span></div>
+        <div><span class="knowabout_slider_img"> <img src="assets/imgs/lifeStyle/independent.png" width="35"
+              height="35" /></span><span class="knowabout_slider_item">
+            {{'quizLifeStyle.lifeStyle.independent' | translate}}<span>Independent</span>
+          </span></div>
+      </div>
+      <div id="nxt-knowabout_slider" class="knowabout_slider_ar"></div>
+    </div>
+    <ion-grid class="knowabout_grid">
+      <ion-row>
+        <ion-col><span class="annual_income">{{'quizLifeStyle.annualIncome' | translate}}</span></ion-col>
+        <ion-col *ngFor="let i of incomeData"><span class="annual_range" id="{{i.IncomeID}}"> {{i.IncomeName}} </span>
+        </ion-col>
+        <!-- <ion-col><span class="annual_range"> <3L </span></ion-col>
+        <ion-col><span class="annual_range">3-5L</span></ion-col>
+        <ion-col><span class="annual_range">5-10L</span></ion-col>
+        <ion-col><span class="annual_range">10-25L</span></ion-col>
+        <ion-col><span class="annual_range"> >25L </span></ion-col> -->
+      </ion-row>
+      <ion-row>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+        <ion-col><span class="square"></span></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col">
+      <button ion-button class="back_btn" (click)="back()" outline>{{'buttons.back' | translate}}</button>
+    </div>
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn" [disabled]="isDisable"
+        (click)="discoverClick()">{{'discover.discover' | translate}}</button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

@@ -1,0 +1,236 @@
+page-aboutus {
+  .header {
+    background: $sbi_thirtytwo_color;
+
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+      border-bottom: 1px solid $sbi_fifth_color;
+
+      .toolbar-background {
+        border: none;
+      }
+
+      .bar-button {
+        color: $sbi_fifth_color;
+        // padding-left: 28px;
+        .back-button-text {
+          display: none;
+        }
+      }
+
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+          margin-left: -22px;
+        }
+      }
+    }
+
+    &:after {
+      background-image: none;
+      height: 0;
+    }
+  }
+  // .top_area{
+  //     position: absolute;
+  //     height: 120px;
+  //     z-index: 1;
+  //     top: 0;
+  //     left: 0;
+  //     right: 0;
+  //     background: none;
+  //     .top_area_container{background: none;
+
+  //     }
+
+  // }
+  .user_pic {
+    border-radius: 83px;
+    width: 274px;
+    height: 85px;
+    overflow: hidden;
+    margin: 25px auto 0;
+    text-align: center;
+    img {
+      text-align: center;
+      //margin-top: 2.77vw;
+    }
+  }
+  .userinfo {
+    text-align: center;
+    padding: 25px 30px;
+    @media screen and (max-width: 360px) {
+      padding: 0px 30px;
+    }
+    p {
+      text-align: left;
+      margin: 0 0 7px;
+      color: #343434;
+      font-size: 14px;
+    }
+
+    h6 {
+      font-size: 3.88vw;
+      line-height: 12px;
+      color: #727272;
+     //font-family: "Lato";
+      font-size: 4.61vw;
+      margin: -38px 19px 20px 0;
+      @media screen and (max-width: 360px) {
+
+        margin: -24px 19px 20px 0;
+
+      }
+    }
+  }
+
+  .content-ios {
+    .content_wrap {
+      top: 154px;
+    }
+  }
+  .content_wrap {
+    display: none;
+    padding: 25px 30px 0;
+    position: fixed;
+    background-color: #fff;
+    border-radius: 20px;
+
+    .icon {
+      border: 4px solid;
+      width: 52px;
+      color: $sbi_thirtysix_color;
+      float: left;
+      border-radius: 10px;
+      margin: 14px 139px;
+    }
+    h2 {
+      font-size: 4.103vw;
+      color: #5c2483 !important;
+      font-family: "Lato";
+      margin: 47px 0 24px 0;
+      text-transform: capitalize;
+    }
+
+    h3 {
+      font-size: 3vw;
+      color: #5c2483;
+      font-family: "Lato";
+      margin: 0 0 10px 0;
+      text-transform: uppercase;
+    }
+    ul,
+    ol {
+      margin: 0 0 25px 0;
+      padding: 0 0 0 15px;
+      li {
+        color: #343434;
+        line-height: 1.7em;
+        margin: 0 0 5px 0;
+        font-size: 3.055vw;
+        font-family: "Lato";
+      }
+    }
+    p {
+      color: #343434;
+      line-height: 120%;
+      margin: 0 0 15px 0;
+      font-size: 3.59vw;
+      font-family: "Lato";
+      strong {
+        font-family: "Lato Black";
+      }
+    }
+  }
+  .list_item {
+    background-color: $sbi_fifth_color;
+    // position: fixed;
+    // left: 0;
+    // right: 0;
+    // /* top: 56px; */
+    // bottom: 0;
+    /* z-index: 99; */
+    /* padding-bottom: 71px; */
+
+    // > .icon {
+    //     position: absolute;
+    //     right:23px;
+    //     top:14px;
+    //     font-size: 5.33vw;
+    //     color: lighten($sbi_nine_color,10%);    z-index: 9;
+    // }
+    .list-ios {
+      .item-block {
+        .item-inner {
+          border-bottom: none;
+        }
+        &:first-child {
+          border-top: none;
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+
+    .list {
+      margin-bottom: 25px;
+      .item {
+        padding: 0 8px 0 32px;
+        background: #e0f6fd;
+
+        &:first-child {
+          display: inline-flex;
+        }
+
+        .item-inner {
+          padding-right: 0px;
+          border-bottom: 0;
+          //padding: 0;
+          .input-wrapper {
+            .label {
+              color: #5c2483;
+              margin: 11px 8px 11px 3px;
+              font-size: 14px;
+              font-family: "Lato";
+              text-transform: capitalize;
+
+              .icon {
+                color: #5c2483;
+                font-size: 24px;
+                width: 20px;
+                height: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    &.footerOverlay {
+      z-index: 0;
+    }
+  }
+
+  .filter_dropdown {
+    position: fixed;
+    left: 0;
+    right: 0;
+    // top: 56px;
+    bottom: 0;
+    background-color: $sbi_fifth_color;
+    z-index: 99;
+    padding: 60px 0 71px 0;
+    border-radius: 25px;
+  }
+}
+
+.scroll-content.scrollOverlay {
+  background: rgba(0, 0, 0, 0.5);
+}

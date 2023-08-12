@@ -1,0 +1,652 @@
+<ion-header class="side_menu_header">
+  <ion-icon class="close_icon" name="md-close" (click)="back()"></ion-icon>
+  <ion-grid class="side_menu_top">
+    <ion-row class="side_menu_top_fr">
+      <ion-col no-padding col-8>
+        <div class="menu_fig_sec">
+          <div class="user_pic" (click)="uploadImg()">
+            <img [src]="profileData.ImagePath" (error)="errorPic()" />
+            <!-- <a>+</a> -->
+          </div>
+          <div class="name_edit">
+            <h3>{{username}}</h3>
+            <!-- <h3>Name</h3> -->
+            <!-- <button ion-button menuClose clear class="side_menu_edit">
+              <img src="../assets/imgs/profile_edit_icon.svg" alt="" />
+            </button> -->
+          </div>
+          <h5>
+            {{profileData.ProfileScore}}% {{'myProfile.completed' | translate}}
+          </h5>
+        </div>
+      </ion-col>
+      <ion-col no-padding col-4 class="lang_sel">
+        <ion-list class="lng_change">
+          <button menuClose ion-item no-lines class="langchg" (click)="languageClick()">
+            <span class="lang_opt">
+              {{langName}}
+              <ion-icon name="md-arrow-dropdown"></ion-icon></span>
+          </button>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+<ion-content class="calculator_common_sec bgTransp">
+  <div class="details_container">
+    <div class="details_content">
+      <div class="tell_us_cont_common profile_tab">
+        <div class="tell_us_cont com_head active">
+          <ion-scroll class="tell_us_slider dOneSlider tab_slider" scrollX="true" scroll-avatar>
+            <div *ngFor="let option of sliderOptionsArr; let i = index" class="slick-slide-item"
+              (click)="openDetails(i)">
+              <span class="tell_us_slider_age">{{option}}</span>
+            </div>
+          </ion-scroll>
+        </div>
+      </div>
+      <div class="details_container_edit" *ngIf="showTabItm == 0">
+        <!-- <ion-item>
+          <ion-label stacked>{{'myProfile.firstName' | translate}}</ion-label>
+          <ion-input
+            type="text"
+            disabled
+            [(ngModel)]="firstName"
+            *ngIf="firstName"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>{{'myProfile.lastName' | translate}}</ion-label>
+          <ion-input
+            type="text"
+            disabled
+            [(ngModel)]="lastName"
+            *ngIf="lastName"
+          ></ion-input>
+        </ion-item> -->
+        <ion-item class="calendar_icon" (click)="openCalendar()">
+          <p stacked>{{'myProfile.dob' | translate}}<p>
+          <div class="course_select">
+            <p class="course_type">{{dob.split("-").reverse().join("-")}}
+              <button class="course_btn" ion-button clear float-right><ion-icon class="drop_down" src="../assets/imgs/profile_personal/calendar.svg"></ion-icon></button>
+            </p>
+          </div>
+        </ion-item>
+        <ion-item class="home_location_icon">
+          <ion-label stacked>{{'myProfile.livingIn' | translate}}</ion-label>
+          <ion-input type="text" placeholder="Select your city" [(ngModel)]="location"></ion-input>
+          <img src="assets/imgs/location_icon.png" />
+        </ion-item>
+        <ion-item class="education_icon" (click)="educationList()">
+          <p stacked>{{'myProfile.education' | translate}}<p>
+          <div class="course_select">
+            <p class="course_type">{{education}}
+              <button class="course_btn" ion-button clear float-right><ion-icon class="drop_down" src="../assets/imgs/profile_personal/education.svg"></ion-icon></button>
+            </p>
+          </div>
+        </ion-item>
+        <ion-item class="life_stage_icon" (click)="lifeStageList()">
+          <p stacked>{{'myProfile.selectLifeStage' | translate}}<p>
+          <div class="course_select">
+            <p class="course_type">{{maritalStatus}}
+              <button class="course_btn" ion-button clear float-right><ion-icon class="drop_down" src="../assets/imgs/profile_personal/life_stage.svg"></ion-icon></button>
+            </p>
+          </div>
+        </ion-item>
+        <ion-label class="add_family">{{'myProfile.addFalmilyMember' | translate}}</ion-label>
+        <div *ngIf="familyMembersArr.length > 0">
+          <div *ngFor="let member of familyMembersArr;index as i">
+            <span *ngIf="familyMembersArr.length > 1" class="remove_member" (click)="removeMembers(i)">
+              <ion-icon name="md-remove"></ion-icon>
+            </span>
+            <ion-item>
+              <ion-label stacked>{{'myProfile.member' | translate}} {{i+1}}</ion-label>
+              <ion-select
+                interface="popover"
+                [(ngModel)]="member.DepRelationShip"
+                (ngModelChange)="insertRelationID(member.DepRelationShip,i)"
+              >
+                <ion-option
+                  [value]="item.Relationship"
+                  *ngFor="let item of relationshipArr"
+                  [selected]="member.DepRelationShip == item.Relationship?'true':'false'"
+                  >{{item.Relationship}}
+                </ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                type="text"
+                placeholder="{{'myProfile.nameOfYourFamilyMember' | translate}}"
+                [(ngModel)]="member.DepedentName"
+              ></ion-input>
+            </ion-item>
+            <div class="calculator_sliders">
+              <div class="car_goal_slider1">
+                <ion-item>
+                  <ion-label stacked>{{'common.age' | translate}}</ion-label>
+                  <ion-select interface="popover" [(ngModel)]="member.DepAge">
+                    <ion-option
+                      [value]="item"
+                      *ngFor="let item of utilitiesProvider.age1to80"
+                      [selected]="member.DepAge == item?'true':'false'"
+                      >{{item}}</ion-option
+                    >
+                  </ion-select>
+                </ion-item>
+              </div>
+            </div>
+            <div class="add_member" *ngIf="familyMembersArr.length > 0 && i == (familyMembersArr.length-1)">
+              <ion-label>{{'myProfile.addAMember' | translate}}</ion-label>
+              <div class="side_menu_edit">
+                <ion-icon name="md-add" (click)="addMembers()"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="tell_us_cont_common life_stage_icon">
+          <div class="car_goal_slider_wrap">
+            <ion-label stacked
+              >{{'myProfile.selectLifeStage' | translate}}</ion-label
+            >
+            <div class="car_goal_slider" *ngIf="lifeStageArr.length  > 0">
+              <div
+                class="car_goal_slider_item"
+                *ngFor="let item of lifeStageArr"
+              >
+                <div class="car_goal_slider_item_inner">
+                  <span class="life_style" id="{{item.MaritalID}}">
+                    <img src="assets/imgs/{{item.img}}" />
+                  </span>
+                  <h4 class="marryStatus">{{item.MaritalStatus}}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <ion-label>{{'myProfile.addFalmilyMember' | translate}}</ion-label>
+        <div *ngIf="familyMembersArr.length > 0">
+          <div *ngFor="let member of familyMembersArr;index as i">
+            <ion-item>
+              <ion-label stacked
+                >{{'myProfile.mobileNumber' | translate}} : {{i+1}}</ion-label
+              >
+              <ion-select
+                interface="popover"
+                [(ngModel)]="member.DepRelationShip"
+                (ngModelChange)="insertRelationID(member.DepRelationShip,i)"
+              >
+                <ion-option
+                  [value]="item.Relationship"
+                  *ngFor="let item of relationshipArr"
+                  [selected]="member.DepRelationShip == item.Relationship?'true':'false'"
+                  >{{item.Relationship}}
+                </ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                type="text"
+                placeholder="{{'myProfile.nameOfYourFamilyMember' | translate}}"
+                [(ngModel)]="member.DepedentName"
+              ></ion-input>
+            </ion-item>
+            <div class="calculator_sliders">
+              <div class="car_goal_slider1">
+                <ion-item>
+                  <ion-label stacked>{{'common.age' | translate}}</ion-label>
+                  <ion-select interface="popover" [(ngModel)]="member.DepAge">
+                    <ion-option
+                      [value]="item"
+                      *ngFor="let item of utilitiesProvider.age1to80"
+                      [selected]="member.DepAge == item?'true':'false'"
+                      >{{item}}</ion-option
+                    >
+                  </ion-select>
+                </ion-item>
+              </div>
+            </div>
+            
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- professional details start -->
+  <div class="details_container_edit" *ngIf="showTabItm == 1">
+    <ion-item class="occupation_icon" (click)="OccupationList()">
+      <p stacked>{{'myProfile.occupation' | translate}}<p>
+      <div class="course_select">
+        <p class="course_type">{{occupation}}
+          <button class="course_btn" ion-button clear float-right><ion-icon class="drop_down" src="../assets/imgs/profile_professional/occupation.svg"></ion-icon></button>
+        </p>
+      </div>
+    </ion-item>
+
+    <ion-item class="industry_icon" (click)="IndustryList()">
+      <p stacked>{{'myProfile.industryOfWork' | translate}}<p>
+      <div class="course_select">
+        <p class="course_type">{{workIndustry}}
+          <button class="course_btn" ion-button clear float-right><ion-icon class="drop_down" src="../assets/imgs/profile_professional/industry.svg"></ion-icon></button>
+        </p>
+      </div>
+    </ion-item>
+    
+    <ion-item class="work_exp_icon" (click)="WorkExpList()">
+      <p stacked>{{'myProfile.yearsOfWorkExperience' | translate}}</p>
+      <div class="course_select">
+        <p class="course_type">{{experience}}
+          <button class="course_btn" ion-button clear float-right><ion-icon class="drop_down" src="../assets/imgs/profile_professional/work_exp.svg"></ion-icon></button>
+        </p>
+      </div>
+      
+      <!-- <ion-select interface="popover" *ngIf="utilitiesProvider.workExp2to50.length > 0" [(ngModel)]="experience">
+        <ion-option [value]="item" *ngFor="let item of utilitiesProvider.workExp2to50"
+          [selected]="item == experience?'true':'false'">{{item}} {{'common.years' | translate}}</ion-option>
+      </ion-select> -->
+    </ion-item>
+    <ion-item class="income_range_icon" (click)="IncomeGroupList()">
+      <p stacked>{{'myProfile.yourIncomeRange' | translate}}</p>
+      <div class="course_select">
+        <p class="course_type">₹ {{incomeGroup}}
+          <button class="course_btn" ion-button clear float-right><ion-icon class="drop_down" src="../assets/imgs/profile_professional/work_exp.svg"></ion-icon></button>
+        </p>
+      </div>
+    </ion-item>
+    <!-- <ion-item *ngIf="workIndustry == 'Others'">
+      <ion-input
+        type="text"
+        [(ngModel)]="designation"
+        placeholder="Enter your Profession Name "
+      ></ion-input>
+    </ion-item> -->
+    <!-- <ion-item *ngIf="workIndustry != 'Others'">
+      <ion-label stacked
+        >{{'myProfile.selectDesignation' | translate}}</ion-label
+      >
+      <ion-select
+        interface="popover"
+        *ngIf="designationArr.length > 0"
+        [(ngModel)]="designation"
+      >
+        <ion-option
+          [value]="item.DesignationName"
+          *ngFor="let item of designationArr"
+          [selected]="item.DesignationName == designation?'true':'false'"
+          >{{item.DesignationName}}</ion-option
+        >
+      </ion-select>
+    </ion-item> -->
+  </div>
+  <!-- professional details end -->
+  <!-- investment details start -->
+  <div class="details_container_edit" *ngIf="showTabItm == 2">
+    <div class="details_content" *ngIf="profileData">
+      <ion-item class="occupation_icon">
+        <ion-label stacked>{{'myProfile.riskassessmentResult' | translate}}
+        </ion-label>
+        <ion-input type="text" [readonly]="true" [(ngModel)]="profileData.Risk_AssestMent_Output">{{profileData.Risk_AssestMent_Output}}</ion-input>
+      </ion-item>
+      <ion-item class="industry_icon">
+        <ion-label stacked>{{'myProfile.monthlyExpenses' | translate}}
+        </ion-label>
+        <ion-input type="tel" (keypress)="isAmount($event)" (ionFocus)="clearStartZero('monthly')"
+        (ionChange)="formatAmount(montlyExpenseComma, 'expense')" (change)="checkAmt('monthly')" [(ngModel)]="montlyExpenseComma"></ion-input>
+      </ion-item>
+      <!-- <div class="add_member" (click)="showExpenseBreakup()">
+        <ion-label>{{'myProfile.addExpenseBreakup' | translate}}</ion-label>
+        <div class="side_menu_edit">
+          <ion-icon name="md-add"></ion-icon>
+        </div>
+      </div> -->
+      <ion-item class="work_exp_icon">
+        <ion-label stacked>{{'myProfile.oneTimeSavings' | translate}}
+        </ion-label>
+        <ion-input type="tel"
+        (keypress)="isAmount($event)"
+        (ionFocus)="clearStartZero('lumpsum')"
+        (ionChange)="formatAmount(lumsumComma, 'lumsum')"
+        (change)="checkAmt('lumpsum')"
+        [(ngModel)]="lumsumComma"></ion-input>
+      </ion-item>
+      <ion-item class="occupation_icon">
+        <ion-label stacked>{{'myProfile.assetValues' | translate}}
+        </ion-label>
+        <ion-input type="tel"
+        (keypress)="isAmount($event)"
+        (ionFocus)="clearStartZero('assets')"
+        (change)="checkAmt('assets')"
+        [(ngModel)]="assetValueComma"
+        (ionChange)="formatAmount(assetValueComma, 'assets')"></ion-input>
+      </ion-item>
+      <ion-item class="occupation_icon">
+        <ion-label stacked>{{'myProfile.Liabilities' | translate}}
+        </ion-label>
+        <ion-input type="tel"
+        (keypress)="isAmount($event)"
+        (ionFocus)="clearStartZero('liabilities')"
+        (change)="checkAmt('liabilities')"
+        [(ngModel)]="liabilitiesValue"
+        (ionChange)="formatAmount(liabilitiesValue, 'liabilities')"></ion-input>
+      </ion-item>
+      <ion-item class="occupation_icon">
+        <ion-label stacked>{{'myProfile.emergencyFunds' | translate}}
+        </ion-label>
+        <ion-input type="tel"
+        (keypress)="isAmount($event)"
+        (ionFocus)="clearStartZero('emergency')"
+        (change)="checkAmt('emergency')"
+        [(ngModel)]="emergencyFundsComma"
+        (ionChange)="formatAmount(emergencyFundsComma, 'emergency')"></ion-input>
+      </ion-item>
+      <ion-item class="occupation_icon">
+        <ion-label stacked>{{'myProfile.ancestryProperty' | translate}}
+        </ion-label>
+        <ion-input type="tel"
+        (keypress)="isAmount($event)"
+        (ionFocus)="clearStartZero('ancestor')"
+        (change)="checkAmt('ancestor')"
+        [(ngModel)]="ancestorPropertyComma"
+        (ionChange)="formatAmount(ancestorPropertyComma, 'ancestor')"></ion-input>
+      </ion-item>
+
+     <div class="calculator_common_sec_inner">
+        <div class="age_slider_heading">
+          <ion-label>{{'myProfile.pickYourPreferredInvestmentInstruments' |
+            translate}}</ion-label>
+        </div>
+        <div class="invest_option_wrapper">
+          <ion-grid class="invest_option">
+            <ion-row>
+              <ion-col *ngFor="let item of allInvestList">
+                <button style="border-radius: 0px;" ion-button icon-end [ngClass]="item.IsActive == 1?'active':'inactive'"
+                  (click)="checkInvestment(item)">
+                  {{item.InvestmentName}}
+                  <!-- <ion-icon name="checkmark"></ion-icon> -->
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- investment details end -->
+  <!-- Hobbies/Interests start -->
+  <div class="details_container_edit" *ngIf="showTabItm == 3">
+    <div class="invest_option_wrapper edit_content hobbies" *ngIf="hobbiesArr">
+      <ion-grid class="invest_option">
+        <ion-row>
+          <ion-item *ngFor="let item of hobbiesArr" (click)="checkHobbies(item)"
+          [ngClass]="{'active': item.IsActive == 1}">
+            <div class="img_wrapper" 
+            [ngClass]="[hobbyImgDict[item.HobbyID]+(item.IsActive == 1?' active':'')]"
+            ></div>
+            <!-- <button class="button" [ngClass]="item.IsActive == 0?null:'active'">
+              <ion-icon name="checkmark"></ion-icon>
+            </button> -->
+            <h4 [ngClass]="{'active': item.IsActive == 1}">{{item.HobbyName}}</h4>
+          </ion-item>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+  <!-- Hobbies/Interests end -->
+  <!-- <div style="height: 100px"></div> -->
+  <!-- <div class="assets_dropdown" *ngIf="assets_status"> -->
+</ion-content>
+<div class="common_loader" *ngIf="pageLoader">
+  <span> <img src="assets/imgs/pageLoader.gif" /> </span>
+</div>
+<ion-footer>
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col">
+      <button ion-button outline class="back_btn" (click)="saveDetails('edit')">
+        {{'common.save' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col" [attr.text-center]="backBtnhide ? '' : null">
+      <button ion-button class="login_btn" (click)="saveDetails('final')">
+        <!-- {{'myProfile.fillProfile' | translate}} -->
+        {{'myProfile.fillProfile' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+<div class="assets_dropdown" *ngIf="assetBreakFlag">
+  <div class="calculator_common_sec">
+    <div class="calculator_sliders">
+      <div class="calculator_sliders_item" *ngIf="assetPageStep == 1">
+        <div class="calculator_common_sec_inner">
+          <div class="age_slider_heading">
+            <h1>{{'myProfile.selectSavAndInv' | translate}}</h1>
+          </div>
+          <div class="invest_option_wrapper">
+            <ion-grid class="invest_option">
+              <ion-row>
+                <ion-col *ngFor="let item of allAssetList">
+                  <button ion-button icon-end [ngClass]="item.IsActive == 1?'active':'inactive'"
+                    (click)="checkAssets(item)">
+                    {{item.value}}
+                    <!-- <ion-icon name="checkmark"></ion-icon> -->
+                  </button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <!-- <div class="showmore" text-left>
+              <button class="shmore" ion-button icon-right clear>View more
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button class="lessmore" ion-button icon-right clear>View less
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="calculator_sliders_item" *ngIf="assetPageStep == 2">
+        <div class="calculator_common_sec_inner">
+          <div class="age_slider_heading">
+            <h1>{{'myProfile.enterSavAndInv' | translate}}</h1>
+          </div>
+        </div>
+        <div class="calculator_common_sec_inner calculate_ttl">
+          <div class="row">
+            <div class="col calculate_ttl_lt" text-left>
+              {{'myProfile.totalAmount' | translate}}
+            </div>
+            <div class="col calculate_ttl_rt" text-right>
+              <span class="rs_icon icon-Icons_Ruppee"></span>{{totalAsset}}
+            </div>
+          </div>
+        </div>
+        <div class="calculator_common_sec_inner calculator_grid_wrapper" style="height: 500px">
+          <div *ngFor="let item of allAssetList">
+            <ion-list *ngIf="item.IsActive == 1">
+              <button ion-button icon-only float-right clear>
+                <ion-icon name="ios-close-outline"></ion-icon>
+              </button>
+              <ion-item class="inp_with_close">
+                <ion-label stacked>{{item.value}} </ion-label>
+                <ion-input type="number" (change)="calculateAllAssets()" (ionFocus)="clearStartingZero(item)"
+                  [(ngModel)]="item.amount"></ion-input>
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_panel row active">
+      <div class="footer_panel_lt col">
+        <button ion-button class="back_btn" outline (click)="goBackAsset()">
+          {{'common.back' | translate}}
+        </button>
+      </div>
+      <div class="footer_panel_rt col">
+        <button ion-button class="login_btn" (click)="nextAssetPage()">
+          {{'common.next' | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="assets_dropdown" *ngIf="liabilityBreakFlag">
+  <div class="calculator_common_sec">
+    <div class="calculator_sliders">
+      <div class="calculator_sliders_item" *ngIf="liabilitiesPageStep == 1">
+        <div class="calculator_common_sec_inner">
+          <div class="age_slider_heading">
+            <h1>{{'myProfile.selectDebtsAndLiab' | translate}}</h1>
+          </div>
+          <div class="invest_option_wrapper">
+            <ion-grid class="invest_option">
+              <ion-row>
+                <ion-col *ngFor="let item of allLiabilitiesList">
+                  <button ion-button icon-end [ngClass]="item.IsActive == 1?'active':'inactive'"
+                    (click)="checkLiabilities(item)">
+                    {{item.value}}
+                    <!-- <ion-icon name="checkmark"></ion-icon> -->
+                  </button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <!-- <div class="showmore" text-left>
+              <button class="shmore" ion-button icon-right clear>View more
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button class="lessmore" ion-button icon-right clear>View less
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="calculator_sliders_item" *ngIf="liabilitiesPageStep == 2">
+        <div class="calculator_common_sec_inner">
+          <div class="age_slider_heading">
+            <h1>{{'myProfile.enterDebtsAnsLiab' | translate}}</h1>
+          </div>
+        </div>
+        <div class="calculator_common_sec_inner calculate_ttl">
+          <div class="row">
+            <div class="col calculate_ttl_lt" text-left>
+              {{'myProfile.totalAmount' | translate}}
+            </div>
+            <div class="col calculate_ttl_rt" text-right>
+              <span class="rs_icon icon-Icons_Ruppee"></span>{{totalLiabilities}}
+            </div>
+          </div>
+        </div>
+        <div class="calculator_common_sec_inner calculator_grid_wrapper" style="height: 500px">
+          <div *ngFor="let item of allLiabilitiesList">
+            <ion-list *ngIf="item.IsActive == 1">
+              <button ion-button icon-only float-right clear>
+                <ion-icon name="ios-close-outline"></ion-icon>
+              </button>
+              <ion-item class="inp_with_close">
+                <ion-label stacked>{{item.value}} </ion-label>
+                <ion-input type="number" (change)="calculateAllLiabilities()" (ionFocus)="clearStartingZero(item)"
+                  [(ngModel)]="item.amount"></ion-input>
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_panel row active">
+      <div class="footer_panel_lt col">
+        <button ion-button class="back_btn" outline (click)="goBackLiabilities()">
+          {{'common.back' | translate}}
+        </button>
+      </div>
+      <div class="footer_panel_rt col">
+        <button ion-button class="login_btn" (click)="nextLiabilitiesPage()">
+          {{'common.next' | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="assets_dropdown" *ngIf="expenseBreakFlag">
+  <div class="calculator_common_sec">
+    <div class="calculator_sliders">
+      <div class="calculator_sliders_item" *ngIf="expensePageStep == 1">
+        <div class="calculator_common_sec_inner">
+          <div class="age_slider_heading">
+            <h1>{{'myProfile.selectYourMonthlyExpenses' | translate}}</h1>
+          </div>
+          <div class="invest_option_wrapper">
+            <ion-grid class="invest_option">
+              <ion-row>
+                <ion-col *ngFor="let item of allExpenseList">
+                  <button ion-button icon-end [ngClass]="item.IsActive == 1?'active':'inactive'"
+                    (click)="checkExpenses(item)">
+                    {{item.MonthlyExpenseName}}
+                    <!-- <ion-icon name="checkmark"></ion-icon> -->
+                  </button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <!-- <div class="showmore" text-left>
+              <button class="shmore" ion-button icon-right clear>View more
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button class="lessmore" ion-button icon-right clear>View less
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="calculator_sliders_item" *ngIf="expensePageStep == 2">
+        <div class="calculator_common_sec_inner">
+          <div class="age_slider_heading">
+            <h1>{{'myProfile.enterMonthlyExpenses' | translate}}</h1>
+          </div>
+        </div>
+        <div class="calculator_common_sec_inner calculate_ttl">
+          <div class="row">
+            <div class="col calculate_ttl_lt" text-left>
+              {{'myProfile.totalAmount' | translate}}
+            </div>
+            <div class="col calculate_ttl_rt" text-right>
+              <span class="rs_icon icon-Icons_Ruppee"></span>{{totalExpenses}}
+            </div>
+          </div>
+        </div>
+        <div class="calculator_common_sec_inner calculator_grid_wrapper" style="height: 500px">
+          <div *ngFor="let item of allExpenseList">
+            <ion-list *ngIf="item.IsActive == 1">
+              <button ion-button icon-only float-right clear>
+                <ion-icon name="ios-close-outline"></ion-icon>
+              </button>
+              <ion-item class="inp_with_close">
+                <ion-label stacked>{{item.MonthlyExpenseName}} </ion-label>
+                <ion-input type="number" (change)="calculateAllExpenses()" (ionFocus)="clearStartingZero(item)"
+                  [(ngModel)]="item.amount"></ion-input>
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_panel row active">
+      <div class="footer_panel_lt col">
+        <button ion-button class="back_btn" outline (click)="goBackExpenses()">
+          {{'common.back' | translate}}
+        </button>
+      </div>
+      <div class="footer_panel_rt col">
+        <button ion-button class="login_btn" (click)="nextExpensesPage()">
+          {{'common.next' | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,626 @@
+page-riskassesment-final {
+  ion-content.content > .scroll-content {
+    margin-top: 0 !important;
+  }
+  .header {
+    background: $sbi_thirtytwo_color;
+
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+      border-bottom: 1px solid $sbi_fifth_color;
+
+      .toolbar-background {
+        border: none;
+      }
+
+      .bar-button {
+        color: $sbi_fifth_color;
+        // padding-left: 28px;
+        // padding-right: 28px;
+        .back-button-text {
+          display: none;
+        }
+      }
+
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+        }
+      }
+    }
+
+    &:after {
+      background-image: none;
+      height: 0;
+    }
+  }
+  .scroll-content {
+    .Risk_details {
+      position: relative;
+      text-align: center;
+      color: $sbi_fifth_color;
+      background: $sbi_thirtytwo_color;
+      margin: 13.72vw 0 0;
+      padding: 38px !important;
+      h4 {
+        font-family: "Lato Semibold";
+        color: $sbi_fifth_color;
+        font-size: 4.103vw;
+        margin: 0 0 6px 0;
+        font-weight: 400;
+        letter-spacing: 0.38px;
+        @media screen and (max-width: 360px) {
+          font-size: 4.45vw;
+        }
+      }
+      .networth_amt {
+        .networth_amt_inner {
+          font-family: "Lato";
+          font-style: italic;
+          color: $sbi_fifth_color;
+          font-size: 7.179vw;
+          margin: 0 0 6px 0;
+        }
+        h3 {
+          font-family: "Lato Semibold";
+          color: $sbi_fifth_color;
+          font-size: 4.103vw;
+          margin: 0;
+          font-weight: 400;
+          letter-spacing: 0.38px;
+          @media screen and (max-width: 360px) {
+            font-size: 4.45vw;
+          }
+        }
+      }
+    }
+    .RiskContent {
+      position: absolute;
+      top: 130px;
+      left: 0;
+      margin: 14px;
+
+      .moderate_content {
+        background: $sbi_fifth_color;
+        border-radius: 4px;
+        box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
+        padding: 30px 20px 40px;
+        .heading_reinvest {
+          padding: 0;
+          font-size: 4.103vw;
+          font-family: "Lato Semibold";
+          color: $sbi_twentyseven_color;
+          letter-spacing: 0.38px;
+          text-transform: none;
+          text-align: left !important;
+          margin: 0;
+          font-weight: 400;
+          line-height: 160%;
+          @media screen and (max-width: 360px) {
+            font-size: 4.44vw;
+          }
+        }
+      }
+    }
+  }
+
+  ion-footer {
+    &.risk_final_footer {
+      &.footer {
+        .footer_panel {
+          box-shadow: none !important;
+          background: none !important;
+          padding: 18px;
+          .footer_panel_rt {
+            .login_btn {
+              background: $sbi_twentysix_color;
+              color: $sbi_fifth_color;
+              letter-spacing: 0.38px;
+              border: 1px solid $sbi_twentyseven_color;
+              max-width: 184px;
+              height: 50px;
+              font-size: 16px;
+            }
+          }
+          .footer_panel_lt {
+            .back_btn {
+              background: $sbi_fifth_color;
+              color: $sbi_twentysix_color;
+              letter-spacing: 0.38px;
+              border: 1px solid $sbi_twentyseven_color;
+              max-width: 184px;
+              height: 50px;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+  // .ion-md-menu:before {
+  //   content: "\f27d";
+  // }
+  // .custom_header_btn {
+  //   .sideMenuCls::before {
+  //     content: "\f32a" !important;
+  //   }
+  // }
+  // .ba-slider {
+  //   width: 200px;
+  // }
+  // .top_area {
+  //   position: absolute;
+  //   z-index: 1;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   background: none;
+  //   .top_area_container {
+  //     background: none;
+  //     .cloud {
+  //       opacity: 0.5;
+  //     }
+  //   }
+  // }
+  // .RiskContent {
+  //   z-index: 1;
+  //   position: relative;
+  // }
+  // .bottom_sec {
+  //   width: 100%;
+  //   background: #fff;
+  //   position: fixed;
+  //   /* z-index: 1; */
+  //   height: 100px;
+  //   bottom: 59px;
+  //   left: 0;
+  // }
+  // .Risk_details {
+  //   text-align: center;
+  //   color: $sbi_fifth_color;
+  //   margin: 9.72vw 0 16.66vw 0;
+
+  //   h4 {
+  //     font-family: "Lato Light";
+  //     color: lighten($sbi_fifth_color, 15%);
+  //     font-size: 3.88vw;
+  //     line-height: 4.16vw;
+  //     margin: 0 0 4px 0;
+  //   }
+  //   h5 {
+  //     font-family: "Lato";
+  //     color: $sbi_fifth_color;
+  //     font-size: 3.33vw;
+  //     line-height: 3.61vw;
+  //     margin: 0 0 12px 0;
+  //   }
+  //   .networth_amt {
+  //     font-family: "Lato Black";
+  //     font-size: 10.27vw;
+  //     .networth_amt_inner {
+  //       display: inline-block;
+  //       padding: 0 10px 5px 10px;
+  //       .rs_icon {
+  //         margin-right: 10px;
+  //       }
+  //     }
+  //     h3 {
+  //       font-family: "Lato Black";
+  //       color: lighten($sbi_fifth_color, 15%);
+  //       font-size: 5.27vw;
+  //       line-height: 6.27vw;
+  //       margin: 0 0 10px 0;
+  //     }
+  //   }
+  //   .networth_sum {
+  //     font-family: "Lato Semibold";
+  //     font-size: 3.61vw;
+  //     padding: 15px 0px 15px 0px;
+  //   }
+  // }
+  // .header {
+  //   .toolbar {
+  //     box-shadow: none;
+  //     .toolbar-background {
+  //       border: none;
+  //     }
+  //     .bar-button {
+  //       color: #1c1d37;
+  //     }
+  //     .notification-button {
+  //       font-size: 3vw;
+  //     }
+  //     .toolbar-content {
+  //       .toolbar-title {
+  //         color: #1c1d37;
+  //       }
+  //     }
+  //   }
+  //   &:after {
+  //     background-image: none;
+  //     height: 0;
+  //   }
+  // }
+  // .RiskContent {
+  // }
+  // .moderate_content {
+  //   background: #fff;
+  //   border-radius: 5px;
+  //   -webkit-box-shadow: 0 4px 10px #b2b2b2;
+  //   box-shadow: 0 4px 10px #b2b2b2;
+  //   padding-bottom: 60px;
+  // }
+
+  // .swiper-slide {
+  //   &:nth-child(2) {
+  //     .ba-slider {
+  //       padding-top: 30px;
+  //     }
+  //   }
+  // }
+  // .content {
+  //   background: url("../assets/imgs/risk_bg.jpg") no-repeat center top
+  //     $sbi_fifth_color;
+  //   background-size: 100% auto;
+  //   .highcharts-container {
+  //     margin: 0 auto;
+  //   }
+
+  //   .RiskContent {
+  //     .heading_reinvest {
+  //       padding: 0 0 15px 0;
+  //       font-size: 3.33vw;
+  //       font-family: "Lato Light";
+  //       color: $sbi_nine_color;
+  //       letter-spacing: 1.5px;
+  //       text-transform: none;
+  //     }
+  //     .overlay_dropdown_rng_val {
+  //       font-size: 8.61vw;
+  //       line-height: 8.88vw;
+  //     }
+  //     .calculation_with_range {
+  //       &.range_result {
+  //         .calculation_with_range_inp {
+  //           .input {
+  //             .text-input {
+  //               text-align: center;
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+
+  //     .swiper-container {
+  //       overflow: inherit;
+  //     }
+  //     .swiper-pagination-bullets {
+  //       bottom: 0;
+  //       .swiper-pagination-bullet-active {
+  //         background: $sbi_secondary_color;
+  //       }
+  //     }
+  //     .card {
+  //       margin: 0 auto 25px auto;
+  //       width: 97%;
+  //       box-shadow: 0px 8px 19px 0px lighten($sbi_third_color, 10%);
+  //       border-radius: 4px;
+  //       .heading_panel_bg {
+  //         text-align: center;
+  //         background: url("../../../assets/imgs/heading_bg.png") no-repeat left
+  //           top;
+  //         background-size: cover;
+  //         padding: 2.2vw 5.5vw 3.3vw 5.5vw;
+  //         span {
+  //           font-family: "Lato Semibold";
+  //           font-size: 3.61vw;
+  //           color: $sbi_fifth_color;
+  //         }
+  //       }
+  //       .invested_result {
+  //         .invested_user_details {
+  //           position: relative;
+  //           &:after {
+  //             position: absolute;
+  //             content: "";
+  //             height: 1px;
+  //             width: 100%;
+  //             background-color: lighten($sbi_third_color, 40%);
+  //             bottom: 0;
+  //             right: -1px;
+  //           }
+  //           .col {
+  //             position: relative;
+  //             padding: 10px 12px;
+  //             &:first-child {
+  //               &:before {
+  //                 position: absolute;
+  //                 content: "";
+  //                 height: 0px;
+  //                 width: 0px;
+  //                 top: 0;
+  //                 right: 0px;
+  //               }
+  //             }
+  //           }
+  //           .invested_user_name {
+  //             font-family: "Lato Black";
+  //             color: $sbi_seven_color;
+  //             font-size: 3.33vw;
+  //             line-height: 3.61vw;
+  //             text-transform: uppercase;
+  //             text-align: left;
+  //           }
+  //           .invested_user_age {
+  //             font-family: "Lato Light";
+  //             color: $sbi_third_color;
+  //             font-size: 3.33vw;
+  //             line-height: 3.61vw;
+  //             text-align: right;
+  //             strong {
+  //               font-family: "Lato Black";
+  //             }
+  //           }
+  //         }
+  //         .col {
+  //           position: relative;
+  //           padding: 12px;
+  //           &:first-child {
+  //             &:before {
+  //               position: absolute;
+  //               content: "";
+  //               height: 44px;
+  //               width: 1px;
+  //               background-color: lighten($sbi_third_color, 20%);
+  //               top: 12px;
+  //               right: -1px;
+  //             }
+  //           }
+  //         }
+  //         border-bottom: 1px solid lighten($sbi_third_color, 20%);
+  //         padding: 4px 0px;
+  //         .grid {
+  //           padding: 0;
+  //         }
+  //         h5 {
+  //           font-family: "Lato Semibold";
+  //           color: $sbi_nine_color;
+  //           font-size: 3.05vw;
+  //           line-height: 3.33vw;
+  //           margin: 0 0 8px 0;
+  //         }
+  //         .invested_result_amt {
+  //           font-family: "Lato Black";
+  //           color: $sbi_primary_color;
+  //           font-size: 5vw;
+  //           line-height: 5.27vw;
+  //           .rs_icon {
+  //             margin-right: 2px;
+  //             font-size: 5.83vw;
+  //           }
+  //           &.highlighted_txt {
+  //             color: $sbi_highlighted_color;
+  //             .pm {
+  //               font-family: "Lato Light";
+  //               font-size: 3.33vw;
+  //             }
+  //           }
+  //         }
+  //       }
+  //       .invested_result_heading {
+  //         text-align: center;
+  //         padding-top: 10px;
+  //         padding-bottom: 10px;
+  //         font-family: "Lato";
+  //         color: lighten($sbi_third_color, 20%);
+  //         font-size: 2.77vw;
+  //         line-height: 3.05vw;
+  //         .indiccat {
+  //           vertical-align: middle;
+  //           margin-right: 3px;
+  //           margin-top: 0px;
+  //         }
+  //         .col {
+  //           position: relative;
+  //           strong {
+  //             font-family: "Lato Black";
+  //             margin-left: 4px;
+  //             color: $sbi_third_color;
+  //             .rs_icon {
+  //               font-size: 3.33vw;
+  //               margin-right: 2px;
+  //             }
+  //           }
+  //           &:first-child {
+  //             &:before {
+  //               position: absolute;
+  //               content: "";
+  //               height: 12px;
+  //               width: 1px;
+  //               background-color: lighten($sbi_third_color, 40%);
+  //               top: 5px;
+  //               right: -1px;
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  //   .ttl_result_val {
+  //     font-family: "Lato Black";
+  //     color: $sbi_third_color;
+  //     font-size: 14px;
+  //     text-align: center;
+  //     .rs_icon {
+  //       font-size: 16px;
+  //       margin-right: 2px;
+  //     }
+  //   }
+
+  //   .calculation_with_range {
+  //     .range {
+  //       padding: 0px 5px 5px 5px;
+  //     }
+  //     .item {
+  //       text-align: center;
+
+  //       .overlay_dropdown_rng_amt {
+  //         font-family: "Lato Black";
+  //         color: $sbi_secondary_color;
+  //         font-size: 3.33vw;
+  //         line-height: 3.61vw;
+  //         float: right;
+  //         margin-top: 20px;
+  //         .rs_icon {
+  //           margin-right: 2px;
+  //           font-size: 3.61vw;
+  //         }
+  //       }
+  //       &.item-range {
+  //         padding-top: 0px;
+  //         contain: none;
+  //         overflow: inherit;
+  //       }
+  //     }
+  //   }
+  //   .emi_gen {
+  //     text-align: center;
+  //     padding: 25px 0 30px 0;
+  //     h5 {
+  //       font-family: "Lato";
+  //       color: $sbi_nine_color;
+  //       font-size: 3.05vw;
+  //       text-transform: uppercase;
+  //       letter-spacing: 1.5px;
+  //     }
+  //     .emi_gen_val {
+  //       font-family: "Lato Light";
+  //       color: $sbi_secondary_color;
+  //       font-size: 8.33vw;
+  //       span {
+  //         display: inline-block;
+  //         margin-top: 2px;
+  //         margin-right: 2px;
+  //       }
+  //     }
+  //   }
+
+  //   .indiccat {
+  //     width: 3.33vw;
+  //     height: 3.33vw;
+  //     border-radius: 3.33vw;
+  //     margin-right: 9px;
+  //     display: inline-block;
+  //     vertical-align: top;
+  //     margin-top: 2px;
+  //     &.color_fr {
+  //       background-color: $sbi_sixth_color;
+  //     }
+  //     &.color_sec {
+  //       background-color: $sbi_seven_color;
+  //     }
+  //     &.color_tr {
+  //       background-color: $sbi_sixth_color;
+  //     }
+  //     &.color_fr {
+  //       background-color: map-get($colors, secondary);
+  //     }
+  //     &.color_fi {
+  //       background-color: $sbi_eight_color;
+  //     }
+  //   }
+
+  //   .networth_list {
+  //     margin: -1px -16px 20px;
+  //     .item {
+  //       border-top: 0.5px solid lighten($sbi_third_color, 20%);
+  //       font-family: "Lato Semibold";
+  //       background-color: lighten($sbi_third_color, 28%);
+  //       color: $sbi_nine_color;
+  //       font-size: 3.33vw;
+
+  //       .label {
+  //         margin-right: 0;
+  //         color: $sbi_nine_color;
+  //         .rs_icon,
+  //         .icon {
+  //           font-size: 4.72vw;
+  //           margin-right: 1.11vw;
+  //           vertical-align: top;
+  //           min-width: 15px;
+  //         }
+  //       }
+  //       .select {
+  //         .select-text {
+  //           color: $sbi_primary_color;
+  //           font-family: "Lato Light";
+  //           font-size: 5.25vw;
+  //         }
+  //         .select-icon {
+  //           color: $sbi_primary_color;
+  //           padding-left: 7px;
+  //           .select-icon-inner {
+  //             position: relative;
+  //             font-family: "Ionicons";
+  //             border: none;
+  //             top: 0;
+  //             right: 0;
+  //             width: auto;
+  //             height: auto;
+  //             left: auto;
+  //             margin-top: 0px;
+  //             &:after {
+  //               content: "\f3d0";
+  //               font-size: 4.4vw;
+  //               color: lighten($sbi_primary_color, 20%);
+  //               margin-top: 1px;
+  //               position: absolute;
+  //               top: 3px;
+  //             }
+  //           }
+  //         }
+  //       }
+  //       .networth_list_lt {
+  //         padding-top: 8px;
+  //         p {
+  //           font-size: 2.77vw;
+  //           color: lighten($sbi_third_color, 30%);
+  //           padding-left: 5.55vw;
+  //           a {
+  //             color: $sbi_primary_color;
+  //           }
+  //         }
+  //         .rs_icon,
+  //         .icon {
+  //           font-size: 4.72vw;
+  //           margin-right: 4px;
+  //           vertical-align: middle;
+  //         }
+  //       }
+
+  //       .item-button {
+  //         font-family: "Lato Light";
+  //         color: $sbi_primary_color;
+  //         font-size: 5vw;
+  //         height: auto;
+  //         .rs_icon {
+  //           display: inline-block;
+  //           vertical-align: middle;
+  //           font-size: 6.11vw;
+  //           margin-top: 3px;
+  //           margin-right: 2px;
+  //         }
+  //         .icon {
+  //           font-size: 4.44vw;
+  //           color: $sbi_eight_color;
+  //           margin-top: 1px;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+}

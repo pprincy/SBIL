@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar color="sbiHeader" text-center>
+    <ion-title>{{ 'mpin.mpin' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="img_area">
+    <div class="user_pic">
+      <img src="assets/imgs/mpin.png" />
+    </div>
+  </div>
+  <div class="mpin_area">
+    <div class="heading_panel">
+      <p class="heading2" *ngIf="patternSteps == 0">{{'mpin.pleaseEnterYourOldPattern' | translate}}</p>
+      <p class="heading2" *ngIf="patternSteps == 1">{{'mpin.pleaseSetYourPattern' | translate}}</p>
+      <p class="heading2" *ngIf="patternSteps == 2">{{'mpin.pleaseReenterYourPattern' | translate}}</p>
+      <p class="heading1" *ngIf="patternSteps == '3'">{{'mpin.yourPatternHasBeenSetSuccessfully' | translate}}</p>
+      <div class="sucess_text" *ngIf="patternSteps == '3'">
+        {{'mpin.mpinNote' | translate}}
+      </div>
+    </div>
+    <div align="center" *ngIf="patternSteps != '3'">
+      <div style="transition-duration: 0.5s;" id="patternHolder1" class="pattern-holder" (touchstart)="removePatternWrong()">
+      </div>
+    </div>
+    <ion-row class="wrong_otp_msg patternWrong hide">
+      <ion-col align="center" *ngIf="patternSteps == '2'">
+        <label>{{'mpin.pleaseEnterTheSamePattern' | translate}}</label></ion-col>
+      <ion-col align="center" *ngIf="patternSteps == '0'">
+        <label>{{'mpin.pleaseEnterTheCorrectPattern' | translate}}</label></ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="footer_panel row active">
+    <div class="col" text-center *ngIf="patternSteps == '2'">
+      <button ion-button class="back_btn" (click)="back()">Back</button>
+    </div>
+    <div class="col" text-center>
+      <button ion-button class="login_btn" *ngIf="patternSteps == '1' || patternSteps == '0'"
+        (click)="next()">{{'common.proceed' | translate}}</button>
+      <button ion-button class="back_btn" *ngIf="patternSteps == '2'"
+        (click)="next()">{{'mpin.confirmPattern' | translate}}</button>
+      <button ion-button class="login_btn" (click)="gotIt()"
+        *ngIf="patternSteps == '3'">{{'mpin.gotIt' | translate}}</button>
+      <!-- <button ion-button class="login_btn"  (click)="next()" *ngIf="setMPinStep == '2'">Confirm Pattern</button>
+        <button ion-button class="login_btn"  (click)="gotIt()" *ngIf="setMPinStep == '3'">Got It!</button> -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" *ngIf="patternSteps == '3'">
+    </div>
+    <div class="col useMpin" text-center *ngIf="patternSteps == '1' || patternSteps == '2'">
+      <button ion-button clear class="no_outline_btn dark_blue" (click)="goMpinLock()">
+        <ion-icon ios="ios-lock" md="md-lock"></ion-icon> &nbsp;
+        {{'mpin.useMpinLock' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

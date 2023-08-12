@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="sbiHeader">
+    <button [class.active]="isBtnActive" ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'selectPreferableLanguage.selectPreferableLanguage' | translate}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="search()">
+        <ion-icon name="ios-search-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only class="notification-button" (click)="goNotificationList()">
+        <ion-icon name="ios-notifications">
+          <ion-badge class="notifications-badge" color="sbi_primary_color"
+            *ngIf="restapiProvider.notificationCount > 0">{{restapiProvider.notificationCount}}</ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div class="language_selector">
+    <ion-list radio-group [(ngModel)]="langId">
+      <ion-item *ngFor="let l of lang">
+        <ion-label>{{l.name}}</ion-label>
+        <ion-radio (click)="langClick(l)" value="{{l.id}}"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="footer_panel row active">
+    <!-- <div class="footer_panel_lt col">
+      <button ion-button outline class="back_btn">Skip</button>
+    </div> -->
+    <div class="col">
+      <button ion-button class="login_btn" (click)="changeLang()">{{'common.done' | translate}}</button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span>
+    <img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

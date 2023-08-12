@@ -1,0 +1,389 @@
+<ion-header>
+  <ion-navbar text-center>
+    <button
+      [class.active]="isBtnActive"
+      (click)="toggleClass()"
+      ion-button
+      [menuToggle]="activeMenu"
+    >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'healthInsuranceGoal.healthInsurance' | translate}}</ion-title>
+  </ion-navbar>
+  <div class="calculator_common_sec_steps">
+    <div class="calculator_steps" id="stepsCount">
+      <div class="calculator_steps_com active">
+        <div class="calculator_dashed step1">
+          <span class="calculator_steps_com_num">
+            <span>1</span>
+          </span>
+        </div>
+      </div>
+      <div class="calculator_steps_com">
+        <div class="calculator_dashed step2">
+          <span class="calculator_steps_com_num">
+            <span>2</span>
+          </span>
+        </div>
+      </div>
+      <div class="calculator_steps_com">
+        <div class="calculator_dashed step3">
+          <span class="calculator_steps_com_num">
+            <span>3</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content class="calculator_common_sec">
+  <ion-slides class="calculator_sliders" pager="false" autoHeight="false">
+    <!-- Slider 1 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h1>{{'healthInsuranceGoal.qOne' | translate}}</h1>
+      </div>
+      <div class="tell_us_cont_common">
+        <ion-card class="card_slide">
+          <div class="tell_us_cont com_head">
+            <div class="tell_us_slider sliderAgeNow">
+              <div *ngFor="let a of ageNow">
+                <span class="tell_us_slider_age">{{a}}</span>
+                <span class="tell_us_slider_year"
+                  >{{'common.years' | translate}}</span
+                >
+              </div>
+            </div>
+          </div>
+        </ion-card>
+      </div>
+    </ion-slide>
+    <!-- Step 2 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h2 class="qtwo">{{'healthInsuranceGoal.qTwo' | translate}}</h2>
+      </div>
+      <div class="tell_us_cont_common goals_slider_range">
+        <div class="calculator_common_sec_inner">
+          <div class="calculation_with_range">
+            <ion-row>
+              <ion-col>
+                <div class="calculation_with_range_inp row">
+                  <ion-input
+                    type="tel"
+                    disabled="{{!dropType}}"
+                    [(ngModel)]="monthlyIncomeComma"
+                    class="overlay_dropdown_rng_val"
+                    (ionChange)="formatAmount(this.monthlyIncomeComma, 'monthlyIncome')"
+                  ></ion-input>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-item *ngIf="dropType">
+              <ion-range
+                min="{{minMonthlyIncome}}"
+                max="{{maxMonthlyIncome}}"
+                step="{{steps}}"
+                [(ngModel)]="monthlyIncome"
+                pin="true"
+                (ngModelChange)="doSomething($event)"
+              >
+              </ion-range>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+
+    <!-- Step 3 -->
+    <ion-slide>
+      <div class="calculator_common_sec_inner age_slider_heading">
+        <h4>{{'healthInsuranceGoal.qFour' | translate}}</h4>
+      </div>
+      <div class="quesDiv">
+        <div class="qDiv">
+          <ion-row>
+            <ion-card>
+              <ion-col>
+                <h2>{{'healthInsuranceGoal.qThree' | translate}}</h2>
+              </ion-col>
+              <ion-row>
+                <ion-col>
+                  <ion-list
+                    radio-group
+                    class="custom_radio"
+                    [(ngModel)]="FamilyCoverReq"
+                  >
+                    <ion-item>
+                      <ion-label>{{'common.yes' | translate}}</ion-label>
+                      <ion-radio value="YES"></ion-radio>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>{{'common.no' | translate}}</ion-label>
+                      <ion-radio value="NO"></ion-radio>
+                    </ion-item>
+                  </ion-list>
+                </ion-col>
+              </ion-row>
+            </ion-card>
+          </ion-row>
+        </div>
+      </div>
+
+      <!-- Spouse -->
+      <div class="yes_no_container_body" *ngIf="FamilyCoverReq == 'YES'">
+        <ion-list class="checkbox_list" style="margin: -1px 13px 16px">
+          <div class="yes_no_container_body_top">
+            <ion-item>
+              <ion-label
+                >{{'healthInsuranceGoal.spouse' | translate}}</ion-label
+              >
+              <ion-checkbox
+                color="#5C2483"
+                [(ngModel)]="isSpouse"
+              ></ion-checkbox>
+            </ion-item>
+          </div>
+        </ion-list>
+        <div
+          class="yes_no_container_body_mid calculation_with_range range_result"
+          *ngIf="isSpouse"
+        >
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6>
+                <ion-item>
+                  <ion-label stacked
+                    >{{'healthInsuranceGoal.selectAge' | translate}}</ion-label
+                  >
+                  <ion-select
+                    [(ngModel)]="spouseAge"
+                    okText="{{'common.yes' | translate}}"
+                    cancelText="{{'common.no' | translate}}"
+                  >
+                    <ion-option value="{{a}}" *ngFor="let a of ageNow"
+                      >{{a}}</ion-option
+                    >
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+              <ion-col col-6>
+                <ion-label stacked
+                  >{{'healthInsuranceGoal.monthlyIncome' |
+                  translate}}</ion-label
+                >
+                <div class="calculation_with_range_inp">
+                  <span class="rs_icon">`</span>
+                  <ion-input
+                    type="tel"
+                    [(ngModel)]="spouseMonthlyIncome"
+                    class="overlay_dropdown_rng_val"
+                    (ionChange)="formatAmount(this.spouseMonthlyIncome, 'spouse')"
+                  ></ion-input>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+
+        <!-- Children -->
+        <div class="yes_no_container_body_top">
+          <ion-list class="checkbox_list" style="margin: -1px 13px 16px">
+            <ion-item>
+              <ion-label
+                >{{'healthInsuranceGoal.children' | translate}}</ion-label
+              >
+              <ion-checkbox
+                color="#5C2483"
+                [(ngModel)]="isChildren"
+                (ngModelChange)="changeChildFunction()"
+              ></ion-checkbox>
+            </ion-item>
+          </ion-list>
+        </div>
+        <div
+          class="yes_no_container_body_mid calculation_with_range range_result"
+          *ngIf="isChildren"
+        >
+          <ion-grid>
+            <ion-row *ngFor="let c of childrenArray">
+              <ion-col id="{{c.id + '-ChildrenAge'}}">
+                <ion-item>
+                  <ion-label stacked
+                    >{{'healthInsuranceGoal.selectAge' | translate}}</ion-label
+                  >
+                  <ion-select
+                    (click)="selectFun(c.id)"
+                    okText="{{'common.yes' | translate}}"
+                    cancelText="{{'common.no' | translate}}"
+                  >
+                    <ion-option value="{{a}}" *ngFor="let a of ageArray"
+                      >{{a}}</ion-option
+                    >
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+              <ion-col id="{{c.id + '-ChildrenIncome'}}">
+                <ion-label stacked
+                  >{{'healthInsuranceGoal.monthlyIncome' |
+                  translate}}</ion-label
+                >
+                <div class="calculation_with_range_inp">
+                  <span class="rs_icon">`</span>
+                  <ion-input
+                    type="tel"
+                    [(ngModel)]="childIncome"
+                    class="overlay_dropdown_rng_val"
+                    (ionChange)="formatAmount(this.childIncome, 'child')"
+                  ></ion-input>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <div class="yes_no_container_body_btm" (click)="addChildren()">
+            <a
+              ><ion-icon name="ios-add-circle"></ion-icon>
+              {{'healthInsuranceGoal.addChildren' | translate}}</a
+            >
+          </div>
+        </div>
+
+        <!-- Father -->
+        <div class="yes_no_container_body_top">
+          <ion-list class="checkbox_list" style="margin: -1px 13px 16px">
+            <ion-item>
+              <ion-label
+                >{{'healthInsuranceGoal.father' | translate}}</ion-label
+              >
+              <ion-checkbox
+                color="#5C2483"
+                [(ngModel)]="isFather"
+              ></ion-checkbox>
+            </ion-item>
+          </ion-list>
+        </div>
+        <div
+          class="yes_no_container_body_mid calculation_with_range range_result"
+          *ngIf="isFather"
+        >
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6>
+                <ion-item>
+                  <ion-label stacked
+                    >{{'healthInsuranceGoal.selectAge' | translate}}</ion-label
+                  >
+                  <ion-select
+                    [(ngModel)]="fatherAge"
+                    okText="{{'common.yes' | translate}}"
+                    cancelText="{{'common.no' | translate}}"
+                  >
+                    <ion-option
+                      value="{{a}}"
+                      *ngFor="let a of fatherMotherAgeArray"
+                      >{{a}}</ion-option
+                    >
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+              <ion-col col-6>
+                <ion-label stacked
+                  >{{'healthInsuranceGoal.monthlyIncome' |
+                  translate}}</ion-label
+                >
+                <div class="calculation_with_range_inp">
+                  <span class="rs_icon">`</span>
+                  <ion-input
+                    type="tel"
+                    [(ngModel)]="fatherMonthlyIncome"
+                    class="overlay_dropdown_rng_val"
+                    (ionChange)="formatAmount(this.fatherMonthlyIncome, 'father')"
+                  ></ion-input>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+
+        <!-- Mother -->
+        <div class="yes_no_container_body_top">
+          <ion-list class="checkbox_list" style="margin: -1px 13px 16px">
+            <ion-item>
+              <ion-label
+                >{{'healthInsuranceGoal.mother' | translate}}</ion-label
+              >
+              <ion-checkbox
+                color="#5C2483"
+                [(ngModel)]="isMother"
+              ></ion-checkbox>
+            </ion-item>
+          </ion-list>
+        </div>
+        <div
+          class="yes_no_container_body_mid calculation_with_range range_result"
+          *ngIf="isMother"
+        >
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6>
+                <ion-item>
+                  <ion-label stacked
+                    >{{'healthInsuranceGoal.selectAge' | translate}}</ion-label
+                  >
+                  <ion-select
+                    [(ngModel)]="motherAge"
+                    okText="{{'common.yes' | translate}}"
+                    cancelText="{{'common.no' | translate}}"
+                  >
+                    <ion-option
+                      value="{{a}}"
+                      *ngFor="let a of fatherMotherAgeArray"
+                      >{{a}}</ion-option
+                    >
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+              <ion-col col-6>
+                <ion-label stacked
+                  >{{'healthInsuranceGoal.monthlyIncome' |
+                  translate}}</ion-label
+                >
+                <div class="calculation_with_range_inp">
+                  <span class="rs_icon">`</span>
+                  <ion-input
+                    type="tel"
+                    [(ngModel)]="motherMonthlyIncome"
+                    class="overlay_dropdown_rng_val"
+                    (ionChange)="formatAmount(this.motherMonthlyIncome, 'mother')"
+                  ></ion-input>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+<ion-footer class="goals_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col" *ngIf="!backBtnhide">
+      <button ion-button class="back_btn" outline (click)="back()">
+        {{'common.back' | translate}}
+      </button>
+    </div>
+    <div
+      class="footer_panel_rt col"
+      [attr.text-center]="backBtnhide ? '' : null"
+    >
+      <button ion-button class="login_btn" (click)="next()">
+        {{'common.next' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

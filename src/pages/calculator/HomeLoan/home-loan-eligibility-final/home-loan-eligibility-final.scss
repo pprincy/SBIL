@@ -1,0 +1,605 @@
+page-home-loan-eligibility-final {
+  .scroll_div .scroll-content {
+    padding-top: 0 !important;
+  }
+  .scroll-content {
+    padding: 0 16px 16px !important;
+    background: #fff !important;
+  }
+  .ba-slider {
+    padding-top: 11px;
+    text-align: center;
+  }
+  //  .top_area{
+  //         position: absolute;
+  //         z-index: 1;
+  //         top: 0;
+  //         left: 0;
+  //         right: 0;
+  //         background: none;
+  //         .top_area_container{background: none;
+  //             .cloud{
+  //                 opacity: 0.5;
+  //             }
+  //         }
+
+  //     }
+  .header {
+    background: $sbi_thirtytwo_color;
+
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+      border-bottom: 1px solid $sbi_fifth_color;
+
+      .toolbar-background {
+        border: none;
+      }
+
+      .bar-button {
+        color: $sbi_fifth_color;
+        // padding-left: 28px;
+        .back-button-text {
+          display: none;
+        }
+      }
+
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+          margin-left: -32px;
+        }
+      }
+    }
+
+    &:after {
+      background-image: none;
+      height: 0;
+    }
+  }
+
+  .content {
+    background: $sbi_fifth_color !important;
+    .networth_details {
+      text-align: center;
+      padding: 30px 0 20px 0;
+      h4 {
+        font-family: "Lato";
+        font-size: 6.154vw;
+        color: $sbi_twentysix_color;
+        margin: 0 auto;
+        padding: 0 0 20px;
+        width: 250px;
+        letter-spacing: 0.38px;
+      }
+      .networth_amt {
+        background: $sbi_thirtytwo_color;
+        border-radius: 38px;
+        width: 251px;
+        height: 50px;
+        margin: 0 auto;
+        .networth_amt_inner {
+          font-family: "Lato";
+          font-size: 6.154vw;
+          color: $sbi_fifth_color;
+          margin: 0;
+          padding: 10px 28px;
+          text-align: center;
+          .rs_icon {
+            font-size: 0.76em;
+            font-weight: bold;
+            // margin-right: -3px;
+          }
+        }
+      }
+    }
+
+    ion-card {
+      &.home_loan_card {
+        background: $sbi_fifth_color;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        margin: 0;
+        
+        .column_wrapper {
+          padding: 5px 8px 8px 8px;
+          float: left;
+          width: 50%;
+          position: relative;
+          text-align: center;
+          .col_inner1 {
+            margin: 0 0 15px 15px;
+            background: linear-gradient(270deg, #301f6c 0%, #d60d47 100%);
+            border-radius: 8px;
+            padding: 1px;
+          }
+          .column_box1 {
+            border: 0px solid $sbi_twentyseven_color;
+            // border-image: linear-gradient(45deg, #301F6C, #D60D47) 1;
+            // border-image: linear-gradient(270deg, #301F6C 0%, #D60D47 100%);
+            border-radius: 8px;
+            width: 100%;
+            padding: 15px 18px 16px;
+            height: auto;
+            max-height: 137px;
+            margin: 0;
+            background: #fff;
+            &:first-child {
+              margin-right: 13px;
+            }
+            figure {
+              width: 24px;
+              height: 24px;
+              overflow: hidden;
+              margin: 0 auto 20px;
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+            h5 {
+              font-family: "Lato Semibold";
+              font-size: 3.077vw;
+              color: $sbi_twentyseven_color;
+              margin: 0 0 4px;
+              &.loan_amt {
+                background: $sbi_thirtytwo_color;
+                font-family: "Lato";
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                font-family: "Lato";
+                font-size: 3.077vw;
+                letter-spacing: 0.38px;
+              }
+            }
+            .invested_result_amt {
+              font-family: "Lato";
+              font-size: 5.9vw;
+              color: $sbi_twentyseven_color;
+              &.loanamt_col {
+                background: $sbi_thirtytwo_color;
+                font-family: "Lato";
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                font-family: "Lato";
+                font-size: 5.9vw;
+                letter-spacing: 0.38px;
+              }
+              .rs_icon {
+                font-size: 0.76em;
+                font-weight: bold;
+                // margin-right: -3px;
+              }
+            }
+          }
+
+          .col_inner2 {
+            margin: 0 15px 15px 0;
+            background: $sbi_twentyseven_color;
+            border-radius: 8px;
+            padding: 1px;
+          }
+          .column_box2 {
+            border: 0px solid $sbi_twentyseven_color;
+            // border-image: linear-gradient(45deg, #301F6C, #D60D47) 1;
+            // border-image: linear-gradient(270deg, #301F6C 0%, #D60D47 100%);
+            border-radius: 8px;
+            width: 100%;
+            padding: 15px 18px 16px;
+            height: auto;
+            max-height: 137px;
+            margin: 0;
+            background: #fff;
+            &:first-child {
+              margin-right: 13px;
+            }
+            figure {
+              width: 24px;
+              height: 24px;
+              overflow: hidden;
+              margin: 0 auto 20px;
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+            h5 {
+              font-family: "Lato Semibold";
+              font-size: 3.077vw;
+              color: $sbi_twentyseven_color;
+              margin: 0 0 4px;
+              letter-spacing: 0.38px;
+              white-space: nowrap;
+              &.loan_amt {
+                background: $sbi_thirtytwo_color;
+                font-family: "Lato";
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                font-family: "Lato";
+                font-size: 3.077vw;
+                letter-spacing: 0.38px;
+              }
+            }
+            .invested_result_amt {
+              font-family: "Lato";
+              font-size: 5.9vw;
+              color: $sbi_twentyseven_color;
+              &.loanamt_col {
+                background: $sbi_thirtytwo_color;
+                font-family: "Lato";
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                font-family: "Lato";
+                font-size: 5.9vw;
+                letter-spacing: 0.38px;
+              }
+              .rs_icon {
+                font-size: 0.76em;
+                font-weight: bold;
+                // margin-right: -3px;
+              }
+            }
+          }
+        }
+
+        .main_img {
+          width: 100%;
+          overflow: hidden;
+          .outstanding_img {
+            width: 100%;
+            height: 100%;
+          }
+
+          .total_amt {
+            font-size: 18px;
+            font-family: "Lato Semibold";
+            font-weight: 400;
+            text-align: center;
+            color: #5c2483;
+            font-style: normal;
+            letter-spacing: 0.38px;
+          }
+
+          .emi_gen_val {
+            text-align: center;
+            color: #2a2076;
+            font-size: 24px;
+            font-weight: 700;
+            font-family: Lato;
+            font-style: normal;
+            margin-bottom: 30px;
+            .rs_icon {
+              font-size: 18px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      ion-card-content {
+        &.home_loan_card_content {
+          padding: 30px 0 0;
+        }
+      }
+    }
+    .card-header {
+      font-size: 4.44vw;
+      color: $sbi_nine_color;
+      font-family: "Lato Black";
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    background: #5448b7; /* Old browsers */
+    background: -moz-linear-gradient(
+      top,
+      #5448b7 0%,
+      #5448b7 35%,
+      #ffffff 35%,
+      #ffffff 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+      top,
+      #5448b7 0%,
+      #5448b7 35%,
+      #ffffff 35%,
+      #ffffff 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+      to bottom,
+      #5448b7 0%,
+      #5448b7 35%,
+      #ffffff 35%,
+      #ffffff 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5448b7', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+    #networth_chart {
+      .highcharts-container {
+        margin: 0 auto;
+      }
+    }
+    .card {
+      margin: 0 auto 25px auto;
+      width: 100%;
+      box-shadow: 0px 8px 19px 0px lighten($sbi_third_color, 10%);
+      border-radius: 4px;
+    }
+
+    // .invested_result {
+    //             .invested_user_details{position: relative;
+    //                 &:after{position: absolute; content: ''; height:1px; width:100%; background-color: lighten($sbi_third_color,40%); bottom:0; right:-1px; }
+    //                 .col{position: relative;  padding:10px 12px;
+    //                     &:first-child{
+    //                         &:before{position: absolute; content: ''; height:0px; width:0px; top:0; right:0px; }
+    //                     }
+    //                     }
+    //                 .invested_user_name{font-family:'Lato Black';
+    //                     color: $sbi_seven_color;
+    //                     font-size: 3.33vw;
+    //                     line-height: 3.61vw; text-transform: uppercase; text-align: left;}
+    //                 .invested_user_age{font-family:'Lato Light';
+    //                     color:$sbi_third_color;
+    //                     font-size: 3.33vw;
+    //                     line-height: 3.61vw;  text-align: right;
+    //                 strong{font-family:'Lato Black';}
+    //                 }
+    //             }
+    //             .col{position: relative;  padding:12px;
+    //             &:first-child{
+    //                 &:before{position: absolute; content: ''; height:44px; width:1px; background-color: lighten($sbi_third_color,20%); top:12px; right:-1px; }
+    //             }
+    //             }
+    //             border-bottom: 1px solid lighten($sbi_third_color,20%); padding: 4px 0px;
+    //             .grid{padding: 0;}
+    //             h5{ font-family:'Lato Semibold';
+    //                 color: $sbi_nine_color;
+    //                 font-size: 3.05vw;
+    //                 line-height: 3.33vw;
+    //                 margin: 0 0 8px 0;}
+    //             .invested_result_amt{
+    //                 font-family:'Lato Black';
+    //                 color: $sbi_primary_color;
+    //                 font-size: 5vw;
+    //                 line-height: 4.27vw;
+    //                 .rs_icon{margin-right:2px; font-size:4.83vw;}
+    //                 &.highlighted_txt{
+    //                     color: $sbi_highlighted_color;
+    //                     .pm{
+    //                         font-family:'Lato Light';
+    //                         font-size: 3.33vw;
+    //                     }
+    //                    }
+    //             }
+    //         }
+    .invested_result {
+      padding: 0 24px;
+      .row {
+        .col {
+          border-radius: 8px;
+          border: 1px solid $sbi_twentysix_color;
+          padding: 28px 0 19px;
+          text-align: center;
+          &:first-child {
+            margin-right: 13px;
+          }
+          figure {
+            width: 24px;
+            height: 24px;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          h5 {
+            font-family: "Lato Semibold";
+            font-size: 3.077vw;
+            // color: $sbi_twentyseven_color;
+            margin: 0 0 4px;
+
+            &.emi_amount {
+              background: $sbi_thirtytwo_color;
+              font-family: "Lato";
+              -webkit-text-fill-color: transparent;
+              -webkit-background-clip: text;
+              font-family: "Lato";
+              font-size: 3.077vw;
+              letter-spacing: 0.38px;
+            }
+
+            &.interest_amt {
+              font-family: "Lato Semibold";
+              font-size: 3.077vw;
+              color: $sbi_twentysix_color;
+              margin: 0 0 4px;
+              letter-spacing: 0.38px;
+            }
+          }
+          .invested_result_amt {
+            font-family: "Lato";
+            font-size: 6.164vw;
+            color: $sbi_twentysix_color;
+            &.interest_amt_col {
+              background: $sbi_thirtytwo_color;
+              font-family: "Lato";
+              -webkit-text-fill-color: transparent;
+              -webkit-background-clip: text;
+              font-family: "Lato";
+              font-size: 6.164vw;
+              letter-spacing: 0.38px;
+            }
+            .rs_icon {
+              font-size: 0.76em;
+              font-weight: bold;
+              // margin-right: -3px;
+            }
+          }
+        }
+      }
+    }
+
+    .networth_list {
+      margin: -1px -16px 0px;
+      .item {
+        border-top: 1px solid $sbi_fifty_color;
+        font-family: "Lato Semibold";
+        background-color: $sbi_fifth_color;
+        color: $sbi_nine_color;
+        font-size: 3.33vw;
+
+        &.item-block {
+          .item-inner {
+            padding: 0 12px 0 22px;
+          }
+        }
+        &.item-block:last-child {
+          border-bottom: none;
+        }
+        .label {
+          margin-right: 0;
+          color: $sbi_nine_color;
+          .rs_icon,
+          .icon {
+            font-size: 3.72vw;
+            margin-right: 1.11vw;
+            vertical-align: top;
+            min-width: 15px;
+          }
+        }
+
+        .networth_list_lt {
+          display: flex;
+          align-items: center;
+          p {
+            font-family: "Lato";
+            font-size: 4.103vw;
+            color: $sbi_twentysix_color;
+            margin-left: 17px;
+            letter-spacing: 0.38px;
+          }
+          .rs_icon,
+          .icon {
+            font-size: 3.72vw;
+            margin-right: 4px;
+            vertical-align: middle;
+          }
+          figure {
+            width: 24px;
+            height: 24px;
+            overflow: hidden;
+            margin: 0 auto;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+
+        .item-button {
+          font-family: "Lato";
+          color: $sbi_twentyseven_color;
+          font-size: 4.103vw;
+          height: auto;
+          .rs_icon,
+          .icon-Icons_Monthly_Expense {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 0.76em;
+            margin-top: 3px;
+            margin-right: -2px;
+            font-weight: bold;
+          }
+          .icon {
+            font-size: 1.8em;
+            line-height: 0.67;
+            pointer-events: none;
+            padding-left: 0.4em;
+            color: #2a2076;
+          }
+        }
+      }
+    }
+
+    .emi_gen {
+      text-align: center;
+      padding: 25px 0 30px 0;
+      h5 {
+        font-family: "Lato";
+        color: $sbi_nine_color;
+        font-size: 3.05vw;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+      .emi_gen_val {
+        font-family: "Lato Light";
+        color: $sbi_secondary_color;
+        font-size: 8.33vw;
+        span {
+          display: inline-block;
+          margin-top: 2px;
+          margin-right: 2px;
+        }
+        .rs_icon {
+          font-size: 6.11vw;
+        }
+      }
+    }
+    .disclaimer_txt {
+      font-family: "Lato";
+      font-size: 4.103vw;
+      color: $sbi_thirtyeight_color;
+      margin: 0;
+      padding: 35px 0 0;
+      text-transform: capitalize;
+      text-decoration-line: underline;
+      a {
+        color: $sbi_thirtyeight_color;
+      }
+    }
+  }
+  ion-footer {
+    &.home_loan_final_footer {
+      &.footer {
+        .footer_panel {
+          box-shadow: none !important;
+          background: none !important;
+          padding: 18px 17px 28px 18px;
+          .footer_panel_rt {
+            .login_btn {
+              background: $sbi_twentysix_color;
+              color: $sbi_fifth_color;
+              letter-spacing: 0.38px;
+              border: 1px solid $sbi_twentyseven_color;
+              max-width: 184px;
+              height: 50px;
+            }
+          }
+          .footer_panel_lt {
+            .back_btn {
+              background: $sbi_fifth_color;
+              color: $sbi_twentysix_color;
+              letter-spacing: 0.38px;
+              border: 1px solid $sbi_twentyseven_color;
+              max-width: 184px;
+              height: 50px;
+            }
+          }
+        }
+        &::before {
+          background-image: none;
+        }
+      }
+    }
+  }
+
+  .login_btn {
+    background: #2a2076;
+    border: 1px solid #5c2483;
+    border-radius: 0;
+    margin-top: 25px;
+    text-transform: inherit;
+    letter-spacing: 0.38px;
+  }
+}

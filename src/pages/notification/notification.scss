@@ -1,0 +1,127 @@
+page-notification {
+  .header {
+    background: $sbi_thirtytwo_color;
+
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+      border-bottom: 1px solid $sbi_fifth_color;
+
+      .toolbar-background {
+        border: none;
+      }
+
+      .bar-button {
+        color: $sbi_fifth_color;
+        // margin: 0 -15px;
+        // padding-left: 28px;
+
+        .back-button-text {
+          display: none;
+        }
+      }
+
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+          margin-left: -22px;
+        }
+      }
+    }
+
+    &:after {
+      background-image: none;
+      height: 0;
+    }
+  }
+
+  .card-ios {
+    margin: 12px;
+    border-radius: 2px;
+    width: calc(100% - 24px);
+    font-size: 1.4rem;
+    background: #fff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    
+} 
+
+  .home_ico {
+    color: #fff;
+    background: transparent;
+    float: right;
+    font-size: 5.55vw;
+    margin: 0 5px;
+  }
+
+  .notifications {
+    .list_group {
+      padding-left: 0;
+      text-align: center;
+      width: 50%;
+      // max-width:138px;
+      float: left;
+      //  height: 138px;
+    }
+
+    .list_wrapper {
+      padding: 0 14px;
+      float: left;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .invest_list {
+      margin-bottom: -18px;
+      .list_icon {
+        content: "\25CF";
+        color: blue;
+        font-weight: bold;
+        display: inline-block;
+        color: $sbi_thirtyeight_color;
+        font-size: 30px;
+        line-height: 20px;
+      }
+
+      .notify_details{
+        font-family: "Lato";
+        font-size: 16px;
+        font-weight: 700;
+        color: #343434;
+        margin: -20px 0px -10px;
+      }
+
+      .publish_date{
+        // margin-left: 38px;
+        // margin-bottom: 10px;
+        font-weight: "Lato";
+        font-size: 14px;
+        color: #343434;
+        margin: -10px 39px 15px;
+      }
+    }
+
+
+
+
+    .sub-content {
+      font-family: "Lato Light";
+      color: $sbi_nine_color;
+      font-size: 3.333vw;
+      clear: both;
+      //  border-top: 1px solid #e6e6e6 ;
+      // padding-top:10px;
+      padding: 10px 12px 0;
+    }
+
+    .list_title {
+      color: $sbi_secondary_color;
+      font-family: "Lato Light";
+      font-size: 14px;
+      padding: 20px 30px 20px;
+      margin: 0;
+    }
+  }
+}

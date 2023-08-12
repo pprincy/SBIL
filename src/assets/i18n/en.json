@@ -1,0 +1,1636 @@
+{
+  "PaisaGenie": "Paisa Genie",
+
+  "appintro": {
+    "Welcome": "Welcome",
+    "title": "SBI Paisa Genie",
+    "subtitle": "Like a loyal friend,",
+    "subtitleone": "we wish to empower you",
+    "skip": "Get Started"
+  },
+
+  "login": {
+    "hello": "Get Your Money Under Control",
+    "subtitle": "Plan your expenses seamlessly",
+    "subtitletwo": "Mobile no. or Email ID",
+    "placeHolder": "Share registered Mobile no. or Email ID",
+    "errorMsg": "Please enter correct email id/mobile no.",
+    "loginBtn": "Login"
+  },
+
+  "unRegisteredCustomer": {
+    "mobileTitle": "May be your mobile no. is not registered with SBI Paisa Ginie",
+    "emailTitle": "May be your mobile no.",
+    "emailTitleone": "is not registered with SBI Paisa Ginie",
+    "emailSubTitle": "Please click on the link to register",
+    "mobileSubTitle": "Please click on the link to register",
+    "locate": "Locate nearest branch",
+    "reEnter": "Re-enter details and check",
+    "tryEmail": "Try using your registered email id",
+    "tryMobile": "Try using your registered Mobile No",
+    "mobile": "Mobile no.",
+    "email": "Email Id",
+    "updateYrEmail": "Update your email id"
+  },
+
+  "otp": {
+    "title": "Phone Verification",
+    "enterOtp": "Please enter the verification code sent to",
+    "sentOn": "sent on your registered $method$.",
+    "submit": "Continue",
+    "resendOtp": "Resend",
+    "resend": "Didn’t receive a code?",
+    "otpResendSuccessfully": "OTP resend successfully",
+    "PleaseEnterTheCorrectOTP": "Please enter the correct OTP",
+    "checkSpam": "Please check your spam in case OTP is not received"
+  },
+
+  "quizAge": {
+    "hello": "Hello",
+    "subTitle": "PaisaGenie will verify your details",
+    "yourAge": "Your Age",
+    "yourPro": "Your profession",
+    "reEnterDetails": "re-enter details",
+    "yesItsMe": "Yes it’s me"
+  },
+
+  "quizLifeStyle": {
+    "hintOne": "1. Tap to select your income bracket",
+    "hintTwo": "2. Pick your lifestage that suits you",
+    "annualIncome": "Annual income",
+    "almostReady": "Almost ready",
+    "selectLifeStageIncome": "Please select your life stage and income",
+    "clickAnywhere": "Click anywhere to proceed",
+    "lifeStyle": {
+      "sinle": "Single",
+      "married": "Married",
+      "marriedWithOneKid": "Married with 1 kid",
+      "marriedWithTwoKid": "Married with 2 kid",
+      "independent": "Independent"
+    }
+  },
+
+  "discover": {
+    "PaisaGenie": "PaisaGenie",
+    "discover": "Discover",
+    "planYourLife": "Plan Your Life",
+    "setYourGoals": "Set your goals",
+    "startPlanning": "Start planning",
+    "yourPersonalisedreads": "Your Personalised Reads",
+    "forBetterPlanning": "Start better planning",
+    "quesHeading": "Help us to know you better",
+    "thankSubTitle": "for answering the question(s) and",
+    "yourInvestmentChoices": "Your investment choices",
+    "tellUsLike": "Tell us what you like",
+    "latestNews": "Latest News",
+    "forYou": "For you",
+    "helpUsToKnowYouBetter": "Help us to know you better",
+    "quesFinal": "for answering the question(s) and giving your details",
+    "collection": "Collection",
+    "allInOnePlace": "All in one place",
+    "updateChoices": "Update choices",
+    "monthlyExpense": "Monthly expense",
+    "startPlanningYourGoals": "Start planning your goals today!"
+  },
+
+  "plan": {
+    "plan": "Plan",
+    "popularGoals": "Popular Goals",
+    "setYourGoals": "Set your goals",
+    "tools": "Tools",
+    "calculateYourInvestments": "calculate your investments",
+    "tellUs": "Tell us",
+    "yourInvestmentAttitude": "Your investment attitude",
+    "tips": "Tips",
+    "forFinancialLifestylePlanning": "For financial & lifestyle planning",
+    "faqs": "FAQs",
+    "completed": "completed",
+    "GiveUsMoreSetailsToKnowYou": "Give us more details to know you",
+    "completeProfile": "complete profile",
+    "takeMeToSpendManager": "Spend Manager",
+    "peerBenchmarking": "Peer Benchmarking",
+    "seehowYourPeerSpends": "See how your peers spend"
+  },
+
+  "settings": {
+    "settings": "Settings",
+    "notifications": "Notifications",
+    "location": "Location",
+    "locationAccess": "Location Access",
+    "sms": "SMS",
+    "smsAccess": "SMS Access",
+    "legal": "Legal",
+    "disclaimers": "Disclaimers",
+    "TermsCondition": "Terms & Condition",
+    "security": "Security",
+    "needMPINToOpenApp": "Need M-PIN to open app"
+  },
+
+  "sidemenu": {
+    "hello": "Hello",
+    "profileCompleted": "Profile Completed",
+    "selectLanguage": "Select Language",
+    "menuPage": [
+      {
+        "title": "Discover",
+        "component": "TabsPage",
+        "name": "Icons_Discover_New"
+      },
+      { "title": "Plan", "component": "TabsPage", "name": "Icons_Plan_New" },
+      {
+        "title": "Goals",
+        "component": "ListingScreenGoalPage",
+        "name": "Icons_Goals_New"
+      },
+      {
+        "title": "Spend Manager",
+        "component": "IncomeDashboardPage",
+        "name": "Icons_Trending_Expenses_New"
+      },
+      {
+        "title": "Tools",
+        "component": "CalculatorlistingPage",
+        "name": "Icons_Tools_New"
+      },
+      {
+        "title": "Collection",
+        "component": "ArticlesPage",
+        "name": "Icons_Trending_Collection_New"
+      },
+      {
+        "title": "Tips",
+        "component": "TipsListingPage",
+        "name": "Icons_Tips_For_You_New"
+      },
+      {
+        "title": "Saved Goal",
+        "component": "SavedArticleGoalPage",
+        "name": "Icons_Saved_Goals_New"
+      },
+      {
+        "title": "Risk Assesment",
+        "component": "RiskAssesmentPage",
+        "name": "Icons_Risk_Assessment_New"
+      },
+      {
+        "title": "Quiz/Survey",
+        "component": "QuizSurveyListPage",
+        "name": "Icons_Quiz_Survey_New"
+      },
+      {
+        "title": "Settings",
+        "component": "SettingsPage",
+        "name": "Icons_Settings_New"
+      }
+    ],
+    "subMenu": [
+      { "title": "FAQs", "component": "FaqsPage", "name": "Icons_FAQs" },
+      {
+        "title": "Contact Us",
+        "component": "ContactusPage",
+        "name": "Icons_ContactUs"
+      },
+      { "title": "M-PIN", "component": "MpinPage", "name": "Icons_MPin" },
+      {
+        "title": "About us",
+        "component": "AboutusPage",
+        "name": "Icons_AboutUs"
+      },
+      {
+        "title": "Privacy Policy",
+        "component": "",
+        "name": "Icons_PrivacyPolicy"
+      },
+      {
+        "title": "Rate us",
+        "component": "RateUs",
+        "name": "Icons_RateUs"
+      },
+      { "title": "Log out", "component": "", "name": "Icons_LogOut" }
+    ]
+  },
+
+  "contactUs": {
+    "contactUs": "Contact Us",
+    "subTitle": "We'd love to hear from you, write to us at the above mentioned email."
+  },
+
+  "faqs": {
+    "faqs": "FAQs"
+  },
+
+  "aboutUs": {
+    "aboutUs": "About Us",
+    "disclaimers": "Disclaimers",
+    "TermsCondition": "Terms & condition",
+    "aboutUsText": "SBI Life is one of the leading private Life Insurance companies in India. We are a joint venture between India’s largest bank State Bank of India and the leading global insurance company BNP Paribas Cardif.State Bank Group has an unrivalled strength of over 23,000 branches across the country, making it the largest Banking group in India. With 198 foreign offices in 37 countries, SBI is truly an Indian multinational.It also features in the Fortune Global 500 list of the world’s biggest corporations.BNP Paribas Cardif is the Life and Property &amp; Casualty insurance arm of BNP Paribas, one of the strongest banks in the world. With presence in more than 70 countries, the BNP Paribas Group ranks highly in Retail Banking, Investment Solutions and Corporate &amp; Investment Banking.BNP Paribas Cardif is one of the world leaders in creditor insurance, and its life and non-life insurance units have received an A rating from Standard &amp; Poor’s."
+  },
+
+  "ratings": {
+    "ratings": "Ratings",
+    "someRating": "Hey drop some rating!",
+    "review": "Tell us how well we served you."
+  },
+
+  "logOut": {
+    "title": "Are you sure you want to log out ?",
+    "no": "No",
+    "yes": "Yes"
+  },
+
+  "goalListing": {
+    "myGoals": "My Goals",
+    "planYourLife": "Plan your life",
+    "collection": "Collection",
+    "allInOnePlace": "All in one place",
+    "muSavedGoal": "My Saved Goals",
+    "goalList": [
+      {
+        "goalName": "Family Protection",
+        "img": "assets/imgs/goals/family_protection.svg",
+        "className": "FamilyProtectionPage",
+        "goalDesc": "Give your loved ones a wholesome protection by estimating the life insurance cover you will need."
+      },
+      {
+        "goalName": "Health Insurance",
+        "img": "assets/imgs/goals/health_insurance.svg",
+        "className": "HealthInsurancePage",
+        "goalDesc": "Medical costs are on a rise. Ensure that you and your family are adequately protected by estimating the health cover your family will need."
+      },
+      {
+        "goalName": "Education",
+        "img": "assets/imgs/goals/education.svg",
+        "className": "ChildEducationPage",
+        "goalDesc": "Education expenses may rise faster than inflation, so work out your investments wisely for yourself and your child with our smart education planner."
+      },
+      {
+        "goalName": "Marriage",
+        "img": "assets/imgs/goals/marriage.svg",
+        "className": "MarriagePage",
+        "goalDesc": "Whether you are planning for your dream wedding or your child’s, our wedding planner will help you plan your investments to make that dream wedding come true."
+      },
+      {
+        "goalName": "Home",
+        "img": "assets/imgs/goals/home.svg",
+        "className": "HomeGoalPage",
+        "goalDesc": "Own your dream home by planning and investing wisely with our home planner."
+      },
+      {
+        "goalName": "Car",
+        "img": "assets/imgs/goals/car.svg",
+        "className": "CargoalPage",
+        "goalDesc": "Invest wisely and live your dream with our smart car planner so you can buy your favourite car."
+      },
+      {
+        "goalName": "Retirement",
+        "img": "assets/imgs/goals/retirement.svg",
+        "className": "RetirementGoalPage",
+        "goalDesc": "Continue living life to the fullest, post your retirement, save and invest wisely with our retirement planner."
+      },
+      {
+        "goalName": "Custom",
+        "img": "assets/imgs/goals/custom.svg",
+        "className": "CustomGoalPage",
+        "goalDesc": "Whether you are planning to expand your business or go on a world tour with your family, our custom planner will help you plan your investments wisely for your dreams to come true."
+      }
+    ]
+  },
+
+  "familyProtection": {
+    "familyProtection": "Family Protection",
+    "qOne": "Select your age",
+    "yourRetirement": "Your Retirement",
+    "yourCurrent": "Your Current",
+    "qTwo": "Enter your monthly income",
+    "approximateValue": "Approximate Value",
+    "qThree": "Enter estimated monthly expenses",
+    "qThreeNew": "Would you like to look for",
+    "yearsToGo": "Years to go",
+    "sliderThreeArray": [
+      { "id": 1, "title": "Accidental Death benefit rider?", "value": "Yes" },
+      { "id": 2, "title": "Total Permanent Disablity rider?", "value": "Yes" }
+    ],
+    "accidentalDeathBenefitRider": "Accidental Death benefit rider?",
+    "totalPermanentDisablityRider": "Total Permanent Disablity rider?",
+    "addAccidentalDeathBenefitRider": "Add Accidental Death benefit rider?",
+    "addTotalPermanentDisablityRider": "Add Total Permanent Disablity rider?",
+    "sliderFourArray": [
+      {
+        "QuestionID": 1,
+        "title": "Do you drive long distance regularly?",
+        "AnswerID": 1,
+        "subTitle": ""
+      },
+      {
+        "QuestionID": 2,
+        "title": "Do you travelby public transport regularly?",
+        "AnswerID": 1,
+        "subTitle": ""
+      },
+      {
+        "QuestionID": 3,
+        "title": "Do you smoke?",
+        "AnswerID": 1,
+        "subTitle": ""
+      },
+      {
+        "QuestionID": 4,
+        "title": "Are you suffering from any major illness?",
+        "AnswerID": 1,
+        "subTitle": "(requiring hospitalisation for more than 3 days)"
+      }
+    ],
+    "mcq1": "Do you drive long distance regularly?",
+    "mcq2": "Do you travelby public transport regularly?",
+    "mcq3": "Do you smoke?",
+    "mcq4": "Are you suffering from any major illness",
+    "mcq4SubTitle": "(requiring hospitalisation for more than 3 days)",
+    "suggestedCompreheniveCover": "Total Life Insurance required",
+    "suggestedTpd": "Suggested TPD",
+    "suggestedAbd": "Suggested ABD",
+    "existingLifeCover": "Existing Life Cover",
+    "excludingEmiAndRent": "Excluding EMI and rent",
+    "enterExpenseBreakupValues": "Enter expense breakup values",
+    "totalLifeInsuranceRequired": "Total Life Insurance required",
+    "healthCover": "Health cover",
+    "ContigencyFund": "Contigency fund",
+    "existingCover": "Existing Life Cover",
+    "monthlyIncome": "Monthly Income",
+    "monthlyExpenses": "Monthly expenses",
+    "retirementAge": "Retirement age",
+    "replan": "Replan",
+    "readArticles": "Read Articles",
+    "ageTodayHas": "Age today has to be less than age at retirement",
+    "adbPopup": "The Medical expenses and permanent loss of income from an accidental death of the breadwinner can be emotionally and financially distressing for the family. Here the accidental death benefit rider can prove helpful. In case of death the nominee receives the original sum assured plus additional rider amount.",
+    "tpdPopup": "A Total and permanent disability rider can be beneficial in cases where the insured person suffers some kind of total and permanent disability that would hinder his/her ability to work thereby causing loss of regular income. In such cases the insured person gets a sum assured as per the rider."
+  },
+
+  "educationGoal": {
+    "educationGoal": "Education Goal",
+    "qOne": "At which age you/child wishes to study",
+    "currentAge": "Current Age",
+    "ageDuring": "Age During Course",
+    "enterTheFee":"Enter what are the course fee",
+    "enterWhatAreThe": "Enter course fees",
+    "dontKnowCostOfCourse": "I don’t know the cost of the course",
+    "underGraduate": "Under Graduate",
+    "postGraduate": "Post Graduate",
+    "isTheCollegeInIndia": "Is this college in India?",
+    "corpusTitle": "Annual corpus needed in year $year$ will be",
+    "willBe": "will be",
+    "futureValueOfYourCourse": "Future Value of Course",
+    "suggestedSavingsPM": "Suggested Savings",
+    "youHaveAlreadyAaved": "You have already saved",
+    "risk": "Risk",
+    "riskSubTitle": "Average rate of return @",
+    "rateOfInflation": "Rate of Infliation",
+    "increasingSavingsRate": "Increasing saving rate",
+    "currentCostOfCourse": "Current cost of course",
+    "qOneError": "Age today to be less than age at during Course",
+    "selectCountry": "Select country",
+    "selectCourseField": "Select course field",
+    "selectCourse": "Select course"
+  },
+
+  "marriageGoal": {
+    "marriageGoal": "Marriage Goal",
+    "qOne": "When are you planning the wedding",
+    "inTheYear": "In the year",
+    "qTwo": "Select your estimated monthly savings",
+    "approximateValue": "Approximate value",
+    "costRequiredInYear": "Cost required in year $year$ will be",
+    "willBe": "will be",
+    "futureValueOfWedding": "Future Value of wedding",
+    "suggestedSavingsPM": "Suggested Savings",
+    "youHaveAlreadySaved": "You have already saved",
+    "riskAppetite": "Risk appetite",
+    "averageRateOfReturn": "Average rate of return",
+    "rateOfInflation": "Rate of inflation",
+    "increasingSavingsRate": "Increasing saving rate",
+    "currentCostOfWedding": "Current cost of wedding"
+  },
+
+  "suggestedAssetsAllocation": {
+    "popupTitle": "Compare your current assets with our suggested ones",
+    "updateAssets": "Update Assets",
+    "compareNow": "Compare now",
+    "getMyRecommendations": "Get my recommendations",
+    "keepingInMind": "Keeping in mind, your risk profile, requirements, and savings, we suggest investing in",
+    "equity": "Equity",
+    "debt": "Debt",
+    "suggestedAssetsAllocation": "suggested assets allocation",
+    "youNeedToSave": "You need to save",
+    "ofYourIncome": "of your income",
+    "suggestedEquityAssets": "suggested equity assets",
+    "suggestedDebtAssets": "suggested debt assets",
+    "inAdditionToAboveYou": "In addition to above you should have adequate protection and health cover",
+    "readArticles": "Read Articles",
+    "tryCalculators": "Try Calculators",
+    "doYouWantToSaveThisGoal": "Do you want to save this goal?",
+    "dontSave": "Don't save",
+    "yourGoalSavedSuccessfully": "Your goal saved successfully",
+    "yourAssetsAllocation": "Your assets allocation",
+    "save": "Save"
+  },
+
+  "updateAssets": {
+    "qOne": "Estimate all that you proudly own?",
+    "savingsAndInvestments": "savings and investments",
+    "totalAmount": "Total amount"
+  },
+
+  "homeGoal": {
+    "homeGoal": "Home Goal",
+    "qOne": "When do you wish to buy your dream home?",
+    "inTheYear": "In Year",
+    "years": "Years",
+    "qTwo": "Enter what is the cost of your home",
+    "approximateValue": "Approximate value",
+    "qThree": "Enter the estimated down payment amount",
+    "ofTheTotalCost": "of the total cost",
+    "coupusTitle": "Corpus needed for down payment in year $year$ will be ",
+    "youHaveAlreadySaved": "You have already saved",
+    "futureValueOfYourHome": "Future value of your home",
+    "suggestedSavingsPM": "Suggested savings p.m",
+    "riskAppetite": "Risk appetite",
+    "averageRateOfReturn": "Average rate of return",
+    "rateOfInflation": "Rate of inflation",
+    "increasingSavingsRate": "Increasing saving rate",
+    "costOfHome": "Current cost of dream home",
+    "estimatedDownPayment": "Estimated down payment",
+    "EMIToBePaid": "EMI to be paid",
+    "loanamount": "Loan Amount",
+    "rateOfInterest": "Rate of interest"
+  },
+
+  "retirementGoal": {
+    "retirementGoal": "Retirement Goal",
+    "qOne": "Select when you wish to retire",
+    "yourRetirementAge": "Your Retirement",
+    "yourCurrentAge": "Your Current",
+    "qTwo": "Enter estimated monthly expenses",
+    "excludingEmiAndRent": "Excluding EMI and rent",
+    "enterExpenseBreakupValues": "Enter expense breakup values",
+    "corpusTitle": "Your retirement corpus by the year $year$ will be",
+    "willBe": "will be",
+    "at5Annuity": "At 5% annuity",
+    "suggestedSavingsPM": "Suggested Savings p.m",
+    "youHaveAlreadySaved": "Previously saved money",
+    "annuityPlan": "Annuity Plan",
+    "riskAppetite": "Risk appetite",
+    "averageRateOfReturn": "Average rate of return",
+    "rateOfInflation": "Rate of inflation",
+    "increasingSavingsRate": "Increasing saving rate",
+    "retirementAge": "Retirement age",
+    "monthlyExpenses": "Monthly expenses",
+    "errorAge": "Age today has to be less than age at retirement",
+    "annuityPopupText": "Annuity plan gives the individual a regular income post retirement. You can make a single payment, and post retirement, the annuity will pay you at fixed intervals (1 month, 3 months, 12 months).",
+    "duration": "Duration"
+  },
+
+  "carGoal": {
+    "carGoal": "Car Goal",
+    "qOne": "Select the type of car you wish to own",
+    "approximatePrice": "Approximate price",
+    "qTwo": "When do you wish to buy the car?",
+    "inTheYear": "In the year",
+    "years": "years",
+    "qThree": "Enter the down payment amount",
+    "ofTheTotalCost": "of the total cost",
+    "corpusTitle": "Annual corpus needed in year $year$ will be",
+    "willBe": "will be",
+    "futureValueOfTheCar": "Future Value of Car",
+    "suggestedSavingsPM": "Suggested Savings p.m",
+    "moneySavedAlready": "Money saved already",
+    "riskAppetite": "Risk appetite",
+    "averageRateOfReturn": "Average rate of return",
+    "rateOfInflation": "Rate of inflation",
+    "increasingSavingsRate": "Increasing savings rate",
+    "costOfCar": "Current cost of the car",
+    "estimatedDownPayment": "Estimated down payment",
+    "EMIToBePaid": "EMI to be paid",
+    "loanAmount": "Loan amount",
+    "rateOfInterest": "Rate of interest"
+  },
+  "healthInsuranceGoal": {
+    "healthInsurance": "Health Insurance",
+    "qOne": "What is your age now?",
+    "qTwo": "How much is your monthly income?",
+    "qThree": "Do you want to add your family \n in the cover?",
+    "qThreeA": "Do you want to add your",
+    "qThreeB": "family in the cover?",
+    "qFour": "What you like to look for:",
+    "yes": "Yes",
+    "no": "No",
+    "spouse": "Spouse",
+    "children": "Children",
+    "addChildren": "Add children",
+    "father": "Father",
+    "mother": "Mother",
+    "selectAge": "Select Age",
+    "monthlyIncome": "Monthly Income",
+    "totalHealthCoverRequired": "Total health cover required",
+    "indemity": "Indemnity",
+    "fixed": "Fixed",
+    "downloadPdf": "Download pdf",
+    "criticalIllness": "Critical Illness",
+    "forParents": "for parents",
+    "forSpouseAndChildren": "for Spouse, Children and You",
+    "forYou": "for you",
+    "ExistingHealthCover": "Existing Health Cover",
+    "indemnityTxt": "An indemnity-based plan reimburses the policyholder the cost of medical expenses if diagnosed with any of the critical illness. These plans will reimburse the policyholder with the amount incurred as expenses during a hospitalization stay up to the sum insured.",
+    "fixedText": "A fixed benefit plan is one where a fixed amount of funds is paid out to cover expenses for a predetermined illness or condition that has been insured. The fixed benefit plan can be beneficial as it provides an additional source of funds during a pre-insured critical illness."
+  },
+
+  "customGoal": {
+    "custom": "Custom",
+    "tellUsYourAspirations": "Tell us your aspiration",
+    "pickAnOptionFromBelow": "Pick an option from below",
+    "nameYourDream": "Name your dream",
+    "back": "Back",
+    "qOne": "When do you want to achieve it?",
+    "inTheYear": "In the year",
+    "years": "years",
+    "qTwo": "Enter the estimated cost of your dream",
+    "approximateValue": "Approximate Value",
+    "corpusTitle": "Annual corpus needed in year $year$ will be",
+    "willBe": "will be",
+    "futureValueOfGoal": "Future value of goal",
+    "suggestedSavingsPM": "Suggested Savings p.m.",
+    "youHaveAlreadySaved": "You have already saved",
+    "riskAppetite": "Risk appetite",
+    "averageRateOfReturn": "Average rate of return",
+    "rateOfInflation": "Rate of inflation",
+    "increasingSavingsRate": "Increasing saving rate",
+    "costOfGoal": "Current cost of the goal",
+    "goalList": [
+      {
+        "goalId": 0,
+        "goalName": "Vacation",
+        "imgFilled": "assets/imgs/vacation_goal.svg",
+        "imgUnFiled": "assets/imgs/travel_unfiled.png",
+        "isActive": "false"
+      },
+      {
+        "goalId": 1,
+        "goalName": "Jewellery",
+        "imgFilled": "assets/imgs/jwellery_goal.svg",
+        "imgUnFiled": "assets/imgs/jewellery_unfiled.png",
+        "isActive": "false"
+      },
+      {
+        "goalId": 2,
+        "goalName": "Bike",
+        "imgFilled": "assets/imgs/bike_goal.svg",
+        "imgUnFiled": "assets/imgs/bike_unfiled.png",
+        "isActive": "false"
+      },
+      {
+        "goalId": 3,
+        "goalName": "Business expansion",
+        "imgFilled": "assets/imgs/business_expansion_goal.svg",
+        "imgUnFiled": "assets/imgs/business_expansion_unfiled.png",
+        "isActive": "false"
+      },
+      {
+        "goalId": 4,
+        "goalName": "Other",
+        "imgFilled": "assets/imgs/other_goal.svg",
+        "imgUnFiled": "assets/imgs/parasuit_unfiled.png",
+        "isActive": "false"
+      }
+    ]
+  },
+
+  "myProfile": {
+    "tabs": ["Personal", "Professional", "Investment", "Hobbies/Interests"],
+    "myProfile": "My Profile",
+    "completed": "completed",
+    "shareYourDetails": "Share your details so we can give you personalised financial planning tips and more",
+    "personaldetails": "Personal details",
+    "professionalDetails": "Professional details",
+    "investmentDetails": "Investment details",
+    "hobbiesInterests": "Hobbies/Interests",
+    "dob": "Date of Birth",
+    "livingIn": "Living in",
+    "education": "Education",
+    "lifeStage": "Life Stage",
+    "familyMembers": "Family Members",
+    "yearOld": "Year Old",
+    "whenweknowYouBetter": "When we know you better, we can serve you better! Please help us help you.",
+    "firstName": "First name",
+    "lastName": "Last Name",
+    "mobileNumber": "Mobile Number",
+    "member": "Member",
+    "emailId": "Email Id",
+    "selectLifeStage": "Select life stage",
+    "addFalmilyMember": "Add Family Members",
+    "addAMember": "Add a member",
+    "nameOfYourFamilyMember": "Name of your family member",
+    "daughter": "Daughter",
+
+    "occupation": "Occupation",
+    "industry": "Industry",
+    "workExperience": "Work Experience",
+    "incomeRange": "Income Range",
+    "industryOfWork": "Industry of work",
+    "selectDesignation": "Select designation",
+    "yearsOfWorkExperience": "Years of work experience",
+    "yourIncomeRange": "Your income range",
+    "annualy": "annualy",
+
+    "riskassessmentResult": "Risk Assessment Result",
+    "monthlyExpenses": "Monthly Expenses",
+    "estimateAllMonthlyExpense": "Estimate all monthly expense",
+    "totalAmount": "Total amount",
+    "oneTimeSavings": "One-time Savings",
+    "viewBreakup": "view breakup",
+    "assetValues": "Asset Values",
+    "estimateAllAssetsYouOwn": "Estimate all assets you own",
+    "savingsAndInvestment": "Savings and Investment",
+    "viewAssetBreakup": "view asset breakup",
+    "Liabilities": "Liabilities",
+    "viewLiabilitiesBreakup": "view liabilities breakup",
+    "estimateAllDebtsYouOwn": "Estimate all debts you own",
+    "debts": "Debts",
+    "emergencyFunds": "Emergency Funds",
+    "ancestryProperty": "Ancestry Property",
+    "preferences": "Preferences",
+    "reAssesMyRiskType": "Re-asses my risk type",
+    "lumpsumSavings": "Lumpsum savings",
+    "estimateYourTotalAssets": "Estimate your total assets",
+    "approxValue": "approx value",
+    "addassetsBreakup": "Add assets breakup",
+    "selectSavAndInv": "Select all your savings and investments (assets)",
+    "enterSavAndInv": "Enter the estimated amount invested in each savings tool",
+    "assetsBreakUpSavedSuccessfully": "Assets breakup saved successfully",
+    "addLiabilitiesBreakup": "Add liabilities breakup",
+    "selectDebtsAndLiab": "Select all your debts and liabilities",
+    "enterDebtsAnsLiab": "Enter the estimated amount of liability in each liabilities tool",
+    "liabilitiesBreakUpSavedSuccessfully": "Liabilities breakup saved successfully",
+    "ancestorProperty": "Ancestor property",
+    "ifAny": "if any",
+    "monthlyExpense": "Monthly expense",
+    "addExpenseBreakup": "Add expense breakup",
+    "selectYourMonthlyExpenses": "Select your Monthly Expenses",
+    "enterMonthlyExpenses": "Enter the estimated amount of expense in each expenses tool",
+    "monthlyExpensesSavedSuccessfully": "Monthly Expenses saved successfully",
+    "pickYourPreferredInvestmentInstruments": "Pick your preferred investment instruments",
+    "selectYourHobbiesInterests": "Select your hobbies & interests",
+    "estimateYourTotalLiabilities": "Estimate your total liabilities",
+    "fillProfile": "Fill Profile",
+    "thanksProfile": "Thank you for completing your profile",
+    "subThanks": "You’re almost there, complete your profile and experience the absolute magic of PaisaGenie.",
+    "monthlyExpenseBreakupSavedSuccessfully": "Monthly expense breakup saved successfully",
+    "liabilitiesBreakupSavedSuccessfully": "Liabilities breakup saved successfully",
+    "assetBreakupSavedSuccessfully": "Asset breakup saved successfully",
+    "edit": "Edit"
+  },
+
+  "tools": {
+    "tools": "Tools",
+    "calculators": "Calculators",
+    "calculateYourInvestments": "calculate your investments",
+    "toolsListing": [
+      {
+        "calName": "Human Life Value",
+        "img": "assets/imgs/calculator/hlv_cal.svg",
+        "className": "HlvCalculatorPage",
+        "desc": "Find out how you can chart out a secure financial future of your family"
+      },
+      {
+        "calName": "NPS Calculator ",
+        "img": "assets/imgs/calculator/nps_cal.svg",
+        "className": "NpsPage",
+        "desc": "Plan for a happy retirement and know how to build a retirement corpus with our NPS calculator."
+      },
+      {
+        "calName": "Sukanya Samridhi",
+        "img": "assets/imgs/calculator/sukanya_cal.svg",
+        "className": "SukanyaSamridhiPage",
+        "desc": "Plan for your daughter’s future and save wisely with our Sukanya Samridhi Yojana calculator."
+      },
+      {
+        "calName": "Fixed Deposit",
+        "img": "assets/imgs/calculator/fixed_deposit_cal.svg",
+        "className": "FdpagePage",
+        "desc": "Know how to grow your money in safe and convenient way with our fixed deposit calculator."
+      },
+      {
+        "calName": "SIP Calculator",
+        "img": "assets/imgs/calculator/sip_cal.svg",
+        "className": "SipCalculatorPage",
+        "desc": "Build savings the systematic monthly investment and earn high returns with SIP calculator."
+      },
+      {
+        "calName": "Loan EMI",
+        "img": "assets/imgs/calculator/loan_emi_cal.svg",
+        "className": "LoanemiCalculatorPage",
+        "desc": "Plan the EMI you can pay each month for home, personal or car loans with our EMI calculator."
+      },
+      {
+        "calName": "Home Loan Eligibility",
+        "img": "assets/imgs/calculator/home_loan_cal.svg",
+        "className": "HomeLoanEligibilityPage",
+        "desc": "Know how much loan you need for your dream home with our home loan eligibility calculator."
+      },
+      {
+        "calName": "Magic of Compounding",
+        "img": "assets/imgs/calculator/nps_cal.svg",
+        "className": "MagicCompoundingPage",
+        "desc": "Plan for a happy retirement and experience the magic of compounding with our calculator."
+      },
+      {
+        "calName": "Networth Calculator",
+        "img": "assets/imgs/calculator/networth_cal.svg",
+        "className": "NetworthStepsPage",
+        "desc": "Know where to invest your money as per your existing assets with our networth calculator."
+      },
+      {
+        "calName": "PPF Calculator",
+        "img": "assets/imgs/calculator/ppf_cal.svg",
+        "className": "PpfWithAccPage",
+        "desc": "Estimate the maturity amount of your PPF for retirement with our PPF calculator"
+      },
+      {
+        "calName": "Become a crorepati",
+        "img": "assets/imgs/calculator/crorepati_cal.svg",
+        "className": "BecomeCrorepatiPage",
+        "desc": "Know how much you need to save with our calculator to become a Crorepati yourself!"
+      },
+      {
+        "calName": "Quit Smoking",
+        "img": "assets/imgs/calculator/quit_smoking_cal.svg",
+        "className": "QuitSmokingPage",
+        "desc": "Quit Smoking today and save your health and money instead!"
+      },
+      {
+        "calName": "Eating Out",
+        "img": "assets/imgs/calculator/family_protection.svg",
+        "className": "EatingOutPage",
+        "desc": "Reduce number of times you eat out to save money and health!"
+      }
+    ]
+  },
+
+  "NPSCalculator": {
+    "NPSCalculator": "NPS calculator",
+    "qOne": "Select your age",
+    "yourRetirement": "Your Retirement Age",
+    "yourCurrent": "Your Current Age",
+    "qTwo": "Select the amount you want to contribute monthly",
+    "corpusTitle": "Your Retirement Corpus in the year $year$ will be",
+    "willbe": "willBe",
+    "monthlyPension": "Monthly Pension",
+    "amountWithdrawn": "Amount Withdrawn",
+    "totalInterestEarned": "Total interest earned",
+    "totalinvestment": "Total investment",
+    "ofYourPensionAmountYou": "% Of your pension amount you plan to re-invest in annuity",
+    "estimatedRateOfReturn": "Est. Rate of Return",
+    "expectedRateOfReturn": "Expected rate of return",
+    "rateOfInflation": "Rate of inflation",
+    "increasingSavingsRate": "Increasing saving rate",
+    "retirementAge": "Retirement age",
+    "monthlyExpenses": "Monthly expenses",
+    "monthlyContribution": "Monthly contribution",
+    "yearsToGo": "Years to go",
+    "setAgeHere": "Set Age Here"
+  },
+
+  "networthCalculator": {
+    "networthCalculator": "Networth Calculator",
+    "qOne": "Select all your savings and investments (assets)",
+    "qTwo": "Amount invested in each savings tool",
+    "qThree": "Select all your liabilities such as loans, debts, mortgages",
+    "qFour": "Amount owed for each liability",
+    "coupusTitle": "Your estimated networth as of today is",
+    "AssetsLiabilitiesNetworth": "Assets - Liabilities = Networth",
+    "totalnetworth": "Total networth",
+    "totalAssets": "Total Assets",
+    "totalLiabilities": "Total Liabilities",
+    "savingsAccount": "Savings Account",
+    "homeLoan": "Home Loan",
+    "others": "Others"
+  },
+
+  "sukannyaSamriddhi": {
+    "sukannyaSamriddhi": "sukannya Samridhi",
+    "qOne": "Select your daughter’s age",
+    "Daughter": "Daughter",
+    "qTwo": "Select the amount you plan to invest monthly",
+    "for": "For $name$",
+    "coupusTitle": "Your maturity corpus for $name$ will be",
+    "atmaturityYear": "at maturity year $year$",
+    "totalInvestment": "Total Investment",
+    "totalInterest": "Total Interest",
+    "totalMaturityValue": "Total maturity value",
+    "monthlyInvestment": "Monthly Investment",
+    "rateOfInterest": "Est.Rate of Interest",
+    "rateOfInterestSubtitle": "Rate of interest as per gov.",
+    "tenurePolicy": "Min. investment tenure of 14 yrs",
+    "investmentTenure": "Investment tenure",
+    "both": "both",
+    "Daughter1": "Daughter 1",
+    "Daughter2": "Daughter 2",
+    "addMore": "Add More",
+    "remove": "Remove"
+  },
+
+  "fixedDepositCalculator": {
+    "fixedDepositCalculator": "Fixed Deposit Calculator",
+    "qOne": "Enter the amount you wish to deposit",
+    "qTwo": "Select the duration for which you want to deposit",
+    "qThree": "Enter frequency of interest rate",
+    "corpusTitle": "Maturity value of FD in $year$ will be",
+    "amountInvested": "Amount Invested",
+    "interestEarned": "Interested Earned",
+    "rateOfinterest": "Est. Rate of Return",
+    "frequencyOfinterest": "Frequency of Interest",
+    "investmentDuration": "Investment Duration",
+    "investmentTenure": "Investment Tenure",
+    "inYear": "In Year",
+    "principalAmount": "Principal Amount",
+    "interest_rate_frequency": [
+      { "name": "Monthly", "id": "Monthly" },
+      { "name": "Quarterly", "id": "Quarterly" },
+      { "name": "Half Yearly", "id": "Half Yearly" },
+      { "name": "Yearly", "id": "Yearly" }
+    ]
+  },
+
+  "emiCalculator": {
+    "emiCalculator": "EMI Calculator",
+    "qOne": "Enter the loan amount you need",
+    "qTwo": "Select the period for which loan is taken",
+    "corpusTitle": "EMI for $month$ months will be",
+    "loanamount": "Loan Amount",
+    "interest": "Interested",
+    "totalPayableamount": "Total payable amount",
+    "rateOfInterest": "Rate of Interest",
+    "EMIDuration": "EMI Duration",
+    "interestRate": "Interest Rate"
+  },
+
+  "sipCalculator": {
+    "sipCalculator": "SIP Calculator",
+    "qOne": "Enter the amount you wish to invest in mutual funds monthly",
+    "qTwo": "Select the duration for which you want to invest",
+    "corpusTitle": "Corpus in the year $year$ will be",
+    "SIPAmountInvested": "SIP Invested",
+    "interestEarned": "Interested Earned",
+    "monthlyInvestment": "Monthly investment",
+    "expectedRateOfReturnPA": "Expected Rate of Return",
+    "increasingSavingsRate": "Increasing Saving rate",
+    "SIPDuration": "SIP Duration"
+  },
+
+  "homeLoanEligibility": {
+    "homeLoanEligibility": "Home Loan Eligibility",
+    "qOne": "Enter your age",
+    "qTwo": "Enter your monthly income",
+    "qThree": "Select the expected duration of your home loan",
+    "corpusTitle": "Your maturity value in the year will be",
+    "EMIPerMonth": "EMI Per month",
+    "interestAmount": "Interest Amount",
+    "totalPayableamount": "Total Payable Amount",
+    "rateOfInterest": "Rate of Interest",
+    "monthlyIncome": "Monthly Income",
+    "tenure": "Tenure",
+    "myMonthlyIncome":"MY MONTHLY INCOME"
+  },
+
+  "magicOfCompounding": {
+    "magicOfCompounding": "Magic Of Compounding",
+    "qOne": "Select the duration of your goal",
+    "qTwo": "Select your estimated monthly savings",
+    "corpusTitle": "Your maturity value in the year will be",
+    "rateOfreturn": "Rate of Return",
+    "increasingsavingsRate": "Increasing saving rate",
+    "monthlysavings": "Monthly Savings",
+    "yourSavings": "Your savings, if you save",
+    "excessAmount": "Excess Amount"
+  },
+
+  "PPFCalculator": {
+    "PPFCalculator": "PPF Calculator",
+    "qOne": "Do you have an existing PPF account?",
+    "qtwo": "Enter your existing PPF balance",
+    "qThree": "Select the duration since when you have been investing",
+    "qFour": "Select the amount you plan to invest",
+    "qFive": "Select the duration of your PPF account",
+    "coupusTitle": "Your corpus accumulated in year $year$ will be",
+    "amountinvested": "Amount invested",
+    "interestEarned": "Interest earned",
+    "futureValueOfExistingbalance": "Future value of existing balance",
+    "rateOfReturn": "Rate of Return",
+    "existingBalance": "Existing balance",
+    "durationOfExistingBalance": "Duration of existing balance",
+    "totalInvestedAmount": "Total invested amount",
+    "totalInterestEarned": "Total interest earned",
+    "tenure": "Tenure",
+    "tenureOfExistingBalance": "Tenure of existing balance",
+    "inTheYear": "in the year $year$"
+  },
+
+  "becomeACrorepati": {
+    "becomeACrorepati": "Become a Crorepati",
+    "toBecomeACrorepatiYouNeedToSave": "To become a crorepati you need to save",
+    "targetAmount": "Target Amount",
+    "amountToSaveIn": "Amount to save in $year$ yr",
+    "amountAlreadySaved": "amount already saved",
+    "rateOfInterest": "Rate of Interest",
+    "iWantToBeACrorepatiIn": "I want to be a crorepati in",
+    "increasingSavingsRate": "Increase saving rate"
+  },
+
+  "quitSmoking": {
+    "quitSmoking": "Quit Smoking",
+    "lifespanReduced": "Lifespan reduced",
+    "totalAmountYouWouldSavedUponQuitting": "Total amount you would've saved upon quitting",
+    "tarAccumaledOverTheYears": "Tar accumaled over the years",
+    "grams": "gms",
+    "cigarettesYouSmokeDaily": "Cigarettes you smoke daily",
+    "rateOfInterest": "Rate of Interest",
+    "costOfTheCigarette": "Cost of a cigarette",
+    "yearsIveBeenSmokingFor": "Years I’ve been smoking for",
+    "popUpText1": "medicalnewstoday.com, University of California, Berkeley Wellness Letter, April 2000",
+    "popUpText2": "tobaccocontrol.bmj.com, Research Paper-Determination of Tar,nicotine and carbon monoxide yeilds in the mainstream smoke of selected international cigarettes",
+    "days": "days"
+  },
+
+  "eatingOutCalculator": {
+    "eatingOutCalculator": "Eating Out Calculator",
+    "amountYouSavePerMonth": "Amount you save per month",
+    "amountSavedInYears": "Amount you would've saved in 5 years",
+    "reductionsInOutingsPerMonth": "Reductions in outings per month",
+    "outingsPerMonth": "Outings per month",
+    "annualSavingGrowthRate": "Annual saving growth rate",
+    "averageCostPerOuting": "Average cost per outing"
+  },
+
+  "hlvCalculator": {
+    "hlvCalculator": "HLV Calculators",
+    "getStarted": "Get Started",
+    "title": "The Happy Life Calculator",
+    "hlvTitle": "Happy Life Calculator",
+    "description": "Here's a simple and easy to use tool that will help you to achieve a comprehensive protection for securing your family's financial future. Simply fill in a bit about yourself and find out how you can chart out a secure financial future of your family",
+    "letsStart": "Let’s get started! Tell us about yourself.",
+    "myName": "My name is",
+    "name": "Name",
+    "enterName": "Enter name",
+    "enterDOB": "Enter your date of birth.",
+    "bornOn": "I was born on",
+    "age": "Age",
+    "DOB": "Date of Birth",
+    "selectGender": "Select your gender identity",
+    "prevDrawnSalary": "Enter your previous drawn salary.",
+    "myMonthlyIncome": "My Monthly Income",
+    "enterExpenses": "Enter housing & other expenses.",
+    "expenseNote": "Note: Please do not include Rent/EMI.",
+    "myHouseholdExpenses": "My Household Expenses",
+    "outstandingAmount": "Outstanding amount of Home Loan, Car Loan, Education Loan Etc.",
+    "myCurrentLiability": "My Current Liabilities",
+    "areYouMarried": "Are you married or single?",
+    "relationshipStatus": "My Relationship Status is",
+    "single": "Single",
+    "married": "Married",
+    "male": "Male",
+    "female": "Female",
+    "almostDone": "You are almost done!",
+    "mySpouseIs": "My Spouse is",
+    "isYourSpouse": "Is your spouse",
+    "earning": "Earning",
+    "notEarning": "Not Earning",
+    "enterSpouseSalary": "Enter Your Spouse's previous drawn salary",
+    "spouseMonthlyIncome": "My Spouse's monthly income is",
+    "spousesMonthlyIncome": "Spouse's Monthly Income",
+    "doYouHave": "Do you have an",
+    "insurancePlan": "insurance plan ?",
+    "iAmCurrently": "I am Currently",
+    "insured": "Insured",
+    "notInsured": "Not Insured",
+    "iamInsured": "I am Insured",
+    "iamNotInsured": "I am not Insured",
+    "totalSumAssured": "Total sum assured under existing polices excluding group insurance",
+    "myCurrentLifeInsurance": "My Current Life Insurance cover is",
+    "myCurrentInsurance": "My Current Insurance cover is",
+    "yourRequiredLifeCover": "Your required life cover to Protect your family's future",
+    "corpusTitle": "Your Human Life Value is",
+    "hereIsTheSummary": "Here is the summary of your financial preparedness towards any Eventuality",
+    "income": "Income",
+    "expenditure": "Expenditure",
+    "currentLiabilities": "Current Liabilities",
+    "currentLifeInsuranceCoverage": "Life Insurance Coverage",
+    "secureYourFamily": "Secure your family's future",
+    "arrivedHLV": "** Arrived HLV is based on the information provided by you. This is an illustrative projection of your financial needs"
+  },
+
+  "collections": {
+    "collections": "Collections",
+    "filter": "Filter",
+    "categories": "Categories",
+    "relatedArticles": "Related Articles",
+    "noArticles": "No Articles",
+    "articles": "Articles",
+    "postedOn": "posted on",
+    "postComments": "Post Comments",
+    "charactersOnly": "1000 Characters only",
+    "rateArticle": "Rate This Article",
+    "comments": "Comments",
+    "awesome": "Thank you!",
+    "commentSuccess": "Your comment has been successfully submitted.",
+    "referenceArticle": "Reference Article",
+    "TrendingTopics": "Trending Topics",
+    "fromLatestNews": "From Latest"
+  },
+
+  "tipsForyou": {
+    "tips": "Tips",
+    "tipsForyou": "Tips for you"
+  },
+
+  "Saved": {
+    "Saved": "Saved",
+    "yourArticles": "Your Articles",
+    "myGoals": "My Goals",
+    "viewEarlierHistory": "view earlier history",
+    "viewMyPlanSummary": "View my plan summary",
+    "plannedOn": "Planned on",
+    "corpusRequiredInYear": "Corpus required in",
+    "myPlanSummary": "plan summary",
+    "canPlanBetter": "Can plan better",
+    "monthlyExpenses": "Monthly Expenses",
+    "requiredSaving": "Required Saving",
+    "yourIncome": "Your income",
+    "plannedGoals": "Planned Goals",
+    "tenure": "Tenure",
+    "savingsRequired": "Savings required",
+    "totalAmountRequired": "Total Amount required",
+    "noSavedArticles": "No saved articles",
+    "noSavedGoals": "No saved goals",
+    "youReallyWantToDelete": "You really want to delete",
+    "totalInsuranceCoverYouNeed": "Total insurance cover you need",
+    "wellPlanned": "Well planned",
+    "totalHealthCoverRequired": "Total health cover required",
+    "savedGoals": "Saved Goals",
+    "viewArticles": "View Articles",
+    "planSummary": "Plan Summary"
+  },
+
+  "riskAssessment": {
+    "riskAssessment": "Risk Assessment",
+    "qOne": "When it comes to investing in stocks and Mutual Funds, I would describe myself as….",
+    "qTwo": "I prefer to keep my money risk-free and in the bank",
+    "qThree": "Risk Scenario You are on a TV game show and are asked to pay Rs 10,000. What will you do?",
+    "qFour": "When you think of the word 'risk' which of the following words come to mind first",
+    "yourRiskProfileIs": "Your risk profile is"
+  },
+
+  "planYourLife": {
+    "planYourLife": "Plan Your Life",
+    "personalGoals": "Personal Goals",
+    "subTitle": "Tap on any goal to start planning!",
+    "popupTitle": "When do you want to achieve it?",
+    "addPlan": "Add Plan",
+    "by": "By $year$",
+    "sPlan": "'s Plan",
+    "viewMyGoals": "View my goals",
+    "youReallyWantToDelete": "You really want to delete"
+  },
+
+  "notification": {
+    "notification": "Notifications",
+    "noNewNotification": "No new notification"
+  },
+
+  "search": {
+    "search": "Search",
+    "noSearchRecords": "No search records",
+    "articlessearches": "Articles Searches",
+    "recentlyViewedArticles": "Recently Viewed Articles",
+    "setYourGoalWith": "Set your goals with"
+  },
+
+  "common": {
+    "yrs": "yrs",
+    "replan": "Replan",
+    "save": "save",
+    "disclaimers": "Disclaimers",
+    "disclaimer": "Disclaimer",
+    "disclaimersLink": "Disclaimer link",
+    "done": "Done",
+    "next": "Next",
+    "toGo": "Years to go",
+    "back": "Back",
+    "pm": "p.m",
+    "pa": "p.a",
+    "age": "Age",
+    "year": "year",
+    "years": "years",
+    "thankYou": "Thank You!",
+    "submit": "Submit",
+    "proceed": "Proceed",
+    "readAll": "Read More",
+    "showMore": "Load more",
+    "totalAmount": "Total amount",
+    "willBe": "will be",
+    "viewMore": "View more",
+    "duration": "Duration",
+    "monthly": "Monthly",
+    "quarterly": "Quarterly",
+    "halfYearly": "Half Yearly",
+    "yearly": "Yearly",
+    "months": "months",
+    "inMonths": "in months",
+    "yes": "Yes",
+    "no": "No",
+    "inTheYear": "In the year",
+    "disclaimerText": "The information, material, advices, suggestions, illustrations notifications, circulars etc. are collectively stated 'the content' in this application. If the said content contains any mistakes, omissions, inaccuracies and typographical errors, etc. SBI Life assumes no responsibility thereof. SBI Life makes no warranty or representation regarding any content provided through this application and disclaims its liabilities in respect thereof. Any action on your part on the basis of the said content is at your own risk and responsibility.SBI Life reserves its right to correct any part of the said content at any time as and when required at its sole discretion. The content of this application shall not be displayed or printed in any form in part or whole without the prior written approval of SBI Life. E-mail messages sent to SBI Life over the Internet cannot be guaranteed to be completely secure. The integrity of such messages cannot be guaranteed on the Internet and SBI Life will not be responsible for any damages incurred by users due to messages send or received by them to and from SBI Life. SBI Life does not send emails from other than domain names - sbilife.co.in & sbi-life.com. Please do not respond to any mails other than email IDs with this domain name as same may be fraudulent/phishing emails.",
+    "doYouWantToSaveGoal": "Do you want to save this goal?",
+    "dontSave": "Don't save",
+    "goalSavedSuccessfully": "Your goal saved successfully.",
+    "viewLess": "View less",
+    "for": "for",
+    "total": "Total",
+    "to": "to",
+    "k": "K",
+    "thousand": "Thousand",
+    "thousands": "Thousands",
+    "l": "L",
+    "lac": "Lac",
+    "lakh": "Lakh",
+    "lakhs": "Lakhs",
+    "cr": "Cr",
+    "crore": "Crore",
+    "crores": "Crores",
+    "tenure": "Tenure",
+    "se": "",
+    "noDataAvalilable": "No Data Available",
+    "noSpendsAvailable": "No Spends Available",
+    "noReportData": "Please select month and year to view the report",
+    "reset": "Reset",
+    "resetAll": "Reset All",
+    "download": "Download",
+    "loadMore": "Load More",
+    "addMore": "Add more",
+    "start": "Start"
+  },
+
+  "buttons": {
+    "back": "Back",
+    "discover": "Discover",
+    "next": "Next",
+    "save": "Save",
+    "disclaimerLink": "Disclaimer link",
+    "replan": "Replan",
+    "suggestInvesment": "Suggest Invesment",
+    "recalculate": "Recalculate",
+    "startPlanning": "Start Planning",
+    "fillProfile": "Fill Profile",
+    "readArticles": "read articles",
+    "newPlan": "New plan",
+    "reassess": "Reassess",
+    "ok": "OK"
+  },
+
+  "errorMsg": {
+    "noInternetConnection": "No Internet Connection",
+    "checkInternetConnection": "Please check your internet connection or try again later",
+    "retry": "Retry",
+    "pleaseTryAgain": "Please try again.",
+    "PleaseEnterDownPaymentBetween": "Please enter down payment between",
+    "to": " to ",
+    "newNotification": "New Notification",
+    "selectOneTopic": "Please select at least one topic from the list",
+    "comingSoon": "Coming Soon...",
+    "enterDepositAmountBetween": "Please enter deposit amount between",
+    "enterTenureBetween": "Please enter tenure between",
+    "tenureMustBeBelow60": "Tenure must be below 60 years of age.",
+    "pleaseNumbers": "Please enter only numbers",
+    "enterAgeAmountBetween": "Please enter age amount between",
+    "enterIncomeAmountBetween": "Please enter income amount between",
+    "atleastSelectOne.": "Atleast select one.",
+    "pleaseEnterAmount": "Please enter amount",
+    "amountShouldBeBetween": "Your total amount should be between",
+    "ageTodayLessToBeRetirement": "Age today has to be less than age at retirement",
+    "enterDownPaymentBetween": "Please enter down payment between",
+    "goalSavedSuccessfully.": "Your goal saved successfully.",
+    "enterFeesBetween": "Please enter fees between",
+    "enterMonthlyExpensesBetween": "Please enter your monthly expenses between ",
+    "enterWeddingCostBetween": "Please enter wedding cost between",
+    "pleaseTryAgainAfterSometime": "Please try again after sometime.",
+    "OTPResendSuccessfully": "OTP resend successfully",
+    "couldNotLoadGoalTypes": "Could not load goal types.",
+    "goalDeletedSuccessfully": "Goal deleted successfully.",
+    "couldSaveSettings!": "Could save the settings!",
+    "enterValidAmountForAssets.": "Please enter valid amount for assets.",
+    "enterValidAmountForLiabilities": "Please enter valid amount for liabilities.",
+    "enterValidDOB": "Please enter a valid Date of Birth",
+    "selectValidEducationOption": "Please select a valid education option",
+    "selectValidLifeStageOption": "Please select a valid life stage option",
+    "selectValidOccupation": "Please select a valid occupation",
+    "selectValidWorkIndustry": "Please select a valid work industry",
+    "selectValidDesignation": "Please select a valid designation",
+    "selectValidRelationshipMember": "Please select a valid relationship for family member",
+    "selectValidAgeMember": "Please select a valid age for family member",
+    "enterValidNameMember": "Please enter a valid name for family member",
+    "enterValidAssetValue": "Please enter valid asset value",
+    "assetBreakupCouldNotSaved": "Asset breakup could not be saved",
+    "liabilitiesBreakupCouldNotSaved": "Liabilities breakup could not be saved",
+    "monthlyExpenseSaved": "Monthly expense breakup could not be saved",
+    "couldNotSaveDetailsCorrectly.": "Could not save details correctly.",
+    "sessionExpired": "Session expired!!!",
+    "saveByNotBuyingCoffee": "Save by not buying coffee daily",
+    "wellPlanned": "Well planned you've already Saved enough",
+    "saveByNotEatingOut": "Save by not eating out daily",
+    "saveByTakingPublicTransport": "Save by taking public transport daily",
+    "saveByNotDrinks": "Save by not spending on drinks daily",
+    "noInternetSubtitle": "Please check your internet connection or try again later",
+    "pleaseEnterNumberBetween": "Please enter number between",
+    "pleaseEnterAmountBetween": "Please enter amount between",
+    "pleaseEnterName": "Please enter name",
+    "pleaseSelectGender": "Please select gender",
+    "pleaseSelectRelationship": "Please select relationship status",
+    "pleaseSelectSpouseEarning": "Please select spouse earning status",
+    "pleaseSelectInsuranceStatus": "Please select insurance status"
+  },
+
+  "infoPopup": [
+    {
+      "id": "1",
+      "title": "Rate of Inflation",
+      "desc": "Rate of inflation is rise in the price of goods and services measured in percentage over a period of time."
+    },
+    {
+      "id": "2",
+      "title": "Increasing Saving Rate",
+      "desc": "Increasing savings rate means increase in savings by a certain percentage on annual basis."
+    },
+    {
+      "id": "3",
+      "title": "Duration This is the loan Tenure",
+      "desc": "Duration of loan is the period from when the loan has been sanctioned to the closure of the loan."
+    },
+    {
+      "id": "4",
+      "title": "Expected Rate of return",
+      "desc": "Expected rate of return are the returns that an individual anticipates on investment."
+    },
+    {
+      "id": "5",
+      "title": "FD Interest Rate",
+      "desc": "FD interest rate is the percent of principal amount given to you by your bank at pre-defined intervals."
+    },
+    {
+      "id": "6",
+      "title": "Loan Interest Rate",
+      "desc": "Interest rate is the amount charged and expressed as percentage of principle by the lender."
+    }
+  ],
+
+  "TermsConditionHtml": [
+    {
+      "key": "Agreement",
+      "value": "These Terms and Conditions read together with the Privacy Policy of this Application shall constitute a legally binding agreement between you and the Company regarding your use of the Application and any services offered by the Company ('the Service'). In the event of any inconsistency between the Terms and Conditions and the Privacy Policy, the Terms and Conditions supersede the Privacy Policy. Any user of the Application is deemed to have agreed to the present Terms and Conditions and has entered into a legally binding contract with the Company. 'User' or 'You' means any person who access or avail this Application of the Company for the purpose of hosting, publishing, sharing, transacting, displaying or uploading information or views and includes other persons jointly participating in using the Application of the Company. You understand and agree that you are using this Application entirely at your risk and SBI LIFE Insurance Company Ltd shall not be responsible for the consequences of any action taken by you while using this Application. This Application is provided to you by SBI Life free of cost as a service gesture and it is entirely your sole discretion as to whether you will use this application or not or whether you will rely on the guidance or suggestions provided by the Application. By accessing the Application or service and/or by clicking 'I agree', you agree to be bound by these Terms and Conditions and any amendment thereof."
+    },
+    {
+      "key": "About this Application",
+      "value": "<p> This Application provides articles, fact cards and tips to help user better plan their  finances and investments for various important goals like Education, marriage, buying a car, Buying a Home and retirement. There will also be content covering general welfare and insurance. There will also be occasional news related articles. There will not be any articles related to any of the products of SBI Life Insurance Co Ltd or any other financial products in the market.</p><p>Apart from the content there will also be calculators that will help users calculate the maturity value of investments in various avenues. There is a separate goal section where user can plan for achieving various target amounts for different  goals and the application will help them by giving suggestions like monthly savings required and the assets where user may wish to invest basis the risk assessment results of user. Suggestions are only limited to asset classes(equity, debt, small saving schemes etc) and no actual  financial products will be suggested or mentioned in any way.)</P>"
+    },
+    {
+      "key": "Disclaimer",
+      "value": "<p>The information, material, advices, suggestions, illustrations notifications, circulars etc. are collectively stated 'the content' in this applicaton. If the said content contains any mistakes, omissions, inaccuracies and typographical errors, etc. SBI Life assumes no responsibility thereof. </p><p>SBI Life makes no warranty or representation regarding any content provided through this application and disclaims its liabilities in respect thereof. Any action on your part on the basis of the said content is at your own risk and responsibility.</p><p>SBI Life reserves its right to correct any part of the said content at any time as and when required at its sole discretion. The content of this application shall not be displayed or printed in any form in part or whole without the prior written approval of SBI Life. SBI LIFE may, at its sole discretion, withdraw this Application at any time without any notice to the Public whatsoever.</p><p>E-mail messages sent to SBI Life over the Internet cannot be guaranteed to be completely secure. The integrity of such messages cannot be guaranteed on the Internet and SBI Life will not be responsible for any damages incurred by users due to messages sent or received by them to and from SBI Life. </p><p>SBI Life does not send emails from other than domain names - sbilife.co.in &amp; sbi-life.com. Please do not respond to any mails other than email IDs with this domain name as same may be fraudulent/phishing emails.</p>"
+    },
+    {
+      "key": "Eligibility",
+      "value": "You hereby represent and warrant to the Company that you have completed at least eighteen (18) years of age or above and are capable of entering, performing and adhering to these Terms and Conditions and that you agree to be bound by the Terms and Conditions. While individuals under the age of 18 may utilize the service of the Application, they shall do so only with the involvement & guidance of their parents and / or legal guardians, under such parent /legal guardian's registered account. In case of a corporation, trust, association of persons or a firm, you must be authorised to agree to the Terms and Conditions and to access, use and avail of the Application. If you do not qualify, please do not access or use the Application. This Application is intended exclusively for the use of Resident Indians, Non-Resident Indians, Persons of Indian Origin. Citizens and residents of countries other than India (collectively, 'non-residents') shall access, use and avail of the Application only to the extent the domestic laws of India and such countries of their residence permit them to access, use and avail of the Application. All non-residents understand that by accessing, using and availing of the Application, they may be violating the local laws in India and/or such countries. You agree that it will be your responsibility to check yourself as to whether you can use this Application  You agree that you will be solely and absolutely liable for any liability incurred by you in India or elsewhere and shall in this regard indemnify SBI LIFE INSURANCE CO LTD and keep indemnified SBI LIFE INSURANCE CO LTD against any liability incurred by SBI LIFE INSURANCE CO LTD in this regard. Nothing in the SBI LIFE INSURANCE CO LTD Application shall be considered as a solicitation to buy or an offer to sell a security, or any product or service, to any person in any jurisdiction where such solicitation, offer, purchase or sale would be unlawful under the laws of that jurisdiction."
+    },
+    {
+      "key": "Conduct of Users",
+      "value": "<p>By agreeing to the Terms &amp; Conditions, the User agrees:<br>to confirm that the details provided by the User(s) are true and correct. </p><p><strong>You shall not - - </strong></p> <ul><li>Restrict or inhibit any other person from accessing, using and enjoying the Application;</li><li>Use the Application for any purpose that is unlawful in any jurisdiction or not permitted by the Terms and Conditions;</li><li>modify, copy, distribute, transmit, display, perform, publish, licence, create derivative works from, transfer or sell any information, designs, logos, trademarks, software, facilities, products or services obtained on or through the Application, except as permitted by the copyright owner or other right holder thereof; </li><li>post, transmit and receive any unlawful, fraudulent, libellous, defamatory, obscene, pornographic, profane, threatening, abusive, hateful, offensive, or otherwise objectionable information or statement of any kind including, without limitation, any information or statement constituting or encouraging conduct that would constitute sedition, a criminal offence, give rise to civil liability, or otherwise violate any local, state, national, foreign or other law;</li><li>post or transmit any advertisements, solicitations, chain letters, pyramid schemes, investment opportunities or schemes or other unsolicited commercial communication (except as otherwise expressly permitted by SBI LIFE INSURANCE CO LTD) or engage in spamming or flooding; </li><li>post, transmit any spam mails, information or software which contains a virus, Trojan horse, worm or other harmful component; post, publish, transmit, reproduce, distribute or in any way exploit any information, software or other material obtained from or through the Application for commercial purposes (); </li><li>upload, post, publish, transmit, reproduce or distribute in any way, information, software or other material obtained on or through the Application which is protected by copyright or other proprietary right, or derivative works with respect thereto, except as permitted by the copyright owner or other right holder thereof; </li><li>upload, post, publish, reproduce, transmit or distribute in any way any component of the Application itself or derivative works with respect thereto, except as permitted by SBI LIFE INSURANCE CO LTD or the copyright owner or other right holder thereof, the Application being copyrighted under the relevant laws;</li><li>Attempt to decompile or reverse engineer any of the software available on the Application.</li><li>You will not make any attempt to hack into the Application or otherwise attempt to subvert any firewall or other security measure of the Application and if you become aware of any shortcoming in the security on the Application you shall forthwith inform SBI LIFE INSURANCE CO LTD of the same in writing. If the Application contains bulletin boards, chat rooms, access to mailing lists or other message or communication facilities (collectively, 'Forums'), you agree to use the Forums only to send and receive messages and material that are proper and related to the particular Forum. You shall use any software provided on, by or through the Application only for the purposes for which it has been provided to you and for no other purpose.&nbsp;</li></ul><p>You shall not host, display, upload, modify, publish, transmit, update or share any information on the Application, that:</p><ol><li>belongs to another person and to which you do not have any right to;</li><li>is grossly harmful, harassing, blasphemous defamatory, obscene, pornographic, paedophilic, libellous, invasive of another's privacy, hateful, or racially, ethnically objectionable, disparaging, relating or encouraging money laundering or gambling, or otherwise unlawful in any manner whatever; </li><li>harm minors in any way;</li><li>infringes any patent, trademark, copyright or other proprietary rights;</li><li>violates any law for the time being in force;</li><li>deceives or misleads the addressee about the origin of such messages or communicates any information which is grossly offensive or menacing in nature;</li><li>impersonate another person;</li><li>contains software viruses or any other computer code, files or programs designed to interrupt, destroy or limit the functionality of any computer resource;</li><li>threatens the unity, integrity, defence, security or sovereignty of India, friendly relations with foreign states, or public order or causes incitement to the commission of any cognisable offence or prevents investigation of any offence or is insulting any other nation.</li></ol><p> Any content and or comment uploaded by you, shall be subject to relevant Indian laws and may be disabled, or and may be subject to investigation under appropriate laws. Furthermore, if you are found to be in non-compliance with the laws and regulations, these terms, or the privacy policy of the Application, the Company shall have the right to immediately terminate/block your access and usage of the Application and the Company shall have the right to immediately remove any non-compliant Content and/or comment, uploaded by you and shall further have the right to take recourse to such remedies as would be available to the Company under the applicable laws.</p>"
+    },
+    {
+      "key": "Disclaimers",
+      "value": [
+        "<p>This Application is not intended to provide any tax, legal, insurance or investment advice, and nothing on the SBI LIFE INSURANCE CO LTD Application should be construed as a recommendation, by SBI LIFE INSURANCE CO LTD or any third party, to acquire or dispose of any investment or security, or to engage in any investment transaction. Except as otherwise specified, you alone are solely responsible for determining whether any investment, security or any other product or service, is appropriate or suitable for you based on your investment objectives and personal and financial situation. You should consult a legal or tax professional regarding your specific legal or tax queries. Access and use of the Application is entirely at your own risk. The Application, including any content or information on it, any related or linked site, products and services displayed, provided, availed of, licensed or purchased on, through or via the Application are provided 'as is,' without any representation or warranty of any kind, either express or implied, including without limitation, any representation or warranty for accuracy, continuity, uninterrupted access, timeliness, sequence, quality, performance, fitness for any particular purpose or completeness. Specifically, SBI LIFE INSURANCE CO LTD disclaims any and all warranties including, but not limited to - - Any warranties concerning the availability, accuracy, usefulness, or correctness, currency or completeness of information, products or services and - Any warranties of title, warranty of non-infringement, freedom from computer virus, warranties of merchantability or fitness for a particular purpose, other than those warranties which are incapable of exclusion, restriction or modification under the laws applicable to the Terms and Conditions.</p>",
+        "<p>SBI LIFE INSURANCE CO LTD has not verified and shall not be liable or responsible for any content or other information on the Application or on web-sites linked to or with SBI LIFE INSURANCE CO LTD. SBI LIFE INSURANCE CO LTD does not, in any way, certify or warrant the performance, operation, content or availability of the Application or such other applications. Although SBI LIFE INSURANCE CO LTD adopts security measures, which it considers appropriate for the Application, it does not assure or guarantee that no person will overcome or subvert the security measures and gain unauthorised access to the Application. SBI LIFE INSURANCE CO LTD LTD shall not be responsible or liable if any unauthorised person hacks into or gains access to the Application, or your accounts; and you shall be liable and responsible for the same. This disclaimer of liability applies also to any damage or injury caused by any failure of performance, error, omission, interruption, deletion, defect, delay in operation or transmission, computer virus, communication line failure, theft or destruction or unauthorized access to, alteration of, or use of record, whether for breach of contract, tortuous behaviour, negligence, or under any other cause of action. The information and views contained herein are based on information available and believed to be correct to the best of our knowledge. Although due care has been exercised to verify the accuracy of the information, neither SBI LIFE INSURANCE CO LTD  nor  its information suppliers assume responsibility for the accuracy or for any loss arising out of any information contained herein. This is neither a solicitation to invest in any product nor to avail of a particular service SBI LIFE INSURANCE CO LTD does not warrant or make any representations regarding the use or the results of the use of any product, service in terms of its compatibility, correctness, accuracy, reliability or otherwise. You assume total responsibility and risk for your access and use of the Application, all site-related services, products and services mentioned or advertised on or accessed or availed on or through the Application. You acknowledge that any warranty that is provided in connection with any of the products or services described on the Application are provided solely by the owner, advertiser, manufacturer, provider or supplier of that product or service, and not by SBI LIFE INSURANCE CO LTD or the Application. SBI LIFE INSURANCE CO LTD operates and offers the Application strictly on a no-liability basis and SBI LIFE INSURANCE CO LTD shall not be liable to you or any other third party for any direct, indirect, incidental, special, exemplary, punitive, consequential or other damages (including without limitation loss of profits, loss or corruption of data, loss of goodwill, work stoppage, computer failure or malfunction, or interruption of business) under any contract, negligence, strict liability or other law or theory arising out of or in connection with the Application, products or services mentioned or advertised on or accessed or availed on or through the Application or any contract or transaction entered into or executed in pursuance thereof (however arising, including negligence) or resulting from the use of or inability to use, access or avail of the Application, any service or product or out of any breach of any warranty. Under no circumstances shall SBI LIFE INSURANCE CO LTD be liable for any damages whatsoever whether such damages are direct, indirect, incidental consequential and irrespective of whether any claim is based on loss of revenue, investment, production, goodwill, profit, interruption of business or any other loss of any character or nature whatsoever and whether sustained by you or any other person.. SBI LIFE INSURANCE CO LTD shall not be responsible for any inability to access the Application or any use or misuse of the Application. Any search results displayed by or on the Application are automated and cannot be screened. Accordingly, SBI LIFE INSURANCE CO LTD assumes no responsibility for the accuracy or otherwise of any search results or of the content of any site included in the search results or otherwise linked to the Application. SBI LIFE INSURANCE CO LTD shall not be responsible for any unauthorised interception of e-mail to or from you or SBI LIFE INSURANCE CO LTD. To the extent possible, the disclaimers, limitations on liability and indemnities available to SBI LIFE INSURANCE CO LTD under the Terms and Conditions shall mutates mutandis extend and be available also to the Alliance Partners and Service Providers and its/ their respective directors, officers, employees, agents, successors, assigns, consultants, sponsors, affiliates, content providers and every one involved in creating, producing, delivering or managing the Application (or any part thereof). However, this clause shall not protect the aforesaid Persons or extend to their obligations and liability to SBI LIFE INSURANCE CO LTD or SBI LIFE INSURANCE CO LTD's claims against them. A possibility exists that the Application could include inaccuracies or errors. Additionally, a possibility exists that unauthorised additions, deletions or alterations could be made by third parties to the Application. Although SBI LIFE INSURANCE CO LTD attempts to ensure the integrity of the Application, they make no guarantee whatsoever as to its sequence, timeliness, completeness, correctness or accuracy. In the event that such an inaccuracy or incompleteness arises, please inform SBI LIFE INSURANCE CO LTD so that it can be corrected. Links from the Application clicking on certain portions or links within the Application might take you to other applications without any intimation or indication of doing or having done so. The linked applications are not under the control of SBI LIFE INSURANCE CO LTD and SBI LIFE INSURANCE CO LTD assumes no responsibility whatsoever for such other applications whether as to content, availability, performance or otherwise. SBI LIFE INSURANCE CO LTD also does not represent or warrant that these links shall operate satisfactorily. SBI LIFE INSURANCE CO LTD provides these links only as a convenience and links to external web sites do not constitute an endorsement by SBI LIFE INSURANCE CO LTD of such other sites, the sponsors of such sites or the content, products, advertising or other materials presented on or by such sites. SBI LIFE INSURANCE CO LTD shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the access or use of such other applications or reliance on or availing of any content, goods or services available on such other sites. The links on the Application may take you to other sites or to other locations within the Application where the trading of securities is possible. SBI LIFE INSURANCE CO LTD shall not be responsible or liable with regard to any trading which may be conducted on such linked trading sites, non-SBI LIFE INSURANCE CO LTD web sites, and any other web site which may be linked to or from the SBI LIFE INSURANCE CO LTD Application. For informational or educational purposes, or as a convenience to the users, the SBI LIFE INSURANCE CO LTD Application may provide referrals to third party content or links to third party applications, including companies that have a relationship with SBI LIFE INSURANCE CO LTD. Our decision to provide referral information to a third party or to pass on an offer made by a third party or to provide a link from SBI LIFE INSURANCE CO LTD Application to a third party application shall not be construed as an endorsement of the third party products, services, content, tools and information. You will use third-party content at your own risk. SBI LIFE INSURANCE CO LTD is not responsible for any third party, their products or services their application, or any content made available through such third party sites, nor do we make any warranties or representations, express or implied, regarding third party content on any third party sites, and shall have no liability in relation to any of the foregoing. You shall agree to all the terms and conditions, disclaimers clauses and be liable to Copyright Owners of the hyper links appearing in the Application which is independent in itself and not connected. You shall further indemnify and keep indemnified SBI LIFE, its employees, directors, representatives and keep them harmless from any dispute(s) that may arise due to a violation/breach (s) of the Terms and Conditions of such hyper link(s) by you. You will be solely responsible for maintaining the confidentiality of the account that you create on the SBI LIFE INSURANCE CO LTD Application.</p>"
+      ]
+    },
+    {
+      "key": "Proprietary and Intellectual Property Rights",
+      "value": "SBI LIFE INSURANCE CO LTD is the owner and/or authorized user of any trademark, registered trademark and/or service mark appearing on the Application, and is the copyright owner or licensee of the content and/or information on the Application including but not limited to any text, images, illustrations, audio clips, video clips and screens appearing on the Application. All rights on the Application are reserved and you may not download and/or save a copy of the Application or any part thereof including any of the screens or part thereof and/or reproduce, store it in a retrieval system or transmit it in any form or by any means - electronic, electrostatic, magnetic tape, mechanical printing, photocopying, recording or otherwise including the right of translation in any language without the express permission of SBI LIFE INSURANCE CO LTD (or use it in any manner that is likely to cause confusion or deception among persons or in any manner disparages or discredits SBI LIFE INSURANCE CO LTD or Partners. This Application is for your personal use. If you make other use of this Application, except as otherwise provided above, you may violate copyright and other laws of India and other countries, and may be subject to penalties. SBI LIFE INSURANCE CO LTD, its Partners do not grant any license or other authorization or user of its trademarks, registered trademarks, service marks, or other copyrightable material or other intellectual property by placing them on the Application. "
+    },
+    {
+      "key": "Authority to SBI LIFE INSURANCE CO LTD",
+      "value": "You irrevocably and unconditionally authorise SBI LIFE INSURANCE CO LTD to access all information relating to you (including personal information and information relating to access and use of the Application by you and the transactions entered into by you). Subject to the Privacy Policy, all information submitted on or via the Application shall be deemed to be and remain the property of SBI LIFE INSURANCE CO LTD and the Partners; and SBI LIFE INSURANCE CO LTD, the Affiliate Partners shall be free to use, for any purpose, any ideas, concepts, know-how or techniques contained in any information you may provide to or through the Application. SBI LIFE INSURANCE CO LTD, the Partners shall not be subject to any obligations of confidentiality regarding submitted information except as otherwise expressly agreed by it directly with you. SBI LIFE INSURANCE CO LTD shall be deemed to acquire from you a non-exclusive, world-wide, perceptual, irrevocable, royalty free licence to use, adapt, reproduce, modify, publish, translate, create derivative works from, distribute, perform or display any ideas, concepts, know-how or techniques contained in any information provided by you to or through the Application."
+    },
+    {
+      "key": "No Agency",
+      "value": "The Terms and Conditions and your use of or access to the Application are not intended to create an agency, partnership, joint-venture or employer-employee relationship between you and the Application, SBI LIFE INSURANCE CO LTD and any Partner."
+    },
+    {
+      "key": "No Obligation for Maintenance",
+      "value": "SBI LIFE INSURANCE CO LTD has no obligation to monitor the functioning of the Application. However, you acknowledge and agree that SBI LIFE INSURANCE CO LTD has the right to monitor the functioning of the Application electronically or otherwise from time to time and to disclose any information as necessary or appropriate to satisfy any law, regulation or other governmental request, to operate the Application properly or to protect itself or its Service Providers, Alliance Partners, Visitors, Users. SBI LIFE INSURANCE CO LTD will not intentionally monitor or disclose any private electronic-mail message to any third party unless required by law. SBI LIFE INSURANCE CO LTD reserves the right to refuse to post or to remove any information or materials, in whole or in part, that, in its sole discretion, are unacceptable, undesirable, inappropriate or in violation of the Terms and Conditions."
+    },
+    {
+      "key": "Indemnity",
+      "value": "You agree to defend, indemnify and hold SBI LIFE INSURANCE CO LTD, its directors, officers, employees, Affiliates Partners, and Content harmless from any and all claims, liabilities, damages, costs, expenses and proceedings, including reasonable attorneys' fees, arising in any way from your use of the Application or the placement or transmission of any message, information, software or other materials through the Application by you or users of your ID and password or related to any violation of the Terms and Conditions by you or users of your of your ID and password, and any claims dispute or differences between you and any supplier."
+    },
+    {
+      "key": "Termination",
+      "value": "You acknowledge and agree that SBI LIFE INSURANCE CO LTD may, without notice, suspend or terminate your ID, password or account or deny you access to all or part of the Application without prior notice if you engage in any conduct or activities that SBI LIFE INSURANCE CO LTD in its sole discretion believes violate any of the Terms and Conditions, violate the rights of SBI LIFE INSURANCE CO LTD, or is otherwise inappropriate for continued access, or IF SBI LIFE INSURANCE CO LTD learns of your death, bankruptcy or lack of legal capacity or of circumstances which impact your credit worthiness (which shall be determined at the sole discretion of SBI LIFE INSURANCE CO LTD) or for any other reason which SBI LIFE INSURANCE CO LTD thinks fit and proper. You acknowledge and agree that SBI LIFE INSURANCE CO LTD may in its sole discretion deny you access through SBI LIFE INSURANCE CO LTD to any materials stored on the Internet, or to access third party services, merchandise or information on the Internet through the Application, and SBI LIFE INSURANCE CO LTD shall have no responsibility to notify you or third-party providers of facilities, services, merchandise or information nor any responsibility for any consequences resulting from lack of notification. "
+    },
+    {
+      "key": "Disclosure Policy",
+      "value": "We will only share non-public personal information with third parties in the limited circumstances permitted under law including situations where we need to share information with entities who work on behalf of SBI LIFE INSURANCE CO LTD to service or maintain your account or process transactions as requested by you, when the disclosure is made to a party representing you, or when such information is required by law including inter alia in response to a legal process. Further, SBI LIFE INSURANCE CO LTD will ensure that any third parties assisting it in marketing its products, are under contractual obligations to protect the confidentiality of information of the users of the SBI LIFE INSURANCE CO LTD Application, and to use it only to provide the services to the extent as required under the agreement with SBI LIFE INSURANCE CO LTD."
+    },
+    {
+      "key": "Governing Law & Jurisdiction",
+      "value": "The Application, the Terms and Conditions, all transactions entered into on or through the Application and the relationship between you and SBI LIFE INSURANCE CO LTD shall be governed by and construed in accordance with the laws of India and no other nation, without regard to the laws relating to conflicts of law. You and SBI LIFE INSURANCE CO LTD agree that all claims, differences and disputes arising under or in connection with or pursuant to the Application, the Terms and Conditions, any transactions entered into on or through the Application or the relationship between you and SBI LIFE INSURANCE CO LTD shall be subject to the exclusive jurisdiction of the competent courts located in the city of New Delhi, India and you hereby accede to and accept the jurisdiction of such courts. Provided that, notwithstanding what is stated above, if SBI LIFE INSURANCE CO LTD so thinks fit SBI LIFE INSURANCE CO LTD may institute proceedings against you in any other court or tribunal having jurisdiction. SBI LIFE INSURANCE CO LTD accepts no liability whatsoever, direct or indirect for non-compliance with the laws of any country other than that of India. The mere fact that the Application can be accessed or used or any facility can be availed of in a country other than India would not mean that the laws of such country would be applicable."
+    },
+    {
+      "key": "No Waiver",
+      "value": "The failure or delay of SBI LIFE INSURANCE CO LTD to exercise or enforce any right or provision of the Terms and Conditions shall not constitute a waiver of such right or provision. No waiver on the part of SBI LIFE INSURANCE CO LTD shall be valid unless it is in writing signed by or on behalf of SBI LIFE INSURANCE CO LTD. A waiver of any right or provision by SBI LIFE INSURANCE CO LTD on a particular occasion shall not prevent SBI LIFE INSURANCE CO LTD from enforcing such right or provision on a subsequent occasion."
+    },
+    {
+      "key": "Severability",
+      "value": "If any provision of the Terms and Conditions shall be held to be invalid or unenforceable by reason of any law or any rule, order, judgment, decree, award or decision of any court, tribunal or regulatory or self-regulatory agency or body, such invalidity or unenforceability shall attach only to such provision or condition,. The validity of the remaining provisions and conditions shall not be affected thereby and these Terms and Conditions shall be carried out as if any such invalid or unenforceable provision or condition was not contained herein."
+    },
+    {
+      "key": "Limitation",
+      "value": "Notwithstanding any statute or law to the contrary, but to the extent permitted by law, any claim or cause of action arising out of or related to access or use of the Application or the Terms and Conditions must be filed within three (3) months after such claim or cause of action arose failing which it shall be forever barred."
+    },
+    {
+      "key": "Notices",
+      "value": "SBI LIFE INSURANCE CO LTD may give notice to you by e-mail, letter, telephone or any other means as SBI LIFE INSURANCE CO LTD may deem fit to the address last given by you. Notices under the Terms and Conditions may be given to SBI LIFE INSURANCE CO LTD by you in writing by delivering them by hand or by sending them by post to SBI LIFE INSURANCE CO LTD's address mentioned on the Application. SBI LIFE INSURANCE CO LTD may, but shall not be bound to, act upon notices and instructions given by you to SBI LIFE INSURANCE CO LTD by e-mail, letter, telephone or any other means as SBI LIFE INSURANCE CO LTD may deem fit. In addition, SBI LIFE INSURANCE CO LTD may (but shall not be bound to) also publish notices of general nature, which are applicable to all users in a newspaper circulating in India or on its Application. Such notices will have the same effect as a notice served individually to each user (including you). Documents which may be sent by electronic communication between the parties may be in the form of an electronic mail, an electronic mail attachment, or in the form of an available download from the Application. SBI LIFE INSURANCE CO LTD shall be deemed to have duly communicated and delivered any communication or document to you if such communication or document is sent via electronic mail (e-mail) to the e-mail address provided by you to SBI LIFE INSURANCE CO LTD. SBI LIFE INSURANCE CO LTD shall also be entitled to act on the basis of any instructions received or purported to be received by SBI LIFE INSURANCE CO LTD from you by e-mail or other electronic means or via the internet. SBI LIFE INSURANCE CO LTD shall also be entitled (but not bound) to act upon fax instructions and communications."
+    },
+    {
+      "key": "Miscellaneous",
+      "value": "The clause headings in the Terms and Conditions are only for convenience and do not affect the meaning of any provision and shall not be taken into account in interpreting or limiting the scope of the provisions of the Terms and the Conditions. SBI LIFE INSURANCE CO LTD may sub-contract or employ agents to carry out any functions or services relating to the Application or any of its obligations under the Terms and Conditions. SBI LIFE INSURANCE CO LTD may from time to time send by e-mail or otherwise, information relating to products and services offered by it or the Partners or any other entities, general information related to financial and other services, advertisements of various products and services etc. to you. You must at your own cost: (a) provide for your own access to the World Wide Web and pay any service fees, telephone charges and online service usage associated with such access, and (b) provide all equipment necessary for you to make such connection to the World Wide Web, including a computer and modem. The content presented at the Application may vary depending upon your browser limitations."
+    },
+    {
+      "key": "Grievance Redressal",
+      "value": "<p>Redressal Mechanism: Any complaints, abuse or concerns with regards to content and or comment or breach of these terms shall be immediately informed  by e-mail to <a href='mailto:paisagenie@sbilife.co.in'>paisagenie@sbilife.co.in</a> Provide the following information in your complaint: </p><ol><li>Identification of the information provided by you.</li><li> Clear statement as to whether the information is personal information or sensitive personal information.</li><li>Your telephone number or e-mail address. </li><li>A statement that you have a good-faith belief that the information has been processed incorrectly or disclosed without authorization, as the case may be.</li><li>A statement, under penalty of perjury, that the information in the notice is accurate, and that the information being complained about belongs to you.</li></ol>    </div>"
+    }
+  ],
+
+  "mpin": {
+    "mpin": "M-Pin",
+    "mobilePersonalIdentificationNumber": "Mobile Personal Identification Number (M-PIN) adds a level of security in Paisa Genie.",
+    "setMPinNow": "Change M-Pin ",
+    "settingMPIN": "Setting M-Pin",
+    "pleaseSetYourMpin": "Please set your M-Pin",
+    "usePatternLock": "Use Pattern Lock",
+    "proceed": "Proceed",
+    "save":"Save",
+    "pleaseRenterYourMpin": "Please re-enter your M-Pin",
+    "confirmMpin": "Confirm M-Pin",
+    "yourMpinHasBeenSetSuccessfully": "Your M-PIN has been set successfully!",
+    "mpinNote": "Please note you will need the M-PIN to unlock PaisaGenie",
+    "gotIt": "Got It!",
+    "forgotMpin": "Forgot M-PIN",
+    "PleaseEnterYourMpin": "Please enter your M-PIN",
+    "changeMpinNow": "Change M-Pin",
+    "pleaseEnterYourOldMpin": "Please enter your old M-PIN",
+    "pleaseEnterYourNewMpin": "Please enter your new M-PIN",
+    "pleaseReenterYourNewMpin": "Please re-enter your new M-PIN",
+    "pleaseSetYourPattern": "Please set your pattern",
+    "useMpinLock": "Use M-PIN Lock",
+    "pleaseReenterYourPattern": "Please re-enter your pattern",
+    "confirmPattern": "Confirm Pattern",
+    "pleaseEnterTheSamePattern": "Please enter the same pattern",
+    "pleaseEnterTheSameMpin": "Please enter the same M-PIN",
+    "yourPatternHasBeenSetSuccessfully": "Your pattern has been set successfully!",
+    "forgot": "Forgot",
+    "enterYourDetailsToReciveOTP": "Enter your details to recive OTP",
+    "pleaseEnterYourOldPattern": "Please enter your old pattern",
+    "pleaseEnterTheCorrectPattern": "Please enter the correct pattern",
+    "enterOtp": "Enter OTP",
+    "pleaseEnterYourPattern": "Please enter your pattern",
+    "forgotPattern": "Forgot Pattern"
+  },
+  "selectPreferableLanguage": {
+    "selectPreferableLanguage": "Select preferable language",
+    "infographics": "Infographics"
+  },
+
+  "editIncome": {
+    "editIncomeTitle": "Edit Income",
+    "howMuchIsYourSalary": "Select your monthly salary",
+    "doYouHaveAnotherIncome": "Select from another income sources",
+    "addOtherSources": "Add other sources of income",
+    "otherIncomeSources": "Other Income Sources",
+    "source1": "Source 1",
+    "monthlyIncome": "Monthly income",
+    "source2": "Source 2",
+    "bussinessIncome": "Business Income",
+    "intrestIncome": "Interest Income",
+    "otherIncome": "Other Income",
+    "rent": "Rent",
+    "source3": "Source 3",
+    "noSpendsFor": "No Spends for ",
+    "inThisMonth": " in this month."
+  },
+
+  "incomeDashboard": {
+    "spendsManager": "Spend Manager",
+    "spendsSummary": "Spend Summary",
+    "spendsReview": "Spend Review",
+    "spendOmeter": "Spend-o-meter",
+    "savings": "Savings",
+    "monthlyIncome": "Monthly Income",
+    "totalMonthlySpends": "Total Monthly Spends",
+    "monthlySavings": "Monthly Savings",
+    "exceededSpends": "Exceeded Spends",
+    "yourCurrentGoals": "Your current goals",
+    "assignSavingsTo": "Assign savings to house goals, car goals, etc.",
+    "assignIncomeToDifferentCategories": "Assign income to different categories",
+
+    "spends": "Spends",
+    "totalSpends": "Total Spends",
+    "selectYourLimit": "Select your desired limit for spending",
+    "inputMonthlySpendingLimit": "Enter monthly spending limit for categories",
+    "getStarted": "Get Started",
+
+    "spendsPattern": "Spend Summary",
+
+    "myRecentSpends": "My recent spends",
+    "addOtherSources": "Add Other Sources",
+
+    "existingSavings": "Existing savings",
+    "savingsRequired": "Savings Required",
+    "gotMoreLifeGoals": "Got more life goals to add",
+    "saveMore": "Save more",
+    "viewDetails": "View details",
+    "yourCurrentSavingsCanBe": "Your current savings can be used to plan for your future Goals",
+    "addGoals": "Add Goals",
+
+    "viewAll": "View All",
+    "viewMore": "View more",
+    "viewReport": "View Report",
+
+    "hi": "Hi!",
+    "youHave": "You have",
+    "uncategorisedSpends": "Uncategorised spends waiting to be categorised.",
+    "doYouWishToLook": " Do you wish to take a look at them?",
+    "noThanks": "NO, THANKS",
+    "okay": "OKAY",
+
+    "itSeemsLike": "It seems like your spends in ",
+    "hasIncreasedRecently": "has increased recently",
+    "setBudgetFor": "Set Budget for ",
+    "keLiye": "",
+    "setBudget": "Set budget",
+
+    "budgetExpense": "Budget Expense",
+    "setMonthlyBudget": "Set Monthly budget",
+    "SelectCategoryBudget": "Select Category Budget",
+    "SelectCategoryToSet": "Select Category to set",
+    "setBudgetIn": "set budget (in)",
+    "spent": "spent ",
+    "karchKiya": "",
+    "ofBudget": "of budget ",
+    "budgetKa": "",
+    "set": "SET",
+    "doYouWantToReset": "Do you want to reset budget for",
+    "kayAap": "",
+    "keLiyeBudget": "",
+    "add": "Add",
+    "expense": "Spends",
+    "totalBudgetSet": "Total budget set for the month: ",
+    "monthlyIncomeText": "Monthly Income"
+  },
+
+  "savings": {
+    "savingsTitle": "Savings",
+    "requiredSavings": "Required Savings",
+    "currentSavings": "Current Savings",
+    "needToSaveMore": "Need to save more",
+    "existingGoals": "Existing Goals",
+    "tenure": "Tenure",
+    "needToSave": " Need to save",
+    "haveMoreFinancialGoals": "Have more Life Goals to Add?",
+    "addHere": "Add here"
+  },
+
+  "expenses": {
+    "spendsTitle": "Spends",
+    "totalSpends": "Total Spends"
+  },
+
+  "incomeApproximation": {
+    "budgetfortheMonth": "Budget for the Month",
+    "inputMonthlySpends": "Input monthly spending limit for categories",
+    "assignMonthlyIncomeForHealth": "assign monthly income for",
+    "assignMonthly": "",
+    "totalbudget": "Total Budget: "
+  },
+
+  "addExpenses": {
+    "addSpends": "Add Spends",
+    "enterAmount": "Enter Amount",
+    "addDetailsOfSpends": "Add details of spends",
+    "selectCategory": "Category",
+    "addCategoryName": "Add Category name",
+    "saveAndAdd": "Save & Add",
+    "or": "OR",
+    "doYouWantToDelete": "Do you want to delete this spend?",
+    "noThanks": "No Thanks",
+    "yes": "Yes",
+    "oneTimeExpense": "One-time expense",
+    "regularExpense": "Regular expense",
+    "setBudget": "Set Budget",
+    "spendingDetails": "Spending Details"
+  },
+
+  "uncategorizedSpends": {
+    "unCatTitle": "Uncategorized Spends",
+    "selectCategory": "Select Category"
+  },
+
+  "expenesTrends": {
+    "spendsPattern": "Spend Pattern",
+    "oneMonth": "1 Month",
+    "threeMonths": "3 Months",
+    "sixMonths": "6 Months",
+    "twelveMonths": "12 Months",
+    "totalSpends": "Total Spend",
+    "week": "Week",
+    "month": "Month"
+  },
+  "mySpends": {
+    "mySpendsTitle": "My Spends",
+    "allSpends": "All",
+    "optionalSpends": "Optional spends",
+    "semioptional": "Semi-optional spends",
+    "requiredSpends": "Required spends",
+    "emi": "EMI",
+    "calender": "Calender",
+    "firstDaySelected": "First day selected",
+    "to": "To",
+    "lastDaySelected": "Last day selected"
+  },
+
+  "report": {
+    "reportTitle": "Report",
+    "yourIncomeDistribution": "Income Expense Distribution",
+    "spends": "Spends",
+    "emi": "EMI",
+    "netCashFlow": "Net Cashflow",
+    "tax": "Tax",
+    "totalTaxToBePaid": "Total tax to be paid",
+    "asPerSalary": "As Per Salary",
+
+    "yourSaving": "Your savings",
+    "yourNetCashFlow": "Your net cashflow",
+    "rateIs": "rate is",
+    "paisaGenieRecommends": "PaisaGenie recommends",
+
+    "spendsAnalysis": "Spends Analysis",
+    "optionalSpends": "Optional spends",
+    "semiOptionalSpends": "Semi-optional spends",
+    "requiredSpends": "Required spends",
+    "taxes": "Taxes",
+    "yourTotalIncome": "Your total income ",
+    "totalIncome": "Total Income",
+    "amount": "Amount",
+    "ofIncome": " of income",
+    "spendsExcluding": "Spends excluding taxes (from total income)",
+    "spendsThatCanBeReduced": "Spends that can be reduced (from total income)",
+    "yourNetSaving": "Your net savings",
+    "manageSpendsToImprove": "Manage spends to improve your future savings",
+    "minimiseSpendsby": "Minimise spends by",
+    "saveExtraBy": "Save extra by",
+    "totalSaving": "Total savings",
+
+    "goalTimeline": "Goal Timeline",
+    "asCorpusAmount": "As Corpus amount",
+    "totalTaxtoBePaid": "Total Tax to be paid",
+    "taxIsDisplayedOnly": "Tax is displayed only basis the salary provided and the applicable tax bracket. Actual tax to be paid may vary considering factors such investments in tax saving instruments, home loan etc.",
+    "spendsanalysis": "Spends Analysis",
+    "spendsCanBe": "Spends can be analyzed as required, semi optional and optional spends. This helps in understanding the spends which can be controlled, if need be.",
+    "impactOfExpense": "Impact of Expense control on Savings in future",
+    "thisExplainthe": "This explains the proportions by which your savings may increase if the optional spends are controlled. Any reduction in controllable expenses would help increase the savings rate.",
+    "savingsProfile": "Savings Profile",
+    "thisRatioShows": "This ratio shows what percentage of earnings that is actually at your disposal. It is calculated after deducting EMIs from the savings rate. It does not consider one-time expenses that are not regular in nature.",
+    "incomeExpenseDistribution": "Income Expense Distribution Report",
+    "incomeExpenseReportIs": "Income Expense report is shown for the number of month’s expense is being captured or input. The report considers data maximum for duration of 12 months."
+  },
+
+  "surveyQuiz": {
+    "surveyQuizTitle": "Quiz / Survey",
+    "quizTitle": "quiz",
+    "surveyTitle": "survey",
+    "takeSurvey": "Take a Survey",
+    "takeQuiz": "Take a Quiz",
+    "close": "Close",
+    "playAgain": "Play Again",
+    "checkAns": "Check Answer",
+    "congrats": "Congrats!",
+    "tryAgain": "Please Try Again!",
+    "quizCompleted": "Quiz Completed Successfully.",
+    "score": "Score",
+    "thankYou": "Thank You!",
+    "surveyComplete": "We truly value your opinion provided in the Survey."
+  }
+}

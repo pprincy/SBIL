@@ -1,0 +1,85 @@
+<div class="top_area">
+  <div class="top_area_container">
+    <div class="cloud cloud1"><img src="assets/imgs/cloud1.png" width="68" height="33" /> </div>
+    <div class="cloud cloud2"><img src="assets/imgs/cloud2.png" width="68" height="33" /> </div>
+    <div class="cloud cloud3"><img src="assets/imgs/cloud3.png" width="99" height="48" /> </div>
+    <div class="cloud cloud4"><img src="assets/imgs/cloud4.png" width="74" height="36" /> </div>
+  </div>
+</div>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row align-items-center justify-content-center>
+      <ion-col col-3>
+        <img [src]="resultObj.PercResult>=50?'assets/imgs/trophy.png':'assets/imgs/sad.svg'" />
+      </ion-col>
+    </ion-row>
+    <div class="result_container">
+      <h5 class="congrat">{{(resultObj.PercResult>=50? 'surveyQuiz.congrats' : 'surveyQuiz.tryAgain') | translate}}</h5>
+      <h2 class="score">{{resultObj.PercResult | number:'1.0-2'}}% {{'surveyQuiz.score' | translate}}</h2>
+      <h5 class="quiz_comp">{{'surveyQuiz.quizCompleted' | translate}}</h5>
+      <p class="quiz_result" *ngIf="langID == 1">
+        You attempted <span class="quiz_ques">{{resultObj.TotalQues}} questions</span> and 
+        <span class="quiz_ans">answered {{resultObj.CorrectAns}}</span> correctly.
+      </p>
+      <p class="quiz_result" *ngIf="langID == 2">
+        आपने <span class="quiz_ques">{{resultObj.TotalQues}} प्रश्नों</span> का प्रयास किया और <span class="quiz_ans">{{resultObj.CorrectAns}} 
+          का उत्तर</span> सही दिया
+      </p>
+    </div>
+  </ion-grid>
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col">
+      <button ion-button class="back_btn" (click)="close()" outline>{{'surveyQuiz.close' | translate}}</button>
+    </div>
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn" (click)="playAgain()">{{'surveyQuiz.playAgain' | translate}}</button>
+    </div>
+    <div class="check_ans_btn">
+      <button ion-button (click)="checkAnswer()" outline>{{'surveyQuiz.checkAns' | translate}}</button>
+    </div>
+  </div>
+
+  <div class="recommend_for_your" *ngIf="relatedArticles.length > 0">
+    <div class="recommend_for_your_header disc_com_header">
+      <h2>{{'collections.referenceArticle' | translate}}</h2>
+
+
+    </div>
+    <div class="recommend_for_your_cont">
+
+      <div class="recommend_for_your_cont">
+        <ion-scroll class="recommend_for_your_cont_slider" id="related_article" scrollX="true" scroll-avatar>
+          <div class="recommend_for_your_cont_slider_item" *ngFor="let item of relatedArticles" (click)="relatedArt(item)">
+            <div class="recommend_for_your_cont_slider_item_inner">
+              <figure>
+                <img src="{{imgURL + item.BigImage}}">
+              </figure>
+              <i style="font-size:0px">{{item.ArticleID}}</i>
+              <h4>{{utilitiesProvider.showEllipsisTitle(item.Title)}}</h4>
+              <p>{{item.Author}}</p>
+            </div>
+          </div>
+        </ion-scroll>
+      </div>
+
+    </div>
+
+  </div>
+</ion-content>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span>
+    <img src="assets/imgs/pageLoader.gif" /> </span>
+</div>
+
+<!-- <ion-footer>
+    <div class="footer_panel row active">
+      <div class="footer_panel_lt col">
+        <button ion-button class="back_btn" outline>Reset All</button>
+      </div>
+      <div class="footer_panel_rt col">
+        <button ion-button class="login_btn">Submit</button>
+      </div>
+    </div>
+  </ion-footer> -->

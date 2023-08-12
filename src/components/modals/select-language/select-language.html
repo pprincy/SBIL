@@ -1,0 +1,20 @@
+<ion-content class="main-view" scroll="false">
+  <div class="overlay" (click)="dismissModal(false)"></div>
+  <div class="modal_content ">
+    <div class="up_content"></div>
+  <div class="language_selector">
+      <ion-list radio-group [(ngModel)]="langId">
+        <ion-item *ngFor="let l of lang">
+          <ion-label>{{l.name}}</ion-label>
+          <ion-radio (click)="langClick(l)" value="{{l.id}}"></ion-radio>
+        </ion-item>
+      </ion-list>
+    </div>
+  
+    <button ion-button class="login_btn" (click)="changeLang()">{{'buttons.save' | translate}}</button>
+  </div>
+</ion-content>
+<div class="common_loader" *ngIf="pageLoader">
+  <span>
+    <img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

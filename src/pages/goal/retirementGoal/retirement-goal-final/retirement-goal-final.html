@@ -1,0 +1,230 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-title>{{'retirementGoal.retirementGoal' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div class="networth_details">
+    <h4>
+      {{('retirementGoal.corpusTitle' | translate).replace('$year$',
+      headerYear)}}
+    </h4>
+    <div class="networth_amt">
+      <div class="networth_amt_inner">
+        <span class="rs_icon icon-Icons_Ruppee"></span>{{finalValue.ShortfallOfCorpus > 0 ?
+        (finalValue.ShortfallOfCorpus |
+        amountFormat:'S') : 0 | amountFormat:'S'}}
+      </div>
+    </div>
+  </div>
+  <div class="sukanya_slider">
+    <ion-slides pager="false">
+      <ion-slide>
+        <ion-card class="custom_card">
+          <div style="margin: 51px auto 0; width: 189px; height: auto">
+            <img src="assets/imgs/retirement_goal_final.png" alt="" />
+          </div>
+          <ion-grid class="invested_result">
+            <ion-row>
+              <ion-col class="col_inner1">
+                <div class="col_inner2">
+                  <h5>
+                    {{'retirementGoal.at5Annuity' | translate}}
+                    <!-- <span class="icon-Icons_Info" (click)="annutiyInfo()"></span> -->
+                  </h5>
+                  <div class="invested_result_amt">
+                    <span class="rs_icon icon-Icons_Ruppee"></span>{{finalValue.AnnuityReceivablePerMonth | amountFormat:'S'}}
+                    <span class="pm"> {{'common.pm' | translate}}</span>
+                  </div>
+                </div>
+                
+              </ion-col>
+              <ion-col>
+                <div class="col_inner">
+                  <h5>{{'retirementGoal.suggestedSavingsPM' | translate}}</h5>
+                <div class="invested_result_amt highlighted_txt">
+                  <span class="rs_icon icon-Icons_Ruppee"></span>{{finalValue.MonthlySavingRequired > 0 ?
+                  (finalValue.MonthlySavingRequired | amountFormat:'S') : 0 }}
+                </div>
+                </div>
+                
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-card-content class="custom_card_content">
+            <p text-center class="heading_reinvest">
+              {{'retirementGoal.youHaveAlreadySaved' | translate}}
+            </p>
+            <div class="tell_us_cont_common goals_slider_range">
+              <div class="calculator_common_sec_inner">
+                <div class="calculation_with_range">
+                  <div class="calculation_with_range_inp">
+                    <ion-input type="tel" [(ngModel)]="msaValueComma" (ionFocus)="clearStartZero('lumsum')"
+                      (ionChange)="formatAmount(msaValueComma)" (ionBlur)="doSomething(msaValue, 'fromHtml')"
+                      class="overlay_dropdown_rng_val"></ion-input>
+                  </div>
+                  <ion-item>
+                    <ion-range min="{{msaMin}}" max="{{msaMax}}" step="{{steps}}" debounce="1000" [(ngModel)]="msaValue"
+                      pin="true" (ionBlur)="doSomething(msaValue, 'fromHtml')">
+                    </ion-range>
+                  </ion-item>
+                </div>
+              </div>
+            </div>
+
+            <ion-list class="networth_list">
+              <ion-item>
+                <div class="networth_list_lt" float-left>
+                  <figure>
+                    <img src="assets/imgs/chart.svg" />
+                  </figure>
+                  <p class="risk_apt">{{'retirementGoal.riskAppetite' | translate}}</p>
+                </div>
+                <button ion-button icon-right float-right clear (click)="RiskData()">
+                  <h4 class="wrap-text">{{riskProfile}}</h4>
+                  <ion-icon name="md-arrow-dropdown"></ion-icon>
+                </button>
+              </ion-item>
+              <ion-item>
+                <div class="networth_list_lt" float-left>
+                  <figure>
+                    <img src="assets/imgs/chart.svg" />
+                  </figure>
+                  <p>{{'retirementGoal.rateOfInflation' | translate}}</p>
+                </div>
+                <button ion-button icon-right float-right clear (click)="showOverlay('inflation')">
+                  {{finalValue.Inflation}}%
+                  <span class="drp_sub_txt">{{'common.pa' | translate}}</span><ion-icon
+                    name="md-arrow-dropdown"></ion-icon>
+                </button>
+              </ion-item>
+              <ion-item>
+                <div class="networth_list_lt" float-left>
+                  <figure>
+                    <img src="assets/imgs/chart.svg" />
+                  </figure>
+                  <p>{{'retirementGoal.increasingSavingsRate' | translate}}</p>
+                </div>
+                <button ion-button icon-right float-right clear (click)="showOverlay('IncrementalSavings')">
+                  {{finalValue.IncrementalSavings_perc_yearly}}%
+                  <span class="drp_sub_txt">{{'common.pa' | translate}}</span><ion-icon
+                    name="md-arrow-dropdown"></ion-icon>
+                </button>
+              </ion-item>
+              <ion-item>
+                <div class="networth_list_lt" float-left>
+                  <figure>
+                    <img src="assets/imgs/hlv_calculator/currency_rupee.svg" />
+                  </figure>
+                  <p>{{'retirementGoal.monthlyExpenses' | translate}}</p>
+                </div>
+                <button ion-button icon-right float-right clear text-lowercase
+                  (click)="showOverlay('CurrentMonthlyExpenditure')">
+                  <span class="icon-Icons_Monthly_Expense"></span>
+                  {{finalValue.CurrentMonthlyExpenditure | amountFormat:'S'}}
+                  <ion-icon name="md-arrow-dropdown"></ion-icon>
+                </button>
+              </ion-item>
+
+              <ion-item>
+                <div class="networth_list_lt" float-left>
+                  <figure>
+                    <img src="assets/imgs/duration.svg" />
+                  </figure>
+                  <p>{{'retirementGoal.duration' | translate}}</p>
+                </div>
+                <button ion-button icon-right float-right clear (click)="showOverlay('RetirementAge')">
+                  {{finalValue.RetirementAge}}
+                  <span class="drp_sub_txt">{{'common.yrs' | translate}}</span><ion-icon
+                    name="md-arrow-dropdown"></ion-icon>
+                </button>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <p class="disclaimer_txt" text-center>
+    <!-- <span class="icon-Icons_Info"></span> -->
+    <a (click)="disclaimerInfo()"> {{'common.disclaimersLink' | translate}} </a>
+  </p>
+</ion-content>
+<!-- </section> -->
+
+<ion-footer class="goals_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col" (click)="replan()">
+      <button ion-button class="back_btn" outline>
+        {{'buttons.replan' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn" (click)="assetAllocation()">
+        {{'buttons.suggestInvesment' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>
+
+<div class="overlay_dropdown annuity" *ngIf="annuity">
+  <div class="overlay_dropdown_content">
+    <div class="overlay_dropdown_content_inner">
+      <ion-icon name="ios-close-circle-outline" (click)="annuityClose()"></ion-icon>
+      <h3 padding>{{'retirementGoal.annuityPlan' | translate}}</h3>
+      <p>{{'retirementGoal.annuityPopupText' | translate}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="overlay_dropdown annuity disclaimer" *ngIf="disclaimer">
+  <div class="overlay_dropdown_content">
+    <div class="overlay_dropdown_content_inner">
+      <ion-icon name="ios-close-circle-outline" (click)="disclaimerClose()"></ion-icon>
+      <h3 padding>{{'common.disclaimers' | translate}}</h3>
+      <div class="innerCont" [innerHtml]="utilitiesProvider.disclaimerText"></div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay_dropdown comparepopup" *ngIf="comparePopup">
+  <div class="overlay_dropdown_content">
+    <h3 text-center padding>
+      {{'suggestedAssetsAllocation.popupTitle' | translate}}
+    </h3>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button outline class="back_btn" (click)="updateAssets()">
+            {{'suggestedAssetsAllocation.updateAssets' | translate}}
+          </button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button outline class="back_btn" (click)="compareNow('compare')">
+            {{'suggestedAssetsAllocation.compareNow' | translate}}
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <button ion-button clear class="login_btn get_recom" (click)="compareNow('getMyReco')">
+            {{'suggestedAssetsAllocation.getMyRecommendations' | translate}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>
+<div class="overlay_dropdown" *ngIf="status">
+  <div class="overlay_dropdown_content calculation_with_range">
+    <retirement-range class="drop_com_comp" class="drop_com_comp" [rangeData]="rangeDataUi"></retirement-range>
+    <ion-item>
+      <button ion-button class="login_btn" (click)="done()">
+        {{'common.done' | translate}}
+      </button>
+    </ion-item>
+  </div>
+</div>

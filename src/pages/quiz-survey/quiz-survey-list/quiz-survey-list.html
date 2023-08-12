@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-title>{{'surveyQuiz.surveyQuizTitle' | translate}}</ion-title>    
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <!-- <ion-card [hidden]="isSurveyData">
+    <ion-row align-items-center justify-content-between>
+      <ion-col col-8>
+        <ion-card-header>
+          <h5>{{'surveyQuiz.takeSurvey' | translate}}</h5>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item *ngFor="let item of surveyList">
+              <ion-radio (click)="goToSurveyPage(item.QB_Header_ID)" [value]="item.QB_Header_ID" item-left></ion-radio>
+              <ion-label (click)="goToSurveyPage(item.QB_Header_ID)">{{item.QB_Header_Name}}</ion-label>
+            </ion-item>
+            <ion-item>
+                  <ion-radio (click)="goToSurveyPage()" [value]="1" item-left></ion-radio>
+                  <ion-label>Financial Survey</ion-label>
+                </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-col>
+      <ion-col col-4>
+        <img src="assets/imgs/survey.png" />
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card [hidden]="isQuizData">
+    <ion-row align-items-center justify-content-between>
+      <ion-col col-8>
+        <ion-card-header>
+          <h5>{{'surveyQuiz.takeQuiz' | translate}}</h5>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item *ngFor="let item of quizList">
+              <ion-radio (click)="goToQuizPage(item.QB_Header_ID)" [value]="item.QB_Header_ID" item-left></ion-radio>
+              <ion-label (click)="goToQuizPage(item.QB_Header_ID)">{{item.QB_Header_Name}}</ion-label>
+            </ion-item>
+            <ion-item>
+                    <ion-radio (click)="goToQuizPage()" [value]="1" item-left></ion-radio>
+                    <ion-label>Financial Quiz</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-radio (click)="goToQuizPage()" [value]="2" item-left></ion-radio>
+                    <ion-label>Mutual Fund Quiz</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-radio (click)="goToQuizPage()" [value]="3" item-left></ion-radio>
+                    <ion-label>Share Martket Quiz</ion-label>
+                  </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-col>
+      <ion-col col-4>
+        <img class="quiz-img" src="assets/imgs/quiz.png" />
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <div class="no_record_found" *ngIf="noData">
+    <div class="no_record_found_cont">
+      <span>Currently no quiz or survey available</span>
+    </div>
+  </div> -->
+  <div class="survey_pic">
+    <img src="assets/imgs/survey_quiz.png"/>
+  </div>
+  <h6 class="txt">Currently no quiz or survey available</h6>
+</ion-content>
+
+<div class="common_loader" *ngIf="pageLoader">
+  <span>
+    <img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

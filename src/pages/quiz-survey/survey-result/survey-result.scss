@@ -1,0 +1,230 @@
+page-survey-result {
+    .scroll_div .scroll-content {
+        padding-top: 0!important;
+    }
+
+    .top_area { 
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: none;
+        .top_area_container {
+            background: none;
+            .cloud{
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .header {
+        .toolbar {    box-shadow: none;
+            .toolbar-background{border:none;}
+                .bar-button{color: $sbi_fifth_color;}
+                .toolbar-content{
+                    .toolbar-title{
+                        color: $sbi_fifth_color;
+                    }
+                } 
+        }
+        &:after{background-image:none; height: 0;}
+        .networth_details {
+            text-align: center;
+            color: $sbi_fifth_color;
+            border-left:none;
+            border-right:none;
+            border-bottom:none;
+            .family_protect_header{ display: none;
+                .grid{ border-radius: 0; margin: 0 -0.5px;
+                    .row{
+                       
+                        .col{
+                            padding: 7px 12px;border-radius: 0px;
+                        }
+                        .family_protect_header_lt{
+                            font-size: 2.77vw; font-family:'Lato Semibold'; color: $sbi_nine_color; 
+        
+                        }
+                        .family_protect_header_rt{
+                            font-size: 3.33vw; font-family:'Lato Black'; color: $sbi_primary_color; 
+                            span{
+                                font-size:3vw;  
+                            }
+                           
+                        }
+                    }
+                }
+        
+        }
+            &.shrink { padding-bottom: 0;
+                &:before{
+                    left: -1px;
+                    width: 22px;
+                    margin-top: 0;
+                }
+                &:after{
+                    right: -1px;
+                    width: 22px;
+                    margin-top: 0;
+                }
+                .networth_amt .networth_amt_inner .rs_icon {font-size: 3.611vw;}
+                .family_protect_header{
+                    display: block;
+                    animation: addAnimation .5s;
+                    animation-fill-mode: both;
+                }
+            }
+             h4{
+                 font-family:'Lato Light';
+                 color: lighten($sbi_fifth_color,15%);          
+                 font-size: 3.88vw;
+                 line-height: 4.16vw;
+                 margin: 0 0 4px 0; 
+             }
+             h5{
+                 font-family: 'Lato';                 
+                 color: $sbi_fifth_color;          
+                 font-size: 5.42vw;
+                 line-height: 7.61vw;
+                 text-align: initial;
+                 margin: 10px 40px;
+             }
+             .networth_amt{
+                font-family:'Lato Black';font-size: 10.27vw;
+                .networth_amt_inner{display: inline-block;   padding: 0 10px 5px 10px;
+                    .rs_icon{margin-right: 5px;  font-size: 8.611vw;}
+                }
+             
+            }
+           
+             .networth_sum{
+                 font-family:'Lato Semibold';font-size:3.61vw; padding: 15px 0px 15px 0px;
+             }
+             
+             
+         }
+    }
+
+    .content {
+        background: #5448b7;
+
+        .grid {
+            margin-top: 50px;
+            img {
+                width: 200px;
+            }
+
+            .result_container {
+                text-align: center;
+                .congrat {
+                    margin: 10px 0;
+                    font-family: 'Lato Black';
+                    color: $sbi_fifth_color;
+                    font-size: 5vw;
+                }
+                .score {
+                    margin: 10px 0;
+                    font-family: 'Lato Black';
+                    color: $sbi_button_color !important;
+                    font-size: 8vw;
+                }
+                .quiz_comp {
+                    margin: 10px 0;
+                    font-family: 'Lato Light';
+                    color: $sbi_fifth_color;
+                    font-size: 4vw;
+                }
+                .quiz_result {
+                    margin: 10px 0;
+                    font-family: 'Lato Light';
+                    color: $sbi_fifth_color;
+                    font-size: 3.5vw;
+                    padding: 0 60px;
+                    .quiz_ques {
+                        color: $sbi_highlighted_color;
+                    }
+                    .quiz_ans {
+                        color: $sbi_button_color;
+                    }
+                }
+            }
+        }
+
+        .footer_panel {
+            background-color: transparent;
+            box-shadow: none;
+            margin-top: 14px;
+            .back_btn {
+                color: $sbi_fifth_color;
+            }
+            .check_ans_btn {
+                width: 100%;
+                margin: 5px 0;
+                button {
+                    width: 100%;
+                    margin: 0;
+                    border: 1px solid #cccccc;
+                    color: #fff;
+                    font-family: 'Lato Black';
+                    font-size: 10px;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .recommend_for_your{
+
+            background: transparent;
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6eaef', endColorstr='#ffffff', GradientType=0 );
+            .recommend_for_your_header {
+                &.disc_com_header{
+                    padding: 0 16px;
+                    margin-top: 30px;
+                    h2{
+
+                        font-size:6.66vw;  font-family:'Lato Black';  margin: 0 0 5px 0; color: $sbi_fifth_color !important;
+                    }
+                }
+  
+            }
+        .recommend_for_your_cont{
+            ion-scroll[scrollX] {
+                white-space: nowrap;
+                height: 65vw;
+                overflow: hidden;
+            }
+            .recommend_for_your_cont_slider{
+                .scroll-content{
+                    margin-top: 0px;
+                }
+                .recommend_for_your_cont_slider_item{ vertical-align: top;    display: inline-block;
+                    .recommend_for_your_cont_slider_item_inner{padding: 0 1.11vw;
+                        width: 45.33vw;
+                      &.view_more{
+                          min-height:100px; border:1px solid lighten($sbi_third_color,20%); border-radius: 4px; text-align: center; background-color: $sbi_fifth_color; position: relative;
+                          .view_more_cont{ position: absolute; top:50%; transform: translateY(-50%); left:0; right:0;
+                              .icon {
+                                  font-size: 7.33vw; color:lighten($sbi_nine_color,30%);
+                              }
+                          span{display: block;  font-family:'Lato Semibold'; font-size:3.33vw; line-height: 3.39vw; color:lighten($sbi_nine_color,40%);}
+                          }
+                      }
+                        figure{ margin: 0;line-height: 0;
+                            img{width:100%; line-height: 0; height:auto; margin: 0; border-radius: 4px; }
+                        }
+                        h4{font-family:'Lato';white-space: normal; font-size:3.61vw; line-height: 4.65vw;   margin: 0 0 10px 0; color: $sbi_fifth_color;}
+                        p{
+                          font-family:'Lato'; font-size:3.33vw; line-height: 4.39vw;   margin: 0 0 10px 0; color:$sbi_fifth_color;  overflow: hidden;
+                          text-overflow: ellipsis; white-space: nowrap;
+                        }
+  
+                    }
+                }
+            }
+        }
+      }
+    }
+}
+    

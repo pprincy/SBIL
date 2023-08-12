@@ -1,0 +1,125 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+@import "ionic.globals";
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (primary: #2A2076, secondary: #32db64, danger: #f53d3d, light: #f4f4f4, dark: #222, sbi_primary_color: #053072, sbi_secondary_color: #5448b7);
+
+$sbi_bg_color: #b6c7ea;
+$sbi_primary_color: #053072;
+$sbi_secondary_color: #5448b7;
+$sbi_third_color: #b2b2b2;
+$sbi_fourth_color: #000033;
+$sbi_error_color: #f0591e;
+$sbi_fifth_color: #fff;
+$sbi_sixth_color: #489ee7;
+$sbi_seven_color: #f1932d;
+$sbi_eight_color: #7d91a3;
+$sbi_nine_color: #555555;
+$sbi_ten_color: #1d1d1d;
+$sbi_eleven_color: #1dd0b5;
+$sbi_twelve_color: #ecf0f3;
+$sbi_thirteen_color: #89d2f3;
+$sbi_fourteen_color: #6f6c6c;
+$sbi_fifteen_color: #461981;
+$sbi_sixeen_color: #311d6e;
+$sbi_seventeen_color: #89e5ed;
+$sbi_eighteen_color: #f8f8f8;
+$sbi_nineteen_color: #eff1f4;
+$sbi_twenty_color: rgba(0, 0, 0, 0.1);
+$sbi_twentyone_color: #757f7b;
+$sbi_twentytwo_color: #1db298;
+$sbi_twentythree_color: #ff2b2b;
+$sbi_twentyfour_color: #f0f2f5;
+$sbi_twentyfivee_color: #333331;
+$sbi_twentysix_color: #2A2076;
+$sbi_twentyseven_color: #5C2483;
+$sbi_twentyeight_color: #343434;
+$sbi_twentynine_color: #000000;
+$sbi_thirty_color: #D9D9D9;
+$sbi_thirtyone_color: #F7F7F7;
+$sbi_thirtytwo_color: linear-gradient(270deg, #301F6C 0%, #D60D47 100%);
+$sbi_thirtythree_color: linear-gradient(226.92deg, rgba(48, 31, 108, 0.6) 0.98%, rgba(214, 13, 71, 0.6) 95.2%);
+$sbi_thirtyfour_color: #727272;
+$sbi_thirtyfive_color: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 87.23%, rgba(92, 36, 131, 0.3) 100%);
+$sbi_thirtysix_color: #B2B2B2;
+$sbi_thirtyseven_color: #E0E0E0;
+$sbi_thirtyeight_color: #2F80ED;
+$sbi_thirtynine_color: #F8F8F8;
+$sbi_forty_color: #00B4EB;
+$sbi_fortyone_color: #c8c7cc;
+$sbi_fortytwo_color: #FFE0CF;
+$sbi_fortythree_color: #DEFFCF;
+$sbi_fortyfour_color: #CFE1FF;
+$sbi_fortyfive_color: #F57721;
+$sbi_fortysix_color: #BDBDBD;
+$sbi_fortyseven_color: #F2F2F2;
+$sbi_fortyeight_color: #0E0E0F;
+$sbi_fortynine_color: #45454A;
+$sbi_fifty_color: #ffc0cb8a;
+$sbi_light_shadow: rgba(94, 72, 186, 0.05);
+$sbi_button_color: rgba(147, 201, 71, 1);
+$sbi_light_shadow_sec: rgba(77, 59, 94, 0.1);
+$sbi_half_transparent: rgba(255, 255, 255, 0.5);
+$ruppes_font: "Rs_symbol";
+$sbi_highlighted_color: #f18e0b;
+$sbi_header_color_before_scroll: #E0F6FD;
+$sbi_gradient_three: linear-gradient(to right, #D60D47, #301F6C);
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";

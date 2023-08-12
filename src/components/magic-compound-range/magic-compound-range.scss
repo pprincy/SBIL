@@ -1,0 +1,52 @@
+magic-compound-range {
+  .tell_us_cont_common {
+    &.magic_range_slider_range {
+      .calculator_common_sec_inner {
+        .calculation_with_range {
+          .range {
+            padding: 0;
+            margin: -11px auto 33px;
+            .range-slider {
+              height: 60px;
+              .range-bar {
+                height: 40px;
+                border: 1px solid $sbi_twentyseven_color;
+                border-radius: 0;
+                &.range-bar-active {
+                  background: $sbi_thirtytwo_color;
+                }
+              }
+              .range-knob-handle {
+                display: none;
+                &:before {
+                  display: none;
+                }
+              }
+            }
+          }
+          .calculation_with_range_inp {
+            border-bottom: none;
+            span {
+              font-family: "Lato";
+              font-size: 7.231vw;
+              color: $sbi_twentyseven_color;
+              font-weight: bold;
+              label {
+                font-family: "Lato";
+                font-size: 9.231vw;
+                color: $sbi_twentyseven_color;
+              }
+            }
+            .text-input {
+              font-size: 9.231vw;
+              font-family: "Lato";
+              color: $sbi_twentyseven_color;
+              text-align: center;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+  }
+}

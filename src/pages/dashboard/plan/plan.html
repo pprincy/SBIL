@@ -1,0 +1,304 @@
+<ion-header id="header">
+  <ion-navbar color="sbiHeader">
+    <ion-title>{{'PaisaGenie' | translate}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="search()">
+        <ion-icon class="icon-Icons_Search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button
+        ion-button
+        icon-only
+        class="notification-button"
+        (click)="goNotificationList()"
+      >
+        <ion-icon class="icon-Icons_Notification">
+          <ion-badge
+            class="notifications-badge"
+            color="sbi_primary_color"
+            *ngIf="restapiProvider.notificationCount > 0"
+            >{{restapiProvider.notificationCount}}</ion-badge
+          >
+        </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button
+        [class.active]="isBtnActive"
+        ion-button
+        [menuToggle]="activeMenu"
+        (click)="menuBtnClick()"
+      >
+        <!-- <ion-icon name="menu"></ion-icon> -->
+        <img src="assets/icon/notification.png" />
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card class="common_expense_card" *ngIf="isPageDataLoad">
+    <ion-card-header>
+      <h4>{{'incomeDashboard.spendOmeter' | translate}}</h4>
+    </ion-card-header>
+
+    <ion-card-content class="spend_card">
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col col-6>
+            <figure>
+              <img src="assets/imgs/spend_review_calendar_icon.svg" alt="" />
+            </figure>
+            <h4>{{'incomeDashboard.spendsReview' | translate}}</h4>
+          </ion-col>
+          <ion-col col-6 text-right>
+            <button class="month_btn" ion-button clear (click)="MonthListExpenseReview()">
+              <p class="month_title">{{expReviewDate ? expReviewDate : 'Select date'}}</p>
+              <ion-icon class="month_arrow" name="md-arrow-dropdown"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div class="card_inner_cont">
+        <div class="spendometer_cont">
+          <ion-card>
+            <div id="spend_review_chart" style="display: block; margin-top: -75px; margin-left: -30px; margin-right: -30px; margin-bottom: -195px;" ></div>
+          </ion-card>
+
+          <div class="column_wrapper">
+            <div class="col_inner1">
+              <ion-list class="column_box1">
+                <figure>
+                  <img src="/assets/imgs/fd_calculator/amount_invested.png" alt="" />
+                </figure>
+                <h5 class="loan_amt">
+                  {{'incomeDashboard.totalMonthlySpends' | translate}}
+                </h5>
+                <div class="invested_result_amt loanamt_col">
+                  <span class="rs_icon icon-Icons_Ruppee"></span>{{totalSpends
+                  | amountFormat:'S' }}
+                </div>
+              </ion-list>
+            </div>
+          </div>
+          <div class="column_wrapper">
+            <div class="col_inner2">
+              <ion-list class="column_box2">
+                <figure>
+                  <img src="assets/imgs/monthly_savings.svg" alt="" />
+                </figure>
+                <h5 *ngIf="!moreSpends">
+                  {{'incomeDashboard.monthlySavings' | translate}}
+                </h5>
+                <div class="invested_result_amt highlighted_txt" *ngIf="!moreSpends">
+                  <span class="rs_icon icon-Icons_Ruppee"></span>{{savings | amountFormat:'S'}}
+                </div>
+                <div class="invested_result_amt highlighted_txt" *ngIf="moreSpends">
+                  <span class="indiccat color"></span>{{'incomeDashboard.exceededSpends' | translate}}
+                  <span class="rs_icon icon-Icons_Ruppee"></span>{{savings | amountFormat:'S'}}
+                </div>
+              </ion-list>
+            </div>
+          </div>
+          <!-- <ion-grid class="invested_monthly">
+            <ion-row class="hiddenRow"> -->
+              <button
+                ion-button
+                class="login_btn block_btn"
+                (click)="incomeExpensePage(selectedDate)"
+              >
+                {{'plan.takeMeToSpendManager' | translate}}
+              </button>
+            <!-- </ion-row>
+          </ion-grid> -->
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="discover_plan_main" *ngIf="goalsList.length > 0">
+    <div class="collection">
+      <div class="collection_header disc_com_header">
+        <h2>{{'plan.popularGoals' | translate}}</h2>
+        <h3>{{'plan.setYourGoals' | translate}}</h3>
+      </div>
+      <div class="collection_cont">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6 *ngFor="let goal of goalsList">
+              <div class="col_inner1">
+                <div class="collection_cont_slider_item">
+                  <div
+                    class="collection_cont_slider_item_inner"
+                    (click)="popularGoalClick(goal)"
+                  >
+                    <div class="collection_cont_slider_item_inner_mid">
+                      <figure class="collection_fig">
+                        <img src="{{imgURLNew + goal.ImagePath}}" />
+                      </figure>
+                    </div>
+                    <div class="collection_cont_slider_item_inner_btm">
+                      {{goal.GoalType}}
+                    </div>
+                    <div class="collection_cont_slider_item_inner_top">
+                      {{goal.ArticleCount}} {{'collections.articles' | translate}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </div>
+
+  <!-- Peer bench marking -->
+  <div class="peer_benchmark" *ngIf="isPeerData">
+    <div class="peer_benchmark_header">
+      <h2>{{'plan.peerBenchmarking' | translate}}</h2>
+      <h3>{{'plan.seehowYourPeerSpends' | translate}}</h3>
+    </div>
+    <div class="peer_benchmark_cont">
+      <ion-slides
+        *ngIf="peerBenchmarkArray && peerBenchmarkArray.length"
+        class="card_slider"
+        pager
+        autoplay="5000"
+        spaceBetween="10"
+        speed="1000"
+        loop="false"
+        (ionSlideReachEnd)="restartSlides($event)"
+      >
+        <ion-slide
+          class="card_slider_item"
+          *ngFor="let peer of peerBenchmarkArray"
+        >
+          <div class="card_slider_item_inner">
+            <figure>
+              <img src="{{imgURLNew + peer.ImagePath}}.png" />
+            </figure>
+            <h4>{{peer.Heading}}</h4>
+            <p>{{peer.HeadingBody}}</p>
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+
+  <div class="discover_plan_main">
+    <!-- //Tools -->
+    <div class="tools">
+      <div class="tools_header tools_inner_header">
+        <div class="tools_head">
+          <h2>{{'plan.tools' | translate}}</h2>
+          <h3>{{'plan.calculateYourInvestments' | translate}}</h3>
+        </div>
+        <figure>
+          <img src="assets/imgs/tools_icon.svg" alt="" />
+        </figure>
+      </div>
+      <div class="tools_cont">
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col
+              col-12
+              *ngFor="let c of calList; let i = index"
+              (click)="calClick(c)"
+            >
+              <div class="tools_cont_inner">
+                <figure>
+                  <img src="{{c.img}}" alt="" />
+                </figure>
+                <h4>{{c.calName}}</h4>
+                <div class="arrow_right_img">
+                  <img src="assets/imgs/arrow_right.svg" alt="" />
+                </div>
+                <!-- <p>{{c.desc}}</p> -->
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="read_all">
+            <ion-col>
+              <button ion-button clear (click)="showMoreCal()">
+                {{'common.showMore' | translate}}
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+
+    <!-- Tell us -->
+    <div class="tell_us_pop">
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col col-7>
+            <div class="tell_us_pop_lt">
+              <h3>{{'plan.tellUs' | translate}}</h3>
+              <h4>{{'plan.yourInvestmentAttitude' | translate}}</h4>
+              <div class="start_btn">
+                <button ion-button class="login_btn" (click)="riskPage()">
+                  {{'common.start' | translate}}
+                </button>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col col-5>
+            <div class="clock_img">
+              <img src="assets/imgs/clock_money.png" />
+            </div>
+          </ion-col>
+        </ion-row>
+        <!-- <ion-row>
+          <ion-col>
+            <button ion-button class="login_btn" (click)="riskPage()">{{'common.next' | translate}}</button>
+          </ion-col>
+        </ion-row> -->
+      </ion-grid>
+    </div>
+    <div class="tell_us_bottom"></div>
+
+    <!-- FAQs -->
+    <div class="faqs" *ngIf="faqsList.length > 0">
+      <div class="faqs_header">
+        <h2>{{'plan.faqs' | translate}}</h2>
+      </div>
+
+      <div *ngFor="let item of faqsList | slice:0:5; let i = index">
+        <div class="faqs_quest">
+          <ion-icon
+            class="add_icon"
+            name="{{item.open ? 'close' : 'add'}}"
+            (click)="showHide(item)"
+          ></ion-icon>
+          <ion-grid>
+            <ion-row>
+              <h3 class="quetions">{{ item.QUESTION }}</h3>
+            </ion-row>
+            <ion-row>
+              <h3 class="answers" *ngIf="item.open">{{ item.ANSWER }}</h3>
+            </ion-row>
+          </ion-grid>
+        </div>
+        <!-- <div class="faqs_answer">
+          <h3>{{ item.ANSWER }}</h3>
+        </div> -->
+      </div>
+      <div class="load_more">
+        <button (click)="faqFun()" ion-button clear class="load_btn">
+          {{'common.showMore' | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>

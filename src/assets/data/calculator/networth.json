@@ -1,0 +1,49 @@
+{
+  "data": {
+    "savInvestData" : [
+        { "id" : "1", "value" : "Cash In hand" , "amount" : 100},
+        { "id" : "2", "value" : " PF/PPF"  , "amount" : 100},
+        { "id" : "3", "value" : "PF/RD"  , "amount" : 100},
+        { "id" : "4", "value" : "Gold"  , "amount" : 100},
+        { "id" : "5", "value" : "Property other than one living in"  , "amount" : 100},
+        { "id" : "6", "value" : "MF - Equity"  , "amount" : 100},
+        { "id" : "7", "value" : "MF- Debt"  , "amount" : 100},
+        { "id" : "8", "value" : "Protection/Term plan"  , "amount" : 100},
+        { "id" : "9", "value" : "Sukanya"  , "amount" : 100},
+        { "id" : "10", "value" : "NSC/KVP"  , "amount" : 100},
+        { "id" : "11", "value" : "NPS" , "amount" : 100},
+        { "id" : "12", "value" : "Direct Equity"  , "amount" : 100},
+        { "id" : "13", "value" : "Bond"  , "amount" : 100},
+        { "id" : "14", "value" : "Child Plan"  , "amount" : 100},
+        { "id" : "15", "value" : "Pension Plan"  , "amount" : 100},
+        { "id" : "16", "value" : "Health Insurance"  , "amount" : 100},
+        { "id" : "17", "value" : "Endowment Plan"  , "amount" : 100},
+        { "id" : "18", "value" : "Unit linked policy"  , "amount" : 100},
+        { "id" : "19", "value" : "Arbitrage Funds"  , "amount" : 100},
+        { "id" : "20", "value" : "RBI Bonds" , "amount" : 100},
+        { "id" : "21", "value" : "Index Funds"  , "amount" : 100},
+        { "id" : "22", "value" : "Others"  , "amount" : 100}
+    ],
+        "owedData" : [
+        { "id" : "23", "value" : "Vehicle Loan"  , "amount" : 100},
+        { "id" : "24", "value" : "Home Loan"  , "amount" : 100},
+        { "id" : "25", "value" : "Personal Loan"  , "amount" : 100},
+        { "id" : "26", "value" : "Credit Card Debt"  , "amount" : 100},
+        { "id" : "27", "value" : "Education Loan"  , "amount" : 100},
+        { "id" : "28", "value" : "Agriculture/ Business Loan"  , "amount" : 100},
+        { "id" : "29", "value" : "Others"  , "amount" : 100}
+    ],
+    "sliderConfig" : {
+        "assets" : {
+            "min" : 1,
+            "max" : 10000,
+            "steps" : 1
+        },
+        "liabilities" : {
+            "min" : 1,
+            "max" : 10000,
+            "steps" : 1
+        }
+    }
+  }
+}

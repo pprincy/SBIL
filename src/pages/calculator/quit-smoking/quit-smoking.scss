@@ -1,0 +1,353 @@
+page-quit-smoking {
+  .scroll-content {
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  .header {
+    background: $sbi_thirtytwo_color;
+
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+      border-bottom: 1px solid $sbi_fifth_color;
+
+      .toolbar-background {
+        border: none;
+      }
+
+      .bar-button {
+        color: $sbi_fifth_color;
+        // padding-left: 28px;
+        .back-button-text {
+          display: none;
+        }
+      }
+
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+          margin-left: -26px;
+        }
+      }
+    }
+
+    &:after {
+      background-image: none;
+      height: 0;
+    }
+  }
+
+  .content {
+    .networth_details {
+      text-align: center;
+      padding: 30px 0 35px 0;
+      h4 {
+        font-family: "Lato";
+        font-size: 6.154vw;
+        color: $sbi_twentysix_color;
+        margin: 0;
+        padding: 0 0 33px;
+        text-transform: capitalize;
+        letter-spacing: 0.38px;
+      }
+      .networth_amt {
+        background: $sbi_thirtytwo_color;
+        border-radius: 38px;
+        width: 251px;
+        height: 50px;
+        margin: 0 auto;
+        .networth_amt_inner {
+          font-family: "Lato";
+          font-size: 6.154vw;
+          color: $sbi_fifth_color;
+          margin: 0;
+          padding: 10px 28px;
+          text-align: center;
+        }
+      }
+    }
+
+    .sukanya_slider {
+      ion-card {
+        &.sukanya_card {
+          background: $sbi_fifth_color;
+          box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+          border-radius: 4px;
+          //margin: 0 11px 11px;
+        }
+        ion-card-content {
+          &.sukanya_card_content {
+            padding: 22px 0 0;
+          }
+          .smoke_heading {
+            .quit_smoking_bg {
+              margin-bottom: 30px;
+              figure {
+                &.bg_img {
+                  margin: 0 auto;
+                  width: 190px;
+                  height: 190px;
+                  overflow: hidden;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+              }
+              figure {
+                &.smok_img {
+                  position: absolute;
+                  top: 17px;
+                  left: 0;
+                  right: 0;
+                  margin: 0 auto;
+                  width: 210px;
+                  height: 210px;
+                  overflow: hidden;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+              }
+            }
+            .first_sec {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              border: 1px solid $sbi_twentyseven_color;
+              filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.1));
+              border-radius: 8px;
+              margin: 0 23px 15px;
+              padding: 15px 19px;
+              height: 58px;
+              h5 {
+                font-family: "Lato Semibold";
+                font-size: 3.077vw;
+                color: $sbi_twentyseven_color;
+                margin: 0;
+                width: 177px;
+                text-align: left;
+                letter-spacing: 0.38px;
+              }
+              .smoke_heading_val {
+                font-family: "Lato";
+                font-size: 4.615vw;
+                color: $sbi_twentysix_color;
+                .rs_icon {
+                  font-size: 3.7vw;
+                  font-weight: bold;
+                  margin-right: -1px;
+                }
+              }
+            }
+            .second_sec {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              border: 1px solid $sbi_twentyseven_color;
+              filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.1));
+              border-radius: 8px;
+              margin: 0 23px;
+              padding: 15px 19px;
+              height: 58px;
+              h5 {
+                font-family: "Lato Semibold";
+                font-size: 3.077vw;
+                color: $sbi_twentyseven_color;
+                margin: 0;
+                width: 177px;
+                text-align: left;
+                letter-spacing: 0.38px;
+              }
+              .gms {
+                font-family: "Lato";
+                font-size: 4.615vw;
+                color: $sbi_twentysix_color;
+              }
+            }
+          }
+          .heading_reinvest {
+            font-family: "Lato";
+            font-size: 3.077vw;
+            color: $sbi_twentysix_color;
+            margin: 0;
+            padding: 30px 0 17px;
+            text-transform: none;
+            letter-spacing: 0.38px;
+          }
+        }
+      }
+    }
+
+    .disclaimer_txt {
+      font-family: "Lato";
+      font-size: 4.103vw;
+      color: $sbi_thirtyeight_color;
+      margin: 0;
+      padding: 26px 0 0;
+      text-transform: capitalize;
+      text-decoration-line: underline;
+      a {
+        color: $sbi_thirtyeight_color;
+      }
+    }
+
+    .calculation_with_range {
+      text-align: center;
+      .calculation_with_range_inp {
+        border-bottom: none;
+        text-align: center;
+      }
+      .range {
+        // padding: 10px 24px 24px;
+        margin: -31px 24px 36px;
+        .range-slider {
+          .range-bar {
+            height: 40px;
+            border: 1px solid $sbi_twentyseven_color;
+            border-radius: 0;
+            &.range-bar-active {
+              background: $sbi_thirtytwo_color;
+            }
+          }
+          .range-knob-handle {
+            display: none;
+            // border: 1px solid $sbi_fifth_color !important;
+            // border-width: 0 3px 3px 0 !important;
+            // display: inline-block !important;
+            // padding: 3px !important;
+            // transform: rotate(-45deg) !important;
+            // -webkit-transform: rotate(-45deg) !important;
+            // background: $sbi_fifth_color;
+            // box-shadow: none;
+            // width: 0;
+            // height: 0;
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .networth_list {
+      margin: -1px -16px 0px;
+      .item {
+        border-top: 1px solid $sbi_fifty_color;
+        font-family: "Lato Semibold";
+        background-color: $sbi_fifth_color;
+        color: $sbi_nine_color;
+        font-size: 3.33vw;
+
+        &.item-block {
+          .item-inner {
+            padding: 0 12px 0 22px;
+          }
+        }
+        &.item-block:last-child {
+          border-bottom: none;
+        }
+        .label {
+          margin-right: 0;
+          color: $sbi_nine_color;
+          .rs_icon,
+          .icon {
+            font-size: 3.72vw;
+            margin-right: 1.11vw;
+            vertical-align: top;
+            min-width: 15px;
+          }
+        }
+
+        .networth_list_lt {
+          display: flex;
+          align-items: center;
+          p {
+            font-family: "Lato";
+            font-size: 4.103vw;
+            color: $sbi_twentysix_color;
+            margin-left: 17px;
+            letter-spacing: 0.38px;
+          }
+          .rs_icon,
+          .icon {
+            font-size: 3.72vw;
+            margin-right: 4px;
+            vertical-align: middle;
+          }
+          figure {
+            width: 24px;
+            height: 24px;
+            overflow: hidden;
+            margin: 0 auto;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+
+        .item-button {
+          font-family: "Lato";
+          color: $sbi_twentyseven_color;
+          font-size: 4.103vw;
+          height: auto;
+          .rs_icon,
+          .icon-Icons_Monthly_Expense {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 0.76em;
+            margin-top: 3px;
+            margin-right: -2px;
+            font-weight: bold;
+          }
+          .icon {
+            font-size: 1.8em;
+            line-height: 0.67;
+            pointer-events: none;
+            padding-left: 0.4em;
+            color: #2a2076;
+          }
+        }
+      }
+    }
+  }
+
+  .quit_smoking_footer {
+    &.footer {
+      .footer_panel {
+        box-shadow: none !important;
+        background: none !important;
+        padding: 18px 17px 28px 18px;
+        .footer_panel_rt {
+          .login_btn {
+            background: $sbi_twentysix_color;
+            color: $sbi_fifth_color;
+            letter-spacing: 0.38px;
+            border: 1px solid $sbi_twentyseven_color;
+            max-width: 184px;
+            height: 50px;
+          }
+        }
+        .footer_panel_lt {
+          .back_btn {
+            background: $sbi_fifth_color;
+            color: $sbi_twentysix_color;
+            letter-spacing: 0.38px;
+            border: 1px solid $sbi_twentyseven_color;
+            max-width: 184px;
+            height: 50px;
+          }
+        }
+      }
+      &::before {
+        background-image: none;
+      }
+    }
+  }
+}

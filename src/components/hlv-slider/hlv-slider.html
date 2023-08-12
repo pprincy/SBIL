@@ -1,0 +1,44 @@
+<div *ngIf="!infoPopup">
+  <h3>
+    {{rangeData.title}}
+    <!-- <i *ngIf="rangeData.info != ''" float-right
+      ><img
+        (click)="interst_rate()"
+        src="assets/imgs/notification_icon.png"
+        width="18"
+        height="18"
+      />
+    </i> -->
+  </h3>
+  <div class="tell_us_cont_common goals_popoup_range_slider_range">
+    <div class="calculator_common_sec_inner">
+      <div class="calculation_with_range">
+        <div class="calculation_with_range_inp">
+          <!-- <span class="rs_icon" *ngIf="rangeData.type == 'r'">`</span> -->
+          <ion-input
+            type="tel"
+            [(ngModel)]="amountComma"
+            class="overlay_dropdown_rng_val"
+            (ngModelChange)="amountChange(amountComma)"
+          ></ion-input>
+        </div>
+        <ion-item>
+          <ion-range
+            min="{{rangeData.min}}"
+            max="{{rangeData.max}}"
+            step="{{rangeData.steps}}"
+            [(ngModel)]="rangeData.amount"
+            (ngModelChange)="amountChange(rangeData.amount)"
+            pin="true"
+          >
+          </ion-range>
+        </ion-item>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="infoPopup">
+  <ion-icon name="ios-close-circle-outline" (click)="interst_rate()"></ion-icon>
+  <h3 padding>{{rangeData.title}}</h3>
+  <p>{{rangeData.info}}</p>
+</div>

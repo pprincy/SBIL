@@ -1,0 +1,545 @@
+page-my-spent {
+  ion-content.content {
+    > .fixed-content {
+      margin-top: 96px !important;
+    }
+  }
+
+  ion-content.content > .fixed-content + .scroll-content {
+    margin-top: 96px !important;
+  }
+
+  .header {
+    background: $sbi_thirtytwo_color;
+
+    .toolbar {
+      box-shadow: none;
+      background: $sbi_thirtytwo_color;
+      border-bottom: 1px solid $sbi_fifth_color;
+
+      .toolbar-background {
+        border: none;
+      }
+
+      .bar-button {
+        color: $sbi_fifth_color;
+        // padding-left: 28px;
+        // margin: 0 -17px;
+        .back-button-text {
+          display: none;
+        }
+      }
+
+      .toolbar-content {
+        .toolbar-title {
+          color: $sbi_fifth_color;
+          text-transform: capitalize;
+          font-family: "Lato";
+          font-size: 4.615vw;
+          margin: -22px;
+        }
+      }
+
+      .filter_icon {
+        float: right;
+      }
+    }
+
+    &:after {
+      background-image: none;
+      height: 0;
+    }
+
+    .segment {
+      padding: 10px 24px;
+
+      .segment-button {
+        font-family: "Lato Semibold";
+        font-size: 3.59vw;
+        color: $sbi_header_color_before_scroll;
+        border: none;
+        border-style: none;
+        height: auto;
+        line-height: 2.5rem;
+        opacity: 1;
+        letter-spacing: 0.38px;
+        margin: 0 10px;
+        min-width: 0;
+        text-transform: capitalize;
+
+        &.segment-activated {
+          background-color: transparent;
+          color: $sbi_thirtyone_color;
+          font-family: "Lato";
+          &:after {
+            position: absolute;
+            content: "";
+            // width: 150px;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 4px;
+            background-color: transparent;
+            border-bottom: 3px solid $sbi_thirtyone_color;
+          }
+        }
+
+        &:first-child {
+          margin: 0 10px 0 0;
+        }
+
+        &:last-child {
+          margin: 0 0 0 10px;
+        }
+      }
+    }
+
+    ion-segment {
+      display: block;
+      white-space: nowrap;
+      font-size: 0;
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        display: none;
+      }
+
+      ion-segment-button.segment-button {
+        display: inline-block;
+        min-width: 100px;
+        width: auto;
+      }
+    }
+  }
+
+  .content {
+    background-color: $sbi_fifth_color;
+
+    .cus_date_picker {
+      color: $sbi_nine_color;
+      font-family: "Lato Semibold";
+      font-size: 3.39vw;
+      max-width: 36.38vw;
+      width: 100%;
+      margin: 20px auto 0 auto;
+
+      ion-datetime {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      span {
+        display: inline-block;
+        vertical-align: middle;
+        color: $sbi_secondary_color;
+
+        img {
+          width: 4.44vw;
+          height: 4.44vw;
+        }
+      }
+    }
+
+    .no_padding {
+      padding: 0 !important;
+
+      .card_inner_cont {
+        padding: 0 13px 16px 13px;
+        position: relative;
+      }
+    }
+
+    .monyear {
+      &.repeat_toogle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 9;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      border: 1px solid $sbi_third_color;
+      border-radius: 20px;
+      margin: 10px 132px 0px 120px;
+
+      span {
+        font-family: "Lato Semibold";
+        font-size: 3.11vw;
+        color: $sbi_secondary_color;
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 20px;
+
+        &.active {
+          background-color: $sbi_secondary_color;
+          color: $sbi_fifth_color;
+        }
+      }
+    }
+  }
+
+  ion-datetime {
+    position: relative;
+  }
+
+  .common_spent_cont {
+    padding: 0px 19px;
+    .recent_spends {
+      .list {
+        margin: 20px 0 0;
+        .item {
+          background: $sbi_fifth_color;
+          box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.1);
+          border-radius: 4px;
+          padding: 10px 20px 10px 10px;
+          margin-bottom: 12px;
+
+          .item-inner {
+            border-bottom: none;
+            padding-right: 0;
+          }
+
+          &:first-child {
+            border-top: none;
+          }
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          // ion-thumbnail {
+          //   min-width: 33px;
+          //   min-height: 33px;
+          //   margin: 8px 8px 8px 0;
+
+          //   img {
+          //     width: 33px;
+          //     height: 33px;
+          //   }
+          // }
+
+          ion-thumbnail {
+            // min-width: 24px;
+            // min-height: 24px;
+            border-radius: 3px;
+            padding: 10px;
+            margin: 0 10px 0 0;
+            overflow: hidden;
+            width: 10px;
+            &.zomato_icon {
+              background-color: $sbi_twentysix_color;
+              min-width: 44px;
+              min-height: 44px;
+            }
+            img {
+              width: auto;
+              height: auto;
+            }
+          }
+
+          .label {
+            margin: 0;
+          }
+
+          h5 {
+            color: $sbi_twentyeight_color;
+            font-family: "Lato";
+            font-size: 4.103vw;
+            margin: 0 0 4px 0;
+            text-transform: capitalize;
+          }
+          h6 {
+            &.spent_data_lbl {
+              color: $sbi_twentysix_color;
+              //font-family: "Lato";
+              font-size: 3.077vw;
+              margin: 0;
+              text-transform: capitalize;
+            }
+          }
+
+          .spent_data {
+            margin: -3px 12px 0 0;
+            text-align: right;
+            font-family: "Lato";
+            font-size: 18px;
+            color: $sbi_twentyeight_color;
+            .rs_icon {
+              &.icon-Icons_Ruppee {
+                font-size: 0.75em;
+                color: #343434;
+                font-weight: bolder;
+              }
+            }
+
+            h4 {
+              &.spent_data_date {
+                color: $sbi_twentysix_color;
+                //font-family: "Lato Light";
+                font-size: 3.077vw;
+                margin: 1px -1px -2px;
+              }
+            }
+          }
+
+          .arrow_right {
+            margin: 0px 0px -7px 0px;
+            overflow: hidden;
+            img {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+    .articles_num {
+      &.articles_num_overlay {
+        display: none;
+      }
+
+      text-align: center;
+      padding: 10px;
+
+      .articles_num_cont {
+        font-family: "Lato Semibold";
+        display: inline-block;
+        vertical-align: middle;
+        color: $sbi_nine_color;
+        font-size: 3.77vw;
+        text-align: center;
+        padding: 7px 17px;
+        margin: 0;
+        border-radius: 20px;
+        border: 1px solid $sbi_third_color;
+
+        strong {
+          font-family: "Lato Bold";
+          color: $sbi_error_color;
+        }
+      }
+    }
+  }
+
+  .overlay_dropdown {
+    .overlay_dropdown_content {
+      top: 50%;
+      transform: translateY(-50%);
+      .recent_spends {
+        .list {
+          .item {
+            padding-left: 0;
+            border-bottom: 1px solid $sbi_eighteen_color;
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            ion-thumbnail {
+              min-width: 33px;
+              min-height: 33px;
+              margin: 8px 8px 8px 0;
+
+              img {
+                width: 33px;
+                height: 33px;
+              }
+            }
+
+            h5 {
+              color: $sbi_primary_color;
+              font-family: "Lato Semibold";
+              font-size: 3.33vw;
+              margin: 0 0 2px 0;
+              text-transform: capitalize;
+            }
+
+            p {
+              color: $sbi_nine_color;
+              font-family: "Lato Semibold";
+              font-size: 2.77vw;
+            }
+
+            .recent_price {
+              color: $sbi_primary_color;
+              font-family: "Lato Black";
+              font-size: 3.88vw;
+
+              span {
+                font-weight: bold;
+                font-size: 3vw;
+              }
+            }
+          }
+        }
+      }
+      .common_expense_card {
+        padding: 0;
+        width: 100%;
+        box-shadow: none;
+        margin: 0;
+
+        ion-card-header {
+          h4 {
+            font-family: "Lato Semibold";
+            font-size: 3.33vw;
+            color: $sbi_nine_color;
+            margin: 0;
+            text-transform: uppercase;
+            display: inline-block;
+            padding-top: 2.5vw;
+          }
+
+          ion-icon {
+            font-size: 1.8em;
+          }
+
+          padding: 0 0 10px 0;
+        }
+
+        .card-content {
+          height: 300px;
+          overflow: auto;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .overlay_dropdown {
+    &.calendar {
+      .overlay_dropdown_content {
+        top: 58%;
+        transform: translateY(-50%);
+        padding-top: 0;
+
+        h5 {
+          color: $sbi_fourth_color;
+          font-family: "Lato Black";
+          font-size: 2.99vw;
+          margin: 0;
+          text-transform: uppercase;
+          background-color: $sbi_eighteen_color;
+          padding: 22px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          margin: 0 -10px;
+
+          i {
+            font-size: 5.75vw;
+            margin: -10px 0 0 0;
+            color: $sbi_fourteen_color;
+          }
+        }
+
+        .round_btn {
+          margin: 0 auto;
+        }
+
+        ion-calendar {
+          padding: 0;
+          font-family: "Lato Semibold";
+
+          .title {
+            .switch-btn {
+              color: $sbi_nine_color;
+              font-family: "Lato Semibold";
+            }
+
+            .button {
+              color: #829bb5;
+
+              &.back {
+                left: 0;
+              }
+
+              &.forward {
+                right: 0;
+              }
+            }
+          }
+
+          .days {
+            button.days-btn.today {
+              p {
+                color: $sbi_secondary_color;
+              }
+            }
+
+            button.days-btn {
+              p {
+                color: $sbi_nine_color;
+              }
+            }
+
+            button.days-btn.on-selected {
+              background-color: $sbi_secondary_color;
+
+              p {
+                color: $sbi_fifth_color;
+              }
+            }
+
+            &.startSelection {
+              button.days-btn {
+                background-color: $sbi_secondary_color;
+
+                p {
+                  color: $sbi_fifth_color;
+                }
+              }
+
+              &:after {
+                background-color: $sbi_secondary_color;
+              }
+            }
+
+            &.endSelection {
+              button.days-btn {
+                background-color: $sbi_secondary_color;
+
+                p {
+                  color: $sbi_fifth_color;
+                }
+              }
+
+              &:after {
+                background-color: $sbi_secondary_color;
+              }
+            }
+
+            &.between {
+              button.days-btn {
+                background-color: $sbi_secondary_color;
+
+                p {
+                  color: $sbi_fifth_color;
+                }
+              }
+            }
+          }
+        }
+
+        .current_date {
+          display: flex;
+          justify-content: space-between;
+          padding: 20px 0;
+
+          span {
+            color: rgba(85, 85, 85, 0.6);
+            font-family: "Lato Semibold";
+            font-size: 3.26vw;
+            letter-spacing: 0.5px;
+          }
+        }
+      }
+    }
+  }
+
+  .login_btn {
+    margin: 0 auto;
+  }
+}

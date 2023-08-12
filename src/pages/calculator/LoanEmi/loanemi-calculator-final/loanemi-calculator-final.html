@@ -1,0 +1,141 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-title>{{'emiCalculator.emiCalculator' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="networth_details">
+    <h4>
+      {{('emiCalculator.corpusTitle' | translate).replace('$month$',
+      tenureInMonths)}}
+    </h4>
+    <div class="networth_amt">
+      <div class="networth_amt_inner">
+        <span class="rs_icon icon-Icons_Ruppee"></span>{{EMIAmt | amountFormat:'S'}}
+      </div>
+    </div>
+  </div>
+
+  <ion-card class="loanemi_card">
+    <div id="networth_chart" style="display: block; margin-top: -65px; margin-left: -30px; margin-right: -30px; margin-bottom: -175px;"></div>
+    <div class="column_wrapper">
+      <div class="col_inner1">
+        <ion-list class="column_box1">
+          <figure>
+            <img src="assets/imgs/fd_calculator/amount_invested.png" />
+          </figure>
+          <h5 class="loan_amt">
+            <span class="indiccat color_tr"></span>{{'emiCalculator.loanamount'| translate}}
+          </h5>
+          <div class="invested_result_amt loanamt_col" text-capitalize>
+            <span class="rs_icon icon-Icons_Ruppee"></span>{{loanAmt |
+            amountFormat:'S'}}
+          </div>
+        </ion-list>
+      </div>
+    </div>
+    <div class="column_wrapper">
+      <div class="col_inner2">
+        <ion-list class="column_box2">
+          <figure>
+            <img src="assets/imgs/fd_calculator/interest_earned.png" />
+          </figure>
+          <h5 class="interest_amt">
+            <span class="indiccat color_fr"></span>{{'emiCalculator.interest' |
+            translate}} @{{interestRate | amountFormat:'S'}}%
+          </h5>
+          <div class="invested_result_amt highlighted_txt" text-capitalize>
+            <span class="rs_icon icon-Icons_Ruppee"></span>{{interestInccured |
+            amountFormat:'S'}}
+          </div>
+        </ion-list>
+      </div>
+    </div>
+    
+    <!-- </ion-card-header> -->
+    <ion-card-content class="loanemi_card_content">
+      <ion-list class="networth_list">
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/chart.svg" />
+            </figure>
+            <p>{{'emiCalculator.rateOfInterest' | translate}}</p>
+          </div>
+          <button ion-button icon-right float-right clear (click)="showOverlay('interestRate')">
+            {{interestRate}}%
+            <span class="drp_sub_txt">{{'common.pa' | translate}}</span><ion-icon name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/hlv_calculator/currency_rupee.svg" />
+            </figure>
+            <p>{{'emiCalculator.loanamount' | translate}}</p>
+          </div>
+          <button ion-button icon-right float-right text-capitalize clear (click)="showOverlay('loanAmt')">
+            <span class="rs_icon icon-Icons_Ruppee"></span>{{loanAmt |
+            amountFormat:'S'}}<ion-icon name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+
+        <ion-item>
+          <div class="networth_list_lt" float-left>
+            <figure>
+              <img src="assets/imgs/duration.svg" />
+            </figure>
+            <p>{{'emiCalculator.EMIDuration' | translate}}</p>
+          </div>
+          <button ion-button icon-right float-right clear (click)="showOverlay('tenure')">
+            {{tenureInYears}}
+            <span class="drp_sub_txt"> {{'common.yrs' | translate}} </span><ion-icon
+              name="md-arrow-dropdown"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <p class="disclaimer_txt" text-center>
+    <!-- <span class="icon-Icons_Info"></span> -->
+    <a (click)="disclaimerInfo()"> {{'common.disclaimersLink' | translate}}</a>
+  </p>
+</ion-content>
+<ion-footer class="loanemi_final_footer">
+  <div class="footer_panel row active">
+    <div class="footer_panel_lt col">
+      <button ion-button class="back_btn" outline (click)="recalculate()">
+        {{'buttons.recalculate' | translate}}
+      </button>
+    </div>
+    <div class="footer_panel_rt col">
+      <button ion-button class="login_btn" (click)="goToGoalsListing()">
+        {{'buttons.startPlanning' | translate}}
+      </button>
+    </div>
+  </div>
+</ion-footer>
+
+<div class="overlay_dropdown" *ngIf="status">
+  <div class="overlay_dropdown_content calculation_with_range">
+    <loan-emi-range class="drop_com_comp" [rangeData]="rangeDataUi"></loan-emi-range>
+    <ion-item>
+      <button ion-button class="login_btn" (click)="done()">
+        {{'common.done' | translate}}
+      </button>
+    </ion-item>
+  </div>
+</div>
+<div class="overlay_dropdown annuity disclaimer" *ngIf="disclaimer">
+  <div class="overlay_dropdown_content">
+    <div class="overlay_dropdown_content_inner">
+      <ion-icon name="ios-close-circle-outline" (click)="disclaimerClose()"></ion-icon>
+      <h3 padding>{{'common.disclaimer' | translate}}</h3>
+      <div class="innerCont" [innerHtml]="utilitiesProvider.disclaimerText"></div>
+    </div>
+  </div>
+</div>
+<div class="common_loader" *ngIf="pageLoader">
+  <span><img src="assets/imgs/pageLoader.gif" /> </span>
+</div>
